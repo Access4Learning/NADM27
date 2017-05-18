@@ -1,0 +1,63 @@
+<h3>Energy Management</h3>
+<Appendix name="Energy Management Notes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Intro>
+
+<h3>Technical Notes</h3>
+
+<p>There are several factors that make this Energy Usage object unique.  They are described below.</p>
+<h4>1. Multiple Energy Usage Object Publishers</h4>
+<p>Even within one Zone, there could be multiple publishers of the Energy Usage event, where each publisher provides a set of repeating time based energy measurements of the measurements/meter readings it is acquiring, as they apply to the Energy Zone it services.</p>
+
+<h4>2. Self-contained Events</h4>
+<p>Given the realities of the current energy management domain, it is hard to impose conformity on the sources of energy management data.  As a result, every Energy Usage Event is self-contained, to the extent that it defines the units that it uses and the sampling interval between the readings, even though this information will be identical in every Event the publisher issues.</p>
+
+<p>The Energy Analysis/Reporting program which is subscribing to these Events will therefore be required to make the necessary unit conversions before the information in the Energy Management Data Store can be utilized.</p>
+
+<h4>3. Granularity of Energy Usage Objects</h4>
+<p>The number of Energy Usage objects is determined by deciding how an Energy Usage object is identified and distinguished from other Energy usage objects.  This is done by using  the location (or school) and Start Time and SourceId as the ID of an Energy Usage Object.  Every Energy Usage Event being reported on is then an Add Event for a new Energy Usage object. </p>
+
+
+<h4>4. Location of Energy Measurements</h4>
+
+<p>This is specified by two components,  The global location information defines the hierarchy in which the energy usage information is relevant (State, District, School).  These are optional entities in the Energy Usage Event schema.  Where they are not supplied the Energy Analysis subscriber would be expected to provide them based upon the Zone in which the Events were published. </p>
+
+<p>It is expected that most or all of this global information will be supplied by the SIF Zone ID.  From the SIF v2.5 Web Service volume this is defined as:</p>
+
+<p>urn:sif:zone:xxx.yyy.zzz where xxx.yyy.zzz is a structure that reading left to right starts with most specific identification such as school and works rightward to identify the higher levels  (e.g., urn:sif:school:AcmeMiddleSchool1.CoyoteDistrict.Arizona)</p>
+
+<p>The local identification adds two further optional narrowings of the School location:  Building and Energy Zone.  The Energy Zone in turn consists of the following subelements:</p>
+<ul>
+	<li>Type (Facility, Classroom, Floor, wing, office, gym, cafeteria, etc.)</li>
+	<li>Name (e.g., Cafeteria, Room 101)</li>
+	<li>Tag List (set of optional name/value pairs for additional Energy Zone information (Sensor ID, Sensor Group, Equipment settings, etc.)</li>
+</ul>
+<p>If no local location information is provided, the energy readings apply to the entire school.</p>
+
+
+
+<h3>Energy Usage Object Context</h3>
+
+<p>Today, SIF standardizes student data so that it may be provided by multiple SIF certified systems in identical format, sent upstream to the District, the AEA and State for apples-to-apples comparisons between schools, which can be later analyzed to make informed educational policy decisions. </p>
+
+<p>The EnergyUsage object is designed to do precisely the same thing for energy usage data obtained from school facilities.  By standardizing on how this data is reported upstream independently of the system which provides it, this object enables cross-school and before-after retrofit energy cost comparisons, and can validate energy usage best practices that will help educational authorities construct an informed green school energy policy, potentially  resulting in significant monetary savings.</p>
+
+<p>In the typical school building, there are three main types of systems which may be used to help control energy costs:</p>
+<ul>
+	<li>Building Automation Systems (BAS) regulate heating, air conditioning, ventilation usage and collect usage data derived from room scheduling data and management of sensors (ex: heating thermostats) to dynamically regulate temperatures and turn equipment on and off for HVAC equipment management.</li>
+	<li>Utility company services including electricity, gas and oil vendors which supply energy to support HVAC/electrical operations in the school building.  Typically, utility company meters supply usage data which is captured by the vendor to invoice the school on a monthly basis to record usage and cost for usage for KWh, BTUs, etc. </li>
+	<li>Energy Monitoring, Data Analytic and Reporting Systems which use the data supplied by the other two systems to let the Facilities team get a handle in near real-time on energy usage and conduct meaningful energy usage audits as well as generate comparison reports to show periods of usage in contrast to other time frames/dates.  These systems may also collect their own energy usage data through the use of shadow metering.</li>
+	</ul>
+
+<p>However, the problem facing school administrators is that typically the above three sources for energy management are not linked.</p>  
+
+<p>The increasing availability of energy management/monitoring systems for the school district use offers the opportunity to provide district administrators who already have a SIF Zone installed with an additional option.  Defining and standardizing an Energy Usage object that can be used by one or more of the above systems, will allow District (and State) officials to compare energy usage between buildings in the same manner as standardizing on student data allowed student performance to be compared. </p> 
+
+<p>An integrated SIF implementation solution can be constructed to enable the school to capture energy use data to assist the district in evaluating a school's performance in energy conservation. Subsequently, the district officials can compare a specific school's analysis with other schools in the district and throughout the nation using programs like EPA's Energy Star Rating system.  </p>
+
+<p>The district upon securing interoperability between the software applications can allow district users to have the capability of integrating seamlessly integrating the energy usage data between the applications to provide a fully integrated solution for the measurement and analysis of district and school performance in managing energy efficiency and cost effectiveness throughout the district. Correlating the energy usage, demand cost and external environmental data (such as temperature) in a series of standardized time based measurements can vastly increase the effectiveness of Energy Analysis and Reporting programs at the State and District levels in terms of flagging equipment problems (ex: the thermostat at Building X appears to flutter whenever the outside temperature hits 65 degrees, turning the building heater on and off and wasting energy) and providing hard data feedback on energy audits and retrofit project effectiveness.</p>
+
+<p>The two-way communicating ability of the SIF Energy Usage Object also permits schools to participate in a variety of utility and grid-managed energy demand programs.</p>
+
+</Intro>
+
+</Appendix>

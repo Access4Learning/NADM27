@@ -1,0 +1,15 @@
+<DataObject name='SetSpecialEducationRecordResponse'>
+	<Intro>
+		<p>This object is empty.</p>
+	</Intro>
+	<Item>
+		<Element>SetSpecialEducationRecordResponse</Element>
+		<Description>
+			This object is empty.
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+	<xhtml:Example xmlns=''>
+
+	</xhtml:Example>
+</DataObject>

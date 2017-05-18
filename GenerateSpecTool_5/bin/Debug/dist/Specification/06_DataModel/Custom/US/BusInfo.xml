@@ -1,0 +1,145 @@
+<DataObject name="BusInfo">
+  <Key>@RefId</Key>
+  <EventsReported>true</EventsReported>
+  <Item>
+    <Element>BusInfo</Element>
+    <Description>
+      <p>This object contains all of the information about a bus.</p>
+    </Description>
+  </Item>
+  <Item>
+
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies this bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+  </Item>
+  <Item>
+    <Element>VehicleNumber</Element>
+
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Vehicle number of the bus.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Element>SeatingCapacity</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The number of people who can ride on the bus at the same time.</p>
+    </Description>
+    <Type name="xs:unsignedInt"></Type>
+  </Item>
+  <Item>
+    <Element>Contractor</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The name of the contractor for this bus.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+
+  <Item>
+    <Element>EquipmentList</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Describes any special equipment that is on this bus.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+
+  <Item>
+
+    <Element>/Equipment</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Inventories each piece of special equipment on the bus.</p>
+    </Description>
+  </Item>
+  <Item>
+
+    <Element>//BusEquipmentRefId</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the type of equipment.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+
+    <Element>//Count</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The number of pieces of this type of equipment that are on this bus.</p>
+    </Description>
+    <Type name="xs:unsignedInt"></Type>
+  </Item>
+
+
+  <Item>
+    <Element>ManufactureYear</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The manufacture year of the bus (CCYY).</p>
+    </Description>
+    <Type name="xs:gYear"></Type>
+  </Item>
+
+  <Item>
+    <Element>VehicleIdentificationNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The Vehicle Identification Number (VIN) of the bus.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+
+  <Item>
+    <Element>LicensePlateNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The vehicle's license plate number.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+
+
+  <Item>
+    <Element>SIF_Metadata</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_Metadata"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_ExtendedElements</Element>
+
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+  </Item>
+  <xhtml:Example xmlns="">
+    <BusInfo RefId="D3E34B359D75101A8C3D00AA001A1652">
+      <VehicleNumber>63</VehicleNumber>
+      <SeatingCapacity>71</SeatingCapacity>
+      <Contractor>RYDER</Contractor>
+      <EquipmentList>
+        <Equipment>
+          <BusEquipmentRefId>E2F23A5323E87343B9A34BE457321E4A</BusEquipmentRefId>
+          <Count>3</Count>
+        </Equipment>
+        <Equipment>
+          <BusEquipmentRefId>34BE45E87343B9A5323A73212F23E7B3</BusEquipmentRefId>
+          <Count>4</Count>
+        </Equipment>
+      </EquipmentList>
+      <ManufactureYear>2001</ManufactureYear>
+      <VehicleIdentificationNumber>12333992AB</VehicleIdentificationNumber>
+      <LicensePlateNumber>BLA254</LicensePlateNumber>
+    </BusInfo>
+  </xhtml:Example>
+</DataObject>

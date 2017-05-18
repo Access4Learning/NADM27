@@ -1,0 +1,1303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GenerateSpec</name>
+    </assembly>
+    <members>
+        <member name="T:GenerateSpec.GenerateSpecMain">
+            <summary>
+            The root class of the project.  
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.GenerateSpecMain.Main(System.String[])">
+            <summary>
+            As per convention, this method launches the application  
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:GenerateSpec.GenerateSpecMain.GenerateSpecification(System.String)">
+            <summary>
+            Launches the specification documents generation.
+            </summary>
+            <param name="specificationGeneratorDocumentPath">The path to the specification source files. These
+            source files are to the docucments, not software.</param>
+        </member>
+        <member name="T:GenerateSpec.Generator.Util.ContentsItem">
+            <summary>
+            A properties-only object used to store and track content.
+            </summary>
+        </member>
+        <member name="T:GenerateSpec.Generator.Util.XsdSettings">
+            <summary>
+            A properties-only object used to store settings for XSD generation.
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.OutputXSDPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.Annotate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.IsDataModelXSD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.SingleSchema">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.IsSIFMessage2XSD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.AddNilAttributes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.Diagram">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.ListWithKeysConstraints">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.XsdSettings.IsServiceBodyDefinition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GenerateSpec.Generator.Util.DocumentGlobalSettings">
+            <summary>
+            A properties-only object used to store global settings about the output. 
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.DocumentGlobalSettings.OutputPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.DocumentGlobalSettings.OutputDiagramPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.DocumentGlobalSettings.SifNamespace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.DocumentGlobalSettings.Intl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.DocumentGlobalSettings.InputPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.Util.DocumentGlobalSettings.SchemaVersion">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GenerateSpec.Generator.GenerateHtml">
+            <summary>
+            Generates the HTML document(s).
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.OutputPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.RootFileName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.SingleDocument">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.DocumentType">
+             <summary>
+            Indicates what types of text to be included in the document output.  See the XSD for enumeration.
+             </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.DocumentGlobalSettings">
+            <summary>
+            A data object used for storing and passing global settings.
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.#ctor(GenerateSpec.Generator.Util.DocumentGlobalSettings,GenerateSpec.Generator.InputDocumentManager)">
+            <summary>
+            The constructor for the GenerateHtml class. Takes two parameters and sets them equal to instance properties. 
+            </summary>
+            <param name="documentGlobalSettings">A data object that contains global settings.</param>
+            <param name="documentManager">An object with properties and methods that manage the input xml.</param>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.NextSectionHack">
+            <summary>
+            Added by Mark Ward:
+            NextSectionHack is used in the Navigation to provide the generator the next section after Data Model.  Right now the generator is not smart enough to determine this.
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.RootTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenerateSpec.Generator.GenerateHtml.inputDocumentManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateHtml.InputDocumentManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateSpec">
+            <summary>
+            This is the core organizing method of the html generation process. 
+            The main pieces of the spec are put together in this method. 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.ValidateExamples">
+            <summary>
+            Constructor for ValidateExamples (plural) method.
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.ValidateExamples(System.String)">
+            <summary>
+            ValidateExamples method implementation.
+            </summary>
+            <param name="xsd"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.ValidateExample(System.String,System.String)">
+            <summary>
+            Validate a single example. 
+            </summary>
+            <param name="xsd"></param>
+            <param name="xml"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartDocument(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates the html document header sections down to the body tag.
+            Used once when generating a single file.  Used on each html page
+            when the spec is generated as multiple pages. 
+            </summary>
+            <param name="path"></param>
+            <param name="id"></param>
+            <param name="title"></param>
+            <param name="nextId"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.ShowValidationErrors(System.Object,System.Xml.Schema.ValidationEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateTitlePage(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateSections(System.Int32)">
+            <summary>
+            Uses the inputDocumentManager to get the sections in the spec.  It then
+            iterates through the sections and builds the html by calling the GenerateSection method. 
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateAppendices(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndDocument(System.String)">
+            <summary>
+            Closes out an .html document: writes EOF to disk. 
+            </summary>
+            <param name="nextId"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteAnchor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateQuickContents">
+            <summary>
+            Generates a short TOC by calling the GenerateContents method with a parameter that specifies
+            that the short TOC (called Quick Contents) be generated. The quickContents array (that holds
+            the actual contents info) is also passed to the GenerateContents method.
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteTopNav">
+            <summary>
+            Writes the Home/TOC navigation used at the top of each 
+            page. 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteBottomNav(System.String)">
+            <summary>
+            Creates the Home/Previous/Next/TOC navigation used at the bottom of each 
+            page. 
+            </summary>
+            <param name="nextId"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateNavigation(System.String,System.Boolean)">
+            <summary>
+            ***NO LONGER USED*****
+            Creates the Home/Previous/Next/TOC navigation used at the bottom of each 
+            page. 
+            </summary>
+            <param name="nextId"></param>
+            <param name="top"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateFullContents">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.Initialize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.ReadBuildComment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheet(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GetID(System.String)">
+            <summary>
+            Takes a name and strips all characters (spaces mostly) except letters, numbers, and underscores. 
+            It also capitalizes the first letter after spaces in the name (camel case). 
+            The returned Id is used mostly in anchor tags. 
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateSection(System.Xml.XPath.XPathNodeIterator,System.Int32,System.String,System.String)">
+            <summary>
+            Generates the html for a single section.  Has specialized code for handling Preamble,
+            Infrastructure, and Data Model Sections.
+            TODO - add a handler for Zone Services section
+            </summary>
+            <param name="section"></param>
+            <param name="level"></param>
+            <param name="sectionNumber"></param>
+            <param name="nextSection"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheetDataModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheetInfrastructure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheetZoneServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetDataModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetInfrastructure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetZoneServices">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateAppendix(System.Xml.XPath.XPathNodeIterator,System.Int32,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="appendixIterator"></param>
+            <param name="level"></param>
+            <param name="sectionNumber"></param>
+            <param name="nextAppendix"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateContents(System.String,System.Collections.ArrayList)">
+            <summary>
+            Takes an array of TOC data and generates an html table of contents.
+            </summary>
+            <param name="title"></param>
+            <param name="contents"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddContents(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Adds an item to the TOC and the Quick TOC arrays
+            </summary>
+            <param name="level"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GetHTag(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteComments(System.Xml.XPath.XPathNodeIterator)">
+            <summary>
+            Vince (3/3/2010): This does not seem to be used.
+            Writes comments wrapped by a Comment tag out as an html list.
+            </summary>
+            <param name="itemIterator"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddExample(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddTable(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddFigure(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            Adds the item to the Figures index
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddObject(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            Adds the item to the Object Index.
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddCommonElement(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            Adds an item to the Common Element Index.
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddCommonType(System.Xml.XmlTextWriter,System.String,System.String)">
+            <summary>
+            Adds an item to the Common Type Index.
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddElement(System.Xml.XmlTextWriter,System.String,System.String,System.String)">
+            <summary>
+            Adds an item to the Element Index.
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddAttribute(System.Xml.XmlTextWriter,System.String,System.String,System.String)">
+            <summary>
+            Adds an item to the Attribute Index. 
+            </summary>
+            <param name="writer"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddIndexItem(System.Xml.XmlTextWriter,System.Collections.ArrayList@,System.String,System.String,System.String,System.String)">
+            <summary>
+            Generic routine to add an item to an index.  The index and the item are passed
+            in as parameters. 
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+            <param name="type"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteCaption(System.Xml.XmlTextWriter,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="type"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateElementTable(System.Xml.XPath.XPathNodeIterator,System.Int32,System.String,System.Int32)">
+            <summary>
+            Creates the html Object Table in the spec that lists elements and attributes. 
+            </summary>
+            <param name="objectIterator"></param>
+            <param name="level"></param>
+            <param name="sectionNumber"></param>
+            <param name="objectSectionNumber"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateDataModel(System.Xml.XPath.XPathNodeIterator,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="section"></param>
+            <param name="level"></param>
+            <param name="sectionNumber"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateInfrastructure(System.Int32,System.String)">
+            <summary>
+            Generates the document layout and content for the Common Elements, Messages, and Data Objects of the
+            Infrastructure Chapter.
+            </summary>
+            <param name="level"></param>
+            <param name="sectionNumber"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.GenerateZoneServices(System.Xml.XPath.XPathNodeIterator,System.Int32,System.String)">
+            <summary>
+            Vince(2010/02/26): This is a new section to accomodate Zone Services.
+            TODO - Break Services Section into multiple pards. 
+            </summary>
+            <param name="section"></param>
+            <param name="level"></param>
+            <param name="sectionNumber"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteExample(System.Xml.XPath.XPathNodeIterator,System.String,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="example"></param>
+            <param name="sectionNumber"></param>
+            <param name="exampleNumber"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteMessage(System.Xml.XPath.XPathNodeIterator,System.Int32,System.String)">
+            <summary>
+              VP(2.24.2010): I currently think this method writes a line in the object table and at the same
+              time, it adds to the spreadsheet. Not sure why it is call WriteMessage.
+            
+              Called by GenerateSection.
+            </summary>
+            <param name="iterator"></param>
+            <param name="level"></param>
+            <param name="number"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheetExternalCodeSets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteCodeSetAppendix(System.Xml.XPath.XPathNodeIterator,System.String,System.Int32)">
+             <summary>
+            Somewhere in all this crap code the "Id" of the codeset gets the spaces taken out,
+            The "group" (e.g., UK) prepended and the word "Type" is appended. For example, a codeset title
+            named "The Codeset" becomes ref='UKTheCodesetType' by convention.
+             This 'ref' becomes the value that a human now has to use in the input as the reference for the codeset.  That is
+            of course, if this stupid convention is detected somehow.  There is no documentation, much less about this.
+            How about having an id and a title as separate fields? Too much to ask?
+             </summary>
+             <param name="appendixIterator"></param>
+             <param name="sectionNumber"></param>
+             <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetExternalCodeSets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheetCodeSets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetWorksheet">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetCodeSets">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.StartSpreadsheetCommonTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.EndSpreadsheetCommonTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteCommonTypesAppendix2(System.Xml.XPath.XPathNodeIterator,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="appendixIterator"></param>
+            <param name="sectionNumber"></param>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteBackgroundDirectory(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="backgroundDirectory"></param>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteIndex(System.Xml.XmlTextWriter,System.Collections.ArrayList@)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteIndex(System.Xml.XmlTextWriter,System.Collections.ArrayList@,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+            <param name="sort"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteMultiIndex(System.Xml.XmlTextWriter,System.Collections.ArrayList@)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteGenericAppendix(System.Xml.XPath.XPathNodeIterator,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="appendixIterator"></param>
+            <param name="sectionNumber"></param>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.AddIndexItem(System.Xml.XmlTextWriter,System.Collections.ArrayList@,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="index"></param>
+            <param name="type"></param>
+            <param name="number"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteBackgroundLink(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="group"></param>
+            <param name="objectName"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.Textify(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="markup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteSpreadsheetRow(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="columns"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteNewLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteContentsNumber(GenerateSpec.Generator.Util.ContentsItem)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateHtml.WriteContentsName(GenerateSpec.Generator.Util.ContentsItem)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="T:GenerateSpec.Generator.GenerateXsd">
+            <summary>
+            Generates XSDs from the input file.
+            Also generates the schema diagrams.  
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.#ctor(GenerateSpec.Generator.Util.DocumentGlobalSettings,GenerateSpec.Generator.Util.XsdSettings,GenerateSpec.Generator.InputDocumentManager)">
+            <summary>
+            This is the constructor of the class. 
+            </summary>
+            <param name="documentGlobalSettings"></param>
+            <param name="XsdSettings"></param>
+            <param name="documentManager"></param>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateXsd.InputDocumentManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateXsd.DocumentGlobalSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.GenerateXsd.GenerateXsdSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.Generate">
+            <summary>
+            This is the root method for generating XSDs and XSD fragments. It calls sub-methods to create
+            the different kinds of XSDs such as DataModel, Infrastructure XSDs. 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.Initialize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:GenerateSpec.Generator.GenerateXsd.buildComment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.ReadBuildComment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateRootXSD">
+            <summary>
+            Second-level method.  Called by Generate(). 
+            Creates the SIF_Message file.
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateDataModelXSD">
+            <summary>
+            Second-level method.  Called by Generate(). 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateCodeSetsXSD">
+            <summary>
+            Second-level method.  Called by Generate(). 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateCodeSetsXSD(System.Xml.XPath.XPathNodeIterator,System.String)">
+            <summary>
+            This is the core code set writer.  It writes single elements or type definitions and not
+            complete xml objects. 
+            </summary>
+            <param name="sourceIterator"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateExternalCodeSetsXSD">
+            <summary>
+            Second-level method.  Called by Generate(). 
+            This method uses GenerateCodeSetsXSD() to do its work. 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateCommonTypesXSD">
+            <summary>
+            Second-level method.  Called by Generate().
+            Creates an iterator for sets of common elements or common types.  For each type or element it calls GenerateDefinition()
+              or it writes the node using WriteNode(). 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.EndXSDFile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GetID(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.StartXSDFile(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="folder"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.StartXSDFile(System.String,System.String,System.String[],System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator)">
+            <summary>
+            
+            </summary>
+            <param name="folder"></param>
+            <param name="name"></param>
+            <param name="includes"></param>
+            <param name="namespaceIterator"></param>
+            <param name="importIterator"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteNewLine">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteNewLines">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteNewLines(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="i"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateDefinition(System.Xml.XPath.XPathNodeIterator,System.Boolean)">
+            <summary>
+            Overidden by GenerateDefinition(XPathNodeIterator rootIterator, bool isElement, bool isTyped)
+            </summary>
+            <param name="rootIterator"></param>
+            <param name="isElement"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GenerateDefinition(System.Xml.XPath.XPathNodeIterator,System.Boolean,System.Boolean)">
+            <summary>
+            Encapsulates the generation of a complete object XSD. 
+            This is used for complete SIF objects. The code set and common types
+            methods write the XSDs without calling a sub-method and they generate single
+            elements or types instead of xml objects. 
+            
+            The top level iterator iterates through items 
+            </summary>
+            <param name="rootIterator"></param>
+            <param name="isElement"></param>
+            <param name="isTyped"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteDefinition(System.String,System.Object[][],System.Boolean,System.Boolean,System.Xml.XPath.XPathNodeIterator)">
+            <summary>
+            Writes out an entire object, common element, common type, message, etc. 
+            The IF statements handle various kind of objects, etc. 
+            </summary>
+            <param name="name"></param>
+            <param name="itemArray"></param>
+            <param name="isTyped"></param>
+            <param name="isElement"></param>
+            <param name="rootIterator"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteCollectionDefinition(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteObjectKeys(System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="elementName"></param>
+            <param name="keys"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GetListKeyName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="elementName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteListKeys(System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="elementName"></param>
+            <param name="keys"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GetListKeys(System.Xml.XPath.XPathNodeIterator)">
+            <summary>
+            
+            </summary>
+            <param name="listOrObjectIterator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GetListModePredicate">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.IsSequence(System.Object[][])">
+            <summary>
+            Tests the itemArray to see if it is a sequence
+            (Vince: not sure this will stand. It looks for a backslash at the beginning of the item name)
+            </summary>
+            <param name="itemArray"></param>
+            <returns>True or False</returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteAnnotation(System.Xml.XPath.XPathNodeIterator)">
+            <summary>
+            
+            </summary>
+            <param name="iterator"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteAttributes(System.Object[][],System.Int32)">
+            <summary>
+            Writes the XML Attributes for an Element. 
+            Takes an itemArray and a start index.  Assumption is that the startIndex points to an attribute.
+            Writes out attributes until the next item is not an attribute. 
+            </summary>
+            <param name="itemArray"></param>
+            <param name="startIndex"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteType(System.Object[][],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteType(System.Object[][],System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="complexDerivation"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteSequence(System.Object[][],System.Int32,System.Int32@,System.Int32)">
+            <summary>
+            Writes an XSD sequence fragment. 
+            Also includes logic to write xs:choice for data model objects
+            </summary>
+            <param name="itemArray"></param>
+            <param name="startIndex"></param>
+            <param name="endIndex"></param>
+            <param name="level"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.IsLastChoiceChild(System.Object[][],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.IsRootSIFElement(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.IsChoice(System.Object[][])">
+            <summary>
+            Tests the itemArray to see if it is an array of choices.
+            </summary>
+            <param name="itemArray"></param>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteEmptyType(System.Object[][],System.Int32,System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <param name="typeIterator"></param>
+            <param name="hasAttributes"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteType(System.Object[][],System.Int32,System.String,System.Boolean)">
+            <summary>
+            Writes a type information to the XSD. 
+            This can be a type declaration within a tag or a complete node depending upon the situation.
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="complexDerivation"></param>
+            <param name="suppress"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteChoiceType(System.Object[][],System.Int32,System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator,System.Boolean,System.Boolean)">
+            <summary>
+            Called by WriteType()
+            Writes an xs:choice node of types NOT a choice of elements.
+            A choice of elements is written by different code embedded in WriteSequence
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <param name="typeIterator"></param>
+            <param name="hasAttributes"></param>
+            <param name="suppress"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteUnionType(System.Object[][],System.Int32,System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator,System.Boolean,System.Boolean)">
+            <summary>
+            Writes an xs:union element.
+            Called by WriteType()
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <param name="typeIterator"></param>
+            <param name="hasAttributes"></param>
+            <param name="suppress"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteEnumeratedValues(System.Xml.XPath.XPathNodeIterator)">
+            <summary>
+            
+            </summary>
+            <param name="valuesIterator"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteSIFType(System.Object[][],System.Int32,System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator,System.Boolean,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <param name="typeIterator"></param>
+            <param name="hasAttributes"></param>
+            <param name="suppress"></param>
+            <param name="complex"></param>
+            <param name="type"></param>
+            <param name="typeAttribute"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.GetListKey(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.HasAttributes(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.IsComplexType(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteXSType(System.Object[][],System.Int32,System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator,System.Boolean,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <param name="typeIterator"></param>
+            <param name="hasAttributes"></param>
+            <param name="suppress"></param>
+            <param name="complex"></param>
+            <param name="type"></param>
+            <param name="typeAttribute"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteValuesAdditionalType(System.Xml.XPath.XPathNodeIterator,System.String,System.Object[][],System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <param name="itemName"></param>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="suppress"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteValuesType(System.Object[][],System.Int32,System.Xml.XPath.XPathNodeIterator,System.Xml.XPath.XPathNodeIterator,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="item"></param>
+            <param name="valuesIterator"></param>
+            <param name="complexDerivation"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.WriteValuesSubsetType(System.Xml.XPath.XPathNodeIterator,System.String,System.Object[][],System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <param name="itemName"></param>
+            <param name="itemArray"></param>
+            <param name="index"></param>
+            <param name="suppress"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.GenerateXsd.IsEmpty(System.Object[][])">
+            <summary>
+            
+            </summary>
+            <param name="itemArray"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GenerateSpec.Generator.InputDocumentManager">
+            <summary>
+            Provides utility methods for handling input xml. Handles things such as namespaces, putting the separate input xml files into one big file, and remembering file location paths. 
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.InputDocumentManager.DocumentGlobalSettings">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.InputDocumentManager.InputDocumentPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.InputDocumentManager.#ctor(GenerateSpec.Generator.Util.DocumentGlobalSettings)">
+            <summary>
+            
+            </summary>
+            <param name="documentSettings"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.InputDocumentManager.BuildInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.InputDocumentManager.Initialize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.InputDocumentManager.BuildInput(System.String)">
+            <summary>
+            Turns the separate include files referenced in SIF.xml into a single xml file
+            called SIF.input.xml.
+            </summary>
+            <param name="inputPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Generator.InputDocumentManager.WriteShallowNode(System.Xml.XmlReader,System.Xml.XmlWriter)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="writer"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.InputDocumentManager.Select(System.Xml.XPath.XPathNavigator,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="nav"></param>
+            <param name="xpath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GenerateSpec.Generator.SifSpecificationGenerator">
+            <summary>
+            This class is called by the main class. It sets up and executes methods on GenerateHtml, GenerateXsd, and InputDocumentManager. 
+            </summary>
+        </member>
+        <member name="P:GenerateSpec.Generator.SifSpecificationGenerator.GeneratorConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.SifSpecificationGenerator.#ctor(System.String)">
+            <summary>
+            The constructor for the class SifSpecificationGenerator
+            </summary>
+            <param name="DocumentPath"></param>
+        </member>
+        <member name="M:GenerateSpec.Generator.SifSpecificationGenerator.Generate">
+            <summary>
+            Performs XSD generation, HTML generation, and validation of xml examples. 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Generator.SifSpecificationGenerator.ProcessHtmlDocument(GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocument)">
+            <summary>
+            Generate HTML documents
+            </summary>
+            <param name="htmlDocument">This input parameter is an object that contains html generation configuration information. Despite its name, it is not an html document.</param>
+        </member>
+        <member name="M:GenerateSpec.Generator.SifSpecificationGenerator.ProcessXsdDocument(GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument)">
+            <summary>
+            Sets some propery values from the input object then calls the xsd generator
+            </summary>
+            <param name="xsdDocument"></param>
+        </member>
+        <member name="T:GenerateSpec.Generator.sifSpecificationGeneratorConfig">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfig.globalSettings">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfig.htmlDocuments">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfig.webServiceDocuments">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfig.xsdDocuments">
+            <remarks/>
+        </member>
+        <member name="T:GenerateSpec.Generator.sifSpecificationGeneratorConfigGlobalSettings">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigGlobalSettings.inputDocument">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigGlobalSettings.sifNamespace">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigGlobalSettings.localizationCode">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigGlobalSettings.schemaVersion">
+            <remarks/>
+        </member>
+        <member name="T:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocument">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocument.singleDocument">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocument.rootDocumentFileName">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocument.rootTitle">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocument.documentType">
+            <remarks/>
+        </member>
+        <member name="T:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocumentDocumentType">
+            <remarks/>
+        </member>
+        <member name="F:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocumentDocumentType.DataModel">
+            <remarks/>
+        </member>
+        <member name="F:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocumentDocumentType.Infrastructure">
+            <remarks/>
+        </member>
+        <member name="F:GenerateSpec.Generator.sifSpecificationGeneratorConfigHtmlDocumentDocumentType.Combined">
+            <remarks/>
+        </member>
+        <member name="T:GenerateSpec.Generator.sifSpecificationGeneratorConfigWebServiceDocument">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigWebServiceDocument.singleDocument">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigWebServiceDocument.rootDocumentFileName">
+            <remarks/>
+        </member>
+        <member name="T:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.xsdTitle">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.diagram">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.isDataModelXsd">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.singleSchema">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.annotate">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.listWithKeyConstraints">
+            <remarks/>
+        </member>
+        <member name="P:GenerateSpec.Generator.sifSpecificationGeneratorConfigXsdDocument.isSifMessage2Xsd">
+            <remarks/>
+        </member>
+        <member name="T:GenerateSpec.Tools.CodeComparer">
+            <summary>
+            This CodeComparer class implements the IComparer interface. An instance of the class is used to sort ArrayList of codes in codeset. 
+            This method is used only once in the project. This probably code that is set and forget unless a major overhaul of code is needed.
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Tools.CodeComparer.Compare(System.Object,System.Object)">
+            <summary>
+            The source code that does the work of implementing the interface
+            </summary>
+        </member>
+        <member name="T:GenerateSpec.Tools.IndexNumberComparer">
+            <summary>
+            This IndexNumberComparer class implements the IComparer interface.  
+            This method is used to create a "multiIndex". A multiIndex is for example a list of elements and all the places the element occurs in SIF data objects.
+            This probably code that is set and forget unless a major overhaul of code is needed.
+            </summary>
+        </member>
+        <member name="F:GenerateSpec.Tools.IndexNumberComparer.codeComparer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:GenerateSpec.Tools.SerializationTools">
+            <summary>
+            Serialize and deserialize XML objects. 
+            </summary>
+        </member>
+        <member name="M:GenerateSpec.Tools.SerializationTools.Serialize(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenerateSpec.Tools.SerializationTools.Deserialize(System.String,System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="xmlstring"></param>
+            <param name="outputType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

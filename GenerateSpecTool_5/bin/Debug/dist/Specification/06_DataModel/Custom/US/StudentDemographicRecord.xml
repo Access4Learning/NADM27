@@ -1,0 +1,439 @@
+<DataObject name="StudentDemographicRecord">
+  <Key>@RefId</Key>
+  <EventsReported>false</EventsReported>
+  <Item>
+    <Element>StudentDemographicRecord</Element>
+    <Description>
+      <p>Conveys a student's demographic data for student record exchange and transcript purposes.</p>
+      <p>
+        This object is designed to be a dual-purpose object.  It can be linked to a <code>StudentRecordExchange</code> object
+        for record exchange purposes.  There may also be Zones where systems can provide this information for record exchange
+        systems or general informational purposes, in which case the object can be linked directly to <code>StudentPersonal</code>.
+      </p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+    <Description>
+      <p>The Id (GUID) of this record.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Attribute>SIF_RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+    <Description>
+      <p>
+        The GUID of an associated object, either <code>StudentRecordExchange</code> or <code>StudentPersonal</code>.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        The associated object type.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>StudentRecordExchange</Code>
+      </Value>
+      <Value>
+        <Code>StudentPersonal</Code>
+      </Value>
+    </Values>
+  </Item>
+
+
+  <Item>
+    <Element>ReportingDate</Element>
+    <Characteristics>M</Characteristics>
+    <Type name="xs:date"></Type>
+    <Description>
+      <p>The date this record was prepared.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>StudentPersonalData</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Collects elements of interest from StudentPersonal.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>/LocalId</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="LocalId"></Type>
+  </Item>
+
+  <Item>
+    <Element>/StateProvinceId</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="StateProvinceId"></Type>
+  </Item>
+
+  <Item>
+    <Element>/SSN</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SSN"></Type>
+  </Item>
+
+  <Item>
+    <Element>/OtherIdList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Lists all "other" identifiers associated with the student.</p>
+    </Description>
+    <List mode="List"/>
+  </Item>
+
+  <Item>
+    <Element>//OtherId</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Lists an "other" identifier associated with the student.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code that defines the type of this other Id.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0147IdentificationSystemType">
+      <Values type="subset">
+        <Value>
+          <Code>0164</Code>
+        </Value>
+        <Value>
+          <Code>0339</Code>
+        </Value>
+        <Value>
+          <Code>0338</Code>
+        </Value>
+        <Value>
+          <Code>0879</Code>
+        </Value>
+        <Value>
+          <Code>9999</Code>
+        </Value>
+        <Value>
+          <Code>0222</Code>
+        </Value>
+        <Value>
+          <Code>0764</Code>
+        </Value>
+        <Value>
+          <Code>0154</Code>
+        </Value>
+        <Value>
+          <Code>0113</Code>
+        </Value>
+        <Value>
+          <Code>5013</Code>
+        </Value>
+      </Values>
+    </Type>
+  </Item>
+  <Item>
+    <Element>/Name</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Name of the student.  Note: Type value of <code>04</code> must be used here.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="NameOfRecordType"></Type>
+  </Item>
+  <Item>
+    <Element>/OtherNames</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Previous, alternate or other names or aliases associated with the student.</p>
+    </Description>
+    <Type ref="DataModel" name="OtherNames"/>
+  </Item>
+
+  <Item>
+    <Element>/DemographicsData</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Collects elements of interest from Demographics.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>//RaceList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="RaceList"></Type>
+  </Item>
+
+  <Item>
+    <Element>//Gender</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Gender"></Type>
+  </Item>
+
+  <Item>
+    <Element>//BirthDate</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="BirthDate"></Type>
+  </Item>
+
+  <Item>
+    <Element>//EnglishProficiency</Element>
+    <Characteristics>O</Characteristics>
+    <Description>Person's proficiency in English.</Description>
+    <Type ref="DataModel" name="EnglishProficiency"></Type>
+  </Item>
+
+  <Item>
+    <Element>//LanguageList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>List of languages an individual uses to communicate.</Description>
+    <Type ref="DataModel" name="LanguageList"></Type>
+  </Item>
+
+  <Item>
+    <Element>//HispanicLatino</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p></p>
+    </Description>
+    <Type ref="DataModel" name="HispanicLatino"></Type>
+  </Item>
+
+  <Item>
+    <Element>//CountryOfBirth</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p></p>
+    </Description>
+    <Type ref="DataModel" name="Country"></Type>
+  </Item>
+
+  <Item>
+    <Element>//DwellingArrangement</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Setting/environment in which the person resides.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>///Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code representing the setting/environment in which the person resides</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0600DwellingArrangementType"></Type>
+  </Item>
+  <Item>
+    <Element>///OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="OtherCodeList"></Type>
+  </Item>
+
+
+  <Item>
+    <Element>/AddressList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The address of the student.</p>
+    </Description>
+    <Type ref="DataModel" name="AddressList"></Type>
+  </Item>
+
+  <Item>
+    <Element>/PhoneNumberList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="PhoneNumberList"></Type>
+  </Item>
+
+  <Item>
+    <Element>/IDEA</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="IDEA"></Type>
+  </Item>
+
+  <Item>
+    <Element>/Migrant</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Migrant"></Type>
+  </Item>
+
+  <Item>
+    <Element>/Title1</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Title1"></Type>
+  </Item>
+
+  <Item>
+    <Element>/GiftedTalented</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="GiftedTalented"></Type>
+  </Item>
+
+  <Item>
+    <Element>/EconomicDisadvantage</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="EconomicDisadvantage"></Type>
+  </Item>
+
+  <Item>
+    <Element>/ELL</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="ELL"></Type>
+  </Item>
+
+  <Item>
+    <Element>/Homeless</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Homeless"></Type>
+  </Item>
+
+  <Item>
+    <Element>/Section504</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Section504"></Type>
+  </Item>
+
+  <Item>
+    <Element>/VocationalConcentrator</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="VocationalConcentrator"></Type>
+  </Item>
+
+  <Item>
+    <Element>/Immigrant</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Immigrant"></Type>
+  </Item>
+
+  <Item>
+    <Element>/NeglectedDelinquent</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="NeglectedDelinquent"></Type>
+  </Item>
+
+  <Item>
+    <Element>StudentContactsSummary</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Reports up to two parents/guardians of the student.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>/ParentGuardian1</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>First parent/guardian.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>//Name</Element>
+    <Characteristics>M</Characteristics>
+    <Type ref="DataModel" name="Name"></Type>
+  </Item>
+
+  <Item>
+    <Element>//PhoneNumberList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="PhoneNumberList"></Type>
+  </Item>
+
+  <Item>
+    <Element>//AddressList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="AddressList"></Type>
+  </Item>
+
+  <Item>
+    <Element>/ParentGuardian2</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Second parent/guardian.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>//Name</Element>
+    <Characteristics>M</Characteristics>
+    <Type ref="DataModel" name="Name"></Type>
+  </Item>
+
+  <Item>
+    <Element>//PhoneNumberList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="PhoneNumberList"></Type>
+  </Item>
+
+  <Item>
+    <Element>//AddressList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="AddressList"></Type>
+  </Item>
+
+  <Item>
+    <Element>SIF_Metadata</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_Metadata"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_ExtendedElements</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+  </Item>
+
+  <xhtml:Example xmlns="">
+    <StudentDemographicRecord RefId="0B4AC4176FED4F00BCB6FBF1AE466FD2" SIF_RefObject="StudentRecordExchange" SIF_RefId="0EAF9D6DA4854F348103B04BFEAC65B2">
+
+      <ReportingDate>2006-09-26</ReportingDate>
+
+      <StudentPersonalData>
+        <LocalId>00356</LocalId>
+        <StateProvinceId>2983472</StateProvinceId>
+        <SSN>399091093</SSN>
+        <Name Type="04">
+          <LastName>Costis</LastName>
+          <FirstName>Martha</FirstName>
+          <MiddleName>Parke</MiddleName>
+        </Name>
+        <DemographicsData>
+          <Gender>F</Gender>
+        </DemographicsData>
+      </StudentPersonalData>
+
+      <StudentContactsSummary>
+
+        <ParentGuardian1>
+          <Name Type="04">
+            <LastName>Costis</LastName>
+            <FirstName>George</FirstName>
+          </Name>
+        </ParentGuardian1>
+
+        <ParentGuardian2>
+          <Name Type="04">
+            <LastName>Costis</LastName>
+            <FirstName>Martha</FirstName>
+          </Name>
+        </ParentGuardian2>
+
+      </StudentContactsSummary>
+
+    </StudentDemographicRecord>
+
+  </xhtml:Example>
+
+</DataObject>

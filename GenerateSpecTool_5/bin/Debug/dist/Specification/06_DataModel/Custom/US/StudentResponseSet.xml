@@ -1,0 +1,227 @@
+<DataObject name="StudentResponseSet">
+  <Key>@RefId</Key>
+  <EventsReported>true</EventsReported>
+
+  <Item>
+    <Element>StudentResponseSet</Element>
+    <Description>
+      <p>This object transmits the student's responses to stimuli presented in an assessment. These are the raw, unscored responses.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+    <Description>
+      <p>The GUID that uniquely identifies an instance of the object.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>AssessmentAdministrationRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Description>
+      <p>The administration associated with the response set.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>StudentPersonalRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Description>
+      <p>The student associated with the response set.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>AssessmentRegistrationRefId</Attribute>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Description>
+      <p>The registration associated with the response set.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Items</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Container for item elements.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>/Item</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>The item contains response data and metadata for each item.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>AssessmentItemRefId</Attribute>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A GUID that identifies the item object associated with this student result.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>//Response</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Answer selected or student work in raw format.</p>
+    </Description>
+    <Type name="xs:string"></Type>
+    <ItemExample>C</ItemExample>
+    <ItemExample>19</ItemExample>
+  </Item>
+  <Item>
+    <Element>//ResponseLocation</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:anyURI"></Type>
+    <Description>
+      <p>An optional element that contains a URL pointing to the location of the response or additional response.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//ResponseStatus</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Status of the response.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Correct</Code>
+      </Value>
+      <Value>
+        <Code>Incorrect</Code>
+      </Value>
+      <Value>
+        <Code>Complete</Code>
+      </Value>
+      <Value>
+        <Code>PartiallyComplete</Code>
+      </Value>
+      <Value>
+        <Code>Viewed</Code>
+      </Value>
+      <Value>
+        <Code>NotViewed</Code>
+        <Description>The item was not viewed by the student</Description>
+      </Value>
+      <Value>
+        <Code>NotAnswered</Code>
+      </Value>
+      <Value>
+        <Code>Attempted</Code>
+        <Description>The item was viewed but no response given</Description>
+      </Value>
+      <Value>
+        <Code>Incomplete</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>//ResponseTime</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:duration"></Type>
+    <Description>
+      <p>The length of time the student took to respond.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//ItemNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:token"></Type>
+    <Description>
+      <p>Identifies the item on the assessment by number.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//ItemName</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:token"></Type>
+    <Description>
+      <p>Identifies the item on the assessment by name.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//DiagnosticStatement</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:string"></Type>
+    <Description>
+      <p>Psychometric purpose or design-related comment about the question.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//NumberOfAttempts</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:unsignedInt"></Type>
+    <Description>
+      <p>The number of times a student changes their answer or attempts a response.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//ItemScore</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This is the score the student received on the specific item.</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+  <Item>
+    <Element>//ItemAidSetUsed</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A tool or aid set used while viewing the item</p>
+    </Description>
+    <Type name='xs:string'/>
+  </Item>
+  <Item>
+    <Element>SIF_Metadata</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_Metadata"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_ExtendedElements</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+  </Item>
+
+  <xhtml:Example name="StudentResponseSet - Example 1" xmlns="">
+    <StudentResponseSet RefId="A32F55CC14004172A7CD8E8FB5187DD0" AssessmentAdministrationRefId="BB181B05598C46D2B8D533483D91392E" StudentPersonalRefId="8F0934CC2F0448F8BBD788AA1ADE691B">
+      <Items>
+        <Item>
+          <Response>C</Response>
+          <ResponseLocation>http://assessments-r-us.com/29834928374/2394/response.html</ResponseLocation>
+          <ResponseStatus>Incomplete</ResponseStatus>
+          <ResponseTime>PT32S</ResponseTime>
+          <ItemNumber>27</ItemNumber>
+          <ItemName>Writing Sample 1</ItemName>
+          <DiagnosticStatement>Shows ability to determine symmetry</DiagnosticStatement>
+          <NumberOfAttempts>2</NumberOfAttempts>
+        </Item>
+      </Items>
+    </StudentResponseSet>
+  </xhtml:Example>
+  
+  <xhtml:Example name="StudentResponseSet - Example 2" xmlns="">
+    <StudentResponseSet RefId="A32F55CC14004172A7CD8E8FB5187DD0" AssessmentAdministrationRefId="BB181B05598C46D2B8D533483D91392E" StudentPersonalRefId="8F0934CC2F0448F8BBD788AA1ADE691B">
+      <Items>
+        <Item>
+          <Response>C</Response>
+          <ResponseLocation>http://assessments-r-us.com/29834928374/2394/response.html</ResponseLocation>
+          <ResponseStatus>Incomplete</ResponseStatus>
+          <ResponseTime>PT32S</ResponseTime>
+          <ItemNumber>27</ItemNumber>
+          <ItemName>Writing Sample 1</ItemName>
+          <DiagnosticStatement>Shows ability to determine symmetry</DiagnosticStatement>
+          <NumberOfAttempts>2</NumberOfAttempts>
+          <ItemScore>5</ItemScore>
+          <ItemAidSetUsed>Calculator</ItemAidSetUsed>
+        </Item>
+      </Items>
+    </StudentResponseSet>
+
+  </xhtml:Example>
+</DataObject>

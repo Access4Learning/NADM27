@@ -1,0 +1,50 @@
+<DataObject name='AssignIdentifierResponse'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>AssignIdentifierResponse</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>TransactionId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>GUID that identifies the operation.</p>
+		</Description>
+		<Type ref='CommonTypes' name='GUIDType'/>
+	</Item>
+	<Item>
+		<Element>StateProvinceId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The assigned state student Id.</p>
+		</Description>
+		<Type ref='DataModel' name='StateProvinceId'/>
+	</Item>
+	<Choice optional="true" >
+		<Item>
+			<Element>StudentReturnValues</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The state may return any identified characteristics of the student as it sees fit.  This element is used with the Student Identifier Service. </p>
+			</Description>
+			<Type ref='CommonTypes' name='StudentParametersType'/>
+		</Item>
+		<Item>
+			<Element>StaffReturnValues</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The state may return any identified characteristics of the staff person as it sees fit.  This element is used with the Staff Identifier Service.</p>
+			</Description>
+			<Type ref='CommonTypes' name='StaffParametersType'/>
+		</Item>
+	</Choice>
+
+	<xhtml:Example xmlns=''>
+		<AssignIdentifierResponse>
+			<StateProvinceId>98766</StateProvinceId>
+		</AssignIdentifierResponse>
+	</xhtml:Example>
+</DataObject>

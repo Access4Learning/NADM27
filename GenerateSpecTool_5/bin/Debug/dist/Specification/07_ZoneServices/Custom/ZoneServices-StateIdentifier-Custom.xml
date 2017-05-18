@@ -1,0 +1,289 @@
+<Section name="Agency Identifier Services" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<table>
+		<thead>
+			<tr>
+				<td>Zone Service</td>
+				<td>Description</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>serviceAgencyStudentIdRequest</td>
+				<td>Perfoms the simple operation of requesting a student identifier.</td>
+			</tr>
+			<tr>
+				<td>serviceAgencyStudentIdManagement</td>
+				<td>Performs more sophisticated student identifier operations.</td>
+			</tr>
+			<tr>
+				<td>serviceAgencyStaffIdRequest</td>
+				<td>Perfoms the simple operation of requesting a staff identifier.</td>
+			</tr>
+			<tr>
+				<td>serviceAgencyStaffIdManagement</td>
+				<td>Performs more sophisticated staff identifier operations.</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>The Agency Identifier Services replace and generalize data model objects currently in the Specification.  The current StudentLocator object and its required request/response choreography are deprecated and will be removed from the specification in the next major release of the SIF Implementation Specification.  Although the Identifier Services have been generalized from a state to any kind of agency, many of the examples refer to district and state agencies in order to retain clarity around the transactions.</p>
+	<p>The data-model-based functionality has been refactored into student Agency Identifier Services:</p>
+	<ul>
+		<li>Agency Student Identifier Request Service</li>
+		<li>Agency Student Identifier Management Service</li>
+	</ul>
+	<p>In addition, an equivalent pair of “StaffLocator” equivalent services has been defined:</p>
+	<ul>
+		<li>Agency Staff Identifier Request Service</li>
+		<li>Agency Staff Identifier Management Service</li>
+	</ul>
+	<p>With an identical set of functionality, the Staff services are involved in a fully parallel identification process. They differ from the Student services only in the Characteristics element that communicates the identifying characteristics of a staff member/employee, vs. a student.</p>
+	<Section name="Interface Overview">
+		<p>Both Agency Identifier Request Services provide the following operations:</p>
+		<ul>
+			<li>RequestIdentifier</li>
+			<li>CancelTransaction</li>
+		</ul>
+		<p>RequestIdentifier provides equivalent functionality to a Locator SIF_Query sent from a district to a state, with an identifying IdStatus of “Request Locator”.</p>
+		<p>The Agency Identifier Management Service provides four operations:</p>
+		<ul>
+			<li>AssignIdentifier</li>
+			<li>ResolveIdentifier</li>
+			<li>ReleaseIdentifier</li>
+			<li>CancelTransaction</li>
+		</ul>
+		<p>AssignIdentifier is used by a district to instruct the state to assign a new identifier to a student or staff member when no matches supplied by the Request Service are appropriate. It provides equivalent functionality to a StudentLocator SIF_Query sent from a district to a state, with an identifying IdStatus of “New Locator”.</p>
+		<p>ResolveIdentifier is used to instruct the state that a given identifier from a list of ambiguous matches does indeed uniquely identify a student or staff member. It provides the equivalent functionality to a StudentLocator SIF_Query sent from a district to a state with an identifying IdStatus of “Resolve Locator”.</p>
+		<p>ReleaseIdentifier is used by a district to instruct the state that a student or staff member has left the district and that the state may release the binding with the district. It provides equivalent functionality to a StudentLocator SIF_Query sent from a district to a state with an identifying IdStatus of “Release Locator”.</p>
+		<p>The Cancel functionality of the StudentLocator object is provided by a CancelTransaction operation in each service.</p>
+		<p>Neither the Agency Identifier Request nor the Agency Identifier Management Zone Services define a SIF_MaxBufferSize distinct from the infrastructure default.  If an Agency Identifier Zone Service message is large enough to require packetization, the packet “break” can occur only at the end of a RequestIdentifierResponse/Match element.</p>
+		<Section name="Use Case: Initial Agency Student Id Assignment">
+			<p>This use case process describes the Zone Service choreography used in support of state Id assignment to an enrolling student.</p>
+			<ul>
+				<li>A student enrolls in a school district for the first time, or re-enrolls but doesn’t know his/her state student Id.</li>
+				<li>The district SIS instructs its agent to issue a request for a StudentLocator.</li>
+				<li>The state agent registered in the same SIF zone as the StudentLocator provider searches its database using the provided student query parameters.</li>
+				<li>If no match is found, a “Valid” response is returned to the district by the state agent containing a new state-assigned student Id.</li>
+				<li>If a valid match is found, a “Valid” response is returned to the district by the state agent containing the valid state student Id.</li>
+				<li>If more than one student match is found, no state student Id is returned.  Instead, an “Ambiguous” response is returned.  The district and state must resolve this ambiguity outside of SIF. Alternatively if the district SIS agent supports it, the state agent can return an “Ambiguous” response containing a list of StudentLocator objects with match candidates.</li>
+			</ul>
+		</Section>
+	</Section>
+	<Section name="Zone Service Operations">
+		<Section name="Student Identifier Request">
+			<table>
+				<thead>
+					<tr>
+						<td>Zone Service</td>
+						<td>Service Input</td>
+						<td>Service Output</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>serviceAgencyStudentIdRequest</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifier">RequestIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifierResponse">RequestIdentifierResponse</a>
+						</td>
+						<td>
+							This is a district request to the state to return the StateProvinceId for the student indicated by the identifying elements.  The state returns one Match marked Valid, or one or more Matches marked Ambiguous, or indicates a processing error in SIF_ServiceOutput/SIF_Error.
+						</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStudentIdRequest</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransaction">CancelTransaction</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransactionResponse">CancelTransactionResponse</a>
+						</td>
+						<td>This is a request to cancel a transaction.</td>
+					</tr>
+				</tbody>
+			</table>
+		</Section>
+		<Section name="Student Identifier Management">
+			<table>
+				<thead>
+					<tr>
+						<td>Zone Service</td>
+						<td>Service Input</td>
+						<td>Service Output</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>serviceAgencyStudentIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifier">RequestIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifierResponse">RequestIdentifierResponse</a>
+						</td>
+						<td>
+							This is a district request to the state to return the StateProvinceId for the student indicated by the identifying elements.  The state returns one Match marked Valid, or one or more Matches marked Ambiguous, or indicates a processing error in SIF_ServiceOutput/SIF_Error.
+						</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStudentIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:AssignIdentifier">AssignIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:AssignIdentifierResponse">AssignIdentifierResponse</a>
+						</td>
+						<td>This is a district follow-up to a RequestIdentifier transaction indicating none of the match candidates is appropriate and an indication to assign a new identifier.  The state returns a StateProvinceId or indicates a processing error in SIF_ServiceOutput/SIF_Error.</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStudentIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:ResolveIdentifier">ResolveIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:ResolveIdentifierResponse">ResolveIdentifierResponse</a>
+						</td>
+						<td>This is a district follow-up request to a RequestIdentifier transaction resolving ambiguities with the information from the match candidate populated by the district.</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStudentIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:ReleaseIdentifier">ReleaseIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:ReleaseIdentifierResponse">ReleaseIdentifierResponse</a>
+						</td>
+						<td>This is a district request to notify the state that the student indicated by the supplied StateProvinceId has left the district and instructs the state to release the binding between the student and the LEA.</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStudentIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransaction">CancelTransaction</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransactionResponse">CancelTransactionResponse</a>
+						</td>
+						<td>This is a request to cancel a transaction.</td>
+					</tr>
+				</tbody>
+			</table>
+		</Section>
+		<Section name="Staff Identifier Request">
+			<table>
+				<thead>
+					<tr>
+						<td>Zone Service</td>
+						<td>Service Input</td>
+						<td>Service Output</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>serviceAgencyStaffIdRequest</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifier">RequestIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifierResponse">RequestIdentifierResponse</a>
+						</td>
+						<td>
+							This is a district request to the state to return the StateProvinceId for the Staff indicated by the identifying elements.  The state returns one match marked valid, or one or more matches marked ambiguous, or indicates a processing error in SIF_ServiceOutput/SIF_Error.
+						</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStaffIdRequest</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransaction">CancelTransaction</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransactionResponse">CancelTransactionResponse</a>
+						</td>
+						<td>This is a request to cancel a transaction.</td>
+					</tr>
+				</tbody>
+			</table>
+		</Section>
+		<Section name="Staff Identifier Management">
+			<table>
+				<thead>
+					<tr>
+						<td>Zone Service</td>
+						<td>Service Input</td>
+						<td>Service Output</td>
+						<td>Description</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>serviceAgencyStaffIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifier">RequestIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:RequestIdentifierResponse">RequestIdentifierResponse</a>
+						</td>
+						<td>
+							This is a district request to the state to return the StateProvinceId for the Staff indicated by the identifying elements.  The state returns one match marked valid, or one or more matches marked ambiguous, or indicates a processing error in SIF_ServiceOutput/SIF_Error.
+						</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStaffIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:AssignIdentifier">AssignIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:AssignIdentifierResponse">AssignIdentifierResponse</a>
+						</td>
+						<td>This is a district request to the state to assign an Id for the Staff indicated by the identifying characteristics.  The state returns a StateProvinceId or indicates a processing error in SIF_ServiceOutput/SIF_Error.</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStaffIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:ResolveIdentifier">ResolveIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:ResolveIdentifierResponse">ResolveIdentifierResponse</a>
+						</td>
+						<td>This is a district request to associate the supplied StateProvinceId with the Staff indicated by the identifying characteristics.</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStaffIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:ReleaseIdentifier">ReleaseIdentifier</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:ReleaseIdentifierResponse">ReleaseIdentifierResponse</a>
+						</td>
+						<td>This is a district request to notify the state that the Staff indicated by the supplied StateProvinceId has left the district and instructs the state to release the binding between the Staff and the LEA.</td>
+					</tr>
+					<tr>
+						<td>serviceAgencyStaffIdManagement</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransaction">CancelTransaction</a>
+						</td>
+						<td>
+							<a href="ZoneServices.html#obj:CancelTransactionResponse">CancelTransactionResponse</a>
+						</td>
+						<td>This is a request to cancel a transaction.</td>
+					</tr>
+				</tbody>
+			</table>
+		</Section>
+	</Section>
+	<Section name="Service Body Definitions" sort="false">
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\RequestIdentifier.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\RequestIdentifierResponse.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\CancelTransaction.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\CancelTransactionResponse.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\AssignIdentifier.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\AssignIdentifierResponse.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\ResolveIdentifier.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\ResolveIdentifierResponse.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\ReleaseIdentifier.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US-ZoneServices\StateIdentifier\ReleaseIdentifierResponse.xml"/>
+	</Section>
+</Section>

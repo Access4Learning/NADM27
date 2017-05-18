@@ -1,0 +1,85 @@
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\GenerateSpec.exe
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\log4net.dll
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\Mvp.Xml.dll
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\03_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\GenerateSpec.exe
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\log4net.dll
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\Mvp.Xml.dll
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.exe.manifest
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.application
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.exe
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\log4net.dll
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\Mvp.Xml.dll
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.TrustInfo.xml
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.exe.manifest
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.application
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\SVN\SIF Specification Generator\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.exe.manifest
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.application
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.exe
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\log4net.dll
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\Mvp.Xml.dll
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.TrustInfo.xml
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.exe.manifest
+C:\Users\Vince\SVN\a_SIF Specification Generator Project\04_SIFSpecificationGenerator\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.application
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_2p5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_2p5\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.config
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.manifest
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.application
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\obj\Debug\GenerateSpecTool.csprojResolveAssemblyReference.cache
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\obj\Debug\GenerateSpec.TrustInfo.xml
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe.manifest
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\obj\Debug\GenerateSpec.application
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\MyGitProjects\SpecGen_v5\GenerateSpecTool_5\obj\Debug\GenerateSpec.pdb
+C:\Users\Linda\Documents\GitHub\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.config
+C:\Users\Linda\Documents\GitHub\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Linda\Documents\GitHub\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe
+C:\Users\Linda\Documents\GitHub\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.config
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.pdb
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpecTool.csprojResolveAssemblyReference.cache
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.manifest
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.application
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.TrustInfo.xml
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe.manifest
+C:\Users\Vince\MyGitProjects\specgen\GenerateSpecTool_5\obj\Debug\GenerateSpec.application

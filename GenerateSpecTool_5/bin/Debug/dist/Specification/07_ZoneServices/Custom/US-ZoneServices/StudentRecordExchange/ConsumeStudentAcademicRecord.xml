@@ -1,0 +1,67 @@
+<DataObject name='SetAcademicRecord'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>SetAcademicRecord</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>StudentId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The StateProvinceId of the student. In the case where a SIF_ServiceInput message spans multiple packets, each packet must provide this element.</p>
+		</Description>
+		<Type ref='DataModel' name='StateProvinceId'/>
+	</Item>
+	<Item>
+		<Element>SendingAgencyId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The StateProvinceId of the sending agency. In the case where a SIF_ServiceInput message spans multiple packets, each packet must provide this element.</p>
+		</Description>
+		<Type ref='DataModel' name='StateProvinceId'/>
+	</Item>
+	<Item>
+		<Element>ReceivingAgencyId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The StateProvinceId of the receiving agency. In the case where a SIF_ServiceInput message spans multiple packets, each packet must provide this element.</p>
+		</Description>
+		<Type ref='DataModel' name='StateProvinceId'/>
+	</Item>
+	<Item>
+		<Element>ExtendedParameters</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Optional list of additional implementation-dependent parameters</p>
+		</Description>
+		<Type ref='DataModel' name='ExtendedParameters'/>
+	</Item>
+	<Item>
+		<Element>StudentAcademicRecord</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<Type ref='StudentRecordExchangeTaskForce' name='StudentAcademicRecord'/>
+	</Item>
+	<xhtml:Example name='SetAcademicRecord' xmlns=''>
+		<SetAcademicRecord>
+			<StudentId>10009600</StudentId>
+			<SendingAgencyId>884</SendingAgencyId>
+			<ReceivingAgencyId>601</ReceivingAgencyId>
+			<ExtendedParameters>
+				<ExtendedParameter>
+					<SIF_Name>Options</SIF_Name>
+					<SIF_Value>0x0001</SIF_Value>
+				</ExtendedParameter>
+				<ExtendedParameter>
+					<SIF_Name>ExchangeType</SIF_Name>
+					<SIF_Value>Transcript</SIF_Value>
+				</ExtendedParameter>
+			</ExtendedParameters>
+		</SetAcademicRecord>
+	</xhtml:Example>
+</DataObject>

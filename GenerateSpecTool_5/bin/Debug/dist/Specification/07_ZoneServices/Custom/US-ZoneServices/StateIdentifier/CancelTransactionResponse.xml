@@ -1,0 +1,23 @@
+<DataObject name='CancelTransactionResponse'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>CancelTransactionResponse</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>TransactionId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Echoes the cancelled TransactionId when successful.</p>
+		</Description>
+		<Type ref='CommonTypes' name='GUIDType'/>
+	</Item>
+	<xhtml:Example name='CancelTransactionResponse' xmlns=''>
+		<CancelTransactionResponse>
+			<TransactionId>BD126823C6634562A55BA1C7FCD47961</TransactionId>
+		</CancelTransactionResponse>
+	</xhtml:Example>
+</DataObject>

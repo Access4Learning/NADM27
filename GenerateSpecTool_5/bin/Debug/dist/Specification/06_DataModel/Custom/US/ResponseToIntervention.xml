@@ -1,0 +1,514 @@
+<DataObject name="ResponseToIntervention">
+
+  <Key>@RefId</Key>
+
+  <EventsReported>true</EventsReported>
+  <Item>
+    <Element>ResponseToIntervention</Element>
+    <Description>
+      <p>
+        Response to Intervention (RTI) is a multi-tier approach to the early identification and assistance of students who are having learning and/or behavioral needs. The process includes intervention, frequent progress measurement, and research-based instructional interventions for students. This object represents the information that describes the Response to Intervention.  Multiple ResponsetoIntervention objects may be created for an individual student.
+      </p>
+    </Description>
+  </Item>
+  
+  <Item>
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Id (GUID) that uniquely identifies a particular Response to Intervention.</p>
+    </Description>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+  </Item>
+  
+ <Item>
+    <Attribute>StudentPersonalRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Id (GUID) of the student to whom this intervention is being administered.</p>
+    </Description>
+    <Type ref="CommonTypes"  name="IdRefType"></Type>
+  </Item>
+  
+  <Item>
+    <Attribute>SchoolInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Id (GUID) of the school to which this intervention applies.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  
+  <Item>
+    <Attribute>StaffPersonalRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Id (GUID) of the staff member who is administering this intervention.</p>
+    </Description>
+    <Type ref="CommonTypes"  name="IdRefType"></Type>
+  </Item>
+  
+  <Item>
+    <Attribute>StudentPlacementRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Id (GUID)  that references the StudentPlacement Object that contains information that describes a specific instructional, related or transitional service that has been prescribed or recommended in the program plan developed for a student who has been placed in an individualized special program.</p>
+    </Description>
+    <Type ref="CommonTypes"  name="IdRefType"></Type>
+  </Item>
+  
+  
+  
+ 
+  
+ <Item>
+    <Element>RTILocalId</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A local ID that may be used to identify this intervention for the student.</p>
+    </Description>
+   <Type ref="DataModel" name="LocalId"/>
+   </Item>
+   
+  <Item>
+    <Element>LocationWhereInterventionDelivered</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This is where the actual intervention would take place.  For example, if at a tutoring provider, then the tutoring organization would be named.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+ 
+ <Item>
+	<Element>InterventionProviderNames</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>A list of persons providing the intervention.</p>
+	</Description>
+	<List mode="List"></List>
+ </Item> 
+  
+ <Item>
+	<Element>/InterventionProviderName</Element>
+	<Characteristics>MR</Characteristics>
+	<Description>
+	  <p>The person providing the intervention.</p>
+	</Description>
+ </Item>
+  <Item>
+	<Attribute>StaffPersonalRefId</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The StaffPersonalRefId of the staff member.  Either the StaffPersonalRefId of the staff member or name must be provided</p>
+	</Description>
+	<Type ref="CommonTypes"  name="IdRefType"></Type>
+ </Item>
+ 
+  <Item>
+	<Element>//OtherProvider</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The name of the person if not a staff member. Either the StaffPersonalRefId of the staff member or name must be provided.</p>
+	</Description>
+	<Type name="xs:normalizedString"></Type>
+ </Item>
+ 
+ <Item>
+    <Element>Tier</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The specific tier of intervention.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  
+  <Item>
+	<Element>Interventions</Element>
+	<Characteristics>M</Characteristics>
+	<Description>
+	  <p>The list of interventions applied here.</p>
+	</Description>
+	<List mode="List"></List>
+ </Item>
+ 
+  <Item>
+	<Element>/Intervention</Element>
+	<Characteristics>MR</Characteristics>
+	<Description>
+	  <p>Details of an intervention.</p>
+	</Description>
+ </Item>
+ <Item>
+	<Element>//InterventionName</Element>
+	<Characteristics>M</Characteristics>
+	<Description>
+	  <p>Naming of the intervention.</p>
+	</Description>
+	<Type name="xs:normalizedString"></Type>
+ </Item>
+ <Item>
+	<Element>//InterventionDescription</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>Description of the intervention.</p>
+	</Description>
+	<Type name="xs:normalizedString"></Type>
+ </Item>
+ <Item>
+	<Element>//InterventionType</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The description of the type of intervention that is delivered.</p>
+	</Description>
+	<Values>
+		<Value>
+			<Code>Face-to-face</Code>
+		</Value>
+		<Value>
+			<Code>Computer Assisted</Code>
+		</Value>
+	</Values>
+ </Item>
+ <Item>
+	<Element>//InterventionDelivery</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>How the instruction is delivered.</p>
+	</Description>
+	<Values>
+		<Value>
+			<Code>Group</Code>
+		</Value>
+		<Value>
+			<Code>Individual</Code>
+		</Value>
+		<Value>
+			<Code>Whole Class</Code>
+		</Value>
+	</Values>
+ </Item>
+ 
+ <Item>
+	<Element>SubjectArea</Element>
+	<Characteristics>M</Characteristics>
+	<Description>
+	  <p>The subject for which this intervention is intended.</p>
+	</Description>
+   <Type ref="DataModel" name="SubjectArea"></Type>
+   </Item>
+  
+  <Item>
+    <Element>LearningStandardItems</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of LearningStandardItems.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  
+   <Item>
+    <Element>/LearningStandardItemRefId</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>GUID that references the LearningStandardItem object that contains information related to curriculum standards statements "standards" or "benchmarks" or the like within the document. This object primarily focuses upon state department curriculum standards, published curriculum standards and local education agency learning standards. Each LearningStandardItem reflects an individual standard statement and may occur at several levels within a hierarchially structured document.  </p>
+    </Description>
+   <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  
+  <Item>
+    <Element>LearningObjectives</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of learning objectives.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>/LearningObjective</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The specific learning objective(s) being addressed by this intervention.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>  
+  
+   <Item>
+    <Element>Measurements</Element>
+    <Characteristics>O</Characteristics>
+     <List mode="List"></List>
+  </Item>
+   <Item>
+ 	  <Element>/Measurement</Element>
+	   <Characteristics>MR</Characteristics>
+		<Description>
+		  <p></p>
+		</Description>
+  </Item>    
+  <Item>
+    <Element>//MeasurementTool</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The specific tool that will be used to gather data about how the student is improving.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>    
+  <Item>
+    <Element>//FrequencyofMeasure</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The frequency of the measuement.</p>
+    </Description>
+    <Values>
+		<Value>
+			<Code>S001</Code> 
+			<Description>Weekly</Description>
+		</Value>
+		<Value>
+			<Code>S002</Code> 
+			<Description>Bi-weekly</Description>
+		</Value>
+		<Value>
+			<Code>S003</Code> 
+			<Description>Semi-monthly</Description>
+		</Value>
+		<Value>
+			<Code>S004</Code> 
+			<Description>Monthly</Description>
+		</Value>
+		<Value>
+			<Code>S005</Code> 
+			<Description>Quarterly</Description>
+		</Value>
+		<Value>
+			<Code>S006</Code> 
+			<Description>Semi-annually</Description>
+		</Value>
+		<Value>
+			<Code>S007</Code> 
+			<Description>Annually</Description>
+		</Value>
+		<Value>
+			<Code>S008</Code> 
+			<Description>Daily</Description>
+		</Value>
+		<Value>
+			<Code>S999</Code> 
+			<Description>Other</Description>
+		</Value>
+    </Values>
+  </Item>    
+  
+  <Item>
+    <Element>Baselines</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of pre-assessment data used to evaluate the student on the learning objective.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>/Baseline</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The pre-assessment data to evaluate the student on the learning objective.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>  
+  
+  <Item>
+    <Element>Targets</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of specific end aims.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>/Target</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The specific end aim that is desired to achieve for the student.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>    
+    
+  <Item>
+	<Element>EntryDate</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>When the intervention begins.</p>
+	</Description>
+	<Type name="xs:date"></Type>
+ </Item>  
+ 
+ <Item>
+    <Element>ProjectedExitDate</Element>
+	<Characteristics>O</Characteristics>
+    <Description>
+		<p>When the intervention is anticipated to end.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+ </Item>
+   
+  <Item>
+    <Element>ExitDate</Element>
+    <Characteristics>O</Characteristics>
+	<Description>
+		<p>Date of when the intervention actually ended.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>  
+  
+   <Item>
+    <Element>FrequencyTime</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The frequency of the intervention.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>/Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The frequency in segments of time.</p>
+    </Description>
+      <Values>
+		<Value>
+			<Code>S001</Code> 
+			<Description>Weekly</Description>
+		</Value>
+		<Value>
+			<Code>S002</Code> 
+			<Description>Bi-weekly</Description>
+		</Value>
+		<Value>
+			<Code>S003</Code> 
+			<Description>Semi-monthly</Description>
+		</Value>
+		<Value>
+			<Code>S004</Code> 
+			<Description>Monthly</Description>
+		</Value>
+		<Value>
+			<Code>S005</Code> 
+			<Description>Quarterly</Description>
+		</Value>
+		<Value>
+			<Code>S006</Code> 
+			<Description>Semi-annually</Description>
+		</Value>
+		<Value>
+			<Code>S007</Code> 
+			<Description>Annually</Description>
+		</Value>
+		<Value>
+			<Code>S008</Code> 
+			<Description>Daily</Description>
+		</Value>
+		<Value>
+			<Code>S999</Code> 
+			<Description>Other</Description>
+		</Value>
+    </Values>
+  </Item>
+   <Item>
+    <Element>/Duration</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The actual duration of the frequency of the intervention.  For example, if the student is to have the intervention for 40 minutes, then 40 would be entered.</p>
+    </Description>
+    <Type name="xs:integer"></Type>
+   </Item>
+   
+   <Item>
+   <Attribute>UnitOfMeasure</Attribute>
+   <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies unit of measure in which amount of time is expressed.</p>
+    </Description>
+    <Values>
+		<Value>
+			<Code>Minutes</Code>
+		</Value>
+				<Value>
+			<Code>Seconds</Code>
+		</Value>
+    </Values>
+   </Item>
+  
+ 
+  <Item>
+    <Element>SIF_Metadata</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_Metadata"></Type>
+  </Item>
+  
+  <Item>
+    <Element>SIF_ExtendedElements</Element>
+
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+  </Item>
+  
+  <xhtml:Example  xmlns="">
+   <ResponseToIntervention RefId="1652D3E34F419D75101A8C3D00AA001A"
+	StudentPersonalRefId="DE072A87EFAD4B778AF9FAF83C94839E"
+	SchoolInfoRefId="1947AB893C29F73910FEC3827A239CB1"
+	StaffPersonalRefId="DCE34B359D75101A8C3D00AA001A1652"
+	StudentPlacementRefId="869670E8540A43509515AFB767FADD9A">
+	
+	<RTILocalId>837D3</RTILocalId>
+	<LocationWhereInterventionDelivered>Classroom</LocationWhereInterventionDelivered>
+	<InterventionProviderNames>
+		<InterventionProviderName StaffPersonalRefId="1652D3E34F419D75101A8C3D00AA001A"></InterventionProviderName>
+		<InterventionProviderName>
+			<OtherProvider>Mary Smith</OtherProvider>
+		</InterventionProviderName>
+	</InterventionProviderNames> 
+	<Tier>11.0</Tier>
+	<Interventions>
+		<Intervention>
+			<InterventionName>Read Naturally</InterventionName>
+			<InterventionDescription>This program develops fluency, vocabulary development and comprehension based upon research-based strategies of teacher modeling, repeated reading and progress monitoring.  Computer software will be used.</InterventionDescription>
+			<InterventionType>Computer Assisted</InterventionType>
+			<InterventionDelivery>Individual</InterventionDelivery>
+		</Intervention>
+	</Interventions>	
+<SubjectArea>
+	<Code>01</Code>
+	  <OtherCodeList>
+		<OtherCode Codeset="Text">Reading</OtherCode>
+	  </OtherCodeList>
+</SubjectArea>
+<LearningStandardItems>
+     <LearningStandardItemRefId>A5D75F789175101B8C7E08EA123A8234</LearningStandardItemRefId>
+</LearningStandardItems>
+<LearningObjectives>
+     <LearningObjective>The student will develop reading fluency by applying phonetic analysis to 
+     multiple syllable words while reading the words.</LearningObjective>
+</LearningObjectives>
+<Measurements>
+	<Measurement>
+		 <MeasurementTool>DIBELS</MeasurementTool>
+		 <FrequencyofMeasure>S005</FrequencyofMeasure>
+	</Measurement>
+</Measurements>
+<Baselines>
+     <Baseline>ORF 40</Baseline>
+</Baselines>
+<Targets>
+     <Target>ORF 70</Target>
+     <Target>ORF 95</Target>
+     <Target>ORF 110</Target>
+</Targets>
+	<EntryDate>2011-09-01</EntryDate>
+	<ProjectedExitDate>2012-05-12</ProjectedExitDate>
+	<FrequencyTime>
+		<Code>S001</Code>
+		<Duration UnitOfMeasure="Minutes">120</Duration>
+	</FrequencyTime>
+</ResponseToIntervention>
+   
+
+  </xhtml:Example>
+</DataObject>

@@ -1,0 +1,118 @@
+<DataObject name="SectionCorrelation">
+	<Key>@RefId</Key>
+	<EventsReported>true</EventsReported>
+	<Item>
+		<Element>SectionCorrelation</Element>
+		<Description>
+			<p>This object provides information about the classes being correlated for some program purpose, for example, career tech or team scheduling.</p>
+		</Description>
+	</Item>
+	
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The Id (GUID) that uniquely identifies this correlation.</p>
+		</Description>
+		<Type ref="CommonTypes" name="RefIdType"/>
+	</Item>
+	
+	<Item>
+		<Element>CorrelationName</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The classes being correlated for some program purpose, for example, career tech or team scheduling.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	
+	<Item>
+		<Element>CorrelationType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The type of correlation.</p>
+		</Description>
+	</Item>	
+	<Item>
+		<Element>/Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The code for the type of correlation.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>c</Code>
+				<Description>career technical</Description>
+			</Value>
+			<Value>
+				<Code>t</Code>
+				<Description>teaching teams</Description>
+			</Value>
+			<Value>
+				<Code>o</Code>
+				<Description>other</Description>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>/OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeList"/>
+	</Item>
+	
+	<Item>
+		<Element>CorrelationSectionList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The list of SectionInfo objects being correlated.</Description>
+		<List mode="List"></List>
+	</Item>
+	<Item>
+		<Element>/CorrelationSection</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Reference to a SectionInfo object to be correlated.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	<Item>
+		<Attribute>Primary</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>Indicate whether a SectionInfo is primary.  Only one SectionInfo in the CorrelationSectionList can be primary.</Description>
+		<Values>
+			<Value>
+				<Code>yes</Code>
+			</Value>
+			<Value>
+				<Code>no</Code>
+			</Value>
+		</Values>
+	</Item>
+	
+	<Item>
+		<Element>SIF_Metadata</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_Metadata"></Type>
+	</Item>
+	<Item>
+		<Element>SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+	</Item>
+	
+    <xhtml:Example xmlns="">
+		<SectionCorrelation RefId="6472B2610947583A463DBB345291B001">
+			<CorrelationName>ComputerizedMilling</CorrelationName>
+			<CorrelationType>
+				<Code>c</Code>
+				<OtherCodeList>
+				  <OtherCode Codeset="Other">CM1</OtherCode>
+				</OtherCodeList>
+			</CorrelationType>
+			<CorrelationSectionList>
+				<CorrelationSection Primary= "yes">FE886483013210000FFF002500F11F4E</CorrelationSection>
+				<CorrelationSection Primary= "no">AE886483013210001F4F002500F11F41</CorrelationSection>
+				<CorrelationSection Primary= "no">EE886483013210001F1F002500F11F49</CorrelationSection>
+			</CorrelationSectionList>		
+		</SectionCorrelation>
+	</xhtml:Example>
+</DataObject>

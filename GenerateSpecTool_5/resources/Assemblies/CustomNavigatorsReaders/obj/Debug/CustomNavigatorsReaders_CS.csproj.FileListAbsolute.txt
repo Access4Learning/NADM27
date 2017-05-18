@@ -1,0 +1,5 @@
+C:\Users\Vince\Desktop\SpecGen_Temp\GeneratorCode\Assemblies\CustomNavigatorsReaders\bin\Developmentor.Xml.dll
+C:\Users\Vince\Desktop\SpecGen_Temp\GeneratorCode\Assemblies\CustomNavigatorsReaders\bin\Developmentor.Xml.pdb
+C:\Users\Vince\Desktop\SpecGen_Temp\GeneratorCode\Assemblies\CustomNavigatorsReaders\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Vince\Desktop\SpecGen_Temp\GeneratorCode\Assemblies\CustomNavigatorsReaders\obj\Debug\Developmentor.Xml.dll
+C:\Users\Vince\Desktop\SpecGen_Temp\GeneratorCode\Assemblies\CustomNavigatorsReaders\obj\Debug\Developmentor.Xml.pdb

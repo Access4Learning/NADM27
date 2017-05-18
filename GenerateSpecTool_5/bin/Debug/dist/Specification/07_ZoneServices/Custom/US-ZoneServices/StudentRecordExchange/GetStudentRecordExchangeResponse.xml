@@ -1,0 +1,51 @@
+<DataObject name='GetRecordExchangeResponse'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>GetRecordExchangeResponse</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>StudentRecordExchangeDataList</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The StudentRecordExchange object set for the student and sending agency that was requested by the GetRecordExchange method. The object set is contained in a composite StudentRecordExchangeData object. To allow for packetizing of StudentRecordExchange object sets, there should be one instance of the StudentRecordExchangeData object for each object it contains.</p>
+		</Description>
+		<Type ref='DataModel' name='StudentRecordExchangeDataList'/>
+	</Item>
+	<xhtml:Example name='GetRecordExchangeResponse' xmlns=''>
+		<GetRecordExchangeResponse>
+			<StudentRecordExchangeDataList>
+				<StudentRecordExchangeData>
+					<StudentRecordExchange RefId="0D015F74DAB645FD92EFA8F43F2D79C3">
+						<StateProvinceId>10009600</StateProvinceId>
+						<Records>
+							<StudentDemographicRecordRefId>A15484ED564995254A4568EFFC5100BD</StudentDemographicRecordRefId>
+							<StudentAcademicRecordRefId>BB181B05598C46D2B8D533483D91392E</StudentAcademicRecordRefId>
+						</Records>
+					</StudentRecordExchange>
+				</StudentRecordExchangeData>
+				<StudentRecordExchangeData>
+					<StudentDemographicRecord RefId="A15484ED564995254A4568EFFC5100BD" SIF_RefObject="StudentRecordExchange" SIF_RefId="0D015F74DAB645FD92EFA8F43F2D79C3">
+						<ReportingDate>2008-11-07</ReportingDate>
+						<StudentPersonalData>
+							<LocalId>88495</LocalId>
+							<StateProvinceId>10009600</StateProvinceId>
+							<Name Type="04">
+								<LastName>Petersen</LastName>
+								<FirstName>Eric</FirstName>
+							</Name>
+						</StudentPersonalData>
+					</StudentDemographicRecord>
+				</StudentRecordExchangeData>
+				<StudentRecordExchangeData>
+					<StudentAcademicRecord RefId="BB181B05598C46D2B8D533483D91392E" SIF_RefObject="StudentRecordExchange" SIF_RefId="0D015F74DAB645FD92EFA8F43F2D79C3">
+					
+				</StudentAcademicRecord>
+				</StudentRecordExchangeData>
+			</StudentRecordExchangeDataList>
+		</GetRecordExchangeResponse>
+	</xhtml:Example>
+</DataObject>

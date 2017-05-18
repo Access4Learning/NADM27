@@ -1,0 +1,2503 @@
+<DataObject name="StudentAcademicRecord">
+	<Key>@RefId</Key>
+	<EventsReported>false</EventsReported>
+	<Item>
+		<Element>StudentAcademicRecord</Element>
+		<Description>
+			<p>This object conveys a student's academic record data for student record exchange and transcript purposes.</p>
+			<p>
+        This object is designed to be a dual-purpose object.  It can be linked to a <code>StudentRecordExchange</code> object
+        for record exchange purposes.  There may also be Zones where systems can provide this information for record exchange
+        systems or general informational purposes, in which case the object can be linked directly to <code>StudentPersonal</code>.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="RefIdType"/>
+		<Description>
+			<p>The Id (GUID) of this record.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SIF_RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="RefIdType"/>
+		<Description>
+			<p>
+        The GUID of an associated object, either <code>StudentRecordExchange</code> or <code>StudentPersonal</code>.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SIF_RefObject</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>
+        The associated object type.
+      </p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>StudentRecordExchange</Code>
+			</Value>
+			<Value>
+				<Code>StudentPersonal</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>ReportingDate</Element>
+		<Characteristics>M</Characteristics>
+		<Type name="xs:date"/>
+		<Description>
+			<p>The date this record was prepared.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>StudentSchoolEnrollmentData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from StudentSchoolEnrollment.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SchoolAttendedRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>References the school of record for the student (see SchoolAttended).</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/GradeLevel</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="DataModel" name="GradeLevel"/>
+	</Item>
+	<Item>
+		<Element>/Advisor</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Staff member assigned to the student as an advisor.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//StaffPersonalData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from StaffPersonal.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Name</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="DataModel" name="Name"/>
+	</Item>
+	<Item>
+		<Element>///Title</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///AddressList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="AddressList"/>
+	</Item>
+	<Item>
+		<Element>///PhoneNumberList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="PhoneNumberList"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>/Counselor</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Staff member assigned to the student as a counselor.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//StaffPersonalData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from StaffPersonal.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Name</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="DataModel" name="Name"/>
+	</Item>
+	<Item>
+		<Element>///Title</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///AddressList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="AddressList"/>
+	</Item>
+	<Item>
+		<Element>///PhoneNumberList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="PhoneNumberList"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>/SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>DistrictEntryDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>The date the student originally enrolled in the district of the school of record.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>SchoolAttendanceHistory</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Chronology of schools attended in the student's academic career, including the current school if enrolled.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>/SchoolAttended</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Data about each individual school attended.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="RefIdType"/>
+		<Description>
+			<p>Id used internally to StudentAcademicRecord to avoid duplication of school-related data.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//LEAInfoData</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Collects elements of interest from LEAInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///LocalId</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="LocalId"/>
+	</Item>
+	<Item>
+		<Element>///StateProvinceId</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="StateProvinceId"/>
+	</Item>
+	<Item>
+		<Element>///NCESId</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="NCESId"/>
+	</Item>
+	<Item>
+		<Element>///LEAName</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="DataModel" name="LEAName"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//SchoolInfoData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from SchoolInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///LocalId</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="DataModel" name="LocalId"/>
+	</Item>
+	<Item>
+		<Element>///StateProvinceId</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="StateProvinceId"/>
+	</Item>
+	<Item>
+		<Element>///NCESId</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="NCESId"/>
+	</Item>
+	<Item>
+		<Element>///SchoolName</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="DataModel" name="SchoolName"/>
+	</Item>
+	<Item>
+		<Element>///SchoolURL</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SchoolURL"/>
+	</Item>
+	<Item>
+		<Element>///SchoolContactList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SchoolContactList"/>
+	</Item>
+	<Item>
+		<Element>///AddressList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="AddressList"/>
+	</Item>
+	<Item>
+		<Element>///PhoneNumberList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="PhoneNumberList"/>
+	</Item>
+	<Item>
+		<Element>///IdentificationInfoList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="IdentificationInfoList"/>
+	</Item>
+	<Item>
+		<Element>///GradeLevels</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="GradeLevels"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//AccreditingBody</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Accrediting body for the school.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//MarkingSystems</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if school of record. Marking systems/grading tables used by the school.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>///MarkValueInfoData</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Marking system/grading table used by the school.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="RefIdType"/>
+		<Description>
+			<p>Id used internally to StudentAcademicRecord to link marks to their marking systems.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////Name</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The text name of the value list ("Letter Grades", "Letter Grades (+/-)", "ESU", "Pass/Fail", "Override Grades", "Citizenship Comment Codes", etc.).</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>////Percentage</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Indicates whether a percent Mark is accepted (format ##0.00).</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////Minimum</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The minimum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be lower than this value.</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>/////Maximum</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The maximum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be higher than this value.</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>////Numeric</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Indicates whether a raw numeric score is accepted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////Precision</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Number of significant digits.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>/////Scale</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Number of decimal places.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>/////Low</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Lowest Mark in the range (e.g., 98, 3.95).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>/////High</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Highest Mark in the range (e.g., 100, 4.0).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>////Letter</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Indicates whether a letter Mark is accepted.</p>
+		</Description>
+		<List mode="ActionList">
+			<Key>ValidMark/Code</Key>
+		</List>
+	</Item>
+	<Item>
+		<Element>/////ValidMark</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>List of specific valid letter Marks.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>String representing the actual Mark that would appear on the report card (e.g., "A+", "I", "100").</p>
+		</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>//////NumericEquivalent</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Numeric equivalent for the Mark (e.g., 100, 4.0).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>//////Description</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The description for this code. (e.g. "Excellent", "Participates in Class", "Incomplete", etc...).</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>////Narrative</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>If present, indicates that a free-form text narrative is accepted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////MaximumSize</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>An integer value representing the maximum number of Unicode characters for the narrative, the UTF-8 encoding of which may be longer.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>EnrollmentHistory</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A list of each enrollment in the schools above (see SchoolAttended).</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/StudentSchoolEnrollmentData</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Collects elements of interest from StudentSchoolEnrollment.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SchoolAttendedRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>Reference to SchoolAttended.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//SchoolYear</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SchoolYear"/>
+	</Item>
+	<Item>
+		<Element>//EntryDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>//ExitDate</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if student exited school.</p>
+		</Description>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>//EntryType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Code</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Code indicating the type of entry for this enrollment</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0619EntryTypeType"/>
+	</Item>
+	<Item>
+		<Element>///OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<Type ref='DataModel' name='OtherCodeList'/>
+	</Item>
+	<Item>
+		<Element>//GradeLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Grade or academic level of student.</p>
+		</Description>
+		<Type ref='DataModel' name='GradeLevel'/>
+	</Item>
+	<Item>
+		<Element>//ExitStatus</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code indicating the exit status for this enrollment.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0643ExitWithdrawalStatusType"/>
+	</Item>
+	<Item>
+		<Element>///OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<Type ref='DataModel' name='OtherCodeList'/>
+	</Item>
+	<Item>
+		<Element>//ExitType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code indicating the type of exit for this enrollment.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0644ExitWithdrawalTypeType"/>
+	</Item>
+	<Item>
+		<Element>///OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<Type ref='DataModel' name='OtherCodeList'/>
+	</Item>
+	<Item>
+		<Element>//StudentLEARelationship</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///MembershipType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The type of this affiliation as it relates to the LEA identified.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Home</Code>
+				<Text>The LEA is responsible for reporting the student's membership/child accounting information.</Text>
+			</Value>
+			<Value>
+				<Code>Concurrent</Code>
+				<Text>The LEA is not the primary reporting unit for the student's membership/child accounting information.</Text>
+			</Value>
+			<Value>
+				<Code>Summer</Code>
+				<Text>A summer school enrollment, not part of the regular school year.</Text>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>///LEARelationshipType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>An instance of the OrganizationRelationshipType common type that describes the details of the student's affiliation with the LEA.</p>
+		</Description>
+		<Type ref="CommonTypes" name="OrganizationRelationshipType"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//StudentSchoolRelationship</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///MembershipType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The type of this affiliation as it relates to the school identified.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Home</Code>
+				<Text>The LEA is responsible for reporting the student's membership/child accounting information.</Text>
+			</Value>
+			<Value>
+				<Code>Concurrent</Code>
+				<Text>The LEA is not the primary reporting unit for the student's membership/child accounting information.</Text>
+			</Value>
+			<Value>
+				<Code>Summer</Code>
+				<Text>A summer school enrollment, not part of the regular school year.</Text>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>///ResidencyStatus</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Location of an individual’s legal residence relative to (within or outside) the boundaries of the school for the enrollment reported.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code indicating the residency status for this enrollment.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0598PublicSchoolResidenceStatusType"/>
+	</Item>
+	<Item>
+		<Element>///NonResidentAttendReason</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>If the school represented by this enrollment is outside of the student's usual attendance area (as indicated in the ResidencyStatus element), this element indicates the reason that the student attends this school.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0599NonResidentAttendanceRationaleType"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>CurrentCourseActivity</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if coursework is underway.  Conveys a student's current coursework along with mid-term marks if applicable.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/TermInfoData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from TermInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SchoolAttendedRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>Reference to the school of record for the courses being taken (see SchoolAttended).</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//SchoolYear</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SchoolYear"/>
+	</Item>
+	<Item>
+		<Element>//StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>//EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>//Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>//TermCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>//Track</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>//TermSpan</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="TermSpan"/>
+	</Item>
+	<Item>
+		<Element>//SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>/Courses</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Courses being taken.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>//Course</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Course being taken.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///SchoolAttendedRefId</Element>
+		<Characteristics>C</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>
+        Reference to the school where the course is being taken (see SchoolAttended); may be omitted if the school is the same as the school of record.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///SchoolCourseInfoData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from SchoolCourseInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////CourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="CourseCode"/>
+	</Item>
+	<Item>
+		<Element>////StateCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="StateCourseCode"/>
+	</Item>
+	<Item>
+		<Element>////DistrictCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="DistrictCourseCode"/>
+	</Item>
+	<Item>
+		<Element>////NationalCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>////SubjectAreaList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SubjectAreaList"/>
+	</Item>
+	<Item>
+		<Element>////CourseTitle</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="CourseTitle"/>
+	</Item>
+	<Item>
+		<Element>////Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>////InstructionalLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="InstructionalLevel"/>
+	</Item>
+	<Item>
+		<Element>////CoreAcademicCourse</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:boolean"/>
+	</Item>
+	<Item>
+		<Element>////GraduationRequirement</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="GraduationRequirement"/>
+	</Item>
+	<Item>
+		<Element>////Department</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>///StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date course section started.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date course section ended, or will end.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///MarkingPeriod</Element>
+		<Characteristics>M</Characteristics>
+	</Item>
+	<Item>
+		<Element>////TermInfoData</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Information related to the span of time associated with the marking period.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>/////EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>/////Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>/////TermCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>/////Track</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>/////TermSpan</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="TermSpan"/>
+	</Item>
+	<Item>
+		<Element>/////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>////GradeLevelWhenTaken</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Student's grade level at time of course.</p>
+		</Description>
+		<Type ref="DataModel" name="GradeLevel"/>
+	</Item>
+	<Item>
+		<Element>////MarkData</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if mid-term mark exists.  Mid-term mark.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>MarkValueInfoDataRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>Reference to marking system at school of record.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////Percentage</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The percent score for this mark (0.00 - 100.00).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>/////Numeric</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The raw numeric score for this mark. Note: This element to be deprecated.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>/////NumericAsDecimal</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The raw numeric score for this mark. This element allows for a numeric mark (score or grade) in decimal format.</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>/////Letter</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The letter grade for this mark.</p>
+		</Description>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>/////Narrative</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The free form text narrative for this mark.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>/////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>////CourseCreditsAttempted</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of course credits attempted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>CourseHistory</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>
+        Conveys the coursework completed, performance and attendance information for a student's academic career.
+      </p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/Term</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Time spans by which courses are grouped.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//TermInfoData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from TermInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SchoolAttendedRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>Reference to the school of record for the time span (see SchoolAttended).</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///SchoolYear</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SchoolYear"/>
+	</Item>
+	<Item>
+		<Element>///StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>///EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>///Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>///TermCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///Track</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///TermSpan</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="TermSpan"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//Courses</Element>
+		<Characteristics>O</Characteristics>
+	</Item>
+	<Item>
+		<Element>///Course</Element>
+		<Characteristics>OR</Characteristics>
+	</Item>
+	<Item>
+		<Element>////SchoolAttendedRefId</Element>
+		<Characteristics>C</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>
+        Reference to the school where the course was taken (see SchoolAttended); may be omitted if the school is the same as the school of record.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////SchoolCourseInfoData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Collects elements of interest from SchoolCourseInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////CourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="CourseCode"/>
+	</Item>
+	<Item>
+		<Element>/////StateCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="StateCourseCode"/>
+	</Item>
+	<Item>
+		<Element>/////DistrictCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="DistrictCourseCode"/>
+	</Item>
+	<Item>
+		<Element>/////NationalCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>/////SubjectAreaList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SubjectAreaList"/>
+	</Item>
+	<Item>
+		<Element>/////CourseTitle</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="CourseTitle"/>
+	</Item>
+	<Item>
+		<Element>/////Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>/////InstructionalLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="InstructionalLevel"/>
+	</Item>
+	<Item>
+		<Element>/////CoreAcademicCourse</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:boolean"/>
+	</Item>
+	<Item>
+		<Element>/////GraduationRequirement</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="GraduationRequirement"/>
+	</Item>
+	<Item>
+		<Element>/////Department</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>/////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>////StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date course section started.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date course section ended.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>////MarkingPeriods</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Student performance/attendance data for each marking period.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/////MarkingPeriod</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Student performance/attendance data for a marking period.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////SchoolAttendedRefId</Element>
+		<Characteristics>C</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>
+        Reference to the school where student took the course during the marking period, if different from schools above.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////TermInfoData</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Information related to the span of time associated with the marking period.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///////StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>///////EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>///////Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>///////TermCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///////Track</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///////TermSpan</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="TermSpan"/>
+	</Item>
+	<Item>
+		<Element>///////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//////GradeLevelWhenTaken</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Student's grade level at time of course.</p>
+		</Description>
+		<Type ref="DataModel" name="GradeLevel"/>
+	</Item>
+	<Item>
+		<Element>//////MarkData</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if mid-term mark exists.  Mid-term mark.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>MarkValueInfoDataRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType"/>
+		<Description>
+			<p>Reference to marking system at school of record.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///////Percentage</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The percent score for this mark (0.00 - 100.00).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>///////Numeric</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The raw numeric score for this mark.Note: This element to be deprecated.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>///////NumericAsDecimal</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The raw numeric score for this mark. This element allows for a numeric mark (score or grade) in decimal format.</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>///////Letter</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The letter grade for this mark.</p>
+		</Description>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///////Narrative</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>The free form text narrative for this mark.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>///////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//////CourseCreditsAttempted</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of course credits attempted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////CourseCreditsEarned</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of course credits earned.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////CreditType</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0108CreditTypeEarnedType"/>
+		<Description>
+			<p>Type of credit.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////ExcessiveAbsenceIndicator</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:boolean"/>
+		<Description>
+			<p>Flag indicating that the student was excessively absent from the class.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////DaysAbsent</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of days absent.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////DaysPresent</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of days present.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>////SectionInfoData</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/////MediumOfInstruction</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Medium through which the student receives instructional communication from the teacher.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//////Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code representing the medium of instruction.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0209MediumOfInstructionType"/>
+	</Item>
+	<Item>
+		<Element>//////OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<Type ref="DataModel" name="OtherCodeList"/>
+	</Item>
+	<Item>
+		<Element>////SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>AcademicPerformanceHistory</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Provides a summary of a student's academic performance by reporting period.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/TermPerformance</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Individual term performance.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//TermInfoData</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Collects elements of interest from TermInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///SchoolYear</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SchoolYear"/>
+	</Item>
+	<Item>
+		<Element>///StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>///EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+	</Item>
+	<Item>
+		<Element>///Description</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>///TermCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///Track</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>///TermSpan</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="TermSpan"/>
+	</Item>
+	<Item>
+		<Element>///SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>//GradeLevelWhenTaken</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Student's grade level at time.</p>
+		</Description>
+		<Type ref="DataModel" name="GradeLevel"/>
+	</Item>
+	<Item>
+		<Element>//CreditsAttempted</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of credits attempted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//CreditsEarned</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of credits earned.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//GPACreditsAttempted</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of GPA credits attempted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//GPACreditsEarned</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of GPA credits earned.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//GPAGradePoints</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of GPA points received.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//GPA</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Grade point average for term.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//WeightedGPA</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Weighted grade point average for term.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//DaysAbsent</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of days absent.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//DaysPresent</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Number of days present.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>AcademicPerformanceSummary</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Conveys a cumulative summary of a student's entire academic performance at the time the transcript was generated.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/TotalCreditsAttempted</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Total credits attempted during academic career.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/TotalCreditsEarned</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Total credits earned during academic career.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/CumulativeGPACreditsEarned</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Cumulative number of GPA credits earned during academic career.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/CumulativeGradePoints</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Cumulative number of grade points earned during academic career.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/CumulativeGPA</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:decimal"/>
+		<Description>
+			<p>Cumulative grade point average for academic career.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/GPAType</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Brief name/description of type of GPA.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/ClassRank</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:unsignedInt"/>
+		<Description>
+			<p>Student's rank in graduating class.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/ClassTotalNumber</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:unsignedInt"/>
+		<Description>
+			<p>Total number of students in student's graduating class.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/ClassRankingDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date class ranking was determined.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/ProjectedGraduationDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Projected graduation date.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/GraduationDate</Element>
+		<Characteristics>C</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Note: Mandatory if graduated.  Graduation date.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/GraduationDiplomaType</Element>
+		<Characteristics>C</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Note: Mandatory if graduated.  Type of diploma earned.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/AcademicTrack</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0106CourseInstructionalLevelType"/>
+		<Description>
+			<p>An indication of the general nature and difficulty of instruction provided throughout a course.</p>
+			<p>Note: This element is deprecated, in favor of the two elements below, beginning with Version 2.2.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>/AcademicFoci</Element>
+		<Characteristics>O</Characteristics>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>//AcademicFocus</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Indicates the general nature and difficulty of instruction provided throughout a course.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>
+        A code to depict the focus of the educational program (replaces deprecated <code>AcademicTrack</code>.
+      </p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0229ProgramTypeType"/>
+	</Item>
+	<Item>
+		<Element>///OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Alternate codes indicating the general nature and difficulty of the educational program.</p>
+		</Description>
+		<Type ref="DataModel" name="OtherCodeList"/>
+	</Item>
+	<Item>
+		<Element>/AcademicSubjects</Element>
+		<Characteristics>O</Characteristics>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>//AcademicSubject</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Coding to depict an intended subject area.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>///Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>A code to depict an academic or vocational discipline studied by an individual in an educational program (based on NCES CIP 2000).</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0373PostsecondarySubjectMatterAreaType"/>
+	</Item>
+	<Item>
+		<Element>///OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Alternate codes for an academic or vocational discipline studied by an individual in an educational program. </p>
+		</Description>
+		<Type ref="DataModel" name="OtherCodeList"/>
+	</Item>
+	<Item>
+		<Element>/SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>AssessmentPerformanceHistory</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if assessments exist.  Conveys a history of assessments that the student has taken throughout his/her academic career.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/Assessment</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>A record of performance on an individual assessment.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Name</Element>
+		<Characteristics>M</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Textual description of assessment.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//AdministrationDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date the assessment was administered.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Form</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Form, version or edition of the test.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Level</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+		<Description>
+			<p>Free-form text description of the level of the test.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//StudentGradeLevelWhenAssessed</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Student's grade level when assessed.</p>
+		</Description>
+		<Type ref="DataModel" name="GradeLevel"/>
+	</Item>
+	<Item>
+		<Element>//SubtestCategory</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>The subtest or subject category of the assessment.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//TestScoreType</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0056AssessmentReportingMethodType"/>
+		<Description>
+			<p>Type of test score.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//TestScore</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Test score.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>AdditionalGraduationRequirementPerformanceHistory</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if additional graduation requirements exist.  Conveys a student's achievements in relation to additional graduation requirements.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/Requirement</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>A record of performance in an individual graduation requirement.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Name</Element>
+		<Characteristics>M</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>Textual description of the requirement.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Method</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:string"/>
+		<Description>
+			<p>The method by which the requirement was met.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Status</Element>
+		<Characteristics>M</Characteristics>
+		<Values>
+			<Value>
+				<Code>Met</Code>
+			</Value>
+			<Value>
+				<Code>Not Met</Code>
+			</Value>
+		</Values>
+		<Description>
+			<p>Student's status with regard to the requirement.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//StatusDeterminationDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>Date the student's status was determined.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>ActivityAwardHistory</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>Note: Mandatory if activities/awards exist.  Conveys award the student has received and/or activities in which s/he has been involved.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>/ActivityAward</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>A record of an individual award or activity</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//Name</Element>
+		<Characteristics>M</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>The title that identifies a particular co-curricular or extra-curricular activity.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//InvolvementCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0679ActivityInvolvementCodeType"/>
+		<Description>
+			<p>The code used to identify the co-curricular or extra-curricular activity in which the individual is involved.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//InvolvementBeginningDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>The month, day, and year on which the individual began to participate in the activity.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//InvolvementEndingDate</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="PartialDateType"/>
+		<Description>
+			<p>The month, day, and year on which the individual ceased to participate in the activity.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//InvolvementAmount</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>An indication of the degree to which the individual is involved in the activity (e.g., number of hours per week).</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//HonorsInformationCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0674HonorsTypeType"/>
+		<Description>
+			<p>A designation of the type of academic distinctions or other honors earned by or awarded to the student.</p>
+			<p>
+        Note: <code>HonorsInformationCode</code> and <code>HonorsDescription</code> are related to honors (athletic award, citizenship award/recognition,
+        medals, honor society membership, etc.) <em>other</em> than graduation and scholar awards and scholarships.  <code>DiplomaCredentialHonorsCode</code>
+        and <code>DiplomaCredentialHonorsDescription</code> are focused on graduation honors like cum laude designations (magna, summa),
+        scholar and honors awards, scholarships, and such.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//HonorsDescription</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>A textual description of the distinction or honor.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//DiplomaCredentialHonorsCode</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0684DiplomaCredentialLevelAndHonorsType"/>
+		<Description>
+			<p>The nature of recognition given the student for the successful completion of work in high school.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//DiplomaCredentialHonorsDescription</Element>
+		<Characteristics>O</Characteristics>
+		<Type name="xs:normalizedString"/>
+		<Description>
+			<p>A textual description of the recognition.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<Item>
+		<Element>SIF_Metadata</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_Metadata"/>
+	</Item>
+	<Item>
+		<Element>SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	
+	 <xhtml:Example name="StudentAcademicRecord - Example 1" xmlns="">
+		<StudentAcademicRecord RefId="D932E34082D04C048112729922B58A93" SIF_RefObject="StudentRecordExchange" SIF_RefId="0EAF9D6DA4854F348103B04BFEAC65B2">
+			<ReportingDate>2006-09-26</ReportingDate>
+			<StudentSchoolEnrollmentData SchoolAttendedRefId="39FA2714A63543B0A7732796825E9C68">
+				<GradeLevel>
+					<Code>12</Code>
+				</GradeLevel>
+			</StudentSchoolEnrollmentData>
+			<DistrictEntryDate>2003-09-01</DistrictEntryDate>
+			<SchoolAttendanceHistory>
+				<SchoolAttended RefId="39FA2714A63543B0A7732796825E9C67">
+					<SchoolInfoData>
+						<LocalId>43</LocalId>
+						<StateProvinceId>389</StateProvinceId>
+						<SchoolName>Thomas Jefferson HS</SchoolName>
+						<GradeLevels>
+							<GradeLevel>
+								<Code>09</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>10</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>11</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>12</Code>
+							</GradeLevel>
+						</GradeLevels>
+					</SchoolInfoData>
+					<MarkingSystems>
+						<MarkValueInfoData RefId="DBA34A13FF234C7994AAE13D89DA9A50">
+							<Name>Letter Grades</Name>
+							<Letter>
+								<ValidMark>
+									<Code>A</Code>
+									<NumericEquivalent>4.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>A-</Code>
+									<NumericEquivalent>3.7</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>B+</Code>
+									<NumericEquivalent>3.2</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>B</Code>
+									<NumericEquivalent>3.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>B-</Code>
+									<NumericEquivalent>2.7</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>C+</Code>
+									<NumericEquivalent>2.8</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>C</Code>
+									<NumericEquivalent>2.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>C-</Code>
+									<NumericEquivalent>1.7</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>D+</Code>
+									<NumericEquivalent>1.2</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>D</Code>
+									<NumericEquivalent>1.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>E</Code>
+									<NumericEquivalent>0.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>F</Code>
+									<NumericEquivalent>0.0</NumericEquivalent>
+								</ValidMark>
+							</Letter>
+						</MarkValueInfoData>
+					</MarkingSystems>
+				</SchoolAttended>
+				<SchoolAttended RefId="39FA2714A63543B0A7732796825E9C68">
+					<LEAInfoData>
+						<LEAName>Everett School District</LEAName>
+					</LEAInfoData>
+					<SchoolInfoData>
+						<LocalId>44</LocalId>
+						<StateProvinceId>390</StateProvinceId>
+						<SchoolName>Everett HS</SchoolName>
+						<AddressList>
+							<Address Type="0123">
+								<Street>
+									<Line1>2416 Colby Ave</Line1>
+								</Street>
+								<City>Everett</City>
+								<StateProvince>WA</StateProvince>
+								<Country>US</Country>
+								<PostalCode>98201</PostalCode>
+							</Address>
+						</AddressList>
+						<GradeLevels>
+							<GradeLevel>
+								<Code>09</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>10</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>11</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>12</Code>
+							</GradeLevel>
+						</GradeLevels>
+					</SchoolInfoData>
+					<MarkingSystems>
+						<MarkValueInfoData RefId="FBE50CCA156741F389D916B89923DFFE">
+							<Name>Letter Grades</Name>
+							<Letter>
+								<ValidMark>
+									<Code>A</Code>
+									<NumericEquivalent>4.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>A-</Code>
+									<NumericEquivalent>3.7</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>B+</Code>
+									<NumericEquivalent>3.2</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>B</Code>
+									<NumericEquivalent>3.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>B-</Code>
+									<NumericEquivalent>2.7</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>C+</Code>
+									<NumericEquivalent>2.8</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>C</Code>
+									<NumericEquivalent>2.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>C-</Code>
+									<NumericEquivalent>1.7</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>D+</Code>
+									<NumericEquivalent>1.2</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>D</Code>
+									<NumericEquivalent>1.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>E</Code>
+									<NumericEquivalent>0.0</NumericEquivalent>
+								</ValidMark>
+								<ValidMark>
+									<Code>F</Code>
+									<NumericEquivalent>0.0</NumericEquivalent>
+								</ValidMark>
+							</Letter>
+						</MarkValueInfoData>
+					</MarkingSystems>
+				</SchoolAttended>
+				<SchoolAttended RefId="39FA2714A63543B0A7732796825E9C69">
+					<SchoolInfoData>
+						<LocalId>45</LocalId>
+						<StateProvinceId>391</StateProvinceId>
+						<NCESId/>
+						<SchoolName>Thomas Alva Edison HS</SchoolName>
+						<GradeLevels>
+							<GradeLevel>
+								<Code>09</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>10</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>11</Code>
+							</GradeLevel>
+							<GradeLevel>
+								<Code>12</Code>
+							</GradeLevel>
+						</GradeLevels>
+					</SchoolInfoData>
+				</SchoolAttended>
+			</SchoolAttendanceHistory>
+			<EnrollmentHistory>
+				<StudentSchoolEnrollmentData SchoolAttendedRefId="39FA2714A63543B0A7732796825E9C67">
+					<SchoolYear>1998</SchoolYear>
+					<EntryDate>1997-09-01</EntryDate>
+					<ExitDate>1998-06-30</ExitDate>
+				</StudentSchoolEnrollmentData>
+				<StudentSchoolEnrollmentData SchoolAttendedRefId="39FA2714A63543B0A7732796825E9C68">
+					<SchoolYear>1999</SchoolYear>
+					<EntryDate>1998-09-01</EntryDate>
+					<ExitDate>1999-06-30</ExitDate>
+				</StudentSchoolEnrollmentData>
+				<StudentSchoolEnrollmentData SchoolAttendedRefId="39FA2714A63543B0A7732796825E9C69">
+					<SchoolYear>2000</SchoolYear>
+					<EntryDate>1999-09-01</EntryDate>
+					<ExitDate>2000-06-30</ExitDate>
+				</StudentSchoolEnrollmentData>
+				<StudentSchoolEnrollmentData SchoolAttendedRefId="39FA2714A63543B0A7732796825E9C68">
+					<SchoolYear>2002</SchoolYear>
+					<EntryDate>2001-09-01</EntryDate>
+				</StudentSchoolEnrollmentData>
+			</EnrollmentHistory>
+			<CourseHistory>
+				<Term>
+					<TermInfoData SchoolAttendedRefId="39FA2714A63543B0A7732796825E9C67">
+						<SchoolYear>1998</SchoolYear>
+						<StartDate>1997-09-01</StartDate>
+						<EndDate>1998-03-30</EndDate>
+					</TermInfoData>
+					<Courses>
+						<Course>
+							<SchoolCourseInfoData>
+								<CourseCode>ENG031</CourseCode>
+								<CourseTitle>Grammar</CourseTitle>
+							</SchoolCourseInfoData>
+							<StartDate>1997-09-01</StartDate>
+							<EndDate>1998-03-30</EndDate>
+							<MarkingPeriods>
+								<MarkingPeriod>
+									<GradeLevelWhenTaken>
+										<Code>09</Code>
+									</GradeLevelWhenTaken>
+									<MarkData MarkValueInfoDataRefId="DBA34A13FF234C7994AAE13D89DA9A50">
+										<Letter>A</Letter>
+									</MarkData>
+									<CourseCreditsAttempted>0.50</CourseCreditsAttempted>
+									<CourseCreditsEarned>0.50</CourseCreditsEarned>
+									<DaysAbsent>0</DaysAbsent>
+									<DaysPresent>85</DaysPresent>
+								</MarkingPeriod>
+							</MarkingPeriods>
+						</Course>
+						<!-- ... -->
+					</Courses>
+				</Term>
+				<!-- ... -->
+			</CourseHistory>
+			<AcademicPerformanceHistory>
+				<TermPerformance>
+					<TermInfoData>
+						<EndDate>1998-03-31</EndDate>
+					</TermInfoData>
+					<GradeLevelWhenTaken>
+						<Code>09</Code>
+					</GradeLevelWhenTaken>
+					<CreditsAttempted>3.0</CreditsAttempted>
+					<CreditsEarned>3.0</CreditsEarned>
+					<GPACreditsAttempted>3.0</GPACreditsAttempted>
+					<GPACreditsEarned>3.0</GPACreditsEarned>
+					<GPAGradePoints>12.0</GPAGradePoints>
+					<GPA>4.00</GPA>
+					<DaysAbsent>0</DaysAbsent>
+					<DaysPresent>85</DaysPresent>
+				</TermPerformance>
+				<TermPerformance>
+					<TermInfoData>
+						<EndDate>1998-06-30</EndDate>
+					</TermInfoData>
+					<GradeLevelWhenTaken>
+						<Code>09</Code>
+					</GradeLevelWhenTaken>
+					<CreditsAttempted>3.5</CreditsAttempted>
+					<CreditsEarned>3.5</CreditsEarned>
+					<GPACreditsAttempted>3.5</GPACreditsAttempted>
+					<GPACreditsEarned>3.5</GPACreditsEarned>
+					<GPAGradePoints>12.0</GPAGradePoints>
+					<GPA>4.00</GPA>
+					<DaysAbsent>0</DaysAbsent>
+					<DaysPresent>85</DaysPresent>
+				</TermPerformance>
+				<TermPerformance>
+					<TermInfoData>
+						<EndDate>1999-01-31</EndDate>
+					</TermInfoData>
+					<GradeLevelWhenTaken>
+						<Code>09</Code>
+					</GradeLevelWhenTaken>
+					<CreditsAttempted>3.0</CreditsAttempted>
+					<CreditsEarned>3.0</CreditsEarned>
+					<GPACreditsAttempted>2.5</GPACreditsAttempted>
+					<GPACreditsEarned>2.5</GPACreditsEarned>
+					<GPAGradePoints>12.0</GPAGradePoints>
+					<GPA>4.00</GPA>
+					<DaysAbsent>0</DaysAbsent>
+					<DaysPresent>85</DaysPresent>
+				</TermPerformance>
+				<!-- ... -->
+			</AcademicPerformanceHistory>
+			<AcademicPerformanceSummary>
+				<TotalCreditsAttempted>27.3</TotalCreditsAttempted>
+				<TotalCreditsEarned>27.3</TotalCreditsEarned>
+				<CumulativeGPACreditsEarned>22.5</CumulativeGPACreditsEarned>
+				<CumulativeGradePoints>94.0</CumulativeGradePoints>
+				<CumulativeGPA>4.000</CumulativeGPA>
+				<ClassRank>1</ClassRank>
+				<ClassTotalNumber>250</ClassTotalNumber>
+				<ClassRankingDate>2002-06-01</ClassRankingDate>
+				<ProjectedGraduationDate>2002-06-05</ProjectedGraduationDate>
+			</AcademicPerformanceSummary>
+			<AssessmentPerformanceHistory>
+				<Assessment>
+					<Name>WASL</Name>
+					<AdministrationDate>2002-01-02</AdministrationDate>
+					<Level>4</Level>
+					<StudentGradeLevelWhenAssessed>
+						<Code>12</Code>
+					</StudentGradeLevelWhenAssessed>
+					<SubtestCategory>Reading</SubtestCategory>
+					<TestScoreType>0512</TestScoreType>
+					<TestScore>SCHOLAR</TestScore>
+				</Assessment>
+				<Assessment>
+					<Name>WASL</Name>
+					<AdministrationDate>2002-01-02</AdministrationDate>
+					<Level>1</Level>
+					<StudentGradeLevelWhenAssessed>
+						<Code>12</Code>
+					</StudentGradeLevelWhenAssessed>
+					<SubtestCategory>Writing</SubtestCategory>
+					<TestScoreType>0512</TestScoreType>
+					<TestScore>NOT MET</TestScore>
+				</Assessment>
+				<!-- ... -->
+			</AssessmentPerformanceHistory>
+			<AdditionalGraduationRequirementPerformanceHistory>
+				<Requirement>
+					<Name>WASL Cert Acad Achievement</Name>
+					<Status>Met</Status>
+					<StatusDeterminationDate>2002-06-01</StatusDeterminationDate>
+				</Requirement>
+				<Requirement>
+					<Name>High School &amp; Beyond Plan</Name>
+					<Method/>
+					<Status>Not Met</Status>
+					<StatusDeterminationDate>2002-06-01</StatusDeterminationDate>
+				</Requirement>
+				<!-- ... -->
+			</AdditionalGraduationRequirementPerformanceHistory>
+			<ActivityAwardHistory>
+				<ActivityAward>
+					<Name>Computer club</Name>
+					<InvolvementCode>0701</InvolvementCode>
+					<InvolvementBeginningDate>2001-09-01</InvolvementBeginningDate>
+					<InvolvementEndingDate>2002-06-30</InvolvementEndingDate>
+				</ActivityAward>
+				<!-- ... -->
+			</ActivityAwardHistory>
+		</StudentAcademicRecord>
+	</xhtml:Example>
+	 <xhtml:Example name="StudentSchoolEnrollment - Example 2" xmlns="">
+	<StudentAcademicRecord RefId="D932E34082D04C048112729922B58A93" SIF_RefObject="StudentRecordExchange" SIF_RefId="0EAF9D6DA4854F348103B04BFEAC65B2"> 
+    <ReportingDate>2010-07-15</ReportingDate>
+    <StudentSchoolEnrollmentData SchoolAttendedRefId="140902170B360F35140071CD92A52A4A">
+        <GradeLevel>
+            <Code>12</Code>
+        </GradeLevel>
+        <Counselor>
+            <StaffPersonalData>
+                <Name Type="04">
+                    <LastName>Reese</LastName>
+                    <FirstName>Beth</FirstName>
+                    <FullName>Beth Reese</FullName>     
+                </Name>
+            </StaffPersonalData>
+        </Counselor>
+    </StudentSchoolEnrollmentData>
+    <SchoolAttendanceHistory>
+        <SchoolAttended RefId="140902170B360F35140071CD92A52A4A">
+            <LEAInfoData>
+                <StateProvinceId>123456</StateProvinceId>
+                <LEAName>Botetourt County</LEAName>
+            </LEAInfoData>
+            <SchoolInfoData>
+                <LocalId>440</LocalId>
+                <StateProvinceId>654321</StateProvinceId>
+	        <SchoolName>Lord Botetourt High School</SchoolName>
+		<SchoolURL>http://sites.google.com/a/bcps.k12.va.us/lord-botetourte-high-school</SchoolURL>
+                <SchoolContactList>
+                    <!-- ... -->
+                </SchoolContactList>
+                <AddressList>
+                    <Address Type="0123">
+                        <!-- ... -->
+                    </Address>
+                    <Address Type="0765">
+                        <!-- ... -->
+                    </Address>
+                </AddressList>
+                <PhoneNumberList>
+                    <PhoneNumber Type="0096">
+                        <Number>703-444-5600</Number>
+                    </PhoneNumber>
+                    <PhoneNumber Type="2364">
+                        <Number>703-555-5555</Number>                     
+                    </PhoneNumber>
+                </PhoneNumberList>
+                <SIF_ExtendedElements>  
+                    <SIF_ExtendedElement Name="SchoolEmail">ABSmith@bcps.k12.va</SIF_ExtendedElement>
+                </SIF_ExtendedElements>
+
+            </SchoolInfoData>
+            <MarkingSystems>
+                <MarkValueInfoData RefId="9BA91E6D97A94933BA2A7D070881D2A3">
+                    <!-- ... -->
+                </MarkValueInfoData>
+            </MarkingSystems>
+            
+        </SchoolAttended>
+    </SchoolAttendanceHistory>
+    <CourseHistory>
+        <Term>
+            <TermInfoData SchoolAttendedRefId="140902170C0227005A532E65ED069555">
+                <SchoolYear>2010</SchoolYear>
+            </TermInfoData>
+            <Courses>
+                <Course>
+                    <SchoolCourseInfoData>
+                        <CourseCode>1109</CourseCode>
+                        <NationalCourseCode>010011IB1130</NationalCourseCode>
+                        <CourseTitle>English 6</CourseTitle>
+                    </SchoolCourseInfoData>
+                    <MarkingPeriods>
+                        <MarkingPeriod>
+                            <TermInfoData>
+                                <TermSpan>
+                                    <Code>0828</Code>
+                                     <OtherCodeList>
+                                        <OtherCode Codeset="StateProvince">FG</OtherCode>
+                                        <OtherCode Codeset="Other">8156</OtherCode>   
+                                    </OtherCodeList>
+                                </TermSpan>
+                            </TermInfoData>
+                            <GradeLevelWhenTaken>
+                                <Code>06</Code>
+                            </GradeLevelWhenTaken>
+                            <MarkData MarkValueInfoDataRefId="66C178304ECB4A8E8FA0A54B7ED4026A">
+                                <!--Letter>C</Letter>-->
+                                <!--Numeric>5</Numeric>  to be deprecated  <Quality Points -->
+                                <NumericAsDecimal>0.5</NumericAsDecimal>   <!-- Quality Points -->
+                            </MarkData>
+                            <CourseCreditsAttempted>0</CourseCreditsAttempted>
+                            <CourseCreditsEarned>1</CourseCreditsEarned>
+                            <SIF_ExtendedElements>  
+                                <SIF_ExtendedElement Name="VA_Verified_Credit_Earned">1</SIF_ExtendedElement>
+                                <SIF_ExtendedElement Name="CourseCreditBasis">CreditByExam</SIF_ExtendedElement>
+                            </SIF_ExtendedElements>
+                        </MarkingPeriod>
+                    </MarkingPeriods>
+                    <SIF_ExtendedElements>  
+                        <SIF_ExtendedElement Name="APCourse">No</SIF_ExtendedElement>
+                        <SIF_ExtendedElement Name="AcceleratedCourse">Yes</SIF_ExtendedElement>
+                        <SIF_ExtendedElement Name="IBCourse">No</SIF_ExtendedElement>
+                        <SIF_ExtendedElement Name="DualEnrollmentCourse">Yes</SIF_ExtendedElement>
+                        <SIF_ExtendedElement Name="HonorsCourse">No</SIF_ExtendedElement>
+                        <SIF_ExtendedElement Name="SummerCourse">No</SIF_ExtendedElement>
+                    </SIF_ExtendedElements>
+                </Course>
+            </Courses>
+        </Term>
+    </CourseHistory>
+	
+    <AcademicPerformanceHistory>
+        <TermPerformance>
+            <TermInfoData>
+                <SchoolYear>2009</SchoolYear>
+            </TermInfoData>
+            <DaysAbsent>6</DaysAbsent>
+            <SIF_ExtendedElements>
+                <SIF_ExtendedElement Name="TermUnexcusedDaysAbent">3</SIF_ExtendedElement>
+            </SIF_ExtendedElements>
+        </TermPerformance>
+        <TermPerformance>
+            <TermInfoData>
+                <SchoolYear>2010</SchoolYear>
+            </TermInfoData>
+            <DaysAbsent>2</DaysAbsent>
+            <SIF_ExtendedElements>
+                <SIF_ExtendedElement Name="TermUnexcusedDaysAbent">3</SIF_ExtendedElement>	
+            </SIF_ExtendedElements>				
+        </TermPerformance>
+        <TermPerformance>
+            <TermInfoData>
+                <SchoolYear>2011</SchoolYear>
+            </TermInfoData>			    
+            <DaysAbsent>4</DaysAbsent>
+        </TermPerformance>
+    </AcademicPerformanceHistory>
+	
+    <AcademicPerformanceSummary>
+        <CumulativeGPA>3.5</CumulativeGPA>
+        <ClassRank>17</ClassRank>
+        <ClassTotalNumber>145</ClassTotalNumber>
+        <GraduationDate>2011-06-30</GraduationDate>
+        <GraduationDiplomaType>2</GraduationDiplomaType>
+        <SIF_ExtendedElements>
+            <SIF_ExtendedElement Name="RankTermBasis">4</SIF_ExtendedElement>
+        </SIF_ExtendedElements>
+     </AcademicPerformanceSummary>
+	
+	
+    <AssessmentPerformanceHistory>
+        <Assessment>
+            <Name>Industry Certification</Name>
+            <AdministrationDate>2010-03-31</AdministrationDate>
+            <SubtestCategory>Welding</SubtestCategory>
+            <TestScore>99</TestScore>
+        </Assessment>
+        <Assessment>
+            <Name>Industry Certification</Name>
+            <AdministrationDate>2010-03-31</AdministrationDate>
+            <SubtestCategory>Carpentry</SubtestCategory>
+            <TestScore>PASS</TestScore>
+        </Assessment>
+        <Assessment>
+            <Name>Industry Certification</Name>
+            <AdministrationDate>2010-03-31</AdministrationDate>
+            <SubtestCategory>MSSC</SubtestCategory>
+            <TestScore>0</TestScore>
+            <SIF_ExtendedElements>
+                <SIF_ExtendedElement Name="ScoreNotReportedReason">3</SIF_ExtendedElement>
+            </SIF_ExtendedElements>
+        </Assessment>
+    </AssessmentPerformanceHistory>	
+    <ActivityAwardHistory>
+        <ActivityAward>
+            <Name>Carpentry Certification Completion</Name>
+            <InvolvementEndingDate>2010-03-31</InvolvementEndingDate>
+            <SIF_ExtendedElements>
+                <SIF_ExtendedElement Name="GovernorRecognition">No</SIF_ExtendedElement>
+            </SIF_ExtendedElements>
+         </ActivityAward>
+    </ActivityAwardHistory>
+		
+			
+   </StudentAcademicRecord>
+</xhtml:Example>
+</DataObject>

@@ -1,0 +1,64 @@
+<DataObject name='CancelTransaction'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>CancelTransaction</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>TransactionId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>GUID that identifies the RequestIdentifier operation.</p>
+		</Description>
+		<Type ref='CommonTypes' name='GUIDType'/>
+	</Item>
+	<Item>
+		<Element>RequestingAgencyIds</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<List mode='List'/>
+	</Item>
+	<Item>
+		<Element>/RequestingAgencyId</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Identification of the agency and/or location requesting the state Id. Optional because the SIF zone infrastructure may provide adequate information for the state to ascertain the origin of the request.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The functional level of the requesting agency.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>ESA</Code>
+				<Text>Educational Services Agency</Text>
+			</Value>
+			<Value>
+				<Code>LEA</Code>
+				<Text>Local Educational Agency (District)</Text>
+			</Value>
+			<Value>
+				<Code>School</Code>
+				<Text>School</Text>
+			</Value>
+		</Values>
+	</Item>
+	<xhtml:Example name='CancelTransaction' xmlns=''>
+		<CancelTransaction>
+			<TransactionId>BD126823C6634562A55BA1C7FCD47961</TransactionId>
+			<RequestingAgencyIds>
+				<RequestingAgencyId Type='LEA'>98</RequestingAgencyId>
+				<RequestingAgencyId Type="School">1010</RequestingAgencyId>
+			</RequestingAgencyIds>
+		</CancelTransaction>
+	</xhtml:Example>
+</DataObject>

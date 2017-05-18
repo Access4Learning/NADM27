@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>SIF Implementation Specification 2.7M - Data Warehouse Working Group</title>
+    <link rel="stylesheet" type="text/css" href="include/document.css" />
+    <link rel="stylesheet" type="text/css" href="include/specification.css" />
+  </head>
+  <body>
+    <div class="navigation" id="topnavigation">
+      <a href="index.html">home</a>
+      <a href="index.html#contents">table of contents</a>
+      <hr />
+    </div>
+    <h2>3.6 Data Warehouse Working Group</h2>
+    <p>
+        The mission of the Data Warehouse Working Group is to lead the definition of the detailed data that schools and parents need to improve student achievement and organizational effectiveness.
+        It will represent to the other SIF Association working groups the interests of the school administrators, guidance counselors, teachers, parents and students who can benefit from the analysis of integrated SIF K-12 data.
+      </p>
+    <div class="element_section">
+      <a name="obj:AggregateStatisticInfo" />
+      <a name="361AggregateStatisticInfo" />
+      <h3 class="element_name">3.6.1 AggregateStatisticInfo</h3>
+      <p>This object defines the data that is being aggregated as well as the type of measurement that is being performed.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3611AggregateStatisticInfo" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/AggregateStatisticInfo.png">
+          <img class="diagram" src="diagrams/AggregateStatisticInfo.png" alt="AggregateStatisticInfo" width="997" height="970" usemap="#AggregateStatisticInfo__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.6.1-1: AggregateStatisticInfo</span><map name="AggregateStatisticInfo__map" id="AggregateStatisticInfo__map">
+  <area alt="AggregateStatisticInfo" href="#AggregateStatisticInfo" shape="rect" coords="5,507,214,549" />
+  <area alt="RefId" href="#AggregateStatisticInfo___RefId" shape="rect" coords="289,15,364,57" />
+  <area alt="StatisticName" href="#AggregateStatisticInfo__StatisticName" shape="rect" coords="289,92,431,134" />
+  <area alt="CalculationRule" href="#AggregateStatisticInfo__CalculationRule" shape="rect" coords="289,159,446,201" />
+  <area alt="Type" href="#AggregateStatisticInfo__CalculationRule___Type" shape="rect" coords="579,159,651,201" />
+  <area alt="ApprovalDate" href="#AggregateStatisticInfo__ApprovalDate" shape="rect" coords="289,226,429,268" />
+  <area alt="ExpirationDate" href="#AggregateStatisticInfo__ExpirationDate" shape="rect" coords="289,283,438,325" />
+  <area alt="ExclusionRules" href="#AggregateStatisticInfo__ExclusionRules" shape="rect" coords="289,350,445,392" />
+  <area alt="ExclusionRule" href="#AggregateStatisticInfo__ExclusionRules__ExclusionRule" shape="rect" coords="579,350,725,392" />
+  <area alt="Type" href="#AggregateStatisticInfo__ExclusionRules__ExclusionRule___Type" shape="rect" coords="800,350,872,392" />
+  <area alt="Source" href="#AggregateStatisticInfo__Source" shape="rect" coords="289,417,378,459" />
+  <area alt="EffectiveDate" href="#AggregateStatisticInfo__EffectiveDate" shape="rect" coords="289,474,426,516" />
+  <area alt="DiscontinueDate" href="#AggregateStatisticInfo__DiscontinueDate" shape="rect" coords="289,531,452,573" />
+  <area alt="Location" href="#AggregateStatisticInfo__Location" shape="rect" coords="289,713,391,755" />
+  <area alt="Type" href="#AggregateStatisticInfo__Location___Type" shape="rect" coords="579,598,651,640" />
+  <area alt="LocationName" href="#AggregateStatisticInfo__Location__LocationName" shape="rect" coords="579,675,725,717" />
+  <area alt="LocationRefId" href="#AggregateStatisticInfo__Location__LocationRefId" shape="rect" coords="579,742,722,784" />
+  <area alt="SIF_RefObject" href="#AggregateStatisticInfo__Location__LocationRefId___SIF_RefObject" shape="rect" coords="800,742,946,784" />
+  <area alt="Measure" href="#AggregateStatisticInfo__Measure" shape="rect" coords="289,809,389,851" />
+  <area alt="SIF_Metadata" href="#AggregateStatisticInfo__SIF_Metadata" shape="rect" coords="289,866,428,908" />
+  <area alt="SIF_ExtendedElements" href="#AggregateStatisticInfo__SIF_ExtendedElements" shape="rect" coords="289,923,504,965" />
+</map><a name="Table3611AggregateStatisticInfo" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo" /><span class="rootElement">AggregateStatisticInfo</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object defines the data that is being aggregated as well as the type of measurement that is being performed.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="AggregateStatisticInfo___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>Key</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__StatisticName" />StatisticName</td><td class="characteristics">M</td><td class="description"><p>Name of Aggregate Statistic</p><p><span class="title">Examples</span><br /><span class="example">Total Enrollment</span><br /><span class="example">Diploma Recipients</span><br /></p></td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__CalculationRule" />CalculationRule</td><td class="characteristics">O</td><td class="description"><p>Rule for calculating the aggregate statistic</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="AggregateStatisticInfo__CalculationRule___Type" />Type</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Description</dt><dt>Formula</dt><dt>URL</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__ApprovalDate" />ApprovalDate</td><td class="characteristics">O</td><td class="description"><p>Date for which the statistic is initially valid</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__ExpirationDate" />ExpirationDate</td><td class="characteristics">O</td><td class="description"><p>Date after which the statistic is no longer valid</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__ExclusionRules" />ExclusionRules</td><td class="characteristics">O</td><td class="description"><p>Rules for which statistic may not be reported.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__ExclusionRules__ExclusionRule" />ExclusionRules/ExclusionRule<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">OR</td><td class="description"><p>Rule for which statistic may not be reported</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="AggregateStatisticInfo__ExclusionRules__ExclusionRule___Type" />Type</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>SampleSize</dt><dt>Description</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__Source" />Source</td><td class="characteristics">O</td><td class="description"><p>System providing the data: i.e., SIS, Transportation,</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__EffectiveDate" />EffectiveDate</td><td class="characteristics">O</td><td class="description"><p>Effective date of the statistic</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__DiscontinueDate" />DiscontinueDate</td><td class="characteristics">O</td><td class="description"><p>Discontinue date of the statistic</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__Location" />Location</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="AggregateStatisticInfo__Location___Type" />Type</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Classroom</dt><dt>School</dt><dt>District</dt><dt>Campus</dt><dt>IntermediateUnit</dt><dt>StateEducationAgency</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__Location__LocationName" />Location/LocationName</td><td class="characteristics">O</td><td class="description"><p>Name of the location</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__Location__LocationRefId" />Location/LocationRefId</td><td class="characteristics">O</td><td class="description"><p><code>RefId</code> of the location object if the location is a SIF object such as <code>SchoolInfo</code>.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="AggregateStatisticInfo__Location__LocationRefId___SIF_RefObject" />SIF_RefObject</td><td class="characteristics">M</td><td class="description"><p>
+        Type of SIF object <code>Location</code> points to.
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>SchoolInfo</dt><dt>LEAInfo</dt><dt>RoomInfo</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__Measure" />Measure</td><td class="characteristics">O</td><td class="description"><p>Type of the statistic.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Count</dt><dt>Minimum</dt><dt>Maximum</dt><dt>Percent</dt><dt>Mean</dt><dt>Median</dt><dt>Mode</dt><dt>Sum</dt><dt>StandardDeviation</dt><dt>UnduplicatedCount</dt><dt>FTE</dt><dt>Other</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticInfo__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.6.1-1: AggregateStatisticInfo</span><a name="Example3611AggregateStatisticInfo" />
+<div class="example_parent"><div class="example"
+>&lt;AggregateStatisticInfo RefId="A5DECBD3161B4F5D9F46EBA64C87B002"&gt;
+  &lt;StatisticName&gt;Read Proficiency L1&lt;/StatisticName&gt;
+  &lt;CalculationRule Type="Description"&gt;Number of students scoring at Reading Proficiency Level 1&lt;/CalculationRule&gt;
+  &lt;ApprovalDate&gt;2002-09-01&lt;/ApprovalDate&gt;
+  &lt;ExpirationDate&gt;2006-06-30&lt;/ExpirationDate&gt;
+  &lt;ExclusionRules&gt;
+    &lt;ExclusionRule Type="SampleSize"&gt;N less than 10&lt;/ExclusionRule&gt;
+  &lt;/ExclusionRules&gt;
+  &lt;Source&gt;SIS&lt;/Source&gt;
+  &lt;Location Type="School"&gt;
+    &lt;LocationName&gt;Green River High School&lt;/LocationName&gt;
+    &lt;LocationRefId SIF_RefObject="SchoolInfo"&gt;279BCEE5515E4C1AAC3A765D1F069BC3&lt;/LocationRefId&gt;
+  &lt;/Location&gt;
+  &lt;Measure&gt;Count&lt;/Measure&gt;
+&lt;/AggregateStatisticInfo&gt;
+</div></div><span class="caption">Example 3.6.1-1: AggregateStatisticInfo</span></div>
+    <div class="element_section">
+      <a name="obj:AggregateCharacteristicInfo" />
+      <a name="362AggregateCharacteristicInfo" />
+      <h3 class="element_name">3.6.2 AggregateCharacteristicInfo</h3>
+      <p>This object defines the attribute of a group of objects that implicitly or explicitly defines a subset of the group.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3621AggregateCharacteristicInfo" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/AggregateCharacteristicInfo.png">
+          <img class="diagram" src="diagrams/AggregateCharacteristicInfo.png" alt="AggregateCharacteristicInfo" width="572" height="367" usemap="#AggregateCharacteristicInfo__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.6.2-1: AggregateCharacteristicInfo</span><map name="AggregateCharacteristicInfo__map" id="AggregateCharacteristicInfo__map">
+  <area alt="AggregateCharacteristicInfo" href="#AggregateCharacteristicInfo" shape="rect" coords="5,206,259,248" />
+  <area alt="RefId" href="#AggregateCharacteristicInfo___RefId" shape="rect" coords="334,15,409,57" />
+  <area alt="Description" href="#AggregateCharacteristicInfo__Description" shape="rect" coords="334,92,457,134" />
+  <area alt="Definition" href="#AggregateCharacteristicInfo__Definition" shape="rect" coords="334,149,443,191" />
+  <area alt="ElementName" href="#AggregateCharacteristicInfo__ElementName" shape="rect" coords="334,206,476,248" />
+  <area alt="SIF_Metadata" href="#AggregateCharacteristicInfo__SIF_Metadata" shape="rect" coords="334,263,473,305" />
+  <area alt="SIF_ExtendedElements" href="#AggregateCharacteristicInfo__SIF_ExtendedElements" shape="rect" coords="334,320,549,362" />
+</map><a name="Table3621AggregateCharacteristicInfo" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="AggregateCharacteristicInfo" /><span class="rootElement">AggregateCharacteristicInfo</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object defines the attribute of a group of objects that implicitly or explicitly defines a subset of the group.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="AggregateCharacteristicInfo___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>Key for aggregate characteristic information.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateCharacteristicInfo__Description" />Description</td><td class="characteristics">O</td><td class="description"><p>
+        Describes the supercategory of the characteristic described in the <code>Definition</code> element below.
+      </p><p><span class="title">Examples</span><br /><span class="example">Gender</span><br /><span class="example">Ethnicity</span><br /><span class="example">Grade</span><br /><span class="example">Economic Status</span><br /><span class="example">LEP Status</span><br /><span class="example">IEP Status</span><br /><span class="example">Migrant Status</span><br /></p></td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateCharacteristicInfo__Definition" />Definition</td><td class="characteristics">M</td><td class="description"><p>Defines the aggregate characteristic information.</p><p><span class="title">Examples</span><br /><span class="example">White</span><br /><span class="example">Male</span><br /><span class="example">Dropout</span><br /></p></td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateCharacteristicInfo__ElementName" />ElementName</td><td class="characteristics">O</td><td class="description"><p>
+        Reference to SIF elements or external authority (e.g., <code>StudentPersonal/Gender</code>).
+      </p><p><span class="title">Examples</span><br /><span class="example">Dropout Status</span><br /></p></td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateCharacteristicInfo__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateCharacteristicInfo__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.6.2-1: AggregateCharacteristicInfo</span><a name="Example3621AggregateCharacteristicInfo" />
+<div class="example_parent"><div class="example"
+>&lt;AggregateCharacteristicInfo RefId="06AF1D69FB064AB388983505714F18FB"&gt;
+  &lt;Description&gt;Ethnicity&lt;/Description&gt;
+  &lt;Definition&gt;Hispanic&lt;/Definition&gt;
+  &lt;ElementName&gt;StudentPersonal/Demographics/Ethnicity&lt;/ElementName&gt;
+&lt;/AggregateCharacteristicInfo&gt;
+</div></div><span class="caption">Example 3.6.2-1: AggregateCharacteristicInfo</span></div>
+    <div class="element_section">
+      <a name="obj:AggregateStatisticFact" />
+      <a name="363AggregateStatisticFact" />
+      <h3 class="element_name">3.6.3 AggregateStatisticFact</h3>
+      <p>This object is the actual value of the measurement. It is always associated with one statistic and one or more characteristics.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3631AggregateStatisticFact" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/AggregateStatisticFact.png">
+          <img class="diagram" src="diagrams/AggregateStatisticFact.png" alt="AggregateStatisticFact" width="936" height="424" usemap="#AggregateStatisticFact__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.6.3-1: AggregateStatisticFact</span><map name="AggregateStatisticFact__map" id="AggregateStatisticFact__map">
+  <area alt="AggregateStatisticFact" href="#AggregateStatisticFact" shape="rect" coords="5,234,217,276" />
+  <area alt="RefId" href="#AggregateStatisticFact___RefId" shape="rect" coords="292,15,367,57" />
+  <area alt="AggregateStatisticInfoRefId" href="#AggregateStatisticFact__AggregateStatisticInfoRefId" shape="rect" coords="292,92,542,134" />
+  <area alt="Characteristics" href="#AggregateStatisticFact__Characteristics" shape="rect" coords="292,149,444,191" />
+  <area alt="AggregateCharacteristicInfoRefId" href="#AggregateStatisticFact__Characteristics__AggregateCharacteristicInfoRefId" shape="rect" coords="617,149,913,191" />
+  <area alt="Excluded" href="#AggregateStatisticFact__Excluded" shape="rect" coords="292,206,398,248" />
+  <area alt="Value" href="#AggregateStatisticFact__Value" shape="rect" coords="292,263,369,305" />
+  <area alt="SIF_Metadata" href="#AggregateStatisticFact__SIF_Metadata" shape="rect" coords="292,320,431,362" />
+  <area alt="SIF_ExtendedElements" href="#AggregateStatisticFact__SIF_ExtendedElements" shape="rect" coords="292,377,507,419" />
+</map><a name="Table3631AggregateStatisticFact" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact" /><span class="rootElement">AggregateStatisticFact</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object is the actual value of the measurement. It is always associated with one statistic and one or more characteristics.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="AggregateStatisticFact___RefId" />RefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__AggregateStatisticInfoRefId" />AggregateStatisticInfoRefId</td><td class="characteristics">M</td><td class="description">
+      Reference to statistic defined by <code>AggregateStatisticInfo</code>.
+    &#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__Characteristics" />Characteristics</td><td class="characteristics">M</td><td class="description"><p>
+        Reference to one or more <code>AggregateCharacteristicInfo</code> objects.
+      </p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__Characteristics__AggregateCharacteristicInfoRefId" />Characteristics/AggregateCharacteristicInfoRefId<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>
+        Reference to an <code>AggregateCharacteristicInfo</code> object.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__Excluded" />Excluded</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Yes</dt><dt>No</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__Value" />Value</td><td class="characteristics">M</td><td class="description"><p>Value of the fact.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="AggregateStatisticFact__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.6.3-1: AggregateStatisticFact</span><a name="Example3631AggregateStatisticFact" />
+<div class="example_parent"><div class="example"
+>&lt;AggregateStatisticFact RefId="3A4E2822C696433B812B49DEAE557E41"&gt;
+  &lt;AggregateStatisticInfoRefId&gt;91A4209F7F4F4F4B9DC8D21CEFD1DC2F&lt;/AggregateStatisticInfoRefId&gt;
+  &lt;Characteristics&gt;
+    &lt;AggregateCharacteristicInfoRefId&gt;0B972D8644EE4D7994F5FF1C3131772D&lt;/AggregateCharacteristicInfoRefId&gt;
+  &lt;/Characteristics&gt;
+  &lt;Excluded&gt;No&lt;/Excluded&gt;
+  &lt;Value&gt;27&lt;/Value&gt;
+&lt;/AggregateStatisticFact&gt;
+</div></div><span class="caption">Example 3.6.3-1: AggregateStatisticFact</span></div>
+    <a name="FacilitiesAndEnergyManagement" />
+    <div class="navigation" id="bottomnavigation">
+      <hr />
+      <a href="index.html">home</a>
+      <a href="DataModelTaskForce.html">previous</a>
+      <a href="FacilitiesAndEnergyManagement.html">next</a>
+      <a href="index.html#contents">table of contents</a>
+    </div><p align='center'><a href='http://validator.w3.org/check?uri=referer'><img src='http://www.w3.org/Icons/valid-xhtml10' alt='Valid XHTML 1.0 Transitional'/></a></p></body>
+</html>

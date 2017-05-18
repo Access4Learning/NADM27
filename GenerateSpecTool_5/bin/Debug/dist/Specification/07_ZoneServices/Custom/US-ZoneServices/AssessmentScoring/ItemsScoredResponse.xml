@@ -1,0 +1,41 @@
+<DataObject name='ItemsScoredResponse'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>ItemsScoredResponse</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>Accepted</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>True or false (boolean) return value indicating whether the Online Assessment System has accepted the results.</p>
+		</Description>
+		<Type name='xs:boolean'/>
+	</Item>
+	<Item>
+		<Element>Receipt</Element>
+		<Characteristics>C</Characteristics>
+		<Description>
+			<p>If accepted, a confirmation token, such as a confirmation number.</p>
+		</Description>
+		<Type name='xs:token'/>
+	</Item>
+	<Item>
+		<Element>Description</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Description of additional information regarding the acceptance of these scores.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<xhtml:Example xmlns=''>
+		<ItemsScoredResponse>
+			<Accepted>true</Accepted>
+			<Receipt>00898788899-A2</Receipt>
+			<Description>Assessment Administration has been accepted by the scoring authority</Description>
+		</ItemsScoredResponse>
+	</xhtml:Example>
+</DataObject>

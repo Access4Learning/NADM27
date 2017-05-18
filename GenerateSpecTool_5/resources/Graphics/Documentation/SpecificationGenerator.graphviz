@@ -1,0 +1,909 @@
+digraph SpecificationGenerator {
+	graph [splines=true overlap=false]
+	//edge [len=120]
+	graph [truecolor ]
+	node [style=filled fillcolor="#00ff005f"]
+
+	// Generators
+	{rank=same; "[HTMLGenerator]" "[XSDGenerator]" "[DiagramGenerator]" "[SpreadSheetGenerator]";}
+
+	// Managers
+	"[InputManager]";
+
+
+	// The Code
+	"[HTMLGenerator]" -> "GenerateSpec()";
+	"[HTMLGenerator]" -> "GenerateSpecWS()";
+	"[XSDGenerator]" -> "GenerateXSD()";
+
+	"[InputManager]" -> "UpdateInput()";
+	//"[InputManager]" -> "Initialize()";
+
+	// Initialize()	
+	"UpdateInput()" -> "Initialize()";
+	"GenerateSpec()" -> "Initialize()";
+	"GenerateXSD()" -> "Initialize()";
+	"ValidateExamples()" -> "Initialize()";
+	"ListObjectAttributes()" -> "Initialize()";
+
+
+	// ValidateExamples()
+	"[HTMLGenerator]" -> "ValidateExamples()";
+
+	// ReadBuildComment
+	"Initialize()" -> "ReadBuildComment()";
+
+	// codeComparer
+	"WriteCodeSetAppendix()" -> codeComparer;
+
+	// "WriteCodeSetAppendix()"
+	"GenerateAppendix()" -> "WriteCodeSetAppendix()";
+	
+	// indexNumberComparer
+	"WriteMultiIndex()" -> indexNumberComparer;
+
+	// WriteMultiIndex()
+	"GenerateAppendix()" -> "WriteMultiIndex()";
+	
+	// GenerateAppendix()
+	"GenerateAppendices()" -> "GenerateAppendix()";
+
+	// GenerateAppendices()
+	"GenerateSpecWS()" -> "GenerateAppendices()";
+	"GenerateSpec()" -> "GenerateAppendices()";	
+
+	// path
+	"GenerateDataModel()" -> path;
+	"GenerateAppendix()" -> path;
+	"GenerateSection()" -> path;
+	"StartDocument()" -> path;
+	
+	// GenerateDataModel()
+	"GenerateSection()" -> "GenerateDataModel()";
+	
+	// GenerateSection()
+	"GenerateElementTable()" -> "GenerateSection()";
+	"GenerateDataModel()" -> "GenerateSection()";
+	"GenerateSections()" -> "GenerateSection()";
+	"WriteGenericAppendix()" -> "GenerateSection()";
+	"GenerateSection()" -> "GenerateSection()";
+
+	// GenerateElementTable()
+	"GenerateInfrastructure()" -> "GenerateElementTable()";
+	"GenerateElementTable()" -> "GenerateElementTable()";
+	"GenerateDataModel()" -> "GenerateElementTable()";
+	"WriteCommonTypesAppendix2()" -> "GenerateElementTable()";
+	
+	// StartDocument()
+	"GenerateDataModel()" -> "StartDocument()";
+	"GenerateAppendix()" -> "StartDocument()";
+	"GenerateSection()" -> "StartDocument()";
+	"GenerateSpecWS()" -> "StartDocument()";
+	"GenerateSpec()" -> "StartDocument()";
+
+	// GenerateSections()
+	"GenerateSpecWS()" -> "GenerateSections()";
+	"GenerateSpec()" -> "GenerateSections()";
+
+	// WriteGenericAppendix()
+	"GenerateAppendix()" -> "WriteGenericAppendix()";
+
+	// GenerateInfrastructure()
+	"GenerateSection()" -> "GenerateInfrastructure()";
+
+	// WriteCommonTypesAppendix2()
+	"GenerateAppendix()" -> "WriteCommonTypesAppendix2()";
+
+	// title
+	"StartDocument()" -> "title";
+	
+	// docId
+	"AddContents()" -> "docId";
+	"GenerateElementTable()" -> "docId";
+	"AddIndexItem()" -> "docId";
+	"GenerateSection()" -> "docId";
+	"StartDocument()" -> "docId";
+	"EndDocument()" -> "docId";
+	"GenerateSpecWS()" -> "docId";
+	"WriteAnchor()" -> "docId";
+
+	// AddContents()
+	"GenerateInfrastructure()" -> "AddContents()";
+	"GenerateElementTable()" -> "AddContents()";
+	"GenerateDataModel()" -> "AddContents()";
+	"GenerateAppendix()" -> "AddContents()";
+	"WriteCodeSetAppendix()" -> "AddContents()";
+	"GenerateSection()" -> "AddContents()";
+
+	// AddIndexItem()
+	"AddIndexItem()" -> "AddIndexItem()";
+	"AddExample()" -> "AddIndexItem()";
+	"AddTable()" -> "AddIndexItem()";
+	"AddFigure()" -> "AddIndexItem()";
+	"AddObject()" -> "AddIndexItem()";
+	"AddCommonElement()" -> "AddIndexItem()";
+	"AddCommonType()" -> "AddIndexItem()";
+	"AddElement()" -> "AddIndexItem()";
+	"AddAttribute()" -> "AddIndexItem()";
+
+	// EndDocument()
+	"GenerateDataModel()" -> "EndDocument()";
+	"GenerateAppendix()" -> "EndDocument()";
+	"GenerateSection()" -> "EndDocument()";
+	"GenerateSpecWS()" -> "EndDocument()";
+	"GenerateSpec()" -> "EndDocument()";
+	
+	// WriteAnchor()
+	"GenerateInfrastructure()" -> "WriteAnchor()";
+	"GenerateElementTable()" -> "WriteAnchor()";
+	"GenerateDataModel()" -> "WriteAnchor()";
+	"AddIndexItem()" -> "WriteAnchor()";
+	"GenerateAppendix()" -> "WriteAnchor()";
+	"WriteCodeSetAppendix()" -> "WriteAnchor()";
+	"WriteCommonTypesAppendix()" -> "WriteAnchor()";
+	"WriteBAckgroundDirectory()" -> "WriteAnchor()";
+	"GenerateSection()" -> "WriteAnchor()";
+	"GenerateSpecWS()" -> "WriteAnchor()";
+	"GenerateSpec()" -> "WriteAnchor()";
+	
+	// WriteCodeSetAppendix()
+	"GenerateAppendix()" -> "WriteCodeSetAppendix()";
+	
+	// AddExample()
+	"WriteExample()" -> "AddExample()";
+
+	// AddTable()
+	"GenerateElementTable()" -> "AddTable()";
+	"WriteMessage()" -> "AddTable()";
+	"GenerateSection()" -> "AddTable()";
+
+	// AddFigure()
+	"GenerateElementTable()" -> "AddFigure()";
+	"GenerateSection()" -> "AddFigure()";
+
+	// AddObject()
+	"GenerateElementTable()" -> "AddObject()";
+
+	// AddCommonElement()
+	"GenerateElemenTable()" -> "AddCommonElement()";
+	
+	// AddCommonType()
+	"GenerateElementTable()" -> "AddCommonType()";
+
+	// AddElement()
+	"GenerateElementTable()" -> "AddElement()";
+
+	// AddAttribute()
+	"GenerateElementTable()" -> "AddAttribute()";
+
+	// WriteExample()
+	"GenerateElementTable()" -> "WriteExample()";
+	"GenerateSection()" -> "WriteExample()";
+
+	// rootTitle
+	"GenerateDataModel()" -> "rootTitle";
+	"GenerateAppendix()" -> "rootTitle";
+	"GenerateSection()" -> "rootTitle";
+	"GenerateSpecWS()" -> "rootTitle";
+	"GenerateSpec()" -> "rootTitle";
+	
+	// actionListConstraints
+	"GetListModePredicate()" -> actionListConstraints;
+	"WriteSequence()" -> actionListConstraints;
+	"WriteDefinition()" -> actionListConstraints;
+	"GetListKey()" -> actionListConstraints;
+	
+	// GetListModePredicate()
+	"WriteSequence()" -> "GetListModePredicate()";
+	"WriteDefinition()" -> "GetListModePredicate()";
+	"GetListKey()" -> "GetListModePredicate()";
+	
+	// WriteSequence()
+	"WriteSequence()" -> "WriteSequence()";
+	"WriteDefinition()" -> "WriteSequence()";
+
+	// WriteDefinition()
+	"GenerateDefinition()" -> "WriteDefinition()";
+
+	// GenerateDefinition()
+	"GenerateCommonTypesXSD()" -> "GenerateDefinition()";
+	"GenerateDefinition()" -> "GenerateDefinition()";
+	
+	// GetListKey()
+	"WriteSIFType()" -> "GetListKey()";
+
+	// GenerateCommonTypesXSD()
+	"GenerateXSD()" -> "GenerateCommonTypesXSD()";
+
+	// listWithKeysConstraints
+	"ListModePredicate()" -> "listWithKeysConstraints";
+	"WriteSequence()" -> listWithKeysConstraints;
+	"WriteDefinition()" -> listWithKeysConstraints;
+	"GetListKey()" -> listWithKeysConstraints;
+
+	// rootDocId
+	"StartDocument()" -> rootDocId;
+	"GenerateNavigation()" -> rootDocId;
+	"EndDocument()" -> rootDocId;
+	"GenerateSpecWS()" -> rootDocId;
+	"GenerateSpec()" -> rootDocId;
+	
+	// GenerateNavigation()
+	"StartDocument()" -> "GenerateNavigation()";
+	"EndDocument()" -> "GenerateNavigation()";
+
+	// prevDocId
+	"GenerateSection()" -> prevDocId;
+	"StartDocument()" -> prevDocId;
+	"GenerateNavigation()" -> prevDocId;
+	"EndDocument()" -> prevDocId;
+	"GenerateSpecWS()" -> prevDocId;
+	"GenerateSpec()" -> prevDocId;
+
+	// nextDocId
+	nextDocId;
+
+	// doc
+	"Initialize()" -> doc;
+	"GenerateSpecWS()" -> doc;
+	"GenerateInfrastructureSpreadSheet()" -> doc;
+
+	// GenerateInfrastructureSpreadSheet()
+	
+	// navigator
+	"GenerateInfrastructure()" -> navigator;
+	"GenerateDataModel()" -> navigator;
+	"GenerateTitlePage()" -> navigator;
+	"GenerateSections()" -> navigator;
+	"GenerateAppendices()" -> navigator;
+	"WriteCommonTypesAppendix()" -> navigator;
+	"UpdateInput()" -> navigator;
+	"Initialize()" -> navigator;
+	"ReadBuildComment()" -> navigator;
+	"ListRepeatableElements()" -> navigator;
+	"ListUntypedElements()" -> navigator;
+	"GenerateSpecWS()" -> navigator;
+	"GenerateCommonTypesXSD()" -> navigator;
+	"GenerateInfrastructureXSD()" -> navigator;
+	"GenerateDataModelXSD()" -> navigator;
+	"GenerateCodeSetsXSD()" -> navigator;
+	"IsRootSIFElement()" -> navigator;
+	"GetListKey()" -> navigator;
+	"IsComplexType()" -> navigator;
+	"HasAttributes()" -> navigator;
+	"ShowObjectDependencies()" -> navigator;
+	"CountNumberOfElements()" -> navigator;
+	"CountNumberOfAttributes()" -> navigator;
+	"CountNumberOfObjects()"-> navigator;
+	"ValidateExamples()" -> navigator;
+	"ListObjectAttributes()" -> navigator;
+	"GenerateInfrastructure()" -> navigator;
+	"GenerateInfrastructureSpreadsheet()" -> navigator;
+
+
+	// CountNumberOfObjects()
+	
+	// CountNumberOfAttributes()
+
+	// ListObjectAttributes()
+
+	// CountNumberOfElements()
+
+	// ShowObjectDependencies()
+	
+	// HasAttributes()
+	"WriteSIFType()" -> "HasAttributes()";
+	"WriteSequence()" -> "HasAttributes()";
+	"WriteValuesSubset()" -> "HasAttributes()";
+	"WriteValuesAdditionalType()" -> "HasAttributes()";
+	"WriteType()" -> "HasAttributes()";
+	"WriteDefinition()" -> "HasAttributes()";
+	
+	// WriteType()
+	"WriteSequence()" -> "WriteType()";
+	"WriteAttributes()" -> "WriteType()";
+	"WriteDefinition()" -> "WriteType()";
+	
+
+	// WriteAttributes()
+	"WriteSequence()" -> "WriteAttributes()";
+	"WriteDefinition()" -> "WriteAttributes()";
+	"WriteValuesAdditionalType()" -> "WriteAttributes()";
+	"WriteType()" -> "WriteAttributes()";
+	"WriteSIFType()" -> "WriteAttributes()";
+	"WriteXSType()" -> "WriteAttributes()";
+	"WriteEmptyType()" -> "WriteAttributes()";
+	"WriteUnionType()" -> "WriteAttributes()";
+	"WriteChoiceType()" -> "WriteAttributes()";
+	
+	// WriteXSType()
+	"WriteType()" -> "WriteXSType()";
+
+	// WriteEmptyType()
+	"WriteType()" -> "WriteEmptyType()";
+
+	// WriteUnionType()
+	"WriteType()" -> "WriteUnionType()";
+
+	// WriteChoiceType()
+	"WriteType()" -> "WriteChoiceType()";
+
+	// WriteValuesAdditionalType()
+	"WriteType()" -> "WriteValuesAdditionalType()";
+
+	// WriteValuesSubset()
+	"WriteType" -> "WriteValuesSubset()";
+
+	// WriteSIFType()
+	"WriteType()" -> "WriteSIFType()";
+
+	// IsComplexType()
+	"WriteSIFType()" -> "IsComplexType()";
+	"IsComplexType()" -> "IsComplexType()";
+
+	// IsRootSIFElement();
+	"WriteSequence()" -> "IsRootSIFElement()";
+	"WriteChoiceType()" -> "IsRootSIFElement()";
+
+	// GenerateCodeSetsXSD()
+	"GenerateXSD()" -> "GenerateCodeSetsXSD()";
+	"GenerateCodeSetsXSD()" -> "GenerateCodeSetsXSD()";
+	"GenerateExternalCodeSets()" -> "GenerateCodeSetsXSD()";
+
+	// GenerateDataModelXSD()
+	"GenerateXSD()" -> "GenerateDataModelXSD()";
+
+	// GenerateInfrastructureXSD()
+	"GenerateXSD()" -> "GenerateInfrastructureXSD()";
+
+	// ListUntypedElements()
+	
+	// ListRepeatableElements()
+	
+	// GenerateTitlePage()
+	"GenerateSpecWS()" -> "GenerateTitlePage()";
+	"GenerateSpec()" -> "GenerateTitlePage()";
+
+	// rootWriter
+	"GenerateSection()" -> rootWriter;
+	"EndDocument()" -> rootWriter;
+	"Initialize()" -> rootWriter;
+	"GenerateSpecWS()" -> rootWriter;
+	"GenerateSpec()" -> rootWriter;
+	
+	// writer
+	"GenerateInfrastructure()" -> writer;
+	"WriteComments()" -> writer;
+	"GenerateElementTable()" -> writer;
+	"WriteBackgroundLink()" -> writer;
+	"GenerateDataModel()" -> writer;
+	"WriteExample()" -> writer;
+	"GenerateTitlePage()" -> writer;
+	"GenerateAppendix()" -> writer;
+	"WriteCodeSetAppendix()" -> writer;
+	"WriteCommonTypesAppendix()" -> writer;
+	"WriteGenericAppendix()" -> writer;
+	"WriteBackgroundDirectory()" -> writer;
+	"WriteContentsNumber()" -> writer;
+	"WriteContentsName()" -> writer;
+	"WriteValue()" -> writer;
+	"WriteMessage()" -> writer;
+	"GenerateSection()" -> writer;
+	"GenerateContents()" -> writer;
+	"StartXSDFile()" -> writer;
+	"WriteNewLine()" -> writer;
+	"EndXSDFile()" -> writer;
+	"StartDocument()" -> writer;
+	"GenerateNavigation()" -> writer;
+	"EndDocument()" -> writer;
+	"Initialize()" -> writer;
+	"GenerateSpecWS()" -> writer;
+	"GenerateSpec()" -> writer;
+	"GenerateCommonTypesXSD()" -> writer;
+	"GenerateInfrastructureXSD()" -> writer;
+	"GenerateDataModelXSD()" -> writer;
+	"GenerateCodeSetsXSD()" -> writer;
+	"WriteSequence()" -> writer;
+	"WriteDefinition()" -> writer;
+	"WriteListKeys()" -> writer;
+	"WriteObjectKeys()" -> writer;
+	"WriteAttributes()" -> writer;
+	"WriteAnnotation()" -> writer;
+	"WriteValuesSubsetType()" -> writer;
+	"WriteValuesAdditionalType()" -> writer;
+	"WriteType()" -> writer;
+	"WriteSIFType()" -> writer;
+	"WriteXSType()" -> writer;
+	"WriteEmptyType()" -> writer;
+	"WriteUnionType()" -> writer;
+	"WriteChoiceType()" -> writer;
+	"WriteEnumeratedValues()" -> writer;
+	"WriteValuesType()" -> writer;
+	"WriteAnchor()" -> writer;
+
+	// WriteMessage()
+	"GenerateSection()" -> "WriteMessage()";
+
+	// WriteValue()
+	"WriteMessage()" -> "WriteValue()";
+	
+	// WriteContentsName()
+	"WriteIndex()" -> "WriteContentsName()";
+	"WriteMultiIndex()" -> "WriteContentsName()";
+
+	// WriteContentsNumber()
+	"WriteIndex()" -> "WriteContentsNumber()";
+	"WriteMultiIndex()" -> "WriteContentsNumber()";
+
+	// WriteBackgroundDirectory()
+	"GenerateAppendix()" -> "WriteBackgroundDirectory()";
+	"WriteBackgroundDirectory()" -> "WriteBackgroundDirectory()";
+
+	// WriteComments()
+	"GenerateElementTable()" -> "WriteComments()";
+	"GenerateDataModel()" -> "WriteComments()";
+	"GenerateSection()" -> "WriteComments()";
+
+	// WriteBackgroundLink()
+	"GenerateElementTable()" -> "WriteBackgroundLink()";
+	"GenerateDataModel()" -> "WriteBackgroundLink()";
+
+	// StartXSDFile()
+	"GeneateCommonTypesXSD()" -> "StartXSDFile()";
+	"GenerateInfrastructureXSD()" -> "StartXSDFile()";
+	"GenerateDataModelXSD()" -> "StartXSDFile()";
+	"GenerateCodeSetsXSD()" -> "StartXSDFile()";
+	"StartXSDFile()" -> "StartXSDFile()";
+	
+	// WriteNewLine()
+	"WriteExample()" -> "WriteNewLine()";
+	"WriteNewLines()" -> "WriteNewLine()";
+	"GenerateCommonTypesXSD()" -> "WriteNewLine()";
+	"GenerateInfrastructureXSD()" -> "WriteNewLine()";
+	"GenerateDataModelXSD()" -> "WriteNewLine()";
+	"WriteDefinition()" -> "WriteNewLine()";
+	
+	// WriteNewLines()
+	
+	// EndXSDFile()
+	"GenerateXSD()" -> "EndXSDFile()";
+	"GenerateCommonTypeXSD()" -> "EndXSDFile()";
+	"GenerateInfrastructureXSD()" -> "EndXSDFile()";
+	"GenerateDataModelXSD()" -> "EndXSDFile()";
+	"GenerateCodeSetsXSD()" -> "EndXSDFile()";
+
+	// WriteListKeys()
+	"WriteSequence()" -> "WriteListKeys()";
+	"WriteDefinition()" -> "WriteListKeys()";
+	"WriteSIFType()" -> "WriteListKeys()";
+	
+	// WriteObjectKeys()
+	"WriteDefinition()" -> "WriteObjectKeys()";
+
+	// WriteAnnotation()
+	"WriteDefinition()" -> "WriteAnnotation()";
+	"WriteValueSubsetType()" -> "WriteAnnotation()";
+	"WriteSIFType()" -> "WriteAnnotation()";
+	"WriteXSType()" -> "WriteAnnotation()";
+	"WriteEmptyType()" -> "WriteAnnotation()";
+	"WriteUnionType()" -> "WriteAnnotation()";
+	"WriteChoiceType()" -> "WriteAnnotation()";
+	"WriteValuesType()"  -> "WriteAnnotation()";
+	
+	// WriteValuesSubsetType()
+	"WriteTye()" -> "WriteValuesSubsetType()";
+
+	// WriteIndex()
+	"GenerateAppendix()" -> "WriteIndex()";
+	"WriteIndex()" -> "WriteIndex()";
+
+	// WriteMultiIndex()
+	"GenerateAppendix()" -> "WriteMultiIndex()";
+	
+	// section
+	"GenerateSpecWS()" -> section;
+	"GenerateSpec()" -> section;
+
+	// level
+	"GenerateSpecWS()" -> level;
+	"GenerateSpec()" -> level;
+	
+	// quickContents
+	"AddContents()" -> quickContents;
+	"GenerateQuickContents()" -> quickContents;
+	"GenerateSpecWS()" -> quickContents;
+	"GenerateSpec()" -> quickContents;
+
+	// GenerateQuickContents()
+	"GenerateSpecWS()" -> "GenerateQuickContents()";
+	"GenerateSpec()" -> "GenerateQuickContents()";
+
+	// fullContents
+	"AddContents()" -> fullContents;
+	"GenerateFullContents()" -> fullContents;
+	"GenerateSpecWS()" -> fullContents;
+	"GenerateSpec()" -> fullContents;
+
+	// GenerateFullContents()
+	"GenerateSpecWS()" -> "GenerateFullContents()";
+	"GenerateSpec()" -> "GenerateFullContents()";
+
+	// examples
+	"AddExample()" -> examples;
+	"GenerateAppendix()" -> examples;
+	"GenerateSpecWS()" -> examples;
+	"GenerateSpec()" -> examples;
+
+	// tables
+	"AddTable()" -> tables;
+	"GenerateAppendix()" -> tables;
+	"GenerateSpecWS()" -> tables;
+	"GenerateSpec()" -> tables;
+
+	// figures
+	"AddFigure()" -> figures;
+	"GenerateAppendix()" -> figures;
+	"GenerateSpecWS()" -> figures;
+	"GenerateSpec()" -> figures;
+	
+	// objects
+	"AddObject()" -> objects;
+	"GenerateAppendix()" -> objects;
+	"GenerateSpec()" -> objects;
+
+	// commonElements
+	"AddCommonElement()" -> commonElements;
+	"GeneratorAppendix()" -> commonElements;
+	"GenerateSpec()" -> commonElements;
+
+	// commonTypes
+	"AddCommonType()" -> commonTypes;
+	"GenerateAppendix()" -> commonTypes;
+	"GenerateSpec()" -> commonTypes;
+	
+	// elements
+	"AddElement()" -> elements;
+	"GenerateAppendix()" -> elements;
+	"GenerateSpec()" -> elements;
+
+	// attributes
+	"AddAttribute()" -> AddElement;
+	"GenerateAppendix()" -> AddElement;
+	"GenerateSpec()" -> AddElement;
+	
+	// AddCommonElement()
+	"GenerateElementTable()" -> "AddCommonElement()";
+		
+	// AddFigure()
+	"GenerateElementTable()" -> "AddFigure()";
+	"GenerateSection()" -> "AddFigure()";
+
+	// AddTable()
+	"GenerateElementTable()" -> "AddTable()";
+	"WriteMessage()" -> "AddTable()";
+	"GenerateSection()" -> "AddTable()";
+
+	// AddExample()
+	"WriteExample()" -> "AddExample()";
+
+	// AddContents()
+	"GenerateInfrastructure()" -> "AddContents()";
+	"GenerateElementTable()" -> "AddContents()";
+	"GenerateDataModel()" -> "AddContents()";
+	"GenerateAppendix()" -> "AddContents()";
+	"WriteCodeSetAppendix()" -> "AddContents()";
+	"GenerateSection()" -> "AddContents()";
+
+	// AddCommonType()
+	"GenerateElementTable()" -> "AddCommonType()";
+
+	// AddElement()
+	"GenerateElementTable()" -> "AddElement()";
+
+	// AddAttribute()
+	"GenerateElementTable()" -> "AddAttribute()";
+
+	// namespaceManager
+	"Generator()" -> namespaceManager;
+	"Select()" -> namespaceManager;
+	"Evaluate()" -> namespaceManager;
+
+	// Select()
+	"GenerateInfrastructure()" -> "Select()";
+	"WriteComments()" -> "Select()";
+	"GenerateElementTable()" -> "Select()";
+	"GenerateDataModel()" -> "Select()";
+	"WriteExample()" -> "Select()";
+	"GenerateTitlePage()" -> "Select()";
+	"GenerateSections()" -> "Select()";
+	"GenerateAppendices()" -> "Select()";
+	"GenerateAppendix()" -> "Select()";
+	"WriteCodeSetAppendix()" -> "Select()";
+	"WriteCommonTypesAppendix()" -> "Select()";
+	"WriteCommonTypesAppendix2()" -> "Select()";
+	"WriteGenericAppendix()" -> "Select()";
+	"WriteValue()" -> "Select()";
+	"WriteMessage()" -> "Select()";
+	"GenerateSection()" -> "Select()";
+	"UpdateInput()" -> "Select()";
+	"ReadBuildComment()" -> "Select()";
+	"ListRepeatableElements()" -> "Select()";
+	"ListUntypedElementS()" -> "Select()";
+	"GenerateCommonTypesXSD()" -> "Select()";
+	"GenerateInfrastructureXSD()" -> "Select()";
+	"GenerateDataModelXSD()" -> "Select()";
+	"GenerateCodeSetsXSD()" -> "Select()";
+	"GenerateExternalCodeSetsXSD()" -> "Select()";
+	"IsLastChoiceChild()" -> "Select()";
+	"WriteSequence()" -> "Select()";
+	"WriteDefinition()" -> "Select()";
+	"IsChoice()" -> "Select()";
+	"IsEmpty()" -> "Select()";
+	"WriteDefinition()" -> "Select()";
+	"WriteAttributes()" -> "Select()";
+	"WriteAnnotation()" -> "Select()";
+	"WriteValuesSubsetType()" -> "Select()";
+	"WriteValuesAdditionalType()" -> "Select()";
+	"WriteType()" -> "Select()";
+	"IsRootSIFElement()" -> "Select()";
+	"GetListKey()" -> "Select()";
+	"IsComplex()" -> "Select()";
+	"HasAttributes()" -> "Select()";
+	"WriteXSType()" -> "Select()";
+	"WriteUnionType()" -> "Select()";
+	"WriteChoiceType()" -> "Select()";
+	"WriteEnumeratedValues()" -> "Select()";
+	"ShowObjectDependencies()" -> "Select()";
+	"ValidateExamples()" -> "Select()";
+	"ListObjectAttributes()" -> "Select()";
+	"GenerateInfrastructureSpreadsheet()" -> "Select()";
+	"GenerateElementTableSpreadsheet()" -> "Select()";
+	
+	// Evaluate()
+	"CountNumberOfElements()" -> "Evaluate()";
+	"CountNumberOfAttributes()" -> "Evaluate()";
+	"CountNumberOfObjects()" -> "Evaluate()";
+
+	// IsLastChoiceChild()
+	"WriteSequence()" -> "IsLastChoiceChild()";
+
+	// GenerateElementTableSpreadsheet()
+	"GenerateInfrastructureSpreadsheet()" -> "GenerateElementTableSpreadsheet()";
+	
+	// inputPath
+	"UpdateInput()" -> inputPath;
+	"Initialize()" -> inputPath;
+	"GenerateSpecWS()" -> inputPath;
+	"GenerateInfrastructureSpreadsheet()" -> inputPath;
+
+	// outputPath
+	"WriteBackgroundLink()" -> outputPath;
+	"GenerateAppendix()" -> outputPath;
+	"WriteBackgroundDirectory()" -> outputPath;
+	"GenerateSpecWS()" -> outputPath;
+	"GenerateSpec()" -> outputPath;
+	"ValidateExamples()" -> outputPath;
+	
+	// rootFileName
+	"GenerateSpecWS()" -> rootFileName;
+	"GenerateSpec()" -> rootFileName;
+	
+	// singleDocument
+	"GenerateContents()" -> singleDocument;
+	"StartDocument()" -> singleDocument;
+	"GenerateNavigation()" -> singleDocument;
+	"EndDocument()" -> singleDocument;
+	"GenerateSpecWS()" -> singleDocument;
+	"GenerateSpec()" -> singleDocument;
+	"WriteAnchor()" -> singleDocument;
+
+	// outputXSDPath
+	"StartXSDFile()" -> outputXSDPath;
+	
+	// outputDiagramPath
+	"GeneratorElementTable()" -> outputDiagramPath;
+	"GenerateDefinition()" -> outputDiagramPath;
+	
+	// inDataObject
+	"GenerateCommonTypesXSD()" -> inDataObject;
+	"GenerateInfrastructureXSD()" -> inDataObject;
+	"GenerateDataModelXSD()" -> inDataObject;
+	"WriteSequence()" -> inDataObject;
+	"WriteDefinition()" -> inDataObject;
+	"WriteListKeys()" -> inDataObject;
+	"WriteObjectKeys()" -> inDataObject;
+	"WriteType()" -> inDataObject;
+	"WriteSIFType()" -> inDataObject;
+	"WriteXSType()" -> inDataObject;
+
+	// inCommonElement
+	"GenerateCommonTypesXSD()" -> inCommonElement;
+	"GenerateInfrastructureXSD()" -> inCommonElement;
+	"GenerateDataModelXSD()" -> inCommonElement;
+	"WriteType()" -> inCommonElement;
+	"WriteSIFType()" -> inCommonElement;
+	"WriteXSType()" -> inCommonElement;
+
+	// inInfrastructure
+	"GenerateInfrastructureXSD()" -> inInfrastructure;
+	"WriteSequence()" -> inInfrastructure;
+	"WriteListKeys()" -> inInfrastructure;
+	"WriteObjectKeys()" -> inInfrastructure;
+	"WriteType()" -> inInfrastructure;
+	"WriteSIFType()" -> inInfrastructure;
+	"WriteXSType()" -> inInfrastructure;
+	
+	// nextSectionHack
+	"GenerateSections()" -> nextSectionHack;
+
+	// sifNamespace
+	"WriteCommonTypesAppendix()" -> sifNamespace;
+	"StartXSDFile()" -> sifNamespace;
+	"ValidateExamples()" -> sifNamespace;
+	"ValidateExample()" -> sifNamespace;
+
+	// intl
+	"GenerateElementTable()" -> intl;
+	"BuildInput()" -> intl;
+	"WriteExample()" -> intl;
+	"WriteMessage()" -> intl;
+	"GenerateSection()" -> intl;
+	"ListRepeatableElements()" -> intl;
+	"ListUntypedElements()" -> intl;
+	"IsLastChoiceChild()" -> intl;
+	"WriteSequence()" -> intl;
+	"GenerateDefinition()" -> intl;
+	"GetListKey()" -> intl;
+	"IsComplexType()" -> intl;
+	"HasAttribute()" -> intl;
+	"UpdateInput()" -> intl;
+	"ShowObjectDependencies()" -> intl;
+	"CountNumberOfElements()" -> intl;
+	"CountNumberOfAttributes()" -> intl;
+	"ValidateExamples()" -> intl;
+	"ListObjectAttributes()" -> intl;
+	"GenerateElementTableSpreadsheet()" -> intl;
+	
+	// singleSchema
+	"GenerateXSD()" -> singleSchema;
+	"GenerateCommonTypesXSD()" -> singleSchema;
+	"GenerateInfrastructureXSD()" -> singleSchema;
+	"GenerateDataModelXSD()" -> singleSchema;
+	"GenerateCodeSetsXSD()" -> singleSchema;
+	
+	// annotate
+	"GenerateCodeSetsXSD()" -> annotate;
+	"WriteAnnotation()" -> annotate;
+	"WriteValuesSubsetType()" -> annotate;
+	"WriteValuesAdditionalType()" -> annotate;
+	"WriteEnumeratedValues()" -> annotate;
+
+	// isDataModelXSD
+	"GenerateCommonTypesXSD()" -> isDataModelXSD;
+	"WriteSequence()" -> isDataModelXSD;
+	"WriteListKeys()" -> isDataModelXSD;
+	"WriteObjectKey()" -> isDataModelXSD;
+	"WriteType()" -> isDataModelXSD;
+	"WriteSIFType()" -> isDataModelXSD;
+	"WriteXSType()" -> isDataModelXSD;
+
+	// isSIFMessage2XSD
+	"GenerateCommonTypesXSD()" -> isSIFMessage2XSD;
+	"WriteObjectKeys()" -> isSIFMessage2XSD;
+	"WriteType()" -> isSIFMessage2XSD;
+	"WriteSIFType()" -> isSIFMessage2XSD;
+	"WriteXSType()" -> isSIFMessage2XSD;
+
+	// diagram
+	"GenerateDefinition()" -> diagram;
+	"ShowObjectDependencies()" -> diagram;
+
+	// addNilAttributes
+	"StartXSDFile()" -> addNilAttributes;
+	"WriteSequence()" -> addNilAttributes;
+	"WriteAttributes()" -> addNilAttributes;
+	"WriteType()" -> addNilAttributes
+	"WriteSIFType()" -> addNilAttributes;
+	
+	// needNilAttribute
+	"WriteSequence()" -> needNilAttribute;
+	"WriteAttributes()" -> needNilAttribute;
+	"WriteType()" -> needNilAttribute;
+	"WriteSIFType()" -> needNilAttribute;
+	
+	// diagrammer
+	"GenerateDefinition()" -> diagrammer;
+	"ShowObjectDependencies()" -> diagrammer;
+
+	// rootNode
+	"GenerateDefinition()" -> rootNode;
+	"WriteDefinition()" -> rootNode;
+	
+	// currentNode
+	"WriteSequence()" -> currentNode;
+	"WriteDefinition()" -> currentNode;
+	"WriteAttributes()" -> currentNode;
+	"WriteValuesSubsetType()" -> currentNode;
+	"WriteValuesAdditionalType()" -> currentNode;
+	"WriteType()" -> currentNode;
+	"WriteSIFType()" -> currentNode;
+	"WriteXSType()" -> currentNode;
+	"WriteEmptyType()" -> currentNode;
+	"WriteUnionType()" -> currentNode;
+	"WriteChoiceType()" -> currentNode;
+	"WriteValuesType()" -> currentNode;
+	
+	// currentAttribute
+	"WriteAttributes()" -> currentAttribute;
+	"WriteValuesSubset()" -> currentAttribute;
+	"WriteValuesAdditionalType()" -> currentAttribute;
+	"WriteType()" -> currentAttribute;
+	"WriteSIFType()" -> currentAttribute;
+	"WriteXSType()" -> currentAttribute;
+	"WriteUnionType()" -> currentAttribute;
+	"WriteValuesType()" -> currentAttribute;
+	
+	// newLine
+	"WriteNewLine()" -> newLine;
+	
+	// ssWriter
+	"StartSpreadsheet()" -> ssWriter;
+	"StartSpreadsheetInfrastructure()" -> ssWriter;
+	"EndSpreadsheetWorksheet()" -> ssWriter;
+	"EndSpreadsheetInfrastructure()" -> ssWriter;
+	"StartSpreadsheetDataModel()" -> ssWriter;
+	"EndSpreadsheetDataModel()" -> ssWriter;
+	"StartSpreadsheetCommonTypes()" -> ssWriter;
+	"EndSpreadsheetCommonTypes()" -> ssWriter;
+	"StartSpreadsheetCodeSets()" -> ssWriter;
+	"EndSpreadsheetCodeSets()" -> ssWriter;
+	"StartSpreadsheetExternalCodeSets()" -> ssWriter
+	"EndSpreadsheetExternalCodeSets()" -> ssWriter;
+	"EndSpreadsheet()" -> ssWriter;
+	
+	// ssStringWriter
+	"StartSpreadsheetInfrastructure()" -> ssStringWriter;
+	"EndSpreadsheetInfrastructure()" -> ssStringWriter;
+	"StartSpreadsheetDataModel()" -> ssStringWriter;
+	"EndSpreadsheetDataModel()" -> ssStringWriter
+	"StartSpreaqdsheetCommonTypes()" -> ssStringWriter;
+	"EndSpreadsheetCommonTypes()" -> ssStringWriter;
+	"StartSpreadsheetCodeSets()" -> ssStringWriter;
+	"EndSpreadsheetCodeSets()" -> ssStringWriter
+	"StartSpreadsheetExternalCodeSets()" -> ssStringWriter;
+	"EndSpreadsheetExternalCodeSets()" -> ssStringWriter
+
+	// buildComment
+	"StartXSDFile()" -> buildComment;
+	"ReadBuildComment()" -> buildComment;
+	
+	// currentGroup
+	"GenerateDataModelXSD()" -> currentGroup;
+
+	// objectNameOverride
+	"GenerateCommonTypesXSD()" -> objectNameOverride;
+	"GenerateInfrastructureXSD()" -> objectNameOverride;
+	"GenerateDefinition()" -> objectNameOverride;
+	
+	// keyNames
+	"Initialize()" -> keyNames;
+	"GetListKeyName()" -> keyNames;
+	
+	// mEmptyTypes
+	"GenerateCommonTypesXSD()" -> mEmptyTypes;
+	"WriteSIFType()" -> mEmptyTypes;
+	"WriteXSType()" -> mEmptyTypes;
+	
+	// exampleXML
+	"ValidateExamples()" -> exampleXML;
+	
+	// errorXML
+	"ValidateExamples()" -> errorXML;
+	"ShowCompileErrors()" -> errorXML;
+
+	// ShowCompileErrors()
+	"ValidateExample()" -> "ShowCompileErrors()";
+
+	
+	
+}

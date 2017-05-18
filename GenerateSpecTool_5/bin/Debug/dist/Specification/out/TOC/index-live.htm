@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>SIF Implementation Specifications 2.6 (US)</title>
+	<link rel="stylesheet" type="text/css" href="include/document.css" />
+    <link rel="stylesheet" type="text/css" href="include/specification.css" />
+</head>
+
+<body>
+    <p align="center">
+        <a href="index.asp">	
+            <img src="images/logo.gif" alt="SIF Association" /></a></p>
+    <p align="center" id="tagline">
+        Where Innovation and Interoperability Are Standard&reg;</p>
+    <p>
+        <h1>SIF Implementation Specifications version 2.6 Documents</h1>
+		 <h3>This release of the SIF specification consists of the following components:</h3>
+    </p>
+    <table id="tlayout" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="tdleft" valign="top">
+                <div class="tdheader">  </div>
+                <div>
+                    
+						<ul>
+							<li>
+								<h2>SIF Global Infrastructure Implementation Specification 2.6</h2>
+								
+								<p>This document contains the HTTP/S Transport and Messaging Specification, upgraded from chapters 1-5 of the earlier SIF v2.4 release. It describes the overall SIF Architecture, and the HTTP/S reference transport.</p>
+								<p>It is independent of any locale-specific Data Objects or Zone Services. As a result, this document is directly reusable by other SIF locales (AU, UK) with very different object types.</p>
+								<p>The link below provides access to the Specification document in PDF format: </br>
+								<ul>
+									<li>
+										<a href="http://specification.sifassociation.org/Global/2.6/infrastructure/SIF_Infrastructure2p6-7.pdf">SIF Global Infrastructure Specification 2.6 (<img src="images/pdflogo.bmp"/> 5.0 MB)</a> 
+										<br/><div style="font-size:x-small">[Last updated: 08/16/12]</div>
+									</li>
+								</ul>	
+								</p>
+							</li>
+											
+							<li><h2>SIF Global Web Services Implementation Specification 2.6</h2>
+							
+								<p>This document is completely new (it has no equivalent in the SIF v2.4 release), and describes the new SIF Web Service transport alternative. It specifies how the web service technologies SOAP and WSDL were leveraged by the SIF standard to create a second reference transport for conveying SIF messages between agent/applications and the ZIS. </p>
+								<p>It relies on, rather than repeats, the infrastructure information contained in the SIF Global Infrastructure 2.6 document, and focuses primarily on the differences between the two reference transports and how to map SIF messages between them. It includes the following sections:</p>
+									<ul>
+										<li>Set of guiding principles that drove the design of the web service functionality</li>
+										<li>Glossary of web service terminology</li>
+										<li>Summary of the new architectural components</li>
+										<li>Listing of all normative dependencies on horizontal web service standards</li>
+										<li>Element-by-element mapping between HTTP/S messaging and SOAP transport messaging</li>
+										<li>Definition of how WS-Addressing elements are used in the SOAP header</li>
+										<li>Complete operation-by-operation description of the WSDL files wrapping the ZIS and Push Agent functionality</li>
+									</ul>	
+							</li>
+							<p>Like the SIF Global Infrastructure 2.6, this document is also independent of any particular SIF Data Model, and is directly reusable by standard releases in all SIF locales.</p>
+							<p>The link below provides access to the Specification document in PDF format: </p>
+							<a href="http://specification.sifassociation.org/Global/2.6/ws/SIF_WebServices2p6-4.pdf">SIF Global Web Service Implementation Specification 2.6 (<img src="images/pdflogo.bmp"/> 1.2 MB)</a>
+							<br/><div style="font-size:x-small">[Last updated: 08/16/12]</div>
+							
+							<!--<p>A SIF Global Web Services Implementation 2.6 Developer’s Toolkit containing the set of WSDL and SOAP Binding XML schema files matching this specification may be found at:</p>
+								<a href="http://specification.sifassociation.org/Global/2.6/ws/SIFv2.6WebServiceDeveloperKit-3.zip">http://specification.sifassociation.org/Global/2.6/ws/SIFv2.6WebServiceDeveloperKit-3.zip</a> 
+							-->
+							<li>
+								<h2>SIF Data Model Implementation Specification (US) 2.6</h2>
+									<p>This document consists of the upgraded chapters 6 and 7 (Data Model and Zone Services) of the earlier SIF v2.4 release.  It describes the set of Data Objects and Zone Services that are unique to the SIF v2.6 US release.  It includes URL pointers to various forms of the SIF_Message schema which encompass both the HTTP/S infrastructure and the set of Data Object and Zone Service element definitions. </p>
+									<p>This document, while dependent upon the underlying infrastructure, can be viewed as describing the US locale-specific Data Model and Zone Service objects. These Data Model and Zone Service objects may also be used in the Web Services transport.</p>
+									<p>The link below provides access to the Specification document:</p>
+									<a href="http://specification.sifassociation.org/Implementation/US/2.6/html/">SIF Data Model Implementation Specification (US) 2.6 (HTML)</a>
+									<br/><div style="font-size:x-small">[Last updated: 08/16/12]</div>
+									<p>This link provides access to the Data Model in a non-normative Excel docuument:</p>
+									<a href="http://specification.sifassociation.org/Implementation/US/2.6/DataModelImplementationSpecification.xls">SIF Data Model Implementation in Excel Format (1.2 MB)</a>
+									<br/><div style="font-size:x-small">[Last updated: 08/16/12]</div>
+							</li>
+				
+						</ul>
+	
+			</div>
+                <br />
+            </td>
+        </tr>
+
+		<tr>
+			<td>
+			<h2>Infrastructure Additions in 2.6</h2>
+			<p>In addition to the new data model, the SIF US v2.6 release also incorporates the SIF International v2.6 Infrastructure, which is a building block for subsequent SIF releases in all three SIF locales. </p>
+			<p>This updated infrastructure release defines the new “Events” message, which is a container for a collection of bundled individual SIF Event messages. Early indications are that, particularly in periods of heavy message traffic such as the end of a reporting period where a flood of attendance Events is often generated, bundling greatly reduces the number of messages exchanged, thereby significantly increasing both the scalability and responsiveness of the SIF Zone.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<h2>Data Model Additions in 2.6</h2>
+			<p>See Section 2.4 of the Data Model document.</p>
+			<p></p>
+			</td>
+		</tr>
+				
+		
+    </table>
+		
+	
+    <p id="copyright">
+        Copyright &copy; 2012
+        Schools Interoperability Framework Association. All Rights Reserved.</p>
+</body>
+</html>

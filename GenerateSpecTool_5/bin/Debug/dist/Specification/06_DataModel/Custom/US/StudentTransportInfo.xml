@@ -1,0 +1,442 @@
+<DataObject name="StudentTransportInfo">
+  <Key>@RefId</Key>
+  <EventsReported>true</EventsReported>
+  <Item>
+    <Element>StudentTransportInfo</Element>
+    <Description>
+      <p>
+        This object contains transportation information about a student. Students should have at least two
+        StudentTransportInfo objects associated with them: one for inbound information (getting to school) and one for
+        outbound information (leaving school). If their transportation changes based on the day of the week, then a student
+        will have more than two StudentTransportInfo objects.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies this object.</p>
+    </Description>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+  </Item>
+  <Item>
+
+    <Attribute>StudentPersonalRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the student that this object refers to.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The direction of transportation that this object refers to.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Inbound</Code>
+      </Value>
+      <Value>
+        <Code>Outbound</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+
+    <Attribute>DayOfWeek</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This attribute indicates the day(s) of the week to which this object refers.</p>
+    </Description>
+    <Type name="xs:token"></Type>
+    <Facets>
+      <xs:pattern value="(Mo)?(Tu)?(We)?(Th)?(Fr)?(Sa)?(Su)?"/>
+    </Facets>
+  </Item>
+  <Item>
+
+    <Attribute>SchoolInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID referring to the school that the student attends on these day(s) of the week.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Element>Eligibility</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Eligibility status of student for district transportation for this trip.</p>
+      <p>
+        Note: this element has been deprecated&#8212;use <code>TransportationStatus</code> and <code>PublicExpense</code>.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Bus</Code>
+      </Value>
+      <Value>
+        <Code>Walk</Code>
+      </Value>
+      <Value>
+        <Code>BusHazard</Code>
+      </Value>
+      <Value>
+        <Code>BusOutOfAttendance</Code>
+      </Value>
+      <Value>
+        <Code>ParentPay</Code>
+      </Value>
+      <Value>
+        <Code>Unknown</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>HomeToSchoolDistance</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Distance between the student’s home address and the school.</p>
+    </Description>
+    <Type name="xs:decimal"/>
+  </Item>
+  <Item>
+    <Attribute>Unit</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Units used in distance reporting.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>km</Code>
+        <Text>Kilometers</Text>
+      </Value>
+      <Value>
+        <Code>m</Code>
+        <Text>Miles</Text>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>WalkToStopDistance</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Distance between the student’s address and the bus stop where they are picked up or dropped off.</p>
+    </Description>
+    <Type name="xs:decimal"/>
+  </Item>
+  <Item>
+    <Attribute>Unit</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Units used in distance reporting.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>km</Code>
+        <Text>Kilometers</Text>
+      </Value>
+      <Value>
+        <Code>m</Code>
+        <Text>Miles</Text>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>StopToSchoolDistance</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Distance between the bus stop where a student is picked up or dropped off and the school.</p>
+    </Description>
+    <Type name="xs:decimal"/>
+  </Item>
+  <Item>
+    <Attribute>Unit</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Units used in distance reporting.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>km</Code>
+        <Text>Kilometers</Text>
+      </Value>
+      <Value>
+        <Code>m</Code>
+        <Text>Miles</Text>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>OriginPoint</Element>
+    <Characteristics>O</Characteristics>
+  </Item>
+  <Item>
+    <Attribute>BusRouteDetailRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>/ArrivalTime</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The time that the bus associated with this route will stop at this bus stop.</p>
+    </Description>
+    <Type name="xs:time"/>
+  </Item>
+  <Item>
+    <Element>/RouteNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A unique identifier for the route. For instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Element>/RouteDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Short explanation of the route.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  <Item>
+    <Element>/VehicleNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Vehicle number of the bus.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Element>/BusStopDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>An explanation of this location.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  <Item>
+    <Element>HomeBusRouteDetail</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>GUID referring to a BusRouteDetail object that identifies the origin bus stop for an inbound route or the destination bus stop for an outbound route.</p>
+      <p>If the HomeBusRouteDetail element does not exist, then the student does not ride a bus to/from school.</p>
+      <p>
+        Note: this element has been deprecated&#8212;use <code>OriginPoint</code> and <code>DestinationPoint</code>.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Values>
+      <Value>
+        <Code>BusRouteDetail</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>TransferPoints</Element>
+    <Characteristics>O</Characteristics>
+    <List mode="List"/>
+  </Item>
+
+  <Item>
+    <Element>/TransferPoint</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>
+        There should be one TransferPoint element for each intermediate point on a trip.
+        The "embark" and "disembark" bus stops for a single transfer point must be at the same location.
+        To order multiple TransferPoint elements, use the Time element of the BusStopInfo objects referenced by the attributes.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>//EmbarkBusRouteDetail</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Values>
+      <Value>
+        <Code>BusRouteDetail</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+
+    <Element>//DisembarkBusRouteDetail</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Values>
+      <Value>
+        <Code>BusRouteDetail</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>SchoolBusRouteDetail</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>GUID referring to a BusRouteDetail object that identifies the origin bus stop for an outbound route or the destination bus stop for an inbound route.</p>
+      <p>If the SchoolBusRouteDetail does not exist, then the student does not ride a bus to/from school.</p>
+      <p>
+        Note: this element has been deprecated&#8212;use <code>OriginPoint</code> and <code>DestinationPoint</code>.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Values>
+      <Value>
+        <Code>BusRouteDetail</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>DestinationPoint</Element>
+    <Characteristics>O</Characteristics>
+  </Item>
+  <Item>
+    <Attribute>BusRouteDetailRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>/ArrivalTime</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The time that the bus associated with this route will stop at this bus stop.</p>
+    </Description>
+    <Type name="xs:time"/>
+  </Item>
+  <Item>
+    <Element>/RouteNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A unique identifier for the route. F or instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Element>/RouteDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Short explanation of the route. It may be used to designate an area, or used to color-code bus routes (the "orange" route).</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  <Item>
+    <Element>/VehicleNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Vehicle number of the bus.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>/BusStopDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>An explanation of this location.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+
+  <Item>
+    <Element>StateAidQualification</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The qualification status of a student entitling local education agency to receive state transportation aid.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0720StateTransportationAidQualificationType"></Type>
+  </Item>
+  <Item>
+    <Element>TransportationStatus</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information about whether or not a student is transported to and/or from school or receives services, aid, or payment in lieu of transportation.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0719TransportationStatusType"></Type>
+  </Item>
+  <Item>
+    <Element>PublicExpense</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The eligibility of a student for transportation between home and school at local public expense because of distance, disability, or other reasons.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0721TransportationAtPublicExpenseEligibilityType"></Type>
+  </Item>
+
+
+  <Item>
+    <Element>SIF_Metadata</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_Metadata"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_ExtendedElements</Element>
+
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+  </Item>
+  <xhtml:Example xmlns="">
+    <StudentTransportInfo RefId="D3E34B359D75101A8C3D00AA001A1652" StudentPersonalRefId="C2F23F450B86234B9B3D00AA001A1652"
+      Type="Inbound" DayOfWeek="MoWeFr" SchoolInfoRefId="B7A34E561C97345C0A4E11BB112B2753">
+      <Eligibility>Bus</Eligibility>
+      <HomeToSchoolDistance Unit="m">2.4</HomeToSchoolDistance>
+      <WalkToStopDistance Unit="m">.4</WalkToStopDistance>
+      <StopToSchoolDistance Unit="m">2.0</StopToSchoolDistance>
+      <OriginPoint BusRouteDetailRefId="AAE34B359D75101A8C3D00AA001A1652">
+        <ArrivalTime>09:10:00</ArrivalTime>
+        <RouteNumber>134A</RouteNumber>
+        <RouteDescription>RiverFront</RouteDescription>
+        <VehicleNumber>16</VehicleNumber>
+        <BusStopDescription>Elm St @ Pine Ave</BusStopDescription>
+      </OriginPoint>
+      <HomeBusRouteDetail SIF_RefObject="BusRouteDetail">A3B7564E971C5C344E0ABB11EE272B53</HomeBusRouteDetail>
+      <SchoolBusRouteDetail SIF_RefObject="BusRouteDetail">7B3AE465C17943C5A0E411BB11B27235</SchoolBusRouteDetail>
+      <DestinationPoint BusRouteDetailRefId="AAE34B359D75101A8C3D00AA001A1652">
+        <ArrivalTime>09:31:00</ArrivalTime>
+        <RouteNumber>134P</RouteNumber>
+        <RouteDescription>RiverFront</RouteDescription>
+        <VehicleNumber>16</VehicleNumber>
+        <BusStopDescription>George Washington Elementary West</BusStopDescription>
+      </DestinationPoint>
+      <StateAidQualification>2065</StateAidQualification>
+      <TransportationStatus>2060</TransportationStatus>
+      <PublicExpense>2068</PublicExpense>
+    </StudentTransportInfo>
+  </xhtml:Example>
+</DataObject>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sifSpecificationGeneratorConfig 
+    xmlns="http://www.sifassociation.org/sifSpecificationGenerator/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.sifassociation.org/sifSpecificationGenerator/1.0 sifSpecificationGeneratorConfig.xsd">
+  <globalSettings>
+    <inputDocument></inputDocument>
+    <sifNamespace></sifNamespace>
+    <localizationCode></localizationCode>
+	<schemaVersion></schemaVersion>
+  </globalSettings>
+  
+  
+  <htmlDocuments>
+    <!-- document 1-->
+    <htmlDocument>
+      <singleDocument></singleDocument> 
+      <rootDocumentFileName></rootDocumentFileName>
+      <rootTitle></rootTitle>
+      <nextSectionHack></nextSectionHack>
+    </htmlDocument>
+  
+    <!-- document 2 (must be a copy of document 1)-->
+    <htmlDocument>
+      <singleDocument></singleDocument> 
+      <rootDocumentFileName></rootDocumentFileName>
+      <rootTitle></rootTitle>
+      <nextSectionHack></nextSectionHack>
+    </htmlDocument>
+  </htmlDocuments>
+
+  <webServiceDocuments>
+    <!-- document 1-->
+    <webServiceDocument>
+      <singleDocument></singleDocument>
+      <rootDocumentFileName></rootDocumentFileName>
+    </webServiceDocument>
+  
+  <!-- document 2 (must be a copy of document 1)-->
+  <webServiceDocument>
+      <singleDocument></singleDocument>
+      <rootDocumentFileName></rootDocumentFileName>
+    </webServiceDocument>
+  </webServiceDocuments>
+  
+  
+  <xsdDocuments>
+    <!-- option 1-->
+    <xsdDocument>
+      <xsdTitle></xsdTitle>
+      <diagram></diagram>
+      <isDataModelXsd></isDataModelXsd>
+      <singleSchema></singleSchema>
+      <annotate></annotate>
+      <listWithKeyConstraints></listWithKeyConstraints>
+      <isSifMessage2Xsd></isSifMessage2Xsd>
+    </xsdDocument>
+
+    <!-- option 2-->
+    <xsdDocument>
+      <xsdTitle></xsdTitle>
+      <diagram></diagram>
+      <isDataModelXsd></isDataModelXsd>
+      <singleSchema></singleSchema>
+      <annotate></annotate>
+      <listWithKeyConstraints></listWithKeyConstraints>
+      <isSifMessage2Xsd></isSifMessage2Xsd>
+    </xsdDocument>
+    
+  </xsdDocuments>
+  
+  
+</sifSpecificationGeneratorConfig>

@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>SIF Implementation Specification 2.7M - Professional Development Working Group</title>
+    <link rel="stylesheet" type="text/css" href="include/document.css" />
+    <link rel="stylesheet" type="text/css" href="include/specification.css" />
+  </head>
+  <body>
+    <div class="navigation" id="topnavigation">
+      <a href="index.html">home</a>
+      <a href="index.html#contents">table of contents</a>
+      <hr />
+    </div>
+    <h2>3.15 Professional Development Working Group</h2>
+    <p>
+        The Professional Development Working Group assesses the interoperability needs of state and local education
+        agencies with regard to professional development.  This includes:
+      </p>
+    <ul>
+      <li>Assessment of professional certification requirements related to the "Highly Qualified Teacher Provisions of No Child Left Behind."</li>
+      <li>
+          Training for administrative and teaching staff on new systems and/or educational programs directed to
+          best practices to be implemented in the schools.
+        </li>
+      <li>
+          Developing data objects that can transport professional development course information, assessment of performance in these courses,
+          and the longitudinal data needed to track professional development of staff.
+        </li>
+    </ul>
+    <div class="element_section">
+      <a name="obj:ActivityProvider" />
+      <a name="3151ActivityProvider" />
+      <h3 class="element_name">3.15.1 ActivityProvider</h3>
+      <p>This object contains information about educational providers of professional education courses and activities.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure31511ActivityProvider" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/ActivityProvider.png">
+          <img class="diagram" src="diagrams/ActivityProvider.png" alt="ActivityProvider" width="477" height="424" usemap="#ActivityProvider__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.15.1-1: ActivityProvider</span><map name="ActivityProvider__map" id="ActivityProvider__map">
+  <area alt="ActivityProvider" href="#ActivityProvider" shape="rect" coords="5,234,164,276" />
+  <area alt="RefId" href="#ActivityProvider___RefId" shape="rect" coords="239,15,314,57" />
+  <area alt="LocalId" href="#ActivityProvider__LocalId" shape="rect" coords="239,92,330,134" />
+  <area alt="StateProvinceId" href="#ActivityProvider__StateProvinceId" shape="rect" coords="239,149,396,191" />
+  <area alt="Name" href="#ActivityProvider__Name" shape="rect" coords="239,206,349,248" />
+  <area alt="Address" href="#ActivityProvider__Address" shape="rect" coords="239,263,338,305" />
+  <area alt="SIF_Metadata" href="#ActivityProvider__SIF_Metadata" shape="rect" coords="239,320,378,362" />
+  <area alt="SIF_ExtendedElements" href="#ActivityProvider__SIF_ExtendedElements" shape="rect" coords="239,377,454,419" />
+</map><a name="Table31511ActivityProvider" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider" /><span class="rootElement">ActivityProvider</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object contains information about educational providers of professional education courses and activities.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="ActivityProvider___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID for this object. The application that owns this object is responsible for generating this unique Id.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider__LocalId" />LocalId</td><td class="characteristics">M</td><td class="description"><p>Local code used to represent this provider</p>&#xA0;</td><td class="type"><a href="DataModel.html#LocalId" class="type">LocalId</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider__StateProvinceId" />StateProvinceId</td><td class="characteristics">O</td><td class="description"><p>State assigned provider number</p>&#xA0;</td><td class="type"><a href="DataModel.html#StateProvinceId" class="type">StateProvinceId</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider__Name" />Name</td><td class="characteristics">M</td><td class="description"><p>Name of the provider.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider__Address" />Address</td><td class="characteristics">O</td><td class="description"><p>This element contains information related to provider's address information.</p>&#xA0;</td><td class="type"><a href="DataModel.html#Address" class="type">Address</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ActivityProvider__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.1-1: ActivityProvider</span><a name="Example31511ActivityProvider" />
+<div class="example_parent"><div class="example"
+>&lt;ActivityProvider RefId="FE1078BA3261545A31905937B265CE01"&gt;
+  &lt;LocalId&gt;305.0&lt;/LocalId&gt;
+  &lt;StateProvinceId&gt;4580&lt;/StateProvinceId&gt;
+  &lt;Name&gt;Sunnyvalley College&lt;/Name&gt;
+  &lt;Address Type="0123"&gt;
+    &lt;Street&gt;
+      &lt;Line1&gt;1 Sunnyvalley Lane&lt;/Line1&gt;
+    &lt;/Street&gt;
+    &lt;City&gt;Sunnyvalley&lt;/City&gt;
+    &lt;StateProvince&gt;OR&lt;/StateProvince&gt;
+    &lt;Country&gt;US&lt;/Country&gt;
+    &lt;PostalCode&gt;97497&lt;/PostalCode&gt;
+  &lt;/Address&gt;
+&lt;/ActivityProvider&gt;
+</div></div><span class="caption">Example 3.15.1-1: ActivityProvider</span></div>
+    <div class="element_section">
+      <a name="obj:EmployeeCredential" />
+      <a name="3152EmployeeCredential" />
+      <h3 class="element_name">3.15.2 EmployeeCredential</h3>
+      <p>
+            This object contains HR, certification and teaching assignment information for elementary and secondary
+            professional personnel for state reporting. It is a snapshot object used for vertical reporting of data related to K-12
+            elementary and secondary professional employees.
+          </p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure31521EmployeeCredential" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/EmployeeCredential.png">
+          <img class="diagram" src="diagrams/EmployeeCredential.png" alt="EmployeeCredential" width="1232" height="1678" usemap="#EmployeeCredential__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.15.2-1: EmployeeCredential</span><map name="EmployeeCredential__map" id="EmployeeCredential__map">
+  <area alt="EmployeeCredential" href="#EmployeeCredential" shape="rect" coords="5,861,196,903" />
+  <area alt="RefId" href="#EmployeeCredential___RefId" shape="rect" coords="271,15,346,57" />
+  <area alt="ReportDate" href="#EmployeeCredential__ReportDate" shape="rect" coords="271,92,393,134" />
+  <area alt="SchoolYear" href="#EmployeeCredential__SchoolYear" shape="rect" coords="271,149,395,191" />
+  <area alt="StateProvinceId" href="#EmployeeCredential__StateProvinceId" shape="rect" coords="271,206,428,248" />
+  <area alt="SSN" href="#EmployeeCredential__SSN" shape="rect" coords="271,263,381,305" />
+  <area alt="Name" href="#EmployeeCredential__Name" shape="rect" coords="271,320,349,362" />
+  <area alt="Demographics" href="#EmployeeCredential__Demographics" shape="rect" coords="271,377,418,419" />
+  <area alt="Race" href="#EmployeeCredential__Race" shape="rect" coords="271,434,389,476" />
+  <area alt="Hispanic" href="#EmployeeCredential__Hispanic" shape="rect" coords="271,491,373,533" />
+  <area alt="Certifications" href="#EmployeeCredential__Certifications" shape="rect" coords="271,576,409,618" />
+  <area alt="Certification" href="#EmployeeCredential__Certifications__Certification" shape="rect" coords="590,576,719,618" />
+  <area alt="Description" href="#EmployeeCredential__Certifications__Certification__Description" shape="rect" coords="794,548,917,590" />
+  <area alt="AreaAuthorized" href="#EmployeeCredential__Certifications__Certification__AreaAuthorized" shape="rect" coords="794,605,1043,647" />
+  <area alt="Salary" href="#EmployeeCredential__Salary" shape="rect" coords="271,662,392,704" />
+  <area alt="Status" href="#EmployeeCredential__Status" shape="rect" coords="271,719,456,761" />
+  <area alt="Leave" href="#EmployeeCredential__Leave" shape="rect" coords="271,776,351,818" />
+  <area alt="TotalYears" href="#EmployeeCredential__TotalYears" shape="rect" coords="271,833,388,875" />
+  <area alt="UnitYears" href="#EmployeeCredential__UnitYears" shape="rect" coords="271,890,381,932" />
+  <area alt="Education" href="#EmployeeCredential__Education" shape="rect" coords="271,947,486,989" />
+  <area alt="TeachingCredentialType" href="#EmployeeCredential__TeachingCredentialType" shape="rect" coords="271,1004,495,1046" />
+  <area alt="TerminationCode" href="#EmployeeCredential__TerminationCode" shape="rect" coords="271,1061,515,1103" />
+  <area alt="BackgroundChecks" href="#EmployeeCredential__BackgroundChecks" shape="rect" coords="271,1175,459,1217" />
+  <area alt="BackgroundCheck" href="#EmployeeCredential__BackgroundChecks__BackgroundCheck" shape="rect" coords="590,1175,768,1217" />
+  <area alt="Type" href="#EmployeeCredential__BackgroundChecks__BackgroundCheck__Type" shape="rect" coords="843,1118,1050,1160" />
+  <area alt="Date" href="#EmployeeCredential__BackgroundChecks__BackgroundCheck__Date" shape="rect" coords="843,1175,912,1217" />
+  <area alt="Description" href="#EmployeeCredential__BackgroundChecks__BackgroundCheck__Description" shape="rect" coords="843,1232,966,1274" />
+  <area alt="Assignments" href="#EmployeeCredential__Assignments" shape="rect" coords="271,1403,407,1445" />
+  <area alt="Assignment" href="#EmployeeCredential__Assignments__Assignment" shape="rect" coords="590,1403,717,1445" />
+  <area alt="SchoolInfoRefId" href="#EmployeeCredential__Assignments__Assignment__SchoolInfoRefId" shape="rect" coords="792,1289,951,1331" />
+  <area alt="GradeLevels" href="#EmployeeCredential__Assignments__Assignment__GradeLevels" shape="rect" coords="792,1346,924,1388" />
+  <area alt="JobFunction" href="#EmployeeCredential__Assignments__Assignment__JobFunction" shape="rect" coords="792,1431,924,1473" />
+  <area alt="Code" href="#EmployeeCredential__Assignments__Assignment__JobFunction__Code" shape="rect" coords="1026,1403,1185,1445" />
+  <area alt="OtherCodeList" href="#EmployeeCredential__Assignments__Assignment__JobFunction__OtherCodeList" shape="rect" coords="1026,1460,1173,1502" />
+  <area alt="FTE" href="#EmployeeCredential__Assignments__Assignment__FTE" shape="rect" coords="792,1517,857,1559" />
+  <area alt="SIF_Metadata" href="#EmployeeCredential__SIF_Metadata" shape="rect" coords="271,1574,410,1616" />
+  <area alt="SIF_ExtendedElements" href="#EmployeeCredential__SIF_ExtendedElements" shape="rect" coords="271,1631,486,1673" />
+</map><a name="Table31521EmployeeCredential" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential" /><span class="rootElement">EmployeeCredential</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+            This object contains HR, certification and teaching assignment information for elementary and secondary
+            professional personnel for state reporting. It is a snapshot object used for vertical reporting of data related to K-12
+            elementary and secondary professional employees.
+          </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="EmployeeCredential___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is a “transient” value; that is, it SHOULD be generated by the provider at the time the object is provided in a Response message.  This value MUST NOT be used in a later Request for the object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__ReportDate" />ReportDate</td><td class="characteristics">M</td><td class="description"><p>Date that report snapshot was generated</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__SchoolYear" />SchoolYear</td><td class="characteristics">M</td><td class="description"><p>School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2004" for the 2003-04 school year).</p>&#xA0;</td><td class="type"><a href="DataModel.html#SchoolYear" class="type">SchoolYear</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__StateProvinceId" />StateProvinceId</td><td class="characteristics">M</td><td class="description"><p>State assigned reporting unit number</p>&#xA0;</td><td class="type"><a href="DataModel.html#StateProvinceId" class="type">StateProvinceId</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__SSN" />SSN</td><td class="characteristics">M</td><td class="description"><p>Employee social security number</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Name" />Name</td><td class="characteristics">M</td><td class="description"><p>Name of employee.</p>&#xA0;</td><td class="type"><a href="DataModel.html#Name" class="type">Name</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Demographics" />Demographics</td><td class="characteristics">O</td><td class="description"><p>This element contains information related to employee demographics.</p>&#xA0;</td><td class="type"><a href="DataModel.html#Demographics" class="type">Demographics</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Race" />Race</td><td class="characteristics">M</td><td class="description"><p>Primary employee's race</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0849RaceType" class="type">NCES0849RaceType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Hispanic" />Hispanic</td><td class="characteristics">O</td><td class="description"><p>Is this employee Hispanic or Latino?</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Yes</dt><dt>No</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Certifications" />Certifications</td><td class="characteristics">M</td><td class="description"><p>Employee certifications</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Certifications__Certification" />Certifications/Certification<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>Employee certification area information</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Certifications__Certification__Description" />Certifications/Certification/<br/>&#160;&#160;&#160;&#160;&#160;Description</td><td class="characteristics">M</td><td class="description"><p>Certification description as defined by state</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Certifications__Certification__AreaAuthorized" />Certifications/Certification/<br/>&#160;&#160;&#160;&#160;&#160;AreaAuthorized</td><td class="characteristics">O</td><td class="description"><p>Area in which employee has certification</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0421TeachingFieldOrAreaAuthorizedType" class="type">NCES0421TeachingFieldOrAreaAuthorizedType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Salary" />Salary</td><td class="characteristics">M</td><td class="description"><p>Employee's salary</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Status" />Status</td><td class="characteristics">M</td><td class="description"><p>Employee professional position status</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0613EmploymentStatusType" class="type">NCES0613EmploymentStatusType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Leave" />Leave</td><td class="characteristics">M</td><td class="description"><p>Is this employee on leave this year?</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Yes</dt><dt>No</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__TotalYears" />TotalYears</td><td class="characteristics">M</td><td class="description"><p>Total number of years employee has been in a professional position</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__UnitYears" />UnitYears</td><td class="characteristics">M</td><td class="description"><p>Total number of years at current LEA</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Education" />Education</td><td class="characteristics">M</td><td class="description"><p>Highest level of education attained by employee.</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0395TeachingCredentialBasisType" class="type">NCES0395TeachingCredentialBasisType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__TeachingCredentialType" />TeachingCredentialType</td><td class="characteristics">OR</td><td class="description"><p>Category in which teacher is authorized to teach</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0394TeachingCredentialTypeType" class="type">NCES0394TeachingCredentialTypeType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__TerminationCode" />TerminationCode</td><td class="characteristics">O</td><td class="description"><p>If appropriate, employment separation reason</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0434EmploymentSeparationReasonType" class="type">NCES0434EmploymentSeparationReasonType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__BackgroundChecks" />BackgroundChecks</td><td class="characteristics">O</td><td class="description"><p>List of background checks performed on employee</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__BackgroundChecks__BackgroundCheck" />BackgroundChecks/BackgroundCheck<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">OR</td><td class="description"><p>Information about background check done on employee</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__BackgroundChecks__BackgroundCheck__Type" />BackgroundChecks/BackgroundCheck/<br/>&#160;&#160;&#160;&#160;&#160;Type</td><td class="characteristics">M</td><td class="description"><p>Background check type</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0401BackgroundCheckTypeType" class="type">NCES0401BackgroundCheckTypeType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__BackgroundChecks__BackgroundCheck__Date" />BackgroundChecks/BackgroundCheck/<br/>&#160;&#160;&#160;&#160;&#160;Date</td><td class="characteristics">M</td><td class="description"><p>Date on which background type was checked</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__BackgroundChecks__BackgroundCheck__Description" />BackgroundChecks/BackgroundCheck/<br/>&#160;&#160;&#160;&#160;&#160;Description</td><td class="characteristics">O</td><td class="description"><p>Description of background check performed</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments" />Assignments</td><td class="characteristics">M</td><td class="description"><p>List of employee assignments to schools</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment" />Assignments/Assignment</td><td class="characteristics">MR</td><td class="description"><p>Information about the school and assignment of employee</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment__SchoolInfoRefId" />Assignments/Assignment/SchoolInfoRefId<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">M</td><td class="description"><p>References SchoolInfo object to determine school in which this assignment pertains.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment__GradeLevels" />Assignments/Assignment/GradeLevels<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">M</td><td class="description"><p>Grade which is assigned to this employee (e.g. 12)</p>&#xA0;</td><td class="type"><a href="DataModel.html#GradeLevels" class="type">GradeLevels</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment__JobFunction" />Assignments/Assignment/JobFunction<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">O</td><td class="description"><p>The purpose of the activity in school as related to students</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment__JobFunction__Code" />Assignments/Assignment/JobFunction/<br/>&#160;&#160;&#160;&#160;&#160;Code</td><td class="characteristics">M</td><td class="description"><p>Code representing the type of job function.</p>&#xA0;</td><td class="type"><a href="ExternalCodeSets.html#NCES0568FunctionTypeType" class="type">NCES0568FunctionTypeType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment__JobFunction__OtherCodeList" />Assignments/Assignment/JobFunction/<br/>&#160;&#160;&#160;&#160;&#160;OtherCodeList</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#OtherCodeList" class="type">OtherCodeList</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__Assignments__Assignment__FTE" />Assignments/Assignment/FTE<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">O</td><td class="description"><p>Full-time equivalent for this school</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredential__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.2-1: EmployeeCredential</span><a name="Example31521EmployeeCredential" />
+<div class="example_parent"><div class="example"
+>&lt;EmployeeCredential RefId="359D75101AD0A9D7A8C3DAD0A85103A2"&gt;
+  &lt;ReportDate&gt;2004-01-15&lt;/ReportDate&gt;
+  &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+  &lt;StateProvinceId&gt;123456&lt;/StateProvinceId&gt;
+  &lt;SSN&gt;590651225&lt;/SSN&gt;
+  &lt;Name Type="04"&gt;
+    &lt;LastName&gt;Silverberg&lt;/LastName&gt;
+    &lt;FirstName&gt;Betty&lt;/FirstName&gt;
+  &lt;/Name&gt;
+  &lt;Demographics&gt;
+    &lt;Gender&gt;F&lt;/Gender&gt;
+  &lt;/Demographics&gt;
+  &lt;Race&gt;0998&lt;/Race&gt;
+  &lt;Hispanic&gt;No&lt;/Hispanic&gt;
+  &lt;Certifications&gt;
+    &lt;Certification&gt;
+      &lt;Description&gt;Secondary Math&lt;/Description&gt;
+      &lt;AreaAuthorized&gt;1166&lt;/AreaAuthorized&gt;
+    &lt;/Certification&gt;
+  &lt;/Certifications&gt;
+  &lt;Salary Currency="USD"&gt;35000&lt;/Salary&gt;
+  &lt;Status&gt;1379&lt;/Status&gt;
+  &lt;Leave&gt;No&lt;/Leave&gt;
+  &lt;TotalYears&gt;12&lt;/TotalYears&gt;
+  &lt;UnitYears&gt;12&lt;/UnitYears&gt;
+  &lt;Education&gt;1237&lt;/Education&gt;
+  &lt;TeachingCredentialType&gt;1222&lt;/TeachingCredentialType&gt;
+  &lt;TerminationCode&gt;1387&lt;/TerminationCode&gt;
+  &lt;BackgroundChecks&gt;
+    &lt;BackgroundCheck&gt;
+      &lt;Type&gt;1420&lt;/Type&gt;
+      &lt;Date&gt;2004-01-10&lt;/Date&gt;
+      &lt;Description&gt;FBI background check&lt;/Description&gt;
+    &lt;/BackgroundCheck&gt;
+  &lt;/BackgroundChecks&gt;
+  &lt;Assignments&gt;
+    &lt;Assignment&gt;
+      &lt;SchoolInfoRefId&gt;72348623487623488AB9827349872349&lt;/SchoolInfoRefId&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;11&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;12&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+      &lt;JobFunction&gt;
+        &lt;Code&gt;1000&lt;/Code&gt;
+      &lt;/JobFunction&gt;
+      &lt;FTE&gt;1.0&lt;/FTE&gt;
+    &lt;/Assignment&gt;
+  &lt;/Assignments&gt;
+&lt;/EmployeeCredential&gt;
+</div></div><span class="caption">Example 3.15.2-1: EmployeeCredential</span></div>
+    <div class="element_section">
+      <a name="obj:EmployeeCredit" />
+      <a name="3153EmployeeCredit" />
+      <h3 class="element_name">3.15.3 EmployeeCredit</h3>
+      <p>This object contains information about courses and activities taken by employees.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure31531EmployeeCredit" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/EmployeeCredit.png">
+          <img class="diagram" src="diagrams/EmployeeCredit.png" alt="EmployeeCredit" width="932" height="330" usemap="#EmployeeCredit__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.15.3-1: EmployeeCredit</span><map name="EmployeeCredit__map" id="EmployeeCredit__map">
+  <area alt="EmployeeCredit" href="#EmployeeCredit" shape="rect" coords="5,187,163,229" />
+  <area alt="RefId" href="#EmployeeCredit___RefId" shape="rect" coords="238,15,313,57" />
+  <area alt="EmployeePersonalRefId" href="#EmployeeCredit___EmployeePersonalRefId" shape="rect" coords="328,15,551,57" />
+  <area alt="ProfessionalDevelopmentActivitiesRefId" href="#EmployeeCredit___ProfessionalDevelopmentActivitiesRefId" shape="rect" coords="566,15,917,57" />
+  <area alt="EndDate" href="#EmployeeCredit__EndDate" shape="rect" coords="238,92,338,134" />
+  <area alt="Earned" href="#EmployeeCredit__Earned" shape="rect" coords="238,159,349,201" />
+  <area alt="Type" href="#EmployeeCredit__Earned___Type" shape="rect" coords="528,159,600,201" />
+  <area alt="SIF_Metadata" href="#EmployeeCredit__SIF_Metadata" shape="rect" coords="238,226,377,268" />
+  <area alt="SIF_ExtendedElements" href="#EmployeeCredit__SIF_ExtendedElements" shape="rect" coords="238,283,453,325" />
+</map><a name="Table31531EmployeeCredit" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredit" /><span class="rootElement">EmployeeCredit</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object contains information about courses and activities taken by employees.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="EmployeeCredit___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>This is the GUID for this object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="EmployeeCredit___EmployeePersonalRefId" />EmployeePersonalRefId</td><td class="characteristics">M</td><td class="description"><p>References EmployeePersonal object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="EmployeeCredit___ProfessionalDevelopmentActivitiesRefId" />ProfessionalDevelopmentActivitiesRefId</td><td class="characteristics">M</td><td class="description"><p>References the ProfessionalDevelopmentActivities object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredit__EndDate" />EndDate</td><td class="characteristics">M</td><td class="description"><p>Date in which the course or activity was completed and awarded credit.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredit__Earned" />Earned</td><td class="characteristics">M</td><td class="description"><p>The number of units earned</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="EmployeeCredit__Earned___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>The unit description</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Hours</dt><dt>Credits</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredit__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeCredit__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.3-1: EmployeeCredit</span><a name="Example31531EmployeeCredit" />
+<div class="example_parent"><div class="example"
+>&lt;EmployeeCredit RefId="BC2078BA3261545A31905937B265CE01" EmployeePersonalRefId="BE3078BA3261545A31905937B265CE01" ProfessionalDevelopmentActivitiesRefId="FD4078BA3261545A31905937B265CE01"&gt;
+  &lt;EndDate&gt;2003-05-20&lt;/EndDate&gt;
+  &lt;Earned Type="Credits"&gt;3.4&lt;/Earned&gt;
+&lt;/EmployeeCredit&gt;
+</div></div><span class="caption">Example 3.15.3-1: EmployeeCredit</span></div>
+    <div class="element_section">
+      <a name="obj:EmployeeRecertification" />
+      <a name="3154EmployeeRecertification" />
+      <h3 class="element_name">3.15.4 EmployeeRecertification</h3>
+      <p>
+        This object contains information about employee continuing professional course and activity credits and hours taken
+        by employees for recertification purposes. It is used as a vertical reporting snapshot-type object to transmit
+        information regarding professional continuing education courses and activities completed by employees to maintain
+        their current educational certification(s) within a given state.
+      </p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure31541EmployeeRecertification" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/EmployeeRecertification.png">
+          <img class="diagram" src="diagrams/EmployeeRecertification.png" alt="EmployeeRecertification" width="682" height="786" usemap="#EmployeeRecertification__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.15.4-1: EmployeeRecertification</span><map name="EmployeeRecertification__map" id="EmployeeRecertification__map">
+  <area alt="EmployeeRecertification" href="#EmployeeRecertification" shape="rect" coords="5,415,230,457" />
+  <area alt="RefId" href="#EmployeeRecertification___RefId" shape="rect" coords="305,15,380,57" />
+  <area alt="StateProvinceId" href="#EmployeeRecertification__StateProvinceId" shape="rect" coords="305,92,462,134" />
+  <area alt="SSN" href="#EmployeeRecertification__SSN" shape="rect" coords="305,149,372,191" />
+  <area alt="Name" href="#EmployeeRecertification__Name" shape="rect" coords="305,206,383,248" />
+  <area alt="Demographics" href="#EmployeeRecertification__Demographics" shape="rect" coords="305,263,452,305" />
+  <area alt="ActivityName" href="#EmployeeRecertification__ActivityName" shape="rect" coords="305,320,442,362" />
+  <area alt="ActivityType" href="#EmployeeRecertification__ActivityType" shape="rect" coords="305,377,436,419" />
+  <area alt="ActivityHours" href="#EmployeeRecertification__ActivityHours" shape="rect" coords="305,434,445,476" />
+  <area alt="Earned" href="#EmployeeRecertification__Earned" shape="rect" coords="305,501,416,543" />
+  <area alt="Type" href="#EmployeeRecertification__Earned___Type" shape="rect" coords="595,501,667,543" />
+  <area alt="DateFrom" href="#EmployeeRecertification__DateFrom" shape="rect" coords="305,568,415,610" />
+  <area alt="DateTo" href="#EmployeeRecertification__DateTo" shape="rect" coords="305,625,394,667" />
+  <area alt="SIF_Metadata" href="#EmployeeRecertification__SIF_Metadata" shape="rect" coords="305,682,444,724" />
+  <area alt="SIF_ExtendedElements" href="#EmployeeRecertification__SIF_ExtendedElements" shape="rect" coords="305,739,520,781" />
+</map><a name="Table31541EmployeeRecertification" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification" /><span class="rootElement">EmployeeRecertification</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object contains information about employee continuing professional course and activity credits and hours taken
+        by employees for recertification purposes. It is used as a vertical reporting snapshot-type object to transmit
+        information regarding professional continuing education courses and activities completed by employees to maintain
+        their current educational certification(s) within a given state.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="EmployeeRecertification___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is a “transient” value; that is, it SHOULD be generated by the provider at the time the object is provided in a Response message.  This value MUST NOT be used in a later Request for the object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__StateProvinceId" />StateProvinceId</td><td class="characteristics">C</td><td class="description"><p>
+        The state-assigned identifier for this staff member.  This element or <code>SSN</code>, or both, must be included.
+      </p>&#xA0;</td><td class="type"><a href="DataModel.html#StateProvinceId" class="type">StateProvinceId</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__SSN" />SSN</td><td class="characteristics">C</td><td class="description"><p>
+        Employee Social Security Number.  This element or <code>StateProvinceId</code>, or both, must be included.
+      </p>&#xA0;</td><td class="type"><a href="DataModel.html#SSN" class="type">SSN</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__Name" />Name</td><td class="characteristics">M</td><td class="description"><p>Name of employee.</p>&#xA0;</td><td class="type"><a href="DataModel.html#Name" class="type">Name</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__Demographics" />Demographics</td><td class="characteristics">O</td><td class="description"><p>This element contains information related to employee demographics.</p>&#xA0;</td><td class="type"><a href="DataModel.html#Demographics" class="type">Demographics</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__ActivityName" />ActivityName</td><td class="characteristics">M</td><td class="description"><p>Name of the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__ActivityType" />ActivityType</td><td class="characteristics">M</td><td class="description"><p>Type of course or activity</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Course</dt><dt>Activity</dt><dt>Other</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__ActivityHours" />ActivityHours</td><td class="characteristics">M</td><td class="description"><p>Total activity hours/total clock hours</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__Earned" />Earned</td><td class="characteristics">M</td><td class="description"><p>Hours attended or credits earned by the employee</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="EmployeeRecertification__Earned___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>Number of hours or credits.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Hours</dt><dt>Credits</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__DateFrom" />DateFrom</td><td class="characteristics">M</td><td class="description"><p>Start date of the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__DateTo" />DateTo</td><td class="characteristics">M</td><td class="description"><p>Ending date of the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="EmployeeRecertification__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.4-1: EmployeeRecertification</span><a name="Example31541EmployeeRecertification" />
+<div class="example_parent"><div class="example"
+>&lt;EmployeeRecertification RefId="359D75101AD0A9D7A8C3DAD0A85103A2"&gt;
+  &lt;SSN&gt;123456789&lt;/SSN&gt;
+  &lt;Name Type="04"&gt;
+    &lt;LastName&gt;Johnson&lt;/LastName&gt;
+    &lt;FirstName&gt;Alicia&lt;/FirstName&gt;
+  &lt;/Name&gt;
+  &lt;Demographics&gt;
+    &lt;Gender&gt;F&lt;/Gender&gt;
+  &lt;/Demographics&gt;
+  &lt;ActivityName&gt;Elementary IU Staff Inservice&lt;/ActivityName&gt;
+  &lt;ActivityType&gt;Activity&lt;/ActivityType&gt;
+  &lt;ActivityHours&gt;5&lt;/ActivityHours&gt;
+  &lt;Earned Type="Credits"&gt;1.5&lt;/Earned&gt;
+  &lt;DateFrom&gt;2003-07-01&lt;/DateFrom&gt;
+  &lt;DateTo&gt;2003-07-01&lt;/DateTo&gt;
+&lt;/EmployeeRecertification&gt;
+</div></div><span class="caption">Example 3.15.4-1: EmployeeRecertification</span></div>
+    <div class="element_section">
+      <a name="obj:ProfessionalDevelopmentActivities" />
+      <a name="3155ProfessionalDevelopmentActivities" />
+      <h3 class="element_name">3.15.5 ProfessionalDevelopmentActivities</h3>
+      <p>
+        This object contains information about courses and activities for which employees can earn credits or hours to
+        maintain their certification.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure31551ProfessionalDevelopmentActivities" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/ProfessionalDevelopmentActivities.png">
+          <img class="diagram" src="diagrams/ProfessionalDevelopmentActivities.png" alt="ProfessionalDevelopmentActivities" width="1097" height="766" usemap="#ProfessionalDevelopmentActivities__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.15.5-1: ProfessionalDevelopmentActivities</span><map name="ProfessionalDevelopmentActivities__map" id="ProfessionalDevelopmentActivities__map">
+  <area alt="ProfessionalDevelopmentActivities" href="#ProfessionalDevelopmentActivities" shape="rect" coords="5,405,313,447" />
+  <area alt="RefId" href="#ProfessionalDevelopmentActivities___RefId" shape="rect" coords="388,15,463,57" />
+  <area alt="ActivityProviderRefId" href="#ProfessionalDevelopmentActivities___ActivityProviderRefId" shape="rect" coords="478,15,679,57" />
+  <area alt="ProfessionalDevelopmentProgramRefId" href="#ProfessionalDevelopmentActivities__ProfessionalDevelopmentProgramRefId" shape="rect" coords="388,92,732,134" />
+  <area alt="LearningStandardItems" href="#ProfessionalDevelopmentActivities__LearningStandardItems" shape="rect" coords="388,149,605,191" />
+  <area alt="LearningStandardItemRefId" href="#ProfessionalDevelopmentActivities__LearningStandardItems__LearningStandardItemRefId" shape="rect" coords="807,149,1056,191" />
+  <area alt="LocalId" href="#ProfessionalDevelopmentActivities__LocalId" shape="rect" coords="388,206,479,248" />
+  <area alt="StartDate" href="#ProfessionalDevelopmentActivities__StartDate" shape="rect" coords="388,263,494,305" />
+  <area alt="EndDate" href="#ProfessionalDevelopmentActivities__EndDate" shape="rect" coords="388,320,488,362" />
+  <area alt="Description" href="#ProfessionalDevelopmentActivities__Description" shape="rect" coords="388,377,511,419" />
+  <area alt="ClockHours" href="#ProfessionalDevelopmentActivities__ClockHours" shape="rect" coords="388,434,513,476" />
+  <area alt="Credits" href="#ProfessionalDevelopmentActivities__Credits" shape="rect" coords="388,491,478,533" />
+  <area alt="Stipend" href="#ProfessionalDevelopmentActivities__Stipend" shape="rect" coords="388,548,509,590" />
+  <area alt="FundingSource" href="#ProfessionalDevelopmentActivities__FundingSource" shape="rect" coords="388,605,542,647" />
+  <area alt="SIF_Metadata" href="#ProfessionalDevelopmentActivities__SIF_Metadata" shape="rect" coords="388,662,527,704" />
+  <area alt="SIF_ExtendedElements" href="#ProfessionalDevelopmentActivities__SIF_ExtendedElements" shape="rect" coords="388,719,603,761" />
+</map><a name="Table31551ProfessionalDevelopmentActivities" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities" /><span class="rootElement">ProfessionalDevelopmentActivities</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object contains information about courses and activities for which employees can earn credits or hours to
+        maintain their certification.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="ProfessionalDevelopmentActivities___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID for this object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="ProfessionalDevelopmentActivities___ActivityProviderRefId" />ActivityProviderRefId</td><td class="characteristics">M</td><td class="description"><p>References the ActivityProvider object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__ProfessionalDevelopmentProgramRefId" />ProfessionalDevelopmentProgramRefId</td><td class="characteristics">O</td><td class="description"><p>Reference to associated professional development program.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__LearningStandardItems" />LearningStandardItems</td><td class="characteristics">O</td><td class="description"><p>
+        Associated <code>LearningStandardItem</code> objects.
+      </p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__LearningStandardItems__LearningStandardItemRefId" />LearningStandardItems/LearningStandardItemRefId<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">OR</td><td class="description"><p>
+        A GUID reference to a <code>LearningStandardItem</code> that supports this content.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__LocalId" />LocalId</td><td class="characteristics">M</td><td class="description"><p>Locally assigned number or provider referenced course number used to represent the course or activity</p>&#xA0;</td><td class="type"><a href="DataModel.html#LocalId" class="type">LocalId</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__StartDate" />StartDate</td><td class="characteristics">M</td><td class="description"><p>The starting date of the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__EndDate" />EndDate</td><td class="characteristics">M</td><td class="description"><p>The ending date of the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__Description" />Description</td><td class="characteristics">M</td><td class="description"><p>The description of the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__ClockHours" />ClockHours</td><td class="characteristics">M</td><td class="description"><p>The actual number of hours required for the course or activity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__Credits" />Credits</td><td class="characteristics">O</td><td class="description"><p>Number of credits that can be earned by completing the course or activity.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__Stipend" />Stipend</td><td class="characteristics">O</td><td class="description"><p>Tracks stipend being offered for this particular activity.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__FundingSource" />FundingSource</td><td class="characteristics">O</td><td class="description"><p>Tracks the source of funding for this particular activity.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentActivities__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.5-1: ProfessionalDevelopmentActivities</span><a name="Example31551ProfessionalDevelopmentActivities" />
+<div class="example_parent"><div class="example"
+>&lt;ProfessionalDevelopmentActivities RefId="CCD1254884AE54687FF4567DACD34653" ActivityProviderRefId="CAD125488EE54687FF4567DACD346532"&gt;
+  &lt;ProfessionalDevelopmentProgramRefId&gt;8BCFB9B7A6BC4895818E5A46C0B431E9&lt;/ProfessionalDevelopmentProgramRefId&gt;
+  &lt;LearningStandardItems&gt;
+    &lt;LearningStandardItemRefId&gt;38473628DAE38FCD8379DE285AAAC328&lt;/LearningStandardItemRefId&gt;
+  &lt;/LearningStandardItems&gt;
+  &lt;LocalId&gt;305.0&lt;/LocalId&gt;
+  &lt;StartDate&gt;2003-05-02&lt;/StartDate&gt;
+  &lt;EndDate&gt;2003-05-03&lt;/EndDate&gt;
+  &lt;Description&gt;In-service on recognizing child abuse&lt;/Description&gt;
+  &lt;ClockHours&gt;16&lt;/ClockHours&gt;
+  &lt;Credits&gt;1.2&lt;/Credits&gt;
+  &lt;Stipend&gt;50.00&lt;/Stipend&gt;
+  &lt;FundingSource&gt;Reading First Grant&lt;/FundingSource&gt;
+&lt;/ProfessionalDevelopmentActivities&gt;
+</div></div><span class="caption">Example 3.15.5-1: ProfessionalDevelopmentActivities</span></div>
+    <div class="element_section">
+      <a name="obj:ProfessionalDevelopmentProgram" />
+      <a name="3156ProfessionalDevelopmentProgram" />
+      <h3 class="element_name">3.15.6 ProfessionalDevelopmentProgram</h3>
+    The purpose of this object is for tracking sets of professional development activities.
+    It creates a high-level relationship between professional development activities for tracking training programs,
+    grant-funded professional development, or potentially individually created learning programs.
+    The case for interoperability is that financial systems and instructional systems need to be aware of professional development programs
+    for funding or alignment respectively.
+  <p class="emphasized_note">SIF_Events are reported for this object.</p><a name="Figure31561ProfessionalDevelopmentProgram" /><div class="diagram_parent" align="center"><a target="_blank" href="diagrams/ProfessionalDevelopmentProgram.png"><img class="diagram" src="diagrams/ProfessionalDevelopmentProgram.png" alt="ProfessionalDevelopmentProgram" width="965" height="481" usemap="#ProfessionalDevelopmentProgram__map" /></a></div><span class="caption">Figure 3.15.6-1: ProfessionalDevelopmentProgram</span><map name="ProfessionalDevelopmentProgram__map" id="ProfessionalDevelopmentProgram__map">
+  <area alt="ProfessionalDevelopmentProgram" href="#ProfessionalDevelopmentProgram" shape="rect" coords="5,263,308,305" />
+  <area alt="RefId" href="#ProfessionalDevelopmentProgram___RefId" shape="rect" coords="383,15,458,57" />
+  <area alt="LearningStandardItems" href="#ProfessionalDevelopmentProgram__LearningStandardItems" shape="rect" coords="383,92,600,134" />
+  <area alt="LearningStandardItemRefId" href="#ProfessionalDevelopmentProgram__LearningStandardItems__LearningStandardItemRefId" shape="rect" coords="675,92,924,134" />
+  <area alt="LocalProgramId" href="#ProfessionalDevelopmentProgram__LocalProgramId" shape="rect" coords="383,149,541,191" />
+  <area alt="ProgramName" href="#ProfessionalDevelopmentProgram__ProgramName" shape="rect" coords="383,206,528,248" />
+  <area alt="ProgramType" href="#ProfessionalDevelopmentProgram__ProgramType" shape="rect" coords="383,263,522,305" />
+  <area alt="FundingSource" href="#ProfessionalDevelopmentProgram__FundingSource" shape="rect" coords="383,320,537,362" />
+  <area alt="SIF_Metadata" href="#ProfessionalDevelopmentProgram__SIF_Metadata" shape="rect" coords="383,377,522,419" />
+  <area alt="SIF_ExtendedElements" href="#ProfessionalDevelopmentProgram__SIF_ExtendedElements" shape="rect" coords="383,434,598,476" />
+</map><a name="Table31561ProfessionalDevelopmentProgram" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram" /><span class="rootElement">ProfessionalDevelopmentProgram</span></td><td class="emptycell">&#xA0;</td><td class="description">Container for external relationships.&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="ProfessionalDevelopmentProgram___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID for this object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__LearningStandardItems" />LearningStandardItems</td><td class="characteristics">O</td><td class="description"><p>
+        Associated <code>LearningStandardItem</code> objects.
+      </p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__LearningStandardItems__LearningStandardItemRefId" />LearningStandardItems/LearningStandardItemRefId<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">OR</td><td class="description"><p>
+        A GUID reference to a <code>LearningStandardItem</code> that supports this content.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__LocalProgramId" />LocalProgramId</td><td class="characteristics">O</td><td class="description"><p>An element for setting local program identifiers.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__ProgramName" />ProgramName</td><td class="characteristics">M</td><td class="description"><p>The name or title of the program.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__ProgramType" />ProgramType</td><td class="characteristics">M</td><td class="description"><p>The type of program whether it be a grant, learning plan, or system training.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__FundingSource" />FundingSource</td><td class="characteristics">O</td><td class="description"><p>The funding source of the program.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentProgram__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.6-1: ProfessionalDevelopmentProgram</span><a name="Example31561ProfessionalDevelopmentProgram" />
+<div class="example_parent"><div class="example"
+>&lt;ProfessionalDevelopmentProgram RefId="E6F37470472D49EE86C1FA8EE47D8244"&gt;
+  &lt;LearningStandardItems&gt;
+    &lt;LearningStandardItemRefId&gt;241A53AFBA3176EF062367CFCC2900BC&lt;/LearningStandardItemRefId&gt;
+  &lt;/LearningStandardItems&gt;
+  &lt;LocalProgramId&gt;RI123&lt;/LocalProgramId&gt;
+  &lt;ProgramName&gt;Reading First Grant&lt;/ProgramName&gt;
+  &lt;ProgramType&gt;Grant&lt;/ProgramType&gt;
+&lt;/ProfessionalDevelopmentProgram&gt;
+</div></div><span class="caption">Example 3.15.6-1: ProfessionalDevelopmentProgram</span></div>
+    <div class="element_section">
+      <a name="obj:ProfessionalDevelopmentRegistration" />
+      <a name="3157ProfessionalDevelopmentRegistration" />
+      <h3 class="element_name">3.15.7 ProfessionalDevelopmentRegistration</h3>
+    This object tracks the status of the user in a professional development activity.
+    It includes where the user is in terms of the status of completion, if a stipend is to be provided and the amount of that stipend.
+  <p class="emphasized_note">SIF_Events are reported for this object.</p><a name="Figure31571ProfessionalDevelopmentRegistration" /><div class="diagram_parent" align="center"><a target="_blank" href="diagrams/ProfessionalDevelopmentRegistration.png"><img class="diagram" src="diagrams/ProfessionalDevelopmentRegistration.png" alt="ProfessionalDevelopmentRegistration" width="778" height="481" usemap="#ProfessionalDevelopmentRegistration__map" /></a></div><span class="caption">Figure 3.15.7-1: ProfessionalDevelopmentRegistration</span><map name="ProfessionalDevelopmentRegistration__map" id="ProfessionalDevelopmentRegistration__map">
+  <area alt="ProfessionalDevelopmentRegistration" href="#ProfessionalDevelopmentRegistration" shape="rect" coords="5,263,336,305" />
+  <area alt="RefId" href="#ProfessionalDevelopmentRegistration___RefId" shape="rect" coords="411,15,486,57" />
+  <area alt="EmployeePersonalRefId" href="#ProfessionalDevelopmentRegistration___EmployeePersonalRefId" shape="rect" coords="501,15,724,57" />
+  <area alt="RegistrationStatus" href="#ProfessionalDevelopmentRegistration__RegistrationStatus" shape="rect" coords="411,92,590,134" />
+  <area alt="ProfessionalDevelopmentActivityRefId" href="#ProfessionalDevelopmentRegistration__ProfessionalDevelopmentActivityRefId" shape="rect" coords="411,149,747,191" />
+  <area alt="ProfessionalDevelopmentProgramRefId" href="#ProfessionalDevelopmentRegistration__ProfessionalDevelopmentProgramRefId" shape="rect" coords="411,206,755,248" />
+  <area alt="PaidAmount" href="#ProfessionalDevelopmentRegistration__PaidAmount" shape="rect" coords="411,263,541,305" />
+  <area alt="Stipend" href="#ProfessionalDevelopmentRegistration__Stipend" shape="rect" coords="411,320,532,362" />
+  <area alt="SIF_Metadata" href="#ProfessionalDevelopmentRegistration__SIF_Metadata" shape="rect" coords="411,377,550,419" />
+  <area alt="SIF_ExtendedElements" href="#ProfessionalDevelopmentRegistration__SIF_ExtendedElements" shape="rect" coords="411,434,626,476" />
+</map><a name="Table31571ProfessionalDevelopmentRegistration" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration" /><span class="rootElement">ProfessionalDevelopmentRegistration</span></td><td class="emptycell">&#xA0;</td><td class="description">&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="ProfessionalDevelopmentRegistration___RefId" />RefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="ProfessionalDevelopmentRegistration___EmployeePersonalRefId" />EmployeePersonalRefId</td><td class="characteristics">M</td><td class="description"><p>Who this record affects.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__RegistrationStatus" />RegistrationStatus</td><td class="characteristics">M</td><td class="description"><p>Tracks the status of the user in the professional development activity.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Registered</dt><dd>Represents the user has registered for the activity.</dd><dt>Withdrawn</dt><dd>Represents that the user has withdrawn from the activity without completing.</dd><dt>Complete</dt><dd>Represents that a user has completed the activity and has received credit and show have a record in the employee credit object to represent this.</dd><dt>Incomplete</dt><dd>Represents that the user did not receive credit for this activity for whatever reason.</dd><dt>In Progress</dt><dd>
+          Represents that the user has not yet finished the ProfessionalDevelopmentActivity or ProfessionalDevelopmentProgram but hasn't withdrawn.
+        </dd></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__ProfessionalDevelopmentActivityRefId" />ProfessionalDevelopmentActivityRefId</td><td class="characteristics">O</td><td class="description"><p>Relationship Id for professional development activity.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__ProfessionalDevelopmentProgramRefId" />ProfessionalDevelopmentProgramRefId</td><td class="characteristics">O</td><td class="description"><p>Relationship Id for professional development program.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__PaidAmount" />PaidAmount</td><td class="characteristics">O</td><td class="description"><p>This optional field is used if there is a fee for the professional development activity and for tracking the amount the user paid to participate in the professional development activity.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__Stipend" />Stipend</td><td class="characteristics">O</td><td class="description"><p>Optional field for tracking the amount the user is paid to participate in the professional development activity.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="ProfessionalDevelopmentRegistration__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.15.7-1: ProfessionalDevelopmentRegistration</span><a name="Example31571ProfessionalDevelopmentRegistration" />
+<div class="example_parent"><div class="example"
+>&lt;ProfessionalDevelopmentRegistration RefId="ACB1254742AE54CC874567DFCD196832" EmployeePersonalRefId="D4E1EA3D82614CA39361514E5F115B14"&gt;
+  &lt;RegistrationStatus&gt;Registered&lt;/RegistrationStatus&gt;
+  &lt;ProfessionalDevelopmentActivityRefId&gt;13F1BD47F2AE862C874567ABE4196DD1&lt;/ProfessionalDevelopmentActivityRefId&gt;
+  &lt;PaidAmount Currency="USD"&gt;25&lt;/PaidAmount&gt;
+  &lt;Stipend Currency="USD"&gt;500&lt;/Stipend&gt;
+&lt;/ProfessionalDevelopmentRegistration&gt;
+</div></div><span class="caption">Example 3.15.7-1: ProfessionalDevelopmentRegistration</span></div>
+    <a name="SpecialProgramsWorkingGroup" />
+    <div class="navigation" id="bottomnavigation">
+      <hr />
+      <a href="index.html">home</a>
+      <a href="LibraryAutomationWorkingGroup.html">previous</a>
+      <a href="SpecialProgramsWorkingGroup.html">next</a>
+      <a href="index.html#contents">table of contents</a>
+    </div><p align='center'><a href='http://validator.w3.org/check?uri=referer'><img src='http://www.w3.org/Icons/valid-xhtml10' alt='Valid XHTML 1.0 Transitional'/></a></p></body>
+</html>

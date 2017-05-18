@@ -1,0 +1,345 @@
+<DataObject name="ItemCharacteristics">
+	<Key>@RefId</Key>
+	<EventsReported>false</EventsReported>
+	<Item>
+		<Element>ItemCharacteristics</Element>
+		<Description>This object provides specific information about each assessment item.  This information includes an analysis, psychometric measures, reliability and validity information.  This item-level information assists in interpreting assessment scores as well as aide in improving teaching and learning.</Description>
+	</Item>
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Type ref="CommonTypes" name="RefIdType"/>
+	</Item>
+	<Item>
+		<Attribute>AssessmentItemRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>This RefId points to the assessment item of which the characteristics are a part.</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	<Item>
+		<Attribute>AssessmentFormRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>This RefId points to the assessment form of which the item is a part.</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	<Item>
+		<Element>PercentCorrect</Element>
+		<Characteristics>O</Characteristics>
+		<Description>Number of correct answers in sample.</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>SampleSize</Element>
+		<Characteristics>O</Characteristics>
+		<Description>Number of total Item exposures.</Description>
+		<Type name="xs:integer"/>
+	</Item>
+	<Item>
+		<Element>SampleDescription</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The description of the Sample the statistics are based on. May be District name, State or National sample.</Description>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>Measurements</Element>
+		<Characteristics>O</Characteristics>
+		<Description>A repeating group of psychometric measures.</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>/Measurement</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>Container for series of item statistics.</Description>
+	</Item>
+	<Item>
+		<Attribute>MeasurementCode</Attribute>
+		<Characteristics>O</Characteristics>
+		<Description>A code representing the type of statistic or analysis.</Description>
+		<Values>
+			<Value>
+				<Code>MSF</Code>
+				<Text>Mean Square Fit</Text>
+			</Value>
+			<Value>
+				<Code>WMSF</Code>
+				<Text>Weighted Mean Square Fit</Text>
+			</Value>
+			<Value>
+				<Code>RMSE</Code>
+				<Text>Revised Mean Square Fit</Text>
+			</Value>
+			<Value>
+				<Code>RPBim</Code>
+				<Text>Revised Point Biserial measure</Text>
+			</Value>
+			<Value>
+				<Code>RIT</Code>
+				<Text>Rasch Item Score</Text>
+			</Value>
+			<Value>
+				<Code>RC</Code>
+				<Text>Response Correlation</Text>
+			</Value>
+			<Value>
+				<Code>RCS</Code>
+				<Text>Response Correlation Squared</Text>
+			</Value>
+			<Value>
+				<Code>ZChiSq</Code>
+				<Text>Z CHI Square</Text>
+			</Value>
+			<Value>
+				<Code>PVal</Code>
+				<Text>PValue</Text>
+			</Value>
+			<Value>
+				<Code>PBi</Code>
+				<Text>PointBiserial</Text>
+			</Value>
+			<Value>
+				<Code>BiS</Code>
+				<Text>Biserial</Text>
+			</Value>
+			<Value>
+				<Code>DI</Code>
+				<Text>DiscriminationIndex</Text>
+			</Value>
+			<Value>
+				<Code>RC</Code>
+				<Text>Reliability Coefficient</Text>
+			</Value>
+			<Value>
+				<Code>CoA</Code>
+				<Text>Coefficient Alpha</Text>
+			</Value>
+			<Value>
+				<Code>ITC</Code>
+				<Text>ItemTestCorrelation</Text>
+			</Value>
+			<Value>
+				<Code>IV</Code>
+				<Text>ItemVariance</Text>
+			</Value>
+			<Value>
+				<Code>Scale</Code>
+				<Text>ScaleValue</Text>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>//MeasurementDescription</Element>
+		<Characteristics>O</Characteristics>
+		<Description>An additional description of the statistic or analysis.</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>//ScaleValue</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The value of the Item based on this analysis</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>//Min</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The minimum value possible for the measurement and test design.</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>//Max</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The maximum value possible for the measurement and test design.</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>//Optimal</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The optimal value for this measurement and test design.</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>Descriptive</Element>
+		<Characteristics>O</Characteristics>
+		<Description>[This element is deprecated as of release 2.5.  It is replaced by the Measurements element.]</Description>
+	</Item>
+	<Item>
+		<Element>/PValue</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The percent of respondents who answered correctly. This number represents the probability of the correct response to a question.</Description>
+		<Type name="xs:float"/>
+	</Item>
+	<Item>
+		<Element>/SampleSize</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The size of the student group that saw the item.</Description>
+		<Type name="xs:integer"/>
+	</Item>
+	<Item>
+		<Element>/PointBiserial</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The correlation between correct answers (dichotomous variable) on this item and total correct answers on the test.</Description>
+		<Type name="xs:decimal"/>
+		<Facets>
+			<xs:minInclusive value="-1.00"/>
+			<xs:maxInclusive value="1.00"/>
+		</Facets>
+	</Item>
+	<Item>
+		<Element>/Biserial</Element>
+		<Characteristics>O</Characteristics>
+		<Description>Similar to the Point Biserial Correlation except that answers to the item are assumed to come from an underlying continuous variable.</Description>
+		<Type name="xs:decimal"/>
+		<Facets>
+			<xs:minInclusive value="-1.00"/>
+			<xs:maxInclusive value="1.00"/>
+		</Facets>
+	</Item>
+	<Item>
+		<Element>/DiscriminationIndex</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The Index of Discrimination is the difference between the proportion of an upper group who got an item right and the proportion of a lower group who got the item right.</Description>
+		<Type name="xs:decimal"/>
+		<Facets>
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1.00"/>
+		</Facets>
+	</Item>
+	<Item>
+		<Element>DifferentialItemAnalysis</Element>
+		<Characteristics>O</Characteristics>
+		<Description>[This element is deprecated as of release 2.5.  It is replaced by the Measurements element.]</Description>
+	</Item>
+	<Item>
+		<Element>/CMH</Element>
+		<Characteristics>O</Characteristics>
+		<Description>Cochran-Mantel-Haenszel statistic.</Description>
+		<Type name="xs:decimal"/>
+		<Facets>
+			<xs:minInclusive value="-1.00"/>
+			<xs:maxInclusive value="1.00"/>
+		</Facets>
+	</Item>
+	<Item>
+		<Element>/MH</Element>
+		<Characteristics>O</Characteristics>
+		<Description>Mantel-Haenszel statistic.</Description>
+		<Type name="xs:decimal"/>
+		<Facets>
+			<xs:minInclusive value="-1.00"/>
+			<xs:maxInclusive value="1.00"/>
+		</Facets>
+	</Item>
+	<Item>
+		<Element>ResponseChoicePattern</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The distribution of responses to each choice.  This element only applies to multiple choice items.</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>/Choice</Element>
+		<Characteristics>MR</Characteristics>
+	</Item>
+	<Item>
+		<Element>//ChoiceLabel</Element>
+		<Characteristics>M</Characteristics>
+		<Description>Identifier for the choice.</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>//Responses</Element>
+		<Characteristics>M</Characteristics>
+		<Description>The number of responses.</Description>
+		<Type name="xs:integer"/>,
+	</Item>
+	<Item>
+		<Element>SIF_Metadata</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_Metadata"/>
+	</Item>
+	<Item>
+		<Element>SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<xhtml:Example xmlns="">
+		<ItemCharacteristics RefId="64B0CC6CFB314A328E520A102229CBC8" AssessmentItemRefId="A328E520A102229CBC864B0CC6CFB314" AssessmentFormRefId="229CBC864A328E520A102B0CC6CFB314">
+			<PercentCorrect>66.6</PercentCorrect>
+			<SampleSize>1777</SampleSize>
+			<SampleDescription>District tests only</SampleDescription>
+			<Measurements>
+				<Measurement MeasurementCode="MSF">
+					<MeasurementDescription>Mean Square Fit</MeasurementDescription>
+					<ScaleValue>.0066</ScaleValue>
+					<Min>0.0</Min>
+					<Max>GT 0.0</Max>
+					<Optimal>0.6</Optimal>
+				</Measurement>
+				<Measurement MeasurementCode="WMSF">
+					<MeasurementDescription>Weighted Mean Square Fit</MeasurementDescription>
+					<ScaleValue>.0066</ScaleValue>
+					<Min>0.0</Min>
+					<Max>GT 0.0</Max>
+					<Optimal>.2</Optimal>
+				</Measurement>
+				<Measurement MeasurementCode="ZChiSq">
+					<MeasurementDescription>Z Chi Square</MeasurementDescription>
+					<ScaleValue>3.3625</ScaleValue>
+					<Min>GT 0.0</Min>
+					<Max>LE 0.0</Max>
+					<Optimal>LT 0.0</Optimal>
+				</Measurement>
+			</Measurements>
+			<DifferentialItemAnalysis>
+				<CMH>-.30</CMH>
+				<MH>-.15</MH>
+			</DifferentialItemAnalysis>
+			<ResponseChoicePattern>
+				<Choice>
+					<ChoiceLabel>1</ChoiceLabel>
+					<Responses>183</Responses>
+				</Choice>
+				<Choice>
+					<ChoiceLabel>2</ChoiceLabel>
+					<Responses>182</Responses>
+				</Choice>
+				<Choice>
+					<ChoiceLabel>3</ChoiceLabel>
+					<Responses>1184</Responses>
+				</Choice>
+				<Choice>
+					<ChoiceLabel>4</ChoiceLabel>
+					<Responses>228</Responses>
+				</Choice>
+			</ResponseChoicePattern>
+			<SIF_Metadata>
+				<TimeElements>
+					<TimeElement>
+						<Type>Full school year</Type>
+						<Code>01</Code>
+						<Name>2004/2005 School Year</Name>
+						<Value>2004-2005</Value>
+						<StartDateTime>2004-09-01T08:00:00-05:00</StartDateTime>
+						<EndDateTime>2005-06-30T15:00:00-05:00</EndDateTime>
+						<IsCurrent>true</IsCurrent>
+					</TimeElement>
+				</TimeElements>
+				<LifeCycle>
+					<Created>
+						<DateTime>2006-08-13T09:00:00-05:00</DateTime>
+						<Creators>
+							<Creator>
+								<Name>My Testing Service</Name>
+								<ID>http://www.myTestingService.com</ID>
+							</Creator>
+						</Creators>
+					</Created>
+					<ModificationHistory>
+						<Modified>
+							<By>http://www.myTestingService.com</By>
+							<DateTime>2006-08-17T09:30:00-05:00</DateTime>
+						</Modified>
+					</ModificationHistory>
+				</LifeCycle>
+			</SIF_Metadata>
+		</ItemCharacteristics>
+	</xhtml:Example>
+</DataObject>

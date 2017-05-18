@@ -1,0 +1,276 @@
+<DataObject name="MarkValueInfo">
+	<EventsReported>true</EventsReported>
+	<Key>@RefId</Key>
+	<Item>
+		<Element>MarkValueInfo</Element>
+		<Description>
+			<p>This object defines the types of values allowed for a mark and the domain for each mark value.  At least one of the Percentage, Numeric, Letter or Narrative nodes must be used to create a valid MarkValueInfo.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The Id (GUID) that uniquely identifies this MarkValueInfo entity.</p>
+		</Description>
+		<Type ref="CommonTypes" name="RefIdType"/>
+	</Item>
+	<Item>
+		<Attribute>SchoolInfoRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The Id (GUID) that uniquely identifies the School that these Mark Values apply to.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	<Item>
+		<Element>SchoolYear</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The year that this  MarkValueInfo applies to.</p>
+		</Description>
+		<Type ref="DataModel" name="SchoolYear"/>
+	</Item>
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The text name of the value list ("Letter Grades", "Letter Grades (+/-)", "ESU", "Pass/Fail", "Override Grades", "Citizenship Comment Codes", etc.).</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>Percentage</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a percent Mark is accepted (format ##0.00).</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>IsAccepted</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a percent Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>
+		</Description>
+		<Type name="xs:boolean"/>
+	</Item>
+	<Item>
+		<Element>/Minimum</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The minimum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be lower than this value.</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>/Maximum</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The maximum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be higher than this value.</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>Numeric</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a raw numeric score is accepted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>IsAccepted</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a raw numeric score is accepted and is used in Change events to unambiguously signal whether support for the score has changed, especially ended.</p>
+		</Description>
+		<Type name="xs:boolean"/>
+	</Item>
+	<Item>
+		<Element>/Precision</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Number of significant digits.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>/Scale</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Number of decimal places.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>/Low</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Lowest Mark in the range (e.g., 98, 3.95).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>/High</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Highest Mark in the range (e.g., 100, 4.0).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>Letter</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a letter Mark is accepted.</p>
+		</Description>
+		<List mode="ActionList">
+			<Key>ValidMark/Code</Key>
+		</List>
+	</Item>
+	<Item>
+		<Attribute>IsAccepted</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a letter Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>
+		</Description>
+		<Type name="xs:boolean"/>
+	</Item>
+	<Item>
+		<Element>/ValidMark</Element>
+		<Characteristics>CR</Characteristics>
+		<Description>
+			<p>
+        List of specific valid letter Marks.  May be omitted when <code>IsAccepted</code> is <code>false</code>, otherwise mandatory.
+      </p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>SIF_Action</Attribute>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>
+        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.  At a minimum the key for the list must also be present.
+      </p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Delete</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>//Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>String representing the actual Mark that would appear on the report card (e.g., "A+", "I", "100").</p>
+		</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
+		<Element>//NumericEquivalent</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Numeric equivalent for the Mark (e.g., 100, 4.0).</p>
+		</Description>
+		<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Element>//Description</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The description for this code. (e.g. "Excellent", "Participates in Class", "Incomplete", etc...).</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Element>Narrative</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>If present, indicates that a free-form text narrative is accepted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>IsAccepted</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates whether a narrative is accepted and is used in Change events to unambiguously signal whether support for a narrative has changed, especially ended.</p>
+		</Description>
+		<Type name="xs:boolean"/>
+	</Item>
+	<Item>
+		<Element>/MaximumSize</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>An integer value representing the maximum number of Unicode characters for the narrative, the UTF-8 encoding of which may be longer.</p>
+		</Description>
+		<Type name="xs:unsignedInt"/>
+	</Item>
+	<Item>
+		<Element>SIF_Metadata</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_Metadata"/>
+	</Item>
+	<Item>
+		<Element>SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+	</Item>
+	<xhtml:Example xmlns="">
+		<MarkValueInfo RefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB">
+			<SchoolYear>2004</SchoolYear>
+			<Name>Letter Grades</Name>
+			<Percentage IsAccepted="false"/>
+			<Numeric IsAccepted="false"/>
+			<Letter IsAccepted="true">
+				<ValidMark>
+					<Code>A</Code>
+					<NumericEquivalent>100</NumericEquivalent>
+				</ValidMark>
+				<ValidMark>
+					<Code>B</Code>
+					<NumericEquivalent>90</NumericEquivalent>
+				</ValidMark>
+				<ValidMark>
+					<Code>C</Code>
+					<NumericEquivalent>80</NumericEquivalent>
+				</ValidMark>
+				<ValidMark>
+					<Code>D</Code>
+					<NumericEquivalent>70</NumericEquivalent>
+				</ValidMark>
+				<ValidMark>
+					<Code>F</Code>
+					<NumericEquivalent>60</NumericEquivalent>
+				</ValidMark>
+			</Letter>
+			<Narrative IsAccepted="false"/>
+		</MarkValueInfo>
+	</xhtml:Example>
+	<xhtml:Example xmlns="">
+		<MarkValueInfo RefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB">
+			<SchoolYear>2004</SchoolYear>
+			<Name>Numeric Grade</Name>
+			<Percentage IsAccepted="false"/>
+			<Numeric IsAccepted="true">
+				<Precision>6</Precision>
+				<Scale>2</Scale>
+				<Low>0</Low>
+				<High>1000</High>
+			</Numeric>
+			<Letter IsAccepted="false"/>
+			<Narrative IsAccepted="false"/>
+		</MarkValueInfo>
+	</xhtml:Example>
+	<xhtml:Example xmlns="">
+		<MarkValueInfo RefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB">
+			<SchoolYear>2004</SchoolYear>
+			<Name>Free Form Comment</Name>
+			<Percentage IsAccepted="false"/>
+			<Numeric IsAccepted="false"/>
+			<Letter IsAccepted="false"/>
+			<Narrative IsAccepted="true">
+				<MaximumSize>255</MaximumSize>
+			</Narrative>
+		</MarkValueInfo>
+	</xhtml:Example>
+</DataObject>

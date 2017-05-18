@@ -1,0 +1,1078 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>SIF Implementation Specification 2.7M - Food Services Working Group</title>
+    <link rel="stylesheet" type="text/css" href="include/document.css" />
+    <link rel="stylesheet" type="text/css" href="include/specification.css" />
+  </head>
+  <body>
+    <div class="navigation" id="topnavigation">
+      <a href="index.html">home</a>
+      <a href="index.html#contents">table of contents</a>
+      <hr />
+    </div>
+    <h2>3.8 Food Services Working Group</h2>
+    <p>
+        The Food Services Working Group specifies, implements, and promotes a standard set of messages and automated communication mechanisms
+        that allow computer applications for the food service sector of the education industry to effectively exchange information
+        with all SIF applications.
+      </p>
+    <div class="element_section">
+      <a name="obj:FoodserviceItem" />
+      <a name="381FoodserviceItem" />
+      <h3 class="element_name">3.8.1 FoodserviceItem</h3>
+      <p>This object communicates information about food service items.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3811FoodserviceItem" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceItem.png">
+          <img class="diagram" src="diagrams/FoodserviceItem.png" alt="FoodserviceItem" width="482" height="424" usemap="#FoodserviceItem__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.1-1: FoodserviceItem</span><map name="FoodserviceItem__map" id="FoodserviceItem__map">
+  <area alt="FoodserviceItem" href="#FoodserviceItem" shape="rect" coords="5,234,169,276" />
+  <area alt="RefId" href="#FoodserviceItem___RefId" shape="rect" coords="244,15,319,57" />
+  <area alt="LocalId" href="#FoodserviceItem__LocalId" shape="rect" coords="244,92,335,134" />
+  <area alt="Description" href="#FoodserviceItem__Description" shape="rect" coords="244,149,367,191" />
+  <area alt="ElectronicIdList" href="#FoodserviceItem__ElectronicIdList" shape="rect" coords="244,206,400,248" />
+  <area alt="ItemCategory" href="#FoodserviceItem__ItemCategory" shape="rect" coords="244,263,382,305" />
+  <area alt="SIF_Metadata" href="#FoodserviceItem__SIF_Metadata" shape="rect" coords="244,320,383,362" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceItem__SIF_ExtendedElements" shape="rect" coords="244,377,459,419" />
+</map><a name="Table3811FoodserviceItem" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem" /><span class="rootElement">FoodserviceItem</span></td><td class="emptycell">&#xA0;</td><td class="description">&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceItem___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this item</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem__LocalId" />LocalId</td><td class="characteristics">M</td><td class="description"><p>Item number as presented to user.</p>&#xA0;</td><td class="type"><a href="DataModel.html#LocalId" class="type">LocalId</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem__Description" />Description</td><td class="characteristics">O</td><td class="description"><p>Description of Item</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem__ElectronicIdList" />ElectronicIdList</td><td class="characteristics">O</td><td class="description"><p>Electronic identifier(s) associated with this item.</p>&#xA0;</td><td class="type"><a href="DataModel.html#ElectronicIdList" class="type">ElectronicIdList</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem__ItemCategory" />ItemCategory</td><td class="characteristics">O</td><td class="description"><p>
+        The category is derived from the Child Nutrition Database's food category codes/names (Source: Food Category Name File <a href="References.html#CNDB">[CNDB]</a>).
+        Agents may use the actual codes or a district's local definition of the names associated with the codes.
+        The Child Nutrition Database <a href="References.html#CNDB">[CNDB]</a> is updated on a yearly basis by the USDA.
+      </p><p><span class="title">Examples</span><br /><span class="example">Milk</span><br /><span class="example">Meat</span><br /><span class="example">Vegetables</span><br /><span class="example">Other</span><br /></p></td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItem__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.1-1: FoodserviceItem</span><a name="Example3811FoodserviceItem" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceItem RefId="EF521958AB474559B2AE7BD82647C66B"&gt;
+  &lt;LocalId&gt;2391&lt;/LocalId&gt;
+  &lt;Description&gt;Green Burrito&lt;/Description&gt;
+  &lt;ElectronicIdList&gt;
+    &lt;ElectronicId Type="Barcode"&gt;123456&lt;/ElectronicId&gt;
+  &lt;/ElectronicIdList&gt;
+  &lt;ItemCategory&gt;Vegetables&lt;/ItemCategory&gt;
+&lt;/FoodserviceItem&gt;
+</div></div><span class="caption">Example 3.8.1-1: FoodserviceItem</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceItemPortion" />
+      <a name="382FoodserviceItemPortion" />
+      <h3 class="element_name">3.8.2 FoodserviceItemPortion</h3>
+      <p>This object describes a certain amount for a specific item unit.</p>
+      <p>
+        Note that this version of the object does not contain any elements that define item pricing. This task is left for future
+        development.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3821FoodserviceItemPortion" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceItemPortion.png">
+          <img class="diagram" src="diagrams/FoodserviceItemPortion.png" alt="FoodserviceItemPortion" width="543" height="424" usemap="#FoodserviceItemPortion__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.2-1: FoodserviceItemPortion</span><map name="FoodserviceItemPortion__map" id="FoodserviceItemPortion__map">
+  <area alt="FoodserviceItemPortion" href="#FoodserviceItemPortion" shape="rect" coords="5,234,226,276" />
+  <area alt="RefId" href="#FoodserviceItemPortion___RefId" shape="rect" coords="301,15,376,57" />
+  <area alt="FoodserviceItemUnitRefId" href="#FoodserviceItemPortion__FoodserviceItemUnitRefId" shape="rect" coords="301,92,538,134" />
+  <area alt="ItemPortionQuantity" href="#FoodserviceItemPortion__ItemPortionQuantity" shape="rect" coords="301,149,492,191" />
+  <area alt="ItemPortionType" href="#FoodserviceItemPortion__ItemPortionType" shape="rect" coords="301,206,464,248" />
+  <area alt="Description" href="#FoodserviceItemPortion__Description" shape="rect" coords="301,263,424,305" />
+  <area alt="SIF_Metadata" href="#FoodserviceItemPortion__SIF_Metadata" shape="rect" coords="301,320,440,362" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceItemPortion__SIF_ExtendedElements" shape="rect" coords="301,377,516,419" />
+</map><a name="Table3821FoodserviceItemPortion" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion" /><span class="rootElement">FoodserviceItemPortion</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object describes a certain amount for a specific item unit.</p><p>
+        Note that this version of the object does not contain any elements that define item pricing. This task is left for future
+        development.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceItemPortion___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this item's portion</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion__FoodserviceItemUnitRefId" />FoodserviceItemUnitRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies related item portion</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion__ItemPortionQuantity" />ItemPortionQuantity</td><td class="characteristics">M</td><td class="description"><p>Quantity of item portion (number of units)</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion__ItemPortionType" />ItemPortionType</td><td class="characteristics">M</td><td class="description"><p>Type of item unit</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Component</dt><dt>Entree</dt><dt>AlaCarte</dt><dt>Bonus</dt><dt>Combo</dt><dt>NonFood</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion__Description" />Description</td><td class="characteristics">O</td><td class="description"><p>Optional description of amount</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemPortion__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.2-1: FoodserviceItemPortion</span><a name="Example3821FoodserviceItemPortion" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceItemPortion RefId="EF521958AB474559B2AE7BD82647C66B"&gt;
+  &lt;FoodserviceItemUnitRefId&gt;D9837A776DD626777872361DD118873C&lt;/FoodserviceItemUnitRefId&gt;
+  &lt;ItemPortionQuantity&gt;1&lt;/ItemPortionQuantity&gt;
+  &lt;ItemPortionType&gt;Entree&lt;/ItemPortionType&gt;
+  &lt;Description&gt;One Cup Serving of Mashed Potatoes&lt;/Description&gt;
+&lt;/FoodserviceItemPortion&gt;
+</div></div><span class="caption">Example 3.8.2-1: FoodserviceItemPortion</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceItemSales" />
+      <a name="383FoodserviceItemSales" />
+      <h3 class="element_name">3.8.3 FoodserviceItemSales</h3>
+      <p>This object gives the sales details for the items sold for a specified date.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3831FoodserviceItemSales" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceItemSales.png">
+          <img class="diagram" src="diagrams/FoodserviceItemSales.png" alt="FoodserviceItemSales" width="1083" height="682" usemap="#FoodserviceItemSales__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.3-1: FoodserviceItemSales</span><map name="FoodserviceItemSales__map" id="FoodserviceItemSales__map">
+  <area alt="FoodserviceItemSales" href="#FoodserviceItemSales" shape="rect" coords="5,363,212,405" />
+  <area alt="RefId" href="#FoodserviceItemSales___RefId" shape="rect" coords="287,15,362,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceItemSales__SchoolInfoRefId" shape="rect" coords="287,92,446,134" />
+  <area alt="Date" href="#FoodserviceItemSales__Date" shape="rect" coords="287,149,356,191" />
+  <area alt="Program" href="#FoodserviceItemSales__Program" shape="rect" coords="287,206,388,248" />
+  <area alt="ItemQuantities" href="#FoodserviceItemSales__ItemQuantities" shape="rect" coords="287,392,434,434" />
+  <area alt="ItemQuantity" href="#FoodserviceItemSales__ItemQuantities__ItemQuantity" shape="rect" coords="577,435,711,477" />
+  <area alt="FoodserviceItemPortionRefId" href="#FoodserviceItemSales__ItemQuantities__ItemQuantity___FoodserviceItemPortionRefId" shape="rect" coords="786,273,1050,315" />
+  <area alt="Value" href="#FoodserviceItemSales__ItemQuantities__ItemQuantity__Value" shape="rect" coords="786,350,863,392" />
+  <area alt="MealType" href="#FoodserviceItemSales__ItemQuantities__ItemQuantity__MealType" shape="rect" coords="786,407,894,449" />
+  <area alt="GradeLevels" href="#FoodserviceItemSales__ItemQuantities__ItemQuantity__GradeLevels" shape="rect" coords="786,464,918,506" />
+  <area alt="Cost" href="#FoodserviceItemSales__ItemQuantities__ItemQuantity__Cost" shape="rect" coords="786,521,907,563" />
+  <area alt="SIF_Metadata" href="#FoodserviceItemSales__SIF_Metadata" shape="rect" coords="287,578,426,620" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceItemSales__SIF_ExtendedElements" shape="rect" coords="287,635,502,677" />
+</map><a name="Table3831FoodserviceItemSales" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales" /><span class="rootElement">FoodserviceItemSales</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object gives the sales details for the items sold for a specified date.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceItemSales___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the school for this object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date of sales</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__ItemQuantities" />ItemQuantities</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__ItemQuantities__ItemQuantity" />ItemQuantities/ItemQuantity<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>Quantity of item amounts sold</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceItemSales__ItemQuantities__ItemQuantity___FoodserviceItemPortionRefId" />FoodserviceItemPortionRefId</td><td class="characteristics">M</td><td class="description"><p>GUID of FoodserviceItemPortion object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__ItemQuantities__ItemQuantity__Value" />ItemQuantities/ItemQuantity/<br/>&#160;&#160;&#160;&#160;&#160;Value</td><td class="characteristics">M</td><td class="description"><p>The value of item quantity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__ItemQuantities__ItemQuantity__MealType" />ItemQuantities/ItemQuantity/<br/>&#160;&#160;&#160;&#160;&#160;MealType</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealType" class="type">MealType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__ItemQuantities__ItemQuantity__GradeLevels" />ItemQuantities/ItemQuantity/<br/>&#160;&#160;&#160;&#160;&#160;GradeLevels</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#GradeLevels" class="type">GradeLevels</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__ItemQuantities__ItemQuantity__Cost" />ItemQuantities/ItemQuantity/<br/>&#160;&#160;&#160;&#160;&#160;Cost</td><td class="characteristics">O</td><td class="description"><p>The cost (monetary value) of the item sold.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemSales__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.3-1: FoodserviceItemSales</span><a name="Example3831FoodserviceItemSales" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceItemSales RefId="F7E8FF23F3A1471BA9D0B0E22A0839C6"&gt;
+  &lt;SchoolInfoRefId&gt;B72A99FFC3624AD2ADD197CC5A4A2563&lt;/SchoolInfoRefId&gt;
+  &lt;Date&gt;2001-09-13&lt;/Date&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;ItemQuantities&gt;
+    &lt;ItemQuantity FoodserviceItemPortionRefId="D38E8D805B664B7CB389CFE2C11B145F"&gt;
+      &lt;Value&gt;35&lt;/Value&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;01&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;02&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;03&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;04&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;05&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+    &lt;/ItemQuantity&gt;
+    &lt;ItemQuantity FoodserviceItemPortionRefId="A08CC23B059C400CAA9F9BBD3DFF94F1"&gt;
+      &lt;Value&gt;152&lt;/Value&gt;
+      &lt;MealType&gt;AlaCarte&lt;/MealType&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;01&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;02&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;03&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;04&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;05&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+    &lt;/ItemQuantity&gt;
+  &lt;/ItemQuantities&gt;
+&lt;/FoodserviceItemSales&gt;
+</div></div><span class="caption">Example 3.8.3-1: FoodserviceItemSales</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceItemUnit" />
+      <a name="384FoodserviceItemUnit" />
+      <h3 class="element_name">3.8.4 FoodserviceItemUnit</h3>
+      <p>This object describes the unit for an item.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3841FoodserviceItemUnit" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceItemUnit.png">
+          <img class="diagram" src="diagrams/FoodserviceItemUnit.png" alt="FoodserviceItemUnit" width="514" height="424" usemap="#FoodserviceItemUnit__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.4-1: FoodserviceItemUnit</span><map name="FoodserviceItemUnit__map" id="FoodserviceItemUnit__map">
+  <area alt="FoodserviceItemUnit" href="#FoodserviceItemUnit" shape="rect" coords="5,234,201,276" />
+  <area alt="RefId" href="#FoodserviceItemUnit___RefId" shape="rect" coords="276,15,351,57" />
+  <area alt="FoodserviceItemRefId" href="#FoodserviceItemUnit__FoodserviceItemRefId" shape="rect" coords="276,92,481,134" />
+  <area alt="Description" href="#FoodserviceItemUnit__Description" shape="rect" coords="276,149,399,191" />
+  <area alt="MeasureDescriptionCode" href="#FoodserviceItemUnit__MeasureDescriptionCode" shape="rect" coords="276,206,508,248" />
+  <area alt="GramWeight" href="#FoodserviceItemUnit__GramWeight" shape="rect" coords="276,263,407,305" />
+  <area alt="SIF_Metadata" href="#FoodserviceItemUnit__SIF_Metadata" shape="rect" coords="276,320,415,362" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceItemUnit__SIF_ExtendedElements" shape="rect" coords="276,377,491,419" />
+</map><a name="Table3841FoodserviceItemUnit" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit" /><span class="rootElement">FoodserviceItemUnit</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object describes the unit for an item.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceItemUnit___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this unit</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit__FoodserviceItemRefId" />FoodserviceItemRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies related item</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit__Description" />Description</td><td class="characteristics">M</td><td class="description"><p>Description of unit ("cup", "teaspoon", etc.)</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit__MeasureDescriptionCode" />MeasureDescriptionCode</td><td class="characteristics">M</td><td class="description"><p>
+        Child Nutrition Database <a href="References.html#CNDB">[CNDB]</a> standard code describing unit.  The database is updated on a yearly basis by the USDA.
+      </p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit__GramWeight" />GramWeight</td><td class="characteristics">M</td><td class="description"><p>Gram weight of this item in terms of MeasureDescriptionCode</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceItemUnit__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.4-1: FoodserviceItemUnit</span><a name="Example3841FoodserviceItemUnit" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceItemUnit RefId="D9837A776DD626777872361DD118873C"&gt;
+  &lt;FoodserviceItemRefId&gt;EF521958AB474559B2AE7BD82647C66B&lt;/FoodserviceItemRefId&gt;
+  &lt;Description&gt;cup&lt;/Description&gt;
+  &lt;MeasureDescriptionCode&gt;CUP01&lt;/MeasureDescriptionCode&gt;
+  &lt;GramWeight&gt;98&lt;/GramWeight&gt;
+&lt;/FoodserviceItemUnit&gt;
+</div></div><span class="caption">Example 3.8.4-1: FoodserviceItemUnit</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceMealPrices" />
+      <a name="385FoodserviceMealPrices" />
+      <h3 class="element_name">3.8.5 FoodserviceMealPrices</h3>
+      <p>This object is a site's meal prices for each grade program, meal status, meal type and grade level.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3851FoodserviceMealPrices" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceMealPrices.png">
+          <img class="diagram" src="diagrams/FoodserviceMealPrices.png" alt="FoodserviceMealPrices" width="889" height="538" usemap="#FoodserviceMealPrices__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.5-1: FoodserviceMealPrices</span><map name="FoodserviceMealPrices__map" id="FoodserviceMealPrices__map">
+  <area alt="FoodserviceMealPrices" href="#FoodserviceMealPrices" shape="rect" coords="5,291,221,333" />
+  <area alt="RefId" href="#FoodserviceMealPrices___RefId" shape="rect" coords="296,15,371,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceMealPrices__SchoolInfoRefId" shape="rect" coords="296,92,455,134" />
+  <area alt="Program" href="#FoodserviceMealPrices__Program" shape="rect" coords="296,149,397,191" />
+  <area alt="Prices" href="#FoodserviceMealPrices__Prices" shape="rect" coords="296,291,378,333" />
+  <area alt="Price" href="#FoodserviceMealPrices__Prices__Price" shape="rect" coords="586,291,659,333" />
+  <area alt="Value" href="#FoodserviceMealPrices__Prices__Price__Value" shape="rect" coords="734,206,855,248" />
+  <area alt="MealStatus" href="#FoodserviceMealPrices__Prices__Price__MealStatus" shape="rect" coords="734,263,854,305" />
+  <area alt="MealType" href="#FoodserviceMealPrices__Prices__Price__MealType" shape="rect" coords="734,320,842,362" />
+  <area alt="GradeLevels" href="#FoodserviceMealPrices__Prices__Price__GradeLevels" shape="rect" coords="734,377,866,419" />
+  <area alt="SIF_Metadata" href="#FoodserviceMealPrices__SIF_Metadata" shape="rect" coords="296,434,435,476" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceMealPrices__SIF_ExtendedElements" shape="rect" coords="296,491,511,533" />
+</map><a name="Table3851FoodserviceMealPrices" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices" /><span class="rootElement">FoodserviceMealPrices</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object is a site's meal prices for each grade program, meal status, meal type and grade level.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceMealPrices___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this meal price.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the school this meal price belongs to</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Prices" />Prices</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Prices__Price" />Prices/Price</td><td class="characteristics">MR</td><td class="description"><p>Price of the meal</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Prices__Price__Value" />Prices/Price/Value</td><td class="characteristics">M</td><td class="description"><p>The price value</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Prices__Price__MealStatus" />Prices/Price/MealStatus</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealStatus" class="type">MealStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Prices__Price__MealType" />Prices/Price/MealType</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealType" class="type">MealType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__Prices__Price__GradeLevels" />Prices/Price/GradeLevels</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#GradeLevels" class="type">GradeLevels</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMealPrices__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.5-1: FoodserviceMealPrices</span><a name="Example3851FoodserviceMealPrices" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceMealPrices RefId="EF521958AB474559B2AE7BD82647C66B"&gt;
+  &lt;SchoolInfoRefId&gt;FF521958AB474559B2AE7BD82647C66B&lt;/SchoolInfoRefId&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Prices&gt;
+    &lt;Price&gt;
+      &lt;Value Currency="USD"&gt;999.99&lt;/Value&gt;
+      &lt;MealStatus Type="Free" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;09&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;10&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;11&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;12&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+    &lt;/Price&gt;
+    &lt;Price&gt;
+      &lt;Value&gt;999.99&lt;/Value&gt;
+      &lt;MealStatus Type="Free" /&gt;
+      &lt;MealType&gt;SecondMeal&lt;/MealType&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;09&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;10&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;11&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;12&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+    &lt;/Price&gt;
+    &lt;Price&gt;
+      &lt;Value&gt;999.99&lt;/Value&gt;
+      &lt;MealStatus Type="Reduced" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;09&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;10&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;11&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;12&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+    &lt;/Price&gt;
+    &lt;Price&gt;
+      &lt;Value&gt;999.99&lt;/Value&gt;
+      &lt;MealStatus Type="None" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;GradeLevels&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;01&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;02&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;03&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;04&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+        &lt;GradeLevel&gt;
+          &lt;Code&gt;05&lt;/Code&gt;
+        &lt;/GradeLevel&gt;
+      &lt;/GradeLevels&gt;
+    &lt;/Price&gt;
+  &lt;/Prices&gt;
+&lt;/FoodserviceMealPrices&gt;
+</div></div><span class="caption">Example 3.8.5-1: FoodserviceMealPrices</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceMenuPlan" />
+      <a name="386FoodserviceMenuPlan" />
+      <h3 class="element_name">3.8.6 FoodserviceMenuPlan</h3>
+      <p>This object communicates the foodservice menu plan for a school site for a given meal program, grade level range and date.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3861FoodserviceMenuPlan" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceMenuPlan.png">
+          <img class="diagram" src="diagrams/FoodserviceMenuPlan.png" alt="FoodserviceMenuPlan" width="1291" height="615" usemap="#FoodserviceMenuPlan__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.6-1: FoodserviceMenuPlan</span><map name="FoodserviceMenuPlan__map" id="FoodserviceMenuPlan__map">
+  <area alt="FoodserviceMenuPlan" href="#FoodserviceMenuPlan" shape="rect" coords="5,330,213,372" />
+  <area alt="RefId" href="#FoodserviceMenuPlan___RefId" shape="rect" coords="288,15,363,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceMenuPlan__SchoolInfoRefId" shape="rect" coords="288,92,447,134" />
+  <area alt="GradeLevels" href="#FoodserviceMenuPlan__GradeLevels" shape="rect" coords="288,149,420,191" />
+  <area alt="MenuPlanDate" href="#FoodserviceMenuPlan__MenuPlanDate" shape="rect" coords="288,206,434,248" />
+  <area alt="Program" href="#FoodserviceMenuPlan__Program" shape="rect" coords="288,263,389,305" />
+  <area alt="Description" href="#FoodserviceMenuPlan__Description" shape="rect" coords="288,320,411,362" />
+  <area alt="ProjectedParticipation" href="#FoodserviceMenuPlan__ProjectedParticipation" shape="rect" coords="288,377,496,419" />
+  <area alt="MenuPlanQuantities" href="#FoodserviceMenuPlan__MenuPlanQuantities" shape="rect" coords="288,444,479,486" />
+  <area alt="MenuPlanQuantity" href="#FoodserviceMenuPlan__MenuPlanQuantities__MenuPlanQuantity" shape="rect" coords="578,444,756,486" />
+  <area alt="FoodserviceItemPortionRefId" href="#FoodserviceMenuPlan__MenuPlanQuantities__MenuPlanQuantity___FoodserviceItemPortionRefId" shape="rect" coords="831,444,1095,486" />
+  <area alt="MenuCategory" href="#FoodserviceMenuPlan__MenuPlanQuantities__MenuPlanQuantity___MenuCategory" shape="rect" coords="1110,444,1258,486" />
+  <area alt="SIF_Metadata" href="#FoodserviceMenuPlan__SIF_Metadata" shape="rect" coords="288,511,427,553" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceMenuPlan__SIF_ExtendedElements" shape="rect" coords="288,568,503,610" />
+</map><a name="Table3861FoodserviceMenuPlan" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan" /><span class="rootElement">FoodserviceMenuPlan</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the foodservice menu plan for a school site for a given meal program, grade level range and date.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceMenuPlan___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this menu plan</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the school for this menu plan</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__GradeLevels" />GradeLevels</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#GradeLevels" class="type">GradeLevels</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__MenuPlanDate" />MenuPlanDate</td><td class="characteristics">M</td><td class="description"><p>Date of menu plan</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__Description" />Description</td><td class="characteristics">O</td><td class="description"><p>Description of menu plan</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__ProjectedParticipation" />ProjectedParticipation</td><td class="characteristics">M</td><td class="description"><p>Feeding figure projected</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__MenuPlanQuantities" />MenuPlanQuantities</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__MenuPlanQuantities__MenuPlanQuantity" />MenuPlanQuantities/MenuPlanQuantity<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">OR</td><td class="description"><p>Quantity of item in this menu plan</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceMenuPlan__MenuPlanQuantities__MenuPlanQuantity___FoodserviceItemPortionRefId" />FoodserviceItemPortionRefId</td><td class="characteristics">M</td><td class="description"><p>Item portion amount</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceMenuPlan__MenuPlanQuantities__MenuPlanQuantity___MenuCategory" />MenuCategory</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>ActualMeal</dt><dt>ProjectedMeal</dt><dt>ActualAlaCarte</dt><dt>ProjectedAlaCarte</dt><dt>Produced</dt><dt>LeftOver</dt><dt>Wasted</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMenuPlan__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.6-1: FoodserviceMenuPlan</span><a name="Example3861FoodserviceMenuPlan" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceMenuPlan RefId="EF521958AB474559B2AE7BD82647C66B"&gt;
+  &lt;SchoolInfoRefId&gt;FF521958AB474559B2AE7BD82647C66B&lt;/SchoolInfoRefId&gt;
+  &lt;GradeLevels&gt;
+    &lt;GradeLevel&gt;
+      &lt;Code&gt;01&lt;/Code&gt;
+    &lt;/GradeLevel&gt;
+    &lt;GradeLevel&gt;
+      &lt;Code&gt;02&lt;/Code&gt;
+    &lt;/GradeLevel&gt;
+    &lt;GradeLevel&gt;
+      &lt;Code&gt;03&lt;/Code&gt;
+    &lt;/GradeLevel&gt;
+    &lt;GradeLevel&gt;
+      &lt;Code&gt;04&lt;/Code&gt;
+    &lt;/GradeLevel&gt;
+    &lt;GradeLevel&gt;
+      &lt;Code&gt;05&lt;/Code&gt;
+    &lt;/GradeLevel&gt;
+  &lt;/GradeLevels&gt;
+  &lt;MenuPlanDate&gt;2001-10-31&lt;/MenuPlanDate&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Description&gt;Halloween Menu&lt;/Description&gt;
+  &lt;ProjectedParticipation&gt;1000&lt;/ProjectedParticipation&gt;
+  &lt;MenuPlanQuantities&gt;
+    &lt;MenuPlanQuantity FoodserviceItemPortionRefId="D9837A776DD626777872361DD118873C" MenuCategory="ActualMeal"&gt;13&lt;/MenuPlanQuantity&gt;
+    &lt;MenuPlanQuantity FoodserviceItemPortionRefId="A08CC23B059C400CAA9F9BBD3DFF94F1" MenuCategory="ActualAlaCarte"&gt;16&lt;/MenuPlanQuantity&gt;
+  &lt;/MenuPlanQuantities&gt;
+&lt;/FoodserviceMenuPlan&gt;
+</div></div><span class="caption">Example 3.8.6-1: FoodserviceMenuPlan</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceMilkSales" />
+      <a name="387FoodserviceMilkSales" />
+      <h3 class="element_name">3.8.7 FoodserviceMilkSales</h3>
+      <p>This object communicates the daily milk sales at a school.</p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure3871FoodserviceMilkSales" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceMilkSales.png">
+          <img class="diagram" src="diagrams/FoodserviceMilkSales.png" alt="FoodserviceMilkSales" width="958" height="595" usemap="#FoodserviceMilkSales__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.7-1: FoodserviceMilkSales</span><map name="FoodserviceMilkSales__map" id="FoodserviceMilkSales__map">
+  <area alt="FoodserviceMilkSales" href="#FoodserviceMilkSales" shape="rect" coords="5,320,210,362" />
+  <area alt="RefId" href="#FoodserviceMilkSales___RefId" shape="rect" coords="285,15,360,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceMilkSales__SchoolInfoRefId" shape="rect" coords="285,92,444,134" />
+  <area alt="Date" href="#FoodserviceMilkSales__Date" shape="rect" coords="285,149,354,191" />
+  <area alt="Program" href="#FoodserviceMilkSales__Program" shape="rect" coords="285,206,386,248" />
+  <area alt="SaleQuantities" href="#FoodserviceMilkSales__SaleQuantities" shape="rect" coords="285,348,432,390" />
+  <area alt="SaleQuantity" href="#FoodserviceMilkSales__SaleQuantities__SaleQuantity" shape="rect" coords="575,348,709,390" />
+  <area alt="Value" href="#FoodserviceMilkSales__SaleQuantities__SaleQuantity__Value" shape="rect" coords="784,263,861,305" />
+  <area alt="MealStatus" href="#FoodserviceMilkSales__SaleQuantities__SaleQuantity__MealStatus" shape="rect" coords="784,320,904,362" />
+  <area alt="SaleUnit" href="#FoodserviceMilkSales__SaleQuantities__SaleQuantity__SaleUnit" shape="rect" coords="784,377,894,419" />
+  <area alt="ChargeToChild" href="#FoodserviceMilkSales__SaleQuantities__SaleQuantity__ChargeToChild" shape="rect" coords="784,434,935,476" />
+  <area alt="SIF_Metadata" href="#FoodserviceMilkSales__SIF_Metadata" shape="rect" coords="285,491,424,533" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceMilkSales__SIF_ExtendedElements" shape="rect" coords="285,548,500,590" />
+</map><a name="Table3871FoodserviceMilkSales" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales" /><span class="rootElement">FoodserviceMilkSales</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the daily milk sales at a school.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceMilkSales___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the daily milk sales object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>School for which the sales object applies</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date on which the sales occurred.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SaleQuantities" />SaleQuantities</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SaleQuantities__SaleQuantity" />SaleQuantities/SaleQuantity<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">OR</td><td class="description"><p>Quantity of sale</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SaleQuantities__SaleQuantity__Value" />SaleQuantities/SaleQuantity/<br/>&#160;&#160;&#160;&#160;&#160;Value</td><td class="characteristics">M</td><td class="description"><p>The quantity sold.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SaleQuantities__SaleQuantity__MealStatus" />SaleQuantities/SaleQuantity/<br/>&#160;&#160;&#160;&#160;&#160;MealStatus</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealStatus" class="type">MealStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SaleQuantities__SaleQuantity__SaleUnit" />SaleQuantities/SaleQuantity/<br/>&#160;&#160;&#160;&#160;&#160;SaleUnit</td><td class="characteristics">M</td><td class="description"><p>Unit of Sale</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SaleQuantities__SaleQuantity__ChargeToChild" />SaleQuantities/SaleQuantity/<br/>&#160;&#160;&#160;&#160;&#160;ChargeToChild</td><td class="characteristics">M</td><td class="description"><p>Charge to child per unit</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceMilkSales__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.7-1: FoodserviceMilkSales</span><a name="Example3871FoodserviceMilkSales" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceMilkSales RefId="D21CF29B7FB44965A9CF950E1E60B21E"&gt;
+  &lt;SchoolInfoRefId&gt;AA66800BE0D84E80AA5838FA97EE3A3E&lt;/SchoolInfoRefId&gt;
+  &lt;Date&gt;2001-10-31&lt;/Date&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;SaleQuantities&gt;
+    &lt;SaleQuantity&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+      &lt;MealStatus Type="Free" /&gt;
+      &lt;SaleUnit&gt;6 oz&lt;/SaleUnit&gt;
+      &lt;ChargeToChild Currency="USD"&gt;999.99&lt;/ChargeToChild&gt;
+    &lt;/SaleQuantity&gt;
+    &lt;SaleQuantity&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+      &lt;MealStatus Type="Reduced" /&gt;
+      &lt;SaleUnit&gt;6 oz&lt;/SaleUnit&gt;
+      &lt;ChargeToChild Currency="USD"&gt;999.99&lt;/ChargeToChild&gt;
+    &lt;/SaleQuantity&gt;
+  &lt;/SaleQuantities&gt;
+&lt;/FoodserviceMilkSales&gt;
+</div></div><span class="caption">Example 3.8.7-1: FoodserviceMilkSales</span></div>
+    <div class="element_section">
+      <a name="obj:FoodservicePurchaseTransaction" />
+      <a name="388FoodservicePurchaseTransaction" />
+      <h3 class="element_name">3.8.8 FoodservicePurchaseTransaction</h3>
+      <p>
+        If a food service transaction is of type <code>Purchase</code> then this object can give the details of the purchase.
+        This object does not exist for other transaction types.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3881FoodservicePurchaseTransaction" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodservicePurchaseTransaction.png">
+          <img class="diagram" src="diagrams/FoodservicePurchaseTransaction.png" alt="FoodservicePurchaseTransaction" width="1369" height="454" usemap="#FoodservicePurchaseTransaction__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.8-1: FoodservicePurchaseTransaction</span><map name="FoodservicePurchaseTransaction__map" id="FoodservicePurchaseTransaction__map">
+  <area alt="FoodservicePurchaseTransaction" href="#FoodservicePurchaseTransaction" shape="rect" coords="5,249,303,291" />
+  <area alt="RefId" href="#FoodservicePurchaseTransaction___RefId" shape="rect" coords="378,15,453,57" />
+  <area alt="FoodserviceTransactionRefId" href="#FoodservicePurchaseTransaction__FoodserviceTransactionRefId" shape="rect" coords="378,92,643,134" />
+  <area alt="PurchaseQuantities" href="#FoodservicePurchaseTransaction__PurchaseQuantities" shape="rect" coords="378,221,566,263" />
+  <area alt="PurchaseQuantity" href="#FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity" shape="rect" coords="718,264,892,306" />
+  <area alt="FoodserviceItemPortionRefId" href="#FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity___FoodserviceItemPortionRefId" shape="rect" coords="967,159,1231,201" />
+  <area alt="Earned" href="#FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity___Earned" shape="rect" coords="1246,159,1336,201" />
+  <area alt="MealType" href="#FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity__MealType" shape="rect" coords="967,236,1075,278" />
+  <area alt="Value" href="#FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity__Value" shape="rect" coords="967,293,1044,335" />
+  <area alt="SIF_Metadata" href="#FoodservicePurchaseTransaction__SIF_Metadata" shape="rect" coords="378,350,517,392" />
+  <area alt="SIF_ExtendedElements" href="#FoodservicePurchaseTransaction__SIF_ExtendedElements" shape="rect" coords="378,407,593,449" />
+</map><a name="Table3881FoodservicePurchaseTransaction" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction" /><span class="rootElement">FoodservicePurchaseTransaction</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        If a food service transaction is of type <code>Purchase</code> then this object can give the details of the purchase.
+        This object does not exist for other transaction types.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodservicePurchaseTransaction___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies purchase transaction</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__FoodserviceTransactionRefId" />FoodserviceTransactionRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies food service transaction in which this purchase was made</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__PurchaseQuantities" />PurchaseQuantities</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity" />PurchaseQuantities/PurchaseQuantity<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>Quantity of the item being purchased</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity___FoodserviceItemPortionRefId" />FoodserviceItemPortionRefId</td><td class="characteristics">M</td><td class="description"><p>Foodservice Item Portion</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity___Earned" />Earned</td><td class="characteristics">M</td><td class="description"><p>Identifies whether the item being purchased is earned i.e., at no cost to the buyer. It is used when  FoodserviceTransaction object's TransactionType element has the value "Purchase".</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Yes</dt><dt>No</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity__MealType" />PurchaseQuantities/PurchaseQuantity/<br/>&#160;&#160;&#160;&#160;&#160;MealType</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealType" class="type">MealType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__PurchaseQuantities__PurchaseQuantity__Value" />PurchaseQuantities/PurchaseQuantity/<br/>&#160;&#160;&#160;&#160;&#160;Value</td><td class="characteristics">M</td><td class="description"><p>The value of quantity</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodservicePurchaseTransaction__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.8-1: FoodservicePurchaseTransaction</span><a name="Example3881FoodservicePurchaseTransaction" />
+<div class="example_parent"><div class="example"
+>&lt;FoodservicePurchaseTransaction RefId="AC99DDF0ED0E426ABE18C9174EC469B7"&gt;
+  &lt;FoodserviceTransactionRefId&gt;EFA054E90CDE45C9BB8A87E9F8F9B238&lt;/FoodserviceTransactionRefId&gt;
+  &lt;PurchaseQuantities&gt;
+    &lt;PurchaseQuantity FoodserviceItemPortionRefId="A2366AFF739B4BC590DA53AD3CE2311A" Earned="Yes"&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;Value&gt;1&lt;/Value&gt;
+    &lt;/PurchaseQuantity&gt;
+    &lt;PurchaseQuantity FoodserviceItemPortionRefId="E612E09D8B614BB4B9F892CFC3272063" Earned="No"&gt;
+      &lt;MealType&gt;AlaCarte&lt;/MealType&gt;
+      &lt;Value&gt;2&lt;/Value&gt;
+    &lt;/PurchaseQuantity&gt;
+  &lt;/PurchaseQuantities&gt;
+&lt;/FoodservicePurchaseTransaction&gt;
+</div></div><span class="caption">Example 3.8.8-1: FoodservicePurchaseTransaction</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceReimbursementRates" />
+      <a name="389FoodserviceReimbursementRates" />
+      <h3 class="element_name">3.8.9 FoodserviceReimbursementRates</h3>
+      <p>This object describes the federal, state, local and other reimbursement rates for a school.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3891FoodserviceReimbursementRates" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceReimbursementRates.png">
+          <img class="diagram" src="diagrams/FoodserviceReimbursementRates.png" alt="FoodserviceReimbursementRates" width="1344" height="769" usemap="#FoodserviceReimbursementRates__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.9-1: FoodserviceReimbursementRates</span><map name="FoodserviceReimbursementRates__map" id="FoodserviceReimbursementRates__map">
+  <area alt="FoodserviceReimbursementRates" href="#FoodserviceReimbursementRates" shape="rect" coords="5,407,304,449" />
+  <area alt="RefId" href="#FoodserviceReimbursementRates___RefId" shape="rect" coords="379,15,454,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceReimbursementRates__SchoolInfoRefId" shape="rect" coords="379,92,538,134" />
+  <area alt="StartDate" href="#FoodserviceReimbursementRates__StartDate" shape="rect" coords="379,149,485,191" />
+  <area alt="EndDate" href="#FoodserviceReimbursementRates__EndDate" shape="rect" coords="379,206,479,248" />
+  <area alt="Program" href="#FoodserviceReimbursementRates__Program" shape="rect" coords="379,263,480,305" />
+  <area alt="Agencies" href="#FoodserviceReimbursementRates__Agencies" shape="rect" coords="379,464,485,506" />
+  <area alt="Agency" href="#FoodserviceReimbursementRates__Agencies__Agency" shape="rect" coords="669,507,761,549" />
+  <area alt="Type" href="#FoodserviceReimbursementRates__Agencies__Agency___Type" shape="rect" coords="836,330,908,372" />
+  <area alt="Name" href="#FoodserviceReimbursementRates__Agencies__Agency__Name" shape="rect" coords="836,407,946,449" />
+  <area alt="Rates" href="#FoodserviceReimbursementRates__Agencies__Agency__Rates" shape="rect" coords="836,536,914,578" />
+  <area alt="Rate" href="#FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate" shape="rect" coords="1021,579,1090,621" />
+  <area alt="SevereNeed" href="#FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate___SevereNeed" shape="rect" coords="1165,474,1293,516" />
+  <area alt="Value" href="#FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate__Value" shape="rect" coords="1165,551,1242,593" />
+  <area alt="MealStatus" href="#FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate__MealStatus" shape="rect" coords="1165,608,1285,650" />
+  <area alt="SIF_Metadata" href="#FoodserviceReimbursementRates__SIF_Metadata" shape="rect" coords="379,665,518,707" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceReimbursementRates__SIF_ExtendedElements" shape="rect" coords="379,722,594,764" />
+</map><a name="Table3891FoodserviceReimbursementRates" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates" /><span class="rootElement">FoodserviceReimbursementRates</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object describes the federal, state, local and other reimbursement rates for a school.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceReimbursementRates___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies this object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the school.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__StartDate" />StartDate</td><td class="characteristics">M</td><td class="description"><p>Effective start date for the reimbursement rates</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__EndDate" />EndDate</td><td class="characteristics">M</td><td class="description"><p>Effective end date for the reimbursement rates</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies" />Agencies</td><td class="characteristics">M</td><td class="description"><p>List of reimbursing agencies.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies__Agency" />Agencies/Agency</td><td class="characteristics">MR</td><td class="description"><p>Reimbursing agency</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceReimbursementRates__Agencies__Agency___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>Type of the reimbursing agency.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Federal</dt><dt>State</dt><dt>Local</dt><dt>Other</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies__Agency__Name" />Agencies/Agency/Name</td><td class="characteristics">C</td><td class="description"><p>
+        The name of the reimbursing agency. This element is to be used when the Type is set as <code>Other</code>.
+      </p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies__Agency__Rates" />Agencies/Agency/Rates</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate" />Agencies/Agency/Rates/Rate<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>Reimbursement rate of the meal</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate___SevereNeed" />SevereNeed</td><td class="characteristics">M</td><td class="description"><p>
+        Severe need identifier for the rate. When SevereNeed is <code>Yes</code> then the rate shown is the combined rate.
+        For certain programs the severe need identifier does not apply.  In such cases the value <code>NA</code> should
+        be used.
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Yes</dt><dt>No</dt><dt>NA</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate__Value" />Agencies/Agency/Rates/Rate/<br/>&#160;&#160;&#160;&#160;&#160;Value</td><td class="characteristics">M</td><td class="description"><p>The rate value</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__Agencies__Agency__Rates__Rate__MealStatus" />Agencies/Agency/Rates/Rate/<br/>&#160;&#160;&#160;&#160;&#160;MealStatus</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealStatus" class="type">MealStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceReimbursementRates__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.9-1: FoodserviceReimbursementRates</span><a name="Example3891FoodserviceReimbursementRates" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceReimbursementRates RefId="D9837A776DD626777872361DD118873C"&gt;
+  &lt;SchoolInfoRefId&gt;EF521958AB474559B2AE7BD82647C66B&lt;/SchoolInfoRefId&gt;
+  &lt;StartDate&gt;2004-01-01&lt;/StartDate&gt;
+  &lt;EndDate&gt;2004-12-31&lt;/EndDate&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Agencies&gt;
+    &lt;Agency Type="Federal"&gt;
+      &lt;Rates&gt;
+        &lt;Rate SevereNeed="No"&gt;
+          &lt;Value&gt;1.00&lt;/Value&gt;
+          &lt;MealStatus Type="Free" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="No"&gt;
+          &lt;Value&gt;2.00&lt;/Value&gt;
+          &lt;MealStatus Type="Reduced" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="No"&gt;
+          &lt;Value&gt;3.00&lt;/Value&gt;
+          &lt;MealStatus Type="None" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="Yes"&gt;
+          &lt;Value&gt;4.00&lt;/Value&gt;
+          &lt;MealStatus Type="Free" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="Yes"&gt;
+          &lt;Value&gt;5.00&lt;/Value&gt;
+          &lt;MealStatus Type="Reduced" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="Yes"&gt;
+          &lt;Value&gt;6.00&lt;/Value&gt;
+          &lt;MealStatus Type="None" /&gt;
+        &lt;/Rate&gt;
+      &lt;/Rates&gt;
+    &lt;/Agency&gt;
+    &lt;Agency Type="Other"&gt;
+      &lt;Name&gt;Some Reimbursing Agency&lt;/Name&gt;
+      &lt;Rates&gt;
+        &lt;Rate SevereNeed="No"&gt;
+          &lt;Value&gt;1.00&lt;/Value&gt;
+          &lt;MealStatus Type="Free" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="No"&gt;
+          &lt;Value&gt;2.00&lt;/Value&gt;
+          &lt;MealStatus Type="Reduced" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="No"&gt;
+          &lt;Value&gt;3.00&lt;/Value&gt;
+          &lt;MealStatus Type="None" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="Yes"&gt;
+          &lt;Value&gt;4.00&lt;/Value&gt;
+          &lt;MealStatus Type="Free" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="Yes"&gt;
+          &lt;Value&gt;5.00&lt;/Value&gt;
+          &lt;MealStatus Type="Reduced" /&gt;
+        &lt;/Rate&gt;
+        &lt;Rate SevereNeed="Yes"&gt;
+          &lt;Value&gt;6.00&lt;/Value&gt;
+          &lt;MealStatus Type="None" /&gt;
+        &lt;/Rate&gt;
+      &lt;/Rates&gt;
+    &lt;/Agency&gt;
+  &lt;/Agencies&gt;
+&lt;/FoodserviceReimbursementRates&gt;
+</div></div><span class="caption">Example 3.8.9-1: FoodserviceReimbursementRates</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceSales" />
+      <a name="3810FoodserviceSales" />
+      <h3 class="element_name">3.8.10 FoodserviceSales</h3>
+      <p>This object communicates the daily sales information.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure38101FoodserviceSales" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceSales.png">
+          <img class="diagram" src="diagrams/FoodserviceSales.png" alt="FoodserviceSales" width="1014" height="444" usemap="#FoodserviceSales__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.10-1: FoodserviceSales</span><map name="FoodserviceSales__map" id="FoodserviceSales__map">
+  <area alt="FoodserviceSales" href="#FoodserviceSales" shape="rect" coords="5,244,178,286" />
+  <area alt="RefId" href="#FoodserviceSales___RefId" shape="rect" coords="253,15,328,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceSales__SchoolInfoRefId" shape="rect" coords="253,92,412,134" />
+  <area alt="Date" href="#FoodserviceSales__Date" shape="rect" coords="253,149,322,191" />
+  <area alt="Program" href="#FoodserviceSales__Program" shape="rect" coords="253,206,354,248" />
+  <area alt="SalesAmounts" href="#FoodserviceSales__SalesAmounts" shape="rect" coords="253,273,400,315" />
+  <area alt="SalesAmount" href="#FoodserviceSales__SalesAmounts__SalesAmount" shape="rect" coords="543,273,681,315" />
+  <area alt="Type" href="#FoodserviceSales__SalesAmounts__SalesAmount___Type" shape="rect" coords="756,273,828,315" />
+  <area alt="AccountType" href="#FoodserviceSales__SalesAmounts__SalesAmount___AccountType" shape="rect" coords="843,273,981,315" />
+  <area alt="SIF_Metadata" href="#FoodserviceSales__SIF_Metadata" shape="rect" coords="253,340,392,382" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceSales__SIF_ExtendedElements" shape="rect" coords="253,397,468,439" />
+</map><a name="Table38101FoodserviceSales" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales" /><span class="rootElement">FoodserviceSales</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the daily sales information.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceSales___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the daily meal sales object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>School for which the sales object applies</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date on which the sales occurred.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__SalesAmounts" />SalesAmounts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__SalesAmounts__SalesAmount" />SalesAmounts/SalesAmount</td><td class="characteristics">MR</td><td class="description"><p>Monetary value</p><p>(count * cost per unit) done for all grade levels</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceSales__SalesAmounts__SalesAmount___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>Type of SalesAmount. This denotes the form of incoming funds for the sales done.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Cash</dt><dt>Account</dt><dt>Charged</dt><dt>Earned</dt></dl></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceSales__SalesAmounts__SalesAmount___AccountType" />AccountType</td><td class="characteristics">M</td><td class="description"><p>
+        Type of account to which sales amounts apply.  This is set to <code>NA</code> when <code>Type</code> is set as <code>Earned</code>.
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>PrepaidCash</dt><dt>BreakfastCredit</dt><dt>LunchCredit</dt><dt>NA</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceSales__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.10-1: FoodserviceSales</span><a name="Example38101FoodserviceSales" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceSales RefId="E57A732918E1473F80C2CFA7774DAA6A"&gt;
+  &lt;SchoolInfoRefId&gt;D21CF29B7FB44965A9CF950E1E60B21E&lt;/SchoolInfoRefId&gt;
+  &lt;Date&gt;2001-10-31&lt;/Date&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;SalesAmounts&gt;
+    &lt;SalesAmount Type="Cash" AccountType="NA" Currency="USD"&gt;9999.99&lt;/SalesAmount&gt;
+    &lt;SalesAmount Type="Account" AccountType="PrepaidCash"&gt;9999.99&lt;/SalesAmount&gt;
+    &lt;SalesAmount Type="Charged" AccountType="PrepaidCash"&gt;9999.99&lt;/SalesAmount&gt;
+    &lt;SalesAmount Type="Charged" AccountType="BreakfastCredit"&gt;9999.99&lt;/SalesAmount&gt;
+    &lt;SalesAmount Type="Charged" AccountType="LunchCredit"&gt;9999.99&lt;/SalesAmount&gt;
+    &lt;SalesAmount Type="Earned" AccountType="NA"&gt;9999.99&lt;/SalesAmount&gt;
+  &lt;/SalesAmounts&gt;
+&lt;/FoodserviceSales&gt;
+</div></div><span class="caption">Example 3.8.10-1: FoodserviceSales</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceStaffEnrollmentCount" />
+      <a name="3811FoodserviceStaffEnrollmentCount" />
+      <h3 class="element_name">3.8.11 FoodserviceStaffEnrollmentCount</h3>
+      <p>This object communicates the staff enrollment for a specified date.</p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure38111FoodserviceStaffEnrollmentCount" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceStaffEnrollmentCount.png">
+          <img class="diagram" src="diagrams/FoodserviceStaffEnrollmentCount.png" alt="FoodserviceStaffEnrollmentCount" width="774" height="310" usemap="#FoodserviceStaffEnrollmentCount__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.11-1: FoodserviceStaffEnrollmentCount</span><map name="FoodserviceStaffEnrollmentCount__map" id="FoodserviceStaffEnrollmentCount__map">
+  <area alt="FoodserviceStaffEnrollmentCount" href="#FoodserviceStaffEnrollmentCount" shape="rect" coords="5,177,305,219" />
+  <area alt="RefId" href="#FoodserviceStaffEnrollmentCount___RefId" shape="rect" coords="380,15,455,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceStaffEnrollmentCount___SchoolInfoRefId" shape="rect" coords="470,15,630,57" />
+  <area alt="Date" href="#FoodserviceStaffEnrollmentCount___Date" shape="rect" coords="645,15,715,57" />
+  <area alt="Program" href="#FoodserviceStaffEnrollmentCount__Program" shape="rect" coords="380,92,481,134" />
+  <area alt="Counts" href="#FoodserviceStaffEnrollmentCount__Counts" shape="rect" coords="380,149,470,191" />
+  <area alt="Count" href="#FoodserviceStaffEnrollmentCount__Counts__Count" shape="rect" coords="670,149,751,191" />
+  <area alt="SIF_Metadata" href="#FoodserviceStaffEnrollmentCount__SIF_Metadata" shape="rect" coords="380,206,519,248" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceStaffEnrollmentCount__SIF_ExtendedElements" shape="rect" coords="380,263,595,305" />
+</map><a name="Table38111FoodserviceStaffEnrollmentCount" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffEnrollmentCount" /><span class="rootElement">FoodserviceStaffEnrollmentCount</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the staff enrollment for a specified date.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceStaffEnrollmentCount___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is a “transient” value; that is, it SHOULD be generated by the provider at the time the object is provided in a Response message.  This value MUST NOT be used in a later Request for the object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceStaffEnrollmentCount___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>Reference to SchoolInfo</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceStaffEnrollmentCount___Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date the count is taken.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffEnrollmentCount__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffEnrollmentCount__Counts" />Counts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffEnrollmentCount__Counts__Count" />Counts/Count</td><td class="characteristics">MR</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSCountType" class="type">FSCountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffEnrollmentCount__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffEnrollmentCount__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.11-1: FoodserviceStaffEnrollmentCount</span><a name="Example38111FoodserviceStaffEnrollmentCount" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceStaffEnrollmentCount RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SchoolInfoRefId="E822BCDC9E7A40F787ED8183D3B485B5" Date="2001-10-31"&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Counts&gt;
+    &lt;Count&gt;
+      &lt;EarnedStatus Type="Yes" /&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;EarnedStatus Type="No" /&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+  &lt;/Counts&gt;
+&lt;/FoodserviceStaffEnrollmentCount&gt;
+</div></div><span class="caption">Example 3.8.11-1: FoodserviceStaffEnrollmentCount</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceStaffMealCounts" />
+      <a name="3812FoodserviceStaffMealCounts" />
+      <h3 class="element_name">3.8.12 FoodserviceStaffMealCounts</h3>
+      <p>This object communicates the daily staff sales.</p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure38121FoodserviceStaffMealCounts" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceStaffMealCounts.png">
+          <img class="diagram" src="diagrams/FoodserviceStaffMealCounts.png" alt="FoodserviceStaffMealCounts" width="734" height="424" usemap="#FoodserviceStaffMealCounts__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.12-1: FoodserviceStaffMealCounts</span><map name="FoodserviceStaffMealCounts__map" id="FoodserviceStaffMealCounts__map">
+  <area alt="FoodserviceStaffMealCounts" href="#FoodserviceStaffMealCounts" shape="rect" coords="5,234,265,276" />
+  <area alt="RefId" href="#FoodserviceStaffMealCounts___RefId" shape="rect" coords="340,15,415,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceStaffMealCounts__SchoolInfoRefId" shape="rect" coords="340,92,499,134" />
+  <area alt="Date" href="#FoodserviceStaffMealCounts__Date" shape="rect" coords="340,149,409,191" />
+  <area alt="Program" href="#FoodserviceStaffMealCounts__Program" shape="rect" coords="340,206,441,248" />
+  <area alt="Counts" href="#FoodserviceStaffMealCounts__Counts" shape="rect" coords="340,263,430,305" />
+  <area alt="Count" href="#FoodserviceStaffMealCounts__Counts__Count" shape="rect" coords="630,263,711,305" />
+  <area alt="SIF_Metadata" href="#FoodserviceStaffMealCounts__SIF_Metadata" shape="rect" coords="340,320,479,362" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceStaffMealCounts__SIF_ExtendedElements" shape="rect" coords="340,377,555,419" />
+</map><a name="Table38121FoodserviceStaffMealCounts" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts" /><span class="rootElement">FoodserviceStaffMealCounts</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the daily staff sales.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceStaffMealCounts___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the daily meal sales object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>School for which the sales object applies</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date on which the sales occurred.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__Counts" />Counts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__Counts__Count" />Counts/Count</td><td class="characteristics">MR</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSCountType" class="type">FSCountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStaffMealCounts__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.12-1: FoodserviceStaffMealCounts</span><a name="Example38121FoodserviceStaffMealCounts" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceStaffMealCounts RefId="E822BCDC9E7A40F787ED8183D3B485B5"&gt;
+  &lt;SchoolInfoRefId&gt;F2F9D9B212B94489BC3F9FD6AB75F54A&lt;/SchoolInfoRefId&gt;
+  &lt;Date&gt;2003-08-25&lt;/Date&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Counts&gt;
+    &lt;Count&gt;
+      &lt;EarnedStatus Type="Yes" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;EarnedStatus Type="No" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;EarnedStatus Type="Yes" /&gt;
+      &lt;MealType&gt;SecondMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;EarnedStatus Type="No" /&gt;
+      &lt;MealType&gt;SecondMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+  &lt;/Counts&gt;
+&lt;/FoodserviceStaffMealCounts&gt;
+</div></div><span class="caption">Example 3.8.12-1: FoodserviceStaffMealCounts</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceStudentEnrollmentCount" />
+      <a name="3813FoodserviceStudentEnrollmentCount" />
+      <h3 class="element_name">3.8.13 FoodserviceStudentEnrollmentCount</h3>
+      <p>This object communicates the student enrollment for a specified date.</p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure38131FoodserviceStudentEnrollmentCount" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceStudentEnrollmentCount.png">
+          <img class="diagram" src="diagrams/FoodserviceStudentEnrollmentCount.png" alt="FoodserviceStudentEnrollmentCount" width="799" height="310" usemap="#FoodserviceStudentEnrollmentCount__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.13-1: FoodserviceStudentEnrollmentCount</span><map name="FoodserviceStudentEnrollmentCount__map" id="FoodserviceStudentEnrollmentCount__map">
+  <area alt="FoodserviceStudentEnrollmentCount" href="#FoodserviceStudentEnrollmentCount" shape="rect" coords="5,177,330,219" />
+  <area alt="RefId" href="#FoodserviceStudentEnrollmentCount___RefId" shape="rect" coords="405,15,480,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceStudentEnrollmentCount___SchoolInfoRefId" shape="rect" coords="495,15,655,57" />
+  <area alt="Date" href="#FoodserviceStudentEnrollmentCount___Date" shape="rect" coords="670,15,740,57" />
+  <area alt="Program" href="#FoodserviceStudentEnrollmentCount__Program" shape="rect" coords="405,92,506,134" />
+  <area alt="Counts" href="#FoodserviceStudentEnrollmentCount__Counts" shape="rect" coords="405,149,495,191" />
+  <area alt="Count" href="#FoodserviceStudentEnrollmentCount__Counts__Count" shape="rect" coords="695,149,776,191" />
+  <area alt="SIF_Metadata" href="#FoodserviceStudentEnrollmentCount__SIF_Metadata" shape="rect" coords="405,206,544,248" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceStudentEnrollmentCount__SIF_ExtendedElements" shape="rect" coords="405,263,620,305" />
+</map><a name="Table38131FoodserviceStudentEnrollmentCount" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentEnrollmentCount" /><span class="rootElement">FoodserviceStudentEnrollmentCount</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the student enrollment for a specified date.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceStudentEnrollmentCount___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is a “transient” value; that is, it SHOULD be generated by the provider at the time the object is provided in a Response message.  This value MUST NOT be used in a later Request for the object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceStudentEnrollmentCount___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>Reference to SchoolInfo</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceStudentEnrollmentCount___Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date the count is taken.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentEnrollmentCount__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentEnrollmentCount__Counts" />Counts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentEnrollmentCount__Counts__Count" />Counts/Count</td><td class="characteristics">MR</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSCountType" class="type">FSCountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentEnrollmentCount__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentEnrollmentCount__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.13-1: FoodserviceStudentEnrollmentCount</span><a name="Example38131FoodserviceStudentEnrollmentCount" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceStudentEnrollmentCount RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SchoolInfoRefId="E822BCDC9E7A40F787ED8183D3B485B5" Date="2003-08-25"&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Counts&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="Free" /&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="Reduced" /&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="None" /&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+  &lt;/Counts&gt;
+&lt;/FoodserviceStudentEnrollmentCount&gt;
+</div></div><span class="caption">Example 3.8.13-1: FoodserviceStudentEnrollmentCount</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceStudentMealCounts" />
+      <a name="3814FoodserviceStudentMealCounts" />
+      <h3 class="element_name">3.8.14 FoodserviceStudentMealCounts</h3>
+      <p>This object communicates the daily student sales.</p>
+      <p class="emphasized_note">SIF_Events are not reported for this object.</p>
+      <a name="Figure38141FoodserviceStudentMealCounts" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceStudentMealCounts.png">
+          <img class="diagram" src="diagrams/FoodserviceStudentMealCounts.png" alt="FoodserviceStudentMealCounts" width="759" height="424" usemap="#FoodserviceStudentMealCounts__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.14-1: FoodserviceStudentMealCounts</span><map name="FoodserviceStudentMealCounts__map" id="FoodserviceStudentMealCounts__map">
+  <area alt="FoodserviceStudentMealCounts" href="#FoodserviceStudentMealCounts" shape="rect" coords="5,234,290,276" />
+  <area alt="RefId" href="#FoodserviceStudentMealCounts___RefId" shape="rect" coords="365,15,440,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceStudentMealCounts__SchoolInfoRefId" shape="rect" coords="365,92,524,134" />
+  <area alt="Date" href="#FoodserviceStudentMealCounts__Date" shape="rect" coords="365,149,434,191" />
+  <area alt="Program" href="#FoodserviceStudentMealCounts__Program" shape="rect" coords="365,206,466,248" />
+  <area alt="Counts" href="#FoodserviceStudentMealCounts__Counts" shape="rect" coords="365,263,455,305" />
+  <area alt="Count" href="#FoodserviceStudentMealCounts__Counts__Count" shape="rect" coords="655,263,736,305" />
+  <area alt="SIF_Metadata" href="#FoodserviceStudentMealCounts__SIF_Metadata" shape="rect" coords="365,320,504,362" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceStudentMealCounts__SIF_ExtendedElements" shape="rect" coords="365,377,580,419" />
+</map><a name="Table38141FoodserviceStudentMealCounts" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts" /><span class="rootElement">FoodserviceStudentMealCounts</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the daily student sales.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceStudentMealCounts___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the daily meal sales object</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>School for which the sales object applies</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__Date" />Date</td><td class="characteristics">M</td><td class="description"><p>Date on which the sales occurred.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__Counts" />Counts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__Counts__Count" />Counts/Count</td><td class="characteristics">MR</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSCountType" class="type">FSCountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceStudentMealCounts__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.14-1: FoodserviceStudentMealCounts</span><a name="Example38141FoodserviceStudentMealCounts" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceStudentMealCounts RefId="E822BCDC9E7A40F787ED8183D3B485B5"&gt;
+  &lt;SchoolInfoRefId&gt;F2F9D9B212B94489BC3F9FD6AB75F54A&lt;/SchoolInfoRefId&gt;
+  &lt;Date&gt;2003-08-25&lt;/Date&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;Counts&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="Free" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="Reduced" /&gt;
+      &lt;MealType&gt;FirstMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="Free" /&gt;
+      &lt;MealType&gt;SecondMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+    &lt;Count&gt;
+      &lt;MealStatus Type="None" /&gt;
+      &lt;MealType&gt;SecondMeal&lt;/MealType&gt;
+      &lt;Amount Type="Value" Credits="0"&gt;99999.99&lt;/Amount&gt;
+      &lt;Tax&gt;9999.99&lt;/Tax&gt;
+      &lt;Value&gt;99999&lt;/Value&gt;
+    &lt;/Count&gt;
+  &lt;/Counts&gt;
+&lt;/FoodserviceStudentMealCounts&gt;
+</div></div><span class="caption">Example 3.8.14-1: FoodserviceStudentMealCounts</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceTransaction" />
+      <a name="3815FoodserviceTransaction" />
+      <h3 class="element_name">3.8.15 FoodserviceTransaction</h3>
+      <p>
+        This object communicates food service transaction information. This is the key object that will be present for every
+        food service transaction.
+      </p>
+      <p>
+		  Note: With SIF Implementation Specification version 2.4 the choice element depicted in the diagram below has changed.  In the XSD files, the choice element used to be rendered as a sequence of optional elements.  Now, in the XSD files, the choice element is rendered as an xs:choice.  This may cause problems with agents that treat the choice element as two optional elements rather than a choice of one and only one of the choices. 
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure38151FoodserviceTransaction" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceTransaction.png">
+          <img class="diagram" src="diagrams/FoodserviceTransaction.png" alt="FoodserviceTransaction" width="882" height="910" usemap="#FoodserviceTransaction__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.15-1: FoodserviceTransaction</span><map name="FoodserviceTransaction__map" id="FoodserviceTransaction__map">
+  <area alt="FoodserviceTransaction" href="#FoodserviceTransaction" shape="rect" coords="5,477,228,519" />
+  <area alt="RefId" href="#FoodserviceTransaction___RefId" shape="rect" coords="303,15,378,57" />
+  <area alt="SchoolInfoRefId" href="#FoodserviceTransaction__SchoolInfoRefId" shape="rect" coords="303,92,462,134" />
+  <area alt="Program" href="#FoodserviceTransaction__Program" shape="rect" coords="303,149,404,191" />
+  <area alt="TransactionDate" href="#FoodserviceTransaction__TransactionDate" shape="rect" coords="303,206,465,248" />
+  <area alt="TransactionTime" href="#FoodserviceTransaction__TransactionTime" shape="rect" coords="303,263,468,305" />
+  <area alt="TransactionTypes" href="#FoodserviceTransaction__TransactionTypes" shape="rect" coords="303,320,477,362" />
+  <area alt="TransactionType" href="#FoodserviceTransaction__TransactionTypes__TransactionType" shape="rect" coords="593,320,758,362" />
+  <area alt="Customer" href="#FoodserviceTransaction__Customer" shape="rect" coords="303,492,413,534" />
+  <area alt="SIF_RefId" href="#FoodserviceTransaction__Customer___SIF_RefId" shape="rect" coords="593,387,703,429" />
+  <area alt="SIF_RefObject" href="#FoodserviceTransaction__Customer___SIF_RefObject" shape="rect" coords="718,387,864,429" />
+  <area alt="" href="#FoodserviceTransaction__Customer__" shape="rect" coords="593,492,645,534" />
+  <area alt="MealStatus" href="#FoodserviceTransaction__Customer____MealStatus" shape="rect" coords="720,464,840,506" />
+  <area alt="EarnedStatus" href="#FoodserviceTransaction__Customer____EarnedStatus" shape="rect" coords="720,521,859,563" />
+  <area alt="Amount" href="#FoodserviceTransaction__Amount" shape="rect" coords="303,578,398,620" />
+  <area alt="Tax" href="#FoodserviceTransaction__Tax" shape="rect" coords="303,635,424,677" />
+  <area alt="Description" href="#FoodserviceTransaction__Description" shape="rect" coords="303,692,426,734" />
+  <area alt="Voided" href="#FoodserviceTransaction__Voided" shape="rect" coords="303,749,391,791" />
+  <area alt="SIF_Metadata" href="#FoodserviceTransaction__SIF_Metadata" shape="rect" coords="303,806,442,848" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceTransaction__SIF_ExtendedElements" shape="rect" coords="303,863,518,905" />
+</map><a name="Table38151FoodserviceTransaction" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction" /><span class="rootElement">FoodserviceTransaction</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object communicates food service transaction information. This is the key object that will be present for every
+        food service transaction.
+      </p><p>
+		  Note: With SIF Implementation Specification version 2.4 the choice element depicted in the diagram below has changed.  In the XSD files, the choice element used to be rendered as a sequence of optional elements.  Now, in the XSD files, the choice element is rendered as an xs:choice.  This may cause problems with agents that treat the choice element as two optional elements rather than a choice of one and only one of the choices. 
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceTransaction___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies food service transaction</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the school/site of account transaction</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Program" />Program</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#Program" class="type">Program</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__TransactionDate" />TransactionDate</td><td class="characteristics">M</td><td class="description"><p>Date of transaction</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__TransactionTime" />TransactionTime</td><td class="characteristics">M</td><td class="description"><p>Time of transaction.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#time" class="type">xs:time</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__TransactionTypes" />TransactionTypes</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__TransactionTypes__TransactionType" />TransactionTypes/TransactionType<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>Type of transaction</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Purchase</dt><dt>Prepayment</dt><dt>Refund</dt><dt>Repayment</dt><dt>Adjustment</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Customer" />Customer</td><td class="characteristics">M</td><td class="description"><p>The customer can be a student or staff.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceTransaction__Customer___SIF_RefId" />SIF_RefId</td><td class="characteristics">M</td><td class="description"><p>The GUID of the customer doing the transaction. </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceTransaction__Customer___SIF_RefObject" />SIF_RefObject</td><td class="characteristics">M</td><td class="description"><p>SIF customer type.</p><p>
+        If <code>StaffPersonal</code>, then <code>EarnedStatus</code> is included.
+        If <code>StudentPersonal</code>, then <code>MealStatus</code> is included.
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>StudentPersonal</dt><dt>StaffPersonal</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Customer__MealStatus" />Customer/MealStatus</td><td class="characteristics">C</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#MealStatus" class="type">MealStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Customer__EarnedStatus" />Customer/EarnedStatus</td><td class="characteristics">C</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#EarnedStatus" class="type">EarnedStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Amount" />Amount</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSAmountType" class="type">FSAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Tax" />Tax</td><td class="characteristics">O</td><td class="description"><p>Amount of tax.</p><p>Note: Final amount is Amount/Value + Tax</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#MonetaryAmountType" class="type">MonetaryAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Description" />Description</td><td class="characteristics">O</td><td class="description"><p>Description of the Transaction</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__Voided" />Voided</td><td class="characteristics">M</td><td class="description"><p>This flag tells us if the transaction is voided.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Yes</dt><dt>No</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransaction__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.15-1: FoodserviceTransaction</span><a name="Example38151FoodserviceTransaction" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceTransaction RefId="A9E34B359F44D51A8C3D00AA001A1652"&gt;
+  &lt;SchoolInfoRefId&gt;EFA054E90CDE45C9BB8A87E9F8F9B238&lt;/SchoolInfoRefId&gt;
+  &lt;Program Type="Foodservice"&gt;NSLP&lt;/Program&gt;
+  &lt;TransactionDate&gt;2003-08-25&lt;/TransactionDate&gt;
+  &lt;TransactionTime&gt;04:32:23-08:00&lt;/TransactionTime&gt;
+  &lt;TransactionTypes&gt;
+    &lt;TransactionType&gt;Purchase&lt;/TransactionType&gt;
+  &lt;/TransactionTypes&gt;
+  &lt;Customer SIF_RefObject="StudentPersonal" SIF_RefId="751177C738B047CD831375FA1CF50CBB"&gt;
+    &lt;MealStatus Type="Reduced" /&gt;
+  &lt;/Customer&gt;
+  &lt;Amount Type="Value" Credits="0" Currency="USD"&gt;12.00&lt;/Amount&gt;
+  &lt;Description&gt;Purchase of food items by a student&lt;/Description&gt;
+  &lt;Voided&gt;No&lt;/Voided&gt;
+&lt;/FoodserviceTransaction&gt;
+</div></div><span class="caption">Example 3.8.15-1: FoodserviceTransaction</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceTransactionDetails" />
+      <a name="3816FoodserviceTransactionDetails" />
+      <h3 class="element_name">3.8.16 FoodserviceTransactionDetails</h3>
+      <p>
+        This object gives the transaction distribution for food service transactions of type other than <code>Purchase</code>. So, this
+        object can be requested for transactions of type <code>Prepayment</code>, <code>Repayment</code>, <code>Refund</code>, <code>Adjustment</code>.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure38161FoodserviceTransactionDetails" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceTransactionDetails.png">
+          <img class="diagram" src="diagrams/FoodserviceTransactionDetails.png" alt="FoodserviceTransactionDetails" width="815" height="367" usemap="#FoodserviceTransactionDetails__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.16-1: FoodserviceTransactionDetails</span><map name="FoodserviceTransactionDetails__map" id="FoodserviceTransactionDetails__map">
+  <area alt="FoodserviceTransactionDetails" href="#FoodserviceTransactionDetails" shape="rect" coords="5,206,282,248" />
+  <area alt="RefId" href="#FoodserviceTransactionDetails___RefId" shape="rect" coords="357,15,432,57" />
+  <area alt="FoodserviceTransactionRefId" href="#FoodserviceTransactionDetails__FoodserviceTransactionRefId" shape="rect" coords="357,92,622,134" />
+  <area alt="Amounts" href="#FoodserviceTransactionDetails__Amounts" shape="rect" coords="357,149,461,191" />
+  <area alt="Amount" href="#FoodserviceTransactionDetails__Amounts__Amount" shape="rect" coords="697,149,792,191" />
+  <area alt="Description" href="#FoodserviceTransactionDetails__Description" shape="rect" coords="357,206,480,248" />
+  <area alt="SIF_Metadata" href="#FoodserviceTransactionDetails__SIF_Metadata" shape="rect" coords="357,263,496,305" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceTransactionDetails__SIF_ExtendedElements" shape="rect" coords="357,320,572,362" />
+</map><a name="Table38161FoodserviceTransactionDetails" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails" /><span class="rootElement">FoodserviceTransactionDetails</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object gives the transaction distribution for food service transactions of type other than <code>Purchase</code>. So, this
+        object can be requested for transactions of type <code>Prepayment</code>, <code>Repayment</code>, <code>Refund</code>, <code>Adjustment</code>.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceTransactionDetails___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies transaction details</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails__FoodserviceTransactionRefId" />FoodserviceTransactionRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies food service transaction</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails__Amounts" />Amounts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails__Amounts__Amount" />Amounts/Amount</td><td class="characteristics">MR</td><td class="description"><p>This amount refers to the funds being directed inwards to/outwards from the customer's account. That is: these amounts reflect the changes to the account balances.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#FSAmountType" class="type">FSAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails__Description" />Description</td><td class="characteristics">O</td><td class="description"><p>Description</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionDetails__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.16-1: FoodserviceTransactionDetails</span><a name="Example38161FoodserviceTransactionDetails" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceTransactionDetails RefId="E50EE86118004F238D21B86E70B5B4AA"&gt;
+  &lt;FoodserviceTransactionRefId&gt;D489306D404E4DB28E0B0DA8B4C24908&lt;/FoodserviceTransactionRefId&gt;
+  &lt;Amounts&gt;
+    &lt;Amount Type="Cash" Credits="0" Currency="USD"&gt;2.00&lt;/Amount&gt;
+    &lt;Amount Type="BreakfastCredit" Credits="3"&gt;4.50&lt;/Amount&gt;
+  &lt;/Amounts&gt;
+  &lt;Description&gt;Refund for 2 dollars cash and 3 breakfast credits.&lt;/Description&gt;
+&lt;/FoodserviceTransactionDetails&gt;
+</div></div><span class="caption">Example 3.8.16-1: FoodserviceTransactionDetails</span></div>
+    <div class="element_section">
+      <a name="obj:FoodserviceTransactionPayMethod" />
+      <a name="3817FoodserviceTransactionPayMethod" />
+      <h3 class="element_name">3.8.17 FoodserviceTransactionPayMethod</h3>
+      <p>
+        This object communicates the funding for a given transaction. By the term funding we refer to the form of payment
+        that is made for the transaction.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure38171FoodserviceTransactionPayMethod" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/FoodserviceTransactionPayMethod.png">
+          <img class="diagram" src="diagrams/FoodserviceTransactionPayMethod.png" alt="FoodserviceTransactionPayMethod" width="1335" height="397" usemap="#FoodserviceTransactionPayMethod__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.17-1: FoodserviceTransactionPayMethod</span><map name="FoodserviceTransactionPayMethod__map" id="FoodserviceTransactionPayMethod__map">
+  <area alt="FoodserviceTransactionPayMethod" href="#FoodserviceTransactionPayMethod" shape="rect" coords="5,221,316,263" />
+  <area alt="RefId" href="#FoodserviceTransactionPayMethod___RefId" shape="rect" coords="391,15,466,57" />
+  <area alt="FoodserviceTransactionRefId" href="#FoodserviceTransactionPayMethod__FoodserviceTransactionRefId" shape="rect" coords="391,92,656,134" />
+  <area alt="TransactionPayMethods" href="#FoodserviceTransactionPayMethod__TransactionPayMethods" shape="rect" coords="391,192,614,234" />
+  <area alt="TransactionPayMethod" href="#FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod" shape="rect" coords="731,236,945,278" />
+  <area alt="Type" href="#FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod___Type" shape="rect" coords="1020,159,1092,201" />
+  <area alt="Amounts" href="#FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod__Amounts" shape="rect" coords="1020,236,1124,278" />
+  <area alt="Amount" href="#FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod__Amounts__Amount" shape="rect" coords="1199,236,1294,278" />
+  <area alt="SIF_Metadata" href="#FoodserviceTransactionPayMethod__SIF_Metadata" shape="rect" coords="391,293,530,335" />
+  <area alt="SIF_ExtendedElements" href="#FoodserviceTransactionPayMethod__SIF_ExtendedElements" shape="rect" coords="391,350,606,392" />
+</map><a name="Table38171FoodserviceTransactionPayMethod" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod" /><span class="rootElement">FoodserviceTransactionPayMethod</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object communicates the funding for a given transaction. By the term funding we refer to the form of payment
+        that is made for the transaction.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="FoodserviceTransactionPayMethod___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies the payment</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__FoodserviceTransactionRefId" />FoodserviceTransactionRefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies food service transaction</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__TransactionPayMethods" />TransactionPayMethods</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod" />TransactionPayMethods/TransactionPayMethod<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>Transaction method.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>This refers to the way the payment was made.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Payment</dt><dt>Refund</dt><dt>Charge</dt><dt>Usage</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod__Amounts" />TransactionPayMethods/TransactionPayMethod/<br/>&#160;&#160;&#160;&#160;&#160;Amounts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__TransactionPayMethods__TransactionPayMethod__Amounts__Amount" />TransactionPayMethods/TransactionPayMethod/<br/>&#160;&#160;&#160;&#160;&#160;Amounts/Amount</td><td class="characteristics">MR</td><td class="description"><p>This amount is the form of the incoming funds for this transaction. For example; the payment can be made by a credit card.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#FSAmountType" class="type">FSAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="FoodserviceTransactionPayMethod__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.17-1: FoodserviceTransactionPayMethod</span><a name="Example38171FoodserviceTransactionPayMethod" />
+<div class="example_parent"><div class="example"
+>&lt;FoodserviceTransactionPayMethod RefId="FF8340A51D844EBDB156DE662BF373CE"&gt;
+  &lt;FoodserviceTransactionRefId&gt;A1D2C4527A484DB08DAD6C382F8F082F&lt;/FoodserviceTransactionRefId&gt;
+  &lt;TransactionPayMethods&gt;
+    &lt;TransactionPayMethod Type="Payment"&gt;
+      &lt;Amounts&gt;
+        &lt;Amount Type="Cash" Credits="0"&gt;2.50&lt;/Amount&gt;
+        &lt;Amount Type="BreakfastCredit" Credits="1"&gt;1.50&lt;/Amount&gt;
+      &lt;/Amounts&gt;
+    &lt;/TransactionPayMethod&gt;
+  &lt;/TransactionPayMethods&gt;
+&lt;/FoodserviceTransactionPayMethod&gt;
+</div></div><span class="caption">Example 3.8.17-1: FoodserviceTransactionPayMethod</span></div>
+    <div class="element_section">
+      <a name="obj:StaffMeal" />
+      <a name="3818StaffMeal" />
+      <h3 class="element_name">3.8.18 StaffMeal</h3>
+      <p>
+        This object communicates the current meal status and account status of a given staff member. This object indicates
+        whether the staff member is entitled to earn meals.
+      </p>
+      <p class="emphasized_note">SIF_Events, typically Change events, can be reported.</p>
+      <a name="Figure38181StaffMeal" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/StaffMeal.png">
+          <img class="diagram" src="diagrams/StaffMeal.png" alt="StaffMeal" width="594" height="424" usemap="#StaffMeal__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.18-1: StaffMeal</span><map name="StaffMeal__map" id="StaffMeal__map">
+  <area alt="StaffMeal" href="#StaffMeal" shape="rect" coords="5,234,111,276" />
+  <area alt="RefId" href="#StaffMeal___RefId" shape="rect" coords="186,15,261,57" />
+  <area alt="StaffPersonalRefId" href="#StaffMeal___StaffPersonalRefId" shape="rect" coords="276,15,457,57" />
+  <area alt="EarnedStatus" href="#StaffMeal__EarnedStatus" shape="rect" coords="186,92,325,134" />
+  <area alt="LastBreakfastDate" href="#StaffMeal__LastBreakfastDate" shape="rect" coords="186,149,364,191" />
+  <area alt="LastLunchDate" href="#StaffMeal__LastLunchDate" shape="rect" coords="186,206,338,248" />
+  <area alt="Amounts" href="#StaffMeal__Amounts" shape="rect" coords="186,263,290,305" />
+  <area alt="Amount" href="#StaffMeal__Amounts__Amount" shape="rect" coords="476,263,571,305" />
+  <area alt="SIF_Metadata" href="#StaffMeal__SIF_Metadata" shape="rect" coords="186,320,325,362" />
+  <area alt="SIF_ExtendedElements" href="#StaffMeal__SIF_ExtendedElements" shape="rect" coords="186,377,401,419" />
+</map><a name="Table38181StaffMeal" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal" /><span class="rootElement">StaffMeal</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object communicates the current meal status and account status of a given staff member. This object indicates
+        whether the staff member is entitled to earn meals.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StaffMeal___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is new for 2.7M and MUST be supported like other objects that have a RefId (i.e. it is the key for the object).  The alternate keys MUST continue to be supported.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StaffMeal___StaffPersonalRefId" />StaffPersonalRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID of the staff to whom this object is linked.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__EarnedStatus" />EarnedStatus</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#EarnedStatus" class="type">EarnedStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__LastBreakfastDate" />LastBreakfastDate</td><td class="characteristics">M</td><td class="description"><p>Last breakfast served date</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__LastLunchDate" />LastLunchDate</td><td class="characteristics">M</td><td class="description"><p>Last lunch served date</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__Amounts" />Amounts</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__Amounts__Amount" />Amounts/Amount</td><td class="characteristics">MR</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSAmountType" class="type">FSAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StaffMeal__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.18-1: StaffMeal</span><a name="Example38181StaffMeal" />
+<div class="example_parent"><div class="example"
+>&lt;StaffMeal RefId="359D75101AD0A9D7A8C3DAD0A85103A2" StaffPersonalRefId="A9E34B359F44D51A8C3D00AA001A1652"&gt;
+  &lt;EarnedStatus Type="Yes"&gt;
+    &lt;StartDate&gt;2003-08-25&lt;/StartDate&gt;
+    &lt;EndDate&gt;2003-08-25&lt;/EndDate&gt;
+  &lt;/EarnedStatus&gt;
+  &lt;LastBreakfastDate&gt;2003-08-25&lt;/LastBreakfastDate&gt;
+  &lt;LastLunchDate&gt;2003-08-25&lt;/LastLunchDate&gt;
+  &lt;Amounts&gt;
+    &lt;Amount Type="Cash" Credits="0"&gt;3.50&lt;/Amount&gt;
+    &lt;Amount Type="BreakfastCredit" Credits="3"&gt;3.00&lt;/Amount&gt;
+    &lt;Amount Type="LunchCredit" Credits="5"&gt;7.50&lt;/Amount&gt;
+  &lt;/Amounts&gt;
+&lt;/StaffMeal&gt;
+</div></div><span class="caption">Example 3.8.18-1: StaffMeal</span></div>
+    <div class="element_section">
+      <a name="obj:StudentMeal" />
+      <a name="3819StudentMeal" />
+      <h3 class="element_name">3.8.19 StudentMeal</h3>
+      <p>This object communicates the current meal/account status of a given student.</p>
+      <p>
+        This object will return information such as the amount of remaining breakfast/lunch credits, cash balance, meal status (free/reduced), etc.
+        Systems may optionally support the historical reporting of a student's meal status (free/reduced).
+      </p>
+      <p class="emphasized_note">SIF_Events, typically Change events, can be reported.</p>
+      <a name="Figure38191StudentMeal" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/StudentMeal.png">
+          <img class="diagram" src="diagrams/StudentMeal.png" alt="StudentMeal" width="662" height="481" usemap="#StudentMeal__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.8.19-1: StudentMeal</span><map name="StudentMeal__map" id="StudentMeal__map">
+  <area alt="StudentMeal" href="#StudentMeal" shape="rect" coords="5,263,136,305" />
+  <area alt="RefId" href="#StudentMeal___RefId" shape="rect" coords="211,15,286,57" />
+  <area alt="StudentPersonalRefId" href="#StudentMeal___StudentPersonalRefId" shape="rect" coords="301,15,507,57" />
+  <area alt="MealStatus" href="#StudentMeal__MealStatus" shape="rect" coords="211,92,331,134" />
+  <area alt="HistoricalMealStatus" href="#StudentMeal__HistoricalMealStatus" shape="rect" coords="211,149,406,191" />
+  <area alt="MealStatus" href="#StudentMeal__HistoricalMealStatus__MealStatus" shape="rect" coords="501,149,621,191" />
+  <area alt="LastBreakfastDate" href="#StudentMeal__LastBreakfastDate" shape="rect" coords="211,206,389,248" />
+  <area alt="LastLunchDate" href="#StudentMeal__LastLunchDate" shape="rect" coords="211,263,363,305" />
+  <area alt="Amounts" href="#StudentMeal__Amounts" shape="rect" coords="211,320,315,362" />
+  <area alt="Amount" href="#StudentMeal__Amounts__Amount" shape="rect" coords="501,320,596,362" />
+  <area alt="SIF_Metadata" href="#StudentMeal__SIF_Metadata" shape="rect" coords="211,377,350,419" />
+  <area alt="SIF_ExtendedElements" href="#StudentMeal__SIF_ExtendedElements" shape="rect" coords="211,434,426,476" />
+</map><a name="Table38191StudentMeal" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal" /><span class="rootElement">StudentMeal</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object communicates the current meal/account status of a given student.</p><p>
+        This object will return information such as the amount of remaining breakfast/lunch credits, cash balance, meal status (free/reduced), etc.
+        Systems may optionally support the historical reporting of a student's meal status (free/reduced).
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentMeal___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is new for 2.7M and MUST be supported like other objects that have a RefId (i.e. it is the key for the object).  The alternate keys MUST continue to be supported.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StudentMeal___StudentPersonalRefId" />StudentPersonalRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID of the student to whom this object is linked.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__MealStatus" />MealStatus</td><td class="characteristics">O</td><td class="description"><p>The student's current meal status.</p>&#xA0;</td><td class="type"><a href="DataModel.html#MealStatus" class="type">MealStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__HistoricalMealStatus" />HistoricalMealStatus</td><td class="characteristics">O</td><td class="description"><p>
+        Optionally provides the meal status of the student historically.
+      </p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__HistoricalMealStatus__MealStatus" />HistoricalMealStatus/MealStatus<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>
+        The student's meal status.  Note that as this status is historical, <code>StartDate</code> and <code>EndDate</code> together,
+        and/or <code>SchoolYear</code> <span class="rfc2119">MUST</span> be included.  If <code>SchoolYear</code> is included,
+        <code>StartDate</code> and <code>EndDate</code> should not cross school year boundaries, i.e. in addition to multiple
+        statuses being a possibility in a given school year, the same status may be repeated so <code>StartDate</code> and <code>EndDate</code> don't
+        disagree with <code>SchoolYear</code>, if included.
+      </p>&#xA0;</td><td class="type"><a href="DataModel.html#MealStatus" class="type">MealStatus</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__LastBreakfastDate" />LastBreakfastDate</td><td class="characteristics">O</td><td class="description"><p>Date of the last reimbursable breakfast served.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__LastLunchDate" />LastLunchDate</td><td class="characteristics">O</td><td class="description"><p>Date of the last reimbursable lunch served.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__Amounts" />Amounts</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__Amounts__Amount" />Amounts/Amount</td><td class="characteristics">MR</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#FSAmountType" class="type">FSAmountType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentMeal__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.8.19-1: StudentMeal</span><a name="Example38191StudentMeal" />
+<div class="example_parent"><div class="example"
+>&lt;StudentMeal RefId="C4E34B359D75101A8C3D00AA001A1792" StudentPersonalRefId="D3E34B359D75101A8C3D00AA001A1652"&gt;
+  &lt;MealStatus Type="Free" /&gt;
+  &lt;HistoricalMealStatus&gt;
+    &lt;MealStatus Type="Reduced"&gt;
+      &lt;StartDate&gt;2003-09-01&lt;/StartDate&gt;
+      &lt;EndDate&gt;2004-06-01&lt;/EndDate&gt;
+      &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+    &lt;/MealStatus&gt;
+    &lt;MealStatus Type="None"&gt;
+      &lt;SchoolYear&gt;2003&lt;/SchoolYear&gt;
+    &lt;/MealStatus&gt;
+  &lt;/HistoricalMealStatus&gt;
+  &lt;LastBreakfastDate&gt;2005-09-25&lt;/LastBreakfastDate&gt;
+  &lt;LastLunchDate&gt;2005-09-25&lt;/LastLunchDate&gt;
+  &lt;Amounts&gt;
+    &lt;Amount Type="Cash" Credits="0"&gt;3.50&lt;/Amount&gt;
+    &lt;Amount Type="BreakfastCredit" Credits="3"&gt;3.00&lt;/Amount&gt;
+    &lt;Amount Type="LunchCredit" Credits="5"&gt;7.50&lt;/Amount&gt;
+  &lt;/Amounts&gt;
+&lt;/StudentMeal&gt;
+</div></div><span class="caption">Example 3.8.19-1: StudentMeal</span></div>
+    <a name="GradeBookWorkingGroup" />
+    <div class="navigation" id="bottomnavigation">
+      <hr />
+      <a href="index.html">home</a>
+      <a href="FacilitiesAndEnergyManagement.html">previous</a>
+      <a href="GradeBookWorkingGroup.html">next</a>
+      <a href="index.html#contents">table of contents</a>
+    </div><p align='center'><a href='http://validator.w3.org/check?uri=referer'><img src='http://www.w3.org/Icons/valid-xhtml10' alt='Valid XHTML 1.0 Transitional'/></a></p></body>
+</html>

@@ -1,0 +1,11 @@
+To generate the class sifSpecificationGeneratorConfig.cs
+
+All changes to the class structure must be performed on the sifSpecificationGeneratorConfig.xsd.  
+
+The XSD is used to validate the configuration file and to create the sifSpecificationGeneratorConfig class.
+
+In a command window execute the following command
+
+xsd.exe /c /n:GenerateSpec.Generator sifSpecificationGeneratorConfig.xsd
+
+The output will be the sifSpecificationGeneratorConfig.cs

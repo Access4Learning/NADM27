@@ -1,0 +1,128 @@
+<DataObject name="FinancialIncomeStatement">
+  <Key>@RefId</Key>
+  <EventsReported>true</EventsReported>
+  <Item>
+    <Element>FinancialIncomeStatement</Element>
+    <Description>
+      <p>This object communicates the income statement details for a location and an accounting period.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies this income statement.</p>
+    </Description>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+  </Item>
+  <Item>
+    <Element>GenerationDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Generation date.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>GenerationTime</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Generation time.</p>
+    </Description>
+    <Type name="xs:time"></Type>
+  </Item>
+  <Item>
+    <Element>LocationInfoRefId</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>LocationInfo reference.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Element>Period</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Period of the income statement.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>/StartDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Start date.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>/EndDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>End date.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>Amounts</Element>
+    <Characteristics>M</Characteristics>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>/Amount</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Amount in the account.</p>
+    </Description>
+    <Type ref="CommonTypes" name="MonetaryAmountType"/>
+  </Item>
+  <Item>
+    <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>FinancialAccountAccountingPeriodLocationInfo reference.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>FinancialClassRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Class of the financial account.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Element>Program</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="Program"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_Metadata</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_Metadata"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_ExtendedElements</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+  </Item>
+  <xhtml:Example xmlns="">
+    <FinancialIncomeStatement RefId="E72C08BD41894187BA07B00C1401BE3F">
+      <GenerationDate>2003-12-31</GenerationDate>
+      <GenerationTime>04:32:23-08:00</GenerationTime>
+      <LocationInfoRefId>FAE352080CC74A3DA815E82FB96F5E15</LocationInfoRefId>
+      <Period>
+        <StartDate>2003-01-01</StartDate>
+        <EndDate>2003-03-31</EndDate>
+      </Period>
+      <Amounts>
+        <Amount FinancialAccountAccountingPeriodLocationInfoRefId="B595A5959A8F43448DF0F5C635CD0E1D"
+          FinancialClassRefId="7582E711FDEE468686CBE623A7C31743" Currency="USD">99999999.99</Amount>
+        <Amount FinancialAccountAccountingPeriodLocationInfoRefId="DE0E6B3C73F6413AA9C1EFCCA57B356B"
+          FinancialClassRefId="7582E711FDEE468686CBE623A7C31743" Currency="USD">99999999.99</Amount>
+      </Amounts>
+      <Program Type="Foodservice">NSLP</Program>
+    </FinancialIncomeStatement>
+  </xhtml:Example>
+</DataObject>

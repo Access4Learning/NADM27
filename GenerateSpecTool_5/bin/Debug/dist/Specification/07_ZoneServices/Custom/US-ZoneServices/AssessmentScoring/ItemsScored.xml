@@ -1,0 +1,110 @@
+<DataObject name='ItemsScored'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>ItemsScored</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>AssessmentAdministration</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The AssessmentAdministration SIF Object.</p>
+		</Description>
+		<Type ref='AssessmentWorkingGroup' name='AssessmentAdministration'/>
+	</Item>
+	<Item>
+		<Element>AssessmentResponseData</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Grouping tag for the response data.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+	<Item>
+		<Element>/AssessmentResponseDataItem</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>The detailed Score Data. Each AssessmentResponseData element contains object relating to the same student.  A packet break can occur at the end of this element.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>//AssessmentRegistration</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Information about the student’s registration.</p>
+		</Description>
+		<Type ref='AssessmentWorkingGroup' name='AssessmentRegistration'/>
+	</Item>
+	<Item>
+		<Element>//StudentResponseSet</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The student’s responses.</p>
+		</Description>
+		<Type ref='AssessmentWorkingGroup' name='StudentResponseSet'/>
+	</Item>
+	<Item>
+		<Element>//StudentSnapshot</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Optional demographic information about the student at the time of the assessment.</p>
+		</Description>
+		<Type ref='StudentInformationSystemsWorkingGroup' name='StudentSnapshot'/>
+	</Item>
+	<xhtml:Example xmlns=''>
+		<ItemsScored>
+			<AssessmentAdministration RefId="E2E8045FD8884745AC588F1DDDBEE864" AssessmentFormRefId="78DA3F367AAE4E34995CE15530F531CC">
+				<SpecialConditions>
+					<SpecialCondition Code="25B">Fire drill during test.</SpecialCondition>
+				</SpecialConditions>
+				<AdministrationDateTime>2006-03-06T14:30:00-05:00</AdministrationDateTime>
+				<FinishDateTime>2006-03-06T15:30:00-05:00</FinishDateTime>
+			</AssessmentAdministration>
+			<AssessmentResponseData>
+				<AssessmentResponseDataItem>
+					<AssessmentRegistration RefId="84243B2716EA4A68889B57A07E3707C9" StudentPersonalRefId="0D015F74DAB645FD92EFA8F43F2D79C3" AssessmentAdministrationRefId="6B08DF6E158941D9B8206D16E1FA6219">
+						<CreationDateTime>2006-03-05T09:30:00-05:00</CreationDateTime>
+						<StudentSpecialConditions>
+							<StudentSpecialCondition Code="45C">Student became ill during test.</StudentSpecialCondition>
+						</StudentSpecialConditions>
+						<StudentGradeLevel>
+							<Code>04</Code>
+						</StudentGradeLevel>
+						<AssessmentGradeLevel>
+							<Code>03</Code>
+						</AssessmentGradeLevel>
+					</AssessmentRegistration>
+					<StudentResponseSet RefId="0D015F74DAB645FD92EFA8F43F2D79C3" AssessmentAdministrationRefId="BB181B05598C46D2B8D533483D91392E" StudentPersonalRefId="8F0934CC2F0448F8BBD788AA1ADE691B">
+						<Items>
+							<Item>
+								<Response>C</Response>
+								<ResponseLocation>http://assessments-r-us.com/29834928374/2394/response.html</ResponseLocation>
+								<ResponseStatus>Incomplete</ResponseStatus>
+								<ResponseTime>PT32S</ResponseTime>
+								<ItemNumber>27</ItemNumber>
+								<ItemName>Writing Sample 1</ItemName>
+								<DiagnosticStatement>Shows ability to determine symmetry</DiagnosticStatement>
+								<NumberOfAttempts>2</NumberOfAttempts>
+							</Item>
+						</Items>
+					</StudentResponseSet>
+					<StudentSnapshot RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SnapDate="2003-10-01" StudentPersonalRefId="A15484ED564995254A4568EFFC5100BD" SchoolYear="2004">
+						<IDEA>No</IDEA>
+						<Migrant>No</Migrant>
+						<Title1>Yes</Title1>
+						<GiftedTalented>No</GiftedTalented>
+						<EconomicDisadvantage>Yes</EconomicDisadvantage>
+						<ELL>No</ELL>
+						<Homeless>No</Homeless>
+						<Section504>No</Section504>
+						<VocationalConcentrator>No</VocationalConcentrator>
+						<Immigrant>No</Immigrant>
+					</StudentSnapshot>
+				</AssessmentResponseDataItem>
+			</AssessmentResponseData>
+		</ItemsScored>
+	</xhtml:Example>
+</DataObject>

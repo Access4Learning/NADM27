@@ -1,0 +1,29 @@
+<IncludeGroup xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!--xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="DataModel-Vertical Reporting Task Force.xml"/-->
+
+  
+  <Group name="Assessment: sif3 Namespace">
+	<Intro>
+      <p>
+        These Assessment Objects are part of a new and separate set of objects having to do with assessment.
+      </p>
+    </Intro>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3Assessment.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentForm.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentItem.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentSection.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentAsset.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentItemAssociation.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentAdministration.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentSession.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentSubTest.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentScoreTable.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentRubric.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3AssessmentRegistration.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3StudentResponseSet.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\sif3StudentScoreSet.xml"/>
+	
+  </Group>
+ 
+  
+</IncludeGroup>

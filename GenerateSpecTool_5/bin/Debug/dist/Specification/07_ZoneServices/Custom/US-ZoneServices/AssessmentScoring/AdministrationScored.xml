@@ -1,0 +1,29 @@
+<DataObject name='AdministrationScored'>
+	<Intro>
+	</Intro>
+	<Item>
+		<Element>AdministrationScored</Element>
+		<Description>
+
+		</Description>
+	</Item>
+	<Item>
+		<Element>AssessmentAdministration</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The AssessmentAdministration SIF Object.</p>
+		</Description>
+		<Type ref='AssessmentWorkingGroup' name='AssessmentAdministration'/>
+	</Item>
+	<xhtml:Example xmlns=''>
+		<AdministrationScored>
+			<AssessmentAdministration RefId="E2E8045FD8884745AC588F1DDDBEE864" AssessmentFormRefId="78DA3F367AAE4E34995CE15530F531CC">
+				<SpecialConditions>
+					<SpecialCondition Code="25B">Fire drill during test.</SpecialCondition>
+				</SpecialConditions>
+				<AdministrationDateTime>2006-03-06T14:30:00-05:00</AdministrationDateTime>
+				<FinishDateTime>2006-03-06T15:30:00-05:00</FinishDateTime>
+			</AssessmentAdministration>
+		</AdministrationScored>
+	</xhtml:Example>
+</DataObject>
