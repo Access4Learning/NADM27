@@ -66,10 +66,7 @@
 				<a href="XSD/DataModelAnnotated/SIF_Message.xsd">DataModel (includes, annotated)</a>
 				<a href="XSD/DataModelAnnotated.zip">(ZIP archive)</a>
 			</dd>
-			 <!--<dd>
-				  <a href="XSD/ServiceBodyDefinitions/SIF_Message.xsd">ServiceBodyDefinitions (includes, annotated)</a>
-				  <a href="XSD/ServiceBodyDefinitions.zip">(ZIP archive)</a>
-			</dd>-->
+
 			<dd style="font-size: smaller">
 				<br/>
 				<em>Note:</em>
@@ -106,15 +103,6 @@
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel-Introduction.xml"/>
 		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel-CommonElements.xml"/>
 		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel.xml"/>
-	</Section>
-	
-	<!--Zone Services-->
-	<Section name="Zone Services">
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/ZoneServices-Exposition.xml"/>
-		<!--<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/Custom/ZoneServices-StateIdentifier-Custom.xml"/>
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/Custom/ZoneServices-Assessment-Custom.xml"/>
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/Custom/ZoneServices-StudentRecordExchange-Custom.xml"/>
-		-->
 	</Section>
 	
 	<!--Back Matter-->

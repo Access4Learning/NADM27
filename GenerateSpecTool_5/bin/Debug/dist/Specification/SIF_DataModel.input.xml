@@ -66,10 +66,7 @@
 				<a href="XSD/DataModelAnnotated/SIF_Message.xsd">DataModel (includes, annotated)</a>
 				<a href="XSD/DataModelAnnotated.zip">(ZIP archive)</a>
 			</dd>
-			 <!--<dd>
-				  <a href="XSD/ServiceBodyDefinitions/SIF_Message.xsd">ServiceBodyDefinitions (includes, annotated)</a>
-				  <a href="XSD/ServiceBodyDefinitions.zip">(ZIP archive)</a>
-			</dd>-->
+
 			<dd style="font-size: smaller">
 				<br />
 				<em>Note:</em>
@@ -53426,19 +53423,6 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 </IncludeGroup>
 	
 </DataObjects>
-	</Section>
-	
-	<!--Zone Services-->
-	<Section name="Zone Services">
-		<Section name="Introduction" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:base="07_ZoneServices/ZoneServices-Exposition.xml">
-	<p>Zone Services are deprecated as of this release in lieu of similar functionality in version 3 infrastructure. This section will be removed from any future 2.* specifications. See version 2.6 Data Model documentation if Zone Services are needed.</p>
-
-</Section>
-
-		<!--<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/Custom/ZoneServices-StateIdentifier-Custom.xml"/>
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/Custom/ZoneServices-Assessment-Custom.xml"/>
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="07_ZoneServices/Custom/ZoneServices-StudentRecordExchange-Custom.xml"/>
-		-->
 	</Section>
 	
 	<!--Back Matter-->
