@@ -14,8 +14,8 @@ namespace GenerateSpec
         static void Main(string[] args)
         {
             // for testing  only -------------------------------
-            //args = new string[1];
-            //args[0] = @".\Specification\SIF.Config_DataModel.xml";
+            args = new string[1];
+            args[0] = @".\Specification\SIF.Config_DataModel.xml";
 
             /*
              * Parameter 0: path to the specificationGenerator.xml file

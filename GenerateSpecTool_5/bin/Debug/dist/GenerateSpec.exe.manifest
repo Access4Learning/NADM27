@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="GenerateSpec.exe" version="5.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="GenerateSpec" version="5.1.6338.166" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="GenerateSpec" version="5.1.6350.9787" language="neutral" processorArchitecture="msil" />
     <commandLine file="GenerateSpec.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -54,13 +54,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GenerateSpec.exe" size="131072">
-      <assemblyIdentity name="GenerateSpec" version="5.1.6338.166" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="GenerateSpec" version="5.1.6350.9787" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uhdTJ+m6ZP9l1c6AteOU7ploIboP4Gx+7rvzXBHT8ik=</dsig:DigestValue>
+        <dsig:DigestValue>vHeYkDkQt+S9SvHrZ1TcC9YwNSZ1TksCkdpicn7r+o4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

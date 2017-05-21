@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "GenerateSpec", "GenerateSpec.exe", "{CEACF022-F562-4553-AE5F-828C8BDD5F5B}"
 	ProjectSection(DebuggerProjectSystem) = preProject
@@ -21,7 +21,7 @@ Global
 		Debug|Default = Debug|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEACF022-F562-4553-AE5F-828C8BDD5F5B}.Debug|Default.ActiveCfg = Release|Any CPU
+		{CEACF022-F562-4553-AE5F-828C8BDD5F5B}.Debug|Default.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

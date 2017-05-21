@@ -10,7 +10,7 @@ rmdir .\Specification\out\XSD\SIF_Message /S /Q
 rmdir .\Specification\out\XSD\SIF_MessageAnnotated /S /Q
 rmdir .\Specification\out\XSD\SIF_MessageNoIncludes /S /Q
 rmdir .\Specification\out\XSD\SIF_MessageNoIncludesAnnotated /S /Q
-rmdir .\Specification\out\XSD\ServiceBodyDefinitions /S /Q
+rem rmdir .\Specification\out\XSD\ServiceBodyDefinitions /S /Q
 
 rem --run a version of Spec Gen -- 
 generatespec.exe ".\Specification\SIF.Config_DataModel.xml"

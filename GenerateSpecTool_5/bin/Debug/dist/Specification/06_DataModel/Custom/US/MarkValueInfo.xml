@@ -29,7 +29,7 @@
 		<Description>
 			<p>The year that this  MarkValueInfo applies to.</p>
 		</Description>
-		<Type ref="DataModel" name="SchoolYear"/>
+		<Type ref="CommonTypes" name="SchoolYearType"/>
 	</Item>
 	<Item>
 		<Element>Name</Element>

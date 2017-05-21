@@ -473,7 +473,7 @@
 	<Item>
 		<Element>//SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear"/>
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>//EntryDate</Element>
@@ -692,7 +692,7 @@
 	<Item>
 		<Element>//SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear"/>
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>//StartDate</Element>
@@ -1006,7 +1006,7 @@
 	<Item>
 		<Element>///SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear"/>
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>///StartDate</Element>
@@ -1394,7 +1394,7 @@
 	<Item>
 		<Element>///SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear"/>
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>///StartDate</Element>
