@@ -17346,7 +17346,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>//SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear" />
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>//EntryDate</Element>
@@ -17565,7 +17565,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>//SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear" />
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>//StartDate</Element>
@@ -17879,7 +17879,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>///SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear" />
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>///StartDate</Element>
@@ -18267,7 +18267,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>///SchoolYear</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolYear" />
+		<Type ref="CommonTypes" name="SchoolYearType"></Type>
 	</Item>
 	<Item>
 		<Element>///StartDate</Element>
@@ -21178,7 +21178,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 		<Description>
 			<p>The year that this  MarkValueInfo applies to.</p>
 		</Description>
-		<Type ref="DataModel" name="SchoolYear" />
+		<Type ref="CommonTypes" name="SchoolYearType" />
 	</Item>
 	<Item>
 		<Element>Name</Element>
@@ -21466,7 +21466,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 		<Description>
 			<p>The year that this  MarkInfo applies to.</p>
 		</Description>
-		<Type ref="DataModel" name="SchoolYear" />
+		<Type ref="CommonTypes" name="SchoolYearType" />
 	</Item>
 	<Item>
 		<Element>Description</Element>
@@ -22351,7 +22351,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
         School year for which this information is applicable, expressed as the four-digit year in which the school year ends (e.g., <code>2008</code> for the 2007-08 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
 
   <Item>
@@ -25600,7 +25600,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
         <Description>
           <p>School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2004" for the 2003-04 school year).</p>
         </Description>
-        <Type ref="DataModel" name="SchoolYear"></Type>
+        <Type ref="CommonTypes" name="SchoolYearType"></Type>
       </Item>
       <Item>
         <Element>StateProvinceId</Element>
@@ -36592,14 +36592,15 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     </Description>
     <Type ref="CommonTypes" name="RefIdType"></Type>
   </Item>
-  <Item>
-
+  
+  <!--<Item>
     <Attribute>xml:lang</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
       <p>The default language of the text used for the content in the learning standard document.</p>
     </Description>
-  </Item>
+  </Item>-->
+  
   <Item>
     <Element>RefURI</Element>
     <Characteristics>O</Characteristics>
@@ -48102,7 +48103,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Description>
       <p>School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2007" for the 2006-07 school year).</p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
 
   <Item>
@@ -53446,6 +53447,16 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   </Item>
 </CommonElement>
 
+<CommonElement name="SchoolYearType" type="true">
+  <Item>
+    <Element>SchoolYearType</Element>
+    <Description>
+      <p>The year in which the school-year ends.</p>
+    </Description>
+	<Type name="xs:token"></Type>
+  </Item>
+</CommonElement>
+
 <CommonElement name="OtherNameType" type="true" dm="true">
   <Item>
     <Element>OtherNameType</Element>
@@ -54231,7 +54242,6 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 </CommonElement>
 
 
-		
 <CommonElement name="ReportPackageType" type="true">
   <Item>
     <Element>ReportPackageType</Element>
@@ -54627,22 +54637,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	</Item>
 </CommonElement>
 
-<!--<CommonElement type="true" name="SIF_ExampleObjectType" >
-	<Item>
-		<Element>SIF_ExampleObjectType</Element>
-		<Type>
-		<xs:choice>
-			<xs:element ref="sif:StudentLocator"/>
-		</xs:choice>
-		</Type>
-	</Item>
-</CommonElement>-->
-
-
-
-
-
-		<CommonElement type="true" name="URIOrBinaryType">
+<CommonElement type="true" name="URIOrBinaryType">
 			<Item>
 				<Element>URIOrBinaryType</Element>
 				<Union>
@@ -54653,7 +54648,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</Item>
 		</CommonElement>
 		
-			<CommonElement type="true" name="GUIDType">
+<CommonElement type="true" name="GUIDType">
 			<Item>
 				<Element>GUIDType</Element>
 				<Type name="xs:token" />
@@ -54672,7 +54667,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</Item>
 		</CommonElement>
 
-		<CommonElement type="true" name="RefIdType">
+<CommonElement type="true" name="RefIdType">
 			<Item>
 				<Element>RefIdType</Element>
 				<Type name="GUIDType" />
@@ -54765,6 +54760,8 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   
 
 
+
+	<!--	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>-->
 				
 	</Appendix>
 	

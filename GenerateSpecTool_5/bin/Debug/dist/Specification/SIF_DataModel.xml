@@ -112,7 +112,7 @@
 		</Intro>
 			<!--Section A-->
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/Custom/DataModel-CommonTypes-Custom.xml"/>
-		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>
+	<!--	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>-->
 				
 	</Appendix>
 	
