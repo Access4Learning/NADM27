@@ -64,7 +64,7 @@
         School year for which this information is applicable, expressed as the four-digit year in which the school year ends (e.g., <code>2008</code> for the 2007-08 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
 
   <Item>

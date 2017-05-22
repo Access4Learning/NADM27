@@ -1,4 +1,0 @@
-<Section name="Introduction" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<p>Zone Services are deprecated as of this release in lieu of similar functionality in version 3 infrastructure. This section will be removed from any future 2.* specifications. See version 2.6 Data Model documentation if Zone Services are needed.</p>
-
-</Section>
