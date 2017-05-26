@@ -19,17 +19,17 @@
         </Description>
         <Type ref="CommonTypes" name="RefIdType"></Type>
       </Item>
-      <Item>
-
+      
+      <!--<Item>
         <Attribute>xml:lang</Attribute>
         <Characteristics>M</Characteristics>
         <Description>
           <p>The default language of the text used for the content in object</p>
         </Description>
-      </Item>
+      </Item>-->
+      
       <Item>
         <Element>Titles</Element>
-
         <Characteristics>M</Characteristics>
         <Description></Description>
         <List mode="List"/>

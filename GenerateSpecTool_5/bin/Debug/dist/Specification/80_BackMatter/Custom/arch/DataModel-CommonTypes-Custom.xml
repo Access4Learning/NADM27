@@ -1,0 +1,1350 @@
+
+<CommonElement name="StateProvinceIdType" type="true">
+  <Intro>
+    <p>
+      This is a common element used to define the state or province assigned identifier associated with an entity. It is
+      used in StudentPersonal, StaffPersonal, and other objects.
+    </p>
+  </Intro>
+  <Item>
+    <Element>StateProvinceIdType</Element>
+    <Characteristics></Characteristics>
+    <Description>
+      <p>The identifier for this entity as assigned by the state or province.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <xhtml:Example xmlns="">
+    <StateProvinceId>L65432765</StateProvinceId>
+  </xhtml:Example>
+</CommonElement>
+
+
+
+<CommonElement name="PartialDateType" type="true">
+  <Item>
+    <Element>PartialDateType</Element>
+    <Description>
+      <p>A year, with an optional month/day, or an optional month by itself.</p>
+    </Description>
+    <Union>
+      <Type name="xs:date"></Type>
+      <Type name="xs:gYearMonth"></Type>
+      <Type name="xs:gYear"></Type>
+    </Union>
+  </Item>
+</CommonElement>
+
+<CommonElement name="SchoolYearType" type="true" >
+  <Item>
+    <Element>SchoolYearType</Element>
+    <Description>
+      <p>The year in which the school-year ends.</p>
+    </Description>
+	<Type name="xs:token"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="OtherNameType" type="true" dm="true">
+  <Item>
+    <Element>OtherNameType</Element>
+    <Description>
+      <p>
+        Extends <code>BaseNameType</code> to allow for <code>Type</code> attribute values excluding "name of record."  Used for other names to
+        be included in addition to the name of record in objects like StudentPersonal.
+      </p>
+    </Description>
+    <Type complex="extension" name="BaseNameType"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Code that specifies what type of name this is, excluding "name of record."
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>01</Code>
+        <Text>Given Name (Name at Birth)</Text>
+      </Value>
+      <Value>
+        <Code>02</Code>
+        <Text>Current Legal</Text>
+      </Value>
+      <Value>
+        <Code>03</Code>
+        <Text>Alias</Text>
+      </Value>
+      <Value>
+        <Code>05</Code>
+        <Text>Previous Name (sometimes called Maiden Name of Female Persons)</Text>
+      </Value>
+      <Value>
+        <Code>07</Code>
+        <Text>Married Name</Text>
+      </Value>
+      <Value>
+        <Code>08</Code>
+        <Text>Professional Name</Text>
+      </Value>
+    </Values>
+  </Item>
+</CommonElement>
+
+<CommonElement name="BaseNameType" type="true" dm="true">
+  <Item>
+    <Element>BaseNameType</Element>
+    <Description>
+      <p>
+        Base type, without attributes, for <code>Name</code> elements, primarily to allow structure to be leveraged with different <code>Type</code> attribute values.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Prefix</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A prefix associated with the name like Mr., Ms., etc.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Element>LastName</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The last name.</p>
+    </Description>
+    <Type ref="DataModel" name="LastName"></Type>
+  </Item>
+  <Item>
+    <Element>FirstName</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The first name.</p>
+    </Description>
+    <Type ref="DataModel" name="FirstName"></Type>
+  </Item>
+  <Item>
+    <Element>MiddleName</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The middle name or initial.</p>
+    </Description>
+    <Type ref="DataModel" name="MiddleName"></Type>
+  </Item>
+  <Item>
+    <Element>Suffix</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Generation of suffix like II, Jr., etc.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Element>PreferredName</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This is a name that the person prefers to be called by.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Element>SortName</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This is the name to be used for sorting purposes.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Element>FullName</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A free text field for the complete name.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <xhtml:Example xmlns="">
+    <Name Type="04">
+      <Prefix>Mr.</Prefix>
+      <LastName>Woodall</LastName>
+      <FirstName>Charles</FirstName>
+      <MiddleName>William</MiddleName>
+      <PreferredName>Chuck</PreferredName>
+    </Name>
+  </xhtml:Example>
+</CommonElement>
+
+<CommonElement name="NameOfRecordType" type="true" dm="true">
+  <Item>
+    <Element>NameOfRecordType</Element>
+    <Description>
+      <p>
+        Extends <code>BaseNameType</code> to allow for one <code>Type</code> attribute value, indicating the name is the name of record;
+        serves as the primary name in some SIF objects, including <code>StudentPersonal</code>.
+      </p>
+    </Description>
+    <Type complex="extension" name="BaseNameType"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Code that specifies what type of name this is.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>04</Code>
+        <Text>Name of Record</Text>
+      </Value>
+    </Values>
+  </Item>
+</CommonElement>
+
+
+<CommonElement name="FSAmountType" type="true" dm="true">
+  <Intro>
+    <p>
+      This provides information about the value of a food service transaction amount.
+      When credits are specified the value is the total cash value of all the credits.
+    </p>
+  </Intro>
+  <Item>
+    <Element>FSAmountType</Element>
+    <Type ref="CommonTypes" name="MonetaryAmountType"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Description>
+      <p>
+        Type of amount.  Note that when this common element is used not all of the following values apply. There are notes to indicate values that are applicable.
+      </p>
+      <p>
+        The type <code>Value</code> is used to denote the value of the amount.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Cash</Code>
+      </Value>
+      <Value>
+        <Code>BreakfastCredit</Code>
+      </Value>
+      <Value>
+        <Code>LunchCredit</Code>
+      </Value>
+      <Value>
+        <Code>Check</Code>
+      </Value>
+      <Value>
+        <Code>CreditCard</Code>
+      </Value>
+      <Value>
+        <Code>ACH</Code>
+      </Value>
+      <Value>
+        <Code>Value</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Attribute>Credits</Attribute>
+    <Description>
+      <p>
+        Number of credits. This attribute does not apply to <code>Cash</code> or <code>Value</code>
+        and hence has a value <code>0</code>. It only applies to types <code>BreakfastCredit</code> and <code>LunchCredit</code>.
+      </p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <!--
+			<xhtml:Example xmlns="">
+				<FSAmount Type="BreakfastCredit" Credits="2">4.00</FSAmount>
+			</xhtml:Example>
+			-->
+</CommonElement>
+
+<CommonElement name="FSCountType" type="true" dm="true">
+  <Item>
+    <Element>FSCountType</Element>
+    <Description>
+      <p>Reports aggregate counts and, optionally, received funds for individual combinations of student or staff meal status and meal type.</p>
+    </Description>
+  </Item>
+  <Choice optional="true">
+    <Item>
+      <Element>MealStatus</Element>
+      <Characteristics>C</Characteristics>
+      <Type ref="DataModel" name="MealStatus"></Type>
+      <Description>
+        <p>Student meal status. If a meal status applies, either MealStatus (for students), or EarnedStatus (for staff) is specified.</p>
+      </Description>
+    </Item>
+    <Item>
+      <Element>EarnedStatus</Element>
+      <Characteristics>C</Characteristics>
+      <Type ref="DataModel" name="EarnedStatus"></Type>
+      <Description>
+        <p>Staff meal status.</p>
+      </Description>
+    </Item>
+  </Choice>
+  <Item>
+    <Element>MealType</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" typed="false" name="MealType"></Type>
+  </Item>
+  <Item>
+    <Element>Amount</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="FSAmountType"></Type>
+  </Item>
+  <Item>
+    <Element>Tax</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="MonetaryAmountType"></Type>
+    <Description>
+      <p>Value of tax collected.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Value</Element>
+    <Characteristics>M</Characteristics>
+    <Type name="xs:decimal"></Type>
+    <Description>
+      <p>The value of the count.</p>
+    </Description>
+  </Item>
+  <!--
+			<xhtml:Example xmlns="" name="From FoodserviceStaffMealCounts:  65 FirstMeals with EarnedStatus of No, $227.50 collected, $14.79 of which was sales tax.">
+				<FSCount>
+					<EarnedStatus Type="No"/>
+					<MealType>FirstMeal</MealType>
+					<FSAmount Type="Value" Credits="0">227.50</FSAmount>
+					<Tax>14.79</Tax>
+					<Value>65</Value>
+				</FSCount>
+			</xhtml:Example>
+			<xhtml:Example xmlns="" name="From FoodserviceStudentEnrollmentCounts: 145 students enrolled with MealStatus of type Reduced">
+				<FSCount>
+					<MealStatus Type="Reduced"/>
+					<Value>145</Value>
+				</FSCount>
+			</xhtml:Example>
+			<xhtml:Example xmlns="" name="From FoodserviceStudentMealCounts: 125 student meals served">
+				<FSCount>
+					<Value>125</Value>
+				</FSCount>
+			</xhtml:Example>
+			-->
+</CommonElement>
+
+<CommonElement name="OrganizationRelationshipType" type="true">
+  <Item>
+    <Element>OrganizationRelationshipType</Element>
+    <Description>
+      <p>Provides information about a student's relationship to an organization.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>ResidencyStatus</Element>
+    <Characteristics>M</Characteristics>
+  </Item>
+  <Item>
+    <Element>/Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Location of an individual's legal residence relative to (within or outside) the boundaries of the organization.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0598PublicSchoolResidenceStatusType"/>
+  </Item>
+  <Item>
+    <Element>/OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="DataModel" name="OtherCodeList"/>
+  </Item>
+  <Item>
+    <Element>ProvidingInstruction</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Flag that indicates if the reporting organization is providing instruction to the student.</p>
+    </Description>
+    <Type name="xs:boolean"/>
+  </Item>
+  <Item>
+    <Element>ProvidingServices</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Flag that indicates if the reporting organization is providing services that are not related to instruction to the student. An example of a non-instructional service is transportation.</p>
+    </Description>
+    <Type name="xs:boolean"/>
+  </Item>
+  <Item>
+    <Element>FinanciallyResponsible</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Flag that indicates if the reporting organization is financially responsible for the student.</p>
+    </Description>
+    <Type name="xs:boolean"/>
+  </Item>
+</CommonElement>
+
+
+
+<CommonElement name="StudentParametersType" type="true" dm="true">
+	<Item>
+		<Element>StudentParametersType</Element>
+		<Description>
+			<p>Characteristics of the student identified by the district which the state uses to perform its locator matching logic.</p>
+		</Description>
+	</Item>
+
+	<Item>
+		<Element>StateProvinceId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Specified if the requesting agency believes it knows the person’s state Id.</p>
+		</Description>
+		<Type ref='DataModel' name='StateProvinceId'/>
+	</Item>
+
+	<Item>
+		<Element>LocalId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>This is the requesting agent’s unique Id for the person.</p>
+		</Description>
+		<Type ref='DataModel' name='LocalId'/>
+	</Item>
+
+	<Item>
+		<Element>SIF_RefId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Requesting agency’s local zone’s GUID of the student's data source object.</p>
+		</Description>
+		<Type ref='CommonTypes' name='IdRefType'/>
+	</Item>
+
+	<Item>
+		<Element>GradeLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The student’s current grade level.</p>
+		</Description>
+		<Type ref='DataModel' name='GradeLevel'/>
+	</Item>
+
+	<Item>
+		<Element>SSN</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Social security number of the person.</p>
+		</Description>
+		<Type ref='DataModel' name='SSN'/>
+	</Item>
+
+	<Item>
+		<Element>Names</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name(s) of the person.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>/Name</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>The name(s) of the person.</p>
+		</Description>
+		<Type ref='DataModel' name='Name'/>
+	</Item>
+
+	<Item>
+		<Element>Addresses</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The address(es) of the person.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>/Address</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>The address(es) of the person.</p>
+		</Description>
+		<Type ref='DataModel' name='Address'/>
+	</Item>
+
+	<Item>
+		<Element>Demographics</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Demographic information about the person. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local object, but it must include enough to drive the state's matching algorithms.</p>
+		</Description>
+		<Type ref='DataModel' name='Demographics'/>
+	</Item>
+
+	<Item>
+		<Element>Contacts</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>/Contact</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+		</Description>
+	</Item>
+
+
+	<Item>
+		<Element>//Relationship</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Relationship to the person.</p>
+		</Description>
+		<Type ref='DataModel' name='Relationship'/>
+	</Item>
+
+	<Item>
+		<Element>//Names</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name(s) of the contact.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>///Name</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>The name(s) of the contact.</p>
+		</Description>
+		<Type ref='DataModel' name='Name'/>
+	</Item>
+
+	<Item>
+		<Element>//OtherIdList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>OtherIds associated with the contact .</p>
+		</Description>
+		<Type ref='DataModel' name='OtherIdList'/>
+	</Item>
+
+	<Item>
+		<Element>//EducationalLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The highest level of education completed by the contact person.</p>
+		</Description>
+		<Type ref="DataModel" name="EducationalLevel"></Type>
+	</Item>
+
+	<Item>
+		<Element>EffectiveDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>This should match StudentSchoolEnrollment/EntryDate.</p>
+		</Description>
+		<Type name='xs:date'/>
+	</Item>
+
+	<Item>
+		<Element>StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Start date for a range that is being requested.  In most cases this will correspond to the school entry date.</p>
+		</Description>
+		<Type name='xs:date'/>
+	</Item>
+
+	<Item>
+		<Element>EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>End date for a range that is being requested.  In most cases this will correspond to the school exit date.</p>
+		</Description>
+		<Type name='xs:date'/>
+	</Item>
+
+	<Item>
+		<Element>GraduationDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Indicates the date the person's graduated Year, Year and Month, or Year, Month and Day may be specified. Intended to facilitate locating persons that may not be currently enrolled in a school or district, particularly in the context of locating student identifiers for initiating a request for a student's academic record. Supplied date values may often be approximations made by the entity endeavoring to request a student's academic record.</p>
+		</Description>
+		<Type ref='DataModel' name='GraduationDate'/>
+	</Item>
+
+	<Item>
+		<Element>SchoolAttendedName</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the school last attended by the person.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+
+	<Item>
+		<Element>SchoolAttendedLocation</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The location of the school last attended by the person (e.g. city or county name, district name, etc.).</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+
+	<Item>
+		<Element>OtherIdList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Additional person identifiers not represented elsewhere in Characteristics (e.g. the driver's license number of the person ).</p>
+		</Description>
+		<Type ref='DataModel' name='OtherIdList'/>
+	</Item>
+
+	<Item>
+		<Element>TimeElement</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>SIF_Metadata’s TimeElement may be specified to indicate a time duration to which the characteristics apply (as opposed to adding new elements to Characteristics). This metadata may be supplied by systems that know a student existed in a district during a certain time period (e.g. a system initiating a student record exchange). If the responder is able to make use of the metadata, it may do so to narrow down the student look-up; otherwise the metadata can be ignored or logged.</p>
+		</Description>
+		<Type ref="DataModel" name="TimeElement"></Type>
+	</Item>
+
+</CommonElement>
+
+<CommonElement name="StaffParametersType" type="true" dm="true">
+	<Item>
+		<Element>StaffParametersType</Element>
+		<Description>
+			<p>Characteristics of the staff person identified by the district which the state uses to perform its matching logic.</p>
+		</Description>
+	</Item>
+
+	<Item>
+		<Element>StateProvinceId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Specified if the requesting agency believes it knows the person’s state Id.</p>
+		</Description>
+		<Type ref='DataModel' name='StateProvinceId'/>
+	</Item>
+
+	<Item>
+		<Element>LocalId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>This is the requesting agent’s unique Id for the person.</p>
+		</Description>
+		<Type ref='DataModel' name='LocalId'/>
+	</Item>
+
+	<Item>
+		<Element>SIF_RefId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Requesting agency’s local zone’s GUID of the person’s data source object.</p>
+		</Description>
+		<Type ref='CommonTypes' name='IdRefType'/>
+	</Item>
+
+	<Item>
+		<Element>SSN</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Social security number of the person.</p>
+		</Description>
+		<Type ref='DataModel' name='SSN'/>
+	</Item>
+
+	<Item>
+		<Element>Names</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name(s) of the person.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>/Name</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>The name(s) of the person.</p>
+		</Description>
+		<Type ref='DataModel' name='Name'/>
+	</Item>
+
+	<Item>
+		<Element>Addresses</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The address(es) of the person.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>/Address</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>The address(es) of the person.</p>
+		</Description>
+		<Type ref='DataModel' name='Address'/>
+	</Item>
+
+	<Item>
+		<Element>Demographics</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Demographic information about the person. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local object, but it must include enough to drive the state's matching algorithms.</p>
+		</Description>
+		<Type ref='DataModel' name='Demographics'/>
+	</Item>
+
+	<Item>
+		<Element>Contacts</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>/Contact</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+		</Description>
+	</Item>
+
+
+	<Item>
+		<Element>//Relationship</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Relationship to the person.</p>
+		</Description>
+		<Type ref='DataModel' name='Relationship'/>
+	</Item>
+
+	<Item>
+		<Element>//Names</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name(s) of the contact.</p>
+		</Description>
+		<List mode='List'/>
+	</Item>
+
+	<Item>
+		<Element>///Name</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>The name(s) of the contact.</p>
+		</Description>
+		<Type ref='DataModel' name='Name'/>
+	</Item>
+
+	<Item>
+		<Element>//OtherIdList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>OtherIds associated with the contact .</p>
+		</Description>
+		<Type ref='DataModel' name='OtherIdList'/>
+	</Item>
+
+	<Item>
+		<Element>//EducationalLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The highest level of education completed by the contact person.</p>
+		</Description>
+		<Type ref="DataModel" name="EducationalLevel"></Type>
+	</Item>
+
+	<Item>
+		<Element>EffectiveDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>This should match StudentSchoolEnrollment/EntryDate.</p>
+		</Description>
+		<Type name='xs:date'/>
+	</Item>
+
+	<Item>
+		<Element>StartDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Start date for a range that is being requested.  In most cases this will correspond to the school entry date.</p>
+		</Description>
+		<Type name='xs:date'/>
+	</Item>
+
+	<Item>
+		<Element>EndDate</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>End date for a range that is being requested.  In most cases this will correspond to the school exit date.</p>
+		</Description>
+		<Type name='xs:date'/>
+	</Item>
+
+	<Item>
+		<Element>OtherIdList</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Additional person identifiers not represented elsewhere in Characteristics (e.g. the driver's license number of the person ).</p>
+		</Description>
+		<Type ref='DataModel' name='OtherIdList'/>
+	</Item>
+
+	<Item>
+		<Element>TimeElement</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>SIF_Metadata’s TimeElement may be specified to indicate a time duration to which the characteristics apply (as opposed to adding new elements to Characteristics). This metadata may be supplied by systems that know a student existed in a district during a certain time period (e.g. a system initiating a student record exchange). If the responder is able to make use of the metadata, it may do so to narrow down the student look-up; otherwise the metadata can be ignored or logged.</p>
+		</Description>
+		<Type ref="DataModel" name="TimeElement"></Type>
+	</Item>
+
+</CommonElement>
+
+
+<CommonElement name="ReportPackageType" type="true">
+  <Item>
+    <Element>ReportPackageType</Element>
+    <Type ref="CommonTypes" complex="extension" name="AbstractContentPackageType"></Type>
+    <Description>
+      This package has exactly the same structure as <code>AbstractContentPackageType</code>.  <code>ReportPackage</code>
+      can be used in addition to SIF objects specifically in reporting situations within <code>SIF_ReportObject</code>.
+      At this time, it is not a SIF object.  It cannot be requested via <code>SIF_Query</code> or <code>SIF_ExtendedQuery</code>
+      in a <code>ReportManifest</code>.  It may be included in <code>SIF_ReportObject</code> as part of an external report
+      definition.
+    </Description>
+  </Item>
+</CommonElement>
+
+<CommonElement type="true" name="AbstractContentPackageType">
+  <Key>@RefId</Key>
+  <Item>
+    <Element>AbstractContentPackageType</Element>
+    <Description>
+      <p>
+        An abstract type for derived content package types, elements and objects.  This structure may be used verbatim, optionally extending
+        with additional attributes, or may be redefined to include only a subset of child elements and/or to add validation to XML
+        contained in <code>XMLData</code>.  Only one instance of <code>XMLData</code>, <code>TextData</code>, <code>BinaryData</code> or
+        <code>Reference</code> can occur in a single instance.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type name="RefIdType"/>
+    <Description>
+      <p>The GUID that uniquely identifies an instance of the package.</p>
+    </Description>
+  </Item>
+  <Choice>
+  
+    <Item>
+      <Element>XMLData</Element>
+      <Characteristics>C</Characteristics>
+      <Type>
+        <xs:any processContents="lax"/>
+      </Type>
+      <Description>
+        <p>Contains an arbitary XML element, encoded in UTF-8.</p>
+      </Description>
+    </Item>
+    <Item>
+      <Attribute>Description</Attribute>
+      <Characteristics>O</Characteristics>
+      <Type name="xs:token"/>
+      <Description>
+        <p>
+          Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+          Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+        </p>
+      </Description>
+    </Item>
+    
+    <Item>
+      <Element>TextData</Element>
+      <Characteristics>C</Characteristics>
+      <Description>
+        <p>Contains arbitrary text, encoded in UTF-8.</p>
+      </Description>
+      <Type name="xs:string"/>
+    </Item>
+    <Item>
+      <Attribute>MIMEType</Attribute>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>
+          Optional MIME type to specifically indicate the text type.  Otherwise <code>text/plain</code> can be assumed.
+        </p>
+      </Description>
+      <Type name="xs:token"/>
+    </Item>
+    <Item>
+      <Attribute>FileName</Attribute>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>
+          Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
+        </p>
+      </Description>
+      <Type name="xs:token"/>
+    </Item>
+    <Item>
+      <Attribute>Description</Attribute>
+      <Characteristics>O</Characteristics>
+      <Type name="xs:token"/>
+      <Description>
+        <p>
+          Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+          Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+        </p>
+      </Description>
+    </Item>
+    
+    <Item>
+      <Element>BinaryData</Element>
+      <Characteristics>C</Characteristics>
+      <Type name="xs:base64Binary"/>
+      <Description>
+        <p>Contains the base64Binary encoding of binary or text data not encoded in UTF-8.</p>
+      </Description>
+    </Item>
+    <Item>
+      <Attribute>MIMEType</Attribute>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>
+          MIME type to indicate the content type.
+        </p>
+      </Description>
+      <Type name="xs:token"/>
+    </Item>
+    <Item>
+      <Attribute>FileName</Attribute>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>
+          Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
+        </p>
+      </Description>
+      <Type name="xs:token"/>
+    </Item>
+    <Item>
+      <Attribute>Description</Attribute>
+      <Characteristics>O</Characteristics>
+      <Type name="xs:token"/>
+      <Description>
+        <p>
+          Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+          Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+        </p>
+      </Description>
+    </Item>
+    
+    <Item>
+      <Element>Reference</Element>
+      <Characteristics>C</Characteristics>
+      <Description>
+        <p>References external content via a URL.</p>
+      </Description>
+    </Item>
+    <Item>
+      <Attribute>MIMEType</Attribute>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>
+          MIME type to indicate the content type to be expected when retrieving the external content.
+        </p>
+      </Description>
+      <Type name="xs:token"/>
+    </Item>
+    <Item>
+      <Attribute>Description</Attribute>
+      <Characteristics>O</Characteristics>
+      <Type name="xs:token"/>
+      <Description>
+        <p>
+          Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+          Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+        </p>
+      </Description>
+    </Item>
+	<Item>
+      <Element>/URL</Element>
+      <Characteristics>M</Characteristics>
+      <Type name="xs:anyURI"/>
+      <Description>
+        <p>Location of external content.</p>
+      </Description>
+    </Item>
+  </Choice>
+  
+</CommonElement>
+
+<CommonElement type="true" name="AbstractContentElementType">
+		  <Item>
+			<Element>AbstractContentElementType</Element>
+			<Description>
+			  <p>
+				<code>AbstractContentPackageType</code> used as an element rather than an object, omitting <code>RefId</code>, <code>SIF_Metadata</code> and <code>SIF_ExtendedElements</code>.
+			  </p>
+			</Description>
+		  </Item>
+		  <Choice>
+			<Item>
+			  <Element>XMLData</Element>
+			  <Characteristics>C</Characteristics>
+			  <Type>
+				<xs:any processContents="lax"/>
+			  </Type>
+			  <Description>
+				<p>Contains an arbitary XML element, encoded in UTF-8.</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Attribute>Description</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Type name="xs:token"/>
+			  <Description>
+				<p>
+				  Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+				  Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+				</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Element>TextData</Element>
+			  <Characteristics>C</Characteristics>
+			  <Description>
+				<p>Contains arbitrary text, encoded in UTF-8.</p>
+			  </Description>
+			  <Type name="xs:string"/>
+			</Item>
+			<Item>
+			  <Attribute>MIMEType</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Description>
+				<p>
+				  Optional MIME type to specifically indicate the text type.  Otherwise <code>text/plain</code> can be assumed.
+				</p>
+			  </Description>
+			  <Type name="xs:token"/>
+			</Item>
+			<Item>
+			  <Attribute>FileName</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Description>
+				<p>
+				  Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
+				</p>
+			  </Description>
+			  <Type name="xs:token"/>
+			</Item>
+			<Item>
+			  <Attribute>Description</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Type name="xs:token"/>
+			  <Description>
+				<p>
+				  Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+				  Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+				</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Element>BinaryData</Element>
+			  <Characteristics>C</Characteristics>
+			  <Type name="xs:base64Binary"/>
+			  <Description>
+				<p>Contains the base64Binary encoding of binary or text data not encoded in UTF-8.</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Attribute>MIMEType</Attribute>
+			  <Characteristics>M</Characteristics>
+			  <Description>
+				<p>
+				  MIME type to indicate the content type.
+				</p>
+			  </Description>
+			  <Type name="xs:token"/>
+			</Item>
+			<Item>
+			  <Attribute>FileName</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Description>
+				<p>
+				  Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
+				</p>
+			  </Description>
+			  <Type name="xs:token"/>
+			</Item>
+			<Item>
+			  <Attribute>Description</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Type name="xs:token"/>
+			  <Description>
+				<p>
+				  Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+				  Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+				</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Element>Reference</Element>
+			  <Characteristics>C</Characteristics>
+			  <Description>
+				<p>References external content via a URL.</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Attribute>MIMEType</Attribute>
+			  <Characteristics>M</Characteristics>
+			  <Description>
+				<p>
+				  MIME type to indicate the content type to be expected when retrieving the external content.
+				</p>
+			  </Description>
+			  <Type name="xs:token"/>
+			</Item>
+			<Item>
+			  <Attribute>Description</Attribute>
+			  <Characteristics>O</Characteristics>
+			  <Type name="xs:token"/>
+			  <Description>
+				<p>
+				  Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+				  Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+				</p>
+			  </Description>
+			</Item>
+			<Item>
+			  <Element>/URL</Element>
+			  <Characteristics>M</Characteristics>
+			  <Type name="xs:anyURI"/>
+			  <Description>
+				<p>Location of external content.</p>
+			  </Description>
+			</Item>
+		  </Choice>
+		</CommonElement>
+
+	<CommonElement type="true" name="MonetaryAmountType">
+			<Item>
+				<Element>MonetaryAmountType</Element>
+				<Type name="xs:decimal"/>
+				<Description>
+					<p>A monetary amount.</p>
+				</Description>
+			</Item>
+			<Item>
+				<Attribute>Currency</Attribute>
+				<Characteristics>O</Characteristics>
+				<Description>Currency code.  Where omitted, defaults to implementation-defined local currency, typically <code>USD</code> in the United States.</Description>
+				<Type ref="ExternalCodeSets" name="ISO4217CurrencyNamesAndCodeElementsType"/>
+			</Item>
+		</CommonElement>
+
+
+<CommonElement type="true" name="ObjectNameType" >
+	<Item>
+		<Element>ObjectNameType</Element>
+		<Description>
+		<p>An unenumerated SIF object name.</p>
+		</Description>
+		<Type name="xs:NCName"></Type>
+		<Facets>
+			<xs:maxLength value="64"/>
+		</Facets>
+	</Item>
+</CommonElement>
+
+<CommonElement type="true" name="ServiceNameType" >
+	<Item>
+		<Element>ServiceNameType</Element>
+		<Description>
+		<p>An unenumerated SIF object name.</p>
+		</Description>
+		<Type name="xs:NCName"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement type="true" name="ObjectType" >
+	<Item>
+		<Element>ObjectType</Element>
+		<Description>
+		<p>A SIF XML object.</p>
+		</Description>
+		<Type>
+			 <xs:sequence> 
+				<xs:any processContents="lax" minOccurs="1" maxOccurs="unbounded" namespace="##any" />
+			</xs:sequence>
+		</Type>
+	</Item>
+</CommonElement>
+
+<CommonElement type="true" name="ReportDataObjectType" >
+	<Item>
+		<Element>ReportDataObjectType</Element>
+		<Description>
+		<p>A SIF XML object.</p>
+		</Description>
+		<Type>
+				 <xs:sequence> 
+					<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+		</Type>
+	</Item>
+</CommonElement>
+
+<CommonElement type="true" name="URIOrBinaryType">
+			<Item>
+				<Element>URIOrBinaryType</Element>
+				<Union>
+					<Type name="xs:anyURI"/>
+					<Type name="xs:base64Binary"/>
+				</Union>
+<Description>Allows for a URL or a Base-64 encoding.</Description>
+			</Item>
+		</CommonElement>
+		
+<CommonElement type="true" name='GUIDType'>
+			<Item>
+				<Element>GUIDType</Element>
+				<Type name='xs:token'/>
+				<Facets>
+				<xs:pattern value='[0-9A-F]{32}'/>
+				</Facets>
+<Description>SIF format for a GUID.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement type="true" name='MsgIdType'>
+			<Item>
+				<Element>MsgIdType</Element>
+				<Type name='GUIDType'/>
+<Description>A message identifier.</Description>
+			</Item>
+		</CommonElement>
+
+<CommonElement type="true" name='RefIdType'>
+			<Item>
+				<Element>RefIdType</Element>
+				<Type name='GUIDType'/>
+<Description>An object or element identifier.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement type="true" name='IdRefType'>
+			<Item>
+				<Element>IdRefType</Element>
+				<Type name='RefIdType'/>
+<Description>A reference to a RefId.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement type="true" name='VersionType'>
+			<Item>
+				<Element>VersionType</Element>
+				<Type name='xs:token'/>
+				<Facets>
+				<xs:maxLength value='12'/>
+				<xs:pattern value='[0-9]+[.][0-9]+(r[0-9]+)?'/>
+				</Facets>
+<Description>A SIF version number.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement type="true" name='VersionWithWildcardsType'>
+			<Item>
+				<Element>VersionWithWildcardsType</Element>
+				<Type name='xs:token'/>
+				<Facets>
+					<xs:maxLength value='12'/>
+					<xs:pattern value='\*|([0-9]+[.]\*)|([0-9]+[.][0-9]+r\*)|([0-9]+[.][0-9]+(r[0-9]+)?)'/>
+				</Facets>
+<Description>A SIF version number, with wildcards for matching multiple versions.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement type="true" name='DefinedProtocolsType'>
+			<Item>
+				<Element>DefinedProtocolsType</Element>
+				<Values>
+					<Value>
+						<Code>HTTPS</Code>
+					</Value>
+					<Value>
+						<Code>HTTP</Code>
+					</Value>
+				</Values>
+<Description>The transport protocols defined in SIF.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement name='ExtendedContentType' type='true'>
+			<Item>
+				<Element>ExtendedContentType</Element>
+				<Type>
+					<xs:complexContent mixed="true">
+						<xs:restriction base="xs:anyType">
+							<xs:sequence>
+								<xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:restriction>
+					</xs:complexContent>
+				</Type>
+			<Description>Allows for any mixed XML in an element.</Description>
+			</Item>
+		</CommonElement>
+
+		<CommonElement name='SelectedContentType' type='true'>
+			<Item>
+				<Element>SelectedContentType</Element>
+				<Type>
+					<xs:complexContent mixed="true">
+						<xs:restriction base="xs:anyType">
+							<xs:sequence>
+								<xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:restriction>
+					</xs:complexContent>
+				</Type>
+			<Description>Allows an XML fragment selected from an object to be used in an element with XML validation skipped.</Description>
+			</Item>
+		</CommonElement>
+		
+			
+		
+ 
+  
+
+

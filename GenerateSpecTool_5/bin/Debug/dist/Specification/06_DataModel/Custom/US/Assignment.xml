@@ -18,13 +18,15 @@
 		</Description>
 		<Type ref="CommonTypes" name="RefIdType"/>
 	</Item>
-	<Item>
+	
+	<!--<Item>
 		<Attribute>xml:lang</Attribute>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>The default language used in the assignment object.</p>
 		</Description>
-	</Item>
+	</Item>-->
+	
 	<Item>
 		<Element>Students</Element>
 		<Characteristics>M</Characteristics>

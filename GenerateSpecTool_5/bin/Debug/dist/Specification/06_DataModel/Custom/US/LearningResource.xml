@@ -19,17 +19,17 @@
     </Description>
     <Type ref="CommonTypes" name="RefIdType"></Type>
   </Item>
-  <Item>
-
+  
+  <!--<Item>
     <Attribute>xml:lang</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
       <p>The default language used in the LearningResource object.</p>
     </Description>
-  </Item>
+  </Item>-->
+  
   <Item>
     <Element>Name</Element>
-
     <Characteristics>M</Characteristics>
     <Description>
       <p>Name of learning resource.</p>
