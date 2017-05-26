@@ -20,13 +20,14 @@
     <Type ref="CommonTypes" name="RefIdType"></Type>
   </Item>
   	
-	<Item>
+	<!--<Item>
 		<Attribute>xml:lang</Attribute>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>The default language used in this ContentCatalog object. </p>
 		</Description>
-	</Item>
+	</Item>-->
+	
 	<Item>
 		<Element>ContentObject</Element>
 		<Characteristics>M</Characteristics>
