@@ -1127,7 +1127,7 @@
 		  </Choice>
 		</CommonElement>
 
-	<CommonElement type="true" name="MonetaryAmountType">
+	<CommonElement name="MonetaryAmountType" type="true">
 			<Item>
 				<Element>MonetaryAmountType</Element>
 				<Type name="xs:decimal"/>
@@ -1144,7 +1144,7 @@
 		</CommonElement>
 
 
-<CommonElement type="true" name="ObjectNameType" >
+<CommonElement name="ObjectNameType" type="true">
 	<Item>
 		<Element>ObjectNameType</Element>
 		<Description>
@@ -1157,7 +1157,7 @@
 	</Item>
 </CommonElement>
 
-<CommonElement type="true" name="ServiceNameType" >
+<CommonElement name="ServiceNameType"  type="true">
 	<Item>
 		<Element>ServiceNameType</Element>
 		<Description>
@@ -1167,7 +1167,7 @@
 	</Item>
 </CommonElement>
 
-<CommonElement type="true" name="ObjectType" >
+<CommonElement name="ObjectType" type="true">
 	<Item>
 		<Element>ObjectType</Element>
 		<Description>
@@ -1181,7 +1181,7 @@
 	</Item>
 </CommonElement>
 
-<CommonElement type="true" name="ReportDataObjectType" >
+<CommonElement name="ReportDataObjectType"  type="true">
 	<Item>
 		<Element>ReportDataObjectType</Element>
 		<Description>
@@ -1195,7 +1195,7 @@
 	</Item>
 </CommonElement>
 
-<CommonElement type="true" name="URIOrBinaryType">
+<CommonElement name="URIOrBinaryType" type="true">
 			<Item>
 				<Element>URIOrBinaryType</Element>
 				<Union>
@@ -1205,8 +1205,7 @@
 <Description>Allows for a URL or a Base-64 encoding.</Description>
 			</Item>
 		</CommonElement>
-		
-<CommonElement type="true" name='GUIDType'>
+<CommonElement name='GUIDType' type="true">		
 			<Item>
 				<Element>GUIDType</Element>
 				<Type name='xs:token'/>
@@ -1217,23 +1216,23 @@
 			</Item>
 		</CommonElement>
 
-		<CommonElement type="true" name='MsgIdType'>
-			<Item>
-				<Element>MsgIdType</Element>
-				<Type name='GUIDType'/>
-<Description>A message identifier.</Description>
-			</Item>
-		</CommonElement>
+<CommonElement name='MsgIdType' type="true">
+	<Item>
+		<Element>MsgIdType</Element>
+		<Type name='GUIDType'/>
+		<Description>A message identifier.</Description>
+	</Item>
+</CommonElement>
 
-<CommonElement type="true" name='RefIdType'>
-			<Item>
-				<Element>RefIdType</Element>
-				<Type name='GUIDType'/>
-<Description>An object or element identifier.</Description>
-			</Item>
-		</CommonElement>
+<CommonElement name='RefIdType' type="true">
+	<Item>
+		<Element>RefIdType</Element>
+		<Type name='GUIDType'/>
+		<Description>An object or element identifier.</Description>
+	</Item>
+</CommonElement>
 
-		<CommonElement type="true" name='IdRefType'>
+<CommonElement name='IdRefType' type="true">
 			<Item>
 				<Element>IdRefType</Element>
 				<Type name='RefIdType'/>
@@ -1241,7 +1240,7 @@
 			</Item>
 		</CommonElement>
 
-		<CommonElement type="true" name='VersionType'>
+		<CommonElement name='VersionType' type="true">
 			<Item>
 				<Element>VersionType</Element>
 				<Type name='xs:token'/>
@@ -1253,7 +1252,7 @@
 			</Item>
 		</CommonElement>
 
-		<CommonElement type="true" name='VersionWithWildcardsType'>
+		<CommonElement name='VersionWithWildcardsType' type="true">
 			<Item>
 				<Element>VersionWithWildcardsType</Element>
 				<Type name='xs:token'/>
@@ -1265,7 +1264,7 @@
 			</Item>
 		</CommonElement>
 
-		<CommonElement type="true" name='DefinedProtocolsType'>
+		<CommonElement name='DefinedProtocolsType' type="true">
 			<Item>
 				<Element>DefinedProtocolsType</Element>
 				<Values>
@@ -1312,6 +1311,7 @@
 			</Item>
 		</CommonElement>
 		
+
 <!-- Below are the elements that used to be common elements and are now common types-->
 
 
@@ -1646,10 +1646,10 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="RightsElement" type="true">
+<CommonElement name="RightsElementType" type="true">
 
   <Item>
-    <Element>RightsElement</Element>
+    <Element>RightsElementType</Element>
     <Description>
       <p>
         A common metadata element designed to carry any intellectual property or copyright information, based on the IEEE LOM Rights element <a href="References.html#LOM">[LOM]</a>.
@@ -1737,7 +1737,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="EducationFilter" type="true">
+<CommonElement name="EducationFilterType" type="true">
 
   <Intro>
     <p>
@@ -1762,7 +1762,7 @@
   </Intro>
 
   <Item>
-    <Element>EducationFilter</Element>
+    <Element>EducationFilterType</Element>
   </Item>
 
   <Item>
@@ -3016,7 +3016,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Section504">
+<CommonElement name="Section504" type="true">
   <Item>
     <Element>Section504</Element>
     <Description>
@@ -3039,7 +3039,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="VocationalConcentrator">
+<CommonElement name="VocationalConcentrator" type="true">
   <Item>
     <Element>VocationalConcentrator</Element>
     <Description>
@@ -3062,7 +3062,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Immigrant">
+<CommonElement name="Immigrant" type="true">
   <Item>
     <Element>Immigrant</Element>
     <Description>
@@ -3085,7 +3085,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="NeglectedDelinquent">
+<CommonElement name="NeglectedDelinquent" type="true">
   <Item>
     <Element>NeglectedDelinquent</Element>
     <Description>
@@ -3110,7 +3110,7 @@
 
 
 
-<CommonElement name="CourseCode">
+<CommonElement name="CourseCode" type="true">
   <Item>
     <Element>CourseCode</Element>
     <Description>
@@ -3124,7 +3124,7 @@
 
 </CommonElement>
 
-<CommonElement name="StateCourseCode">
+<CommonElement name="StateCourseCode" type="true">
   <Item>
     <Element>StateCourseCode</Element>
     <Description>
@@ -3137,7 +3137,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="DistrictCourseCode">
+<CommonElement name="DistrictCourseCode" type="true">
   <Item>
     <Element>DistrictCourseCode</Element>
     <Description>
@@ -3151,7 +3151,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="CourseTitle">
+<CommonElement name="CourseTitle" type="true">
   <Item>
     <Element>CourseTitle</Element>
     <Description>
@@ -3165,7 +3165,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="IdentificationInfoList">
+<CommonElement name="IdentificationInfoList" type="true">
   <Item>
     <Element>IdentificationInfoList</Element>
     <List mode="List">
@@ -3188,7 +3188,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="IdentificationInfo">
+<CommonElement name="IdentificationInfo" type="true">
   <Item>
     <Element>IdentificationInfo</Element>
     <Description>
@@ -3225,7 +3225,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="CourseCredits">
+<CommonElement name="CourseCredits" type="true">
   <Item>
     <Element>CourseCredits</Element>
     <Description>
@@ -3246,7 +3246,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="InstructionalLevel">
+<CommonElement name="InstructionalLevel" type="true">
   <Item>
     <Element>InstructionalLevel</Element>
     <Description>
@@ -3274,7 +3274,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="AddressList">
+<CommonElement name="AddressList" type="true">
   <Item>
     <Element>AddressList</Element>
     <Description>
@@ -3329,7 +3329,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Address">
+<CommonElement name="Address" type="true">
   <Intro>
     <p>
       This element represents an address. This element occurs within objects and elements such as StaffPersonal and
@@ -3533,7 +3533,7 @@
     </Address>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="StateProvince">
+<CommonElement name="StateProvince" type="true">
   <Item>
     <Element>StateProvince</Element>
     <Description>
@@ -3550,7 +3550,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Country">
+<CommonElement name="Country" type="true">
   <Item>
     <Element>Country</Element>
     <Description>
@@ -3566,7 +3566,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="CongressionalDistrict">
+<CommonElement name="CongressionalDistrict" type="true">
   <Intro>
     <p>
       Common element used to indicate the number of the U.S. Congressional District in which an entity resides or is
@@ -3590,7 +3590,7 @@
     <CongressionalDistrict>3</CongressionalDistrict>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="ContactInfo">
+<CommonElement name="ContactInfo" type="true">
   <Item>
     <Element>ContactInfo</Element>
     <Description>
@@ -3777,7 +3777,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="HispanicLatino">
+<CommonElement name="HispanicLatino" type="true">
   <Item>
     <Element>HispanicLatino</Element>
     <Description>
@@ -3800,7 +3800,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Location">
+<CommonElement name="Location" type="true">
 
   <Intro>
     <p>
@@ -3885,7 +3885,7 @@
 
 </CommonElement>
 
-<CommonElement name="RaceList">
+<CommonElement name="RaceList" type="true">
   <Item>
     <Element>RaceList</Element>
     <List mode="List">
@@ -3942,7 +3942,7 @@
 
 </CommonElement>
 
-<CommonElement name="Gender">
+<CommonElement name="Gender" type="true">
   <Item>
     <Element>Gender</Element>
     <Characteristics>O</Characteristics>
@@ -3969,7 +3969,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="BirthDate">
+<CommonElement name="BirthDate" type="true">
   <Item>
     <Element>BirthDate</Element>
     <Description>
@@ -3982,7 +3982,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Demographics">
+<CommonElement name="Demographics" type="true">
   <Item>
     <Element>Demographics</Element>
     <Description>
@@ -4219,7 +4219,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="EducationalLevel">
+<CommonElement name="EducationalLevel" type="true">
   <Item>
     <Element>EducationalLevel</Element>
     <Description>
@@ -4231,7 +4231,7 @@
     <EducationalLevel>1057</EducationalLevel>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="ElectronicIdList">
+<CommonElement name="ElectronicIdList" type="true">
   <Item>
     <Element>ElectronicIdList</Element>
     <Description>
@@ -4252,7 +4252,7 @@
     </ElectronicIdList>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="ElectronicId">
+<CommonElement name="ElectronicId" type="true">
   <Item>
     <Element>ElectronicId</Element>
     <Type name="xs:normalizedString"></Type>
@@ -4289,7 +4289,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="EmailList">
+<CommonElement name="EmailList" type="true">
   <Item>
     <Element>EmailList</Element>
     <Description>
@@ -4326,7 +4326,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Email">
+<CommonElement name="Email" type="true">
   <Item>
     <Element>Email</Element>
     <Type name="xs:normalizedString"></Type>
@@ -4365,7 +4365,7 @@
     <Email Type="Primary">contact@sifinfo.org</Email>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="EntryDate">
+<CommonElement name="EntryDate" type="true">
   <Intro>
     <p>
       Common element used to specify the date on which a student enters a school, program, course section, etc. It is
@@ -4384,7 +4384,7 @@
     <EntryDate>2004-08-27</EntryDate>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="ExitDate">
+<CommonElement name="ExitDate" type="true">
   <Intro>
     <p>
       The last school calendar day (membership day) the student was enrolled (inclusive). Refer to the object for a precise contextual definition.
@@ -4402,7 +4402,7 @@
     <ExitDate>2005-06-03</ExitDate>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="GradeLevel">
+<CommonElement name="GradeLevel" type="true">
   <Intro>
     <p>
       This is a common element used to specify a grade level. It is used in StudentSchoolEnrollment and assessment-related
@@ -4494,7 +4494,7 @@
     </GradeLevel>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="GradeLevels">
+<CommonElement name="GradeLevels" type="true">
   <Item>
     <Element>GradeLevels</Element>
     <Description>
@@ -4528,7 +4528,7 @@
     </GradeLevels>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="GraduationDate">
+<CommonElement name="GraduationDate" type="true">
   <Item>
     <Element>GraduationDate</Element>
     <Description>
@@ -4541,7 +4541,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="ProjectedGraduationYear">
+<CommonElement name="ProjectedGraduationYear" type="true" >
   <Intro>
     <p>Currently projected graduation year.</p>
   </Intro>
@@ -4557,7 +4557,7 @@
     <ProjectedGraduationYear>2006</ProjectedGraduationYear>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="OnTimeGraduationYear">
+<CommonElement name="OnTimeGraduationYear" type="true">
   <Intro>
     <p>First projected graduation year, usually determined when student is accepted into 9th grade (CCYY).</p>
   </Intro>
@@ -4573,7 +4573,7 @@
     <OnTimeGraduationYear>2006</OnTimeGraduationYear>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="GridLocation">
+<CommonElement name="GridLocation" type="true">
   <Item>
     <Element>GridLocation</Element>
     <Description>
@@ -4620,7 +4620,7 @@
     </GridLocation>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="HomeroomNumber">
+<CommonElement name="HomeroomNumber" type="true">
   <Item>
     <Description>
       <p>
@@ -4636,7 +4636,7 @@
     <HomeroomNumber>A-204</HomeroomNumber>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="LocalId">
+<CommonElement name="LocalId" type="true">
   <Item>
     <Element>LocalId</Element>
     <Type name="xs:normalizedString"></Type>
@@ -4651,7 +4651,7 @@
     <LocalId>123321A</LocalId>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="MeetingTime">
+<CommonElement name="MeetingTime" type="true">
   <Item>
     <Element>MeetingTime</Element>
     <Description>
@@ -4685,7 +4685,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="Name">
+<CommonElement name="Name" type="true">
   <Item>
     <Element>Name</Element>
     <Description>
@@ -4745,7 +4745,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="NCESId">
+<CommonElement name="NCESId" type="true">
   <Item>
     <Element>NCESId</Element>
     <Characteristics></Characteristics>
@@ -4761,7 +4761,7 @@
     <NCESId>421575003045</NCESId>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="OperationalStatus">
+<CommonElement name="OperationalStatus" type="true">
   <Intro>
     <p>This common element contains status information about a school, LEA, or other institution.</p>
   </Intro>
@@ -4781,7 +4781,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="OtherId">
+<CommonElement name="OtherId" type="true">
   <Item>
     <Element>OtherId</Element>
     <Type name="xs:normalizedString"></Type>
@@ -4805,7 +4805,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="PhoneNumberList">
+<CommonElement name="PhoneNumberList" type="true">
   <Item>
     <Element>PhoneNumberList</Element>
     <Description>
@@ -4844,7 +4844,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="PhoneNumber">
+<CommonElement name="PhoneNumber" type="true">
 
   <Item>
     <Element>PhoneNumber</Element>
@@ -4905,7 +4905,7 @@
     </PhoneNumber>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="Program">
+<CommonElement name="Program" type="true">
   <Intro>
     <p>
       This common element is used to describe program information. It uses a type attribute that provides a list of values
@@ -4956,7 +4956,7 @@
     <Program Type="Foodservice">NSLP</Program>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="PublishInDirectory">
+<CommonElement name="PublishInDirectory" type="true">
   <Intro>
     <p>
       This is a common element used to specify whether or not information (e.g., contact information) should be
@@ -4982,7 +4982,7 @@
     <PublishInDirectory>Yes</PublishInDirectory>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="Relationship">
+<CommonElement name="Relationship" type="true">
   <Item>
     <Element>Relationship</Element>
     <Description>
@@ -5008,7 +5008,7 @@
     </Relationship>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="SchoolName">
+<CommonElement name="SchoolName" type="true">
   <Intro>
     <p>
       Common element used to specify the name of a school. It is used in objects such as SchoolInfo and
@@ -5045,7 +5045,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="SCEDCode">
+<CommonElement name="SCEDCode" type="true">
   <Item>
     <Element>SCEDCode</Element>
     <Description>
@@ -5191,7 +5191,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="OtherCodeList">
+<CommonElement name="OtherCodeList" type="true">
   <Item>
     <Element>OtherCodeList</Element>
     <Description>
@@ -5244,7 +5244,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="MealStatus">
+<CommonElement name="MealStatus" type="true">
   <Item>
     <Element>MealStatus</Element>
     <Description>
@@ -5317,7 +5317,7 @@
 
 
 
-<CommonElement name="EarnedStatus">
+<CommonElement name="EarnedStatus" type="true">
   <Item>
     <Element>EarnedStatus</Element>
     <Description>
@@ -5369,7 +5369,7 @@
     </EarnedStatus>
   </xhtml:Example>
 </CommonElement>
-<CommonElement name="MealType">
+<CommonElement name="MealType" type="true">
   <Item>
     <Element>MealType</Element>
     <Description>
@@ -5398,7 +5398,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="OtherIdList">
+<CommonElement name="OtherIdList" type="true">
   <Item>
     <Element>OtherIdList</Element>
     <Characteristics>O</Characteristics>
@@ -5423,7 +5423,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="PersonInfo">
+<CommonElement name="PersonInfo" type="true">
 
   <Item>
     <Element>PersonInfo</Element>
@@ -5530,7 +5530,7 @@
   </xhtml:Example>
 </CommonElement>
 
-<CommonElement name="TechnicalRequirements">
+<CommonElement name="TechnicalRequirements" type="true">
   <Item>
     <Element>TechnicalRequirements</Element>
     <Description>
@@ -5554,7 +5554,7 @@
 	
 </CommonElement>
 
-<CommonElement name="SoftwareRequirementList">
+<CommonElement name="SoftwareRequirementList" type="true">
   <Item>
     <Element>SoftwareRequirementList</Element>
     <Description>
@@ -5610,7 +5610,7 @@
   </Item>
 </CommonElement>
 
-<CommonElement name="ExtendedParameters">
+<CommonElement name="ExtendedParameters" type="true">
 	<Intro>
 		<p>Allow a SIF Zone Service to have additional vendor-specific parameters.</p>
 	</Intro>
@@ -5651,7 +5651,7 @@
 	
 </CommonElement>
 
-<CommonElement name="StudentRecordExchangeDataList">
+<CommonElement name="StudentRecordExchangeDataList" type="true">
 <Intro>
 	<p>All of the service methods defined here either return or accept as input a StudentRecor-dExchange object set, which is comprised of a single StudentRecordExchange object and all of the dependent objects it references in its Records and OtherRecords elements. Be-cause a StudentRecordExchange object set can be potentially very large, it is necessary to packetize these objects across multiple SIF_ServiceInput or SIF_ServiceOutput messages. The composite StudentRecordExchangeData object is designed for this purpose.</p>
 	<p>StudentRecordExchangeData is always declared to be a Repeatable element in service messages. An instance of this element should be created for each StudentRecordEx-change, StudentDemographicRecord, StudentAcademicRecord, StudentSpecialEduca-tionRecord, or StudentRecordPackage object in the set. Each StudentRecordExchange-Data instance must only contain one of these elements.</p>
@@ -5722,7 +5722,7 @@
 
 
 		
- <CommonElement name="SIF_Metadata" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <CommonElement name="SIF_Metadata"  type="true">
   <Intro>
     <p>
       Metadata is commonly referred to as data about data and includes information such as author, grade level, or keywords relating to a learning object, as examples.
