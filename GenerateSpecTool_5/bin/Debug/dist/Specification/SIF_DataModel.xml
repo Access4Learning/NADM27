@@ -90,19 +90,16 @@
 	<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="02_Introduction/Introduction-Datamodel.xml"/>
 	
 	
-	
-	
 	<!--Infrastructure-->
-	<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="05_Infrastructure/Infrastructure.xml"/>
+    <!--<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="05_Infrastructure/Infrastructure.xml"/>-->
 
 
-
-	
 	<!--Data Model-->
 	<Section name="Data Model">
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel-Introduction.xml"/>
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel-CommonElements.xml"/>
-		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel.xml"/>
+<!--		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel-CommonElements.xml"/>-->
+		<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/Custom/DataModel-Custom.xml"/>
+		<!--<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="06_DataModel/DataModel.xml"/>-->
 	</Section>
 	
 	<!--Back Matter-->
@@ -111,7 +108,7 @@
 			<p>Common and supporting types referenced in this specification are included here as a reference.</p>
 		</Intro>
 			<!--Section A-->
-		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/Custom/DataModel-CommonTypes-Custom.xml"/>
+		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/DataModel-CommonTypes.xml"/>
 	<!--	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>-->
 				
 	</Appendix>

@@ -16,13 +16,15 @@
 		<Description/>
 		<Type ref="CommonTypes" name="RefIdType"/>
 	</Item>
-	<Item>
+	
+	<!--<Item>
 		<Attribute>xml:lang</Attribute>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>The default language of the text used for the content in the Assessment.</p>
 		</Description>
-	</Item>
+	</Item>-->
+	
 	<Item>
 		<Element>Title</Element>
 		<Characteristics>O</Characteristics>
