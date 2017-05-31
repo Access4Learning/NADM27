@@ -5804,5 +5804,6 @@
 	</Item>
 </CommonElement>
 
-
-
+<!--These includes and associated files will disappear before the end of development.-->
+<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesLinda.xml"/>
+<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesNick.xml"/>
