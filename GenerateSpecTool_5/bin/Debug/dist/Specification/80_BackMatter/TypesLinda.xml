@@ -1,0 +1,100 @@
+<CommonElement name="AlertMessagesType" type="true" dm="true">
+	<Item>
+		<Element>AlertMessagesType</Element>
+		<Characteristics>O</Characteristics>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>AlertMessage</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>This is an alert message that is associated with the student.</p>
+		</Description>
+		<Type ref="CommonTypes" name="AlertMessageType"/>
+	</Item>
+</CommonElement>
+<CommonElement name="AlertMessageType" type="true" dm="true">
+	<Item>
+		<Element>AlertMessageType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>This is an alert message that is associated with the student.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+		<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>This attribute specifies what type of alert message this is.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Legal</Code>
+				<Description>Custody, guardian, court orders (e.g. must attend school), lawsuits, etc.</Description>
+			</Value>
+			<Value>
+				<Code>Discipline</Code>
+				<Description>Student is suspended, expelled, on probation, etc.</Description>
+			</Value>
+			<Value>
+				<Code>Educational</Code>
+				<Description>Section 504 student, IDEA/IEP, academic probation, etc.</Description>
+			</Value>
+			<Value>
+				<Code>Other</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+<CommonElement name="MedicalAlertMessagesType" type="true" dm="true">
+	<Item>
+		<Element>MedicalAlertMessagesType</Element>
+		<Characteristics>O</Characteristics>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>MedicalAlertMessage</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Medical alert associated with the student.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MedicalAlertMessageType"/>
+	</Item>
+</CommonElement>
+<CommonElement name="MedicalAlertMessageType" type="true" dm="true">
+	<Item>
+		<Element>MedicalAlertMessageType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Medical alert associated with the student.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Attribute>Severity</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The level of severity of this medical alert.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Low</Code>
+			</Value>
+			<Value>
+				<Code>Moderate</Code>
+			</Value>
+			<Value>
+				<Code>High</Code>
+			</Value>
+			<Value>
+				<Code>Severe</Code>
+			</Value>
+			<Value>
+				<Code>Unknown</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
