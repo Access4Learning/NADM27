@@ -56,60 +56,8 @@
 		<Description>
 			<p>Lists all "other" identifiers associated with the student.</p>
 		</Description>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/OtherId</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>Lists an "other" identifier associated with the student.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
-	<Item>
-		<Attribute>Type</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Code that defines the type of this other Id.</p>
-		</Description>
-		<Type ref="ExternalCodeSets" name="NCES0147IdentificationSystemType"/>
-		<Values type="subset">
-			<Value>
-				<Code>0164</Code>
-			</Value>
-			<Value>
-				<Code>0339</Code>
-			</Value>
-			<Value>
-				<Code>0338</Code>
-			</Value>
-			<Value>
-				<Code>0879</Code>
-			</Value>
-			<Value>
-				<Code>9999</Code>
-			</Value>
-			<Value>
-				<Code>0222</Code>
-			</Value>
-			<Value>
-				<Code>0764</Code>
-			</Value>
-			<Value>
-				<Code>0154</Code>
-			</Value>
-			<Value>
-				<Code>0004</Code>
-			</Value>
-			<Value>
-				<Code>0113</Code>
-			</Value>
-			<Value>
-				<Code>5013</Code>
-			</Value>
-		</Values>
-	</Item>
+		<Type ref="CommonTypes" name="OtherIdListType"/>
+  	</Item>
 	<Item>
 		<Element>Name</Element>
 		<Characteristics>M</Characteristics>
@@ -184,7 +132,7 @@
     </Description>
 		<Type ref="DataModel" name="GraduationDate"/>
 	</Item>
-	<Item>
+    <Item>
 		<Element>MostRecent</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
@@ -193,32 +141,8 @@
         currently enrolled in the district, the elements contain current information.
       </p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>/SchoolLocalId</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Local identifier representing the school in which the student is or was most recently enrolled in the district.</p>
-		</Description>
-		<Type ref="DataModel" name="LocalId"/>
-	</Item>
-	<Item>
-		<Element>/HomeroomLocalId</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>
-        Local identifier representing the current or most recent homeroom in which the student is or was most recently assigned in the district.  Use the value from <code>RoomInfo/HomeroomNumber</code> if supported.  If not supported, use the value from <code>RoomInfo/RoomNumber</code>.  If neither is supported, use the most appropriate value from the agent’s application.
-      </p>
-		</Description>
-		<Type ref="DataModel" name="LocalId"/>
-	</Item>
-	<Item>
-		<Element>/GradeLevel</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The current or most recent grade level of the student in the district.</p>
-		</Description>
-		<Type ref="DataModel" name="GradeLevel"/>
+		
+    <Type ref="CommonTypes" name="StudentMostRecentContainerType"/>	
 	</Item>
 	<Item>
 		<Element>AcceptableUsePolicy</Element>
