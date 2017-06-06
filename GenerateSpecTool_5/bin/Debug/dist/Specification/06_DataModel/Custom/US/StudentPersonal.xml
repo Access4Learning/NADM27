@@ -18,86 +18,21 @@
 	<Item>
 		<Element>AlertMessages</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/AlertMessage</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>This is an alert message that is associated with the student.</p>
-		</Description>
-		<Type name="xs:string"/>
-	</Item>
-	<Item>
-		<Attribute>Type</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>This attribute specifies what type of alert message this is.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Legal</Code>
-				<Description>Custody, guardian, court orders (e.g. must attend school), lawsuits, etc.</Description>
-			</Value>
-			<Value>
-				<Code>Discipline</Code>
-				<Description>Student is suspended, expelled, on probation, etc.</Description>
-			</Value>
-			<Value>
-				<Code>Educational</Code>
-				<Description>Section 504 student, IDEA/IEP, academic probation, etc.</Description>
-			</Value>
-			<Value>
-				<Code>Other</Code>
-			</Value>
-		</Values>
-	</Item>
+		<Type ref="CommonTypes"  name="AlertMessagesType"/>
+    </Item>
+		
 	<Item>
 		<Element>MedicalAlertMessages</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/MedicalAlertMessage</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>Medical alert associated with the student.</p>
-		</Description>
-		<Type name="xs:string"/>
-	</Item>
-	<Item>
-		<Attribute>Severity</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The level of severity of this medical alert.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Low</Code>
-			</Value>
-			<Value>
-				<Code>Moderate</Code>
-			</Value>
-			<Value>
-				<Code>High</Code>
-			</Value>
-			<Value>
-				<Code>Severe</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
+		<Type ref="CommonTypes"  name="MedicalAlertMessagesType"/>
+    </Item>
 	<Item>
 		<Element>LocalId</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>The locally-assigned identifier for this student.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalId"/>
 	</Item>
 	<Item>
 		<Element>StateProvinceId</Element>
@@ -105,7 +40,7 @@
 		<Description>
 			<p>The state-assigned identifier for this student.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId"/>
+		<Type ref="CommonTypes" name="StateProvinceId"/>
 	</Item>
 	<Item>
 		<Element>ElectronicIdList</Element>
@@ -113,7 +48,7 @@
 		<Description>
 			<p>Electronic identifier(s) associated with this entity.</p>
 		</Description>
-		<Type ref="DataModel" name="ElectronicIdList"/>
+		<Type ref="CommonTypes" name="ElectronicIdList"/>
 	</Item>
 	<Item>
 		<Element>OtherIdList</Element>
@@ -121,60 +56,8 @@
 		<Description>
 			<p>Lists all "other" identifiers associated with the student.</p>
 		</Description>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/OtherId</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>Lists an "other" identifier associated with the student.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
-	<Item>
-		<Attribute>Type</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Code that defines the type of this other Id.</p>
-		</Description>
-		<Type ref="ExternalCodeSets" name="NCES0147IdentificationSystemType"/>
-		<Values type="subset">
-			<Value>
-				<Code>0164</Code>
-			</Value>
-			<Value>
-				<Code>0339</Code>
-			</Value>
-			<Value>
-				<Code>0338</Code>
-			</Value>
-			<Value>
-				<Code>0879</Code>
-			</Value>
-			<Value>
-				<Code>9999</Code>
-			</Value>
-			<Value>
-				<Code>0222</Code>
-			</Value>
-			<Value>
-				<Code>0764</Code>
-			</Value>
-			<Value>
-				<Code>0154</Code>
-			</Value>
-			<Value>
-				<Code>0004</Code>
-			</Value>
-			<Value>
-				<Code>0113</Code>
-			</Value>
-			<Value>
-				<Code>5013</Code>
-			</Value>
-		</Values>
-	</Item>
+		<Type ref="CommonTypes" name="OtherIdListType"/>
+  	</Item>
 	<Item>
 		<Element>Name</Element>
 		<Characteristics>M</Characteristics>
@@ -191,7 +74,7 @@
 		<Description>
 			<p>Previous, alternate or other names or aliases associated with the student.</p>
 		</Description>
-		<Type ref="DataModel" name="OtherNames"/>
+		<Type ref="CommonTypes" name="OtherNames"/>
 	</Item>
 	<Item>
 		<Element>Demographics</Element>
@@ -199,7 +82,7 @@
 		<Description>
 			<p>This element contains information related to student demographics.</p>
 		</Description>
-		<Type ref="DataModel" name="Demographics"/>
+		<Type ref="CommonTypes" name="DemographicsType"/>
 	</Item>
 	<Item>
 		<Element>AddressList</Element>
@@ -207,7 +90,7 @@
 		<Description>
 			<p>The student's address(es)</p>
 		</Description>
-		<Type ref="DataModel" name="AddressList"/>
+		<Type ref="CommonTypes" name="AddressListType"/>
 	</Item>
 	<Item>
 		<Element>PhoneNumberList</Element>
@@ -215,7 +98,7 @@
 		<Description>
 			<p>The student's phone number(s).</p>
 		</Description>
-		<Type ref="DataModel" name="PhoneNumberList"/>
+		<Type ref="CommonTypes" name="PhoneNumberListType"/>
 	</Item>
 	<Item>
 		<Element>EmailList</Element>
@@ -223,7 +106,7 @@
 		<Description>
 			<p>The student's e-mail address(es).</p>
 		</Description>
-		<Type ref="DataModel" name="EmailList"/>
+		<Type ref="CommonTypes" name="EmailListType"/>
 	</Item>
 	<Item>
 		<Element>ProjectedGraduationYear</Element>
@@ -231,7 +114,7 @@
 		<Description>
 			<p>Currently projected graduation year.</p>
 		</Description>
-		<Type ref="DataModel" name="ProjectedGraduationYear"/>
+		<Type ref="CommonTypes" name="ProjectedGraduationYearType"/>
 	</Item>
 	<Item>
 		<Element>OnTimeGraduationYear</Element>
@@ -239,7 +122,7 @@
 		<Description>
 			<p>First projected graduation year, usually determined when student is accepted into 9th grade.</p>
 		</Description>
-		<Type ref="DataModel" name="OnTimeGraduationYear"/>
+		<Type ref="CommonTypes" name="OnTimeGraduationYearType"/>
 	</Item>
 	<Item>
 		<Element>GraduationDate</Element>
@@ -247,9 +130,9 @@
 		<Description>
       Date student officially graduated from secondary education.
     </Description>
-		<Type ref="DataModel" name="GraduationDate"/>
+		<Type ref="CommonTypes" name="GraduationDateType"/>
 	</Item>
-	<Item>
+    <Item>
 		<Element>MostRecent</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
@@ -258,32 +141,8 @@
         currently enrolled in the district, the elements contain current information.
       </p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>/SchoolLocalId</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Local identifier representing the school in which the student is or was most recently enrolled in the district.</p>
-		</Description>
-		<Type ref="DataModel" name="LocalId"/>
-	</Item>
-	<Item>
-		<Element>/HomeroomLocalId</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>
-        Local identifier representing the current or most recent homeroom in which the student is or was most recently assigned in the district.  Use the value from <code>RoomInfo/HomeroomNumber</code> if supported.  If not supported, use the value from <code>RoomInfo/RoomNumber</code>.  If neither is supported, use the most appropriate value from the agent’s application.
-      </p>
-		</Description>
-		<Type ref="DataModel" name="LocalId"/>
-	</Item>
-	<Item>
-		<Element>/GradeLevel</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The current or most recent grade level of the student in the district.</p>
-		</Description>
-		<Type ref="DataModel" name="GradeLevel"/>
+		
+    <Type ref="CommonTypes" name="StudentMostRecentContainerType"/>	
 	</Item>
 	<Item>
 		<Element>AcceptableUsePolicy</Element>
@@ -303,57 +162,57 @@
 	<Item>
 		<Element>IDEA</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="IDEA"/>
+		<Type ref="CommonTypes" name="IDEAType"/>
 	</Item>
 	<Item>
 		<Element>Migrant</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="Migrant"/>
+		<Type ref="CommonTypes" name="MigrantType"/>
 	</Item>
 	<Item>
 		<Element>Title1</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="Title1"/>
+		<Type ref="CommonTypes" name="Title1Type"/>
 	</Item>
 	<Item>
 		<Element>GiftedTalented</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="GiftedTalented"/>
+		<Type ref="CommonTypes" name="GiftedTalentedType"/>
 	</Item>
 	<Item>
 		<Element>EconomicDisadvantage</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="EconomicDisadvantage"/>
+		<Type ref="CommonTypes" name="EconomicDisadvantageType"/>
 	</Item>
 	<Item>
 		<Element>ELL</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="ELL"/>
+		<Type ref="CommonTypes" name="ELLType"/>
 	</Item>
 	<Item>
 		<Element>Homeless</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="Homeless"/>
+		<Type ref="CommonTypes" name="HomelessType"/>
 	</Item>
 	<Item>
 		<Element>Section504</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="Section504"/>
+		<Type ref="CommonTypes" name="Section504Type"/>
 	</Item>
 	<Item>
 		<Element>VocationalConcentrator</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="VocationalConcentrator"/>
+		<Type ref="CommonTypes" name="VocationalConcentratorType"/>
 	</Item>
 	<Item>
 		<Element>Immigrant</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="Immigrant"/>
+		<Type ref="CommonTypes" name="Immigrant"/>
 	</Item>
 	<Item>
 		<Element>NeglectedDelinquent</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="NeglectedDelinquent"/>
+		<Type ref="CommonTypes" name="NeglectedDelinquentType"/>
 	</Item>
 	<Item>
 		<Element>FirstUSEnrollment</Element>
@@ -366,12 +225,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<StudentPersonal RefId="D3E34B359D75101A8C3D00AA001A1652">
