@@ -71,7 +71,7 @@
     <Description>
       <p>The bell periods for this school year bell schedule.</p>
     </Description>
-     <Type ref="CommonTypes" name="TimeTablePeriodListType"></Type>
+     <Type ref="CommonTypes" name="BellPeriodListType"></Type>
   </Item>
 
   
