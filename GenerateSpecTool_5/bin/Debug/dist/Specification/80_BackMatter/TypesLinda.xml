@@ -193,7 +193,7 @@
 		<Description>
 			<p>Local identifier representing the school in which the student is or was most recently enrolled in the district.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
 	<Item>
 		<Element>HomeroomLocalId</Element>
@@ -203,7 +203,7 @@
         Local identifier representing the current or most recent homeroom in which the student is or was most recently assigned in the district.  Use the value from <code>RoomInfo/HomeroomNumber</code> if supported.  If not supported, use the value from <code>RoomInfo/RoomNumber</code>.  If neither is supported, use the most appropriate value from the agent’s application.
       </p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
 	<Item>
 		<Element>GradeLevel</Element>
@@ -211,7 +211,218 @@
 		<Description>
 			<p>The current or most recent grade level of the student in the district.</p>
 		</Description>
-		<Type ref="DataModel" name="GradeLevel"/>
+		<Type ref="ComonTypes" name="GradeLevelType"/>
 	</Item>
 	<Item>
+</CommonElement>
+
+<CommonElement name="TimeTableDayListType" type="true" dm="true">
+	<Item>
+		<Element>TimeTableDayListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The timetable days for this school year bell schedule.  This essentially provides a list of the time day identifiers that are used in the BellPeriod definitions below with some additional properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>TimeTableDay</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable day.</p>
+		</Description>
+		<Type ref="CommonTypes" name="TimeTableDayType"/>
+	</Item>
+	<Item>
+		<Element>TimeTableDay</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>This element identifies a ‘day’ in a TimeTable.</p>
+		</Description>
+		<Type ref="CommonTypes" name="TimeTableDayType"/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="TimeTableDayType" type="true" dm="true">
+	 <Item>
+    <Element>TimetableDayType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>An entry for each unique timetable day</p>
+    </Description>
+
+  </Item>
+
+  <Item>
+    <Element>Identifier</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The unique identifier for the timetable day for this school calendar.</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+
+  <Item>
+    <Element>Name</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The name of the timetable day.</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+</CommonElement>
+
+</CommonElement>
+	
+
+<CommonElement name="TimeTablePeriodListType" type="true" dm="true">
+	<Item>
+		<Element>TimeTablePeriodListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The timetable periods for this school year bell schedule.  This essentially provides a list of the time period identifiers that are used in the BellPeriod definitions below with some addition properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>TimeTablePeriod</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable period.</p>
+		</Description>
+		<Type ref="CommonTypes" name="TimeTablePeriodType"/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="TimeTablePeriodType" type="true" dm="true">
+	<Item>
+		<Element>TimeTablePeriodType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable period.</p>
+		</Description>
+	</Item>
+ <Item>
+    <Element>Identifier</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The unique identifier for the timetable period for this school calendar.</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+
+  <Item>
+    <Element>Name</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The name of the timetable period.</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+
+</CommonElement>
+
+<CommonElement name="BellPeriodListType" type="true" dm="true">
+	<Item>
+		<Element>BellPeriodListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The bell periods for this school year bell schedule.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>BellPeriod</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique bell period for the bell schedule.</p>
+		</Description>
+		<Type ref="CommonTypes" name="BellPeriodType"/>
+	</Item>
+</CommonElement>	
+	
+<CommonElement name="BellPeriodType" type="true" dm="true">
+	<Item>
+		<Element>BellPeriodType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>An entry for each unique bell period for the bell schedule.</p>
+		</Description>
+	</Item>
+ <Item>
+    <Element>TimetableDayIdentifier</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The unique identifier for the timetable day used for the bell period (from the day list above).</p>
+    </Description>
+    <Type name='xs:token'/>
+  </Item>
+
+  <Item>
+    <Element>TimetablePeriodIdentifier</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The unique identifier for the timetable period used for the bell period (from the period list above).</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+
+  <Item>
+    <Element>StartTime</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The starting time for the bell period.</p>
+    </Description>
+    <Type name='xs:time'/>
+  </Item>
+
+  <Item>
+    <Element>EndTime</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The ending time for the bell period.</p>
+    </Description>
+    <Type name='xs:time'/>
+  </Item>
+
+  <Item>
+    <Element>RegularSchoolPeriod</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Indicates if the bell period is part of the regular school day (i.e. is not a before or after school or break period).</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>InstructionalMinutes</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The number of minutes to be counted for instruction for the bell period.</p>
+    </Description>
+    <Type name='xs:unsignedInt'/>
+  </Item>
+
+  <Item>
+    <Element>UseInAttendanceCalculations</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Indicates if the bell period should be included in attendance calculations.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
 </CommonElement>
