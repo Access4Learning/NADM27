@@ -9863,12 +9863,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <Billing RefId="CA12345847DEA97463FEB238759FD123">
@@ -9880,79 +9880,79 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   </xhtml:Example>
 </DataObject>
     <DataObject name="Payment">
-  <Key>@RefId</Key>
-  <EventsReported>true</EventsReported>
-  <Item>
-    <Element>Payment</Element>
-    <Description>
-      <p>This object complements the Billing object, and contains information about the payment of a Billing object.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>RefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID for this transaction. The application that owns this object is responsible for generating this unique Id.</p>
-    </Description>
-    <Type ref="CommonTypes" name="RefIdType"></Type>
-  </Item>
-  <Item>
-    <Attribute>BillingRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>A pointer back to the Billing object.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>ReceivedDate</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Date payment was received.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>ReceivedAmount</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Amount received.</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType" />
-  </Item>
-  <Item>
-    <Element>ReceivedTransactionId</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Memo transaction Id from other vendor software.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>TransactionDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Description of the transaction.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Element>SIF_Metadata</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
-  </Item>
-  <Item>
-    <Element>SIF_ExtendedElements</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
-  </Item>
-  <xhtml:Example xmlns="">
-    <Payment RefId="EDF4985ABC3458FEDA75493AB3812345" BillingRefId="CA12345847DEA97463FEB238759FD123">
-      <ReceivedDate>1999-10-20</ReceivedDate>
-      <ReceivedAmount Currency="USD">50.00</ReceivedAmount>
-      <ReceivedTransactionId>010523</ReceivedTransactionId>
-    </Payment>
-  </xhtml:Example>
+	<Key>@RefId</Key>
+	<EventsReported>true</EventsReported>
+	<Item>
+		<Element>Payment</Element>
+		<Description>
+			<p>This object complements the Billing object, and contains information about the payment of a Billing object.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>RefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>GUID for this transaction. The application that owns this object is responsible for generating this unique Id.</p>
+		</Description>
+		<Type ref="CommonTypes" name="RefIdType"></Type>
+	</Item>
+	<Item>
+		<Attribute>BillingRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>A pointer back to the Billing object.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"></Type>
+	</Item>
+	<Item>
+		<Element>ReceivedDate</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Date payment was received.</p>
+		</Description>
+		<Type name="xs:date"></Type>
+	</Item>
+	<Item>
+		<Element>ReceivedAmount</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Amount received.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MonetaryAmountType" />
+	</Item>
+	<Item>
+		<Element>ReceivedTransactionId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Memo transaction Id from other vendor software.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>TransactionDescription</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Description of the transaction.</p>
+		</Description>
+		<Type name="xs:string"></Type>
+	</Item>
+	<Item>
+		<Element>SIF_Metadata</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="SIF_MetadataType"></Type>
+	</Item>
+	<Item>
+		<Element>SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
+	</Item>
+	<xhtml:Example xmlns="">
+		<Payment RefId="EDF4985ABC3458FEDA75493AB3812345" BillingRefId="CA12345847DEA97463FEB238759FD123">
+			<ReceivedDate>1999-10-20</ReceivedDate>
+			<ReceivedAmount Currency="USD">50.00</ReceivedAmount>
+			<ReceivedTransactionId>010523</ReceivedTransactionId>
+		</Payment>
+	</xhtml:Example>
 </DataObject>
     <DataObject name="EmployeeAssignment">
   <Key>@RefId</Key>
@@ -10054,39 +10054,15 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The specific group of duties or responsibilities of position.</p>
     </Description>
+    <Type ref="CommonTypes" name="JobClassificationType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The specific group of duties or responsibilities of position.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0557JobClassificationType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-  <Item>
+ <Item>
     <Element>ProgramType</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>The type of instructional or non-instructional program.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The type of instructional or non-instructional program.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0229ProgramTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
+    <Type ref="CommonTypes" name="EmployeeAssignmentProgramType"></Type>
   </Item>
   <Item>
     <Element>FundingSource</Element>
@@ -10094,29 +10070,17 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>Provider of funds for the program or service.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Provider of funds for the program or service.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0222ProgramFundingSourceType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-  <Item>
+     <Type ref="CommonTypes" name="FundingSourceType"></Type>
+ </Item>
+   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeeAssignment RefId="FE1078BA3261545A31905937B265CE01" EmployeePersonalRefId="BE1078BA3261545A31905937B265CE02">
@@ -10214,12 +10178,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeeContract RefId="AA1078BA3261545A31905937B265CE01" EmployeePersonalRefId="AB1078BA3261545A31905937B265CE01">
@@ -10359,12 +10323,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
 
@@ -10405,7 +10369,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The state-assigned identifier for this staff member.</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>OtherIdList</Element>
@@ -10413,34 +10377,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>List all "other" Ids associated with the employee.</p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/OtherId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>This field can hold a SSN, state or locally assigned Id.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>SSN</Code>
-      </Value>
-      <Value>
-        <Code>State</Code>
-      </Value>
-      <Value>
-        <Code>Local</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
+		<Type ref="CommonTypes" name="EmployeePersonalOtherIdListType" />
   </Item>
   <Item>
     <Element>Name</Element>
@@ -10448,7 +10385,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>Name of employee.</p>
     </Description>
-    <Type ref="DataModel" name="Name"></Type>
+    <Type ref="CommonTypes" name="NameOfRecordType"></Type>
   </Item>
   <Item>
     <Element>Demographics</Element>
@@ -10456,7 +10393,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>This element contains information related to employee demographics.</p>
     </Description>
-    <Type ref="DataModel" name="Demographics"></Type>
+    <Type ref="CommonTypes" name="DemographicsType"></Type>
   </Item>
   <Item>
     <Element>AddressList</Element>
@@ -10464,7 +10401,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The employee's address(es).</p>
     </Description>
-    <Type ref="DataModel" name="AddressList"></Type>
+    <Type ref="CommonTypes" name="AddressListType"></Type>
   </Item>
   <Item>
     <Element>PhoneNumberList</Element>
@@ -10472,7 +10409,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The employee's phone number(s).</p>
     </Description>
-    <Type ref="DataModel" name="PhoneNumberList"></Type>
+    <Type ref="CommonTypes" name="PhoneNumberListType"></Type>
   </Item>
   <Item>
     <Element>EmailList</Element>
@@ -10480,17 +10417,17 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The employee's e-mail address(es).</p>
     </Description>
-    <Type ref="DataModel" name="EmailList"></Type>
+    <Type ref="CommonTypes" name="EmailListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeePersonal RefId="CD590651225DAC3859DEA3458BC39583">
@@ -10582,12 +10519,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeePicture RefId="359D75101AD0A9D7A8C3DAD0A85103A2" EmployeePersonalRefId="D3E34B359D75101A8C3D00AA001A1652">
@@ -10646,311 +10583,17 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Characteristics>M</Characteristics>
     <List mode="List">
     </List>
-  </Item>
-  <Item>
-    <Element>/AnnualItem</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Contains information about the item being summarized.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//AccountType</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Classification of budgetary account code summary</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Revenue</Code>
-      </Value>
-      <Value>
-        <Code>Expenditure</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//AccountTypeDetail</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Use AccountTypeDetail when AccountType is “Other”. For instance, when an AccountType=“Other”, and the AccountTypeDetail value is Long Term Asset.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Current Asset</Code>
-      </Value>
-      <Value>
-        <Code>Long Term Asset</Code>
-      </Value>
-      <Value>
-        <Code>Other Asset</Code>
-      </Value>
-      <Value>
-        <Code>Current Liability</Code>
-      </Value>
-      <Value>
-        <Code>Long Term Liability</Code>
-      </Value>
-      <Value>
-        <Code>Other Liability</Code>
-      </Value>
-      <Value>
-        <Code>Fund Balance</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//FundType</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Is the account a general or special account code designation?</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>General</Code>
-      </Value>
-      <Value>
-        <Code>Special</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//FundClassificationCode</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A fund is a separate fiscal and accounting entity with a self-balancing set of accounts recording cash and other financial resources, together with all related liabilities and residual equities or
-balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital Projects Funds, or Pension Funds, to name a few  examples.
-</p>
-    </Description>
-      <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//StateProvinceId</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>State-assigned Id for the relative area in which the expenditure/revenue was used.</p>
-    </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
-  </Item>
-  <Item>
-    <Element>//ExpenditureArea</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Relative area in which the expenditure was used.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Elementary</Code>
-      </Value>
-      <Value>
-        <Code>Secondary</Code>
-      </Value>
-      <Value>
-        <Code>Federal</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//Function</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Function break in account code for summarization. The function describes the activity for which a service or material object is acquired.  (Definition from NCES, Financial Accounting for Local and State School Systems.)</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//Object</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Object break in account code for summarization. The function describes the activity for which a service or material object is acquired.  (Definition from NCES, Financial Accounting for Local and State School Systems.) </p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//InstructionalProgram</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Instructional program break in account code for summarization</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//Amount</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Summarized amount.</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Element>//InstructionalLevel</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>An identifier for the level of instruction provided by the facility or operational unit e.g. Middle, Elementary, Prekindergarten, Charter This has greater granularity than the SIF element ExpenditureArea.</p>
-    </Description>
-    <ItemExample>Middle</ItemExample>
-    <ItemExample>Elementary</ItemExample>
-    <ItemExample>Prekindergarten</ItemExample>
-    <ItemExample>Adult Education</ItemExample>
-    <ItemExample>Elementary and Secondary combined</ItemExample>
-    <ItemExample>Community/Junior College</ItemExample>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//OperationalUnit</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The code for a location, building, organization code, facility or site. For example, this code can identify a Charter School or Maintenance Facility.</p>
-      </Description>
-       <Type name="xs:normalizedString"></Type>
-   </Item>
-   <Item>
-    <Element>//ProjectCode</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A code used for project reporting. For instance, according to NCES, this code can be parsed to identify the particular funding source, authority, or expenditure purpose for which a special record or report is required, and to identify particular projects and the fiscal year of the appropriation within that funding source.</p>
-      </Description>
-       <Type name="xs:normalizedString"></Type>
-   </Item>
-   <Item>
-    <Element>//Source</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Codes used for recording revenue and other receivables by source, e.g. codes for Taxes Levied/Assessed by the School District, Sales and Use Taxes, code for Textbook Sales and Rentals, etc.</p>
-      </Description>
-       <Type name="xs:normalizedString"></Type>
-   </Item>
-   <Item>
-    <Element>//ChartOfAccountCode</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Balance Sheet account number used for an Asset, Liability, or Equity (equity also known as Net Asset or Fund Balance), e.g. a code for Cash in Bank, or Interfund Loans Payable, or Unreserved Fund Balance, etc.</p>
-      </Description>
-       <Type name="xs:normalizedString"></Type>
-   </Item>
-   <Item>
-    <Element>//SubjectMatter</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The actual code that identifies the organization of subject matter and related learning experiences provided for the instruction of students.</p>
-      </Description>
-       <Type name="xs:normalizedString"></Type>
-   </Item>
-   <Item>
-    <Element>//JobClassification</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A code that classifies an expense; a description of the specific group of duties and responsibilities, e.g. Staff Career Development Alternatives. (NCES, National Education Data Model, http://nces.ed.gov/forum/datamodel/eiebrowser/techview.aspx?instance=staffAssignment'amp';attrib=Professional-Educational_Job_Classification).</p>
-      </Description>
-       <Type name="xs:normalizedString"></Type>
-   </Item>
-  <Item>
-    <Element>//SpecialAmountType</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>With regard to regional/local education service agencies report of "special" account code information, the account code summarization can be classified as:</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>1</Code>
-        <Text>Special Education</Text>
-      </Value>
-      <Value>
-        <Code>2</Code>
-        <Text>Transportation</Text>
-      </Value>
-      <Value>
-        <Code>3</Code>
-        <Text>Early Intervention</Text>
-      </Value>
-      <Value>
-        <Code>4</Code>
-        <Text>Institutionalized Children</Text>
-      </Value>
-      <Value>
-        <Code>5</Code>
-        <Text>Other</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//GLAmountType</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>General Ledger Amount Type.  With regard to an account code grouping classified as a General Ledger account:</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>1</Code>
-        <Text>Administration</Text>
-      </Value>
-      <Value>
-        <Code>2</Code>
-        <Text>Curriculum Development and Improvement</Text>
-      </Value>
-      <Value>
-        <Code>3</Code>
-        <Text>Education Planning</Text>
-      </Value>
-      <Value>
-        <Code>4</Code>
-        <Text>Instructional Materials</Text>
-      </Value>
-      <Value>
-        <Code>5</Code>
-        <Text>Management</Text>
-      </Value>
-      <Value>
-        <Code>6</Code>
-        <Text>Continuing Education</Text>
-      </Value>
-      <Value>
-        <Code>7</Code>
-        <Text>Pupil Personnel</Text>
-      </Value>
-      <Value>
-        <Code>8</Code>
-        <Text>State and Federal Liaison</Text>
-      </Value>
-      <Value>
-        <Code>9</Code>
-        <Text>Federal</Text>
-      </Value>
-      <Value>
-        <Code>10</Code>
-        <Text>Medical Assistance</Text>
-      </Value>
-      <Value>
-        <Code>11</Code>
-        <Text>Auxiliary services of non-profit private and parochial schools</Text>
-      </Value>
-      <Value>
-        <Code>12</Code>
-        <Text>Other</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//SIF_ExtendedElements</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
-  </Item>
-  
+     <Type ref="CommonTypes" name="AnnualItemListType"></Type>
+ </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example xmlns="">
@@ -11060,7 +10703,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Description>
       <p>State-assigned identifier for this location</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>FiscalYear</Element>
@@ -11074,75 +10717,21 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>BudgetAccounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/BudgetAccount</Element>
-    <Characteristics>MR</Characteristics>
     <Description>
       <p>Information about budget accounts being submitted.</p>
     </Description>
+     <Type ref="CommonTypes" name="BudgetAccountListType"></Type>
   </Item>
-  <Item>
-    <Element>//AccountClass</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Classification of budgetary account code summary</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Revenue</Code>
-      </Value>
-      <Value>
-        <Code>Expenditure</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//FundBreakdown</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Fund breakdown of account code for summarization.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//FunctionBreakdown</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Function breakdown of account code for summarization.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//ObjectBreakdown</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Object breakdown of account code for summarization.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//BudgetAmount</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Summarized, positive amount without cents for breakdowns</p>
-    </Description>
-    <Type name="xs:unsignedInt"></Type>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialBudget RefId="359D75101AD0A9D7A8C3DAD0A85103A2">
@@ -11207,19 +10796,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Description>
       <p>The purpose of the activities as related to students.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code representing the type of job function.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0568FunctionTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
+    <Type ref="CommonTypes" name="JobFunctionType"></Type>
   </Item>
   <Item>
     <Element>RegularHours</Element>
@@ -11248,12 +10825,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <TimeWorked RefId="CCD1254884EE54687FF4567DACD34653">
@@ -11299,7 +10876,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Description>
       <p>Contact information.</p>
     </Description>
-    <Type ref="DataModel" name="ContactInfo"></Type>
+    <Type ref="CommonTypes" name="ContactInfoType"></Type>
   </Item>
   <Item>
     <Element>CustomerId</Element>
@@ -11365,12 +10942,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <VendorInfo RefId="AB3647C568654CF45678DD34EF564E22">
@@ -11484,7 +11061,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>State of residence.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvince" />
+		<Type ref="CommonTypes" name="StateProvinceType" />
 	</Item>
 	<Item>
 		<Element>Exempt</Element>
@@ -11497,12 +11074,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata" />
+		<Type ref="CommonTypes" name="SIF_MetadataType" />
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements" />
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType" />
 	</Item>
 	<xhtml:Example xmlns="">
 		<W4 RefId="359D75101AD0A9D7A8C3DAD0A85103A2" EmployeePersonalRefId="DD5906EFD512EFDA253764EDA5897321">
@@ -11544,66 +11121,17 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>PayRates</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/PayRate</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Per pay distributions</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Type of pay</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>P</Code>
-        <Text>Per pay</Text>
-      </Value>
-      <Value>
-        <Code>H</Code>
-        <Text>Hourly</Text>
-      </Value>
-      <Value>
-        <Code>D</Code>
-        <Text>Per diem</Text>
-      </Value>
-      <Value>
-        <Code>X</Code>
-        <Text>Extra pay</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//Amount</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Pay amount.</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType" />
-  </Item>
-  <Item>
-    <Element>//Percentage</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Percentage of pay this represents.</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
+    <Type ref="CommonTypes" name="PayRateListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeeWage RefId="CDF90651225DAC3859D2A3458BC39583" EmployeePersonalRefId="CD490651225DAC3859DEA3458BC39522">
@@ -11685,12 +11213,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The locally-assigned identifier for this location.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId" />
+		<Type ref="CommonTypes" name="LocalIdType" />
 	</Item>
 	<Item>
 		<Element>IdentificationInfoList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="IdentificationInfoList" />
+		<Type ref="CommonTypes" name="IdentificationInfoListType" />
 	</Item>
 	<Item>
 		<Element>StateProvinceId</Element>
@@ -11698,7 +11226,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The state-assigned identifier for this location.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId" />
+		<Type ref="CommonTypes" name="StateProvinceIdType" />
 	</Item>
 	<Item>
 		<Element>NCESId</Element>
@@ -11706,7 +11234,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The NCES-assigned identifier for this location.</p>
 		</Description>
-		<Type ref="DataModel" name="NCESId" />
+		<Type ref="CommonTypes" name="NCESIdType" />
 	</Item>
 	<Item>
 		<Element>LEAInfoRefId</Element>
@@ -11719,16 +11247,10 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	<Item>
 		<Element>OtherLEAs</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/LEAInfoRefId</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
 			<p>The Id (GUID) of an other related education agency, such as a regional service agency.</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType" />
+		<Type ref="CommonTypes" name="OtherLEAListType" />
 	</Item>
 	<Item>
 		<Element>ParentLocationInfo</Element>
@@ -11764,7 +11286,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>This element has the LocationInfo address information.</p>
 		</Description>
-		<Type ref="DataModel" name="AddressList" />
+		<Type ref="CommonTypes" name="AddressListType" />
 	</Item>
 	<Item>
 		<Element>PhoneNumberList</Element>
@@ -11772,17 +11294,17 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The location's phone numbers.</p>
 		</Description>
-		<Type ref="DataModel" name="PhoneNumberList" />
+		<Type ref="CommonTypes" name="PhoneNumberListType" />
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata" />
+		<Type ref="CommonTypes" name="SIF_MetadataType" />
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements" />
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType" />
 	</Item>
 	<xhtml:Example xmlns="">
 		<LocationInfo RefId="D3E34B359D75101A8C3D00AA001A1652" LocationType="School">
@@ -11874,86 +11396,20 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	<Item>
 		<Element>PurchasingItems</Element>
 		<Characteristics>M</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/PurchasingItem</Element>
-		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>Contains information about the item being purchased.</p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>//ItemNumber</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Vendor item number.</p>
-		</Description>
-		<Type name="xs:normalizedString" />
-	</Item>
-	<Item>
-		<Element>//ItemDescription</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Description of the item.</p>
-		</Description>
-		<Type name="xs:string" />
-	</Item>
-	<Item>
-		<Element>//Quantity</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Quantity ordered.</p>
-		</Description>
-		<Type name="xs:normalizedString" />
-	</Item>
-	<Item>
-		<Element>//UnitCost</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Unit cost of the item.</p>
-		</Description>
-		<Type ref="CommonTypes" name="MonetaryAmountType" />
-	</Item>
-	<Item>
-		<Element>//ExpenseAccounts</Element>
-		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>///ExpenseAccount</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Account that is to be charged for the item.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Element>////AccountCode</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Account code charged to this item.</p>
-		</Description>
-		<Type name="xs:token" />
-	</Item>
-	<Item>
-		<Element>////Amount</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Amount charged to this account.</p>
-		</Description>
-		<Type ref="CommonTypes" name="MonetaryAmountType" />
+		<Type ref="CommonTypes" name="PurchasingItemListType" />
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata" />
+		<Type ref="CommonTypes" name="SIF_MetadataType" />
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements" />
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType" />
 	</Item>
 	<xhtml:Example xmlns="">
 		<Purchasing RefId="ED12345FDA8497275BC28AA349DD3721">
@@ -12038,12 +11494,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <AccountingPeriod RefId="A08CC23B059C400CAA9F9BBD3DFF94F1">
@@ -12123,12 +11579,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialAccount RefId="EEC8FC128D2C4EE394A86C5395024EDE">
@@ -12185,12 +11641,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialAccountAccountingPeriodLocationInfo RefId="B595A5959A8FE43448DF0EF5C635CD0E">
@@ -12255,12 +11711,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialClass RefId="EEC8FC128D2C4EE394A86C5395024EDE">
@@ -12317,38 +11773,17 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Description>
       <p>Period of the income statement.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/StartDate</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Start date.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/EndDate</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>End date.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
+     <Type ref="CommonTypes" name="PeriodType"></Type>
+ </Item>
   <Item>
     <Element>Amounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Amount in the account.</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType" />
-  </Item>
-  <Item>
+     <Description>
+     <p>Amount in the account.</p>
+	 </Description>
+     <Type ref="CommonTypes" name="MonetaryAmountListType"></Type>
+ </Item>
+   <Item>
     <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
@@ -12367,17 +11802,17 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>Program</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="ProgramType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialIncomeStatement RefId="E72C08BD41894187BA07B00C1401BE3F">
@@ -12432,42 +11867,15 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>Amounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
+     <Description>
       <p>Monetary amount of the transaction.</p>
     </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType" />
-  </Item>
-  <Item>
-    <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Account.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description></Description>
-    <Values>
-      <Value>
-        <Code>Debit</Code>
-      </Value>
-      <Value>
-        <Code>Credit</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="DebitCreditMonetaryAmountListType" />
   </Item>
   <Item>
     <Element>Program</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="ProgramType"></Type>
   </Item>
   <Item>
     <Element>Description</Element>
@@ -12477,12 +11885,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialTransaction RefId="E72C08BD41894187BA07B00C1401BE3F">
@@ -12540,12 +11948,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FiscalYear RefId="C0C65853B3B4440AED4E575C7BF9DCD2">
@@ -46256,7 +45664,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<p>A list of alert messages associated with the student.</p>
 		</Description>
 		<List mode="List">
-    </List>
+		</List>
 	</Item>
 	<Item>
 		<Element>AlertMessage</Element>
@@ -46276,7 +45684,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Description>
 		<Type name="xs:string" />
 	</Item>
-		<Item>
+	<Item>
 		<Attribute>Type</Attribute>
 		<Characteristics>M</Characteristics>
 		<Description>
@@ -46309,7 +45717,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<p>A list of medical altert messages associated with the student.</p>
 		</Description>
 		<List mode="List">
-    </List>
+		</List>
 	</Item>
 	<Item>
 		<Element>MedicalAlertMessage</Element>
@@ -46362,7 +45770,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<p>Lists all "other" identifiers associated with the entity.</p>
 		</Description>
 		<List mode="List">
-        </List>
+		</List>
 	</Item>
 	<Item>
 		<Element>OtherId</Element>
@@ -46432,10 +45840,10 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Element>StudentMostRecentContainerType</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
-		<p>
+			<p>
         Container for elements reflecting the most recent enrollment of a student.  If the student is
         currently enrolled in the district, the elements contain current information.
-        </p>
+			</p>
 		</Description>
 	</Item>
 	<Item>
@@ -46452,7 +45860,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>
         Local identifier representing the current or most recent homeroom in which the student is or was most recently assigned in the district.  Use the value from <code>RoomInfo/HomeroomNumber</code> if supported.  If not supported, use the value from <code>RoomInfo/RoomNumber</code>.  If neither is supported, use the most appropriate value from the agent’s application.
-      </p>
+			</p>
 		</Description>
 		<Type ref="CommonTypes" name="LocalIdType" />
 	</Item>
@@ -46487,32 +45895,32 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 </CommonElement>
 
 <CommonElement name="TimeTableDayType" type="true" dm="true">
-	 <Item>
-    <Element>TimetableDayType</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>An entry for each unique timetable day</p>
-    </Description>
+	<Item>
+		<Element>TimetableDayType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable day</p>
+		</Description>
 
-  </Item>
+	</Item>
 
-  <Item>
-    <Element>Identifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable day for this school calendar.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
+	<Item>
+		<Element>Identifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable day for this school calendar.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
 
-  <Item>
-    <Element>Name</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The name of the timetable day.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the timetable day.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
 </CommonElement>
 
 <CommonElement name="TimeTablePeriodListType" type="true" dm="true">
@@ -46542,23 +45950,23 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<p>An entry for each unique timetable period.</p>
 		</Description>
 	</Item>
- <Item>
-    <Element>Identifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable period for this school calendar.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
+	<Item>
+		<Element>Identifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable period for this school calendar.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
 
-  <Item>
-    <Element>Name</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The name of the timetable period.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the timetable period.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
 
 </CommonElement>
 
@@ -46580,7 +45988,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Type ref="CommonTypes" name="BellPeriodType" />
 	</Item>
 </CommonElement>	
-	
+
 <CommonElement name="BellPeriodType" type="true" dm="true">
 	<Item>
 		<Element>BellPeriodType</Element>
@@ -46589,88 +45997,882 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<p>An entry for each unique bell period for the bell schedule.</p>
 		</Description>
 	</Item>
- <Item>
-    <Element>TimetableDayIdentifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable day used for the bell period (from the day list above).</p>
-    </Description>
-    <Type name="xs:token" />
-  </Item>
+	<Item>
+		<Element>TimetableDayIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable day used for the bell period (from the day list above).</p>
+		</Description>
+		<Type name="xs:token" />
+	</Item>
 
-  <Item>
-    <Element>TimetablePeriodIdentifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable period used for the bell period (from the period list above).</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
+	<Item>
+		<Element>TimetablePeriodIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable period used for the bell period (from the period list above).</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
 
-  <Item>
-    <Element>StartTime</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The starting time for the bell period.</p>
-    </Description>
-    <Type name="xs:time" />
-  </Item>
+	<Item>
+		<Element>StartTime</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The starting time for the bell period.</p>
+		</Description>
+		<Type name="xs:time" />
+	</Item>
 
-  <Item>
-    <Element>EndTime</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The ending time for the bell period.</p>
-    </Description>
-    <Type name="xs:time" />
-  </Item>
+	<Item>
+		<Element>EndTime</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The ending time for the bell period.</p>
+		</Description>
+		<Type name="xs:time" />
+	</Item>
 
-  <Item>
-    <Element>RegularSchoolPeriod</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Indicates if the bell period is part of the regular school day (i.e. is not a before or after school or break period).</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-    </Values>
-  </Item>
+	<Item>
+		<Element>RegularSchoolPeriod</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates if the bell period is part of the regular school day (i.e. is not a before or after school or break period).</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
 
-  <Item>
-    <Element>InstructionalMinutes</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The number of minutes to be counted for instruction for the bell period.</p>
-    </Description>
-    <Type name="xs:unsignedInt" />
-  </Item>
+	<Item>
+		<Element>InstructionalMinutes</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The number of minutes to be counted for instruction for the bell period.</p>
+		</Description>
+		<Type name="xs:unsignedInt" />
+	</Item>
 
-  <Item>
-    <Element>UseInAttendanceCalculations</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Indicates if the bell period should be included in attendance calculations.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-    </Values>
-  </Item>
+	<Item>
+		<Element>UseInAttendanceCalculations</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates if the bell period should be included in attendance calculations.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
 </CommonElement>
 
 
 <!--These includes and associated files will disappear before the end of development.-->
 <xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesLinda.xml" />
 <xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesNick.xml" />
+
+
+<CommonElement name="JobClassificationType" type="true" dm="true">
+	<Item>
+		<Element>JobClassificationType</Element>
+		<Description>
+			<p>The specific group of duties or responsibilities of position.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The specific group of duties or responsibilities of position.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0557JobClassificationType"></Type>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeListType"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="EmployeeAssignmentProgramType" type="true" dm="true">
+	<Item>
+		<Element>EmployeeAssignmentProgramType</Element>
+		<Description>
+			<p>The type of instructional or non-instructional program.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The type of instructional or non-instructional program.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0229ProgramTypeType"></Type>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeList"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="FundingSourceType" type="true" dm="true">
+	<Item>
+		<Element>FundingSourceType</Element>
+		<Description>
+			<p>Provider of funds for the program or service.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Provider of funds for the program or service.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0222ProgramFundingSourceType"></Type>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="DataModel" name="OtherCodeList"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="EmployeePersonalOtherIdListType" type="true" dm="true">
+	<Item>
+		<Element>EmployeePersonalOtherIdListType</Element>
+		<Description>
+			<p>List all "other" Ids associated with the employee.</p>
+		</Description>
+		<List mode="List">
+		</List>
+		<Type ref="CommonTypes" name="OtherIdListType" />
+	</Item>
+	<Item>
+		<Element>OtherId</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>This field can hold a SSN, state or locally assigned Id.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Values>
+			<Value>
+				<Code>SSN</Code>
+			</Value>
+			<Value>
+				<Code>State</Code>
+			</Value>
+			<Value>
+				<Code>Local</Code>
+			</Value>
+			<Value>
+				<Code>Other</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+
+<CommonElement name="PayRateListType" type="true" dm="true">
+	<Item>
+		<Element>PayRateListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>PayRate</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Per pay distributions</p>
+		</Description>
+		<Type ref="CommonTypes" name="PayRateType"></Type>
+	</Item>
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Type of pay</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>P</Code>
+				<Text>Per pay</Text>
+			</Value>
+			<Value>
+				<Code>H</Code>
+				<Text>Hourly</Text>
+			</Value>
+			<Value>
+				<Code>D</Code>
+				<Text>Per diem</Text>
+			</Value>
+			<Value>
+				<Code>X</Code>
+				<Text>Extra pay</Text>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+
+<CommonElement name="PayRateType" type="true" dm="true">
+	<Item>
+		<Element>PayRateType</Element>
+		<Description>
+			<p>Per pay distributions</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Amount</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Pay amount.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MonetaryAmountType" />
+	</Item>
+	<Item>
+		<Element>Percentage</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Percentage of pay this represents.</p>
+		</Description>
+		<Type name="xs:decimal"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="AnnualItemListType" type="true" dm="true">
+	<Item>
+		<Element>AnnualItemListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>AnnualItem</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Contains information about the item being summarized.</p>
+		</Description>
+		<Type ref="CommonTypes" name="AnnualItemType"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="AnnualItemType" type="true" dm="true">
+	<Item>
+		<Element>AnnualItemType</Element>
+		<Description>
+			<p>Contains information about the item being summarized.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>AccountType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Classification of budgetary account code summary</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Revenue</Code>
+			</Value>
+			<Value>
+				<Code>Expenditure</Code>
+			</Value>
+			<Value>
+				<Code>Other</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>AccountTypeDetail</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Use AccountTypeDetail when AccountType is “Other”. For instance, when an AccountType=“Other”, and the AccountTypeDetail value is Long Term Asset.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Current Asset</Code>
+			</Value>
+			<Value>
+				<Code>Long Term Asset</Code>
+			</Value>
+			<Value>
+				<Code>Other Asset</Code>
+			</Value>
+			<Value>
+				<Code>Current Liability</Code>
+			</Value>
+			<Value>
+				<Code>Long Term Liability</Code>
+			</Value>
+			<Value>
+				<Code>Other Liability</Code>
+			</Value>
+			<Value>
+				<Code>Fund Balance</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>FundType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Is the account a general or special account code designation?</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>General</Code>
+			</Value>
+			<Value>
+				<Code>Special</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>FundClassificationCode</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A fund is a separate fiscal and accounting entity with a self-balancing set of accounts recording cash and other financial resources, together with all related liabilities and residual equities or
+balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital Projects Funds, or Pension Funds, to name a few  examples.
+			</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>StateProvinceId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>State-assigned Id for the relative area in which the expenditure/revenue was used.</p>
+		</Description>
+		<Type ref="CommonElement" name="StateProvinceIdType"></Type>
+	</Item>
+	<Item>
+		<Element>ExpenditureArea</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Relative area in which the expenditure was used.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Elementary</Code>
+			</Value>
+			<Value>
+				<Code>Secondary</Code>
+			</Value>
+			<Value>
+				<Code>Federal</Code>
+			</Value>
+			<Value>
+				<Code>Other</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>Function</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Function break in account code for summarization. The function describes the activity for which a service or material object is acquired.  (Definition from NCES, Financial Accounting for Local and State School Systems.)</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>Object</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Object break in account code for summarization. The function describes the activity for which a service or material object is acquired.  (Definition from NCES, Financial Accounting for Local and State School Systems.) </p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>InstructionalProgram</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Instructional program break in account code for summarization</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>Amount</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Summarized amount.</p>
+		</Description>
+		<Type name="xs:decimal"></Type>
+	</Item>
+	<Item>
+		<Element>InstructionalLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>An identifier for the level of instruction provided by the facility or operational unit e.g. Middle, Elementary, Prekindergarten, Charter This has greater granularity than the SIF element ExpenditureArea.</p>
+		</Description>
+		<ItemExample>Middle</ItemExample>
+		<ItemExample>Elementary</ItemExample>
+		<ItemExample>Prekindergarten</ItemExample>
+		<ItemExample>Adult Education</ItemExample>
+		<ItemExample>Elementary and Secondary combined</ItemExample>
+		<ItemExample>Community/Junior College</ItemExample>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>OperationalUnit</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The code for a location, building, organization code, facility or site. For example, this code can identify a Charter School or Maintenance Facility.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>ProjectCode</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A code used for project reporting. For instance, according to NCES, this code can be parsed to identify the particular funding source, authority, or expenditure purpose for which a special record or report is required, and to identify particular projects and the fiscal year of the appropriation within that funding source.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>Source</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Codes used for recording revenue and other receivables by source, e.g. codes for Taxes Levied/Assessed by the School District, Sales and Use Taxes, code for Textbook Sales and Rentals, etc.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>ChartOfAccountCode</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Balance Sheet account number used for an Asset, Liability, or Equity (equity also known as Net Asset or Fund Balance), e.g. a code for Cash in Bank, or Interfund Loans Payable, or Unreserved Fund Balance, etc.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>SubjectMatter</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The actual code that identifies the organization of subject matter and related learning experiences provided for the instruction of students.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>JobClassification</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A code that classifies an expense; a description of the specific group of duties and responsibilities, e.g. Staff Career Development Alternatives. (NCES, National Education Data Model, http://nces.ed.gov/forum/datamodel/eiebrowser/techview.aspx?instance=staffAssignment'amp';attrib=Professional-Educational_Job_Classification).</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>SpecialAmountType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>With regard to regional/local education service agencies report of "special" account code information, the account code summarization can be classified as:</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>1</Code>
+				<Text>Special Education</Text>
+			</Value>
+			<Value>
+				<Code>2</Code>
+				<Text>Transportation</Text>
+			</Value>
+			<Value>
+				<Code>3</Code>
+				<Text>Early Intervention</Text>
+			</Value>
+			<Value>
+				<Code>4</Code>
+				<Text>Institutionalized Children</Text>
+			</Value>
+			<Value>
+				<Code>5</Code>
+				<Text>Other</Text>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>GLAmountType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>General Ledger Amount Type.  With regard to an account code grouping classified as a General Ledger account:</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>1</Code>
+				<Text>Administration</Text>
+			</Value>
+			<Value>
+				<Code>2</Code>
+				<Text>Curriculum Development and Improvement</Text>
+			</Value>
+			<Value>
+				<Code>3</Code>
+				<Text>Education Planning</Text>
+			</Value>
+			<Value>
+				<Code>4</Code>
+				<Text>Instructional Materials</Text>
+			</Value>
+			<Value>
+				<Code>5</Code>
+				<Text>Management</Text>
+			</Value>
+			<Value>
+				<Code>6</Code>
+				<Text>Continuing Education</Text>
+			</Value>
+			<Value>
+				<Code>7</Code>
+				<Text>Pupil Personnel</Text>
+			</Value>
+			<Value>
+				<Code>8</Code>
+				<Text>State and Federal Liaison</Text>
+			</Value>
+			<Value>
+				<Code>9</Code>
+				<Text>Federal</Text>
+			</Value>
+			<Value>
+				<Code>10</Code>
+				<Text>Medical Assistance</Text>
+			</Value>
+			<Value>
+				<Code>11</Code>
+				<Text>Auxiliary services of non-profit private and parochial schools</Text>
+			</Value>
+			<Value>
+				<Code>12</Code>
+				<Text>Other</Text>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>SIF_ExtendedElements</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
+	</Item>
+</CommonElement> 
+
+<CommonElement name="BudgetAccountListType" type="true" dm="true">
+	<Item>
+		<Element>BudgetAccountListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>BudgetAccount</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Information about budget accounts being submitted.</p>
+		</Description>
+		<Type ref="CommonTypes" name="BudgetAccountType"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="BudgetAccountType" type="true" dm="true">
+	<Item>
+		<Element>BudgetAccountType</Element>
+		<Description>
+			<p>Information about budget accounts being submitted.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>AccountClass</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Classification of budgetary account code summary</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Revenue</Code>
+			</Value>
+			<Value>
+				<Code>Expenditure</Code>
+			</Value>
+			<Value>
+				<Code>Other</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>FundBreakdown</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Fund breakdown of account code for summarization.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>FunctionBreakdown</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Function breakdown of account code for summarization.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>ObjectBreakdown</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Object breakdown of account code for summarization.</p>
+		</Description>
+		<Type name="xs:normalizedString"></Type>
+	</Item>
+	<Item>
+		<Element>BudgetAmount</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Summarized, positive amount without cents for breakdowns</p>
+		</Description>
+		<Type name="xs:unsignedInt"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="PeriodType" type="true" dm="true">
+	<Item>
+		<Element>PeriodType</Element>
+		<Description>
+			<p>Period between two dates.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>StartDate</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Start date.</p>
+		</Description>
+		<Type name="xs:date"></Type>
+	</Item>
+	<Item>
+		<Element>EndDate</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>End date.</p>
+		</Description>
+		<Type name="xs:date"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="MonetaryAmountListType" type="true" dm="true">
+	<Item>
+		<Element>MonetaryAmountListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>List of monetary amounts.</p>
+		</Description>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>Amount</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Amount</p>
+		</Description>
+		<Type ref="CommonTypes" name="MonetaryAmountType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="DebitCreditMonetaryAmountListType" type="true" dm="true">
+	<Item>
+		<Element>DebitCreditMonetaryAmountListType</Element>
+		<Description>
+			<p>List of monetary amounts, with debit and credit types.</p>
+		</Description>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>Amount</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Amount</p>
+		</Description>
+		<Type ref="CommonTypes" name="DebitCreditMonetaryAmountType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="DebitCreditMonetaryAmountType" type="true" dm="true">
+	<Item>
+		<Element>DebitCreditMonetaryAmountType</Element>
+		<Description>
+			<p>Monetary amount, with debit and credit types.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MonetaryAmountType"></Type>
+	</Item>
+	<Item>
+		<Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Account.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"></Type>
+	</Item>
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description></Description>
+		<Values>
+			<Value>
+				<Code>Debit</Code>
+			</Value>
+			<Value>
+				<Code>Credit</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+
+<CommonElement name="OtherLEAListType" type="true" dm="true">
+	<Item>
+		<Element>OtherLEAListType</Element>
+		<Description>
+			<p>The Id (GUID) of an other related education agency, such as a regional service agency.</p>
+		</Description>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>LEAInfoRefId</Element>
+		<Characteristics>MR</Characteristics>
+		<Type ref="CommonTypes" name="IdRefType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="PurchasingItemListType" type="true" dm="true">
+	<Item>
+		<Element>PurchasingItemListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>PurchasingItem</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Contains information about the item being purchased.</p>
+		</Description>
+		<Type ref="CommonTypes" name="PurchasingItemType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="PurchasingItemType" type="true" dm="true">
+	<Item>
+		<Element>PurchasingItemType</Element>
+		<Description>
+			<p>Contains information about the item being purchased.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>ItemNumber</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Vendor item number.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
+	<Item>
+		<Element>ItemDescription</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Description of the item.</p>
+		</Description>
+		<Type name="xs:string" />
+	</Item>
+	<Item>
+		<Element>Quantity</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Quantity ordered.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
+	<Item>
+		<Element>UnitCost</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Unit cost of the item.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MonetaryAmountType" />
+	</Item>
+	<Item>
+		<Element>ExpenseAccounts</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="ExpenseAccountListType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="ExpenseAccountListType" type="true" dm="true">
+	<Item>
+		<Element>ExpenseAccountListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>ExpenseAccount</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Account that is to be charged for the item.</p>
+		</Description>
+		<Type ref="CommonTypes" name="ExpenseAccountType" />
+	</Item>
+</CommonElement>
+<CommonElement name="ExpenseAccountType" type="true" dm="true">
+	<Item>
+		<Element>ExpenseAccountType</Element>
+		<Description>
+			<p>Account that is to be charged for the item.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>AccountCode</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Account code charged to this item.</p>
+		</Description>
+		<Type name="xs:token" />
+	</Item>
+	<Item>
+		<Element>Amount</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Amount charged to this account.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MonetaryAmountType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="JobFunctionType" type="true" dm="true">
+  <Item>
+    <Element>JobFunctionType</Element>
+    <Description>
+      <p>The purpose of the activities as related to students.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code representing the type of job function.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0568FunctionTypeType"></Type>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+  </Item>
+</CommonElement>
+
 
 	<!--	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>-->
 				

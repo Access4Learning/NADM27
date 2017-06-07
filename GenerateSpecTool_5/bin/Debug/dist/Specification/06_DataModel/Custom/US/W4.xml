@@ -77,7 +77,7 @@
 		<Description>
 			<p>State of residence.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvince"/>
+		<Type ref="CommonTypes" name="StateProvinceType"/>
 	</Item>
 	<Item>
 		<Element>Exempt</Element>
@@ -90,12 +90,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<W4 RefId="359D75101AD0A9D7A8C3DAD0A85103A2" EmployeePersonalRefId="DD5906EFD512EFDA253764EDA5897321">

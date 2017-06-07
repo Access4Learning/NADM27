@@ -45,38 +45,17 @@
     <Description>
       <p>Period of the income statement.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/StartDate</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Start date.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/EndDate</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>End date.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
+     <Type ref="CommonTypes" name="PeriodType"></Type>
+ </Item>
   <Item>
     <Element>Amounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Amount in the account.</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"/>
-  </Item>
-  <Item>
+     <Description>
+     <p>Amount in the account.</p>
+	 </Description>
+     <Type ref="CommonTypes" name="MonetaryAmountListType"></Type>
+ </Item>
+   <Item>
     <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
@@ -95,17 +74,17 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="ProgramType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialIncomeStatement RefId="E72C08BD41894187BA07B00C1401BE3F">
