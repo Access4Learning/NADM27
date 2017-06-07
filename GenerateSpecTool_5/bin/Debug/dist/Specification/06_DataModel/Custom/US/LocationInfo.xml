@@ -67,12 +67,12 @@
 		<Description>
 			<p>The locally-assigned identifier for this location.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
 	<Item>
 		<Element>IdentificationInfoList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="IdentificationInfoList"/>
+		<Type ref="CommonTypes" name="IdentificationInfoListType"/>
 	</Item>
 	<Item>
 		<Element>StateProvinceId</Element>
@@ -80,7 +80,7 @@
 		<Description>
 			<p>The state-assigned identifier for this location.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId"/>
+		<Type ref="CommonTypes" name="StateProvinceIdType"/>
 	</Item>
 	<Item>
 		<Element>NCESId</Element>
@@ -88,7 +88,7 @@
 		<Description>
 			<p>The NCES-assigned identifier for this location.</p>
 		</Description>
-		<Type ref="DataModel" name="NCESId"/>
+		<Type ref="CommonTypes" name="NCESIdType"/>
 	</Item>
 	<Item>
 		<Element>LEAInfoRefId</Element>
@@ -101,16 +101,10 @@
 	<Item>
 		<Element>OtherLEAs</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/LEAInfoRefId</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
 			<p>The Id (GUID) of an other related education agency, such as a regional service agency.</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
+		<Type ref="CommonTypes" name="OtherLEAListType"/>
 	</Item>
 	<Item>
 		<Element>ParentLocationInfo</Element>
@@ -146,7 +140,7 @@
 		<Description>
 			<p>This element has the LocationInfo address information.</p>
 		</Description>
-		<Type ref="DataModel" name="AddressList"/>
+		<Type ref="CommonTypes" name="AddressListType"/>
 	</Item>
 	<Item>
 		<Element>PhoneNumberList</Element>
@@ -154,17 +148,17 @@
 		<Description>
 			<p>The location's phone numbers.</p>
 		</Description>
-		<Type ref="DataModel" name="PhoneNumberList"/>
+		<Type ref="CommonTypes" name="PhoneNumberListType"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<LocationInfo RefId="D3E34B359D75101A8C3D00AA001A1652" LocationType="School">

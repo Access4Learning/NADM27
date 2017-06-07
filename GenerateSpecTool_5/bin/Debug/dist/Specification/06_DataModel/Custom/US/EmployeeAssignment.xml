@@ -98,39 +98,15 @@
     <Description>
       <p>The specific group of duties or responsibilities of position.</p>
     </Description>
+    <Type ref="CommonTypes" name="JobClassificationType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The specific group of duties or responsibilities of position.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0557JobClassificationType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-  <Item>
+ <Item>
     <Element>ProgramType</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>The type of instructional or non-instructional program.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The type of instructional or non-instructional program.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0229ProgramTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
+    <Type ref="CommonTypes" name="EmployeeAssignmentProgramType"></Type>
   </Item>
   <Item>
     <Element>FundingSource</Element>
@@ -138,29 +114,17 @@
     <Description>
       <p>Provider of funds for the program or service.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Provider of funds for the program or service.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0222ProgramFundingSourceType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-  <Item>
+     <Type ref="CommonTypes" name="FundingSourceType"></Type>
+ </Item>
+   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeeAssignment RefId="FE1078BA3261545A31905937B265CE01" EmployeePersonalRefId="BE1078BA3261545A31905937B265CE02">

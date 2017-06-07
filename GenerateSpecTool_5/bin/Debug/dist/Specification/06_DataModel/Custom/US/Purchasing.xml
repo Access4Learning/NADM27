@@ -75,86 +75,20 @@
 	<Item>
 		<Element>PurchasingItems</Element>
 		<Characteristics>M</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/PurchasingItem</Element>
-		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>Contains information about the item being purchased.</p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>//ItemNumber</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Vendor item number.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
-	<Item>
-		<Element>//ItemDescription</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Description of the item.</p>
-		</Description>
-		<Type name="xs:string"/>
-	</Item>
-	<Item>
-		<Element>//Quantity</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Quantity ordered.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
-	<Item>
-		<Element>//UnitCost</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Unit cost of the item.</p>
-		</Description>
-		<Type ref="CommonTypes" name="MonetaryAmountType"/>
-	</Item>
-	<Item>
-		<Element>//ExpenseAccounts</Element>
-		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>///ExpenseAccount</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Account that is to be charged for the item.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Element>////AccountCode</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Account code charged to this item.</p>
-		</Description>
-		<Type name="xs:token"/>
-	</Item>
-	<Item>
-		<Element>////Amount</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Amount charged to this account.</p>
-		</Description>
-		<Type ref="CommonTypes" name="MonetaryAmountType"/>
+		<Type ref="CommonTypes" name="PurchasingItemListType"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<Purchasing RefId="ED12345FDA8497275BC28AA349DD3721">

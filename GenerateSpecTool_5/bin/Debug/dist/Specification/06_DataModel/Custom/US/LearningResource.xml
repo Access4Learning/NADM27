@@ -53,52 +53,9 @@
     <Description>
       <p>Contains contact information about resource authors.</p>
     </Description>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="LearningResourceContactListType"></Type>
   </Item>
-  <Item>
-    <Element>/Contact</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Contains contact information about a resource author.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//Name</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Name of contact person. Use the generic element Name.</p>
-    </Description>
-    <Type ref="DataModel" name="Name"></Type>
-  </Item>
-  <Item>
-    <Element>//Address</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Address of organization or company.</p>
-    </Description>
-    <Type ref="DataModel" name="Address"></Type>
-  </Item>
-  <Item>
-    <Element>//PhoneNumber</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Phone number of organization or company.</p>
-    </Description>
-    <Type ref="DataModel" name="PhoneNumber"></Type>
-  </Item>
-  <Item>
-    <Element>//Email</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The email of the organization or company.</p>
-    </Description>
-    <Type ref="DataModel" name="Email"></Type>
-  </Item>
+ 
   <Item>
     <Element>Location</Element>
 
@@ -139,18 +96,12 @@
     <Element>GradeLevels</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsTypes"></Type>
   </Item>
   <Item>
     <Element>SubjectAreas</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>/SubjectArea</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Type ref="DataModel" name="SubjectArea"></Type>
+    <Type ref="CommonTypes" name="SubjectAreaListType"></Type>
   </Item>
   <Item>
     <Element>MediaTypes</Element>
@@ -161,20 +112,9 @@
         Resource media types.
       </p>
     </Description>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="MediaTypeListType"></Type>
   </Item>
-  <Item>
-    <Element>/MediaType</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>
-        MIME type <a href="References.html#MIME">[MIME]</a> based on IANA registration (see RFC2048) or 'non-digital'.
-      </p>
-    </Description>
-    <Type name="xs:token"></Type>
-  </Item>
-  <Item>
+   <Item>
     <Element>UseAgreement</Element>
 
     <Characteristics>O</Characteristics>
@@ -198,86 +138,18 @@
     <Description>
       <p>Authorizations to use this resource. For example, this resource may be included as part of the district's standard curriculum model.</p>
     </Description>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="ApprovalListType"></Type>
   </Item>
-  <Item>
-    <Element>/Approval</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>A sub-element containing an authorization to use this resource. For example, this resource may be included as part of the district's standard curriculum model.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//Organization</Element>
-
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Name of agency that approved use of resource.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//Date</Element>
-
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Date resource was approved.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
+ 
   <Item>
     <Element>Evaluations</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Evaluations/review of the resource.</p>
     </Description>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="LearningResourceEvaluationType"></Type>
   </Item>
-  <Item>
-    <Element>/Evaluation</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Evaluation/review of resource.</p>
-    </Description>
-  </Item>
-  <Item>
-
-    <Attribute>RefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID assigned to an evaluation.</p>
-    </Description>
-    <Type ref="CommonTypes" name="RefIdType"></Type>
-  </Item>
-  <Item>
-    <Element>//Description</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Description of evaluation of resource.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Element>//Date</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Date evaluation was performed</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>//Name</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Name of individual who submitted evaluation.</p>
-    </Description>
-    <Type ref="DataModel" name="Name"></Type>
-  </Item>
+ 
 
   <Item>
     <Element>Components</Element>
@@ -285,101 +157,16 @@
     <Description>
       <p>Lesson or activity-sized portions of a resource.</p>
     </Description>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="LearningResourceComponentListType"></Type>
   </Item>
-  <Item>
-    <Element>/Component</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>A lesson or activity-sized portion of a resource.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//Name</Element>
-
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Name of learning resource component within the resource, i.e. "Chapter 1, Section 4.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//Reference</Element>
-
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Description of where ResourceComponent is located within resource or in general, i.e. "Section 4, pages 32-38," or URL string, or whatever locator is appropriate for media.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Element>//Description</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Description of ResourceComponent, i.e. "Discover how changing the scale of a map can either increase or decrease the level of detail you see."</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Element>//Strategies</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Teaching/learning strategies used in the learning resource.</p>
-    </Description>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>///Strategy</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Teaching/learning strategy used in the learning resource. One per element.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Element>//AssociatedObjects</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>References from component to associated elements within another SIF object.</p>
-    </Description>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>///AssociatedObject</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Reference from component to associated elements within another SIF object.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Attribute that identifies the type of SIF object being referenced.</p>
-    </Description>
-    <Type ref="CommonTypes" name="ObjectNameType"></Type>
-  </Item>
+ 
   <Item>
     <Element>LearningStandards</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>References to LearningStandardItems.</p>
     </Description>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Reference to a LearningStandardItem.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
   <Item>
     <Element>LearningResourcePackageRefId</Element>
@@ -395,13 +182,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <LearningResource RefId="6938D88F82A37EFD88892429EC6AB1B5" xml:lang="en">

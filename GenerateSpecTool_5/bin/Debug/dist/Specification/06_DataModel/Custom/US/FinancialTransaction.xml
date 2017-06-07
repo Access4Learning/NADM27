@@ -34,42 +34,15 @@
   <Item>
     <Element>Amounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
+     <Description>
       <p>Monetary amount of the transaction.</p>
     </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"/>
-  </Item>
-  <Item>
-    <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Account.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description></Description>
-    <Values>
-      <Value>
-        <Code>Debit</Code>
-      </Value>
-      <Value>
-        <Code>Credit</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="DebitCreditMonetaryAmountListType"/>
   </Item>
   <Item>
     <Element>Program</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="ProgramType"></Type>
   </Item>
   <Item>
     <Element>Description</Element>
@@ -79,12 +52,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialTransaction RefId="E72C08BD41894187BA07B00C1401BE3F">

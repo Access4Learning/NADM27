@@ -24,7 +24,7 @@
 		<Description>
 			<p>The locally-assigned identifier for this staff member.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
 	<Item>
 		<Element>StateProvinceId</Element>
@@ -32,12 +32,12 @@
 		<Description>
 			<p>The state-assigned identifier for this staff member.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId"/>
+		<Type ref="CommonTypes" name="StateProvinceIdType"/>
 	</Item>
 	<Item>
 		<Element>ElectronicIdList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="ElectronicIdList"/>
+		<Type ref="CommonTypes" name="ElectronicIdListType"/>
 		<Description>
 			<p>Electronic identifier(s) associated with this entity.</p>
 		</Description>
@@ -46,59 +46,10 @@
 		<Element>OtherIdList</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
-			<p>Lists all "other" identifiers associated with the staff member.</p>
+			<p>Lists all "other" identifiers associated with the student.</p>
 		</Description>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/OtherId</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>Lists an "other" identifier associated with the staff member.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
-	<Item>
-		<Attribute>Type</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Code that defines the type of this other Id.</p>
-		</Description>
-		<Type ref="ExternalCodeSets" name="NCES0147IdentificationSystemType"/>
-		<Values type="subset">
-			<Value>
-				<Code>0328</Code>
-			</Value>
-			<Value>
-				<Code>0164</Code>
-			</Value>
-			<Value>
-				<Code>0339</Code>
-			</Value>
-			<Value>
-				<Code>9999</Code>
-			</Value>
-			<Value>
-				<Code>0222</Code>
-			</Value>
-			<Value>
-				<Code>0154</Code>
-			</Value>
-			<Value>
-				<Code>0399</Code>
-			</Value>
-			<Value>
-				<Code>0004</Code>
-			</Value>
-			<Value>
-				<Code>0113</Code>
-			</Value>
-			<Value>
-				<Code>5013</Code>
-			</Value>
-		</Values>
-	</Item>
+		<Type ref="CommonTypes" name="OtherIdListType"/>
+  	</Item>
 	<Item>
 		<Element>Name</Element>
 		<Characteristics>M</Characteristics>
@@ -115,7 +66,7 @@
 		<Description>
 			<p>Previous, alternate or other names or aliases associated with the staff member.</p>
 		</Description>
-		<Type ref="DataModel" name="OtherNames"/>
+		<Type ref="CommonTypes" name="OtherNamesType"/>
 	</Item>
 	<Item>
 		<Element>Demographics</Element>
@@ -123,7 +74,7 @@
 		<Description>
 			<p>This element contains information related to staff member demographics.</p>
 		</Description>
-		<Type ref="DataModel" name="Demographics"/>
+		<Type ref="CommonTypes" name="DemographicsType"/>
 	</Item>
 	<Item>
 		<Element>Title</Element>
@@ -139,7 +90,7 @@
 		<Description>
 			<p>The staff member's address(es).</p>
 		</Description>
-		<Type ref="DataModel" name="AddressList"/>
+		<Type ref="CommonTypes" name="AddressListType"/>
 	</Item>
 	<Item>
 		<Element>PhoneNumberList</Element>
@@ -147,7 +98,7 @@
 		<Description>
 			<p>The staff member's phone number(s).</p>
 		</Description>
-		<Type ref="DataModel" name="PhoneNumberList"/>
+		<Type ref="CommonTypes" name="PhoneNumberListType"/>
 	</Item>
 	<Item>
 		<Element>EmailList</Element>
@@ -155,7 +106,7 @@
 		<Description>
 			<p>The staff member's e-mail address(es).</p>
 		</Description>
-		<Type ref="DataModel" name="EmailList"/>
+		<Type ref="CommonTypes" name="EmailListType"/>
 	</Item>
 	<Item>
 		<Element>EmployeePersonalRefId</Element>
@@ -168,12 +119,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<StaffPersonal RefId="D3E34F419D75101A8C3D00AA001A1652">
