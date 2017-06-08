@@ -44,42 +44,18 @@
     <Description>
       <p>Describes what type of assessment this represents.</p>
     </Description>
+    <Type ref="CommonTypes" name="AssessmentDescriptorListType"></Type>
   </Item>
-  <Item>
-    <Element>/AssessmentDescriptor</Element>
-    <Characteristics>OR</Characteristics>
-    <Union>
-      <Type ref="ExternalCodeSets" name="NCES0067AssessmentTypeType"/>
-      <Type name="xs:token">
-        <Values type="additional">
-          <Value>
-            <Code>Statewide</Code>
-          </Value>
-          <Value>
-            <Code>Formative</Code>
-          </Value>
-          <Value>
-            <Code>Local Summative</Code>
-          </Value>
-          <Value>
-            <Code>Diagnostic</Code>
-          </Value>
-          <Value>
-            <Code>Benchmark</Code>
-          </Value>
-        </Values>
-      </Type>
-    </Union>
-  </Item>
+ 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

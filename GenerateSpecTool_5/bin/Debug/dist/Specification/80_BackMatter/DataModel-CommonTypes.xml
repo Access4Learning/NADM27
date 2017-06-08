@@ -2281,18 +2281,25 @@
 	</xhtml:Example>
 </CommonElement>
 
-<CommonElement name="ExceptionalityCategoriesType" type="true">
+<CommonElement name="ExceptionalityCategoryListType" type="true">
 	<Item>
-		<Element>ExceptionalityCategoriesType</Element>
+		<Element>ExceptionalityCategoryListType</Element>
 		<List mode="List">
 		</List>
 	</Item>
 	<Item>
 		<Element>ExceptionalityCategory</Element>
 		<Characteristics>MR</Characteristics>
+		<Type ref="CommonTypes" name="ExceptionalityCategoryType"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="ExceptionalityCategoryType" type="true">
+	<Item>
+		<Element>ExceptionalityCategoryType</Element>
 	</Item>
 	<Item>
-		<Element>/Code</Element>
+		<Element>Code</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>
@@ -2314,12 +2321,12 @@
 		</Union>
 	</Item>
 	<Item>
-		<Element>/OtherCodeList</Element>
+		<Element>OtherCodeList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeListType"></Type>
+		<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 	</Item>
 	<Item>
-		<Element>/ExceptionalityPriority</Element>
+		<Element>ExceptionalityPriority</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>Identifies priority of the exceptionality.  "Primary" is the first and is required even if only one exceptionality is specified. "Secondary", etc. are of lower priority. Primary, Secondary, and Tertiary must be specified before "Additional" is used.</p>

@@ -85,32 +85,7 @@
 	<Description>
 	  <p>A list of persons providing the intervention.</p>
 	</Description>
-	<List mode="List"></List>
- </Item> 
-  
- <Item>
-	<Element>/InterventionProviderName</Element>
-	<Characteristics>MR</Characteristics>
-	<Description>
-	  <p>The person providing the intervention.</p>
-	</Description>
- </Item>
-  <Item>
-	<Attribute>StaffPersonalRefId</Attribute>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The StaffPersonalRefId of the staff member.  Either the StaffPersonalRefId of the staff member or name must be provided</p>
-	</Description>
-	<Type ref="CommonTypes"  name="IdRefType"></Type>
- </Item>
- 
-  <Item>
-	<Element>//OtherProvider</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The name of the person if not a staff member. Either the StaffPersonalRefId of the staff member or name must be provided.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
+	<Type ref="CommonTypes"  name="InterventionProviderNameListType"></Type>
  </Item>
  
  <Item>
@@ -128,65 +103,10 @@
 	<Description>
 	  <p>The list of interventions applied here.</p>
 	</Description>
-	<List mode="List"></List>
+	<Type ref="CommonTypes"  name="InterventionListType"></Type>
  </Item>
  
-  <Item>
-	<Element>/Intervention</Element>
-	<Characteristics>MR</Characteristics>
-	<Description>
-	  <p>Details of an intervention.</p>
-	</Description>
- </Item>
- <Item>
-	<Element>//InterventionName</Element>
-	<Characteristics>M</Characteristics>
-	<Description>
-	  <p>Naming of the intervention.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- <Item>
-	<Element>//InterventionDescription</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>Description of the intervention.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- <Item>
-	<Element>//InterventionType</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The description of the type of intervention that is delivered.</p>
-	</Description>
-	<Values>
-		<Value>
-			<Code>Face-to-face</Code>
-		</Value>
-		<Value>
-			<Code>Computer Assisted</Code>
-		</Value>
-	</Values>
- </Item>
- <Item>
-	<Element>//InterventionDelivery</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>How the instruction is delivered.</p>
-	</Description>
-	<Values>
-		<Value>
-			<Code>Group</Code>
-		</Value>
-		<Value>
-			<Code>Individual</Code>
-		</Value>
-		<Value>
-			<Code>Whole Class</Code>
-		</Value>
-	</Values>
- </Item>
+
  
  <Item>
 	<Element>SubjectArea</Element>
@@ -194,7 +114,7 @@
 	<Description>
 	  <p>The subject for which this intervention is intended.</p>
 	</Description>
-   <Type ref="DataModel" name="SubjectArea"></Type>
+   <Type ref="CommonTypes" name="SubjectAreaType"></Type>
    </Item>
   
   <Item>
@@ -203,100 +123,24 @@
     <Description>
       <p>List of LearningStandardItems.</p>
     </Description>
-    <List mode="List"></List>
-  </Item>
-  
-   <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>GUID that references the LearningStandardItem object that contains information related to curriculum standards statements "standards" or "benchmarks" or the like within the document. This object primarily focuses upon state department curriculum standards, published curriculum standards and local education agency learning standards. Each LearningStandardItem reflects an individual standard statement and may occur at several levels within a hierarchially structured document.  </p>
-    </Description>
-   <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
   
   <Item>
     <Element>LearningObjectives</Element>
     <Characteristics>O</Characteristics>
-    <Description>
-      <p>List of learning objectives.</p>
-    </Description>
-    <List mode="List"></List>
-  </Item>
-  <Item>
-    <Element>/LearningObjective</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
+   <Description>
       <p>The specific learning objective(s) being addressed by this intervention.</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
+     <Type ref="CommonTypes" name="LearningObjectiveListType"></Type>
   </Item>  
   
    <Item>
     <Element>Measurements</Element>
     <Characteristics>O</Characteristics>
-     <List mode="List"></List>
+     <Type ref="CommonTypes" name="ResponseToInterventionMeasurementListType"></Type>
   </Item>
-   <Item>
- 	  <Element>/Measurement</Element>
-	   <Characteristics>MR</Characteristics>
-		<Description>
-		  <p></p>
-		</Description>
-  </Item>    
-  <Item>
-    <Element>//MeasurementTool</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The specific tool that will be used to gather data about how the student is improving.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-  <Item>
-    <Element>//FrequencyofMeasure</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The frequency of the measuement.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>S001</Code> 
-			<Description>Weekly</Description>
-		</Value>
-		<Value>
-			<Code>S002</Code> 
-			<Description>Bi-weekly</Description>
-		</Value>
-		<Value>
-			<Code>S003</Code> 
-			<Description>Semi-monthly</Description>
-		</Value>
-		<Value>
-			<Code>S004</Code> 
-			<Description>Monthly</Description>
-		</Value>
-		<Value>
-			<Code>S005</Code> 
-			<Description>Quarterly</Description>
-		</Value>
-		<Value>
-			<Code>S006</Code> 
-			<Description>Semi-annually</Description>
-		</Value>
-		<Value>
-			<Code>S007</Code> 
-			<Description>Annually</Description>
-		</Value>
-		<Value>
-			<Code>S008</Code> 
-			<Description>Daily</Description>
-		</Value>
-		<Value>
-			<Code>S999</Code> 
-			<Description>Other</Description>
-		</Value>
-    </Values>
-  </Item>    
+  
   
   <Item>
     <Element>Baselines</Element>
@@ -304,16 +148,8 @@
     <Description>
       <p>List of pre-assessment data used to evaluate the student on the learning objective.</p>
     </Description>
-    <List mode="List"></List>
+     <Type ref="CommonTypes" name="BaselineListType"></Type>
   </Item>
-  <Item>
-    <Element>/Baseline</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The pre-assessment data to evaluate the student on the learning objective.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
   
   <Item>
     <Element>Targets</Element>
@@ -321,17 +157,9 @@
     <Description>
       <p>List of specific end aims.</p>
     </Description>
-    <List mode="List"></List>
+     <Type ref="CommonTypes" name="TargetListType"></Type>
   </Item>
-  <Item>
-    <Element>/Target</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The specific end aim that is desired to achieve for the student.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-    
+     
   <Item>
 	<Element>EntryDate</Element>
 	<Characteristics>O</Characteristics>
@@ -365,60 +193,9 @@
     <Description>
       <p>The frequency of the intervention.</p>
     </Description>
+     <Type ref="CommonTypes" name="InterventionFrequencyTimeType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The frequency in segments of time.</p>
-    </Description>
-      <Values>
-		<Value>
-			<Code>S001</Code> 
-			<Description>Weekly</Description>
-		</Value>
-		<Value>
-			<Code>S002</Code> 
-			<Description>Bi-weekly</Description>
-		</Value>
-		<Value>
-			<Code>S003</Code> 
-			<Description>Semi-monthly</Description>
-		</Value>
-		<Value>
-			<Code>S004</Code> 
-			<Description>Monthly</Description>
-		</Value>
-		<Value>
-			<Code>S005</Code> 
-			<Description>Quarterly</Description>
-		</Value>
-		<Value>
-			<Code>S006</Code> 
-			<Description>Semi-annually</Description>
-		</Value>
-		<Value>
-			<Code>S007</Code> 
-			<Description>Annually</Description>
-		</Value>
-		<Value>
-			<Code>S008</Code> 
-			<Description>Daily</Description>
-		</Value>
-		<Value>
-			<Code>S999</Code> 
-			<Description>Other</Description>
-		</Value>
-    </Values>
-  </Item>
-   <Item>
-    <Element>/Duration</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The actual duration of the frequency of the intervention.  For example, if the student is to have the intervention for 40 minutes, then 40 would be entered.</p>
-    </Description>
-    <Type name="xs:integer"></Type>
-   </Item>
+ 
    
    <Item>
    <Attribute>UnitOfMeasure</Attribute>
@@ -440,14 +217,14 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example  xmlns="">

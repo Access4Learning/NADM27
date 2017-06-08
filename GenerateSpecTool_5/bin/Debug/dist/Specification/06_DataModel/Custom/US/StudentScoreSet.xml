@@ -54,68 +54,19 @@
     <Description>
       <p>Container for score elements. </p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Score</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>The score with other information related to the score.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>AssessmentSubTestRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-    <Description>
-      <p>References the AssessmentSubTest that defines the score.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//ScoreValue</Element>
-    <Type name="xs:normalizedString"></Type>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The value of the score.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//DiagnosticStatement</Element>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:string"></Type>
-    <Description>
-      <p>Comment created by any logical analysis of this score.</p>
-    </Description>
+     <Type ref="CommonTypes" name="StudentScoreSetScoreListType"></Type>
   </Item>
 
-  <Item>
-    <Element>//Description</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This is further qualification of a Student Score.</p>
-    </Description>
-    <Type name='xs:string'/>
-  </Item>
-
-  <Item>
-    <Element>//NumberOfResponses</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This is the number of responses that are included with the StudentScoreSet.</p>
-    </Description>
-    <Type name='xs:unsignedInt'/>
-  </Item>
   
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

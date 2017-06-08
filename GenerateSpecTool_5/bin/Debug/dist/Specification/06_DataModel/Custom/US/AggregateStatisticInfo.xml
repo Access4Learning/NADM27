@@ -71,30 +71,9 @@
     <Description>
       <p>Rules for which statistic may not be reported.</p>
     </Description>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="ExclusionRuleListType"></Type>
   </Item>
-  <Item>
-    <Element>/ExclusionRule</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Rule for which statistic may not be reported</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description></Description>
-    <Values>
-      <Value>
-        <Code>SampleSize</Code>
-      </Value>
-      <Value>
-        <Code>Description</Code>
-      </Value>
-    </Values>
-  </Item>
+
   <Item>
     <Element>Source</Element>
     <Characteristics>O</Characteristics>
@@ -123,70 +102,9 @@
     <Element>Location</Element>
     <Characteristics>O</Characteristics>
     <Description></Description>
+    <Type ref="CommonTypes" name="AggregateStatisticInfoLocationType"></Type>
   </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description></Description>
-    <Values>
-      <Value>
-        <Code>Classroom</Code>
-      </Value>
-      <Value>
-        <Code>School</Code>
-      </Value>
-      <Value>
-        <Code>District</Code>
-      </Value>
-      <Value>
-        <Code>Campus</Code>
-      </Value>
-      <Value>
-        <Code>IntermediateUnit</Code>
-      </Value>
-      <Value>
-        <Code>StateEducationAgency</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>/LocationName</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Name of the location</p>
-    </Description>
-    <Type name="xs:token"></Type>
-  </Item>
-  <Item>
-    <Element>/LocationRefId</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>
-        <code>RefId</code> of the location object if the location is a SIF object such as <code>SchoolInfo</code>.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
-        Type of SIF object <code>Location</code> points to.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>SchoolInfo</Code>
-      </Value>
-      <Value>
-        <Code>LEAInfo</Code>
-      </Value>
-      <Value>
-        <Code>RoomInfo</Code>
-      </Value>
-    </Values>
-  </Item>
+ 
   <Item>
     <Element>Measure</Element>
     <Characteristics>O</Characteristics>
@@ -235,12 +153,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <AggregateStatisticInfo RefId="A5DECBD3161B4F5D9F46EBA64C87B002">

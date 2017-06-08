@@ -34,43 +34,10 @@
     <Description>
       <p>Special conditions or unusual events related to the administration event.</p>
     </Description>
-    <List mode="ActionList">
-      <Key>SpecialCondition/@Code</Key>
-    </List>
+    <Type ref="CommonTypes" name="SpecialConditionListType"></Type>
   </Item>
-  <Item>
-    <Element>/SpecialCondition</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>A text description of the special condition.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-    <ItemExample>Fire drill during test.</ItemExample>
-    <ItemExample>Air conditioning broke during the request.</ItemExample>
-    <ItemExample>Assessment was given over three days instead of in one sitting.</ItemExample>
-  </Item>
-  <Item>
-    <Attribute>Code</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type name="xs:token"></Type>
-    <Description>
-      <p>This is the primary key for the list of special conditions.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>SIF_Action</Attribute>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>
-        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.  At a minimum the key for the list must also be present.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Delete</Code>
-      </Value>
-    </Values>
-  </Item>
+ 
+ 
   <Item>
     <Element>AdministrationDateTime</Element>
     <Characteristics>M</Characteristics>
@@ -109,7 +76,7 @@
     <Description>
       <p>Address of the location where the administration takes place.</p>
     </Description>
-    <Type ref="DataModel" name="Address"></Type>
+    <Type ref="CommonTypes" name="AddressType"></Type>
   </Item>
   <Item>
     <Element>StaffPersonalRefId</Element>
@@ -138,12 +105,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">
