@@ -9657,3 +9657,128 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Type name='xs:unsignedInt'/>
   </Item>
 </CommonElement>
+
+   <CommonElement name="ExclusionRuleListType" type="true" dm="true">
+  <Item>
+    <Element>ExclusionRuleListType</Element>
+    <Description>
+      <p>Rules for which statistic may not be reported.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>ExclusionRule</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Rule for which statistic may not be reported</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description></Description>
+    <Values>
+      <Value>
+        <Code>SampleSize</Code>
+      </Value>
+      <Value>
+        <Code>Description</Code>
+      </Value>
+    </Values>
+  </Item>
+</CommonElement>
+
+   <CommonElement name="AggregateStatisticInfoLocationType" type="true" dm="true">
+  <Item>
+    <Element>AggregateStatisticInfoLocationType</Element>
+    <Description></Description>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description></Description>
+    <Values>
+      <Value>
+        <Code>Classroom</Code>
+      </Value>
+      <Value>
+        <Code>School</Code>
+      </Value>
+      <Value>
+        <Code>District</Code>
+      </Value>
+      <Value>
+        <Code>Campus</Code>
+      </Value>
+      <Value>
+        <Code>IntermediateUnit</Code>
+      </Value>
+      <Value>
+        <Code>StateEducationAgency</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>LocationName</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Name of the location</p>
+    </Description>
+    <Type name="xs:token"></Type>
+  </Item>
+  <Item>
+    <Element>LocationRefId</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>
+        <code>RefId</code> of the location object if the location is a SIF object such as <code>SchoolInfo</code>.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Type of SIF object <code>Location</code> points to.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>SchoolInfo</Code>
+      </Value>
+      <Value>
+        <Code>LEAInfo</Code>
+      </Value>
+      <Value>
+        <Code>RoomInfo</Code>
+      </Value>
+    </Values>
+  </Item>
+</CommonElement>
+
+   <CommonElement name="AggregateCharacteristicInfoRefIdListType" type="true" dm="true">
+  <Item>
+    <Element>AggregateCharacteristicInfoRefIdListType</Element>
+    <Description>
+      <p>
+        Reference to one or more <code>AggregateCharacteristicInfo</code> objects.
+      </p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>AggregateCharacteristicInfoRefId</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>
+        Reference to an <code>AggregateCharacteristicInfo</code> object.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+</CommonElement>

@@ -29,18 +29,7 @@
         Reference to one or more <code>AggregateCharacteristicInfo</code> objects.
       </p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/AggregateCharacteristicInfoRefId</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>
-        Reference to an <code>AggregateCharacteristicInfo</code> object.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="AggregateCharacteristicInfoRefIdListType"></Type>
   </Item>
   <Item>
     <Element>Excluded</Element>
@@ -66,12 +55,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <AggregateStatisticFact RefId="3A4E2822C696433B812B49DEAE557E41">
