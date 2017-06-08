@@ -54,60 +54,9 @@
     <Element>TargetObjects</Element>
     <Characteristics>M</Characteristics>
     <Description>List of target objects for the learning standard linkage.</Description>
-    <List mode="List"></List>
-  </Item>
-  <Item>
-    <Element>/TargetObject</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>At least one target for the learning standard linkage.</p>
-    </Description>
+    <Type ref="CommonTypes" name="TargetObjectListType"></Type>
   </Item>
   
-  <Item>
-    <Attribute>ObjectType</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The Target Object name referenced.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>AssessmentItem</Code>
-		</Value>
-		<Value>
-			<Code>LearningResource</Code>
-		</Value>
-    </Values>
-  </Item>
-  
-  <Item>
-    <Element>//SIF_RefId</Element>
-    <Characteristics>M</Characteristics>
-	<Type ref="CommonTypes"  name="IdRefType"></Type>
-    <Description>
-      <p>The RefId for the LearningResource or AssessmentItem</p>
-    </Description>
-   
-  </Item> 
-
-  <Item>
-    <Element>//AssociationStrength</Element>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:decimal"></Type>
-	<Description>
-      <p>A number greater than 0 and less than or equal to 1. This indicates the strength of the association between the one or more Learning Standards and this target object.  </p>
-    </Description>
-  </Item>
-
-  <Item>
-    <Element>//AssociationType</Element>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:token"></Type>
-	<Description>
-      <p>The type of relationship or cardinality being modeled, e.g., predecessor, prerequisite, unidirectional, nondirectional, is a component of, etc. </p>
-    </Description>
-  </Item>
-
   
  <Item>
 	 <Element>StartDate</Element>
@@ -178,12 +127,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example name="LearningStandardAssociation Example" xmlns="">

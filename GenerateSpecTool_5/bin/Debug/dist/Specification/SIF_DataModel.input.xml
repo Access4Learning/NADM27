@@ -23415,31 +23415,21 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>Organizations</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/Organization</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Name of organization represented by the document, i.e., "National Council of Teachers of Mathematics (NCTM)," "Washington," "Seattle School District."</p>
+     <Description>
+      <p>Names of organization represented by the document, i.e., "National Council of Teachers of Mathematics (NCTM)," "Washington," "Seattle School District."</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
+   <Type ref="CommonTypes" name="OrganizationListType"></Type>
   </Item>
+
   <Item>
     <Element>Authors</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/Author</Element>
-
-    <Characteristics>OR</Characteristics>
     <Description>
       <p>Name of the organization that authored the standards document, i.e. "Mid-Continent Research for Education &amp; Learning (McREL)." May be the same as "Organization" above.</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
+   <Type ref="CommonTypes" name="AuthorListType"></Type>
   </Item>
+
   <Item>
     <Element>OrganizationContactPoint</Element>
 
@@ -23452,15 +23442,10 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SubjectAreas</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List" />
+    <Type ref="CommonTypes" name="SubjectAreaListType"></Type>
   </Item>
-  <Item>
-    <Element>/SubjectArea</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Type ref="DataModel" name="SubjectArea"></Type>
-  </Item>
-  <Item>
+ 
+ <Item>
     <Element>DocumentStatus</Element>
 
     <Characteristics>M</Characteristics>
@@ -23523,25 +23508,9 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>Copyright for document.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Date</Element>
-
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>Copyright date</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/Holder</Element>
-
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>Name of the copyright holder</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
+     <Type ref="CommonTypes" name="CopyrightType"></Type>
+ </Item>
+ 
   <Item>
     <Element>GradeLevels</Element>
 
@@ -23549,7 +23518,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>SIF common GradeLevels element</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>RepositoryDate</Element>
@@ -23573,26 +23542,18 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>RelatedLearningStandards</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/LearningStandardDocumentRefId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Links to related LearningStandardDocument</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="LearningStandardDocumentRefIdListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <LearningStandardDocument RefId="A5A575C789175101B8E7F08ED123A823" xml:lang="en">
@@ -23713,110 +23674,57 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The name of the state or organization that authored and manages updates to the standards document (i.e., NCTM, Ohio Department of Education).</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Country</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Country" />
-  </Item>
-  <Item>
-    <Element>/StateProvince</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="StateProvince" />
-  </Item>
-  <Item>
-    <Element>/NCESId</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="NCESId" />
-  </Item>
-  <Item>
-    <Element>/SettingBodyName</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This is the text version of the organization's name.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
+     <Type ref="CommonTypes" name="StandardSettingBodyType"></Type>
+ </Item>
+
   <Item>
     <Element>StandardHierarchyLevel</Element>
     <Characteristics>M</Characteristics>
     <Description>
       <p>Description of hierarchical level within standards tree.</p>
     </Description>
+     <Type ref="CommonTypes" name="StandardHierarchyLevelType"></Type>
   </Item>
-  <Item>
-    <Element>/Number</Element>
 
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Integer assigned to each hierarchical level within standards tree. The top level is "1".</p>
-    </Description>
-    <Type name="xs:unsignedInt"></Type>
-  </Item>
-  <Item>
-
-    <Element>/Description</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Used to describe what role this item is serving in the structure. Some standards describe their levels in terms of standard, strands, and topics. Others use standards, benchmarks, and indicators. This attribute names the level of the item.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
   <Item>
     <Element>PredecessorItems</Element>
 
     <Characteristics>O</Characteristics>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-
-    <Characteristics>MR</Characteristics>
     <Description>
       <p>GUID assigned to the LearningStandardItem directly above it in the hierarchy tree. This is a repeatable element because a single granular item may relate to multiple parent levels of the hierarchy.</p>
     </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+     <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
   <Item>
     <Element>StatementCodes</Element>
 
     <Characteristics>O</Characteristics>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/StatementCode</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Description>
+     <Description>
       <p>An alphanumeric Id code as defined by the organization to identify the statement.</p>
     </Description>
-    <Type name="xs:token"></Type>
+    <Type ref="CommonTypes" name="StatementCodeListType"></Type>
   </Item>
+
   <Item>
     <Element>Statements</Element>
 
     <Characteristics>O</Characteristics>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/Statement</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Description>
+   <Description>
       <p>The text of the "standard," or "benchmark."</p>
     </Description>
-    <Type name="xs:string"></Type>
+    <Type ref="CommonTypes" name="StatementListType"></Type>
   </Item>
-  <Item>
+ 
+ <Item>
     <Element>GradeLevels</Element>
 
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>SubjectArea</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SubjectArea"></Type>
+    <Type ref="CommonTypes" name="SubjectAreaType"></Type>
   </Item>
   <Item>
     <Element>StandardIdentifier</Element>
@@ -23824,88 +23732,9 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>This element describes the unique identifier for each LearningStandard.</p>
     </Description>
+    <Type ref="CommonTypes" name="StandardIdentifierType"></Type>
   </Item>
-  <Item>
-    <Element>/YearCreated</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This represents the year that this specific learning standard was created.  This is important to indicate as standards are updated to reflect the appropriate year it was created. This would be assigned and unique to the standard setting body.</p>
-    </Description>
-    <Type name="xs:gYear" />
-  </Item>
-  <Item>
-    <Element>/SubjectArea</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This represents the subject or content area this learning standard addresses. This would be assigned and unique to the standard setting body.\</p>
-    </Description>
-    <Type ref="DataModel" name="SubjectArea" />
-  </Item>
-  <Item>
-    <Element>/StandardNumber</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This is the specific number of the standard.  For example, if the subject is mathematics and this standard is Patterns, Functions and Algebra, this would be StandardNumber 1. This would be assigned and unique to the standard setting body.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
-  <Item>
-    <Element>/GradeLevels</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This represents the grade level(s) this specific learning standard will address. This may be addressed in different ways.  Some states have a grade level that covers several grades and others have just one grade. This would be assigned and unique to the standard setting body.</p>
-    </Description>
-    <Type ref="DataModel" name="GradeLevels" />
-  </Item>
-  <Item>
-    <Element>/Benchmark</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This is the next level within the hierarchy of the learning standard.  For example, if the subject is mathematics and the standard is algebra, this would be the next delineation - Represent an unknown quantity as a variable using a symbol, including letters. This would be assigned and unique to the standard setting body.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
-  <Item>
-    <Element>/GradeLevel</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This is the specific grade level.  This is to be utilized if the GradeLevel covers several grades. This would be assigned and unique to the standard setting body.</p>
-    </Description>
-    <Type ref="DataModel" name="GradeLevel" />
-  </Item>
-  <Item>
-    <Element>/IndicatorNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This would be the most granular level of the learning standard associated with the grade level. Following the same example, an indicator for Algebra GradeLevel 5-7, the indicator for the benchmark above at 6 grade would be to Evaluate simple expressions by replacing variables with given values, and use formulas in problem-solving situations. This would be assigned and unique to the standard setting body.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
-  <Item>
-    <Element>/AlternateIdentificationCodes</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This element is for an organization to utilize for an internal code.  This may be used for an alignment schema or other purposes that are only internal for the organization.</p>
-    </Description>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>//AlternateIdentificationCode</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>An alphanumeric Id code as defined by the organization to identify the statement.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
-  <Item>
-    <Element>/Organization</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Name of organization represented by the document, i.e., "National Council of Teachers of Mathematics (NCTM)," "Washington," "Seattle School District." This is the name of the organization that has this AlternateIdentificationCode. This should be a text field.</p>
-    </Description>
-    <Type name="xs:normalizedString" />
-  </Item>
-
+ 
   <Item>
     <Element>LearningStandardDocumentRefId</Element>
 
@@ -23921,26 +23750,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>Container for external relationships.</p>
     </Description>
-    <List mode="List" />
-  </Item>
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>A relationship between the current standard item and another standard item.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>RelationshipType</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Type of the relationship between the current standard and the target standard.  The value identifies the type of standard of the target item. The purpose of this information is to allow applications to sort/display these relationships in the appropriate context.</p>
-    </Description>
-    <Union>
-      <Type ref="CodeSets" name="LearningStandardItemRelationshipTypesType" />
-      <Type name="xs:token" />
-    </Union>
+    <Type ref="CommonTypes" name="RelatedLearningStandardItemRefIdListType"></Type>
   </Item>
 
   <Item>
@@ -23964,13 +23774,13 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example name="LearningStandardItem - Example 1" xmlns="">
     <LearningStandardItem RefId="A5D75F789175101B8C7E08EA123A8234" xml:lang="en">
@@ -24304,54 +24114,23 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>SourceObjects</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/SourceObject</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
-			<p>Reference to the source object.</p>
+			<p>Reference to the source objects.</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType" />
-	</Item>
-	<Item>
-		<Attribute>SIF_RefObject</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The type of learning object being referred to.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Assessment</Code>
-			</Value>
-			<Value>
-				<Code>LearningResource</Code>
-			</Value>
-			<Value>
-				<Code>Activity</Code>
-			</Value>
-			<Value>
-				<Code>Lesson</Code>
-			</Value>
-		</Values>
+		<Type ref="CommonTypes" name="SourceObjectListType" />
 	</Item>
 	<Item>
 		<Element>CurriculumStructures</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/CurriculumStructureRefId</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
-			<p>A GUID reference to the parent CurriculumStructure object of this Lesson.</p>
+			<p>GUID references to the parent CurriculumStructure object of this Lesson.</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType" />
+		<Type ref="CommonTypes" name="CurriculumStructuresRefIdListType" />
 	</Item>
 	<Item>
 		<Element>SubjectArea</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SubjectArea" />
+		<Type ref="CommonTypes" name="SubjectAreaType" />
 	</Item>
 	<Item>
 		<Element>Title</Element>
@@ -24412,128 +24191,61 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>Strategies</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/Strategy</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
-			<p>Teaching strategy used in this lesson plan.</p>
+			<p>Teaching strategies used in this lesson plan.</p>
 		</Description>
-		<Type name="xs:normalizedString" />
+		<Type ref="CommonTypes" name="LessonStrategyListType" />
 	</Item>
 	<Item>
 		<Element>LearningObjectives</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/LearningObjective</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
 			<p>Description of learning objective(s) for this lesson, i.e., "Student will be able to use Pythagorean Theorem."—equates to 'benchmark' or 'goal' or other terminology</p>
 		</Description>
-		<Type name="xs:string" />
+		<Type ref="CommonTypes" name="LearningObjectiveListType" />
 	</Item>
 	<Item>
 		<Element>SupportingActivities</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/ActivityRefId</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
 			<p>Links to Activity objects that may support the lesson</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType" />
+		<Type ref="CommonTypes" name="ActivityRefIdListType" />
 	</Item>
 	<Item>
 		<Element>LearningStandards</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/LearningStandardItemRefId</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
-			<p>Link to an associated LearningStandardItem. This allows for a single Lesson to be aligned to multiple standard statements.</p>
+			<p>Link to associated LearningStandardItems. This allows for a single Lesson to be aligned to multiple standard statements.</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType" />
+		<Type ref="CommonTypes" name="LearningStandardItemRefIdListType" />
 	</Item>
 	<Item>
 		<Element>LearningResources</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/LearningResourceRefId</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
-			<p>Link to an aligned LearningResource object.</p>
+			<p>Links to  aligned LearningResource objects.</p>
 		</Description>
-		<Type ref="CommonTypes" name="IdRefType" />
+		<Type ref="CommonTypes" name="LearningResourceRefIdListType" />
 	</Item>
 	<Item>
 		<Element>LessonSources</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List" />
-	</Item>
-	<Item>
-		<Element>/LessonSource</Element>
-		<Characteristics>OR</Characteristics>
 		<Description>
 			<p>One or more sources for the lesson. This describes the lesson's origin.</p>
 		</Description>
+			<Type ref="CommonTypes" name="LessonSourceListType" />
 	</Item>
-	<Item>
-		<Element>//Author</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>For each source, the authors of the source.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Element>///Name</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Name of the author.</p>
-		</Description>
-		<Type ref="DataModel" name="Name" />
-	</Item>
-	<Item>
-		<Element>///Organization</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Organization name.</p>
-		</Description>
-		<Type name="xs:normalizedString" />
-	</Item>
-	<Item>
-		<Element>///Address</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Address of the author.</p>
-		</Description>
-		<Type ref="DataModel" name="Address" />
-	</Item>
-	<Item>
-		<Element>///Email</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Email address of the author.</p>
-		</Description>
-		<Type ref="DataModel" name="Email" />
-	</Item>
+
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata" />
+		<Type ref="CommonTypes" name="SIF_MetadataType" />
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements" />
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType" />
 	</Item>
 	<xhtml:Example xmlns="">
 		<Lesson RefId="6A6151B83273F352228C6411D0F09218" xml:lang="en">
@@ -25703,7 +25415,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 			<p>The Social Security number of the person.</p>
 		</Description>
 		<!--<Type name="xs:string"></Type>-->
-		<Type ref="DataModel" name="SSN" /> 
+		<Type ref="CommonTypes" name="SSNType" /> 
 	</Item>
 	<Item>
 		<Element>DriversLicenseNumber</Element>
@@ -25719,7 +25431,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 		<Description>
 			<p>The state/province that issued the driver's license.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvince"></Type>
+		<Type ref="CommonTypes" name="StateProvinceType"></Type>
 	</Item>
 	<Item>
 		<Element>PersonId</Element>
@@ -25727,7 +25439,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 		<Description>
 			<p>The state-assigned identifier for this person.  This will probably not be the same State Province Id as the one assigned to the various roles such as StudentPersonal.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId" />
+		<Type ref="CommonTypes" name="StateProvinceIdType" />
 	</Item>
 	<Item>
 		<Attribute>Label</Attribute>
@@ -25744,7 +25456,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 		<Description>
 			<p>Electronic identifier(s) associated with this entity.</p>
 		</Description>
-		<Type ref="DataModel" name="ElectronicIdList" />
+		<Type ref="CommonTypes" name="ElectronicIdListType" />
 	</Item>
 	
 	<Item>
@@ -25753,7 +25465,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>Common element containing person demographic information.</p>
     </Description>
-    <Type ref="DataModel" name="PersonInfo"></Type>
+    <Type ref="CommonTypes" name="PersonInfoType"></Type>
   </Item>
 	
 	
@@ -25769,12 +25481,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata" />
+		<Type ref="CommonTypes" name="SIF_MetadataType" />
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements" />
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType" />
 	</Item>
 	
 	<xhtml:Example xmlns="">
@@ -26018,12 +25730,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata" />
+		<Type ref="CommonTypes" name="SIF_MetadataType" />
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements" />
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType" />
 	</Item>
 	
 	<xhtml:Example xmlns="">
@@ -26127,32 +25839,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Description>
 	  <p>A list of persons providing the intervention.</p>
 	</Description>
-	<List mode="List"></List>
- </Item> 
-  
- <Item>
-	<Element>/InterventionProviderName</Element>
-	<Characteristics>MR</Characteristics>
-	<Description>
-	  <p>The person providing the intervention.</p>
-	</Description>
- </Item>
-  <Item>
-	<Attribute>StaffPersonalRefId</Attribute>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The StaffPersonalRefId of the staff member.  Either the StaffPersonalRefId of the staff member or name must be provided</p>
-	</Description>
-	<Type ref="CommonTypes" name="IdRefType"></Type>
- </Item>
- 
-  <Item>
-	<Element>//OtherProvider</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The name of the person if not a staff member. Either the StaffPersonalRefId of the staff member or name must be provided.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
+	<Type ref="CommonTypes" name="InterventionProviderNameListType"></Type>
  </Item>
  
  <Item>
@@ -26170,65 +25857,10 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Description>
 	  <p>The list of interventions applied here.</p>
 	</Description>
-	<List mode="List"></List>
+	<Type ref="CommonTypes" name="InterventionListType"></Type>
  </Item>
  
-  <Item>
-	<Element>/Intervention</Element>
-	<Characteristics>MR</Characteristics>
-	<Description>
-	  <p>Details of an intervention.</p>
-	</Description>
- </Item>
- <Item>
-	<Element>//InterventionName</Element>
-	<Characteristics>M</Characteristics>
-	<Description>
-	  <p>Naming of the intervention.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- <Item>
-	<Element>//InterventionDescription</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>Description of the intervention.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- <Item>
-	<Element>//InterventionType</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The description of the type of intervention that is delivered.</p>
-	</Description>
-	<Values>
-		<Value>
-			<Code>Face-to-face</Code>
-		</Value>
-		<Value>
-			<Code>Computer Assisted</Code>
-		</Value>
-	</Values>
- </Item>
- <Item>
-	<Element>//InterventionDelivery</Element>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>How the instruction is delivered.</p>
-	</Description>
-	<Values>
-		<Value>
-			<Code>Group</Code>
-		</Value>
-		<Value>
-			<Code>Individual</Code>
-		</Value>
-		<Value>
-			<Code>Whole Class</Code>
-		</Value>
-	</Values>
- </Item>
+
  
  <Item>
 	<Element>SubjectArea</Element>
@@ -26236,7 +25868,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 	<Description>
 	  <p>The subject for which this intervention is intended.</p>
 	</Description>
-   <Type ref="DataModel" name="SubjectArea"></Type>
+   <Type ref="CommonTypes" name="SubjectAreaType"></Type>
    </Item>
   
   <Item>
@@ -26245,100 +25877,24 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>List of LearningStandardItems.</p>
     </Description>
-    <List mode="List"></List>
-  </Item>
-  
-   <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>GUID that references the LearningStandardItem object that contains information related to curriculum standards statements "standards" or "benchmarks" or the like within the document. This object primarily focuses upon state department curriculum standards, published curriculum standards and local education agency learning standards. Each LearningStandardItem reflects an individual standard statement and may occur at several levels within a hierarchially structured document.  </p>
-    </Description>
-   <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
   
   <Item>
     <Element>LearningObjectives</Element>
     <Characteristics>O</Characteristics>
-    <Description>
-      <p>List of learning objectives.</p>
-    </Description>
-    <List mode="List"></List>
-  </Item>
-  <Item>
-    <Element>/LearningObjective</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
+   <Description>
       <p>The specific learning objective(s) being addressed by this intervention.</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
+     <Type ref="CommonTypes" name="LearningObjectiveListType"></Type>
   </Item>  
   
    <Item>
     <Element>Measurements</Element>
     <Characteristics>O</Characteristics>
-     <List mode="List"></List>
+     <Type ref="CommonTypes" name="ResponseToInterventionMeasurementListType"></Type>
   </Item>
-   <Item>
- 	  <Element>/Measurement</Element>
-	   <Characteristics>MR</Characteristics>
-		<Description>
-		  <p></p>
-		</Description>
-  </Item>    
-  <Item>
-    <Element>//MeasurementTool</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The specific tool that will be used to gather data about how the student is improving.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-  <Item>
-    <Element>//FrequencyofMeasure</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The frequency of the measuement.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>S001</Code> 
-			<Description>Weekly</Description>
-		</Value>
-		<Value>
-			<Code>S002</Code> 
-			<Description>Bi-weekly</Description>
-		</Value>
-		<Value>
-			<Code>S003</Code> 
-			<Description>Semi-monthly</Description>
-		</Value>
-		<Value>
-			<Code>S004</Code> 
-			<Description>Monthly</Description>
-		</Value>
-		<Value>
-			<Code>S005</Code> 
-			<Description>Quarterly</Description>
-		</Value>
-		<Value>
-			<Code>S006</Code> 
-			<Description>Semi-annually</Description>
-		</Value>
-		<Value>
-			<Code>S007</Code> 
-			<Description>Annually</Description>
-		</Value>
-		<Value>
-			<Code>S008</Code> 
-			<Description>Daily</Description>
-		</Value>
-		<Value>
-			<Code>S999</Code> 
-			<Description>Other</Description>
-		</Value>
-    </Values>
-  </Item>    
+  
   
   <Item>
     <Element>Baselines</Element>
@@ -26346,16 +25902,8 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>List of pre-assessment data used to evaluate the student on the learning objective.</p>
     </Description>
-    <List mode="List"></List>
+     <Type ref="CommonTypes" name="BaselineListType"></Type>
   </Item>
-  <Item>
-    <Element>/Baseline</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The pre-assessment data to evaluate the student on the learning objective.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
   
   <Item>
     <Element>Targets</Element>
@@ -26363,17 +25911,9 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>List of specific end aims.</p>
     </Description>
-    <List mode="List"></List>
+     <Type ref="CommonTypes" name="TargetListType"></Type>
   </Item>
-  <Item>
-    <Element>/Target</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The specific end aim that is desired to achieve for the student.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-    
+     
   <Item>
 	<Element>EntryDate</Element>
 	<Characteristics>O</Characteristics>
@@ -26407,60 +25947,9 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>The frequency of the intervention.</p>
     </Description>
+     <Type ref="CommonTypes" name="InterventionFrequencyTimeType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The frequency in segments of time.</p>
-    </Description>
-      <Values>
-		<Value>
-			<Code>S001</Code> 
-			<Description>Weekly</Description>
-		</Value>
-		<Value>
-			<Code>S002</Code> 
-			<Description>Bi-weekly</Description>
-		</Value>
-		<Value>
-			<Code>S003</Code> 
-			<Description>Semi-monthly</Description>
-		</Value>
-		<Value>
-			<Code>S004</Code> 
-			<Description>Monthly</Description>
-		</Value>
-		<Value>
-			<Code>S005</Code> 
-			<Description>Quarterly</Description>
-		</Value>
-		<Value>
-			<Code>S006</Code> 
-			<Description>Semi-annually</Description>
-		</Value>
-		<Value>
-			<Code>S007</Code> 
-			<Description>Annually</Description>
-		</Value>
-		<Value>
-			<Code>S008</Code> 
-			<Description>Daily</Description>
-		</Value>
-		<Value>
-			<Code>S999</Code> 
-			<Description>Other</Description>
-		</Value>
-    </Values>
-  </Item>
-   <Item>
-    <Element>/Duration</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The actual duration of the frequency of the intervention.  For example, if the student is to have the intervention for 40 minutes, then 40 would be entered.</p>
-    </Description>
-    <Type name="xs:integer"></Type>
-   </Item>
+ 
    
    <Item>
    <Attribute>UnitOfMeasure</Attribute>
@@ -26482,14 +25971,14 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example xmlns="">
@@ -26602,7 +26091,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>A local ID that may be used to identify this intervention for the student.</p>
     </Description>
-	<Type ref="DataModel" name="LocalId" />
+	<Type ref="CommonTypes" name="LocalIdType" />
    </Item>
    
    <Item>
@@ -26617,82 +26106,13 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
    <Item>
     <Element>PerformanceIndicators</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"></List>
-  </Item>
-  <Item>
-    <Element>/PerformanceIndicator</Element>
-    <Characteristics>MR</Characteristics>
     <Description>
-      <p>The specific measurement goal at the end of the intervention that each student should reach.</p>
+      <p>The specific measurement goals at the end of the intervention that each student should reach.</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
+	<Type ref="CommonTypes" name="ResponseToInterventionMeasurementListType" />
+  </Item>
+ 
   
-   <Item>
-    <Element>Measurements</Element>
-    <Characteristics>O</Characteristics>
-     <List mode="List"></List>
-  </Item>
-  <Item>
- 	  <Element>/Measurement</Element>
-	   <Characteristics>MR</Characteristics>
-		<Description>
-		  <p></p>
-		</Description>
-  </Item>    
-  <Item>
-    <Element>//MeasurementTool</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The specific tool that will be used to gather data about how the student is improving.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-  <Item>
-    <Element>//FrequencyofMeasure</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The frequency of the measuement.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>S001</Code> 
-			<Description>Weekly</Description>
-		</Value>
-		<Value>
-			<Code>S002</Code> 
-			<Description>Bi-weekly</Description>
-		</Value>
-		<Value>
-			<Code>S003</Code> 
-			<Description>Semi-monthly</Description>
-		</Value>
-		<Value>
-			<Code>S004</Code> 
-			<Description>Monthly</Description>
-		</Value>
-		<Value>
-			<Code>S005</Code> 
-			<Description>Quarterly</Description>
-		</Value>
-		<Value>
-			<Code>S006</Code> 
-			<Description>Semi-annually</Description>
-		</Value>
-		<Value>
-			<Code>S007</Code> 
-			<Description>Annually</Description>
-		</Value>
-		<Value>
-			<Code>S008</Code> 
-			<Description>Daily</Description>
-		</Value>
-		<Value>
-			<Code>S999</Code> 
-			<Description>Other</Description>
-		</Value>
-    </Values>
-  </Item>       
    
   <Item>
     <Element>Baselines</Element>
@@ -26700,59 +26120,35 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Description>
       <p>List of pre-assessment data used to evaluate the student on the learning objective.</p>
     </Description>
-    <List mode="List"></List>
+	<Type ref="CommonTypes" name="BaselineListType" />
   </Item>
-  <Item>
-    <Element>/Baseline</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The pre-assessment data to evaluate the student on the learning objective.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
-  
+   
   <Item>
     <Element>Targets</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>List of specific end aims.</p>
     </Description>
-    <List mode="List"></List>
+	<Type ref="CommonTypes" name="TargetListType" />
   </Item>
-  <Item>
-    <Element>/Target</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The specific end aim that is desired to achieve for the student.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-  
+   
   <Item>
     <Element>Results</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"></List>
+	<Type ref="CommonTypes" name="ResultListType" />
   </Item>
-  <Item>
-    <Element>/Result</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>This represents the results based on each measurement period.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
- 
+  
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example xmlns="">
@@ -26844,60 +26240,9 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
     <Element>TargetObjects</Element>
     <Characteristics>M</Characteristics>
     <Description>List of target objects for the learning standard linkage.</Description>
-    <List mode="List"></List>
-  </Item>
-  <Item>
-    <Element>/TargetObject</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>At least one target for the learning standard linkage.</p>
-    </Description>
+    <Type ref="CommonTypes" name="TargetObjectListType"></Type>
   </Item>
   
-  <Item>
-    <Attribute>ObjectType</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The Target Object name referenced.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>AssessmentItem</Code>
-		</Value>
-		<Value>
-			<Code>LearningResource</Code>
-		</Value>
-    </Values>
-  </Item>
-  
-  <Item>
-    <Element>//SIF_RefId</Element>
-    <Characteristics>M</Characteristics>
-	<Type ref="CommonTypes" name="IdRefType"></Type>
-    <Description>
-      <p>The RefId for the LearningResource or AssessmentItem</p>
-    </Description>
-   
-  </Item> 
-
-  <Item>
-    <Element>//AssociationStrength</Element>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:decimal"></Type>
-	<Description>
-      <p>A number greater than 0 and less than or equal to 1. This indicates the strength of the association between the one or more Learning Standards and this target object.  </p>
-    </Description>
-  </Item>
-
-  <Item>
-    <Element>//AssociationType</Element>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:token"></Type>
-	<Description>
-      <p>The type of relationship or cardinality being modeled, e.g., predecessor, prerequisite, unidirectional, nondirectional, is a component of, etc. </p>
-    </Description>
-  </Item>
-
   
  <Item>
 	 <Element>StartDate</Element>
@@ -26968,12 +26313,12 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example name="LearningStandardAssociation Example" xmlns="">
@@ -47097,6 +46442,818 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Type ref="CommonTypes" name="ObjectNameType"></Type>
   </Item>
 </CommonElement>
+
+<CommonElement name="TargetObjectListType" type="true" dm="true">
+ <Item>
+    <Element>TargetObjectListType</Element>
+    <Description>List of target objects for the learning standard linkage.</Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>TargetObject</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>At least one target for the learning standard linkage.</p>
+    </Description>
+     <Type ref="CommonTypes" name="TargetObjectType"></Type>
+ </Item>
+ </CommonElement>
+  
+<CommonElement name="TargetObjectType" type="true" dm="true">
+   <Item>
+    <Element>TargetObjectType</Element>
+    <Description>
+      <p>Target object for the learning standard linkage.</p>
+    </Description>
+ </Item>
+ <Item>
+    <Attribute>ObjectType</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Target Object name referenced.</p>
+    </Description>
+    <Values>
+		<Value>
+			<Code>AssessmentItem</Code>
+		</Value>
+		<Value>
+			<Code>LearningResource</Code>
+		</Value>
+    </Values>
+  </Item>
+  
+  <Item>
+    <Element>SIF_RefId</Element>
+    <Characteristics>M</Characteristics>
+	<Type ref="CommonTypes" name="IdRefType"></Type>
+    <Description>
+      <p>The RefId for the LearningResource or AssessmentItem</p>
+    </Description>
+   
+  </Item> 
+
+  <Item>
+    <Element>AssociationStrength</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:decimal"></Type>
+	<Description>
+      <p>A number greater than 0 and less than or equal to 1. This indicates the strength of the association between the one or more Learning Standards and this target object.  </p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>AssociationType</Element>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:token"></Type>
+	<Description>
+      <p>The type of relationship or cardinality being modeled, e.g., predecessor, prerequisite, unidirectional, nondirectional, is a component of, etc. </p>
+    </Description>
+  </Item>
+  </CommonElement>
+  
+<CommonElement name="OrganizationListType" type="true" dm="true">
+    <Item>
+    <Element>OrganizationListType</Element>
+   <Description>
+      <p>Names of organizations</p>
+    </Description>
+    <List mode="List" />
+  </Item>
+  <Item>
+    <Element>Organization</Element>
+
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Name of organization</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="AuthorListType" type="true" dm="true">
+  <Item>
+    <Element>AuthorListType</Element>
+    <Characteristics>O</Characteristics>
+     <Description>
+      <p>Names of authors</p>
+    </Description>
+    <List mode="List" />
+ </Item>
+  <Item>
+    <Element>Author</Element>
+
+    <Characteristics>OR</Characteristics>
+     <List mode="List" />
+     <Description>
+      <p>Name of author</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="CopyrightType" type="true" dm="true">
+  <Item>
+    <Element>CopyrightType</Element>
+    <Description>
+      <p>Copyright for a document.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Date</Element>
+
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>Copyright date</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>Holder</Element>
+
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>Name of the copyright holder</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+</CommonElement> 
+
+<CommonElement name="LearningStandardDocumentRefIdListType" type="true" dm="true">
+ <Item>
+    <Element>LearningStandardDocumentRefIdListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Links to LearningStandardDocument objects</p>
+    </Description>
+    <List mode="List" />
+  </Item>
+  <Item>
+    <Element>LearningStandardDocumentRefId</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Link to  LearningStandardDocument</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="StandardHierarchyLevelType" type="true" dm="true">
+     <Item>
+        <Element>StandardHierarchyLevelType</Element>
+        <Description>
+          <p>Description of hierarchical level within standards tree.</p>
+        </Description>
+      </Item>
+      <Item>
+        <Element>Number</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>
+            Integer assigned to each hierarchical level within the CurriculumStructure tree. The top level is <code>1</code>.
+          </p>
+        </Description>
+        <Type name="xs:unsignedInt"></Type>
+      </Item>
+      <Item>
+
+        <Element>Description</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Used to describe what role this is serving in the structure. Some curriculum objects describe their levels in terms of programs of study, courses and units. Others use other terms.</p>
+        </Description>
+        <Type name="xs:string"></Type>
+      </Item>
+</CommonElement>
+
+<CommonElement name="StatementListType" type="true" dm="true">
+ <Item>
+    <Element>StatementListType</Element>
+    <Description>
+      <p>A list of texts of the "standard," or "benchmark."</p>
+    </Description>
+   <List mode="List" />
+  </Item>
+  <Item>
+    <Element>Statement</Element>
+
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The text of the "standard," or "benchmark."</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="StandardIdentifierType" type="true" dm="true">
+  <Item>
+    <Element>StandardIdentifierType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This element describes the unique identifier for each LearningStandard.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>YearCreated</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This represents the year that this specific learning standard was created.  This is important to indicate as standards are updated to reflect the appropriate year it was created. This would be assigned and unique to the standard setting body.</p>
+    </Description>
+    <Type name="xs:gYear" />
+  </Item>
+  <Item>
+    <Element>SubjectArea</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This represents the subject or content area this learning standard addresses. This would be assigned and unique to the standard setting body.\</p>
+    </Description>
+    <Type ref="CommonTypes" name="SubjectAreaType" />
+  </Item>
+  <Item>
+    <Element>StandardNumber</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This is the specific number of the standard.  For example, if the subject is mathematics and this standard is Patterns, Functions and Algebra, this would be StandardNumber 1. This would be assigned and unique to the standard setting body.</p>
+    </Description>
+    <Type name="xs:normalizedString" />
+  </Item>
+  <Item>
+    <Element>GradeLevels</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This represents the grade level(s) this specific learning standard will address. This may be addressed in different ways.  Some states have a grade level that covers several grades and others have just one grade. This would be assigned and unique to the standard setting body.</p>
+    </Description>
+    <Type ref="CommonTypes" name="GradeLevelsType" />
+  </Item>
+  <Item>
+    <Element>Benchmark</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This is the next level within the hierarchy of the learning standard.  For example, if the subject is mathematics and the standard is algebra, this would be the next delineation - Represent an unknown quantity as a variable using a symbol, including letters. This would be assigned and unique to the standard setting body.</p>
+    </Description>
+    <Type name="xs:normalizedString" />
+  </Item>
+  <Item>
+    <Element>GradeLevel</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This is the specific grade level.  This is to be utilized if the GradeLevel covers several grades. This would be assigned and unique to the standard setting body.</p>
+    </Description>
+    <Type ref="CommonTypes" name="GradeLevelType" />
+  </Item>
+  <Item>
+    <Element>IndicatorNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This would be the most granular level of the learning standard associated with the grade level. Following the same example, an indicator for Algebra GradeLevel 5-7, the indicator for the benchmark above at 6 grade would be to Evaluate simple expressions by replacing variables with given values, and use formulas in problem-solving situations. This would be assigned and unique to the standard setting body.</p>
+    </Description>
+    <Type name="xs:normalizedString" />
+  </Item>
+  <Item>
+    <Element>AlternateIdentificationCodes</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This element is for an organization to utilize for an internal code.  This may be used for an alignment schema or other purposes that are only internal for the organization.</p>
+    </Description>
+    <Type ref="CommonTypes" name="AlternateIdentificationCodeListType" />
+  </Item>
+  <Item>
+    <Element>Organization</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Name of organization represented by the document, i.e., "National Council of Teachers of Mathematics (NCTM)," "Washington," "Seattle School District." This is the name of the organization that has this AlternateIdentificationCode. This should be a text field.</p>
+    </Description>
+    <Type name="xs:normalizedString" />
+  </Item>
+ </CommonElement>
+
+<CommonElement name="AlternateIdentificationCodeListType" type="true" dm="true">
+ <Item>
+    <Element>AlternateIdentificationCodeListType</Element>
+    <Description>
+      <p>A list of alphanumeric Id codes as defined by the organization to identify a statement.</p>
+    </Description>
+    <List mode="List" />
+  </Item>
+  <Item>
+    <Element>AlternateIdentificationCode</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>An alphanumeric Id code as defined by the organization to identify a statement.</p>
+    </Description>
+    <Type name="xs:normalizedString" />
+  </Item>
+</CommonElement>
+
+<CommonElement name="RelatedLearningStandardItemRefIdListType" type="true" dm="true">
+	<Item>
+		<Element>RelatedLearningStandardItemRefIdListType</Element>
+		<Description>
+			<p>Associated <code>LearningStandardItem</code> objects, capturing the type of relation.</p>
+		</Description>
+		<List mode="List" />
+	</Item>
+	<Item>
+		<Element>LearningStandardItemRefId</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Link to associated LearningStandardItem object.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType" />
+	</Item>
+  <Item>
+    <Attribute>RelationshipType</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Type of the relationship between the current standard and the target standard.  The value identifies the type of standard of the target item. The purpose of this information is to allow applications to sort/display these relationships in the appropriate context.</p>
+    </Description>
+    <Union>
+      <Type ref="CodeSets" name="LearningStandardItemRelationshipTypesType" />
+      <Type name="xs:token" />
+    </Union>
+  </Item>
+</CommonElement>
+
+<CommonElement name="CurriculumStructuresRefIdListType" type="true" dm="true">
+	<Item>
+		<Element>CurriculumStructuresRefIdListType</Element>
+		<Description>
+			<p>GUID references to the parent CurriculumStructure object of a Lesson.</p>
+		</Description>
+		<List mode="List" />
+	</Item>
+	<Item>
+		<Element>CurriculumStructureRefId</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>A GUID reference to the parent CurriculumStructure object of a Lesson.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="LessonStrategyListType" type="true" dm="true">
+	<Item>
+		<Element>LessonStrategyListType</Element>
+		<Description>
+			<p>Teaching strategies used in a lesson plan.</p>
+		</Description>
+		<List mode="List" />
+	</Item>
+	<Item>
+		<Element>Strategy</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Teaching strategy used in a lesson plan.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="ActivityRefIdListType" type="true" dm="true">
+	<Item>
+		<Element>ActivityRefIdListType</Element>
+		<Description>
+			<p>Links to Activity objects</p>
+		</Description>
+		<List mode="List" />
+	</Item>
+	<Item>
+		<Element>ActivityRefId</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Link to Activity object</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="LearningResourceRefIdListType" type="true" dm="true">
+	<Item>
+		<Element>LearningResourceRefIdListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Links to  aligned LearningResource objects.</p>
+		</Description>
+		<List mode="List" />
+	</Item>
+	<Item>
+		<Element>LearningResourceRefId</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>Link to an aligned LearningResource object.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="LessonSourceListType" type="true" dm="true">
+	<Item>
+		<Element>LessonSourceListType</Element>
+		<Description>
+			<p>One or more sources for the lesson. This describes the lesson's origin.</p>
+		</Description>
+		<List mode="List" />
+	</Item>
+	<Item>
+		<Element>LessonSource</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>One or more sources for the lesson. This describes the lesson's origin.</p>
+		</Description>
+		<Type ref="CommonTypes" name="LessonSourceType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="LessonSourceType" type="true" dm="true">
+	<Item>
+		<Element>LessonSourceType</Element>
+		<Description>
+			<p>One or more sources for the lesson. This describes the lesson's origin.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Author</Element>
+		<Characteristics>OR</Characteristics>
+		<Description>
+			<p>For each lesson source, the authors of the source.</p>
+		</Description>
+		<Type ref="CommonTypes" name="LessonSourceAuthorType" />
+	</Item>
+	</CommonElement>
+<CommonElement name="LessonSourceAuthorType" type="true" dm="true">
+	<Item>
+		<Element>LessonSourceAuthorType</Element>
+		<Description>
+			<p>For each lesson source, the author of the source.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Name of the author.</p>
+		</Description>
+		<Type ref="CommonElement" name="NameOfRecordType" />
+	</Item>
+	<Item>
+		<Element>Organization</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Organization name.</p>
+		</Description>
+		<Type name="xs:normalizedString" />
+	</Item>
+	<Item>
+		<Element>Address</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Address of the author.</p>
+		</Description>
+		<Type ref="CommonTypes" name="AddressType" />
+	</Item>
+	<Item>
+		<Element>Email</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Email address of the author.</p>
+		</Description>
+		<Type ref="CommonTypes" name="EmailType" />
+	</Item>
+</CommonElement>
+
+<CommonElement name="InterventionProviderNameListType" type="true" dm="true">
+<Item>
+	<Element>InterventionProviderNameListType</Element>
+	<Description>
+	  <p>A list of persons providing an intervention.</p>
+	</Description>
+	<List mode="List"></List>
+ </Item> 
+  
+ <Item>
+	<Element>InterventionProviderName</Element>
+	<Characteristics>MR</Characteristics>
+	<Description>
+	  <p>The person providing the intervention.</p>
+	</Description>
+ 		<Type ref="CommonTypes" name="InterventionProviderNameType" />
+</Item>
+</CommonElement>
+<CommonElement name="InterventionProviderNameType" type="true" dm="true">
+  <Item>
+	<Element>InterventionProviderNameType</Element>
+	<Description>
+	  <p>The person providing the intervention.</p>
+	</Description>
+</Item>
+ <Item>
+	<Attribute>StaffPersonalRefId</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The StaffPersonalRefId of the staff member.  Either the StaffPersonalRefId of the staff member or name must be provided</p>
+	</Description>
+	<Type ref="CommonTypes" name="IdRefType"></Type>
+ </Item>
+ 
+  <Item>
+	<Element>OtherProvider</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The name of the person if not a staff member. Either the StaffPersonalRefId of the staff member or name must be provided.</p>
+	</Description>
+	<Type name="xs:normalizedString"></Type>
+ </Item>
+ </CommonElement>
+ 
+<CommonElement name="InterventionListType" type="true" dm="true">
+   <Item>
+	<Element>InterventionListType</Element>
+	<Description>
+	  <p>The list of interventions applied.</p>
+	</Description>
+	<List mode="List"></List>
+ </Item>
+ 
+  <Item>
+	<Element>Intervention</Element>
+	<Characteristics>MR</Characteristics>
+	<Description>
+	  <p>Details of an intervention.</p>
+	</Description>
+	<Type ref="CommonTypes" name="Intervention2Type"></Type>
+ </Item>
+ </CommonElement>
+ 
+ <CommonElement name="Intervention2Type" type="true" dm="true">
+ <Item>
+	<Element>Intervention2Type</Element>
+	<Description>
+	  <p>Details of an intervention.</p>
+	</Description>
+ </Item>
+<Item>
+	<Element>InterventionName</Element>
+	<Characteristics>M</Characteristics>
+	<Description>
+	  <p>Naming of the intervention.</p>
+	</Description>
+	<Type name="xs:normalizedString"></Type>
+ </Item>
+ <Item>
+	<Element>InterventionDescription</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>Description of the intervention.</p>
+	</Description>
+	<Type name="xs:normalizedString"></Type>
+ </Item>
+ <Item>
+	<Element>InterventionType</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The description of the type of intervention that is delivered.</p>
+	</Description>
+	<Values>
+		<Value>
+			<Code>Face-to-face</Code>
+		</Value>
+		<Value>
+			<Code>Computer Assisted</Code>
+		</Value>
+	</Values>
+ </Item>
+ <Item>
+	<Element>InterventionDelivery</Element>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>How the instruction is delivered.</p>
+	</Description>
+	<Values>
+		<Value>
+			<Code>Group</Code>
+		</Value>
+		<Value>
+			<Code>Individual</Code>
+		</Value>
+		<Value>
+			<Code>Whole Class</Code>
+		</Value>
+	</Values>
+ </Item>
+ </CommonElement>
+  <CommonElement name="ResponseToInterventionMeasurementListType" type="true" dm="true">
+  <Item>
+    <Element>ResponseToInterventionMeasurementListType</Element>
+    <Characteristics>O</Characteristics>
+     <List mode="List"></List>
+  </Item>
+   <Item>
+ 	  <Element>Measurement</Element>
+	   <Characteristics>MR</Characteristics>
+		<Description>
+		  <p></p>
+		</Description>
+	<Type ref="CommonTypes" name="ResponseToInterventionMeasurementType"></Type>
+  </Item>
+</CommonElement>
+
+  
+   <CommonElement name="ResponseToInterventionMeasurementType" type="true" dm="true">
+    <Item>
+ 	  <Element>ResponseToInterventionMeasurementType</Element>
+		<Description>
+		  <p></p>
+		</Description>
+  </Item>
+<Item>
+    <Element>MeasurementTool</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The specific tool that will be used to gather data about how the student is improving.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>    
+  <Item>
+    <Element>FrequencyofMeasure</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The frequency of the measuement.</p>
+    </Description>
+    <Values>
+		<Value>
+			<Code>S001</Code> 
+			<Description>Weekly</Description>
+		</Value>
+		<Value>
+			<Code>S002</Code> 
+			<Description>Bi-weekly</Description>
+		</Value>
+		<Value>
+			<Code>S003</Code> 
+			<Description>Semi-monthly</Description>
+		</Value>
+		<Value>
+			<Code>S004</Code> 
+			<Description>Monthly</Description>
+		</Value>
+		<Value>
+			<Code>S005</Code> 
+			<Description>Quarterly</Description>
+		</Value>
+		<Value>
+			<Code>S006</Code> 
+			<Description>Semi-annually</Description>
+		</Value>
+		<Value>
+			<Code>S007</Code> 
+			<Description>Annually</Description>
+		</Value>
+		<Value>
+			<Code>S008</Code> 
+			<Description>Daily</Description>
+		</Value>
+		<Value>
+			<Code>S999</Code> 
+			<Description>Other</Description>
+		</Value>
+    </Values>
+  </Item>   
+</CommonElement>  
+
+    <CommonElement name="BaselineListType" type="true" dm="true">
+<Item>
+    <Element>BaselineListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of pre-assessment data used to evaluate the student on the learning objective.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>Baseline</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The pre-assessment data to evaluate the student on the learning objective.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>  
+</CommonElement>
+
+    <CommonElement name="TargetListType" type="true" dm="true">
+  <Item>
+    <Element>TargetListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of specific end aims.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>Target</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The specific end aim that is desired to achieve for the student.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>    
+</CommonElement>
+
+     <CommonElement name="InterventionFrequencyTimeType" type="true" dm="true">
+  <Item>
+    <Element>InterventionFrequencyTimeType</Element>
+    <Description>
+      <p>The frequency of the intervention.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The frequency in segments of time.</p>
+    </Description>
+      <Values>
+		<Value>
+			<Code>S001</Code> 
+			<Description>Weekly</Description>
+		</Value>
+		<Value>
+			<Code>S002</Code> 
+			<Description>Bi-weekly</Description>
+		</Value>
+		<Value>
+			<Code>S003</Code> 
+			<Description>Semi-monthly</Description>
+		</Value>
+		<Value>
+			<Code>S004</Code> 
+			<Description>Monthly</Description>
+		</Value>
+		<Value>
+			<Code>S005</Code> 
+			<Description>Quarterly</Description>
+		</Value>
+		<Value>
+			<Code>S006</Code> 
+			<Description>Semi-annually</Description>
+		</Value>
+		<Value>
+			<Code>S007</Code> 
+			<Description>Annually</Description>
+		</Value>
+		<Value>
+			<Code>S008</Code> 
+			<Description>Daily</Description>
+		</Value>
+		<Value>
+			<Code>S999</Code> 
+			<Description>Other</Description>
+		</Value>
+    </Values>
+  </Item>
+   <Item>
+    <Element>Duration</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The actual duration of the frequency of the intervention.  For example, if the student is to have the intervention for 40 minutes, then 40 would be entered.</p>
+    </Description>
+    <Type name="xs:integer"></Type>
+   </Item>
+ </CommonElement>  
+ 
+     <CommonElement name="PerformanceIndicatorListType" type="true" dm="true">
+    <Item>
+    <Element>PerformanceIndicatorListType</Element>
+     <Description>
+      <p>The specific measurement goals at the end of the intervention that each student should reach.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>PerformanceIndicator</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>The specific measurement goal at the end of the intervention that each student should reach.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>  
+</CommonElement>  
+
+     <CommonElement name="ResultListType" type="true" dm="true">
+  <Item>
+    <Element>ResultListType</Element>
+    <Characteristics>O</Characteristics>
+   <Description>
+      <p>This represents the results based on each measurement period.</p>
+    </Description>
+    <List mode="List"></List>
+  </Item>
+  <Item>
+    <Element>Result</Element>
+    <Characteristics>MR</Characteristics>
+     <Type name="xs:normalizedString"></Type>
+  </Item>  
+ </CommonElement>
+
 	<!--	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>-->
 				
 	</Appendix>
