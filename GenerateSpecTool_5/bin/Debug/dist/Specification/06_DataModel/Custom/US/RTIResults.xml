@@ -50,7 +50,7 @@
     <Description>
       <p>A local ID that may be used to identify this intervention for the student.</p>
     </Description>
-	<Type ref="DataModel" name="LocalId"/>
+	<Type ref="CommonTypes" name="LocalIdType"/>
    </Item>
    
    <Item>
@@ -65,82 +65,13 @@
    <Item>
     <Element>PerformanceIndicators</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"></List>
-  </Item>
-  <Item>
-    <Element>/PerformanceIndicator</Element>
-    <Characteristics>MR</Characteristics>
     <Description>
-      <p>The specific measurement goal at the end of the intervention that each student should reach.</p>
+      <p>The specific measurement goals at the end of the intervention that each student should reach.</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
+	<Type ref="CommonTypes" name="ResponseToInterventionMeasurementListType"/>
+  </Item>
+ 
   
-   <Item>
-    <Element>Measurements</Element>
-    <Characteristics>O</Characteristics>
-     <List mode="List"></List>
-  </Item>
-  <Item>
- 	  <Element>/Measurement</Element>
-	   <Characteristics>MR</Characteristics>
-		<Description>
-		  <p></p>
-		</Description>
-  </Item>    
-  <Item>
-    <Element>//MeasurementTool</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The specific tool that will be used to gather data about how the student is improving.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-  <Item>
-    <Element>//FrequencyofMeasure</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The frequency of the measuement.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>S001</Code> 
-			<Description>Weekly</Description>
-		</Value>
-		<Value>
-			<Code>S002</Code> 
-			<Description>Bi-weekly</Description>
-		</Value>
-		<Value>
-			<Code>S003</Code> 
-			<Description>Semi-monthly</Description>
-		</Value>
-		<Value>
-			<Code>S004</Code> 
-			<Description>Monthly</Description>
-		</Value>
-		<Value>
-			<Code>S005</Code> 
-			<Description>Quarterly</Description>
-		</Value>
-		<Value>
-			<Code>S006</Code> 
-			<Description>Semi-annually</Description>
-		</Value>
-		<Value>
-			<Code>S007</Code> 
-			<Description>Annually</Description>
-		</Value>
-		<Value>
-			<Code>S008</Code> 
-			<Description>Daily</Description>
-		</Value>
-		<Value>
-			<Code>S999</Code> 
-			<Description>Other</Description>
-		</Value>
-    </Values>
-  </Item>       
    
   <Item>
     <Element>Baselines</Element>
@@ -148,59 +79,35 @@
     <Description>
       <p>List of pre-assessment data used to evaluate the student on the learning objective.</p>
     </Description>
-    <List mode="List"></List>
+	<Type ref="CommonTypes" name="BaselineListType"/>
   </Item>
-  <Item>
-    <Element>/Baseline</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The pre-assessment data to evaluate the student on the learning objective.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
-  
+   
   <Item>
     <Element>Targets</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>List of specific end aims.</p>
     </Description>
-    <List mode="List"></List>
+	<Type ref="CommonTypes" name="TargetListType"/>
   </Item>
-  <Item>
-    <Element>/Target</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>The specific end aim that is desired to achieve for the student.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>    
-  
+   
   <Item>
     <Element>Results</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"></List>
+	<Type ref="CommonTypes" name="ResultListType"/>
   </Item>
-  <Item>
-    <Element>/Result</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>This represents the results based on each measurement period.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>  
- 
+  
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   
   <xhtml:Example  xmlns="">

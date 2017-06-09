@@ -49,35 +49,15 @@
     <Description>
       <p>Records student-specific special conditions during the test. </p>
     </Description>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="StudentSpecialConditionListType"></Type>
   </Item>
 
-  <Item>
-    <Element>/StudentSpecialCondition</Element>
-    <Characteristics>MR</Characteristics>
-    <Type name="xs:normalizedString"></Type>
-    <Description>
-      <p>
-        A description of the special condition.  Student special conditions are different
-        from special conditions of the test.
-      </p>
-    </Description>
-  </Item>
 
-  <Item>
-    <Attribute>Code</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type name="xs:token"></Type>
-    <Description>
-      <p>A code indicating the type of special condition.</p>
-    </Description>
-  </Item>
 
   <Item>
     <Element>StudentGradeLevel</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GradeLevel"></Type>
+    <Type ref="CommonTypes" name="GradeLevelType"></Type>
     <Description>
       <p>Grade level of the student at the time of testing.</p>
     </Description>
@@ -86,7 +66,7 @@
   <Item>
     <Element>AssessmentGradeLevel</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GradeLevel"></Type>
+    <Type ref="CommonTypes" name="GradeLevelType"></Type>
     <Description>
       <p>The grade or level at which the student is to be tested. This element should be omitted unless the student is being tested out-of-level.</p>
     </Description>
@@ -98,47 +78,10 @@
     <Description>
       <p>The status of the student at the time of testing.  The source of this information is meant to be the assessment system and not the student information system.</p>
     </Description>
-  </Item>
+     <Type ref="CommonTypes" name="AssessmentStudentSnapshotType"></Type>
+ </Item>
 
-  <Item>
-    <Element>/RaceList</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Person's race</p>
-    </Description>
-    <Type ref="DataModel" name="RaceList"></Type>
-  </Item>
-  <Item>
-    <Element>/HispanicLatino</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="HispanicLatino"></Type>
-  </Item>
-  <Item>
-    <Element>/Gender</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Person's gender.</p>
-    </Description>
-    <Type ref="DataModel" name="Gender"></Type>
-  </Item>
-  <Item>
-    <Element>/BirthDate</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The person's date of birth.</p>
-    </Description>
-    <Type ref="DataModel" name="BirthDate"></Type>
-  </Item>
-  <Item>
-    <Element>/Title1</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Title1"></Type>
-  </Item>
-  <Item>
-    <Element>/ELL</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="ELL"></Type>
-  </Item>
+ 
 
   <Item>
     <Element>LEAInfoRefId</Element>
@@ -179,12 +122,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

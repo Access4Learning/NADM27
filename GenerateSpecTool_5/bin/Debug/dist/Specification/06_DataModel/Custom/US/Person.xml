@@ -23,7 +23,7 @@
 			<p>The Social Security number of the person.</p>
 		</Description>
 		<!--<Type name="xs:string"></Type>-->
-		<Type ref="DataModel" name="SSN"/> 
+		<Type ref="CommonTypes" name="SSNType"/> 
 	</Item>
 	<Item>
 		<Element>DriversLicenseNumber</Element>
@@ -39,7 +39,7 @@
 		<Description>
 			<p>The state/province that issued the driver's license.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvince"></Type>
+		<Type ref="CommonTypes" name="StateProvinceType"></Type>
 	</Item>
 	<Item>
 		<Element>PersonId</Element>
@@ -47,7 +47,7 @@
 		<Description>
 			<p>The state-assigned identifier for this person.  This will probably not be the same State Province Id as the one assigned to the various roles such as StudentPersonal.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId"/>
+		<Type ref="CommonTypes" name="StateProvinceIdType"/>
 	</Item>
 	<Item>
 		<Attribute>Label</Attribute>
@@ -64,7 +64,7 @@
 		<Description>
 			<p>Electronic identifier(s) associated with this entity.</p>
 		</Description>
-		<Type ref="DataModel" name="ElectronicIdList"/>
+		<Type ref="CommonTypes" name="ElectronicIdListType"/>
 	</Item>
 	
 	<Item>
@@ -73,7 +73,7 @@
     <Description>
       <p>Common element containing person demographic information.</p>
     </Description>
-    <Type ref="DataModel" name="PersonInfo"></Type>
+    <Type ref="CommonTypes" name="PersonInfoType"></Type>
   </Item>
 	
 	
@@ -89,12 +89,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	
 	<xhtml:Example xmlns="">

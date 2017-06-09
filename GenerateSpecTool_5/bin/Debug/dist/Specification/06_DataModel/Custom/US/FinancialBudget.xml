@@ -34,7 +34,7 @@
     <Description>
       <p>State-assigned identifier for this location</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>FiscalYear</Element>
@@ -48,75 +48,21 @@
   <Item>
     <Element>BudgetAccounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/BudgetAccount</Element>
-    <Characteristics>MR</Characteristics>
     <Description>
       <p>Information about budget accounts being submitted.</p>
     </Description>
+     <Type ref="CommonTypes" name="BudgetAccountListType"></Type>
   </Item>
-  <Item>
-    <Element>//AccountClass</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Classification of budgetary account code summary</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Revenue</Code>
-      </Value>
-      <Value>
-        <Code>Expenditure</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//FundBreakdown</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Fund breakdown of account code for summarization.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//FunctionBreakdown</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Function breakdown of account code for summarization.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//ObjectBreakdown</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Object breakdown of account code for summarization.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//BudgetAmount</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Summarized, positive amount without cents for breakdowns</p>
-    </Description>
-    <Type name="xs:unsignedInt"></Type>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FinancialBudget RefId="359D75101AD0A9D7A8C3DAD0A85103A2">

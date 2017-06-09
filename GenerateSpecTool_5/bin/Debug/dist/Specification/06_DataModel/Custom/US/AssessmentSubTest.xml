@@ -33,86 +33,18 @@
     <Element>ScoreRange</Element>
     <Characteristics>O</Characteristics>
     <Description>The possible range of scores.</Description>
+    <Type ref="CommonTypes" name="ScoreRangeType"></Type>
   </Item>
-  <Item>
-    <Attribute>ScoreMetric</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type ref="ExternalCodeSets" name="NCES0056AssessmentReportingMethodType"></Type>
-    <Description>
-      <p>The metric or scale used to report the scores.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>/Minimum</Element>
-    <Description>
-      <p>Lowest possible score value.</p>
-    </Description>
-    <Type name="xs:token"></Type>
-    <Characteristics>O</Characteristics>
-  </Item>
-  <Item>
-    <Element>/Maximum</Element>
-    <Description>
-      <p>Highest possible score value.</p>
-    </Description>
-    <Type name="xs:token"></Type>
-    <Characteristics>O</Characteristics>
-  </Item>
+ 
   <Item>
     <Element>PerformanceLevels</Element>
     <Description>
       <p>Container for performance level elements. </p>
     </Description>
     <Characteristics>O</Characteristics>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="PerformanceLevelListType"></Type>
   </Item>
-  <Item>
-    <Element>/PerformanceLevel</Element>
-    <Description>
-      <p>Defines cut scores for placing students in appropriate performance levels.</p>
-    </Description>
-    <Characteristics>OR</Characteristics>
-  </Item>
-  <Item>
-    <Attribute>LevelName</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type name="xs:token"></Type>
-    <Description>
-      <p>The name of the performance level.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//CutScores</Element>
-    <Description>
-      <p>Score bounds for the performance level.</p>
-    </Description>
-    <Characteristics>O</Characteristics>
-  </Item>
-  <Item>
-    <Attribute>ScoreMetric</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type ref="ExternalCodeSets" name="NCES0056AssessmentReportingMethodType"></Type>
-    <Description>
-      <p>The metric or scale used to report the scores.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>///LowerCut</Element>
-    <Type name="xs:token"></Type>
-    <Description>
-      <p>Lower bound for the performance level.</p>
-    </Description>
-    <Characteristics>O</Characteristics>
-  </Item>
-  <Item>
-    <Element>///UpperCut</Element>
-    <Description>
-      <p>Upper bound for the performance level.</p>
-    </Description>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:token"></Type>
-  </Item>
+  
   <Item>
     <Element>SubjectArea</Element>
     <Description>
@@ -124,7 +56,7 @@
   <Item>
     <Element>GradeLevels</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="DataModel" name="GradeLevelsType"></Type>
     <Description>
       <p>Grade levels for which the score is valid.</p>
     </Description>
@@ -135,17 +67,8 @@
       <p>References (possibly recursive) to other SIF AssessmentSubTests. This enables subtests or scores to be composites of other scores. If any references are given here, the score is a composite score. The list must be unique.</p>
     </Description>
     <Characteristics>O</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/AssessmentSubTestRefId</Element>
-    <Type ref="CommonTypes" relationship="child sub-tests defined by" count="*:1" name="IdRefType"></Type>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>A reference to an AssessmentSubTest by RefId.</p>
-    </Description>
-  </Item>
+     <Type ref="CommonTypes"  name="AssessmentSubTestRefIdListType"></Type>
+   </Item>
   <Item>
     <Element>SubTestTier</Element>
     <Description>
@@ -160,17 +83,7 @@
       <p>References to LearningStandardItems. The list must be unique.</p>
     </Description>
     <Characteristics>O</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Type ref="CommonTypes" relationship="associated learning standards defined by" count="*:1" name="IdRefType"></Type>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>A reference to a LearningStandardItem by RefId.</p>
-    </Description>
+    <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
 
   <Item>
@@ -212,13 +125,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
 
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

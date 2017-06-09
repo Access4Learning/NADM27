@@ -37,19 +37,7 @@
     <Description>
       <p>The purpose of the activities as related to students.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code representing the type of job function.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0568FunctionTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
+    <Type ref="CommonTypes" name="JobFunctionType"></Type>
   </Item>
   <Item>
     <Element>RegularHours</Element>
@@ -78,12 +66,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <TimeWorked RefId="CCD1254884EE54687FF4567DACD34653">

@@ -21,7 +21,7 @@
     <Description>
       <p>The state-assigned identifier for this staff member.</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>OtherIdList</Element>
@@ -29,34 +29,7 @@
     <Description>
       <p>List all "other" Ids associated with the employee.</p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/OtherId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>This field can hold a SSN, state or locally assigned Id.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>SSN</Code>
-      </Value>
-      <Value>
-        <Code>State</Code>
-      </Value>
-      <Value>
-        <Code>Local</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
+		<Type ref="CommonTypes" name="EmployeePersonalOtherIdListType"/>
   </Item>
   <Item>
     <Element>Name</Element>
@@ -64,7 +37,7 @@
     <Description>
       <p>Name of employee.</p>
     </Description>
-    <Type ref="DataModel" name="Name"></Type>
+    <Type ref="CommonTypes" name="NameOfRecordType"></Type>
   </Item>
   <Item>
     <Element>Demographics</Element>
@@ -72,7 +45,7 @@
     <Description>
       <p>This element contains information related to employee demographics.</p>
     </Description>
-    <Type ref="DataModel" name="Demographics"></Type>
+    <Type ref="CommonTypes" name="DemographicsType"></Type>
   </Item>
   <Item>
     <Element>AddressList</Element>
@@ -80,7 +53,7 @@
     <Description>
       <p>The employee's address(es).</p>
     </Description>
-    <Type ref="DataModel" name="AddressList"></Type>
+    <Type ref="CommonTypes" name="AddressListType"></Type>
   </Item>
   <Item>
     <Element>PhoneNumberList</Element>
@@ -88,7 +61,7 @@
     <Description>
       <p>The employee's phone number(s).</p>
     </Description>
-    <Type ref="DataModel" name="PhoneNumberList"></Type>
+    <Type ref="CommonTypes" name="PhoneNumberListType"></Type>
   </Item>
   <Item>
     <Element>EmailList</Element>
@@ -96,17 +69,17 @@
     <Description>
       <p>The employee's e-mail address(es).</p>
     </Description>
-    <Type ref="DataModel" name="EmailList"></Type>
+    <Type ref="CommonTypes" name="EmailListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeePersonal RefId="CD590651225DAC3859DEA3458BC39583">
