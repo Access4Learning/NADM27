@@ -2645,29 +2645,29 @@
   <area alt="ServiceNameType" href="#ServiceNameType" shape="rect" coords="5,5,180,47" />
 </map><a name="TableA1091ServiceNameType" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="ServiceNameType" /><span class="rootElement">ServiceNameType</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>An unenumerated SIF object name.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#NCName" class="type">xs:NCName</a></td></tr></tbody></table><span class="caption">Table A.109-1: ServiceNameType</span></div>
     <div class="element_section">
-      <a name="obj:SIF_ExtendedElements" />
-      <a name="A110SIF_ExtendedElements" />
-      <h2 class="element_name">A.110 SIF_ExtendedElements</h2>
+      <a name="obj:SIF_ExtendedElementsType" />
+      <a name="A110SIF_ExtendedElementsType" />
+      <h2 class="element_name">A.110 SIF_ExtendedElementsType</h2>
       <p>
       This element is supported at the end of all SIF objects.
       The element is used to extend existing SIF objects with locally-defined elements.
       Extended elements <span class="rfc2119">SHOULD NOT</span> be used to duplicate data that can be obtained from other SIF objects.
     </p>
-      <a name="FigureA1101SIF_ExtendedElements" />
+      <a name="FigureA1101SIF_ExtendedElementsType" />
       <div class="diagram_parent" align="center">
-        <a target="_blank" href="diagrams/SIF_ExtendedElements.png">
-          <img class="diagram" src="diagrams/SIF_ExtendedElements.png" alt="SIF_ExtendedElements" width="1001" height="72" usemap="#SIF_ExtendedElements__map" />
+        <a target="_blank" href="diagrams/SIF_ExtendedElementsType.png">
+          <img class="diagram" src="diagrams/SIF_ExtendedElementsType.png" alt="SIF_ExtendedElementsType" width="1040" height="72" usemap="#SIF_ExtendedElementsType__map" />
         </a>
       </div>
-      <span class="caption">Figure A.110-1: SIF_ExtendedElements</span><map name="SIF_ExtendedElements__map" id="SIF_ExtendedElements__map">
-  <area alt="SIF_ExtendedElements" href="#SIF_ExtendedElements" shape="rect" coords="5,15,220,57" />
-  <area alt="SIF_ExtendedElement" href="#SIF_ExtendedElements__SIF_ExtendedElement" shape="rect" coords="295,15,501,57" />
-  <area alt="Name" href="#SIF_ExtendedElements__SIF_ExtendedElement___Name" shape="rect" coords="576,15,686,57" />
-  <area alt="xsi:type" href="#SIF_ExtendedElements__SIF_ExtendedElement___xsi:type" shape="rect" coords="719,15,815,57" />
-  <area alt="SIF_Action" href="#SIF_ExtendedElements__SIF_ExtendedElement___SIF_Action" shape="rect" coords="848,15,968,57" />
-</map><a name="TableA1101SIF_ExtendedElements" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="SIF_ExtendedElements" /><span class="rootElement">SIF_ExtendedElements</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>Allows an agent to include data not yet defined within a SIF data object as name/value pairs.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#ActionList">ActionList (SIF_ExtendedElement/@Name)</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SIF_ExtendedElements__SIF_ExtendedElement" />SIF_ExtendedElement</td><td class="characteristics">OR</td><td class="description"><p>A name/value pair, the name being contained in the Name attribute, the value being the element content.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#ExtendedContentType" class="type">ExtendedContentType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SIF_ExtendedElements__SIF_ExtendedElement___Name" />Name</td><td class="characteristics">M</td><td class="description"><p>The name of the extended element. As it is possible that names for extended elements may collide from agent to agent, it is recommended that the names of extended elements be configurable in an agent, or that agents use URIs for the names of extended elements.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SIF_ExtendedElements__SIF_ExtendedElement___xsi:type" />xsi:type</td><td class="characteristics">O</td><td class="description"><p>Allows type of element to be explicitly communicated.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SIF_ExtendedElements__SIF_ExtendedElement___SIF_Action" />SIF_Action</td><td class="characteristics">O</td><td class="description"><p>
+      <span class="caption">Figure A.110-1: SIF_ExtendedElementsType</span><map name="SIF_ExtendedElementsType__map" id="SIF_ExtendedElementsType__map">
+  <area alt="SIF_ExtendedElementsType" href="#SIF_ExtendedElementsType" shape="rect" coords="5,15,259,57" />
+  <area alt="SIF_ExtendedElement" href="#SIF_ExtendedElementsType__SIF_ExtendedElement" shape="rect" coords="334,15,540,57" />
+  <area alt="Name" href="#SIF_ExtendedElementsType__SIF_ExtendedElement___Name" shape="rect" coords="615,15,725,57" />
+  <area alt="xsi:type" href="#SIF_ExtendedElementsType__SIF_ExtendedElement___xsi:type" shape="rect" coords="758,15,854,57" />
+  <area alt="SIF_Action" href="#SIF_ExtendedElementsType__SIF_ExtendedElement___SIF_Action" shape="rect" coords="887,15,1007,57" />
+</map><a name="TableA1101SIF_ExtendedElementsType" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="SIF_ExtendedElementsType" /><span class="rootElement">SIF_ExtendedElementsType</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>Allows an agent to include data not yet defined within a SIF data object as name/value pairs.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#ActionList">ActionList (SIF_ExtendedElement/@Name)</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SIF_ExtendedElementsType__SIF_ExtendedElement" />SIF_ExtendedElement</td><td class="characteristics">OR</td><td class="description"><p>A name/value pair, the name being contained in the Name attribute, the value being the element content.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#ExtendedContentType" class="type">ExtendedContentType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SIF_ExtendedElementsType__SIF_ExtendedElement___Name" />Name</td><td class="characteristics">M</td><td class="description"><p>The name of the extended element. As it is possible that names for extended elements may collide from agent to agent, it is recommended that the names of extended elements be configurable in an agent, or that agents use URIs for the names of extended elements.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SIF_ExtendedElementsType__SIF_ExtendedElement___xsi:type" />xsi:type</td><td class="characteristics">O</td><td class="description"><p>Allows type of element to be explicitly communicated.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SIF_ExtendedElementsType__SIF_ExtendedElement___SIF_Action" />SIF_Action</td><td class="characteristics">O</td><td class="description"><p>
         In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.  At a minimum the key for the list must also be present.
-      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Delete</dt></dl></td></tr></tbody></table><span class="caption">Table A.110-1: SIF_ExtendedElements</span><a name="ExampleA1101SIF_ExtendedElements" />
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Delete</dt></dl></td></tr></tbody></table><span class="caption">Table A.110-1: SIF_ExtendedElementsType</span><a name="ExampleA1101SIF_ExtendedElementsType" />
 <div class="example_parent"><div class="example"
 >&lt;SIF_ExtendedElements&gt;
   &lt;SIF_ExtendedElement Name="ApplicationSubmissionStatus"&gt;4&lt;/SIF_ExtendedElement&gt;
@@ -2682,7 +2682,7 @@
     &lt;xhtml:strong xmlns:xhtml="http://www.w3.org/1999/xhtml"&gt;Double&lt;/xhtml:strong&gt;-check submission status.
       &lt;/SIF_ExtendedElement&gt;
 &lt;/SIF_ExtendedElements&gt;
-</div></div><span class="caption">Example A.110-1: SIF_ExtendedElements</span></div>
+</div></div><span class="caption">Example A.110-1: SIF_ExtendedElementsType</span></div>
     <div class="element_section">
       <a name="obj:SIF_MetadataType" />
       <a name="A111SIF_MetadataType" />

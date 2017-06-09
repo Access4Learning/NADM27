@@ -46667,7 +46667,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   </Item>
 </CommonElement>
 
-<CommonElement name="SIF_ExtendedElements" type="true">
+<CommonElement name="SIF_ExtendedElementsType" type="true">
   <Intro>
     <p>
       This element is supported at the end of all SIF objects.
@@ -46676,7 +46676,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     </p>
   </Intro>
   <Item>
-    <Element>SIF_ExtendedElements</Element>
+    <Element>SIF_ExtendedElementsType</Element>
     <Description>
       <p>Allows an agent to include data not yet defined within a SIF data object as name/value pairs.</p>
     </Description>
