@@ -52,16 +52,7 @@
     <Description>
       <p>Reference numbers for the form.</p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/FormNumber</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Reference number for the form.</p>
-    </Description>
-    <Type name="xs:token"></Type>
+    <Type ref="CommonTypes" name="AssessmentFormNumberListType"></Type>
   </Item>
   <Item>
     <Element>Level</Element>
@@ -83,7 +74,7 @@
   </Item>
   <Item>
     <Element>GradeLevels</Element>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Grade levels this assessment is designed to evaluate.</p>
@@ -95,26 +86,17 @@
     <Description>
       <p>Associated subtests (score types).  Each form can provide scores in one or more subtest areas.</p>
     </Description>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="AssessmentSubTestRefIdListType"></Type>
   </Item>
-  <Item>
-    <Element>/AssessmentSubTestRefId</Element>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>A subtest identified by RefId.</p>
-    </Description>
-  </Item>
-  <Item>
+   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

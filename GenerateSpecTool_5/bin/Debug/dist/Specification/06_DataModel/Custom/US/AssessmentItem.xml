@@ -77,12 +77,7 @@
         Each <code>LearningStandardItemRefId</code> reflects an individual standard statement and may occur at several levels within a hierarchially structured document.
       </p>
     </Description>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Characteristics>MR</Characteristics>
-    <Type ref="CommonTypes" name="IdRefType"/>
+    <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"/>
   </Item>
   <Item>
     <Element>Stimulus</Element>
@@ -123,37 +118,9 @@
       </ul>
       <p>Other cases will be added in the future.</p>
     </Description>
+    <Type ref="CommonTypes" name="AssessmentItemChoiceListType"/>
   </Item>
-  <Item>
-    <Element>/Choice</Element>
-    <Characteristics>MR</Characteristics>
-  </Item>
-  <Item>
-    <Element>//ChoiceLabel</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A choice number or other identifier for the choice.  It may be used to indicate the order or grouping of the choices.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>//ChoiceContent</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
-        The text of the choice, such as <code>true</code>, <code>27</code>, or <code>Important economic and social factors</code>.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="AbstractContentElementType"/>
-  </Item>
-  <Item>
-    <Element>//CreditValue</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A numeric value that indicates the amount of credit awarded for choosing the choice.</p>
-    </Description>
-    <Type name="xs:float"/>
-  </Item>
+
   <Item>
     <Element>ItemScoreMaximum</Element>
     <Characteristics>O</Characteristics>
@@ -176,63 +143,17 @@
     <Description>
       <p>Performance Levels are an ordered set of categories that indicate the achievement level of a person on an assessment. </p>
     </Description>
-    <List mode='List'/>
-  </Item>
-  <Item>
-    <Element>/PerformanceLevel</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Defines cut scores for placing students in an appropriate performance level.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>LevelName</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The name of the performance level.</p>
-    </Description>
-    <Type name='xs:normalizedString'/>
-  </Item>
-  <Item>
-    <Element>//CutScores</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Score bounds for the performance level.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>ScoreMetric</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The metric or scale used to report the scores.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0056AssessmentReportingMethodType"></Type>
-  </Item>
-  <Item>
-    <Element>///LowerCut</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Lower bound for the performance level.</p>
-    </Description>
-    <Type name='xs:token'/>
-  </Item>
-  <Item>
-    <Element>///UpperCut</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Upper bound for the performance level.</p>
-    </Description>
-    <Type name='xs:token'/>
+    <Type ref="CommonTypes" name="PerformanceLevelListType"/>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example name="AssessmentItem - Example 1" xmlns="">

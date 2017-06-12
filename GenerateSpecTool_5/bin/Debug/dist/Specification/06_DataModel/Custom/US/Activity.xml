@@ -7,7 +7,7 @@
 			<p>
         The work assigned to students, an educational event planned by a teacher to deliver a particular educational concept
         or skill.
-      </p>
+			</p>
 		</Description>
 	</Item>
 	<Item>
@@ -16,7 +16,7 @@
 		<Description/>
 		<Type ref="CommonTypes" name="RefIdType"/>
 	</Item>
-	
+
 	<!--<Item>
 		<Attribute>xml:lang</Attribute>
 		<Characteristics>M</Characteristics>
@@ -24,7 +24,7 @@
 			<p>The default language of the text used for the content in the Assessment.</p>
 		</Description>
 	</Item>-->
-	
+
 	<Item>
 		<Element>Title</Element>
 		<Characteristics>O</Characteristics>
@@ -47,7 +47,7 @@
 		<Description>
 			<p>Operating system, network, and other technical requirements for the activity, if applicable.</p>
 		</Description>
-		<Type ref="DataModel" name="TechnicalRequirements"/>
+		<Type ref="CommonTypes" name="TechnicalRequirementsType"/>
 	</Item>
 	<Item>
 		<Element>SoftwareRequirementList</Element>
@@ -55,7 +55,7 @@
 		<Description>
 			<p>Contains information about required software.</p>
 		</Description>
-		<Type ref="DataModel" name="SoftwareRequirementList"/>
+		<Type ref="CommonTypes" name="SoftwareRequirementListType"/>
 	</Item>
 	<Item>
 		<Element>EssentialMaterials</Element>
@@ -63,15 +63,7 @@
 		<Description>
 			<p>Essential materials required to engage in this activity.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/EssentialMaterial</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Essential material required to engage in this activity.</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="EssentialMaterialListType"/>
 	</Item>
 	<Item>
 		<Element>LearningObjectives</Element>
@@ -79,15 +71,7 @@
 		<Description>
 			<p>Educational objectives of the activity.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/LearningObjective</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Description of an educational objective of the activity.</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="LearningObjectiveListType"/>
 	</Item>
 	<Item>
 		<Element>LearningStandards</Element>
@@ -95,22 +79,14 @@
 		<Description>
 			<p>
         Associated <code>LearningStandardItem</code> objects.
-      </p>
+			</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/LearningStandardItemRefId</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Link from activity to associated LearningStandardItem object.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
+		<Type ref="CommonTypes" name="LearningStandardItemRefIdListType"/>
 	</Item>
 	<Item>
 		<Element>SubjectArea</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SubjectArea"/>
+		<Type ref="CommonTypes" name="SubjectAreaType"/>
 	</Item>
 	<Item>
 		<Element>Prerequisites</Element>
@@ -118,17 +94,9 @@
 		<Description>
 			<p>
         Skills or competencies the student must have to engage in activity.
-      </p>
+			</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/Prerequisite</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Skill or competency the student must have to engage in activity.</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="PrerequisiteListType"/>
 	</Item>
 	<Item>
 		<Element>Students</Element>
@@ -136,17 +104,9 @@
 		<Description>
 			<p>
         Links to any students or group or category of students that this activity is for.
-      </p>
+			</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/StudentPersonalRefId</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Link to a student.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
+		<Type ref="CommonTypes" name="StudentPersonalRefIdListType"/>
 	</Item>
 	<Item>
 		<Element>SourceObjects</Element>
@@ -154,38 +114,9 @@
 		<Description>
 			<p>
         Source objects assigned to students.
-      </p>
+			</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/SourceObject</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>GUID assigned to the source object.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
-	<Item>
-		<Attribute>SIF_RefObject</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The type of learning object the source object is.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Assessment</Code>
-			</Value>
-			<Value>
-				<Code>LearningResource</Code>
-			</Value>
-			<Value>
-				<Code>Activity</Code>
-			</Value>
-			<Value>
-				<Code>Lesson</Code>
-			</Value>
-		</Values>
+		<Type ref="CommonTypes" name="SourceObjectListType"/>
 	</Item>
 	<Item>
 		<Element>Points</Element>
@@ -201,70 +132,7 @@
 		<Description>
 			<p>Time structures for the activity.</p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>/CreationDate</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Creation date of the activity.</p>
-		</Description>
-		<Type name="xs:date"/>
-	</Item>
-	<Item>
-		<Element>/Duration</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Time required to complete the activity.</p>
-		</Description>
-		<Type name="xs:unsignedInt"/>
-	</Item>
-	<Item>
-		<Attribute>Units</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Unit of time of the Duration value.&#160;</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>week</Code>
-			</Value>
-			<Value>
-				<Code>day</Code>
-			</Value>
-			<Value>
-				<Code>hour</Code>
-			</Value>
-			<Value>
-				<Code>minute</Code>
-			</Value>
-			<Value>
-				<Code>second</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/StartDate</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Date activity is started.</p>
-		</Description>
-		<Type name="xs:date"/>
-	</Item>
-	<Item>
-		<Element>/FinishDate</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Date activity is finished.</p>
-		</Description>
-		<Type name="xs:date"/>
-	</Item>
-	<Item>
-		<Element>/DueDate</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Date activity is due.</p>
-		</Description>
-		<Type name="xs:date"/>
+		<Type ref="CommonTypes" name="ActivityTimeType"/>
 	</Item>
 	<Item>
 		<Element>AssessmentRefId</Element>
@@ -296,29 +164,7 @@
 		<Description>
 			<p>Field for non-numeric types of grading and evaluation such as "narrative."</p>
 		</Description>
-	</Item>
-	<Item>
-		<Attribute>EvaluationType</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>A qualifer for what type of evaluation this is. Valid values are "Inline" and "RefId". Inline values are contained in the optional Description element, RefIds are contained in the AssessmentRefId element.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Inline</Code>
-			</Value>
-			<Value>
-				<Code>RefId</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/Description</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>A free text description of the evaluation to be used for this activity</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="ActivityEvaluationType"/>
 	</Item>
 	<Item>
 		<Element>LearningResources</Element>
@@ -326,25 +172,17 @@
 		<Description>
 			<p>Learning resources that support this activity.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/LearningResourceRefId</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>A GUID reference to a SIF LearningResource object that supports this activity</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
+		<Type ref="CommonTypes" name="LearningResourcesRefIdListType"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example name="Activity - Example 1" xmlns="">
 		<Activity RefId="C27E1FCFC163485FBEF0F36F18A0493A" xml:lang="en">

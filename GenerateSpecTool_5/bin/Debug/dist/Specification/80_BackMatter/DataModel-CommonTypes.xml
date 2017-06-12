@@ -2281,18 +2281,25 @@
 	</xhtml:Example>
 </CommonElement>
 
-<CommonElement name="ExceptionalityCategoriesType" type="true">
+<CommonElement name="ExceptionalityCategoryListType" type="true">
 	<Item>
-		<Element>ExceptionalityCategoriesType</Element>
+		<Element>ExceptionalityCategoryListType</Element>
 		<List mode="List">
 		</List>
 	</Item>
 	<Item>
 		<Element>ExceptionalityCategory</Element>
 		<Characteristics>MR</Characteristics>
+		<Type ref="CommonTypes" name="ExceptionalityCategoryType"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="ExceptionalityCategoryType" type="true">
+	<Item>
+		<Element>ExceptionalityCategoryType</Element>
 	</Item>
 	<Item>
-		<Element>/Code</Element>
+		<Element>Code</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>
@@ -2314,12 +2321,12 @@
 		</Union>
 	</Item>
 	<Item>
-		<Element>/OtherCodeList</Element>
+		<Element>OtherCodeList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeListType"></Type>
+		<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 	</Item>
 	<Item>
-		<Element>/ExceptionalityPriority</Element>
+		<Element>ExceptionalityPriority</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>Identifies priority of the exceptionality.  "Primary" is the first and is required even if only one exceptionality is specified. "Secondary", etc. are of lower priority. Primary, Secondary, and Tertiary must be specified before "Additional" is used.</p>
@@ -5814,7 +5821,7 @@
 			<p>A list of alert messages associated with the student.</p>
 		</Description>
 		<List mode="List">
-    </List>
+		</List>
 	</Item>
 	<Item>
 		<Element>AlertMessage</Element>
@@ -5834,7 +5841,7 @@
 		</Description>
 		<Type name="xs:string"/>
 	</Item>
-		<Item>
+	<Item>
 		<Attribute>Type</Attribute>
 		<Characteristics>M</Characteristics>
 		<Description>
@@ -5867,7 +5874,7 @@
 			<p>A list of medical altert messages associated with the student.</p>
 		</Description>
 		<List mode="List">
-    </List>
+		</List>
 	</Item>
 	<Item>
 		<Element>MedicalAlertMessage</Element>
@@ -5920,7 +5927,7 @@
 			<p>Lists all "other" identifiers associated with the entity.</p>
 		</Description>
 		<List mode="List">
-        </List>
+		</List>
 	</Item>
 	<Item>
 		<Element>OtherId</Element>
@@ -5990,10 +5997,10 @@
 		<Element>StudentMostRecentContainerType</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
-		<p>
+			<p>
         Container for elements reflecting the most recent enrollment of a student.  If the student is
         currently enrolled in the district, the elements contain current information.
-        </p>
+			</p>
 		</Description>
 	</Item>
 	<Item>
@@ -6010,7 +6017,7 @@
 		<Description>
 			<p>
         Local identifier representing the current or most recent homeroom in which the student is or was most recently assigned in the district.  Use the value from <code>RoomInfo/HomeroomNumber</code> if supported.  If not supported, use the value from <code>RoomInfo/RoomNumber</code>.  If neither is supported, use the most appropriate value from the agent’s application.
-      </p>
+			</p>
 		</Description>
 		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
@@ -6045,32 +6052,32 @@
 </CommonElement>
 
 <CommonElement name="TimeTableDayType" type="true" dm="true">
-	 <Item>
-    <Element>TimetableDayType</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>An entry for each unique timetable day</p>
-    </Description>
+	<Item>
+		<Element>TimetableDayType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable day</p>
+		</Description>
 
-  </Item>
+	</Item>
 
-  <Item>
-    <Element>Identifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable day for this school calendar.</p>
-    </Description>
-    <Type name='xs:normalizedString'/>
-  </Item>
+	<Item>
+		<Element>Identifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable day for this school calendar.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
 
-  <Item>
-    <Element>Name</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The name of the timetable day.</p>
-    </Description>
-    <Type name='xs:normalizedString'/>
-  </Item>
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the timetable day.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
 </CommonElement>
 
 <CommonElement name="TimeTablePeriodListType" type="true" dm="true">
@@ -6100,23 +6107,23 @@
 			<p>An entry for each unique timetable period.</p>
 		</Description>
 	</Item>
- <Item>
-    <Element>Identifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable period for this school calendar.</p>
-    </Description>
-    <Type name='xs:normalizedString'/>
-  </Item>
+	<Item>
+		<Element>Identifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable period for this school calendar.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
 
-  <Item>
-    <Element>Name</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The name of the timetable period.</p>
-    </Description>
-    <Type name='xs:normalizedString'/>
-  </Item>
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the timetable period.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
 
 </CommonElement>
 
@@ -6138,7 +6145,7 @@
 		<Type ref="CommonTypes" name="BellPeriodType"/>
 	</Item>
 </CommonElement>	
-	
+
 <CommonElement name="BellPeriodType" type="true" dm="true">
 	<Item>
 		<Element>BellPeriodType</Element>
@@ -6147,85 +6154,86 @@
 			<p>An entry for each unique bell period for the bell schedule.</p>
 		</Description>
 	</Item>
- <Item>
-    <Element>TimetableDayIdentifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable day used for the bell period (from the day list above).</p>
-    </Description>
-    <Type name='xs:token'/>
-  </Item>
+	<Item>
+		<Element>TimetableDayIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable day used for the bell period (from the day list above).</p>
+		</Description>
+		<Type name='xs:token'/>
+	</Item>
 
-  <Item>
-    <Element>TimetablePeriodIdentifier</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unique identifier for the timetable period used for the bell period (from the period list above).</p>
-    </Description>
-    <Type name='xs:normalizedString'/>
-  </Item>
+	<Item>
+		<Element>TimetablePeriodIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable period used for the bell period (from the period list above).</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
 
-  <Item>
-    <Element>StartTime</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The starting time for the bell period.</p>
-    </Description>
-    <Type name='xs:time'/>
-  </Item>
+	<Item>
+		<Element>StartTime</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The starting time for the bell period.</p>
+		</Description>
+		<Type name='xs:time'/>
+	</Item>
 
-  <Item>
-    <Element>EndTime</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The ending time for the bell period.</p>
-    </Description>
-    <Type name='xs:time'/>
-  </Item>
+	<Item>
+		<Element>EndTime</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The ending time for the bell period.</p>
+		</Description>
+		<Type name='xs:time'/>
+	</Item>
 
-  <Item>
-    <Element>RegularSchoolPeriod</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Indicates if the bell period is part of the regular school day (i.e. is not a before or after school or break period).</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-    </Values>
-  </Item>
+	<Item>
+		<Element>RegularSchoolPeriod</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates if the bell period is part of the regular school day (i.e. is not a before or after school or break period).</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
 
-  <Item>
-    <Element>InstructionalMinutes</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The number of minutes to be counted for instruction for the bell period.</p>
-    </Description>
-    <Type name='xs:unsignedInt'/>
-  </Item>
+	<Item>
+		<Element>InstructionalMinutes</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The number of minutes to be counted for instruction for the bell period.</p>
+		</Description>
+		<Type name='xs:unsignedInt'/>
+	</Item>
 
-  <Item>
-    <Element>UseInAttendanceCalculations</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Indicates if the bell period should be included in attendance calculations.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-    </Values>
-  </Item>
+	<Item>
+		<Element>UseInAttendanceCalculations</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates if the bell period should be included in attendance calculations.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
 </CommonElement>
 
 
 <!--These includes and associated files will disappear before the end of development.-->
 <xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesLinda.xml"/>
 <xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesNick.xml"/>
+

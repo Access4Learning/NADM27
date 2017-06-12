@@ -29,7 +29,7 @@
     <Description>
       <p>Contact information.</p>
     </Description>
-    <Type ref="DataModel" name="ContactInfo"></Type>
+    <Type ref="CommonTypes" name="ContactInfoType"></Type>
   </Item>
   <Item>
     <Element>CustomerId</Element>
@@ -95,12 +95,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <VendorInfo RefId="AB3647C568654CF45678DD34EF564E22">

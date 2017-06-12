@@ -104,31 +104,21 @@
   <Item>
     <Element>Organizations</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>/Organization</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Name of organization represented by the document, i.e., "National Council of Teachers of Mathematics (NCTM)," "Washington," "Seattle School District."</p>
+     <Description>
+      <p>Names of organization represented by the document, i.e., "National Council of Teachers of Mathematics (NCTM)," "Washington," "Seattle School District."</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
+   <Type ref="CommonTypes" name="OrganizationListType"></Type>
   </Item>
+
   <Item>
     <Element>Authors</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>/Author</Element>
-
-    <Characteristics>OR</Characteristics>
     <Description>
       <p>Name of the organization that authored the standards document, i.e. "Mid-Continent Research for Education &amp; Learning (McREL)." May be the same as "Organization" above.</p>
     </Description>
-    <Type name="xs:normalizedString"></Type>
+   <Type ref="CommonTypes" name="AuthorListType"></Type>
   </Item>
+
   <Item>
     <Element>OrganizationContactPoint</Element>
 
@@ -141,15 +131,10 @@
   <Item>
     <Element>SubjectAreas</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="SubjectAreaListType"></Type>
   </Item>
-  <Item>
-    <Element>/SubjectArea</Element>
-
-    <Characteristics>MR</Characteristics>
-    <Type ref="DataModel" name="SubjectArea"></Type>
-  </Item>
-  <Item>
+ 
+ <Item>
     <Element>DocumentStatus</Element>
 
     <Characteristics>M</Characteristics>
@@ -212,25 +197,9 @@
     <Description>
       <p>Copyright for document.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/Date</Element>
-
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>Copyright date</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/Holder</Element>
-
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>Name of the copyright holder</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
+     <Type ref="CommonTypes" name="CopyrightType"></Type>
+ </Item>
+ 
   <Item>
     <Element>GradeLevels</Element>
 
@@ -238,7 +207,7 @@
     <Description>
       <p>SIF common GradeLevels element</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>RepositoryDate</Element>
@@ -262,26 +231,18 @@
   <Item>
     <Element>RelatedLearningStandards</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>/LearningStandardDocumentRefId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Links to related LearningStandardDocument</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="LearningStandardDocumentRefIdListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <LearningStandardDocument RefId="A5A575C789175101B8E7F08ED123A823" xml:lang="en">

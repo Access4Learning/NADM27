@@ -33,15 +33,7 @@
 		<Description>
 			<p>Students given this assignment.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/StudentPersonalRefId</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>GUID assigned to the student.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
+		<Type ref="CommonTypes" name="StudentPersonalRefIdListType"/>
 	</Item>
 	<Item>
 		<Element>StaffPersonalRefId</Element>
@@ -57,7 +49,7 @@
 		<Description>
 			<p>Operating system, network, and other technical requirements for the activity, if applicable.</p>
 		</Description>
-		<Type ref="DataModel" name="TechnicalRequirements"/>
+		<Type ref="CommonTypes" name="TechnicalRequirementsType"/>
 	</Item>
 	<Item>
 		<Element>SoftwareRequirementList</Element>
@@ -65,7 +57,7 @@
 		<Description>
 			<p>Contains information about required software.</p>
 		</Description>
-		<Type ref="DataModel" name="SoftwareRequirementList"/>
+		<Type ref="CommonTypes" name="SoftwareRequirementListType"/>
 	</Item>
 	<Item>
 		<Element>EssentialMaterials</Element>
@@ -73,15 +65,7 @@
 		<Description>
 			<p>Essential materials required to engage in the assignment.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/EssentialMaterial</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Essential material required to engage in the assignment.</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="EssentialMaterialListType"/>
 	</Item>
 	<Item>
 		<Element>Title</Element>
@@ -105,15 +89,7 @@
 		<Description>
 			<p>Educational objectives of the assignment.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/LearningObjective</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Description of an educational objective of the assignment.</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="LearningObjectiveListType"/>
 	</Item>
 	<Item>
 		<Element>LearningStandards</Element>
@@ -123,15 +99,7 @@
         Associated <code>LearningStandardItem</code> objects.
       </p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/LearningStandardItemRefId</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Link from assignment to an associated LearningStandardItem object.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
+		<Type ref="CommonTypes" name="LearningStandardItemRefIdListType"/>
 	</Item>
 	<Item>
 		<Element>Prerequisites</Element>
@@ -139,15 +107,7 @@
 		<Description>
 			<p>Skills or competencies the student must have to engage in assignment.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/Prerequisite</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Skill or competency the student must have to engage in assignment.</p>
-		</Description>
-		<Type name="xs:string"/>
+		<Type ref="CommonTypes" name="PrerequisiteListType"/>
 	</Item>
 	<Item>
 		<Element>SourceObjects</Element>
@@ -155,36 +115,7 @@
 		<Description>
 			<p>Source objects assigned to students.</p>
 		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>/SourceObject</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>GUID assigned to the source object. The source object is the "thing" being assigned to a student.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
-	<Item>
-		<Attribute>SIF_RefObject</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The type of learning object the source object is.&#160;</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Assessment</Code>
-			</Value>
-			<Value>
-				<Code>LearningResource</Code>
-			</Value>
-			<Value>
-				<Code>Activity</Code>
-			</Value>
-			<Value>
-				<Code>Lesson</Code>
-			</Value>
-		</Values>
+		<Type ref="CommonTypes" name="SourceObjectListType"/>
 	</Item>
 	<Item>
 		<Element>AssignmentTime</Element>
@@ -192,88 +123,7 @@
 		<Description>
 			<p>Time structures for the assignment.</p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>/CreationDate</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Creation date of the assignment</p>
-		</Description>
-		<Type name="xs:date"/>
-	</Item>
-	<Item>
-		<Element>/Duration</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Time required to complete the assignment.</p>
-		</Description>
-		<Type name="xs:decimal"/>
-	</Item>
-	<Item>
-		<Attribute>Units</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>
-        Unit of time of the <code>Duration</code> value.
-      </p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>week</Code>
-			</Value>
-			<Value>
-				<Code>day</Code>
-			</Value>
-			<Value>
-				<Code>hour</Code>
-			</Value>
-			<Value>
-				<Code>minute</Code>
-			</Value>
-			<Value>
-				<Code>second</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/StartDate</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Date assignment is started.</p>
-		</Description>
-		<Type name="xs:date"/>
-	</Item>
-	<Item>
-		<Element>/StartTime</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Time assignment is started.</p>
-		</Description>
-		<Type name="xs:time"/>
-	</Item>
-	<Item>
-		<Element>/DueDate</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Date assignment is due.</p>
-		</Description>
-		<Type name="xs:date"/>
-	</Item>
-	<Item>
-		<Element>/DueTime</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Time assignment is due.</p>
-		</Description>
-		<Type name="xs:time"/>
-	</Item>
-	<Item>
-		<Element>/AdministrationDate</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Date that the assignment was administered to student if an assessment.</p>
-		</Description>
-		<Type name="xs:date"/>
+		<Type ref="CommonTypes" name="AssignmentTimeType"/>
 	</Item>
 	<Item>
 		<Element>MaxAttemptsAllowed</Element>
@@ -294,12 +144,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example name="Assignment - Example 1" xmlns="">
 		<Assignment RefId="DE072A87EFAD4B778AF9FAF83C94839E" xml:lang="en">

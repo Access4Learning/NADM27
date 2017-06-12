@@ -47,7 +47,7 @@
 	<Item>
 		<Element>ProgramType</Element>
 		<Characteristics>M</Characteristics>
-		<Type ref="DataModel" typed="false" name="ProgramType"/>
+		<Type ref="CommonTypes" typed="false" name="ProgramType"/>
 	</Item>
 	
 		<Item>
@@ -61,153 +61,7 @@
 	<Item>
 		<Element>ProgramFundingSources</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/ProgramFundingSource</Element>
-		<Characteristics>MR</Characteristics>
-	</Item>
-	<Item>
-		<Element>//Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Funding source for the program, may be more than one.</p>
-		</Description>
-		<Union>
-			<Type ref="ExternalCodeSets" name="NCES0222ProgramFundingSourceType">
-				<Values type="subset">
-					<Value>
-						<Code>0797</Code>
-					</Value>
-					<Value>
-						<Code>0617</Code>
-					</Value>
-					<Value>
-						<Code>0622</Code>
-					</Value>
-					<Value>
-						<Code>0654</Code>
-					</Value>
-					<Value>
-						<Code>9999</Code>
-					</Value>
-				</Values>
-			</Type>
-			<Type name="xs:token">
-				<Values type="additional">
-					<Value>
-						<Code>S001</Code>
-						<Text>Education for the Disadvantaged, ESEA I-A</Text>
-					</Value>
-					<Value>
-						<Code>S002</Code>
-						<Text>English Language Acquisition, Language Enhancement and Academic Achievement, ESEA III-A</Text>
-					</Value>
-					<Value>
-						<Code>S003</Code>
-						<Text>Foreign Language Assistance, ESEA V-D</Text>
-					</Value>
-					<Value>
-						<Code>S004</Code>
-						<Text>Gifted and Talented, Javits, ESEA V-D</Text>
-					</Value>
-					<Value>
-						<Code>S005</Code>
-						<Text>Homeless Children and Youths, ESEA X-C (MVHAA VII-B)</Text>
-					</Value>
-					<Value>
-						<Code>S006</Code>
-						<Text>Impact Aid, ESEA, Title VIII</Text>
-					</Value>
-					<Value>
-						<Code>S007</Code>
-						<Text>Indian Education, ESEA Title VII</Text>
-					</Value>
-					<Value>
-						<Code>S008</Code>
-						<Text>Migrant, ESEA I-C</Text>
-					</Value>
-					<Value>
-						<Code>S009</Code>
-						<Text>Migrant, HEA IV-A</Text>
-					</Value>
-					<Value>
-						<Code>S010</Code>
-						<Text>Neglected and Delinquent, ESEA I-D</Text>
-					</Value>
-					<Value>
-						<Code>S011</Code>
-						<Text>Other ESEA reading programs</Text>
-					</Value>
-					<Value>
-						<Code>S012</Code>
-						<Text>Public School Choice, ESEA I-A</Text>
-					</Value>
-					<Value>
-						<Code>S013</Code>
-						<Text>Reading First, ESEA I-B</Text>
-					</Value>
-					<Value>
-						<Code>S014</Code>
-						<Text>Rural Education, ESEA VI-B</Text>
-					</Value>
-					<Value>
-						<Code>S015</Code>
-						<Text>Safe Schools and Citizenship Education, ESEA IV-A and V-D</Text>
-					</Value>
-					<Value>
-						<Code>S016</Code>
-						<Text>School Choice, ESEA, Title V-B,-C,-D</Text>
-					</Value>
-					<Value>
-						<Code>S017</Code>
-						<Text>Special Education Early Intervening Services, IDEA, Part B</Text>
-					</Value>
-					<Value>
-						<Code>S018</Code>
-						<Text>Special Education Grants for Infants and Families Ages 0-2, IDEA, Part C</Text>
-					</Value>
-					<Value>
-						<Code>S019</Code>
-						<Text>Special Education Preschool Grants Ages 3-5, IDEA, Part B</Text>
-					</Value>
-					<Value>
-						<Code>S020</Code>
-						<Text>Special Education State Grants, IDEA, Part B</Text>
-					</Value>
-					<Value>
-						<Code>S021</Code>
-						<Text>State Scholars Capacity Building, ESEA V-D</Text>
-					</Value>
-					<Value>
-						<Code>S022</Code>
-						<Text>Supplemental Education Services, ESEA I-A</Text>
-					</Value>
-					<Value>
-						<Code>S023</Code>
-						<Text>Vocational Education (Carl D Perkins VTEA)</Text>
-					</Value>
-					<Value>
-						<Code>S024</Code>
-						<Text>Reading Proficiency</Text>
-					</Value>
-					<Value>
-						<Code>S025</Code>
-						<Text>Reading Sufficiency</Text>
-					</Value>
-					<Value>
-						<Code>S026</Code>
-						<Text>Alternative Education</Text>
-					</Value>
-				</Values>
-			</Type>
-		</Union>
-	</Item>
-	<Item>
-		<Element>//OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="ProgramFundingSourceListType"/>
 	</Item>
 	<Item>
 		<Element>ManagingPublicAgency</Element>
@@ -246,42 +100,7 @@
 	<Item>
 		<Element>PartCTransitionMeetingNotHeldReasons</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/PartCTransitionMeetingNotHeldReason</Element>
-		<Characteristics>MR</Characteristics>
-	</Item>
-	<Item>
-		<Element>//Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>A reason why the Part C transition meeting was not held.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>S001</Code>
-				<Text>Parent Withdrawal or Parent Choice</Text>
-			</Value>
-			<Value>
-				<Code>S002</Code>
-				<Text>Parent/Child Moved</Text>
-			</Value>
-			<Value>
-				<Code>S003</Code>
-				<Text>Child exited 0-3 Program Prior to Transition Meeting (No Longer Eligible for Part C)</Text>
-			</Value>
-			<Value>
-				<Code>S004</Code>
-				<Text>Other</Text>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>//OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="PartCTransitionMeetingNotHeldReasonListType"/>
 	</Item>
 	<Item>
 		<Element>PartCTransitionMeetingDate</Element>
@@ -294,50 +113,7 @@
 	<Item>
 		<Element>PartCTransitionMeetingOutcomes</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/PartCTransitionMeetingOutcome</Element>
-		<Characteristics>MR</Characteristics>
-	</Item>
-	<Item>
-		<Element>//Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>An outcome of a Part C transition meeting.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>S001</Code>
-				<Text>Assessments needed</Text>
-			</Value>
-			<Value>
-				<Code>S002</Code>
-				<Text>Family support provided</Text>
-			</Value>
-			<Value>
-				<Code>S003</Code>
-				<Text>Program options identified</Text>
-			</Value>
-			<Value>
-				<Code>S004</Code>
-				<Text>Referral to community options</Text>
-			</Value>
-			<Value>
-				<Code>S005</Code>
-				<Text>Part B eligible</Text>
-			</Value>
-			<Value>
-				<Code>S006</Code>
-				<Text>Other</Text>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>//OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="PartCTransitionMeetingOutcomeListType"/>
 	</Item>
 	<Item>
 		<Element>ReferralDate</Element>
@@ -350,24 +126,12 @@
 	<Item>
 		<Element>ReferralSource</Element>
 		<Characteristics>O</Characteristics>
-	</Item>
-	<Item>
-		<Element>/Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The method by which a student was identified for referral to a particular program.</p>
-		</Description>
-		<Type ref="ExternalCodeSets" name="NCES0792IdentificationProcedureType"/>
-	</Item>
-	<Item>
-		<Element>/OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="ReferralSourceType"/>
 	</Item>
 	<Item>
 		<Element>ProgramStatus</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="ProgramStatus"/>
+		<Type ref="CommonTypes" name="ProgramStatusType"/>
 	</Item>
 	<Item>
 		<Element>GiftedEligibilityCriteria</Element>
@@ -420,7 +184,7 @@
 	<Item>
 		<Element>ExceptionalityCategories</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="ExceptionalityCategories"/>
+		<Type ref="CommonTypes" name="ExceptionalityCategoryListType"/>
 	</Item>
 	<Item>
 		<Element>ProgramEligibilityDate</Element>
@@ -433,49 +197,7 @@
 	<Item>
 		<Element>ProgramPlanType</Element>
 		<Characteristics>O</Characteristics>
-	</Item>
-	<Item>
-		<Element>/Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The document that outlines the student program/plan as approved by parents, guardians, and staff.</p>
-		</Description>
-		<Union>
-			<Type ref="ExternalCodeSets" name="NCES0806IndividualizedProgramTypeType"/>
-			<Type name="xs:token">
-				<Values type="additional">
-					<Value>
-						<Code>S001</Code>
-						<Text>504 plan</Text>
-					</Value>
-					<Value>
-						<Code>S002</Code>
-						<Text>Student intervention / support plan</Text>
-					</Value>
-					<Value>
-						<Code>S003</Code>
-						<Text>GIEP - Individualized education program for gifted student</Text>
-					</Value>
-					<Value>
-						<Code>S004</Code>
-						<Text>Literacy plan</Text>
-					</Value>
-					<Value>
-						<Code>S005</Code>
-						<Text>Individualized transition plan</Text>
-					</Value>
-					<Value>
-						<Code>S006</Code>
-						<Text>Services plan</Text>
-					</Value>
-				</Values>
-			</Type>
-		</Union>
-	</Item>
-	<Item>
-		<Element>/OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="ProgramPlanTypeType"/>
 	</Item>
 	<Item>
 		<Element>ProgramPlanDate</Element>
@@ -518,41 +240,7 @@
 	<Item>
 		<Element>LeastRestrictiveEnvironment</Element>
 		<Characteristics>O</Characteristics>
-	</Item>
-	<Item>
-		<Element>/Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Category represents the optimal educational setting in which the student should be placed (setting where child has most desirable learning environment).  Relates specifically to special education.</p>
-		</Description>
-		<Union>
-			<Type ref="ExternalCodeSets" name="NCES0307ServiceSettingType"/>
-			<Type ref="ExternalCodeSets" name="NCES0798EarlyChildhoodProgramSettingType"/>
-			<Type ref="ExternalCodeSets" name="NCES0804EarlyChildhoodSpecialEducationSettingType">
-				<Values type="subset">
-					<Value>
-						<Code>2191</Code>
-					</Value>
-					<Value>
-						<Code>2190</Code>
-					</Value>
-					<Value>
-						<Code>2187</Code>
-					</Value>
-					<Value>
-						<Code>2188</Code>
-					</Value>
-					<Value>
-						<Code>2184</Code>
-					</Value>
-				</Values>
-			</Type>
-		</Union>
-	</Item>
-	<Item>
-		<Element>/OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="LeastRestrictiveEnvironmentType"/>
 	</Item>
 	<Item>
 		<Element>ExtendedSchoolYear</Element>
@@ -573,19 +261,7 @@
 	<Item>
 		<Element>ProgramAvailability</Element>
 		<Characteristics>O</Characteristics>
-	</Item>
-	<Item>
-		<Element>/Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Describes the availability of the program.</p>
-		</Description>
-		<Type ref="ExternalCodeSets" name="NCES0211ProgramAvailabilityType"/>
-	</Item>
-	<Item>
-		<Element>/OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="ProgramAvailabilityType"/>
 	</Item>
 	<Item>
 		<Element>PrivateNotPlacedByPublic</Element>
@@ -630,34 +306,9 @@
 	<Item>
 		<Element>ProgramExitReason</Element>
 		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="ProgramExitReasonType"/>
 	</Item>
-	<Item>
-		<Element>/Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Review by program / state.  May be required if student has exited the program.</p>
-		</Description>
-		<Union>
-			<Type ref="ExternalCodeSets" name="NCES0815ProgramExitReasonType"/>
-			<Type name="xs:token">
-				<Values type="additional">
-					<Value>
-						<Code>S001</Code>
-						<Text>Student choice</Text>
-					</Value>
-					<Value>
-						<Code>S002</Code>
-						<Text>Student served in other ways</Text>
-					</Value>
-				</Values>
-			</Type>
-		</Union>
-	</Item>
-	<Item>
-		<Element>/OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
-	</Item>
+
 	<Item>
 		<Element>ProjectedExitDate</Element>
 		<Characteristics>O</Characteristics>
@@ -702,7 +353,7 @@
 		<Description>
 			<p>The student's planned level of participation in statewide assessments.</p>
 		</Description>
-		<Type ref="DataModel" name="PlannedAssessmentParticipation"/>
+		<Type ref="CommonTypes" name="PlannedAssessmentParticipationType"/>
 	</Item>
 	<Item>
 		<Element>TransitionPlanning</Element>
@@ -773,24 +424,7 @@
 		<Description>
 			<p/>
 		</Description>
-		<List mode="List"></List>
-	</Item>
-	<Item>
-		<Element>/ProgramAvailability</Element>
-		<Characteristics>OR</Characteristics>
-	</Item>
-	<Item>
-		<Element>//Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Describes the availability of the program.</p>
-		</Description>
-		<Type ref="ExternalCodeSets" name="NCES0211ProgramAvailabilityType"/>
-	</Item>
-	<Item>
-		<Element>//OtherCodeList</Element>
-		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherCodeList"/>
+		<Type ref="CommonTypes" name="ProgramAvailabilityListType"/>
 	</Item>
 	<Item>
 		<Element>CaseManager</Element>
@@ -803,12 +437,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example name="StudentParticipation - Example 1" xmlns="">
 		<StudentParticipation RefId="D3E34B359D75101A8C3D00AA001A1652" StudentPersonalRefId="A2E34F59A742C1A4B3D11CC002B163A2">
