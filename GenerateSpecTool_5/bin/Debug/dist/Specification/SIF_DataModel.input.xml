@@ -43509,7 +43509,7 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 		<Element>TimetableDayIdentifier</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
-			<p>he unique identifier of a timetable day to be utilized for the calendar date (from the list of timetable days defined for the calendar in the referenced BellSchedule object).</p>
+			<p>The unique identifier of a timetable day to be utilized for the calendar date (from the list of timetable days defined for the calendar in the referenced BellSchedule object).</p>
 		</Description>
 		<Type name="xs:string" />
 	</Item>
@@ -43517,8 +43517,8 @@ XML has changed) and possibly also Delete events, likewise in responses even whe
 </CommonElement>
 
 <!--These includes and associated files will disappear before the end of development.-->
-<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesLinda.xml" />
-<xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesNick.xml" />
+<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/TypesLinda.xml" />
+<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/TypesNick.xml" />
 
 
 	<!--	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CommonTypes.xml"/>-->
