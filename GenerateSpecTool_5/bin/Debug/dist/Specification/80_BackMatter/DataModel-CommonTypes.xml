@@ -6149,7 +6149,7 @@
 <CommonElement name="BellPeriodType" type="true" dm="true">
 	<Item>
 		<Element>BellPeriodType</Element>
-		<Characteristics>O</Characteristics>
+		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>An entry for each unique bell period for the bell schedule.</p>
 		</Description>
@@ -6232,6 +6232,129 @@
 	</Item>
 </CommonElement>
 
+<!-- LMM Additions-->
+<CommonElement name="CalendarDateInfoType" type="true" dm="true">
+ <Item>
+    <Element>CalendarDateInfoType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Calendar date type information.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code indicating the type of school day.</p>
+    </Description>
+      <Union>
+      <Type ref="ExternalCodeSets" name="NCES0084CalendarEventType"></Type>
+      <Type name="xs:token">
+        <Values type="additional">
+          <Value>
+            <Code>INST</Code>
+            <Text>Instructional School Day</Text>
+          </Value>
+          <Value>
+            <Code>MKUP</Code>
+            <Text>Instructional day that is scheduled solely to make up for emergency days or early dismissal days.</Text>
+          </Value>
+        </Values>
+      </Type>
+    </Union>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="AttendanceInfoType" type="true" dm="true">
+ <Item>
+    <Element>AttendanceInfoType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information describing how the day relates to attendance.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>CountsTowardAttendance</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Designates whether this date should be counted toward student attendance.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>AttendanceValue</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Amount of the school day in which the student should be in attendance (Format is x.x; a student who should be in attendance a full day would be represented as 1.0).  If <code>CountsTowardAttendance</code> equals <code>Yes</code> then <code>AttendanceValue</code> must be greater than zero.
+      </p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+    <Facets>
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+      <xs:fractionDigits value="1"/>
+    </Facets>
+  </Item>
+</CommonElement>
+
+<CommonElement name="BellScheduleDayListType" type="true" dm="true">
+	<Item>
+		<Element>BellScheduleDayListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A list of the bell schedules and the timetable day from that bell schedule to be used for the calendar date.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>BellScheduleDay</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p></p>
+		</Description>
+		<Type ref="CommonTypes" name="BellScheduleDayType"/>
+	</Item>
+</CommonElement>	
+
+<CommonElement name="BellScheduleDayType" type="true" dm="true">
+	<Item>
+		<Element>BellScheduleDayType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p></p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>BellScheduleRefId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>he GUID of a bell schedule to be utilized for the calendar date.</p>
+		</Description>
+		<Type ref='CommonTypes' name='IdRefType'/>
+	</Item>
+	<Item>
+		<Element>TimetableDayIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>he unique identifier of a timetable day to be utilized for the calendar date (from the list of timetable days defined for the calendar in the referenced BellSchedule object).</p>
+		</Description>
+		<Type name='xs:string'/>
+	</Item>
+
+</CommonElement>
 
 <!--These includes and associated files will disappear before the end of development.-->
 <xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="TypesLinda.xml"/>
