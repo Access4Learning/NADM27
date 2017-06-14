@@ -1,3 +1,546 @@
 <!--
+<!-- LINDA'S ADDED HERE -->
+
+<CommonElement name="AlertMessagesType" type="true" dm="true">
+	<Item>
+		<Element>AlertMessagesType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A list of alert messages associated with the student.</p>
+		</Description>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>AlertMessage</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>This is an alert message that is associated with the student.</p>
+		</Description>
+		<Type ref="CommonTypes" name="AlertMessageType"/>
+	</Item>
+</CommonElement>
+<CommonElement name="AlertMessageType" type="true" dm="true">
+	<Item>
+		<Element>AlertMessageType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>This is an alert message that is associated with the student.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>This attribute specifies what type of alert message this is.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Legal</Code>
+				<Description>Custody, guardian, court orders (e.g. must attend school), lawsuits, etc.</Description>
+			</Value>
+			<Value>
+				<Code>Discipline</Code>
+				<Description>Student is suspended, expelled, on probation, etc.</Description>
+			</Value>
+			<Value>
+				<Code>Educational</Code>
+				<Description>Section 504 student, IDEA/IEP, academic probation, etc.</Description>
+			</Value>
+			<Value>
+				<Code>Other</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+<CommonElement name="MedicalAlertMessagesType" type="true" dm="true">
+	<Item>
+		<Element>MedicalAlertMessagesType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A list of medical altert messages associated with the student.</p>
+		</Description>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>MedicalAlertMessage</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Medical alert associated with the student.</p>
+		</Description>
+		<Type ref="CommonTypes" name="MedicalAlertMessageType"/>
+	</Item>
+</CommonElement>
+<CommonElement name="MedicalAlertMessageType" type="true" dm="true">
+	<Item>
+		<Element>MedicalAlertMessageType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Medical alert associated with the student.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	<Item>
+		<Attribute>Severity</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The level of severity of this medical alert.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Low</Code>
+			</Value>
+			<Value>
+				<Code>Moderate</Code>
+			</Value>
+			<Value>
+				<Code>High</Code>
+			</Value>
+			<Value>
+				<Code>Severe</Code>
+			</Value>
+			<Value>
+				<Code>Unknown</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+<CommonElement name="OtherIdList2Type" type="true" dm="true">
+	<Item>
+		<Element>OtherIdList2Type</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Lists all "other" identifiers associated with the entity.</p>
+		</Description>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>OtherId</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Lists an "other" identifier associated with the entity.</p>
+		</Description>
+		<Type ref="CommonTypes" name="OtherId2Type"/>
+	</Item>
+</CommonElement>
+<CommonElement name="OtherId2Type" type="true" dm="true">
+	<Item>
+		<Element>OtherIdType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Lists an "other" identifier associated with the entity.</p>
+		</Description>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code that defines the type of this other Id.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0147IdentificationSystemType"/>
+		<Values type="subset">
+			<Value>
+				<Code>0164</Code>
+			</Value>
+			<Value>
+				<Code>0339</Code>
+			</Value>
+			<Value>
+				<Code>0338</Code>
+			</Value>
+			<Value>
+				<Code>0879</Code>
+			</Value>
+			<Value>
+				<Code>9999</Code>
+			</Value>
+			<Value>
+				<Code>0222</Code>
+			</Value>
+			<Value>
+				<Code>0764</Code>
+			</Value>
+			<Value>
+				<Code>0154</Code>
+			</Value>
+			<Value>
+				<Code>0004</Code>
+			</Value>
+			<Value>
+				<Code>0113</Code>
+			</Value>
+			<Value>
+				<Code>5013</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+
+<CommonElement name="StudentMostRecentContainerType" type="true" dm="true">
+	<Item>
+		<Element>StudentMostRecentContainerType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>
+        Container for elements reflecting the most recent enrollment of a student.  If the student is
+        currently enrolled in the district, the elements contain current information.
+			</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>SchoolLocalId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Local identifier representing the school in which the student is or was most recently enrolled in the district.</p>
+		</Description>
+		<Type ref="CommonTypes" name="LocalIdType"/>
+	</Item>
+	<Item>
+		<Element>HomeroomLocalId</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>
+        Local identifier representing the current or most recent homeroom in which the student is or was most recently assigned in the district.  Use the value from <code>RoomInfo/HomeroomNumber</code> if supported.  If not supported, use the value from <code>RoomInfo/RoomNumber</code>.  If neither is supported, use the most appropriate value from the agent’s application.
+			</p>
+		</Description>
+		<Type ref="CommonTypes" name="LocalIdType"/>
+	</Item>
+	<Item>
+		<Element>GradeLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The current or most recent grade level of the student in the district.</p>
+		</Description>
+		<Type ref="ComonTypes" name="GradeLevelType"/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="TimeTableDayListType" type="true" dm="true">
+	<Item>
+		<Element>TimeTableDayListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The timetable days for this school year bell schedule.  This essentially provides a list of the time day identifiers that are used in the BellPeriod definitions below with some additional properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>TimeTableDay</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable day.</p>
+		</Description>
+		<Type ref="CommonTypes" name="TimeTableDayType"/>
+	</Item>
+
+</CommonElement>
+
+<CommonElement name="TimeTableDayType" type="true" dm="true">
+	<Item>
+		<Element>TimeTableDayType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable day</p>
+		</Description>
+	</Item>
+
+	<Item>
+		<Element>Identifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable day for this school calendar.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the timetable day.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="TimeTablePeriodListType" type="true" dm="true">
+	<Item>
+		<Element>TimeTablePeriodListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The timetable periods for this school year bell schedule.  This essentially provides a list of the time period identifiers that are used in the BellPeriod definitions below with some addition properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>TimeTablePeriod</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable period.</p>
+		</Description>
+		<Type ref="CommonTypes" name="TimeTablePeriodType"/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="TimeTablePeriodType" type="true" dm="true">
+	<Item>
+		<Element>TimeTablePeriodType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique timetable period.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Identifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable period for this school calendar.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+
+	<Item>
+		<Element>Name</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The name of the timetable period.</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+
+</CommonElement>
+
+<CommonElement name="BellPeriodListType" type="true" dm="true">
+	<Item>
+		<Element>BellPeriodListType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The bell periods for this school year bell schedule.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>BellPeriod</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique bell period for the bell schedule.</p>
+		</Description>
+		<Type ref="CommonTypes" name="BellPeriodType"/>
+	</Item>
+</CommonElement>	
+
+<CommonElement name="BellPeriodType" type="true" dm="true">
+	<Item>
+		<Element>BellPeriodType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>An entry for each unique bell period for the bell schedule.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>TimetableDayIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable day used for the bell period (from the day list above).</p>
+		</Description>
+		<Type name='xs:token'/>
+	</Item>
+
+	<Item>
+		<Element>TimetablePeriodIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier for the timetable period used for the bell period (from the period list above).</p>
+		</Description>
+		<Type name='xs:normalizedString'/>
+	</Item>
+
+	<Item>
+		<Element>StartTime</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The starting time for the bell period.</p>
+		</Description>
+		<Type name='xs:time'/>
+	</Item>
+
+	<Item>
+		<Element>EndTime</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The ending time for the bell period.</p>
+		</Description>
+		<Type name='xs:time'/>
+	</Item>
+
+	<Item>
+		<Element>RegularSchoolPeriod</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates if the bell period is part of the regular school day (i.e. is not a before or after school or break period).</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
+
+	<Item>
+		<Element>InstructionalMinutes</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The number of minutes to be counted for instruction for the bell period.</p>
+		</Description>
+		<Type name='xs:unsignedInt'/>
+	</Item>
+
+	<Item>
+		<Element>UseInAttendanceCalculations</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Indicates if the bell period should be included in attendance calculations.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+
+<!-- LMM Additions-->
+<CommonElement name="CalendarDateInfoType" type="true" dm="true">
+ <Item>
+    <Element>CalendarDateInfoType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Calendar date type information.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code indicating the type of school day.</p>
+    </Description>
+      <Union>
+      <Type ref="ExternalCodeSets" name="NCES0084CalendarEventType"></Type>
+      <Type name="xs:token">
+        <Values type="additional">
+          <Value>
+            <Code>INST</Code>
+            <Text>Instructional School Day</Text>
+          </Value>
+          <Value>
+            <Code>MKUP</Code>
+            <Text>Instructional day that is scheduled solely to make up for emergency days or early dismissal days.</Text>
+          </Value>
+        </Values>
+      </Type>
+    </Union>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+  </Item>
+</CommonElement>
+
+<CommonElement name="AttendanceInfoType" type="true" dm="true">
+ <Item>
+    <Element>AttendanceInfoType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information describing how the day relates to attendance.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>CountsTowardAttendance</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Designates whether this date should be counted toward student attendance.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>AttendanceValue</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Amount of the school day in which the student should be in attendance (Format is x.x; a student who should be in attendance a full day would be represented as 1.0).  If <code>CountsTowardAttendance</code> equals <code>Yes</code> then <code>AttendanceValue</code> must be greater than zero.
+      </p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+    <Facets>
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+      <xs:fractionDigits value="1"/>
+    </Facets>
+  </Item>
+</CommonElement>
+
+<CommonElement name="BellScheduleDayListType" type="true" dm="true">
+	<Item>
+		<Element>BellScheduleDayListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A list of the bell schedules and the timetable day from that bell schedule to be used for the calendar date.</p>
+		</Description>
+		<List mode="List"/>
+	</Item>
+	<Item>
+		<Element>BellScheduleDay</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p></p>
+		</Description>
+		<Type ref="CommonTypes" name="BellScheduleDayType"/>
+	</Item>
+</CommonElement>	
+
+<CommonElement name="BellScheduleDayType" type="true" dm="true">
+	<Item>
+		<Element>BellScheduleDayType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p></p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>BellScheduleRefId</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>he GUID of a bell schedule to be utilized for the calendar date.</p>
+		</Description>
+		<Type ref='CommonTypes' name='IdRefType'/>
+	</Item>
+	<Item>
+		<Element>TimetableDayIdentifier</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The unique identifier of a timetable day to be utilized for the calendar date (from the list of timetable days defined for the calendar in the referenced BellSchedule object).</p>
+		</Description>
+		<Type name='xs:string'/>
+	</Item>
+
+</CommonElement>
 
 -->	

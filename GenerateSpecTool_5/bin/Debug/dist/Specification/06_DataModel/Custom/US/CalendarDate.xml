@@ -21,7 +21,7 @@
   </Item>
   
   <Item>
-    <Element>Date</Element>
+    <Attribute>Date</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
       <p>A specific school day that occurs within the school year.</p>
@@ -29,7 +29,7 @@
     <Type name="xs:date"></Type>
   </Item>
   <Item>
-    <Element>CalendarSummaryRefId</Element>
+    <Attribute>CalendarSummaryRefId</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
       <p>The Id (GUID) of the calendar summary in which this calendar date is.</p>
@@ -37,7 +37,7 @@
     <Type ref="CommonTypes" name="IdRefType"></Type>
   </Item>
   <Item>
-    <Element>SchoolInfoRefId</Element>
+    <Attribute>SchoolInfoRefId</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
       <p>The Id (GUID) of the school for which this calendar information is being reported.</p>
@@ -45,7 +45,7 @@
     <Type ref="CommonTypes" name="IdRefType"></Type>
   </Item>
   <Item>
-    <Element>SchoolYear</Element>
+    <Attribute>SchoolYear</Attribute>
     <Characteristics>M</Characteristics>
     <Description>
       <p>School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2007" for the 2006-07 school year).</p>
