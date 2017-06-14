@@ -55,7 +55,7 @@
       <Description>
         <p>The student's name as presented in StudentPersonal object, Name element with a Type of 02 (Current Legal Name).  If Type 02 is not available, Type of 04 (Name of Record).  Sub-elements to be used: LastName, FirstName, MiddleName.</p>
       </Description>
-      <Type ref="DataModel" name="Name"></Type>
+      <Type ref="CommonTypes" name="NameOfRecordType"></Type>
     </Item>
     <Item>
       <Element>LocalId</Element>
@@ -63,7 +63,7 @@
       <Description>
         <p>The locally assigned identifier for this student.</p>
       </Description>
-      <Type ref="DataModel" name="LocalId"></Type>
+      <Type ref="CommonTypes" name="LocalIdType"></Type>
     </Item>
   </Sequence>
   <Item>
@@ -72,7 +72,7 @@
     <Description>
       <p>Reference to the state code identifying the student in the StudentPersonal object, as of the date of the response.</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <!--</Choice>-->
   <Item>
@@ -81,7 +81,7 @@
     <Description>
       <p>Reference to State code (StateProvinceId for LEAInfo) for the student's district of enrollment as of the date of the response (optional because school might be independent).</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>LEAInfoRefId</Element>
@@ -105,7 +105,7 @@
     <Description>
       <p>Reference to State code (StateProvinceId for SchoolInfo) for student's home school of enrollment as of the date of the response (optional because state may not require).</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>GradeLevel</Element>
@@ -113,7 +113,7 @@
     <Description>
       <p>Code for the current actual grade placement of the student as of the date of the response  from StudentSchoolEnrollment.</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevel"></Type>
+    <Type ref="CommonTypes" name="GradeLevelType"></Type>
   </Item>
   <Item>
     <Element>AssessmentRegistrationRefId</Element>
@@ -222,146 +222,17 @@
     <Description>
       <p>Container.  If the requested student no longer requires any accomodations, this element should be omitted.</p>
     </Description>
-  </Item>
-  <Item>
-    <Element>/StudentProgramAccommodation</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Identifies a program in which the student participates and the accommodations specified by that program.</p>
-    </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>//StudentParticipationRefId</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Reference to the instance of the StudentParticipation object in which the required test accommodation(s) are specified for the date of the test.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>//StudentProgramType</Element>
-    <Characteristics>M</Characteristics>
-  </Item>
-  <Item>
-    <Element>///Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The value specified in the referenced StudentParticipation object in ProgramType</p>
-    </Description>
-    <Type name="xs:token"></Type>
-  </Item>
-  <Item>
-    <Element>///OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-  <Item>
-    <Element>//Accommodations</Element>
-    <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>///Accommodation</Element>
-    <Characteristics>MR</Characteristics>
-  </Item>
-  <Item>
-    <Element>////Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies the specific accommodation.  At least one required if the repeating group is sent.</p>
-    </Description>
-    <Union>
-      <Type ref="CodeSets" name="TestAccommodationTestMaterialType"/>
-      <Type ref="CodeSets" name="TestAccommodationTestAdministrationType"/>
-      <Type ref="CodeSets" name="TestAccommodationStudentEquipmentAndTechnologyType"/>
-      <Type ref="CodeSets" name="TestAccommodationTestResponseType"/>
-      <Type ref="CodeSets" name="TestAccommodationSchedulingType"/>
-      <Type ref="CodeSets" name="TestAccommodationSettingType"/>
-      <Type name="xs:token">
-        <Values type="additional">
-          <Value>
-            <Code>9999</Code>
-            <Text>Other</Text>
-          </Value>
-        </Values>
-      </Type>
-    </Union>
-  </Item>
-
-  <Item>
-    <Element>////OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-
-  <Item>
-    <Element>////AccommodationCategory</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Defines a general category of test accommodation.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>/////Code</Element>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>S001</Code>
-        <Text>Presentation</Text>
-      </Value>
-      <Value>
-        <Code>S002</Code>
-        <Text>Presentation equipment / technology</Text>
-      </Value>
-      <Value>
-        <Code>S003</Code>
-        <Text>Response</Text>
-      </Value>
-      <Value>
-        <Code>S004</Code>
-        <Text>Scheduling / timing</Text>
-      </Value>
-      <Value>
-        <Code>S005</Code>
-        <Text>Setting</Text>
-      </Value>
-      <Value>
-        <Code>S006</Code>
-        <Text>Test Response</Text>
-      </Value>
-      <Value>
-        <Code>S999</Code>
-        <Text>Other</Text>
-      </Value>
-    </Values>
-  </Item>
-
-  <Item>
-    <Element>/////OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-
-  <Item>
-    <Element>////SpecialMaterials</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Accommodation specified requires special materials. Required if the repeating group is sent.</p>
-    </Description>
-    <Type name="xs:boolean"></Type>
-  </Item>
-  <Item>
+     <Type ref="CommonTypes" name="StudentProgramAccommodationListType"></Type>
+ </Item>
+   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">
