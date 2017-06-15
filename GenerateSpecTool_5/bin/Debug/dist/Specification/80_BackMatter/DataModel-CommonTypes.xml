@@ -266,7 +266,7 @@
 		<Item>
 			<Element>MealType</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" typed="false" name="MealType"></Type>
+			<Type ref="CommonTypes" name="MealType"></Type>
 		</Item>
 		<Item>
 			<Element>Amount</Element>
