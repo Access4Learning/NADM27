@@ -1,4 +1,3 @@
-<a>
 <CommonElement name="JobClassificationType" type="true" dm="true">
 	<Item>
 		<Element>JobClassificationType</Element>
@@ -5491,4 +5490,3 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 	</Item>
 </CommonElement>
-</a>
