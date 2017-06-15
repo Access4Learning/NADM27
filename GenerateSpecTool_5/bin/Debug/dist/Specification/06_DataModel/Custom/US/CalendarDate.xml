@@ -50,7 +50,7 @@
     <Description>
       <p>School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2007" for the 2006-07 school year).</p>
     </Description>
-    <Type ref="CommonTypes" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
    <Item>
     <Element>CalendarDateType</Element>
@@ -107,12 +107,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example name="CalendarDate - Example 1" xmlns="">
     <CalendarDate RefId="359D75101AD0A9D7A8C3DAD0A85103A2" Date="2007-08-31" CalendarSummaryRefId="B5739375800AC4CC63850BB2754114AA"

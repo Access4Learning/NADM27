@@ -219,9 +219,9 @@
 	</Item>
 </CommonElement>
 
-<CommonElement name="TimeTableDayListType" type="true" dm="true">
+<CommonElement name="TimetableDayListType" type="true" dm="true">
 	<Item>
-		<Element>TimeTableDayListType</Element>
+		<Element>TimetableDayListType</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>The timetable days for this school year bell schedule.  This essentially provides a list of the time day identifiers that are used in the BellPeriod definitions below with some additional properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime.</p>
@@ -229,19 +229,19 @@
 		<List mode="List"/>
 	</Item>
 	<Item>
-		<Element>TimeTableDay</Element>
+		<Element>TimetableDay</Element>
 		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>An entry for each unique timetable day.</p>
 		</Description>
-		<Type ref="CommonTypes" name="TimeTableDayType"/>
+		<Type ref="CommonTypes" name="TimetableDayType"/>
 	</Item>
 
 </CommonElement>
 
-<CommonElement name="TimeTableDayType" type="true" dm="true">
+<CommonElement name="TimetableDayType" type="true" dm="true">
 	<Item>
-		<Element>TimeTableDayType</Element>
+		<Element>TimetableDayType</Element>
 		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>An entry for each unique timetable day</p>
@@ -267,9 +267,9 @@
 	</Item>
 </CommonElement>
 
-<CommonElement name="TimeTablePeriodListType" type="true" dm="true">
+<CommonElement name="TimetablePeriodListType" type="true" dm="true">
 	<Item>
-		<Element>TimeTablePeriodListType</Element>
+		<Element>TimetablePeriodListType</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
 			<p>The timetable periods for this school year bell schedule.  This essentially provides a list of the time period identifiers that are used in the BellPeriod definitions below with some addition properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime</p>
@@ -277,18 +277,18 @@
 		<List mode="List"/>
 	</Item>
 	<Item>
-		<Element>TimeTablePeriod</Element>
+		<Element>TimetablePeriod</Element>
 		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>An entry for each unique timetable period.</p>
 		</Description>
-		<Type ref="CommonTypes" name="TimeTablePeriodType"/>
+		<Type ref="CommonTypes" name="TimetablePeriodType"/>
 	</Item>
 </CommonElement>
 
-<CommonElement name="TimeTablePeriodType" type="true" dm="true">
+<CommonElement name="TimetablePeriodType" type="true" dm="true">
 	<Item>
-		<Element>TimeTablePeriodType</Element>
+		<Element>TimetablePeriodType</Element>
 		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>An entry for each unique timetable period.</p>

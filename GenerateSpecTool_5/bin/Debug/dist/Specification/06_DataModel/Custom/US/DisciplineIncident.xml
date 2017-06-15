@@ -23,7 +23,7 @@
     <Description>
       <p>School year in which the incident occurred, and for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2007" for the 2006-07 school year).</p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="DataModel" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>AgencyReporting</Element>
