@@ -652,7 +652,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 
 <CommonElement name="FinancialIncomeStatementMonetaryAmountType" type="true" dm="true">
 	<Item>
-		<Element>DebitCreditMonetaryAmountType</Element>
+		<Element>FinancialIncomeStatementMonetaryAmountType</Element>
 		<Description>
 			<p>Monetary amount, with debit and credit types.</p>
 		</Description>
