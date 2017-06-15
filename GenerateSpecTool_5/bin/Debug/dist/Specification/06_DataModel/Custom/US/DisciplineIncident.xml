@@ -23,7 +23,7 @@
     <Description>
       <p>School year in which the incident occurred, and for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., "2007" for the 2006-07 school year).</p>
     </Description>
-    <Type ref="DataModel" name="SchoolYearType"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>AgencyReporting</Element>
@@ -136,52 +136,9 @@
     <Description>
       <p>Information regarding the individual who reported the incident.</p>
     </Description>
+    <Type ref="CommonTypes" name="IncidentReporterType"></Type>
   </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies the type of individual who reported the incident.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES1043ReporterDescriptionType"></Type>
-  </Item>
-  <Item>
-    <Element>/Name</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The name of the individual reporting the incident.</p>
-    </Description>
-    <Type ref="DataModel" name="Name"></Type>
-  </Item>
-  <Item>
-    <Element>/SIF_RefId</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>GUID of the SIF object that relates to the person who reported the incident, if applicable.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The name of the SIF object to which the GUID relates.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>StudentPersonal</Code>
-      </Value>
-      <Value>
-        <Code>StaffPersonal</Code>
-      </Value>
-      <Value>
-        <Code>EmployeePersonal</Code>
-      </Value>
-      <Value>
-        <Code>StudentContact</Code>
-      </Value>
-    </Values>
-  </Item>
+     
   <Item>
     <Element>RelatedToList</Element>
     <Characteristics>O</Characteristics>
@@ -239,7 +196,7 @@
   <Item>
     <Element>/OtherCodeList</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
     <Description>
       <p>List of other codes or strings that crosswalk to or serve as translations of the Code element.  If Code changes and OtherCode elements are supported, both Code and all associated OtherCode elements must be present.</p>
     </Description>
@@ -284,7 +241,7 @@
     <Description>
       <p>The name of the offender.</p>
     </Description>
-    <Type ref="DataModel" name="Name"></Type>
+    <Type ref="CommonTypes" name="Name"></Type>
   </Item>
   <Item>
     <Element>//SIF_RefId</Element>
@@ -403,7 +360,7 @@
   <Item>
     <Element>////OtherCodeList</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
+    <Type ref="CommonTypes" name="OtherCodeList"></Type>
     <Description>
       <p>List of other codes or strings that crosswalk to or serve as translations of the Code element.  If Code changes and OtherCode elements are supported, both Code and all associated OtherCode elements must be present.</p>
     </Description>
@@ -597,7 +554,7 @@
     <Description>
       <p>The name of the victim.</p>
     </Description>
-    <Type ref="DataModel" name="Name"></Type>
+    <Type ref="CommonTypes" name="Name"></Type>
   </Item>
   <Item>
     <Element>//SIF_RefId</Element>
@@ -741,12 +698,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_Metadata"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElements"></Type>
   </Item>
 
   <xhtml:Example xmlns="">
