@@ -2,3 +2,5 @@ GenerateSpecTool_5/bin/Debug/dist/Logs/*
 GenerateSpecTool_5/bin/Debug/dist/Specification/out/temp/*
 GenerateSpecTool_5/bin/Debug/dist/Specification/out/diagrams/*
 GenerateSpecTool_5/bin/Debug/dist/Specification/out/XSD/*
+GenerateSpecTool_5/bin/Debug/dist/Specification/out/*.html
+GenerateSpecTool_5/bin/Debug/dist/Specification/SIF_DataModel.input.xml
