@@ -116,6 +116,15 @@
 		</Description>
 		<Type ref="CommonTypes" name="PayRateType"></Type>
 	</Item>
+</CommonElement>
+
+<CommonElement name="PayRateType" type="true" dm="true">
+	<Item>
+		<Element>PayRateType</Element>
+		<Description>
+			<p>Per pay distributions</p>
+		</Description>
+	</Item>
 	<Item>
 		<Attribute>Type</Attribute>
 		<Characteristics>M</Characteristics>
@@ -140,15 +149,6 @@
 				<Text>Extra pay</Text>
 			</Value>
 		</Values>
-	</Item>
-</CommonElement>
-
-<CommonElement name="PayRateType" type="true" dm="true">
-	<Item>
-		<Element>PayRateType</Element>
-		<Description>
-			<p>Per pay distributions</p>
-		</Description>
 	</Item>
 	<Item>
 		<Element>Amount</Element>
