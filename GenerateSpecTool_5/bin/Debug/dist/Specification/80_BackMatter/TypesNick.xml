@@ -1,4 +1,4 @@
-
+<a>
 <CommonElement name="JobClassificationType" type="true" dm="true">
 	<Item>
 		<Element>JobClassificationType</Element>
@@ -214,7 +214,7 @@
 		<Element>AccountTypeDetail</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
-			<p>Use AccountTypeDetail when AccountType is “Other”. For instance, when an AccountType=“Other”, and the AccountTypeDetail value is Long Term Asset.</p>
+			<p>Use AccountTypeDetail when AccountType is "Other". For instance, when an AccountType="Other", and the AccountTypeDetail value is Long Term Asset.</p>
 		</Description>
 		<Values>
 			<Value>
@@ -581,7 +581,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	</Item>
 </CommonElement>
 
-<CommonElement name="MonetaryAmountListType" type="true">
+<CommonElement name="FinancialIncomeStatementMonetaryAmountListType" type="true">
 	<Item>
 		<Element>MonetaryAmountListType</Element>
 		<Characteristics>M</Characteristics>
@@ -597,7 +597,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>Amount</p>
 		</Description>
-		<Type ref="CommonTypes" name="MonetaryAmountType"/>
+		<Type ref="CommonTypes" name="FinancialIncomeStatementMonetaryAmountType"/>
 	</Item>
 </CommonElement>
 
@@ -649,6 +649,32 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</Value>
 		</Values>
 	</Item>
+</CommonElement>
+
+<CommonElement name="FinancialIncomeStatementMonetaryAmountType" type="true" dm="true">
+	<Item>
+		<Element>DebitCreditMonetaryAmountType</Element>
+		<Description>
+			<p>Monetary amount, with debit and credit types.</p>
+		</Description>
+		<Type  ref="CommonTypes" name="MonetaryAmountType"></Type>
+	</Item>
+   <Item>
+    <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>FinancialAccountAccountingPeriodLocationInfo reference.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>FinancialClassRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Class of the financial account.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
 </CommonElement>
 
 <CommonElement name="OtherLEAListType" type="true" dm="true">
@@ -5465,3 +5491,4 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 	</Item>
 </CommonElement>
+</a>
