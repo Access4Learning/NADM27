@@ -2592,7 +2592,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<Description>Other</Description>
 			</Value>
 		</Values>
-    </xs:token>
+    </Type>
 	</Item>
 	<Item>
 		<Element>Duration</Element>
