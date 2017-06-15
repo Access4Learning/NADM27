@@ -116,6 +116,15 @@
 		</Description>
 		<Type ref="CommonTypes" name="PayRateType"></Type>
 	</Item>
+</CommonElement>
+
+<CommonElement name="PayRateType" type="true" dm="true">
+	<Item>
+		<Element>PayRateType</Element>
+		<Description>
+			<p>Per pay distributions</p>
+		</Description>
+	</Item>
 	<Item>
 		<Attribute>Type</Attribute>
 		<Characteristics>M</Characteristics>
@@ -140,15 +149,6 @@
 				<Text>Extra pay</Text>
 			</Value>
 		</Values>
-	</Item>
-</CommonElement>
-
-<CommonElement name="PayRateType" type="true" dm="true">
-	<Item>
-		<Element>PayRateType</Element>
-		<Description>
-			<p>Per pay distributions</p>
-		</Description>
 	</Item>
 	<Item>
 		<Element>Amount</Element>
@@ -1563,7 +1563,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>Address of organization or company.</p>
 		</Description>
-		<Type ref="CommonTypes" name="AddressTypes"></Type>
+		<Type ref="CommonTypes" name="AddressType"></Type>
 	</Item>
 	<Item>
 		<Element>PhoneNumber</Element>
@@ -1572,7 +1572,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>Phone number of organization or company.</p>
 		</Description>
-		<Type ref="CommonTypes" name="PhoneNumberTypes"></Type>
+		<Type ref="CommonTypes" name="PhoneNumberType"></Type>
 	</Item>
 	<Item>
 		<Element>Email</Element>
@@ -1581,7 +1581,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The email of the organization or company.</p>
 		</Description>
-		<Type ref="CommonTypes" name="EmailTypes"></Type>
+		<Type ref="CommonTypes" name="EmailType"></Type>
 	</Item>
 </CommonElement>
 
@@ -2553,6 +2553,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The frequency in segments of time.</p>
 		</Description>
+			<Type name="xs:token">
 		<Values>
 			<Value>
 				<Code>S001</Code> 
@@ -2591,6 +2592,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<Description>Other</Description>
 			</Value>
 		</Values>
+    </Type>
 	</Item>
 	<Item>
 		<Element>Duration</Element>
@@ -2600,7 +2602,23 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Description>
 		<Type name="xs:integer"></Type>
 	</Item>
-</CommonElement>  
+	  <Item>
+   <Attribute>UnitOfMeasure</Attribute>
+   <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies unit of measure in which amount of time is expressed.</p>
+    </Description>
+    <Values>
+		<Value>
+			<Code>Minutes</Code>
+		</Value>
+				<Value>
+			<Code>Seconds</Code>
+		</Value>
+    </Values>
+   </Item>
+ 
+</CommonElement> 
 
 <CommonElement name="PerformanceIndicatorListType" type="true" dm="true">
 	<Item>
