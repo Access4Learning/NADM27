@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>SIF Implementation Specification 2.7M - Introduction</title>
+    <link rel="stylesheet" type="text/css" href="include/document.css" />
+    <link rel="stylesheet" type="text/css" href="include/specification.css" />
+  </head>
+  <body>
+    <div class="navigation" id="topnavigation">
+      <a href="index.html">home</a>
+      <a href="index.html#contents">table of contents</a>
+      <hr />
+    </div>
+    <a name="Introduction" />
+    <h1>2 Introduction</h1>
+    <a name="SpecificationOrganization" />
+    <h2>2.1 Specification Organization</h2>
+    <p>
+      With respect to the SIF Specification, educators and non-technical readers are typically interested in the pK-12 data objects
+      that can be shared and reported on by SIF-enabled applications in SIF implementations.  This document, the <em>SIF Data Model Implementation Specification</em>, contains a <a href="DataModel.html">Data Model</a>
+      section in a format that should not be a barrier to readers with a some knowledge of <a href="http://www.w3.org/XML/1999/XML-in-10-points.html">[XML]</a>.
+      More technical readers, including software architects,
+      developers and integrators, will also be interested in the separate <em>SIF Infrastructure Implementation Specification</em> document.   
+    </p>
+    <ul>
+      <li>
+        The <a href="index.html#Preamble">Preamble</a> provides an abstract of SIF along with the SIF Association disclaimer and details regarding certification and compliance claims.
+      </li>
+      <li>
+        This Introduction outlines the organization of this specification document, provides conventions used in this document, and summarizes versioning of the specification.
+        Highlights of additions/changes since the previous version of the specification are also provided.
+      </li>
+      <li>
+        The <a href="DataModel.html">Data Model</a> section provides definitions of the XML structure for common elements in the data model and all objects
+        related to entities in the pK-12 environment.  This section is organized by the working groups and task forces within the SIF Association that have defined
+        common elements or objects.
+      </li>
+      <li>
+        <a href="ZoneServices.html">Zone Services</a> details the data formats and operation choreographies of the interfaces which Zone Services provide in support of their clients.
+      </li>
+      <li>
+        The document concludes with various appendices including lists of code set values defined within SIF and in external documents,
+        and ends with a list of <a href="References.html">references</a> to other documents.
+      </li>
+    </ul>
+    <a name="DocumentConventions" />
+    <h2>2.2 Document Conventions</h2>
+    <a name="Definitions" />
+    <h3>2.2.1 Definitions</h3>
+    <p>
+        The first time a term or concept is defined, it may be <em>emphasized</em>.
+      </p>
+    <a name="StructureAndValues" />
+    <h3>2.2.2 Structure and Values</h3>
+    <p>
+      <code>SIF message and object names, XML element tags, attribute names and values, and other codes or values are typically presented as in this sentence.</code>
+    </p>
+    <a name="Examples" />
+    <h3>2.2.3 Examples</h3>
+    <a name="Example2231ExamplesConvention" />
+
+    <div class="example_parent">
+      <div class="example"
+>Longer examples of XML or HTTP messages are typically numbered and presented as given here.
+</div>
+    </div>
+    <span class="caption">Example 2.2.3-1: Examples Convention</span>
+    <a name="References" />
+    <h3>2.2.4 References</h3>
+    <p>
+        References to other works occurring in this text are given in brackets, e.g. [REFERENCE].  The text in brackets corresponds to a key in the <a href="References.html#References">References</a> appendix.
+        Often when the text in the brackets duplicates surrounding text, the reference alone is used (e.g. [XML] instead of XML [XML]).
+      </p>
+    <a name="Terminology" />
+    <h3>2.2.5 Terminology</h3>
+    <p>
+        The key words <span class="rfc2119">MUST</span>, <span class="rfc2119">MUST NOT</span>, <span class="rfc2119">REQUIRED</span>, <span class="rfc2119">SHALL</span>,
+        <span class="rfc2119">SHALL NOT</span>, <span class="rfc2119">SHOULD</span>, <span class="rfc2119">SHOULD NOT</span>, <span class="rfc2119">RECOMMENDED</span>,
+        <span class="rfc2119">MAY</span>, <span class="rfc2119">OPTIONAL</span>, when <span class="rfc2119">EMPHASIZED</span>, are to be interpreted as described in <a href="References.html#RFC2119">[RFC 2119]</a>.
+      </p>
+    <a name="XMLDiagrams" />
+    <h3>2.2.6 XML Diagrams</h3>
+    <p>
+        Quick overviews of XML structures, including messages, objects, common elements and types, are provided in XML diagrams.  The following diagram illustrates
+        the conventions typically encountered in SIF.
+      </p>
+    <a name="Figure2261XMLDiagramConventions" />
+    <p>
+      <img src="images/SequenceElement.png" title="XML Diagram Conventions" />
+    </p>
+    <span class="caption">Figure 2.2.6-1: XML Diagram Conventions</span>
+    <p>
+        XML elements are represented by rectangles with the name of the element in the upper portion and the type, if any, in the lower portion.  Attributes
+        are represented in the same fashion, but have an <code>@</code> icon rather than a SIF icon.  Elements and attributes that are optional have a circled <code>?</code>
+        (0 or 1 occurrence) to the left of the rectangle.  Optional and mandatory repeatable elements are indicated by a circled <code>*</code> (0 or more occurrences)
+        and <code>+</code> (1 or more occurrences), respectively.
+        Element attributes are grouped together in a rectangular block and connected to the element with a line that turns at right angles.
+        Ordered sequences of XML elements are bracketed by lines that turn at right angles.  When a choice of XML elements is indicated, the elements are bracketed by angled
+        lines.  A choice of elements can occur within an element, or may be an unnamed choice of elements.
+      </p>
+    <p>XML types are represented using the same conventions as for XML elements, though the type portion of the rectangle typically indicates a base type, if any.</p>
+    <p>
+        The type name of any element, attribute or type may be prefixed with a <code>↓</code>, indicating the type is restricted in some fashion by one or more
+        XML Schema facets (e.g. enumeration).  When the type is a union of types, a list of types is presented, each type separated by <code>|</code>; if the list of union types
+        is long, the list may be marked with ellipses, e.g., <code>| ...</code></p>
+    <p>In an actual XML diagram, element, type and attribute rectangles are usually linked to their corresponding definitions/descriptions in accompanying tables.</p>
+    <a name="VersionNumbers" />
+    <h2>2.3 Version Numbers</h2>
+    <p>The SIF Implementation Specification uses the following version numbering scheme:</p>
+    <p>
+      <em>major version</em>
+      <code>.</code>
+      <em>minor version</em>
+      <code>r</code>
+      <em>revision number</em>
+    </p>
+    <p>
+      Major versions typically introduce additions/changes to the SIF infrastructure and/or data model changes that impact a significant
+      percentage of SIF-enabled applications (e.g. making previously optional elements mandatory, removal of deprecated objects, elements or values).
+      The first release of a major version has a minor version of <code>0</code> (<code>2.0</code>);
+      major version numbers start at <code>1</code> and are incremented as major versions are released (<code>1.0</code>, <code>2.0</code>, <code>3.0</code>, ...).
+    </p>
+    <p>
+      Minor releases typically introduce new data objects, or optional additions to data objects, to the marketplace, and may include minor
+      infrastructure additions/changes that do not impact existing SIF-enabled applications and that ZIS vendors have agreed to implement.
+      The first minor version released subsequent
+      to and within a major release has a minor version of <code>1</code> and is incremented as new minor versions are released
+      (<code>2.1</code>, <code>2.2</code>, ...).  If a significant number of minor release features is introduced in a specification,
+      the SIF Association may decide to increment the minor version number by more than <code>1</code> (e.g. <code>1.1</code> to <code>1.5</code>),
+      though a number like <code>1.5</code> is not an indication of being halfway to a major release, as minor version numbers may be incremented
+      significantly past <code>10</code> (<code>2.10</code>, <code>2.11</code>, ...) as data objects and other minor version features are released.
+    </p>
+    <p>
+      Corrections resulting from identified errata, as well as textual changes, may be incorporated into a revision release.
+      These typically include minor corrections to messages or data objects, corrections of typographical errors, or corrected/expanded documentation.
+      If major errors in any release are identified, a revision release may incorporate changes more typical of a major or minor release.
+      First major and minor releases have a revision number of <code>0</code>, which is omitted from the version number (<code>2.0</code>, not <code>2.0r0</code>);
+      subsequent revision numbers start at <code>1</code> and are incremented as new revisions are released (<code>2.0r1</code>, <code>2.0r2</code>,
+      ...).
+    </p>
+    <a name="AdditionsChangesSinceVersion26" />
+    <h2>2.4 Additions/Changes Since Version 2.6</h2>
+    <p>This release of the SIF Data Model Implementation Specification is a so-called migration release because it incorporates important version 3 structural changes that move the data model toward compatibility with both the 2.* and SIF 3 infrastructures. The data model Zone Services have been deprecated in lieu of similar functionality in the SIF 3 infrastructure. Also, RefIds have been added to all SIF objects that did not have them before as detailed below.</p>
+    <p>Although this specification is not a SIF Infrastructure release it does suggest that certain infrastructure features not be used, namely: Zone Services, the SOAP Transport, and Bundled Events.</p>
+    <p>RefIds added to these SIF objects:</p>
+    <ul>
+      <li>EmploymentRecord </li>
+      <li>SectionMarkInfo </li>
+      <li>StaffEvaluation</li>
+      <li>StudentAttendanceSummary </li>
+      <li>StudentSectionMarks </li>
+      <li>CalendarDate</li>
+      <li>ContentCatalog</li>
+      <li>EmployeeCredential</li>
+      <li>EmployeePicture</li>
+      <li>EmployeeRecertification</li>
+      <li>EnergyUsage</li>
+      <li>FinancialAnnual</li>
+      <li>FinancialBudget</li>
+      <li>FoodServiceStaffEnrollmentCount</li>
+      <li>FoodServiceStudentEnrollmentCount</li>
+      <li>GradingAssignmentScore</li>
+      <li>LibraryPatronStatus</li>
+      <li>StaffMeal</li>
+      <li>StudentContactRelationship</li>
+      <li>StudentDailyAttendance</li>
+      <li>StudentLocator</li>
+      <li>StudentMeal</li>
+      <li>StudentPicture</li>
+      <li>StudentSnapshot</li>
+      <li>StudentSpecialEducationSummary</li>
+      <li>W4</li>
+    </ul>
+    <p>Staff Evaluation - Events Reported changed to True.</p>
+    <p>BusPositionInfo/BusPositionInfoRefId changed to RefId.</p>
+    <p>LearningResourcePackage - example corrected.</p>
+    <p>Added four new Identity Management objects and the Identity Management Project Team section in the Spec. </p>
+    <div class="navigation" id="bottomnavigation">
+      <hr />
+      <a href="index.html">home</a>
+      <a href="index.html">previous</a>
+      <a href="DataModel.html">next</a>
+      <a href="index.html#contents">table of contents</a>
+    </div><p align='center'><a href='http://validator.w3.org/check?uri=referer'><img src='http://www.w3.org/Icons/valid-xhtml10' alt='Valid XHTML 1.0 Transitional'/></a></p></body>
+</html>

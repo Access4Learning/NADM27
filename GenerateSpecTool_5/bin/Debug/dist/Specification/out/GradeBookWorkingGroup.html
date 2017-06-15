@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>SIF Implementation Specification 2.7M - Grade Book Working Group</title>
+    <link rel="stylesheet" type="text/css" href="include/document.css" />
+    <link rel="stylesheet" type="text/css" href="include/specification.css" />
+  </head>
+  <body>
+    <div class="navigation" id="topnavigation">
+      <a href="index.html">home</a>
+      <a href="index.html#contents">table of contents</a>
+      <hr />
+    </div>
+    <h2>3.9 Grade Book Working Group</h2>
+    <p>The goal of the Grade Book Working Group is an efficient, functional standard that supports the entire SIF structure, allowing for easy, bi-directional transfer of data integral to grading.</p>
+    <div class="element_section">
+      <a name="obj:GradingAssignment" />
+      <a name="391GradingAssignment" />
+      <h3 class="element_name">3.9.1 GradingAssignment</h3>
+      <p>This object provides information about a particular assignment, allows applications to synchronize each other's assignment tables, gathers the definition for a GradingAssignmentScore object, etc.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3911GradingAssignment" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/GradingAssignment.png">
+          <img class="diagram" src="diagrams/GradingAssignment.png" alt="GradingAssignment" width="1101" height="558" usemap="#GradingAssignment__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.1-1: GradingAssignment</span><map name="GradingAssignment__map" id="GradingAssignment__map">
+  <area alt="GradingAssignment" href="#GradingAssignment" shape="rect" coords="5,301,195,343" />
+  <area alt="RefId" href="#GradingAssignment___RefId" shape="rect" coords="270,15,345,57" />
+  <area alt="SectionInfoRefId" href="#GradingAssignment___SectionInfoRefId" shape="rect" coords="360,15,525,57" />
+  <area alt="TermInfoRefId" href="#GradingAssignment___TermInfoRefId" shape="rect" coords="540,15,686,57" />
+  <area alt="SchoolInfoRefId" href="#GradingAssignment___SchoolInfoRefId" shape="rect" coords="701,15,861,57" />
+  <area alt="GradingCategoryRefId" href="#GradingAssignment___GradingCategoryRefId" shape="rect" coords="876,15,1086,57" />
+  <area alt="Description" href="#GradingAssignment__Description" shape="rect" coords="270,92,393,134" />
+  <area alt="PointsPossible" href="#GradingAssignment__PointsPossible" shape="rect" coords="270,149,421,191" />
+  <area alt="CreateDate" href="#GradingAssignment__CreateDate" shape="rect" coords="270,206,390,248" />
+  <area alt="DueDate" href="#GradingAssignment__DueDate" shape="rect" coords="270,263,370,305" />
+  <area alt="Weight" href="#GradingAssignment__Weight" shape="rect" coords="270,320,358,362" />
+  <area alt="DetailedDescription" href="#GradingAssignment__DetailedDescription" shape="rect" coords="270,387,458,429" />
+  <area alt="Type" href="#GradingAssignment__DetailedDescription___Type" shape="rect" coords="560,387,632,429" />
+  <area alt="SIF_Metadata" href="#GradingAssignment__SIF_Metadata" shape="rect" coords="270,454,409,496" />
+  <area alt="SIF_ExtendedElements" href="#GradingAssignment__SIF_ExtendedElements" shape="rect" coords="270,511,485,553" />
+</map><a name="Table3911GradingAssignment" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment" /><span class="rootElement">GradingAssignment</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object provides information about a particular assignment, allows applications to synchronize each other's assignment tables, gathers the definition for a GradingAssignmentScore object, etc.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="GradingAssignment___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignment___SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID for the SectionInfo object.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignment___TermInfoRefId" />TermInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID for the TermInfo object that defines the marking period that the assignment was created in.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignment___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the School that these Mark Values apply to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignment___GradingCategoryRefId" />GradingCategoryRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID for the GradingCategory that this assignment is part of.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__Description" />Description</td><td class="characteristics">M</td><td class="description"><p>The text-based description of the assignment.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__PointsPossible" />PointsPossible</td><td class="characteristics">M</td><td class="description"><p>The points possible on the assignment.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#unsignedInt" class="type">xs:unsignedInt</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__CreateDate" />CreateDate</td><td class="characteristics">O</td><td class="description"><p>Creation date of the assignment.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__DueDate" />DueDate</td><td class="characteristics">O</td><td class="description"><p>Date the assignment is due.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__Weight" />Weight</td><td class="characteristics">O</td><td class="description"><p>The weight of the assignment.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__DetailedDescription" />DetailedDescription</td><td class="characteristics">O</td><td class="description"><p>
+        This element defines the assignment.
+        If the <code>Type</code> attribute is <code>URL</code>, this is the location of the document that describes the assignment.
+        If <code>Type</code> is <code>PDF</code>, this element will contain the Base64 encoding of the entire document.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#URIOrBinaryType" class="type">URIOrBinaryType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignment__DetailedDescription___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>The type of information that is contained in the DetailedDescription element.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>URL</dt><dt>PDF</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignment__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.1-1: GradingAssignment</span><a name="Example3911GradingAssignment" />
+<div class="example_parent"><div class="example"
+>&lt;GradingAssignment RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SectionInfoRefId="D0A0A27AD0A8510AD9D75101A8C3DA39" TermInfoRefId="A8C3A2E35B359D75101D00AA001A0000" GradingCategoryRefId="98A57A0013BA8C3D00AA012B359D751A" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;Description&gt;Pop Quiz&lt;/Description&gt;
+  &lt;PointsPossible&gt;100&lt;/PointsPossible&gt;
+  &lt;CreateDate&gt;2000-11-21&lt;/CreateDate&gt;
+  &lt;DueDate&gt;2000-11-25&lt;/DueDate&gt;
+  &lt;Weight&gt;1.0&lt;/Weight&gt;
+  &lt;DetailedDescription Type="URL"&gt;http://www.assignmentinfo.com/assignment1.pdf&lt;/DetailedDescription&gt;
+&lt;/GradingAssignment&gt;
+</div></div><span class="caption">Example 3.9.1-1: GradingAssignment</span></div>
+    <div class="element_section">
+      <a name="obj:GradingAssignmentScore" />
+      <a name="392GradingAssignmentScore" />
+      <h3 class="element_name">3.9.2 GradingAssignmentScore</h3>
+      <p>This object provides score information about a particular assignment.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3921GradingAssignmentScore" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/GradingAssignmentScore.png">
+          <img class="diagram" src="diagrams/GradingAssignmentScore.png" alt="GradingAssignmentScore" width="1230" height="424" usemap="#GradingAssignmentScore__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.2-1: GradingAssignmentScore</span><map name="GradingAssignmentScore__map" id="GradingAssignmentScore__map">
+  <area alt="GradingAssignmentScore" href="#GradingAssignmentScore" shape="rect" coords="5,234,241,276" />
+  <area alt="RefId" href="#GradingAssignmentScore___RefId" shape="rect" coords="316,15,391,57" />
+  <area alt="StudentPersonalRefId" href="#GradingAssignmentScore___StudentPersonalRefId" shape="rect" coords="406,15,612,57" />
+  <area alt="SectionInfoRefId" href="#GradingAssignmentScore___SectionInfoRefId" shape="rect" coords="627,15,792,57" />
+  <area alt="SchoolInfoRefId" href="#GradingAssignmentScore___SchoolInfoRefId" shape="rect" coords="807,15,967,57" />
+  <area alt="GradingAssignmentRefId" href="#GradingAssignmentScore___GradingAssignmentRefId" shape="rect" coords="982,15,1215,57" />
+  <area alt="ScorePoints" href="#GradingAssignmentScore__ScorePoints" shape="rect" coords="316,92,445,134" />
+  <area alt="ScorePercent" href="#GradingAssignmentScore__ScorePercent" shape="rect" coords="316,149,455,191" />
+  <area alt="ScoreLetter" href="#GradingAssignmentScore__ScoreLetter" shape="rect" coords="316,206,440,248" />
+  <area alt="ScoreDescription" href="#GradingAssignmentScore__ScoreDescription" shape="rect" coords="316,263,485,305" />
+  <area alt="SIF_Metadata" href="#GradingAssignmentScore__SIF_Metadata" shape="rect" coords="316,320,455,362" />
+  <area alt="SIF_ExtendedElements" href="#GradingAssignmentScore__SIF_ExtendedElements" shape="rect" coords="316,377,531,419" />
+</map><a name="Table3921GradingAssignmentScore" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore" /><span class="rootElement">GradingAssignmentScore</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object provides score information about a particular assignment.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignmentScore___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is new for 2.7M and MUST be supported like other objects that have a RefId (i.e. it is the key for the object).  The alternate keys MUST continue to be supported.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="GradingAssignmentScore___StudentPersonalRefId" />StudentPersonalRefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignmentScore___SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingAssignmentScore___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID that specifies the school this score was recorded at.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="GradingAssignmentScore___GradingAssignmentRefId" />GradingAssignmentRefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore__ScorePoints" />ScorePoints</td><td class="characteristics">C</td><td class="description"><p>The score represented as points.  Conditionally required that one or more of ScorePoints, ScorePercent or ScoreLetter must be filled in.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#unsignedInt" class="type">xs:unsignedInt</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore__ScorePercent" />ScorePercent</td><td class="characteristics">C</td><td class="description"><p>The score represented as a percent.  Conditionally required that one or more of ScorePoints, ScorePercent or ScoreLetter must be filled in.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore__ScoreLetter" />ScoreLetter</td><td class="characteristics">C</td><td class="description"><p>The score represented as a letter grade.  Conditionally required that one or more of ScorePoints, ScorePercent or ScoreLetter must be filled in.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore__ScoreDescription" />ScoreDescription</td><td class="characteristics">O</td><td class="description"><p>Text description of the score.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingAssignmentScore__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.2-1: GradingAssignmentScore</span><a name="Example3921GradingAssignmentScore" />
+<div class="example_parent"><div class="example"
+>&lt;GradingAssignmentScore RefId="359D75101AD0A9D7A8C3DAD0A85103A2" StudentPersonalRefId="A75A00101A8C301D02E3A05B359D0A00" SectionInfoRefId="D0A0A27AD0A8510AD9D75101A8C3DA39" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB" GradingAssignmentRefId="359D75101AD0A9D7A8C3DAD0A85105D2"&gt;
+  &lt;ScorePoints&gt;45&lt;/ScorePoints&gt;
+  &lt;ScorePercent&gt;90&lt;/ScorePercent&gt;
+  &lt;ScoreDescription&gt;Excellent&lt;/ScoreDescription&gt;
+&lt;/GradingAssignmentScore&gt;
+</div></div><span class="caption">Example 3.9.2-1: GradingAssignmentScore</span></div>
+    <div class="element_section">
+      <a name="obj:GradingCategory" />
+      <a name="393GradingCategory" />
+      <h3 class="element_name">3.9.3 GradingCategory</h3>
+      <p>This object provides information about a particular grading category to provide grouping and type information for assignments.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3931GradingCategory" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/GradingCategory.png">
+          <img class="diagram" src="diagrams/GradingCategory.png" alt="GradingCategory" width="853" height="253" usemap="#GradingCategory__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.3-1: GradingCategory</span><map name="GradingCategory__map" id="GradingCategory__map">
+  <area alt="GradingCategory" href="#GradingCategory" shape="rect" coords="5,149,172,191" />
+  <area alt="RefId" href="#GradingCategory___RefId" shape="rect" coords="247,15,322,57" />
+  <area alt="SectionInfoRefId" href="#GradingCategory___SectionInfoRefId" shape="rect" coords="337,15,502,57" />
+  <area alt="TermInfoRefId" href="#GradingCategory___TermInfoRefId" shape="rect" coords="517,15,663,57" />
+  <area alt="SchoolInfoRefId" href="#GradingCategory___SchoolInfoRefId" shape="rect" coords="678,15,838,57" />
+  <area alt="Description" href="#GradingCategory__Description" shape="rect" coords="247,92,370,134" />
+  <area alt="SIF_Metadata" href="#GradingCategory__SIF_Metadata" shape="rect" coords="247,149,386,191" />
+  <area alt="SIF_ExtendedElements" href="#GradingCategory__SIF_ExtendedElements" shape="rect" coords="247,206,462,248" />
+</map><a name="Table3931GradingCategory" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="GradingCategory" /><span class="rootElement">GradingCategory</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object provides information about a particular grading category to provide grouping and type information for assignments.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="GradingCategory___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>GUID that identifies a grading category.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingCategory___SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID for the SectionInfo object that this category is used for grading in.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingCategory___TermInfoRefId" />TermInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID for the TermInfo object that defines the marking period that the category was created in.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="GradingCategory___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the School that these Mark Values apply to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingCategory__Description" />Description</td><td class="characteristics">M</td><td class="description"><p>The name/short description of the category.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingCategory__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="GradingCategory__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.3-1: GradingCategory</span><a name="Example3931GradingCategory" />
+<div class="example_parent"><div class="example"
+>&lt;GradingCategory RefId="98157AA013BA8C3D00AA012B359D7512" SectionInfoRefId="13BA8C3D00AA098157AA012B359D7512" TermInfoRefId="D00AA012B359D798157AA013BA8C3512" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;Description&gt;Tests&lt;/Description&gt;
+&lt;/GradingCategory&gt;
+</div></div><span class="caption">Example 3.9.3-1: GradingCategory</span></div>
+    <div class="element_section">
+      <a name="obj:MarkInfo" />
+      <a name="394MarkInfo" />
+      <h3 class="element_name">3.9.4 MarkInfo</h3>
+      <p>
+        This object defines each mark that can be recorded and associates it with a MarkValueInfo object that lists the types of values and valid values for each type.  It also
+        places the definition in the context of a school and a school year.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3941MarkInfo" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/MarkInfo.png">
+          <img class="diagram" src="diagrams/MarkInfo.png" alt="MarkInfo" width="650" height="310" usemap="#MarkInfo__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.4-1: MarkInfo</span><map name="MarkInfo__map" id="MarkInfo__map">
+  <area alt="MarkInfo" href="#MarkInfo" shape="rect" coords="5,177,107,219" />
+  <area alt="RefId" href="#MarkInfo___RefId" shape="rect" coords="182,15,257,57" />
+  <area alt="MarkValueInfoRefId" href="#MarkInfo___MarkValueInfoRefId" shape="rect" coords="272,15,460,57" />
+  <area alt="SchoolInfoRefId" href="#MarkInfo___SchoolInfoRefId" shape="rect" coords="475,15,635,57" />
+  <area alt="SchoolYear" href="#MarkInfo__SchoolYear" shape="rect" coords="182,92,306,134" />
+  <area alt="Description" href="#MarkInfo__Description" shape="rect" coords="182,149,305,191" />
+  <area alt="SIF_Metadata" href="#MarkInfo__SIF_Metadata" shape="rect" coords="182,206,321,248" />
+  <area alt="SIF_ExtendedElements" href="#MarkInfo__SIF_ExtendedElements" shape="rect" coords="182,263,397,305" />
+</map><a name="Table3941MarkInfo" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="MarkInfo" /><span class="rootElement">MarkInfo</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object defines each mark that can be recorded and associates it with a MarkValueInfo object that lists the types of values and valid values for each type.  It also
+        places the definition in the context of a school and a school year.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="MarkInfo___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies this Grading Mark entity.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkInfo___MarkValueInfoRefId" />MarkValueInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the MarkValueInfo.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkInfo___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the School that this Mark applies to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkInfo__SchoolYear" />SchoolYear</td><td class="characteristics">M</td><td class="description"><p>The year that this  MarkInfo applies to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#SchoolYearType" class="type">SchoolYearType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkInfo__Description" />Description</td><td class="characteristics">M</td><td class="description"><p>Textual description of the type of Mark (e.g. "Marking Period Grade", "Comment 1", "Comment 2", "Conduct", "Effort", "WorkHabits").</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkInfo__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkInfo__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.4-1: MarkInfo</span><a name="Example3941MarkInfo" />
+<div class="example_parent"><div class="example"
+>&lt;MarkInfo RefId="46BDBA4301C11737E214A7CADCA75C87" MarkValueInfoRefId="301CADCA7511737E214A7C46BDBA4E23" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+  &lt;Description&gt;Marking Period Grade&lt;/Description&gt;
+&lt;/MarkInfo&gt;
+</div></div><span class="caption">Example 3.9.4-1: MarkInfo</span><a name="Example3942MarkInfo" />
+<div class="example_parent"><div class="example"
+>&lt;MarkInfo RefId="11737E214A7C46BDBA4301CADCA75C87" MarkValueInfoRefId="11737E214A7C46BDBA4301CADCA75E23" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+  &lt;Description&gt;Conduct Grade&lt;/Description&gt;
+&lt;/MarkInfo&gt;
+</div></div><span class="caption">Example 3.9.4-2: MarkInfo</span></div>
+    <div class="element_section">
+      <a name="obj:MarkValueInfo" />
+      <a name="395MarkValueInfo" />
+      <h3 class="element_name">3.9.5 MarkValueInfo</h3>
+      <p>This object defines the types of values allowed for a mark and the domain for each mark value.  At least one of the Percentage, Numeric, Letter or Narrative nodes must be used to create a valid MarkValueInfo.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3951MarkValueInfo" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/MarkValueInfo.png">
+          <img class="diagram" src="diagrams/MarkValueInfo.png" alt="MarkValueInfo" width="924" height="1315" usemap="#MarkValueInfo__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.5-1: MarkValueInfo</span><map name="MarkValueInfo__map" id="MarkValueInfo__map">
+  <area alt="MarkValueInfo" href="#MarkValueInfo" shape="rect" coords="5,680,150,722" />
+  <area alt="RefId" href="#MarkValueInfo___RefId" shape="rect" coords="225,15,300,57" />
+  <area alt="SchoolInfoRefId" href="#MarkValueInfo___SchoolInfoRefId" shape="rect" coords="315,15,475,57" />
+  <area alt="SchoolYear" href="#MarkValueInfo__SchoolYear" shape="rect" coords="225,92,349,134" />
+  <area alt="Name" href="#MarkValueInfo__Name" shape="rect" coords="225,149,303,191" />
+  <area alt="Percentage" href="#MarkValueInfo__Percentage" shape="rect" coords="225,321,347,363" />
+  <area alt="IsAccepted" href="#MarkValueInfo__Percentage___IsAccepted" shape="rect" coords="515,216,637,258" />
+  <area alt="Minimum" href="#MarkValueInfo__Percentage__Minimum" shape="rect" coords="515,293,620,335" />
+  <area alt="Maximum" href="#MarkValueInfo__Percentage__Maximum" shape="rect" coords="515,350,624,392" />
+  <area alt="Numeric" href="#MarkValueInfo__Numeric" shape="rect" coords="225,579,324,621" />
+  <area alt="IsAccepted" href="#MarkValueInfo__Numeric___IsAccepted" shape="rect" coords="515,417,637,459" />
+  <area alt="Precision" href="#MarkValueInfo__Numeric__Precision" shape="rect" coords="515,494,622,536" />
+  <area alt="Scale" href="#MarkValueInfo__Numeric__Scale" shape="rect" coords="515,551,599,593" />
+  <area alt="Low" href="#MarkValueInfo__Numeric__Low" shape="rect" coords="515,608,581,650" />
+  <area alt="High" href="#MarkValueInfo__Numeric__High" shape="rect" coords="515,665,584,707" />
+  <area alt="Letter" href="#MarkValueInfo__Letter" shape="rect" coords="225,909,304,951" />
+  <area alt="IsAccepted" href="#MarkValueInfo__Letter___IsAccepted" shape="rect" coords="515,732,637,774" />
+  <area alt="ValidMark" href="#MarkValueInfo__Letter__ValidMark" shape="rect" coords="515,953,626,995" />
+  <area alt="SIF_Action" href="#MarkValueInfo__Letter__ValidMark___SIF_Action" shape="rect" coords="719,819,839,861" />
+  <area alt="Code" href="#MarkValueInfo__Letter__ValidMark__Code" shape="rect" coords="701,896,775,938" />
+  <area alt="NumericEquivalent" href="#MarkValueInfo__Letter__ValidMark__NumericEquivalent" shape="rect" coords="701,953,883,995" />
+  <area alt="Description" href="#MarkValueInfo__Letter__ValidMark__Description" shape="rect" coords="701,1010,824,1052" />
+  <area alt="Narrative" href="#MarkValueInfo__Narrative" shape="rect" coords="225,1154,329,1196" />
+  <area alt="IsAccepted" href="#MarkValueInfo__Narrative___IsAccepted" shape="rect" coords="515,1077,637,1119" />
+  <area alt="MaximumSize" href="#MarkValueInfo__Narrative__MaximumSize" shape="rect" coords="515,1154,657,1196" />
+  <area alt="SIF_Metadata" href="#MarkValueInfo__SIF_Metadata" shape="rect" coords="225,1211,364,1253" />
+  <area alt="SIF_ExtendedElements" href="#MarkValueInfo__SIF_ExtendedElements" shape="rect" coords="225,1268,440,1310" />
+</map><a name="Table3951MarkValueInfo" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo" /><span class="rootElement">MarkValueInfo</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object defines the types of values allowed for a mark and the domain for each mark value.  At least one of the Percentage, Numeric, Letter or Narrative nodes must be used to create a valid MarkValueInfo.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="MarkValueInfo___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies this MarkValueInfo entity.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkValueInfo___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the School that these Mark Values apply to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__SchoolYear" />SchoolYear</td><td class="characteristics">M</td><td class="description"><p>The year that this  MarkValueInfo applies to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#SchoolYearType" class="type">SchoolYearType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Name" />Name</td><td class="characteristics">M</td><td class="description"><p>The text name of the value list ("Letter Grades", "Letter Grades (+/-)", "ESU", "Pass/Fail", "Override Grades", "Citizenship Comment Codes", etc.).</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Percentage" />Percentage</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a percent Mark is accepted (format ##0.00).</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkValueInfo__Percentage___IsAccepted" />IsAccepted</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a percent Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#boolean" class="type">xs:boolean</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Percentage__Minimum" />Percentage/Minimum</td><td class="characteristics">O</td><td class="description"><p>The minimum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be lower than this value.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Percentage__Maximum" />Percentage/Maximum</td><td class="characteristics">O</td><td class="description"><p>The maximum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be higher than this value.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Numeric" />Numeric</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a raw numeric score is accepted.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkValueInfo__Numeric___IsAccepted" />IsAccepted</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a raw numeric score is accepted and is used in Change events to unambiguously signal whether support for the score has changed, especially ended.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#boolean" class="type">xs:boolean</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Numeric__Precision" />Numeric/Precision</td><td class="characteristics">O</td><td class="description"><p>Number of significant digits.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#unsignedInt" class="type">xs:unsignedInt</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Numeric__Scale" />Numeric/Scale</td><td class="characteristics">O</td><td class="description"><p>Number of decimal places.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#unsignedInt" class="type">xs:unsignedInt</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Numeric__Low" />Numeric/Low</td><td class="characteristics">O</td><td class="description"><p>Lowest Mark in the range (e.g., 98, 3.95).</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Numeric__High" />Numeric/High</td><td class="characteristics">O</td><td class="description"><p>Highest Mark in the range (e.g., 100, 4.0).</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Letter" />Letter</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a letter Mark is accepted.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#ActionList">ActionList (ValidMark/Code)</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkValueInfo__Letter___IsAccepted" />IsAccepted</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a letter Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#boolean" class="type">xs:boolean</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Letter__ValidMark" />Letter/ValidMark</td><td class="characteristics">CR</td><td class="description"><p>
+        List of specific valid letter Marks.  May be omitted when <code>IsAccepted</code> is <code>false</code>, otherwise mandatory.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkValueInfo__Letter__ValidMark___SIF_Action" />SIF_Action</td><td class="characteristics">O</td><td class="description"><p>
+        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.  At a minimum the key for the list must also be present.
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Delete</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Letter__ValidMark__Code" />Letter/ValidMark/Code</td><td class="characteristics">M</td><td class="description"><p>String representing the actual Mark that would appear on the report card (e.g., "A+", "I", "100").</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Letter__ValidMark__NumericEquivalent" />Letter/ValidMark/NumericEquivalent<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">O</td><td class="description"><p>Numeric equivalent for the Mark (e.g., 100, 4.0).</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Letter__ValidMark__Description" />Letter/ValidMark/Description<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">O</td><td class="description"><p>The description for this code. (e.g. "Excellent", "Participates in Class", "Incomplete", etc...).</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Narrative" />Narrative</td><td class="characteristics">M</td><td class="description"><p>If present, indicates that a free-form text narrative is accepted.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="MarkValueInfo__Narrative___IsAccepted" />IsAccepted</td><td class="characteristics">M</td><td class="description"><p>Indicates whether a narrative is accepted and is used in Change events to unambiguously signal whether support for a narrative has changed, especially ended.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#boolean" class="type">xs:boolean</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__Narrative__MaximumSize" />Narrative/MaximumSize</td><td class="characteristics">O</td><td class="description"><p>An integer value representing the maximum number of Unicode characters for the narrative, the UTF-8 encoding of which may be longer.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#unsignedInt" class="type">xs:unsignedInt</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="MarkValueInfo__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.5-1: MarkValueInfo</span><a name="Example3951MarkValueInfo" />
+<div class="example_parent"><div class="example"
+>&lt;MarkValueInfo RefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+  &lt;Name&gt;Letter Grades&lt;/Name&gt;
+  &lt;Percentage IsAccepted="false" /&gt;
+  &lt;Numeric IsAccepted="false" /&gt;
+  &lt;Letter IsAccepted="true"&gt;
+    &lt;ValidMark&gt;
+      &lt;Code&gt;A&lt;/Code&gt;
+      &lt;NumericEquivalent&gt;100&lt;/NumericEquivalent&gt;
+    &lt;/ValidMark&gt;
+    &lt;ValidMark&gt;
+      &lt;Code&gt;B&lt;/Code&gt;
+      &lt;NumericEquivalent&gt;90&lt;/NumericEquivalent&gt;
+    &lt;/ValidMark&gt;
+    &lt;ValidMark&gt;
+      &lt;Code&gt;C&lt;/Code&gt;
+      &lt;NumericEquivalent&gt;80&lt;/NumericEquivalent&gt;
+    &lt;/ValidMark&gt;
+    &lt;ValidMark&gt;
+      &lt;Code&gt;D&lt;/Code&gt;
+      &lt;NumericEquivalent&gt;70&lt;/NumericEquivalent&gt;
+    &lt;/ValidMark&gt;
+    &lt;ValidMark&gt;
+      &lt;Code&gt;F&lt;/Code&gt;
+      &lt;NumericEquivalent&gt;60&lt;/NumericEquivalent&gt;
+    &lt;/ValidMark&gt;
+  &lt;/Letter&gt;
+  &lt;Narrative IsAccepted="false" /&gt;
+&lt;/MarkValueInfo&gt;
+</div></div><span class="caption">Example 3.9.5-1: MarkValueInfo</span><a name="Example3952MarkValueInfo" />
+<div class="example_parent"><div class="example"
+>&lt;MarkValueInfo RefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+  &lt;Name&gt;Numeric Grade&lt;/Name&gt;
+  &lt;Percentage IsAccepted="false" /&gt;
+  &lt;Numeric IsAccepted="true"&gt;
+    &lt;Precision&gt;6&lt;/Precision&gt;
+    &lt;Scale&gt;2&lt;/Scale&gt;
+    &lt;Low&gt;0&lt;/Low&gt;
+    &lt;High&gt;1000&lt;/High&gt;
+  &lt;/Numeric&gt;
+  &lt;Letter IsAccepted="false" /&gt;
+  &lt;Narrative IsAccepted="false" /&gt;
+&lt;/MarkValueInfo&gt;
+</div></div><span class="caption">Example 3.9.5-2: MarkValueInfo</span><a name="Example3953MarkValueInfo" />
+<div class="example_parent"><div class="example"
+>&lt;MarkValueInfo RefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;SchoolYear&gt;2004&lt;/SchoolYear&gt;
+  &lt;Name&gt;Free Form Comment&lt;/Name&gt;
+  &lt;Percentage IsAccepted="false" /&gt;
+  &lt;Numeric IsAccepted="false" /&gt;
+  &lt;Letter IsAccepted="false" /&gt;
+  &lt;Narrative IsAccepted="true"&gt;
+    &lt;MaximumSize&gt;255&lt;/MaximumSize&gt;
+  &lt;/Narrative&gt;
+&lt;/MarkValueInfo&gt;
+</div></div><span class="caption">Example 3.9.5-3: MarkValueInfo</span></div>
+    <div class="element_section">
+      <a name="obj:OfficialStudentPeriodAttendance" />
+      <a name="396OfficialStudentPeriodAttendance" />
+      <h3 class="element_name">3.9.6 OfficialStudentPeriodAttendance</h3>
+      <p>
+        This object provides attendance for a student in the  context of a SectionInfo object.  It is used to represent the final/official attendance that has been assigned to a student.  Only one agent in a zone should generate events for this object.  That agent is responsible for receiving and validating all StudentPeriodAttendance events and
+        for generating a corresponding OfficialStudentPeriodAttendance event once any unofficial events have been processed.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3961OfficialStudentPeriodAttendance" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/OfficialStudentPeriodAttendance.png">
+          <img class="diagram" src="diagrams/OfficialStudentPeriodAttendance.png" alt="OfficialStudentPeriodAttendance" width="301" height="52" usemap="#OfficialStudentPeriodAttendance__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.6-1: OfficialStudentPeriodAttendance</span><map name="OfficialStudentPeriodAttendance__map" id="OfficialStudentPeriodAttendance__map">
+  <area alt="OfficialStudentPeriodAttendance" href="#OfficialStudentPeriodAttendance" shape="rect" coords="5,5,296,47" />
+</map><a name="Table3961OfficialStudentPeriodAttendance" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="OfficialStudentPeriodAttendance" /><span class="rootElement">OfficialStudentPeriodAttendance</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object provides attendance for a student in the  context of a SectionInfo object.  It is used to represent the final/official attendance that has been assigned to a student.  Only one agent in a zone should generate events for this object.  That agent is responsible for receiving and validating all StudentPeriodAttendance events and
+        for generating a corresponding OfficialStudentPeriodAttendance event once any unofficial events have been processed.
+      </p>&#xA0;</td><td class="type"><a href="GradeBookWorkingGroup.html#StudentPeriodAttendance" class="type">StudentPeriodAttendance</a></td></tr></tbody></table><span class="caption">Table 3.9.6-1: OfficialStudentPeriodAttendance</span><a name="Example3961OfficialStudentPeriodAttendance" />
+<div class="example_parent"><div class="example"
+>&lt;OfficialStudentPeriodAttendance RefId="98157AA013BA8C3D00AA012B359D7512" StudentPersonalRefId="A75A00101A8C301D02E3A05B359D0A00" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB" Date="2001-03-05" SectionInfoRefId="D02E3A05B359DA75A00101A8C3010A00"&gt;
+  &lt;TimetablePeriod&gt;P4&lt;/TimetablePeriod&gt;
+  &lt;AttendanceCode AttendanceCodeInfoRefId="1A0000359D75101A8C3D00AA00A2E35B"&gt;042&lt;/AttendanceCode&gt;
+  &lt;AuditInfo&gt;
+    &lt;CreationUser Type="School Admin"&gt;
+      &lt;UserId&gt;AttendanceKeeper&lt;/UserId&gt;
+    &lt;/CreationUser&gt;
+    &lt;CreationDateTime&gt;2006-09-26T15:43:00-05:00&lt;/CreationDateTime&gt;
+  &lt;/AuditInfo&gt;
+&lt;/OfficialStudentPeriodAttendance&gt;
+</div></div><span class="caption">Example 3.9.6-1: OfficialStudentPeriodAttendance</span></div>
+    <div class="element_section">
+      <a name="obj:SectionMarkInfo" />
+      <a name="397SectionMarkInfo" />
+      <h3 class="element_name">3.9.7 SectionMarkInfo</h3>
+      <p>This object defines the marking periods (TermInfo) that marks (StudentSectionMarks) are recorded in for a particular section (SectionInfo) and lists the types of marks (MarkTypeInfo) that are valid for that marking period (TermInfo).</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3971SectionMarkInfo" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/SectionMarkInfo.png">
+          <img class="diagram" src="diagrams/SectionMarkInfo.png" alt="SectionMarkInfo" width="1069" height="340" usemap="#SectionMarkInfo__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.7-1: SectionMarkInfo</span><map name="SectionMarkInfo__map" id="SectionMarkInfo__map">
+  <area alt="SectionMarkInfo" href="#SectionMarkInfo" shape="rect" coords="5,192,166,234" />
+  <area alt="RefId" href="#SectionMarkInfo___RefId" shape="rect" coords="241,15,316,57" />
+  <area alt="SectionInfoRefId" href="#SectionMarkInfo___SectionInfoRefId" shape="rect" coords="331,15,496,57" />
+  <area alt="SchoolInfoRefId" href="#SectionMarkInfo___SchoolInfoRefId" shape="rect" coords="511,15,671,57" />
+  <area alt="TermMarkLists" href="#SectionMarkInfo__TermMarkLists" shape="rect" coords="241,135,391,177" />
+  <area alt="MarkInfoList" href="#SectionMarkInfo__TermMarkLists__MarkInfoList" shape="rect" coords="531,179,662,221" />
+  <area alt="TermInfoRefId" href="#SectionMarkInfo__TermMarkLists__MarkInfoList___TermInfoRefId" shape="rect" coords="737,102,883,144" />
+  <area alt="SIF_Action" href="#SectionMarkInfo__TermMarkLists__MarkInfoList___SIF_Action" shape="rect" coords="916,102,1036,144" />
+  <area alt="MarkInfoRefId" href="#SectionMarkInfo__TermMarkLists__MarkInfoList__MarkInfoRefId" shape="rect" coords="737,179,880,221" />
+  <area alt="SIF_Metadata" href="#SectionMarkInfo__SIF_Metadata" shape="rect" coords="241,236,380,278" />
+  <area alt="SIF_ExtendedElements" href="#SectionMarkInfo__SIF_ExtendedElements" shape="rect" coords="241,293,456,335" />
+</map><a name="Table3971SectionMarkInfo" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="SectionMarkInfo" /><span class="rootElement">SectionMarkInfo</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object defines the marking periods (TermInfo) that marks (StudentSectionMarks) are recorded in for a particular section (SectionInfo) and lists the types of marks (MarkTypeInfo) that are valid for that marking period (TermInfo).</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SectionMarkInfo___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of the object. This RefId is new for 2.7M and MUST be supported like other objects that have a RefId (i.e. it is the key for the object).  The alternate keys MUST continue to be supported.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="SectionMarkInfo___SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the SectionInfo object that this item refers to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="SectionMarkInfo___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the School that these Mark Values apply to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SectionMarkInfo__TermMarkLists" />TermMarkLists</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a class="type" href="DataModel.html#ActionList">ActionList (MarkInfoList/@TermInfoRefId)</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SectionMarkInfo__TermMarkLists__MarkInfoList" />TermMarkLists/MarkInfoList<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">MR</td><td class="description"><p>The grading-related information for a section, repeating for each marking period (TermInfo) in which the section reports Marks.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SectionMarkInfo__TermMarkLists__MarkInfoList___TermInfoRefId" />TermInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that identifies the marking period that the following marks are recorded in.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="SectionMarkInfo__TermMarkLists__MarkInfoList___SIF_Action" />SIF_Action</td><td class="characteristics">O</td><td class="description"><p>
+        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.
+        At a minimum the key for the list must also be present.
+      </p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Delete</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SectionMarkInfo__TermMarkLists__MarkInfoList__MarkInfoRefId" />TermMarkLists/MarkInfoList/<br/>&#160;&#160;&#160;&#160;&#160;MarkInfoRefId</td><td class="characteristics">MR</td><td class="description"><p>The Id (GUID) that identifies a mark that this class uses for grading.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SectionMarkInfo__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="SectionMarkInfo__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.7-1: SectionMarkInfo</span><a name="Example3971SectionMarkInfo" />
+<div class="example_parent"><div class="example"
+>&lt;SectionMarkInfo RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SectionInfoRefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;TermMarkLists&gt;
+    &lt;MarkInfoList TermInfoRefId="BDBA4301CA1A7C461737DCA75C87E214"&gt;
+      &lt;MarkInfoRefId&gt;A7C46BDBA4301CA11737E214DCA75C87&lt;/MarkInfoRefId&gt;
+      &lt;MarkInfoRefId&gt;BA4301CADCA75C8711737E214A7C46BD&lt;/MarkInfoRefId&gt;
+    &lt;/MarkInfoList&gt;
+    &lt;MarkInfoList TermInfoRefId="01CA1BDBA43A7C461737DCA75C87E214"&gt;
+      &lt;MarkInfoRefId&gt;A7C46BDBA4301CA11737E214DCA75C87&lt;/MarkInfoRefId&gt;
+      &lt;MarkInfoRefId&gt;BA4301CADCA75C8711737E214A7C46BD&lt;/MarkInfoRefId&gt;
+    &lt;/MarkInfoList&gt;
+  &lt;/TermMarkLists&gt;
+&lt;/SectionMarkInfo&gt;
+</div></div><span class="caption">Example 3.9.7-1: SectionMarkInfo</span></div>
+    <div class="element_section">
+      <a name="obj:StudentGrade" />
+      <a name="398StudentGrade" />
+      <h3 class="element_name">3.9.8 StudentGrade</h3>
+      <p>
+      This is an object that a LMS or other application will utilize to provide grades about students in a section to a grade book.
+      A grade book is often used to collect various assignment scores or test scores for students in a class or section and then calculate various grades or marks that are printed on report cards.
+      When a LMS is also being used in a LEA, additional information is gathered by the LMS and some of this information needs to be available to the grade book to facilitate calculation of the report card grades or marks (i.e. StudentSectionMarks).
+      This object is available to facilitate communication of the final grade from the LMS to the grade book.
+    </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3981StudentGrade" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/StudentGrade.png">
+          <img class="diagram" src="diagrams/StudentGrade.png" alt="StudentGrade" width="657" height="823" usemap="#StudentGrade__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.8-1: StudentGrade</span><map name="StudentGrade__map" id="StudentGrade__map">
+  <area alt="StudentGrade" href="#StudentGrade" shape="rect" coords="5,434,147,476" />
+  <area alt="RefId" href="#StudentGrade___RefId" shape="rect" coords="222,15,297,57" />
+  <area alt="StudentPersonalRefId" href="#StudentGrade__StudentPersonalRefId" shape="rect" coords="222,92,427,134" />
+  <area alt="SectionInfoRefId" href="#StudentGrade__SectionInfoRefId" shape="rect" coords="222,149,386,191" />
+  <area alt="SchoolInfoRefId" href="#StudentGrade__SchoolInfoRefId" shape="rect" coords="222,206,381,248" />
+  <area alt="SchoolYear" href="#StudentGrade__SchoolYear" shape="rect" coords="222,263,346,305" />
+  <area alt="Grade" href="#StudentGrade__Grade" shape="rect" coords="222,491,302,533" />
+  <area alt="Percentage" href="#StudentGrade__Grade__Percentage" shape="rect" coords="512,320,634,362" />
+  <area alt="Numeric" href="#StudentGrade__Grade__Numeric" shape="rect" coords="512,377,611,419" />
+  <area alt="OutOf" href="#StudentGrade__Grade__OutOf" shape="rect" coords="512,434,592,476" />
+  <area alt="Low" href="#StudentGrade__Grade__Low" shape="rect" coords="512,491,578,533" />
+  <area alt="High" href="#StudentGrade__Grade__High" shape="rect" coords="512,548,581,590" />
+  <area alt="Letter" href="#StudentGrade__Grade__Letter" shape="rect" coords="512,605,591,647" />
+  <area alt="Narrative" href="#StudentGrade__Grade__Narrative" shape="rect" coords="512,662,616,704" />
+  <area alt="SIF_Metadata" href="#StudentGrade__SIF_Metadata" shape="rect" coords="222,719,361,761" />
+  <area alt="SIF_ExtendedElements" href="#StudentGrade__SIF_ExtendedElements" shape="rect" coords="222,776,437,818" />
+</map><a name="Table3981StudentGrade" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade" /><span class="rootElement">StudentGrade</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object contains the final grade for a student in a section.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StudentGrade___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>
+        The Id (GUID) that uniquely identifies this object.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__StudentPersonalRefId" />StudentPersonalRefId</td><td class="characteristics">M</td><td class="description"><p>
+        The Id (GUID) that uniquely identifies the <code>StudentPersonal</code> object that this item refers to.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description"><p>
+        The Id (GUID) that uniquely identifies the <code>SectionInfo</code> object that this item refers to.
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the school that these values apply to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__SchoolYear" />SchoolYear</td><td class="characteristics">M</td><td class="description"><p>
+        School year for which this information is applicable, expressed as the four-digit year in which the school year ends (e.g., <code>2008</code> for the 2007-08 school year).
+      </p>&#xA0;</td><td class="type"><a href="CommonTypes.html#SchoolYearType" class="type">SchoolYearType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade" />Grade</td><td class="characteristics">M</td><td class="description">
+      This is the one grade given for this student and section. At least one numeric, percentage or letter must be provided as defined in the fields below. If <code>Grade/Numeric</code> is entered, <code>Grade/OutOf</code>, <code>Grade/Low</code> and <code>Grade/High</code> must also be entered.
+    &#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__Percentage" />Grade/Percentage</td><td class="characteristics">C</td><td class="description">The grade percentage for this grade (0.00-100.00).&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a><br /><table><tr><td><a href="http://www.w3.org/TR/xmlschema-2/#rf-minInclusive">xs:minInclusive</a></td><td>0.00</td></tr><tr><td><a href="http://www.w3.org/TR/xmlschema-2/#rf-maxInclusive">xs:maxInclusive</a></td><td>100.00</td></tr></table></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__Numeric" />Grade/Numeric</td><td class="characteristics">C</td><td class="description">
+      The raw numeric value for this grade. If this is provided, the <code>OutOf</code>, <code>Low</code> and <code>High</code> must be entered.
+    &#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__OutOf" />Grade/OutOf</td><td class="characteristics">C</td><td class="description">
+      This is the high value equivalent to 100% without extra points or extra credit (e.g. if a student received 3.5 out of 4, 4 would be the <code>Grade/OutOf</code> value and 3.5 would be the <code>Grade/Numeric</code> value).
+    &#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__Low" />Grade/Low</td><td class="characteristics">C</td><td class="description">Lowest grade value in the range for the numeric grade.&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__High" />Grade/High</td><td class="characteristics">C</td><td class="description">
+      Highest grade value in the range for the numeric grade.  NOTE: This could be higher than the <code>Grade/OutOf</code> value.
+    &#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__Letter" />Grade/Letter</td><td class="characteristics">C</td><td class="description">The letter grade value for this grade. If this is provided, the numeric value or percentage value must also be entered in order to provide a numeric value for the grade to be utilized in any computations.&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__Grade__Narrative" />Grade/Narrative</td><td class="characteristics">O</td><td class="description">The free form text narrative for this grade.&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentGrade__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.8-1: StudentGrade</span><a name="Example3981StudentGrade" />
+<div class="example_parent"><div class="example"
+>&lt;StudentGrade RefId="0E54211E78674FC9B32E5FD5AC2A4CE0"&gt;
+  &lt;StudentPersonalRefId&gt;A137D78E00BC744EF90AF2871CEB90A2&lt;/StudentPersonalRefId&gt;
+  &lt;SectionInfoRefId&gt;AAA0937D8392BB0297ECA78D8F9A3914&lt;/SectionInfoRefId&gt;
+  &lt;SchoolInfoRefId&gt;830DCB82EA8A90243BC4E7AD902BC47D&lt;/SchoolInfoRefId&gt;
+  &lt;SchoolYear&gt;2008&lt;/SchoolYear&gt;
+  &lt;Grade&gt;
+    &lt;Percentage&gt;79&lt;/Percentage&gt;
+    &lt;Numeric&gt;3.0&lt;/Numeric&gt;
+    &lt;OutOf&gt;4.0&lt;/OutOf&gt;
+    &lt;Low&gt;0.0&lt;/Low&gt;
+    &lt;High&gt;4.5&lt;/High&gt;
+    &lt;Letter&gt;C&lt;/Letter&gt;
+    &lt;Narrative&gt;Johnny is only achieving average performance.&lt;/Narrative&gt;
+  &lt;/Grade&gt;
+  &lt;SIF_Metadata&gt;
+    &lt;EducationFilter&gt;
+      &lt;LearningStandardItems&gt;
+        &lt;LearningStandardItemRefId&gt;502070339FA347B5B123BEF68D118332&lt;/LearningStandardItemRefId&gt;
+      &lt;/LearningStandardItems&gt;
+    &lt;/EducationFilter&gt;
+  &lt;/SIF_Metadata&gt;
+&lt;/StudentGrade&gt;
+</div></div><span class="caption">Example 3.9.8-1: StudentGrade</span></div>
+    <div class="element_section">
+      <a name="obj:StudentPeriodAttendance" />
+      <a name="399StudentPeriodAttendance" />
+      <h3 class="element_name">3.9.9 StudentPeriodAttendance</h3>
+      <p>
+        This object provides attendance for a student in the context of a SectionInfo object.
+        This object is used by all agents in a zone that provide period attendance,
+        but don't have the logic to determine whether or not they have sufficient rights to override attendance from another user or system.
+        Agents that represent a system that can validate attendance based on, among other things, its source, should subscribe to
+        StudentPeriodAttendance events to collect "suggested" attendance changes from the zone,
+        and should then publish "accepted" attendance changes as OfficialStudentPeriodAttendance events.
+        A rejected change would result in an event that reverts the system that generated the rejected event back to its previous state
+        or to some other state that represents the correct "official" attendance.
+      </p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure3991StudentPeriodAttendance" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/StudentPeriodAttendance.png">
+          <img class="diagram" src="diagrams/StudentPeriodAttendance.png" alt="StudentPeriodAttendance" width="1066" height="702" usemap="#StudentPeriodAttendance__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.9-1: StudentPeriodAttendance</span><map name="StudentPeriodAttendance__map" id="StudentPeriodAttendance__map">
+  <area alt="StudentPeriodAttendance" href="#StudentPeriodAttendance" shape="rect" coords="5,373,240,415" />
+  <area alt="RefId" href="#StudentPeriodAttendance___RefId" shape="rect" coords="315,15,390,57" />
+  <area alt="StudentPersonalRefId" href="#StudentPeriodAttendance___StudentPersonalRefId" shape="rect" coords="405,15,611,57" />
+  <area alt="SectionInfoRefId" href="#StudentPeriodAttendance___SectionInfoRefId" shape="rect" coords="626,15,791,57" />
+  <area alt="SchoolInfoRefId" href="#StudentPeriodAttendance___SchoolInfoRefId" shape="rect" coords="806,15,966,57" />
+  <area alt="Date" href="#StudentPeriodAttendance___Date" shape="rect" coords="981,15,1051,57" />
+  <area alt="TimetablePeriod" href="#StudentPeriodAttendance__TimetablePeriod" shape="rect" coords="315,92,476,134" />
+  <area alt="TimeIn" href="#StudentPeriodAttendance__TimeIn" shape="rect" coords="315,149,401,191" />
+  <area alt="TimeOut" href="#StudentPeriodAttendance__TimeOut" shape="rect" coords="315,206,415,248" />
+  <area alt="AttendanceCode" href="#StudentPeriodAttendance__AttendanceCode" shape="rect" coords="315,273,479,315" />
+  <area alt="AttendanceCodeInfoRefId" href="#StudentPeriodAttendance__AttendanceCode___AttendanceCodeInfoRefId" shape="rect" coords="605,273,841,315" />
+  <area alt="AuditInfo" href="#StudentPeriodAttendance__AuditInfo" shape="rect" coords="315,412,420,454" />
+  <area alt="CreationUser" href="#StudentPeriodAttendance__AuditInfo__CreationUser" shape="rect" coords="605,427,741,469" />
+  <area alt="Type" href="#StudentPeriodAttendance__AuditInfo__CreationUser___Type" shape="rect" coords="854,350,926,392" />
+  <area alt="UserId" href="#StudentPeriodAttendance__AuditInfo__CreationUser__UserId" shape="rect" coords="854,427,964,469" />
+  <area alt="CreationDateTime" href="#StudentPeriodAttendance__AuditInfo__CreationDateTime" shape="rect" coords="605,484,779,526" />
+  <area alt="AttendanceComment" href="#StudentPeriodAttendance__AttendanceComment" shape="rect" coords="315,541,514,583" />
+  <area alt="SIF_Metadata" href="#StudentPeriodAttendance__SIF_Metadata" shape="rect" coords="315,598,454,640" />
+  <area alt="SIF_ExtendedElements" href="#StudentPeriodAttendance__SIF_ExtendedElements" shape="rect" coords="315,655,530,697" />
+</map><a name="Table3991StudentPeriodAttendance" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance" /><span class="rootElement">StudentPeriodAttendance</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>
+        This object provides attendance for a student in the context of a SectionInfo object.
+        This object is used by all agents in a zone that provide period attendance,
+        but don't have the logic to determine whether or not they have sufficient rights to override attendance from another user or system.
+        Agents that represent a system that can validate attendance based on, among other things, its source, should subscribe to
+        StudentPeriodAttendance events to collect "suggested" attendance changes from the zone,
+        and should then publish "accepted" attendance changes as OfficialStudentPeriodAttendance events.
+        A rejected change would result in an event that reverts the system that generated the rejected event back to its previous state
+        or to some other state that represents the correct "official" attendance.
+      </p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StudentPeriodAttendance___RefId" />RefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentPeriodAttendance___StudentPersonalRefId" />StudentPersonalRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID of the student that this attendance applies to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentPeriodAttendance___SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The GUID of the section that this attendance applies to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentPeriodAttendance___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The school where the attendance was recorded.  Somewhat redundant, needed for requests.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentPeriodAttendance___Date" />Date</td><td class="characteristics">M</td><td class="description"><p>The date of the attendance event.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#date" class="type">xs:date</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__TimetablePeriod" />TimetablePeriod</td><td class="characteristics">C</td><td class="description"><p>The period within which attendance is being reported, e.g. "4D".  Conditional on the SectionInfo object having MeetingTime elements.  If one or more are defined for the Section, this element is required.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__TimeIn" />TimeIn</td><td class="characteristics">O</td><td class="description"><p>The time the student entered or returned to this class.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#time" class="type">xs:time</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__TimeOut" />TimeOut</td><td class="characteristics">O</td><td class="description"><p>The time the student left this class.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#time" class="type">xs:time</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__AttendanceCode" />AttendanceCode</td><td class="characteristics">M</td><td class="description"><p>The local attendance code.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#token" class="type">xs:token</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentPeriodAttendance__AttendanceCode___AttendanceCodeInfoRefId" />AttendanceCodeInfoRefId</td><td class="characteristics">M</td><td class="description">&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__AuditInfo" />AuditInfo</td><td class="characteristics">M</td><td class="description"><p>An audit trail to help determine who entered this attendance event and when.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__AuditInfo__CreationUser" />AuditInfo/CreationUser</td><td class="characteristics">M</td><td class="description"><p>Information about which staff member created this attendance record.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentPeriodAttendance__AuditInfo__CreationUser___Type" />Type</td><td class="characteristics">M</td><td class="description"><p>The role of the staff member for that created this attendance record.</p>&#xA0;</td><td class="type"><span class="title">values:</span><br /><dl><dt>Office Staff</dt><dt>School Admin</dt><dt>Parent</dt><dt>Nurse</dt><dt>Teacher</dt><dt>Other</dt></dl></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__AuditInfo__CreationUser__UserId" />AuditInfo/CreationUser/UserId<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">M</td><td class="description"><p>Unique identifier of the user that created the attendance record.  This will depend on the user and the source.  The preferred identifier would be a RefId for a StaffPersonal, StudentContact, or StudentPersonal Object.  However, the user may not be associated with any of these SIF objects.  In that case a unique Id given by the source should be used.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__AuditInfo__CreationDateTime" />AuditInfo/CreationDateTime<br/>&#160;&#160;&#160;&#160;&#160;</td><td class="characteristics">M</td><td class="description"><p>The date and time of this attendance record was created.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#dateTime" class="type">xs:dateTime</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__AttendanceComment" />AttendanceComment</td><td class="characteristics">O</td><td class="description"><p>This element contains the comments that are relevant to this attendance record.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentPeriodAttendance__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.9-1: StudentPeriodAttendance</span><a name="Example3991StudentPeriodAttendance" />
+<div class="example_parent"><div class="example"
+>&lt;StudentPeriodAttendance RefId="98157AA013BA8C3D00AA012B359D7512" StudentPersonalRefId="A75A00101A8C301D02E3A05B359D0A00" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB" Date="2001-03-05" SectionInfoRefId="D02E3A05B359DA75A00101A8C3010A00"&gt;
+  &lt;TimetablePeriod&gt;P4&lt;/TimetablePeriod&gt;
+  &lt;AttendanceCode AttendanceCodeInfoRefId="1A0000359D75101A8C3D00AA00A2E35B"&gt;042&lt;/AttendanceCode&gt;
+  &lt;AuditInfo&gt;
+    &lt;CreationUser Type="School Admin"&gt;
+      &lt;UserId&gt;AttendanceKeeper&lt;/UserId&gt;
+    &lt;/CreationUser&gt;
+    &lt;CreationDateTime&gt;2006-09-26T15:43:00-05:00&lt;/CreationDateTime&gt;
+  &lt;/AuditInfo&gt;
+&lt;/StudentPeriodAttendance&gt;
+</div></div><span class="caption">Example 3.9.9-1: StudentPeriodAttendance</span></div>
+    <div class="element_section">
+      <a name="obj:StudentSectionMarks" />
+      <a name="3910StudentSectionMarks" />
+      <h3 class="element_name">3.9.10 StudentSectionMarks</h3>
+      <p>This object contains the marks entered for a student in a class section for a specific marking period.</p>
+      <p class="emphasized_note">SIF_Events are reported for this object.</p>
+      <a name="Figure39101StudentSectionMarks" />
+      <div class="diagram_parent" align="center">
+        <a target="_blank" href="diagrams/StudentSectionMarks.png">
+          <img class="diagram" src="diagrams/StudentSectionMarks.png" alt="StudentSectionMarks" width="1108" height="568" usemap="#StudentSectionMarks__map" />
+        </a>
+      </div>
+      <span class="caption">Figure 3.9.10-1: StudentSectionMarks</span><map name="StudentSectionMarks__map" id="StudentSectionMarks__map">
+  <area alt="StudentSectionMarks" href="#StudentSectionMarks" shape="rect" coords="5,306,206,348" />
+  <area alt="RefId" href="#StudentSectionMarks___RefId" shape="rect" coords="281,15,356,57" />
+  <area alt="StudentPersonalRefId" href="#StudentSectionMarks___StudentPersonalRefId" shape="rect" coords="371,15,577,57" />
+  <area alt="SectionInfoRefId" href="#StudentSectionMarks___SectionInfoRefId" shape="rect" coords="592,15,757,57" />
+  <area alt="TermInfoRefId" href="#StudentSectionMarks___TermInfoRefId" shape="rect" coords="772,15,918,57" />
+  <area alt="SchoolInfoRefId" href="#StudentSectionMarks___SchoolInfoRefId" shape="rect" coords="933,15,1093,57" />
+  <area alt="IsFinal" href="#StudentSectionMarks__IsFinal" shape="rect" coords="281,92,366,134" />
+  <area alt="MarkList" href="#StudentSectionMarks__MarkList" shape="rect" coords="281,278,382,320" />
+  <area alt="Mark" href="#StudentSectionMarks__MarkList__Mark" shape="rect" coords="571,321,642,363" />
+  <area alt="MarkInfoRefId" href="#StudentSectionMarks__MarkList__Mark___MarkInfoRefId" shape="rect" coords="717,159,861,201" />
+  <area alt="Percentage" href="#StudentSectionMarks__MarkList__Mark__Percentage" shape="rect" coords="717,236,839,278" />
+  <area alt="Numeric" href="#StudentSectionMarks__MarkList__Mark__Numeric" shape="rect" coords="717,293,816,335" />
+  <area alt="Letter" href="#StudentSectionMarks__MarkList__Mark__Letter" shape="rect" coords="717,350,827,392" />
+  <area alt="Narrative" href="#StudentSectionMarks__MarkList__Mark__Narrative" shape="rect" coords="717,407,821,449" />
+  <area alt="SIF_Metadata" href="#StudentSectionMarks__SIF_Metadata" shape="rect" coords="281,464,420,506" />
+  <area alt="SIF_ExtendedElements" href="#StudentSectionMarks__SIF_ExtendedElements" shape="rect" coords="281,521,496,563" />
+</map><a name="Table39101StudentSectionMarks" /><table class="definition"><thead><tr><th> </th><th>Element/@Attribute</th><th>Char</th><th>Description</th><th>Type</th></tr></thead><tbody><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks" /><span class="rootElement">StudentSectionMarks</span></td><td class="emptycell">&#xA0;</td><td class="description"><p>This object contains the marks entered for a student in a class section for a specific marking period.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentSectionMarks___RefId" />RefId</td><td class="characteristics">M</td><td class="description"><p>A GUID that identifies an instance of this object. This RefId is new for 2.7M and MUST be supported like other objects that have a RefId (i.e. it is the key for the object).  The alternate keys MUST continue to be supported.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#RefIdType" class="type">RefIdType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StudentSectionMarks___StudentPersonalRefId" />StudentPersonalRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the StudentPersonal object that this item refers to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StudentSectionMarks___SectionInfoRefId" />SectionInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the SectionInfo object that this item refers to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@<br /><img class="key" src="images/key.png" alt="key" /></td><td class="attribute"><a name="StudentSectionMarks___TermInfoRefId" />TermInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that identifies the marking period that the following marks are recorded in.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentSectionMarks___SchoolInfoRefId" />SchoolInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that uniquely identifies the School that these Mark Values apply to.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__IsFinal" />IsFinal</td><td class="characteristics">M</td><td class="description"><p>Indicates if the grades are "Final" from the perspective of the teacher or school.  Does not mean that change events will not occur for this item.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#boolean" class="type">xs:boolean</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__MarkList" />MarkList</td><td class="characteristics">M</td><td class="description"><p>A list of marks received for this student in this section.  For each Mark entry, at least one of the sub-elements must be specified.</p>&#xA0;</td><td class="type"><a class="type" href="DataModel.html#List">List</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__MarkList__Mark" />MarkList/Mark</td><td class="characteristics">MR</td><td class="description"><p>Outer wrapper for marks  reported for this section, in this term.</p>&#xA0;</td><td class="emptycell">&#xA0;</td></tr><tr><td class="indicators">@</td><td class="attribute"><a name="StudentSectionMarks__MarkList__Mark___MarkInfoRefId" />MarkInfoRefId</td><td class="characteristics">M</td><td class="description"><p>The Id (GUID) that identifies a mark that was given for this student.</p>&#xA0;</td><td class="type"><a href="CommonTypes.html#IdRefType" class="type">IdRefType</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__MarkList__Mark__Percentage" />MarkList/Mark/Percentage</td><td class="characteristics">C</td><td class="description"><p>The percent score for this mark (0.00 - 100.00).</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a><br /><table><tr><td><a href="http://www.w3.org/TR/xmlschema-2/#rf-minInclusive">xs:minInclusive</a></td><td>0</td></tr><tr><td><a href="http://www.w3.org/TR/xmlschema-2/#rf-maxInclusive">xs:maxInclusive</a></td><td>100</td></tr><tr><td><a href="http://www.w3.org/TR/xmlschema-2/#rf-fractionDigits">xs:fractionDigits</a></td><td>2</td></tr></table></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__MarkList__Mark__Numeric" />MarkList/Mark/Numeric</td><td class="characteristics">C</td><td class="description"><p>The raw numeric score for this mark.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#decimal" class="type">xs:decimal</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__MarkList__Mark__Letter" />MarkList/Mark/Letter</td><td class="characteristics">C</td><td class="description"><p>The letter grade for this mark.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString" class="type">xs:normalizedString</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__MarkList__Mark__Narrative" />MarkList/Mark/Narrative</td><td class="characteristics">C</td><td class="description"><p>The free form text narrative for this mark.</p>&#xA0;</td><td class="type"><a href="http://www.w3.org/TR/xmlschema-2/#string" class="type">xs:string</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__SIF_Metadata" />SIF_Metadata</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_Metadata" class="type">SIF_Metadata</a></td></tr><tr><td class="indicators"> </td><td class="element"><a name="StudentSectionMarks__SIF_ExtendedElements" />SIF_ExtendedElements</td><td class="characteristics">O</td><td class="description">&#xA0;</td><td class="type"><a href="DataModel.html#SIF_ExtendedElements" class="type">SIF_ExtendedElements</a></td></tr></tbody></table><span class="caption">Table 3.9.10-1: StudentSectionMarks</span><a name="Example39101StudentSectionMarks" />
+<div class="example_parent"><div class="example"
+>&lt;StudentSectionMarks RefId="359D75101AD0A9D7A8C3DAD0A85103A2" StudentPersonalRefId="11737EA4301CADCA75C87214A7C46BDB" SectionInfoRefId="11737E214A7C46BDBA4301CADCA75C99" TermInfoRefId="BDBA4301CA1A7C461737DCA75C87E214" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB"&gt;
+  &lt;IsFinal&gt;true&lt;/IsFinal&gt;
+  &lt;MarkList&gt;
+    &lt;Mark MarkInfoRefId="A7C46BDBA4301CA11737E214DCA75C87"&gt;
+      &lt;Percentage&gt;88&lt;/Percentage&gt;
+      &lt;Letter&gt;B&lt;/Letter&gt;
+    &lt;/Mark&gt;
+    &lt;Mark MarkInfoRefId="737E214A7C46BDBA4301CA11DCA75C87"&gt;
+      &lt;Narrative&gt;Plays well with others and is willing to share with the one exception being food.  Student is very possessive of his lunch and becomes very aggressive if anyone attempts to take any of it from him&lt;/Narrative&gt;
+    &lt;/Mark&gt;
+    &lt;Mark MarkInfoRefId="11737E214A7C46BDBA4301CADCA75E23"&gt;
+      &lt;Letter&gt;A9&lt;/Letter&gt;
+    &lt;/Mark&gt;
+  &lt;/MarkList&gt;
+&lt;/StudentSectionMarks&gt;
+</div></div><span class="caption">Example 3.9.10-1: StudentSectionMarks</span></div>
+    <a name="HumanResourcesFinancialsWorkingGroup" />
+    <div class="navigation" id="bottomnavigation">
+      <hr />
+      <a href="index.html">home</a>
+      <a href="FoodServicesWorkingGroup.html">previous</a>
+      <a href="HumanResourcesFinancialsWorkingGroup.html">next</a>
+      <a href="index.html#contents">table of contents</a>
+    </div><p align='center'><a href='http://validator.w3.org/check?uri=referer'><img src='http://www.w3.org/Icons/valid-xhtml10' alt='Valid XHTML 1.0 Transitional'/></a></p></body>
+</html>
