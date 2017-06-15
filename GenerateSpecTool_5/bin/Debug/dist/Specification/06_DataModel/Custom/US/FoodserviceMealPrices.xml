@@ -57,7 +57,7 @@
   <Item>
     <Element>//MealType</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" typed="false" name="MealType"></Type>
+    <Type ref="CommonTypes" name="MealType"></Type>
   </Item>
   <Item>
     <Element>//GradeLevels</Element>
