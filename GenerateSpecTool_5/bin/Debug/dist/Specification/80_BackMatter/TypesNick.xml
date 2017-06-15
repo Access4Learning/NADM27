@@ -2553,6 +2553,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>The frequency in segments of time.</p>
 		</Description>
+			<Type name="xs:token">
 		<Values>
 			<Value>
 				<Code>S001</Code> 
@@ -2591,6 +2592,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<Description>Other</Description>
 			</Value>
 		</Values>
+    </xs:token>
 	</Item>
 	<Item>
 		<Element>Duration</Element>
