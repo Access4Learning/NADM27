@@ -190,7 +190,10 @@
           This element or <code>ReportInfo</code> or <code>ReportData</code> is included but never at the same time.
         </p>
       </Description>
-      <Type ref="Infrastructure" name="SIF_ExtendedQueryResults"></Type>
+	  <!--
+	  TODO: Infrastructure dependency, should not be here
+      <Type ref="Infrastructure" name="SIF_ExtendedQueryResults"></Type>-->
+	        <Type name="xs:string"></Type>
     </Item>
   </Choice>
   <Item>
