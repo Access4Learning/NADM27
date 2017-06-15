@@ -266,7 +266,7 @@
 		<Item>
 			<Element>MealType</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" typed="false" name="MealType"></Type>
+			<Type ref="CommonTypes" typed="false" name="MealType"></Type>
 		</Item>
 		<Item>
 			<Element>Amount</Element>
@@ -4798,7 +4798,7 @@
 		</xhtml:Example>
 	</CommonElement>
 
-	<!-- <CommonElement name="OtherIdType" type="true">
+	<CommonElement name="OtherIdType" type="true">
 		<Item>
 			<Element>OtherIdType</Element>
 			<Type name="xs:normalizedString"></Type>
@@ -4820,7 +4820,7 @@
 		<xhtml:Example xmlns="">
 			<OtherId Type="0004">333333333</OtherId>
 		</xhtml:Example>
-	</CommonElement> -->
+	</CommonElement>
 
 	<CommonElement name="PhoneNumberListType" type="true">
 		<Item>
@@ -5389,7 +5389,7 @@
 		</xhtml:Example>
 	</CommonElement>
 
-	<CommonElement name="MealType" type="true">
+	<CommonElement name="MealType" type="true" dm="true">
 		<Item>
 			<Element>MealType</Element>
 			<Description>
@@ -5418,7 +5418,6 @@
 		</xhtml:Example>
 	</CommonElement>
 
-	<!-- Linda's overrides this
 		<CommonElement name="OtherIdListType" type="true">
 		<Item>
 			<Element>OtherIdListType</Element>
@@ -5443,7 +5442,7 @@
 			</OtherIdList>
 		</xhtml:Example>
 	</CommonElement>
- -->
+
 	<CommonElement name="PersonInfoType" type="true">
 		<Item>
 			<Element>PersonInfoType</Element>

@@ -197,21 +197,6 @@
   </Item>
  
    
-   <Item>
-   <Attribute>UnitOfMeasure</Attribute>
-   <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies unit of measure in which amount of time is expressed.</p>
-    </Description>
-    <Values>
-		<Value>
-			<Code>Minutes</Code>
-		</Value>
-				<Value>
-			<Code>Seconds</Code>
-		</Value>
-    </Values>
-   </Item>
   
  
   <Item>
