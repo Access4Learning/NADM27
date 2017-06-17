@@ -527,7 +527,7 @@
 		<Element>BellScheduleRefId</Element>
 		<Characteristics>M</Characteristics>
 		<Description>
-			<p>he GUID of a bell schedule to be utilized for the calendar date.</p>
+			<p>The GUID of a bell schedule to be utilized for the calendar date.</p>
 		</Description>
 		<Type ref='CommonTypes' name='IdRefType'/>
 	</Item>
@@ -539,5 +539,758 @@
 		</Description>
 		<Type name='xs:string'/>
 	</Item>
+</CommonElement>
+  
+  <CommonElement name="IncidentReporterType" type="true" dm="true">	
+	  <Item>
+		<Element>IncidentReporterType</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+		  <p>Information regarding the individual who reported the incident.</p>
+		</Description>
+	  </Item>
+	   
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies the type of individual who reported the incident.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1043ReporterDescriptionType"></Type>
+  </Item>
+  <Item>
+    <Element>Name</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The name of the individual reporting the incident.</p>
+    </Description>
+    <Type ref="CommonTypes" name="NameType"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_RefId</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>GUID of the SIF object that relates to the person who reported the incident, if applicable.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The name of the SIF object to which the GUID relates.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>StudentPersonal</Code>
+      </Value>
+      <Value>
+        <Code>StaffPersonal</Code>
+      </Value>
+      <Value>
+        <Code>EmployeePersonal</Code>
+      </Value>
+      <Value>
+        <Code>StudentContact</Code>
+      </Value>
+    </Values>
+  </Item>
+  
 
 </CommonElement>
+
+ <CommonElement name="IncidentTimeType" type="true" dm="true">	
+ <Item>
+    <Element>IncidentTimeType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The time when the incident occurred.</p>
+    </Description>
+    <Type name="xs:time"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not the incident occurred during school hours. </p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="SAFETYTimeType"></Type>
+  </Item>
+  </CommonElement>
+  <CommonElement name="IncidentLocationType" type="true" dm="true">	
+   <Item>
+    <Element>IncidentLocationType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The locally-defined identifier or description of the location where the incident occurred.</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies where the incident occurred.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1040IncidentLocationType"></Type>
+  </Item>
+  </CommonElement>
+  
+  <CommonElement name="RelatedToListType" type="true" dm="true">
+  <Item>
+    <Element>RelatedToListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of categories to which the incident is related.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>RelatedTo</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Identifies if incident was related to a specific category.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1048SecondaryIncidentBehaviorType"></Type>
+  </Item>
+  </CommonElement>
+  
+   <CommonElement name="WeaponTypeListType" type="true" dm="true">
+   <Item>
+    <Element>WeaponTypeListType</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>List of weapons involved in the incident. If the incident involves weapons, the element must have a value.</p>
+
+      <p>Each weapon used in the incident is identified by a WeaponType entry. When multiple weapons of a single type are used, each weapon has a separate entry in this list.</p>
+
+      <p>Weapons used by individual offenders are also reported in WeaponTypeList entries associated to the offender.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>WeaponType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Identifies the type of weapon used during an incident.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1045WeaponTypeType"></Type>
+  </Item>
+  </CommonElement>
+  
+    <CommonElement name="IncidentCategoryContainerType" type="true" dm="true">
+    <Item>
+    <Element>IncidentCategoryContainerType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The category or description for this incident.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies the type of incident being reported.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1049IncidentCodeType"></Type>
+  </Item>
+
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+    <Description>
+      <p>List of other codes or strings that crosswalk to or serve as translations of the Code element.  If Code changes and OtherCode elements are supported, both Code and all associated OtherCode elements must be present.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>CodeComment</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A short comment clarifying the discipline code (e.g. for Nonsexual Harassment could detail "Racial comment, pushing, name-calling" or "Cell phone violation. Second offense.")</p>
+    </Description>
+    <Type name='xs:normalizedString'/>
+  </Item>
+  
+  </CommonElement>
+  
+    <CommonElement name="OffenderListType" type="true" dm="true">
+  
+   <Item>
+    <Element>OffenderList</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>List of offenders.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>Offender</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information regarding the offender(s)/perpetrator(s).</p>
+    </Description>
+    <Type ref="CommonTypes" name="OffenderType"></Type>
+  </Item>
+  
+</CommonElement>
+
+  <CommonElement name="OffenderType" type="true" dm="true">  
+   <Item>
+    <Element>OffenderType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information regarding the offender(s)/perpetrator(s).</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies the type of offender involved in the incident.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1043ReporterDescriptionType"></Type>
+  </Item>
+  <Item>
+    <Element>Name</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The name of the offender.</p>
+    </Description>
+    <Type ref="CommonTypes" name="Name"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_RefId</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>If the Offender Type attribute identifies the offender as a Student or Staff Member, then this element should contain the Id (GUID) of the student or staff to whom this information relates.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>SIF Object to which the SIFRefId relates.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>StudentPersonal</Code>
+      </Value>
+      <Value>
+        <Code>StaffPersonal</Code>
+      </Value>
+      <Value>
+        <Code>EmployeePersonal</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>Injury</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not this specific offender was physically injured, and if so, identifies whether the injury was major or minor.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1046IncidentInjuryType"></Type>
+  </Item>
+  
+  <Item>
+    <Element>ManifestationDetermination</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information relating to a manifestation determination meeting.</p>
+    </Description>
+    <Type ref="CommonTypes" name="ManifestationDeterminationType"></Type>
+  </Item>
+ 
+  <Item>
+    <Element>ActionList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of actions taken.</p>
+      <p>Note:  There is also a SIF type called ActionList.  It is one of two types of lists.  Do not confuse this element with the SIF type called ActionList.  This problem will be resolved in the next major release.</p>
+    </Description>
+    <Type ref="CommonTypes" name="DisciplineActionListType"></Type>
+  </Item>
+ 
+
+  <Item>
+    <Element>WeaponTypeList</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>List of weapons involved in the incident used by the offender. If the incident involves weapons, the element must have a value.</p>
+
+      <p>Each weapon used by the offender is identified by a WeaponType entry. When multiple weapons of a single type are used by the offender, each weapon has a separate entry in this list.</p>
+
+      <p>(Note: All weapons used in the incident are reported in WeaponTypeList entries for the incident, including those weapons related to this offender.)</p>
+    </Description>
+
+    <Type ref="CommonTypes" name="WeaponTypeListType"></Type>
+  </Item>
+
+  <Item>
+    <Element>RelatedToList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of categories to which the offender’s incident is related.</p>
+    </Description>
+    <Type ref="CommonTypes" name="RelatedToListType"></Type>
+  </Item>
+
+
+  </CommonElement>
+  
+    <CommonElement name="ManifestationDeterminationType" type="true" dm="true"> 
+    <Item>
+    <Element>ManifestationDeterminationType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information relating to a manifestation determination meeting.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>MeetingHeld</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Was a manifestation determination meeting held for this student regarding this offense?</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>MeetingDate</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Date of the manifestation determination meeting, if applicable.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>DueToDisability</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Did the team determine that the offense was a manifestation of the student's disability?</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>MeetingOutcome</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Text description of the outcome of the meeting: for example, hearing completed, pending, or refused by student's parents.</p>
+    </Description>
+    <Type name='xs:string'/>
+  </Item>
+  </CommonElement>
+  
+<CommonElement name="DisciplineActionListType" type="true" dm="true"> 
+   <Item>
+    <Element>DisciplineActionListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of actions taken.</p>
+      <p>Note:  There is also a SIF type called ActionList.  It is one of two types of lists.  Do not confuse this element with the SIF type called ActionList.  This problem will be resolved in the next major release.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>Action</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Information regarding the action(s) taken against the offender in response to the incident.</p>
+    </Description>
+    <Type ref="CommonTypes" name="DisciplineActionType"></Type>
+  </Item>
+</CommonElement>  
+
+
+ <CommonElement name="DisciplineActionType" type="true" dm="true">  
+   <Item>
+    <Element>DisciplineActionType</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Information regarding the action(s) taken against the offender in response to the incident.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Specific action taken toward this offender.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1054DisciplinaryActionType"></Type>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+    <Description>
+      <p>List of other codes or strings that crosswalk to or serve as translations of the Code element.  If Code changes and OtherCode elements are supported, both Code and all associated OtherCode elements must be present.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>StartDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The date on which the disciplinary action begins.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>EndDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The date through which the disciplinary action is in effect, inclusive.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>Duration</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies the length, in school days, of the disciplinary action.  Note: decimal places may be used for fractions of school days.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Element>ZeroTolerance</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not this action taken against a student was imposed as a consequence of state or local zero tolerance policies.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>FullYearExpulsion</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not the action involved an expulsion with or without services for a period of one full year (i.e., 365 days).</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>ShortenedExpulsion</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not the action involved an expulsion with or without services that is shortened to a term of less than one year by the superintendent or chief administrator of a school district.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>PoliceNotification</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not the offender's action included notification of local law enforcement, regardless of whether official action was taken.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>Arrest</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not the offender was arrested.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+      <Value>
+        <Code>Pending</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>AlternativeEducation</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not the offender was assigned to an Alternative Education facility.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+ <CommonElement name="VictimListType" type="true" dm="true">    
+   <Item>
+    <Element>VictimListType</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>List of victim(s) if the incident is directed toward specific persons or their property.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>Victim</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information regarding the victim(s) in the incident.</p>
+    </Description>
+    <Type ref="CommonTypes" name="VictimType"></Type>
+  </Item>
+  </CommonElement>
+  
+   <CommonElement name="VictimType" type="true" dm="true">  
+     <Item>
+    <Element>VictimType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information regarding the victim(s) in the incident.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies the type of individual victimized in the incident.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1043ReporterDescriptionType"></Type>
+  </Item>
+  <Item>
+    <Element>Name</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The name of the victim.</p>
+    </Description>
+    <Type ref="CommonTypes" name="Name"></Type>
+  </Item>
+  <Item>
+    <Element>SIF_RefId</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>If the Victim Type attribute identifies the victim as a Student or Staff Member, then this element should contain the Id (GUID) of the student  or staff to whom this information relates.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>SIF Object to which the SIFRefId relates.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>StudentPersonal</Code>
+      </Value>
+      <Value>
+        <Code>StaffPersonal</Code>
+      </Value>
+      <Value>
+        <Code>EmployeePersonal</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>Injury</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not this specific victim was physically injured, and if so, identify whether the injury was major or minor.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1046IncidentInjuryType"></Type>
+  </Item>
+  </CommonElement>
+  
+    <CommonElement name="IncidentActionListType" type="true" dm="true">  
+    <Item>
+    <Element>IncidentActionListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>List of actions taken on the incident, regardless of actions relating to individual offenders.</p>
+    </Description>
+    <List mode='List'/>
+  </Item>
+
+  <Item>
+    <Element>IncidentAction</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information regarding the action(s) taken in response to the incident.</p>
+    </Description>
+     <Type ref="CommonTypes" name="IncidentActionType"></Type>
+  </Item>
+  
+  </CommonElement>
+  
+  <CommonElement name="IncidentActionType" type="true" dm="true">  
+ <Item>
+    <Element>IncidentAction</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information regarding the action(s) taken in response to the incident.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>StartDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The date on which the action begins.</p>
+    </Description>
+    <Type name='xs:date'/>
+  </Item>
+
+  <Item>
+    <Element>EndDate</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The date through which the action is in effect, inclusive.</p>
+    </Description>
+    <Type name='xs:date'/>
+  </Item>
+
+  <Item>
+    <Element>Duration</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies the length, in school days, of the action. Note: decimal places may be used for fractions of school days.</p>
+    </Description>
+    <Type name='xs:decimal'/>
+  </Item>
+
+  <Item>
+    <Element>ZeroTolerance</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether or not this action was imposed as a consequence of state or local zero tolerance policies.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>PoliceNotification</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether there was notification of local law enforcement, regardless of whether official action was taken.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>Arrest</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies whether there were any arrests.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+      <Value>
+        <Code>Pending</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  <!-- Added to get rid of compile error -->
+   <CommonElement name="SIF_ErrorDataModelType" type="true" dm="true">	
+   <Item>
+    <Element>SIF_ErrorDataModelType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The category or description for this incident.</p>
+    </Description>
+     <Type name="xs:string"></Type>
+  </Item>
+  </CommonElement>
+   <CommonElement name="SIF_ExtendedQueryResultsDataModelType" type="true" dm="true">	
+   <Item>
+    <Element>SIF_ExtendedQueryResultsDataModelType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The category or description for this incident.</p>
+    </Description>
+     <Type name="xs:string"></Type>
+  </Item>
+  </CommonElement>
+   <CommonElement name="SIF_ExtendedQueryDataModelType" type="true" dm="true">	
+   <Item>
+    <Element>SIF_ExtendedQueryDataModelType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The category or description for this incident.</p>
+    </Description>
+     <Type name="xs:string"></Type>
+  </Item>
+  </CommonElement>
+   <CommonElement name="SIF_QueryDataModelType" type="true" dm="true">	
+   <Item>
+    <Element>SIF_QueryDataModelType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The category or description for this incident.</p>
+    </Description>
+     <Type name="xs:string"></Type>
+  </Item>
+  </CommonElement>
