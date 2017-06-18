@@ -25,7 +25,7 @@
     <Description>
       <p>The locally-assigned identifier for this LEA.</p>
     </Description>
-    <Type ref="DataModel" name="LocalId"></Type>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
   </Item>
   <Item>
     <Element>StateProvinceId</Element>
@@ -34,7 +34,7 @@
     <Description>
       <p>The state-assigned identifier for this LEA.</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>NCESId</Element>
@@ -43,7 +43,7 @@
     <Description>
       <p>The NCES-assigned identifier for this LEA.</p>
     </Description>
-    <Type ref="DataModel" name="NCESId"></Type>
+    <Type ref="CommonTypes" name="NCESIdType"></Type>
   </Item>
   <Item>
     <Element>LEAName</Element>
@@ -52,7 +52,7 @@
     <Description>
       <p>Name of LEA.</p>
     </Description>
-    <Type ref="DataModel" name="LEAName"></Type>
+    <Type ref="CommonTypes" name="LEANameType"></Type>
   </Item>
   <Item>
     <Element>LEAURL</Element>
@@ -70,48 +70,15 @@
     <Description>
       <p>The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control.</p>
     </Description>
+     <Type ref="CommonTypes" name="EducationAgencyTypeType"></Type>
   </Item>
-  <Item>
-
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the operational/administrative level.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES1151AgencyTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-  <Item>
+  
+ <Item>
     <Element>LEAContactList</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="LEAContactListType"></Type>
   </Item>
-  <Item>
-    <Element>/LEAContact</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Information on contact persons for this LEA.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//PublishInDirectory</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Indicates whether or not this LEA contact's information should be published in a directory of LEA information.</p>
-    </Description>
-    <Type ref="DataModel" name="PublishInDirectory"></Type>
-  </Item>
-  <Item>
-    <Element>//ContactInfo</Element>
-
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="ContactInfo"></Type>
-  </Item>
+  
   <Item>
     <Element>PhoneNumberList</Element>
 
@@ -119,7 +86,7 @@
     <Description>
       <p>The LEA's phone number(s).</p>
     </Description>
-    <Type ref="DataModel" name="PhoneNumberList"></Type>
+    <Type ref="CommonTypes" name="PhoneNumberList"></Type>
   </Item>
   <Item>
     <Element>AddressList</Element>
@@ -128,7 +95,7 @@
     <Description>
       <p>The LEA's address(es).</p>
     </Description>
-    <Type ref="DataModel" name="AddressList"></Type>
+    <Type ref="CommonTypes" name="AddressList"></Type>
   </Item>
   <Item>
     <Element>IdentificationInfoList</Element>
@@ -136,7 +103,7 @@
     <Description>
       <p>Other identification information associated with an LEA, such as the locally-defined code/identifier, etc.</p>
     </Description>
-    <Type ref="DataModel" name="IdentificationInfoList"></Type>
+    <Type ref="CommonTypes" name="IdentificationInfoList"></Type>
   </Item>
   <Item>
     <Element>GradeLevels</Element>
@@ -144,7 +111,7 @@
     <Description>
       <p>Collection of grade levels offered in this LEA.</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>OperationalStatus</Element>
@@ -153,7 +120,7 @@
     <Description>
       <p>Operational condition of an LEA.</p>
     </Description>
-    <Type ref="DataModel" name="OperationalStatus"></Type>
+    <Type ref="CommonTypes" name="OperationalStatusType"></Type>
   </Item>
   <Item>
     <Element>CongressionalDistrict</Element>
@@ -162,18 +129,18 @@
     <Description>
       <p>Number for the US congressional district where the LEA is located.</p>
     </Description>
-    <Type ref="DataModel" name="CongressionalDistrict"></Type>
+    <Type ref="CommonTypes" name="CongressionalDistrictType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <LEAInfo RefId="D3E34B359D75101A8C3D00AA001A1652">
