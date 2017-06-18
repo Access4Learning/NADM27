@@ -21,7 +21,7 @@
 		<Description>
 			<p>The locally-assigned identifier for this school.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
 	<Item>
 		<Element>StateProvinceId</Element>
@@ -29,7 +29,7 @@
 		<Description>
 			<p>The state-assigned identifier for this school.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId"/>
+		<Type ref="CommonTypes" name="StateProvinceIdType"/>
 	</Item>
 	<Item>
 		<Element>NCESId</Element>
@@ -37,7 +37,7 @@
 		<Description>
 			<p>The NCES-assigned identifier for this school.</p>
 		</Description>
-		<Type ref="DataModel" name="NCESId"/>
+		<Type ref="CommonTypes" name="NCESIdType"/>
 	</Item>
 	<Item>
 		<Element>SchoolName</Element>
@@ -83,80 +83,40 @@
 		</Description>
 		<Type ref="ExternalCodeSets" name="NCES0031SchoolLevelType"/>
 	</Item>
+	
 	<Item>
 		<Element>SchoolFocusList</Element>
 		<Characteristics>O</Characteristics>
-		<List mode="List">
-    </List>
+	    <Type ref="CommonTypes" name="SchoolFocusListType"/>
 	</Item>
-	<Item>
-		<Element>/SchoolFocus</Element>
-		<Characteristics>MR</Characteristics>
-		<xs:maxOccurs value="6"/>
-		<Description>
-			<p>The type of educational institution as classified by its focus.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Regular</Code>
-			</Value>
-			<Value>
-				<Code>SpecialEd</Code>
-			</Value>
-			<Value>
-				<Code>Vocational</Code>
-			</Value>
-			<Value>
-				<Code>Alternative</Code>
-			</Value>
-			<Value>
-				<Code>Magnet</Code>
-			</Value>
-			<Value>
-				<Code>Charter</Code>
-			</Value>
-		</Values>
-	</Item>
+
 	<Item>
 		<Element>SchoolURL</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
 			<p>URL for the school.</p>
 		</Description>
-		<Type ref="DataModel" name="SchoolURL"/>
+		<Type ref="CommonTypes" name="SchoolURLType"/>
 	</Item>
+	
 	<Item>
 		<Element>PrincipalInfo</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
 			<p>Information about the school's principal.</p>
 		</Description>
+		<Type ref="CommonTypes" name="PrincipalInfoType"/>
 	</Item>
-	<Item>
-		<Element>/ContactName</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The name of the principal.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
-	<Item>
-		<Element>/ContactTitle</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The principal's title.</p>
-		</Description>
-		<Type name="xs:normalizedString"/>
-	</Item>
+	
 	<Item>
 		<Element>SchoolContactList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SchoolContactList"/>
+		<Type ref="CommonTypes" name="SchoolContactListType"/>
 	</Item>
 	<Item>
 		<Element>AddressList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="AddressList"/>
+		<Type ref="CommonTypes" name="AddressListType"/>
 		<Description>
 			<p>The school's addresses.</p>
 		</Description>
@@ -164,7 +124,7 @@
 	<Item>
 		<Element>PhoneNumberList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="PhoneNumberList"/>
+		<Type ref="CommonTypes" name="PhoneNumberListType"/>
 		<Description>
 			<p>The school's phone numbers.</p>
 		</Description>
@@ -172,7 +132,7 @@
 	<Item>
 		<Element>IdentificationInfoList</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="IdentificationInfoList"/>
+		<Type ref="CommonTypes" name="IdentificationInfoListType"/>
 		<Description>
 			<p>Other identification information associated with a school, such as the locally-defined code/identifier, etc.</p>
 		</Description>
@@ -191,7 +151,7 @@
 		<Description>
 			<p>Collection of grade levels offered in this school.</p>
 		</Description>
-		<Type ref="DataModel" name="GradeLevels"/>
+		<Type ref="CommonTypes" name="GradeLevelsType"/>
 	</Item>
 	<Item>
 		<Element>Title1Status</Element>
@@ -220,7 +180,7 @@
 		<Description>
 			<p>Operational condition of a school.</p>
 		</Description>
-		<Type ref="DataModel" name="OperationalStatus"/>
+		<Type ref="CommonTypes" name="OperationalStatusType"/>
 	</Item>
 	<Item>
 		<Element>CongressionalDistrict</Element>
@@ -228,7 +188,7 @@
 		<Description>
 			<p>Number for the US congressional district of the school location.</p>
 		</Description>
-		<Type ref="DataModel" name="CongressionalDistrict"/>
+		<Type ref="CommonTypes" name="CongressionalDistrictType"/>
 	</Item>
 	<Item>
 		<Element>ActiveSchoolYear</Element>
@@ -241,12 +201,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<SchoolInfo RefId="D3E34B359D75101A8C3D00AA001A1652">

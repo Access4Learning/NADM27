@@ -1253,6 +1253,212 @@
     </Values>
   </Item>
   </CommonElement>
+  
+  <CommonElement name="EducationAgencyTypeType" type="true" dm="true">  
+   <Item>
+    <Element>EducationAgencyTypeType</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The classification of the education agency within the geographic boundaries of a state according to the level of administrative and operational control.</p>
+    </Description>
+  </Item>
+  <Item>
+
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code indicating the operational/administrative level.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES1151AgencyTypeType"></Type>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+  </Item>
+  </CommonElement>
+  
+   <CommonElement name="LEAContactListType" type="true" dm="true">  
+  <Item>
+    <Element>LEAContactListType</Element>
+    <Characteristics>O</Characteristics>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>LEAContact</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information on contact persons for this LEA.</p>
+    </Description>
+    <Type ref="CommonTypes" name="LEAContactType"></Type>
+  </Item>
+  </CommonElement>
+  
+<CommonElement name="LEAContactType" type="true" dm="true">   
+  <Item>
+    <Element>LEAContactType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Information on contact persons for this LEA.</p>
+    </Description>
+  </Item> 
+  <Item>
+    <Element>PublishInDirectory</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Indicates whether or not this LEA contact's information should be published in a directory of LEA information.</p>
+    </Description>
+    <Type ref="CommonTypes" name="PublishInDirectoryType"></Type>
+  </Item>
+  <Item>
+    <Element>ContactInfo</Element>
+
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="ContactInfoType"></Type>
+  </Item>
+  </CommonElement>
+  
+  <CommonElement name="StaffListType" type="true" dm="true">   
+   <Item>
+    <Element>StaffListType</Element>
+    <Characteristics>O</Characteristics>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>StaffPersonalRefId</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>GUID that identifies the staff person assigned to this room (e.g. the homeroom teacher).</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  </CommonElement>
+ 
+  <CommonElement name="SchoolFocusListType" type="true" dm="true">    
+  <Item>
+		<Element>SchoolFocusListType</Element>
+		<Characteristics>O</Characteristics>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>SchoolFocus</Element>
+		<Characteristics>MR</Characteristics>
+		<xs:maxOccurs value="6"/>
+		<Description>
+			<p>The type of educational institution as classified by its focus.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Regular</Code>
+			</Value>
+			<Value>
+				<Code>SpecialEd</Code>
+			</Value>
+			<Value>
+				<Code>Vocational</Code>
+			</Value>
+			<Value>
+				<Code>Alternative</Code>
+			</Value>
+			<Value>
+				<Code>Magnet</Code>
+			</Value>
+			<Value>
+				<Code>Charter</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>
+
+  <CommonElement name="PrincipalInfoType" type="true" dm="true">   
+	<Item>
+		<Element>PrincipalInfoType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Information about the school's principal.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>ContactName</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The name of the principal.</p>
+		</Description>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	<Item>
+		<Element>ContactTitle</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The principal's title.</p>
+		</Description>
+		<Type name="xs:normalizedString"/>
+	</Item>
+	</CommonElement>
+	
+<CommonElement name="SEAContactListType" type="true" dm="true">  
+	 <Item>
+    <Element>SEAContactListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>Information on contact persons for this SEA.</Description>
+    <List mode="List"/>
+  </Item>
+  <Item>
+    <Element>SEAContact</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>Container element for SEA contact information.</Description>
+    <Type ref="CommonTypes" name="SEAContactType"></Type>
+  </Item>
+  
+ </CommonElement>
+ 
+  <CommonElement name="SEAContactType" type="true" dm="true">   
+    <Item>
+    <Element>SEAContactType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>Container element for SEA contact information.</Description>
+  </Item>
+  <Item>
+    <Element>PublishInDirectory</Element>
+    <Characteristics>O</Characteristics>
+    <Description>Indicates whether or not this SEA contact's information should be published in a directory of SEA information.</Description>
+    <Type ref="CommonTypes" name="PublishInDirectoryType"></Type>
+  </Item>
+  <Item>
+    <Element>ContactInfo</Element>
+    <Characteristics>M</Characteristics>
+    <Description>Contact information for a person at the SEA.</Description>
+    <Type ref="CommonTypes" name="ContactInfoType"></Type>
+  </Item>
+  </CommonElement>
+ 
+ <CommonElement name="EDENInfoType" type="true" dm="true">    
+   <Item>
+    <Element>EDENInfoType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>Container element for EDEN-specific information.</Description>
+  </Item>
+  <Item>
+    <Element>FIPSStateCode</Element>
+    <Characteristics>O</Characteristics>
+    <Description>The two-digit Federal Information Processing Standard (FIPS) Code for the State, District of Columbia, and the possessions and freely associated areas of the United States (e.g. Puerto Rico).</Description>
+    <Type name="xs:token"/>
+    <Facets>
+      <xs:pattern value="[0-9]{2}|[A-Z]{2}"/>
+    </Facets>
+  </Item>
+  <Item>
+    <Element>AgencyIdNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>A number used in EDEN to uniquely uniquely identify state agencies.</Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+</CommonElement>
+  
   <!-- Added to get rid of compile error -->
    <CommonElement name="SIF_ErrorDataModelType" type="true" dm="true">	
    <Item>
