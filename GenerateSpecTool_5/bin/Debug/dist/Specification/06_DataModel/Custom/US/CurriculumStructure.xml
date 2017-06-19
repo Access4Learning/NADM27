@@ -48,7 +48,7 @@
         <Element>SubjectArea</Element>
 
         <Characteristics>O</Characteristics>
-        <Type ref="CommonTypes" name="SubjectAreaList"></Type>
+        <Type ref="CommonTypes" name="SubjectAreaType"></Type>
       </Item>
       <Item>
         <Element>CurriculumHierarchyLevel</Element>
