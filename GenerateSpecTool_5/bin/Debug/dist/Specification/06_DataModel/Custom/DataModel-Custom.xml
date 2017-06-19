@@ -6,6 +6,9 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentLEARelationship.xml"/>
   </Group>
 -->
+
+
+
   <Group name="Data Warehouse Working Group" sort="false">
     <Intro>
       <p>
@@ -18,7 +21,8 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\AggregateCharacteristicInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\AggregateStatisticFact.xml"/>
   </Group>
-  
+
+
   <!--<Group name="Food Services Working Group">
     <Intro>
       <p>
@@ -103,7 +107,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FinancialTransaction.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FiscalYear.xml"/>
   </Group>
-  
+
   <!--<Group name="Professional Development Working Group">
     <Intro>
       <p>
@@ -183,7 +187,7 @@
 	
   </Group>-->
 
-  
+
   <Group name="Instructional Services Task Force">
     <Intro>
       <p>The goal of Instructional Services Task Force is to create, design and advocate a set of specifications that feature data objects which will advance interoperability standards of information needed in instruction and educational service delivery in the classroom and instructional settings.</p>
@@ -197,8 +201,8 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\LearningResource.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\LearningResourcePackage.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ContentCatalog.xml"/>
-    <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\Person.xml"/>
-    <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\PersonRoleAssociation.xml"/>
+   <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\Person.xml"/>
+     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\PersonRoleAssociation.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ResponseToIntervention.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\RTIResults.xml"/>
     <!--<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ResponseToInterventionResults.xml"/>-->
@@ -251,7 +255,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StaffEvaluationInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SectionCorrelation.xml"/>
   </Group>
-  
+
   <!--<Group name="Transportation and Geographic Information Working Group">
     <Intro>
       <p>
