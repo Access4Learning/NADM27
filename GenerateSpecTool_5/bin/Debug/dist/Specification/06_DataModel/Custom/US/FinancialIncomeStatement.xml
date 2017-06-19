@@ -53,28 +53,12 @@
      <Description>
      <p>Amount in the account.</p>
 	 </Description>
-     <Type ref="CommonTypes" name="MonetaryAmountListType"></Type>
+     <Type ref="CommonTypes" name="FinancialIncomeStatementMonetaryAmountListType"></Type>
  </Item>
-   <Item>
-    <Attribute>FinancialAccountAccountingPeriodLocationInfoRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>FinancialAccountAccountingPeriodLocationInfo reference.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>FinancialClassRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Class of the financial account.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
   <Item>
     <Element>Program</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="ProgramType"></Type>
+    <Type ref="CommonTypes" name="ProgramTypeType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>

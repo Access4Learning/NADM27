@@ -32,7 +32,7 @@
         School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g. <code>2007</code> for the 2006-07 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>CourseCode</Element>
@@ -40,7 +40,7 @@
     <Description>
       <p>School-defined local code for the course.</p>
     </Description>
-    <Type ref="DataModel" name="CourseCode"></Type>
+    <Type ref="CommonTypes" name="CourseCodeType"></Type>
   </Item>
   <Item>
     <Element>StateCourseCode</Element>
@@ -48,7 +48,7 @@
     <Description>
       <p>State-defined standard course code used to report information about courses.</p>
     </Description>
-    <Type ref="DataModel" name="StateCourseCode"></Type>
+    <Type ref="CommonTypes" name="StateCourseCodeType"></Type>
   </Item>
   <Item>
     <Element>DistrictCourseCode</Element>
@@ -56,12 +56,12 @@
     <Description>
       <p>The corresponding district course code.</p>
     </Description>
-    <Type ref="DataModel" name="DistrictCourseCode"></Type>
+    <Type ref="CommonTypes" name="DistrictCourseCodeType"></Type>
   </Item>
   <Item>
     <Element>SubjectAreaList</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SubjectAreaList"></Type>
+    <Type ref="CommonTypes" name="SubjectAreaListType"></Type>
     <Description>
       <p>Subject matter areas.</p>
     </Description>
@@ -73,7 +73,7 @@
     <Description>
       <p>Title of the course.</p>
     </Description>
-    <Type ref="DataModel" name="CourseTitle"></Type>
+    <Type ref="CommonTypes" name="CourseTitleType"></Type>
   </Item>
   <Item>
     <Element>Description</Element>
@@ -91,7 +91,7 @@
     <Description>
       <p>An indication of the general nature and difficulty of instruction provided.</p>
     </Description>
-    <Type ref="DataModel" name="InstructionalLevel"></Type>
+    <Type ref="CommonTypes" name="InstructionalLevelType"></Type>
   </Item>
   <Item>
     <Element>CourseCredits</Element>
@@ -100,7 +100,7 @@
     <Description>
       <p>The number of credits awarded upon course completion.</p>
     </Description>
-    <Type ref="DataModel" name="CourseCredits"></Type>
+    <Type ref="CommonTypes" name="CourseCreditsType"></Type>
   </Item>
   <Item>
     <Element>CoreAcademicCourse</Element>
@@ -125,7 +125,7 @@
     <Description>
       <p>Does the state require that the course be completed for graduation?</p>
     </Description>
-    <Type ref="DataModel" name="GraduationRequirement"></Type>
+    <Type ref="CommonTypes" name="GraduationRequirementType"></Type>
   </Item>
   <Item>
     <Element>Department</Element>
@@ -144,7 +144,7 @@
         NOTE:  SCED codes currently only apply to secondary courses.  This element may be sent with <code>xsi:nil="true"</code> or omitted for elementary courses.
       </p>
     </Description>
-    <Type ref="DataModel" name="SCEDCode"></Type>
+    <Type ref="CommonTypes" name="SCEDCodeType"></Type>
   </Item>
   
    <Item>
@@ -181,13 +181,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <SchoolCourseInfo RefId="9D75101A8C3D00AA001A0000A2E35B35" SchoolInfoRefId="101A8C3D00AA001A0000A2E35B359D75" SchoolYear="2006">

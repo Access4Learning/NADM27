@@ -53,7 +53,7 @@
     <Description>
       <p>The timetable days for this school year bell schedule.  This essentially provides a list of the time day identifiers that are used in the BellPeriod definitions below with some additional properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime.</p>
     </Description>
-   <Type ref="CommonTypes" name="TimeTableDayListType"></Type>
+   <Type ref="CommonTypes" name="TimetableDayListType"></Type>
   </Item>
 
   <Item>
@@ -62,7 +62,7 @@
     <Description>
       <p>The timetable periods for this school year bell schedule.  This essentially provides a list of the time period identifiers that are used in the BellPeriod definitions below with some addition properties for each.  The identifiers defined here may be referenced by other objects / elements like MeetingTime.</p>
     </Description>
-    <Type ref="CommonTypes" name="TimeTablePeriodListType"></Type>
+    <Type ref="CommonTypes" name="TimetablePeriodListType"></Type>
   </Item>
    
   <Item>
@@ -78,12 +78,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example name="BellSchedule - Example 1" xmlns=''>

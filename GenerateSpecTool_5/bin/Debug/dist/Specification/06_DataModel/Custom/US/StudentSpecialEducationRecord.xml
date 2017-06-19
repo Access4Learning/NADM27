@@ -137,7 +137,7 @@
   <Item>
     <Element>/ProgramType</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" typed="false" name="ProgramType"></Type>
+    <Type ref="CommonTypes" name="ProgramTypeType"></Type>
   </Item>
 
   <Item>
@@ -313,7 +313,7 @@
     <Description>
       <p></p>
     </Description>
-    <Type ref='DataModel' name='ProgramType'/>
+    <Type ref="CommonTypes" name='ProgramTypeType'/>
   </Item>
 
   <Item>
