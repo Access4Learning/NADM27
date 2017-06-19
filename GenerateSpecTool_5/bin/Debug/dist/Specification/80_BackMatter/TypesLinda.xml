@@ -1459,7 +1459,7 @@
   </Item>
 </CommonElement>
   
-  <!-- Added to get rid of compile error -->
+  <!-- Added to get rid of compile error 
    <CommonElement name="SIF_ErrorDataModelType" type="true" dm="true">	
    <Item>
     <Element>SIF_ErrorDataModelType</Element>
@@ -1500,3 +1500,5 @@
      <Type name="xs:string"></Type>
   </Item>
   </CommonElement>
+  
+  -->
