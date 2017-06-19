@@ -4925,7 +4925,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p></p>
 		</Description>
-		<Type ref='CommonTypes' name='ProgramType'/>
+		<Type ref='CommonTypes' name='ProgramTypeType'/>
 	</Item>
 
 	<Item>
