@@ -70,7 +70,7 @@
     <Description>
       <p>The time when the incident occurred.</p>
     </Description>
-    <Type ref="CommonTypes" name="SchoolYearType"></Type>
+    <Type ref="CommonTypes" name="IncidentTimeType"></Type>
   </Item>
   
   <Item>
@@ -207,7 +207,7 @@
     <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="Discipline Incident" xmlns="">
     <DisciplineIncident RefId="A1544ED564995254A4568EFFC5100BD1"
       SchoolYear="2007">
       <AgencyReporting SIF_RefObject="SchoolInfo">0847987235489729AAA73011BB365EC3</AgencyReporting>
