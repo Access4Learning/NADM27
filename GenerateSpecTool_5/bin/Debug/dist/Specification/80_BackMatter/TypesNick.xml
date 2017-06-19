@@ -1210,6 +1210,14 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Description>
 		<Type name='xs:string'/>
 	</Item>
+	<Item>
+		<Attribute>ReferenceType</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>A qualifying attribute for the Location payload. If ReferenceType is "URI", the payload contains a web address where the resource can be found.</p>
+		</Description>
+		<Type name='xs:token'/>
+	</Item>
 </CommonElement>
 
 <CommonElement name="MediaTypeListType" type="true" dm="true">
