@@ -96,7 +96,7 @@
     <Element>GradeLevels</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="GradeLevelsTypes"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>SubjectAreas</Element>

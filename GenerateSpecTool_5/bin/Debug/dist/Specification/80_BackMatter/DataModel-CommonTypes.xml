@@ -2423,9 +2423,9 @@
 		</xhtml:Example>
 	</CommonElement>
 
-	<CommonElement name="ProgramType" type="true">
+	<CommonElement name="ProgramTypeType" type="true">
 		<Item>
-			<Element>ProgramType</Element>
+			<Element>ProgramTypeType</Element>
 		</Item>
 		<Item>
 			<Element>Code</Element>
@@ -5670,7 +5670,7 @@
 
 	</CommonElement>
 
-	<CommonElement name="StudentRecordExchangeDataListType" type="true">
+	<!--<CommonElement name="StudentRecordExchangeDataListType" type="true">
 		<Intro>
 			<p>All of the service methods defined here either return or accept as input a StudentRecor-dExchange object set, which is comprised of a single StudentRecordExchange object and all of the dependent objects it references in its Records and OtherRecords elements. Be-cause a StudentRecordExchange object set can be potentially very large, it is necessary to packetize these objects across multiple SIF_ServiceInput or SIF_ServiceOutput messages. The composite StudentRecordExchangeData object is designed for this purpose.</p>
 			<p>StudentRecordExchangeData is always declared to be a Repeatable element in service messages. An instance of this element should be created for each StudentRecordEx-change, StudentDemographicRecord, StudentAcademicRecord, StudentSpecialEduca-tionRecord, or StudentRecordPackage object in the set. Each StudentRecordExchange-Data instance must only contain one of these elements.</p>
@@ -5736,7 +5736,7 @@
 			<Type ref='StudentRecordExchangeTaskForce' name='StudentRecordPackage'/>
 		</Item>
 
-	</CommonElement>
+	</CommonElement>-->
 
 	<CommonElement name="SIF_MetadataType"  type="true">
 		<Intro>

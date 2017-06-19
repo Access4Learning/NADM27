@@ -47,7 +47,7 @@
 	<Item>
 		<Element>ProgramType</Element>
 		<Characteristics>M</Characteristics>
-		<Type ref="CommonTypes" typed="false" name="ProgramType"/>
+		<Type ref="CommonTypes" name="ProgramTypeType"/>
 	</Item>
 	
 		<Item>
