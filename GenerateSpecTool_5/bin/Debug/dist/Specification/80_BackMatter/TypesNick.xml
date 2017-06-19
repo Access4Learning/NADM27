@@ -1057,23 +1057,6 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	</Item>
 </CommonElement>
 
-<CommonElement name="LearningResourcesRefIdListType" type="true" dm="true">
-	<Item>
-		<Element>LearningResourcesRefIdListType</Element>
-		<Description>
-			<p>List of learning resources.</p>
-		</Description>
-		<List mode="List"/>
-	</Item>
-	<Item>
-		<Element>LearningResourcesRefId</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>A GUID reference to a SIF LearningResource object</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
-</CommonElement>
 
 <CommonElement name="AssignmentTimeType" type="true" dm="true">
 	<Item>
@@ -1701,7 +1684,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>Name of individual who submitted evaluation.</p>
 		</Description>
-		<Type ref="CommonTypes" name="NameOfRecordType"></Type>
+		<Type ref="CommonTypes" name="NameType"></Type>
 	</Item>
 </CommonElement>
 
@@ -1766,6 +1749,14 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Description>
 		<Type ref="CommonTypes" name="LearningResourceComponentStrategyListType"></Type>
 	</Item>
+	<Item>
+		<Element>AssociatedObjects</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>References from component to associated elements within another SIF object.</p>
+		</Description>
+		<Type ref="CommonTypes" name="AssociatedObjectListType"></Type>
+	</Item>
 </CommonElement>
 
 <CommonElement name="LearningResourceComponentStrategyListType" type="true" dm="true">
@@ -1796,14 +1787,6 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Type name="xs:string"></Type>
 	</Item>
 
-	<Item>
-		<Element>AssociatedObjects</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>References from component to associated elements within another SIF object.</p>
-		</Description>
-		<Type ref="CommonTypes" name="AssociatedObjectListType"></Type>
-	</Item>
 </CommonElement>
 
 <CommonElement name="AssociatedObjectListType" type="true" dm="true">
@@ -2283,7 +2266,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p>Name of the author.</p>
 		</Description>
-		<Type ref="CommonElement" name="NameOfRecordType"/>
+		<Type ref="CommonElement" name="NameType"/>
 	</Item>
 	<Item>
 		<Element>Organization</Element>
@@ -3251,6 +3234,12 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Type name="xs:token"/>
 	</Item>
 	<Item>
+		<Element>ChoiceLabel</Element>
+		<Characteristics>M</Characteristics>
+		<Description>Identifier for the choice.</Description>
+		<Type name="xs:token"/>
+	</Item>
+	<Item>
 		<Element>Responses</Element>
 		<Characteristics>M</Characteristics>
 		<Description>The number of responses.</Description>
@@ -3599,6 +3588,19 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</p>
 		</Description>
 		<Type ref="CommonTypes" name="IdRefType"></Type>
+	</Item>
+</CommonElement>
+
+<CommonElement name="ServiceFundingSourceListType" type="true" dm="true">
+	<Item>
+		<Element>ServiceFundingSourceListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>ProgramFundingSource</Element>
+		<Characteristics>MR</Characteristics>
+		<Type ref="CommonTypes" name="ProgramFundingSourceType"></Type>
 	</Item>
 </CommonElement>
 
@@ -4347,6 +4349,18 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 	</Item>
 </CommonElement>
 
+<CommonElement name="StudentPlacementProgramFundingSourceListType" type="true" dm="true">
+	<Item>
+		<Element>StudentPlacementProgramFundingSourceListType</Element>
+		<List mode="List">
+		</List>
+	</Item>
+	<Item>
+		<Element>ProgramFundingSource</Element>
+		<Characteristics>MR</Characteristics>
+		<Type ref="CommonTypes" name="StudentPlacementServiceFundingSourceType"></Type>
+	</Item>
+</CommonElement>
 <CommonElement name="StudentPlacementServiceFundingSourceListType" type="true" dm="true">
 	<Item>
 		<Element>StudentPlacementServiceFundingSourceListType</Element>
@@ -4942,7 +4956,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Description>
 			<p></p>
 		</Description>
-		<Type ref='CommonTypes' name='StudentPlacementServiceFundingSourceListType'/>
+		<Type ref='CommonTypes' name='StudentPlacementProgramFundingSourceListType'/>
 	</Item>
 
 	<Item>
