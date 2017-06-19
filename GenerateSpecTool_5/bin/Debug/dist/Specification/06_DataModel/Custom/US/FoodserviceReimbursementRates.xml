@@ -42,7 +42,7 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="DataModel" name="ProgramTypeType"></Type>
   </Item>
   <Item>
     <Element>Agencies</Element>

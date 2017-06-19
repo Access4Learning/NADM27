@@ -330,7 +330,11 @@
             in log files or error reports, along with the SIF_Desc and optional SIF_ExtendedDesc elements.
           </p>
 		</Description>
+		<!--
+		TODO: this is an infrastructure dependency, should not be here
 		<Type ref="Infrastructure" name="SIF_Error"/>
+		-->
+		<Type ref="DataModel" name="OtherId"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
