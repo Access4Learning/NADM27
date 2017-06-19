@@ -209,12 +209,12 @@
 	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\LearningStandardAssociation.xml"/>
   </Group>
 
-  <!--<Group name="Library Automation Working Group">
+  <Group name="Library Automation Working Group">
     <Intro>
       <p>The Library Automation Working Group provides the library automation entities necessary to effectively exchange relevant data via the framework.</p>
     </Intro>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\LibraryPatronStatus.xml"/>
-  </Group>-->
+  </Group>
 
   <Group name="Student Information Systems Working Group">
     <Intro>
