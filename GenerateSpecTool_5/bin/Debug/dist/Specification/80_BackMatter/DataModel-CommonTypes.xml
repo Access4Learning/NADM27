@@ -4327,7 +4327,7 @@
 				</Value>
 			</Values>
 		</Item>
-		<xhtml:Example xmlns="">
+		<xhtml:Example xmlns="" skipValidate="True">
 			<EmailList>
 				<Email Type="Primary">contact@sifinfo.org</Email>
 				<Email Type="Alternate1">info@sifinfo.org</Email>
