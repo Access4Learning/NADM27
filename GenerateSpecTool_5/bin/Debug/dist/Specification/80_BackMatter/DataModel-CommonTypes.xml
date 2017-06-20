@@ -4327,7 +4327,7 @@
 				</Value>
 			</Values>
 		</Item>
-		<xhtml:Example xmlns="">
+		<xhtml:Example xmlns="" skipValidate="True">
 			<EmailList>
 				<Email Type="Primary">contact@sifinfo.org</Email>
 				<Email Type="Alternate1">info@sifinfo.org</Email>
@@ -4922,8 +4922,7 @@
 		</xhtml:Example>
 	</CommonElement>
 
-	<!--This element is an inexact version of the other element named Program Type-->
-	<!--<CommonElement name="ProgramType" type="true">
+	<CommonElement name="FundedProgramType" dm="true" type="true">
 	<Intro>
 		<p>
 			This common element is used to describe program information. It uses a type attribute that provides a list of values
@@ -4932,7 +4931,7 @@
 		</p>
 	</Intro>
 	<Item>
-		<Element>ProgramType</Element>
+		<Element>FundedProgramType</Element>
 		<Characteristics></Characteristics>
 		<Description>
 			<p>Program value.</p>

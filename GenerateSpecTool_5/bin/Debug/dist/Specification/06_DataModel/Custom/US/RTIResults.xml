@@ -68,6 +68,15 @@
     <Description>
       <p>The specific measurement goals at the end of the intervention that each student should reach.</p>
     </Description>
+	<Type ref="CommonTypes" name="PerformanceIndicatorListType"/>
+  </Item>
+ 
+  <Item>
+    <Element>Measurements</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The specific measurement goals at the end of the intervention that each student should reach.</p>
+    </Description>
 	<Type ref="CommonTypes" name="ResponseToInterventionMeasurementListType"/>
   </Item>
  

@@ -317,7 +317,7 @@
 			<p>The date when this ready hold will expire freeing the item to be assigned to another patron.</p>
 		</Description>
 		<Type name="xs:date"/>
-	</Item>
+	</Item> 
 	<Item>
 		<Element>MessageList</Element>
 		<Characteristics>O</Characteristics>

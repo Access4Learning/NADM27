@@ -147,7 +147,7 @@
     <Description>
       <p>Evaluations/review of the resource.</p>
     </Description>
-    <Type ref="CommonTypes" name="LearningResourceEvaluationType"></Type>
+    <Type ref="CommonTypes" name="LearningResourceEvaluationListType"></Type>
   </Item>
  
 

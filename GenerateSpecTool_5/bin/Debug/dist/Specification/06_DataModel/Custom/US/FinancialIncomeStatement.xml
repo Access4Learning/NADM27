@@ -58,7 +58,7 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="ProgramTypeType"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>

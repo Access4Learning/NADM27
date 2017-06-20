@@ -172,7 +172,7 @@
 		<Description>
 			<p>Learning resources that support this activity.</p>
 		</Description>
-		<Type ref="CommonTypes" name="LearningResourcesRefIdListType"/>
+		<Type ref="CommonTypes" name="LearningResourceRefIdListType"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
