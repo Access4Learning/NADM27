@@ -121,7 +121,7 @@
 			<p>Select shared and named code sets defined in SIF are included here for reference.</p>
 		  </Intro>
 		  <CodeSets>
-			<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CodeSets.xml"/>
+			<!--<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="85_InfraBackMatter/Infrastructure-CodeSets.xml"/>-->
 
 			<!-- include data model code sets here -->
 			<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/Custom/DataModel-CodeSets-Custom.xml"/>
