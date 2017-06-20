@@ -86,7 +86,7 @@
 			<Description>
 				<p>The last name.</p>
 			</Description>
-			<Type ref="DataModel" name="LastName"></Type>
+			<Type ref="CommonTypes" name="LastNameType"></Type>
 		</Item>
 		<Item>
 			<Element>FirstName</Element>
@@ -94,7 +94,7 @@
 			<Description>
 				<p>The first name.</p>
 			</Description>
-			<Type ref="DataModel" name="FirstName"></Type>
+			<Type ref="CommonTypes" name="FirstNameType"></Type>
 		</Item>
 		<Item>
 			<Element>MiddleName</Element>
@@ -102,7 +102,7 @@
 			<Description>
 				<p>The middle name or initial.</p>
 			</Description>
-			<Type ref="DataModel" name="MiddleName"></Type>
+			<Type ref="CommonTypes" name="MiddleNameType"></Type>
 		</Item>
 		<Item>
 			<Element>Suffix</Element>
@@ -249,7 +249,7 @@
 			<Item>
 				<Element>MealStatus</Element>
 				<Characteristics>C</Characteristics>
-				<Type ref="DataModel" name="MealStatus"></Type>
+				<Type ref="CommonTypes" name="MealStatus"></Type>
 				<Description>
 					<p>Student meal status. If a meal status applies, either MealStatus (for students), or EarnedStatus (for staff) is specified.</p>
 				</Description>
@@ -257,7 +257,7 @@
 			<Item>
 				<Element>EarnedStatus</Element>
 				<Characteristics>C</Characteristics>
-				<Type ref="DataModel" name="EarnedStatus"></Type>
+				<Type ref="CommonTypes" name="EarnedStatus"></Type>
 				<Description>
 					<p>Staff meal status.</p>
 				</Description>
@@ -323,20 +323,9 @@
 		<Item>
 			<Element>ResidencyStatus</Element>
 			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="ResidencyStatusType"/>
 		</Item>
-		<Item>
-			<Element>/Code</Element>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Location of an individual's legal residence relative to (within or outside) the boundaries of the organization.</p>
-			</Description>
-			<Type ref="ExternalCodeSets" name="NCES0598PublicSchoolResidenceStatusType"/>
-		</Item>
-		<Item>
-			<Element>/OtherCodeList</Element>
-			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"/>
-		</Item>
+	
 		<Item>
 			<Element>ProvidingInstruction</Element>
 			<Characteristics>M</Characteristics>
@@ -362,10 +351,28 @@
 			<Type name="xs:boolean"/>
 		</Item>
 	</CommonElement>
+	
+	<CommonElement name="ResidencyStatusType" type="true">	
+			<Item>
+			<Element>ResidencyStatusType</Element>
+			<Characteristics>M</Characteristics>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Location of an individual's legal residence relative to (within or outside) the boundaries of the organization.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0598PublicSchoolResidenceStatusType"/>
+		</Item>
+		<Item>
+			<Element>OtherCodeList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="OtherCodeListType"/>
+		</Item>
+</CommonElement>
 
-
-
-	<CommonElement name="StudentParametersType" type="true" dm="true">
+<CommonElement name="StudentParametersType" type="true" dm="true">
 		<Item>
 			<Element>StudentParametersType</Element>
 			<Description>
@@ -379,7 +386,7 @@
 			<Description>
 				<p>Specified if the requesting agency believes it knows the person’s state Id.</p>
 			</Description>
-			<Type ref='DataModel' name='StateProvinceId'/>
+			<Type ref='CommonTypes' name='StateProvinceId'/>
 		</Item>
 
 		<Item>
@@ -388,7 +395,7 @@
 			<Description>
 				<p>This is the requesting agent’s unique Id for the person.</p>
 			</Description>
-			<Type ref='DataModel' name='LocalId'/>
+			<Type ref='CommonTypes' name='LocalId'/>
 		</Item>
 
 		<Item>
@@ -406,7 +413,7 @@
 			<Description>
 				<p>The student’s current grade level.</p>
 			</Description>
-			<Type ref='DataModel' name='GradeLevel'/>
+			<Type ref='CommonTypes' name='GradeLevel'/>
 		</Item>
 
 		<Item>
@@ -415,7 +422,7 @@
 			<Description>
 				<p>Social security number of the person.</p>
 			</Description>
-			<Type ref='DataModel' name='SSN'/>
+			<Type ref='CommonTypes' name='SSN'/>
 		</Item>
 
 		<Item>
@@ -433,7 +440,7 @@
 			<Description>
 				<p>The name(s) of the person.</p>
 			</Description>
-			<Type ref='DataModel' name='Name'/>
+			<Type ref='CommonTypes' name='Name'/>
 		</Item>
 
 		<Item>
@@ -451,7 +458,7 @@
 			<Description>
 				<p>The address(es) of the person.</p>
 			</Description>
-			<Type ref='DataModel' name='Address'/>
+			<Type ref='CommonTypes' name='Address'/>
 		</Item>
 
 		<Item>
@@ -460,7 +467,7 @@
 			<Description>
 				<p>Demographic information about the person. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local object, but it must include enough to drive the state's matching algorithms.</p>
 			</Description>
-			<Type ref='DataModel' name='Demographics'/>
+			<Type ref='CommonTypes' name='Demographics'/>
 		</Item>
 
 		<Item>
@@ -487,7 +494,7 @@
 			<Description>
 				<p>Relationship to the person.</p>
 			</Description>
-			<Type ref='DataModel' name='Relationship'/>
+			<Type ref='CommonTypes' name='Relationship'/>
 		</Item>
 
 		<Item>
@@ -505,7 +512,7 @@
 			<Description>
 				<p>The name(s) of the contact.</p>
 			</Description>
-			<Type ref='DataModel' name='Name'/>
+			<Type ref='CommonTypes' name='Name'/>
 		</Item>
 
 		<Item>
@@ -514,7 +521,7 @@
 			<Description>
 				<p>OtherIds associated with the contact .</p>
 			</Description>
-			<Type ref='DataModel' name='OtherIdListType'/>
+			<Type ref='CommonTypes' name='OtherIdListType'/>
 		</Item>
 
 		<Item>
@@ -523,7 +530,7 @@
 			<Description>
 				<p>The highest level of education completed by the contact person.</p>
 			</Description>
-			<Type ref="DataModel" name="EducationalLevel"></Type>
+			<Type ref="CommonTypes" name="EducationalLevel"></Type>
 		</Item>
 
 		<Item>
@@ -559,7 +566,7 @@
 			<Description>
 				<p>Indicates the date the person's graduated Year, Year and Month, or Year, Month and Day may be specified. Intended to facilitate locating persons that may not be currently enrolled in a school or district, particularly in the context of locating student identifiers for initiating a request for a student's academic record. Supplied date values may often be approximations made by the entity endeavoring to request a student's academic record.</p>
 			</Description>
-			<Type ref='DataModel' name='GraduationDate'/>
+			<Type ref='CommonTypes' name='GraduationDate'/>
 		</Item>
 
 		<Item>
@@ -586,7 +593,7 @@
 			<Description>
 				<p>Additional person identifiers not represented elsewhere in Characteristics (e.g. the driver's license number of the person ).</p>
 			</Description>
-			<Type ref='DataModel' name='OtherIdList'/>
+			<Type ref='CommonTypes' name='OtherIdList'/>
 		</Item>
 
 		<Item>
@@ -595,7 +602,7 @@
 			<Description>
 				<p>SIF_Metadata’s TimeElement may be specified to indicate a time duration to which the characteristics apply (as opposed to adding new elements to Characteristics). This metadata may be supplied by systems that know a student existed in a district during a certain time period (e.g. a system initiating a student record exchange). If the responder is able to make use of the metadata, it may do so to narrow down the student look-up; otherwise the metadata can be ignored or logged.</p>
 			</Description>
-			<Type ref="DataModel" name="TimeElement"></Type>
+			<Type ref="CommonTypes" name="TimeElement"></Type>
 		</Item>
 
 	</CommonElement>
@@ -614,7 +621,7 @@
 			<Description>
 				<p>Specified if the requesting agency believes it knows the person’s state Id.</p>
 			</Description>
-			<Type ref='DataModel' name='StateProvinceId'/>
+			<Type ref='CommonTypes' name='StateProvinceId'/>
 		</Item>
 
 		<Item>
@@ -623,7 +630,7 @@
 			<Description>
 				<p>This is the requesting agent’s unique Id for the person.</p>
 			</Description>
-			<Type ref='DataModel' name='LocalId'/>
+			<Type ref='CommonTypes' name='LocalId'/>
 		</Item>
 
 		<Item>
@@ -641,7 +648,7 @@
 			<Description>
 				<p>Social security number of the person.</p>
 			</Description>
-			<Type ref='DataModel' name='SSN'/>
+			<Type ref='CommonTypes' name='SSN'/>
 		</Item>
 
 		<Item>
@@ -659,7 +666,7 @@
 			<Description>
 				<p>The name(s) of the person.</p>
 			</Description>
-			<Type ref='DataModel' name='Name'/>
+			<Type ref='CommonTypes' name='Name'/>
 		</Item>
 
 		<Item>
@@ -677,7 +684,7 @@
 			<Description>
 				<p>The address(es) of the person.</p>
 			</Description>
-			<Type ref='DataModel' name='Address'/>
+			<Type ref='CommonTypes' name='Address'/>
 		</Item>
 
 		<Item>
@@ -686,7 +693,7 @@
 			<Description>
 				<p>Demographic information about the person. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local object, but it must include enough to drive the state's matching algorithms.</p>
 			</Description>
-			<Type ref='DataModel' name='Demographics'/>
+			<Type ref='CommonTypes' name='Demographics'/>
 		</Item>
 
 		<Item>
@@ -713,7 +720,7 @@
 			<Description>
 				<p>Relationship to the person.</p>
 			</Description>
-			<Type ref='DataModel' name='Relationship'/>
+			<Type ref='CommonTypes' name='Relationship'/>
 		</Item>
 
 		<Item>
@@ -731,7 +738,7 @@
 			<Description>
 				<p>The name(s) of the contact.</p>
 			</Description>
-			<Type ref='DataModel' name='Name'/>
+			<Type ref='CommonTypes' name='Name'/>
 		</Item>
 
 		<Item>
@@ -740,7 +747,7 @@
 			<Description>
 				<p>OtherIds associated with the contact .</p>
 			</Description>
-			<Type ref='DataModel' name='OtherIdListType'/>
+			<Type ref='CommonTypes' name='OtherIdListType'/>
 		</Item>
 
 		<Item>
@@ -749,7 +756,7 @@
 			<Description>
 				<p>The highest level of education completed by the contact person.</p>
 			</Description>
-			<Type ref="DataModel" name="EducationalLevel"></Type>
+			<Type ref="CommonTypes" name="EducationalLevel"></Type>
 		</Item>
 
 		<Item>
@@ -785,7 +792,7 @@
 			<Description>
 				<p>Additional person identifiers not represented elsewhere in Characteristics (e.g. the driver's license number of the person ).</p>
 			</Description>
-			<Type ref='DataModel' name='OtherIdListType'/>
+			<Type ref='CommonTypes' name='OtherIdListType'/>
 		</Item>
 
 		<Item>
@@ -794,7 +801,7 @@
 			<Description>
 				<p>SIF_Metadata’s TimeElement may be specified to indicate a time duration to which the characteristics apply (as opposed to adding new elements to Characteristics). This metadata may be supplied by systems that know a student existed in a district during a certain time period (e.g. a system initiating a student record exchange). If the responder is able to make use of the metadata, it may do so to narrow down the student look-up; otherwise the metadata can be ignored or logged.</p>
 			</Description>
-			<Type ref="DataModel" name="TimeElement"></Type>
+			<Type ref="CommonTypes" name="TimeElement"></Type>
 		</Item>
 
 	</CommonElement>
@@ -1620,7 +1627,7 @@
 		<Item>
 			<Element>/TimeElement</Element>
 			<Characteristics>OR</Characteristics>
-			<Type ref="DataModelTaskForce" name="TimeElement"></Type>
+			<Type ref="CommonTypesTaskForce" name="TimeElement"></Type>
 		</Item>
 
 
@@ -1782,7 +1789,7 @@
 			<Element>GradeLevels</Element>
 			<Characteristics>O</Characteristics>
 			<Description>Applicable grade levels as defined by SIF.</Description>
-			<Type ref="DataModel" name="GradeLevels"></Type>
+			<Type ref="CommonTypes" name="GradeLevels"></Type>
 		</Item>
 
 		<Item>
@@ -1799,7 +1806,7 @@
 		<Item>
 			<Element>/SubjectArea</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" name="SubjectArea"></Type>
+			<Type ref="CommonTypes" name="SubjectArea"></Type>
 		</Item>
 
 		<Item>
@@ -1814,7 +1821,7 @@
 		<Item>
 			<Element>/InterestLevel</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" name="GradeLevel"></Type>
+			<Type ref="CommonTypes" name="GradeLevel"></Type>
 		</Item>
 
 		<Item>
@@ -2126,7 +2133,7 @@
 		<Item>
 			<Element>OtherCodeListType</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 	</CommonElement>
 
@@ -2152,7 +2159,7 @@
 		<Item>
 			<Element>/OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<Item>
 			<Element>/LanguageType</Element>
@@ -2414,7 +2421,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<ProgramStatus>
@@ -2639,7 +2646,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<ProgramType>
@@ -2687,7 +2694,7 @@
 			<Description>
 				<p>Subject matter.</p>
 			</Description>
-			<Type ref="DataModel" name="SubjectArea"></Type>
+			<Type ref="CommonTypes" name="SubjectArea"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<SubjectAreaList>
@@ -2717,7 +2724,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<TermSpan>
@@ -2752,13 +2759,13 @@
 			<Description>
 				<p>Indicates whether or not this school contact's information should be published in a directory of school information.</p>
 			</Description>
-			<Type ref="DataModel" name="PublishInDirectory"></Type>
+			<Type ref="CommonTypes" name="PublishInDirectory"></Type>
 		</Item>
 		<Item>
 			<Element>/ContactInfo</Element>
 
 			<Characteristics>M</Characteristics>
-			<Type ref="DataModel" name="ContactInfo"></Type>
+			<Type ref="CommonTypes" name="ContactInfo"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<SchoolContactList>
@@ -3184,7 +3191,7 @@
 		<Item>
 			<Element>IdentificationInfo</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" name="IdentificationInfoType"></Type>
+			<Type ref="CommonTypes" name="IdentificationInfoType"></Type>
 			<Description>
 				<p>Other identification information associated with a school or LEA.</p>
 			</Description>
@@ -3273,7 +3280,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<InstructionalLevel>
@@ -3296,7 +3303,7 @@
 		<Item>
 			<Element>Address</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" complex="extension" name="Address"></Type>
+			<Type ref="CommonTypes" complex="extension" name="Address"></Type>
 		</Item>
 		<Item>
 			<Attribute>SIF_Action</Attribute>
@@ -3493,7 +3500,7 @@
 			<Description>
 				<p>The state or province code.</p>
 			</Description>
-			<Type ref="DataModel" name="StateProvince"></Type>
+			<Type ref="CommonTypes" name="StateProvince"></Type>
 		</Item>
 		<Item>
 			<Element>Country</Element>
@@ -3501,7 +3508,7 @@
 			<Description>
 				<p>The country code.</p>
 			</Description>
-			<Type ref="DataModel" name="Country"></Type>
+			<Type ref="CommonTypes" name="Country"></Type>
 		</Item>
 		<Item>
 			<Element>PostalCode</Element>
@@ -3517,7 +3524,7 @@
 			<Description>
 				<p>The location of the address.</p>
 			</Description>
-			<Type ref="DataModel" name="GridLocation"></Type>
+			<Type ref="CommonTypes" name="GridLocation"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<Address Type="0123">
@@ -3670,7 +3677,7 @@
 			<Description>
 				<p>The last name.</p>
 			</Description>
-			<Type ref="DataModel" name="LastName"></Type>
+			<Type ref="CommonTypes" name="LastName"></Type>
 		</Item>
 		<Item>
 			<Element>/FirstName</Element>
@@ -3678,7 +3685,7 @@
 			<Description>
 				<p>The first name.</p>
 			</Description>
-			<Type ref="DataModel" name="FirstName"></Type>
+			<Type ref="CommonTypes" name="FirstName"></Type>
 		</Item>
 		<Item>
 			<Element>/MiddleName</Element>
@@ -3686,7 +3693,7 @@
 			<Description>
 				<p>The middle name or initial.</p>
 			</Description>
-			<Type ref="DataModel" name="MiddleName"></Type>
+			<Type ref="CommonTypes" name="MiddleName"></Type>
 		</Item>
 		<Item>
 			<Element>/Suffix</Element>
@@ -3748,7 +3755,7 @@
 			<Description>
 				<p>Address of the contact.</p>
 			</Description>
-			<Type ref="DataModel" name="Address"></Type>
+			<Type ref="CommonTypes" name="Address"></Type>
 		</Item>
 		<Item>
 			<Element>EmailList</Element>
@@ -3756,7 +3763,7 @@
 			<Description>
 				<p>List of Email elements.</p>
 			</Description>
-			<Type ref="DataModel" name="EmailListType"></Type>
+			<Type ref="CommonTypes" name="EmailListType"></Type>
 		</Item>
 		<Item>
 			<Element>PhoneNumberList</Element>
@@ -3764,7 +3771,7 @@
 			<Description>
 				<p>List of PhoneNumber elements.</p>
 			</Description>
-			<Type ref="DataModel" name="PhoneNumberListType"></Type>
+			<Type ref="CommonTypes" name="PhoneNumberListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<ContactInfo>
@@ -3930,7 +3937,7 @@
 		<Item>
 			<Element>/OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<Item>
 			<Element>/Proportion</Element>
@@ -4004,12 +4011,12 @@
 		<Item>
 			<Element>RaceList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="RaceListType"></Type>
+			<Type ref="CommonTypes" name="RaceListType"></Type>
 		</Item>
 		<Item>
 			<Element>HispanicLatino</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="HispanicLatino"></Type>
+			<Type ref="CommonTypes" name="HispanicLatino"></Type>
 		</Item>
 		<Item>
 			<Element>Gender</Element>
@@ -4017,7 +4024,7 @@
 			<Description>
 				<p>Person's gender.</p>
 			</Description>
-			<Type ref="DataModel" name="Gender"></Type>
+			<Type ref="CommonTypes" name="Gender"></Type>
 		</Item>
 		<Item>
 			<Element>BirthDate</Element>
@@ -4025,7 +4032,7 @@
 			<Description>
 				<p>The person's date of birth.</p>
 			</Description>
-			<Type ref="DataModel" name="BirthDate"></Type>
+			<Type ref="CommonTypes" name="BirthDate"></Type>
 		</Item>
 		<Item>
 			<Element>BirthDateVerification</Element>
@@ -4057,7 +4064,7 @@
 			<Description>
 				<p>The person's state of birth.</p>
 			</Description>
-			<Type ref="DataModel" name="StateProvince"></Type>
+			<Type ref="CommonTypes" name="StateProvince"></Type>
 		</Item>
 		<Item>
 			<Element>CountryOfBirth</Element>
@@ -4065,7 +4072,7 @@
 			<Description>
 				<p>The person's country of birth.</p>
 			</Description>
-			<Type ref="DataModel" name="Country"></Type>
+			<Type ref="CommonTypes" name="Country"></Type>
 		</Item>
 		<Item>
 			<Element>CountriesOfCitizenship</Element>
@@ -4079,7 +4086,7 @@
 			<Description>
 				<p>A person's country of citizenship.</p>
 			</Description>
-			<Type ref="DataModel" name="Country"></Type>
+			<Type ref="CommonTypes" name="Country"></Type>
 		</Item>
 		<Item>
 			<Element>CountriesOfResidency</Element>
@@ -4093,7 +4100,7 @@
 			<Description>
 				<p>A person's country of residence.</p>
 			</Description>
-			<Type ref="DataModel" name="Country"></Type>
+			<Type ref="CommonTypes" name="Country"></Type>
 		</Item>
 		<Item>
 			<Element>CountryArrivalDate</Element>
@@ -4116,14 +4123,14 @@
 			<Element>EnglishProficiency</Element>
 			<Characteristics>O</Characteristics>
 			<Description>Person's proficiency in English.</Description>
-			<Type ref="DataModel" name="EnglishProficiency"></Type>
+			<Type ref="CommonTypes" name="EnglishProficiency"></Type>
 		</Item>
 
 		<Item>
 			<Element>LanguageList</Element>
 			<Characteristics>O</Characteristics>
 			<Description>List of languages an individual uses to communicate.</Description>
-			<Type ref="DataModel" name="LanguageListType"></Type>
+			<Type ref="CommonTypes" name="LanguageListType"></Type>
 		</Item>
 
 
@@ -4145,7 +4152,7 @@
 		<Item>
 			<Element>/OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<Item>
 			<Element>MaritalStatus</Element>
@@ -4252,7 +4259,7 @@
 		<Item>
 			<Element>ElectronicId</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" name="ElectronicId"></Type>
+			<Type ref="CommonTypes" name="ElectronicId"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<ElectronicIdList>
@@ -4311,7 +4318,7 @@
 		<Item>
 			<Element>Email</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" name="Email"></Type>
+			<Type ref="CommonTypes" name="Email"></Type>
 		</Item>
 		<Item>
 			<Attribute>SIF_Action</Attribute>
@@ -4497,7 +4504,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<GradeLevel>
@@ -4521,7 +4528,7 @@
 		<Item>
 			<Element>GradeLevel</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel" name="GradeLevel"></Type>
+			<Type ref="CommonTypes" name="GradeLevel"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<GradeLevels>
@@ -4835,7 +4842,7 @@
 		<Item>
 			<Element>PhoneNumber</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="DataModel"  complex="extension" name="PhoneNumber"></Type>
+			<Type ref="CommonTypes"  complex="extension" name="PhoneNumber"></Type>
 		</Item>
 		<Item>
 			<Attribute>SIF_Action</Attribute>
@@ -5019,7 +5026,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<Relationship>
@@ -5199,7 +5206,7 @@
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<SubjectArea>
@@ -5324,7 +5331,7 @@
 				(e.g., <code>2004</code> for the 2003-04 school year).
 				</p>
 			</Description>
-			<Type ref="DataModel" name="SchoolYear"></Type>
+			<Type ref="CommonTypes" name="SchoolYear"></Type>
 		</Item>
 
 		<xhtml:Example xmlns="">
@@ -5432,7 +5439,7 @@
 			<Description>
 				<p>The other Id entry.</p>
 			</Description>
-			<Type ref="DataModel" name="OtherId"></Type>
+			<Type ref="CommonTypes" name="OtherId"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<OtherIdList>
@@ -5455,7 +5462,7 @@
 			<Description>
 				<p>The locally-assigned identifier for this person. Note: LocalId may be used as a unique person identifier rather than a unique contact identifier. In this case there may be more than one object instance with the same LocalId.</p>
 			</Description>
-			<Type ref="DataModel" name="LocalId"></Type>
+			<Type ref="CommonTypes" name="LocalId"></Type>
 		</Item>
 		<Item>
 			<Element>OtherIdList</Element>
@@ -5463,7 +5470,7 @@
 			<Description>
 				<p>Lists all "other" identifiers associated with the person.</p>
 			</Description>
-			<Type ref="DataModel" name="OtherIdListType"></Type>
+			<Type ref="CommonTypes" name="OtherIdListType"></Type>
 		</Item>
 		<Item>
 			<Element>Name</Element>
@@ -5479,7 +5486,7 @@
 			<Description>
 				<p>Previous, alternate or other names or aliases associated with the person.</p>
 			</Description>
-			<Type ref="DataModel" name="OtherNames"/>
+			<Type ref="CommonTypes" name="OtherNames"/>
 		</Item>
 		<Item>
 			<Element>Demographics</Element>
@@ -5487,7 +5494,7 @@
 			<Description>
 				<p>This element contains information related to person's demographics.</p>
 			</Description>
-			<Type ref="DataModel" name="Demographics"></Type>
+			<Type ref="CommonTypes" name="Demographics"></Type>
 		</Item>
 		<Item>
 			<Element>AddressList</Element>
@@ -5495,7 +5502,7 @@
 			<Description>
 				<p>The person's address(es).</p>
 			</Description>
-			<Type ref="DataModel" name="AddressListType"></Type>
+			<Type ref="CommonTypes" name="AddressListType"></Type>
 		</Item>
 		<Item>
 			<Element>PhoneNumberList</Element>
@@ -5503,7 +5510,7 @@
 			<Description>
 				<p>The person's phone number(s).</p>
 			</Description>
-			<Type ref="DataModel" name="PhoneNumberListType"></Type>
+			<Type ref="CommonTypes" name="PhoneNumberListType"></Type>
 		</Item>
 		<Item>
 			<Element>EmailList</Element>
@@ -5511,7 +5518,7 @@
 			<Description>
 				<p>The person's e-mail address(es).</p>
 			</Description>
-			<Type ref="DataModel" name="EmailListType"></Type>
+			<Type ref="CommonTypes" name="EmailListType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<PersonInfo>
@@ -5785,12 +5792,12 @@
 		<Item>
 			<Element>/TimeElement</Element>
 			<Characteristics>OR</Characteristics>
-			<Type ref="DataModel" name="TimeElement"></Type>
+			<Type ref="CommonTypes" name="TimeElement"></Type>
 		</Item>
 		<Item>
 			<Element>LifeCycle</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="LifeCycle"></Type>
+			<Type ref="CommonTypes" name="LifeCycle"></Type>
 		</Item>
 		<Item>
 			<Element>RightsElements</Element>
@@ -5801,12 +5808,12 @@
 		<Item>
 			<Element>/RightsElement</Element>
 			<Characteristics>OR</Characteristics>
-			<Type ref="DataModel" name="RightsElement"></Type>
+			<Type ref="CommonTypes" name="RightsElement"></Type>
 		</Item>
 		<Item>
 			<Element>EducationFilter</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="DataModel" name="EducationFilter"></Type>
+			<Type ref="CommonTypes" name="EducationFilter"></Type>
 		</Item>
 	</CommonElement>
 	
