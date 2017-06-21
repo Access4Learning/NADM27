@@ -386,7 +386,7 @@
 			<Description>
 				<p>Specified if the requesting agency believes it knows the person’s state Id.</p>
 			</Description>
-			<Type ref='CommonTypes' name='StateProvinceId'/>
+			<Type ref="CommonTypes" name="StateProvinceIdType"/>
 		</Item>
 
 		<Item>
@@ -395,7 +395,7 @@
 			<Description>
 				<p>This is the requesting agent’s unique Id for the person.</p>
 			</Description>
-			<Type ref='CommonTypes' name='LocalId'/>
+			<Type ref="CommonTypes" name="LocalIdType"/>
 		</Item>
 
 		<Item>
@@ -413,7 +413,7 @@
 			<Description>
 				<p>The student’s current grade level.</p>
 			</Description>
-			<Type ref='CommonTypes' name='GradeLevel'/>
+			<Type ref='CommonTypes' name='GradeLevelType'/>
 		</Item>
 
 		<Item>
@@ -422,43 +422,25 @@
 			<Description>
 				<p>Social security number of the person.</p>
 			</Description>
-			<Type ref='CommonTypes' name='SSN'/>
+			<Type ref='CommonTypes' name='SSNType'/>
 		</Item>
-
+ 
 		<Item>
 			<Element>Names</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>The name(s) of the person.</p>
 			</Description>
-			<List mode='List'/>
+			<Type ref='CommonTypes' name='NamesType'/>
 		</Item>
 
-		<Item>
-			<Element>/Name</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>The name(s) of the person.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Name'/>
-		</Item>
-
-		<Item>
+	 	<Item>
 			<Element>Addresses</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>The address(es) of the person.</p>
 			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>/Address</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>The address(es) of the person.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Address'/>
+			<Type ref='CommonTypes' name='AddressListType'/>
 		</Item>
 
 		<Item>
@@ -467,72 +449,18 @@
 			<Description>
 				<p>Demographic information about the person. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local object, but it must include enough to drive the state's matching algorithms.</p>
 			</Description>
-			<Type ref='CommonTypes' name='Demographics'/>
+			<Type ref='CommonTypes' name='DemographicsType'/>
 		</Item>
-
+ 
 		<Item>
 			<Element>Contacts</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
 			</Description>
-			<List mode='List'/>
+			<Type ref='CommonTypes' name='ContactRelationshipsType'/>
 		</Item>
-
-		<Item>
-			<Element>/Contact</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
-			</Description>
-		</Item>
-
-
-		<Item>
-			<Element>//Relationship</Element>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Relationship to the person.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Relationship'/>
-		</Item>
-
-		<Item>
-			<Element>//Names</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The name(s) of the contact.</p>
-			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>///Name</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>The name(s) of the contact.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Name'/>
-		</Item>
-
-		<Item>
-			<Element>//OtherIdList</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>OtherIds associated with the contact .</p>
-			</Description>
-			<Type ref='CommonTypes' name='OtherIdListType'/>
-		</Item>
-
-		<Item>
-			<Element>//EducationalLevel</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The highest level of education completed by the contact person.</p>
-			</Description>
-			<Type ref="CommonTypes" name="EducationalLevel"></Type>
-		</Item>
-
+ 
 		<Item>
 			<Element>EffectiveDate</Element>
 			<Characteristics>O</Characteristics>
@@ -602,10 +530,97 @@
 			<Description>
 				<p>SIF_Metadata’s TimeElement may be specified to indicate a time duration to which the characteristics apply (as opposed to adding new elements to Characteristics). This metadata may be supplied by systems that know a student existed in a district during a certain time period (e.g. a system initiating a student record exchange). If the responder is able to make use of the metadata, it may do so to narrow down the student look-up; otherwise the metadata can be ignored or logged.</p>
 			</Description>
-			<Type ref="CommonTypes" name="TimeElement"></Type>
+			<Type ref="CommonTypes" name="TimeElementType"></Type>
 		</Item>
 
 	</CommonElement>
+	
+ <CommonElement name="NamesType" type="true" dm="true">
+		<Item>
+			<Element>NamesType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The name(s) of the person.</p>
+			</Description>
+			<List mode='List'/>
+		</Item>
+
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>The name(s) of the person.</p>
+			</Description>
+			<Type ref='CommonTypes' name='Name'/>
+		</Item>
+</CommonElement>
+
+ <CommonElement name="ContactRelationshipsType" type="true" dm="true">
+
+	<Item>
+			<Element>ContactRelationshipsType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+			</Description>
+			<List mode='List'/>
+		</Item>
+
+		<Item>
+			<Element>Contact</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+			</Description>
+	    	<Type ref='CommonTypes' name='ContactRelationshipType'/>
+		</Item>
+</CommonElement>
+
+ <CommonElement name="ContactRelationshipType" type="true" dm="true">
+       <Item>
+			<Element>ContactRelationshipType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Relationship</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Relationship to the person.</p>
+			</Description>
+			<Type ref='CommonTypes' name='Relationship'/>
+		</Item>
+
+		<Item>
+			<Element>Names</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The name(s) of the contact.</p>
+			</Description>
+			<Type ref='CommonTypes' name='NamesType'/>
+		</Item>
+
+		<Item>
+			<Element>OtherIdList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>OtherIds associated with the contact .</p>
+			</Description>
+			<Type ref='CommonTypes' name='OtherIdListType'/>
+		</Item>
+
+		<Item>
+			<Element>EducationalLevel</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The highest level of education completed by the contact person.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EducationalLevelType"></Type>
+		</Item>
+		
+</CommonElement>
 
 	<CommonElement name="StaffParametersType" type="true" dm="true">
 		<Item>
@@ -621,7 +636,7 @@
 			<Description>
 				<p>Specified if the requesting agency believes it knows the person’s state Id.</p>
 			</Description>
-			<Type ref='CommonTypes' name='StateProvinceId'/>
+			<Type ref='CommonTypes' name='StateProvinceIdType'/>
 		</Item>
 
 		<Item>
@@ -630,7 +645,7 @@
 			<Description>
 				<p>This is the requesting agent’s unique Id for the person.</p>
 			</Description>
-			<Type ref='CommonTypes' name='LocalId'/>
+			<Type ref='CommonTypes' name='LocalIdType'/>
 		</Item>
 
 		<Item>
@@ -648,7 +663,7 @@
 			<Description>
 				<p>Social security number of the person.</p>
 			</Description>
-			<Type ref='CommonTypes' name='SSN'/>
+			<Type ref='CommonTypes' name='SSNType'/>
 		</Item>
 
 		<Item>
@@ -657,16 +672,7 @@
 			<Description>
 				<p>The name(s) of the person.</p>
 			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>/Name</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>The name(s) of the person.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Name'/>
+			<Type ref='CommonTypes' name='NamesType'/>
 		</Item>
 
 		<Item>
@@ -675,16 +681,7 @@
 			<Description>
 				<p>The address(es) of the person.</p>
 			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>/Address</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>The address(es) of the person.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Address'/>
+			<Type ref='CommonTypes' name='AddressListType'/>
 		</Item>
 
 		<Item>
@@ -693,7 +690,7 @@
 			<Description>
 				<p>Demographic information about the person. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local object, but it must include enough to drive the state's matching algorithms.</p>
 			</Description>
-			<Type ref='CommonTypes' name='Demographics'/>
+			<Type ref='CommonTypes' name='DemographicsType'/>
 		</Item>
 
 		<Item>
@@ -702,61 +699,7 @@
 			<Description>
 				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
 			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>/Contact</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
-			</Description>
-		</Item>
-
-
-		<Item>
-			<Element>//Relationship</Element>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Relationship to the person.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Relationship'/>
-		</Item>
-
-		<Item>
-			<Element>//Names</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The name(s) of the contact.</p>
-			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>///Name</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-				<p>The name(s) of the contact.</p>
-			</Description>
-			<Type ref='CommonTypes' name='Name'/>
-		</Item>
-
-		<Item>
-			<Element>//OtherIdList</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>OtherIds associated with the contact .</p>
-			</Description>
-			<Type ref='CommonTypes' name='OtherIdListType'/>
-		</Item>
-
-		<Item>
-			<Element>//EducationalLevel</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The highest level of education completed by the contact person.</p>
-			</Description>
-			<Type ref="CommonTypes" name="EducationalLevel"></Type>
+			<Type ref='CommonTypes' name='ContactRelationshipsType'/>
 		</Item>
 
 		<Item>
@@ -801,7 +744,7 @@
 			<Description>
 				<p>SIF_Metadata’s TimeElement may be specified to indicate a time duration to which the characteristics apply (as opposed to adding new elements to Characteristics). This metadata may be supplied by systems that know a student existed in a district during a certain time period (e.g. a system initiating a student record exchange). If the responder is able to make use of the metadata, it may do so to narrow down the student look-up; otherwise the metadata can be ignored or logged.</p>
 			</Description>
-			<Type ref="CommonTypes" name="TimeElement"></Type>
+			<Type ref="CommonTypes" name="TimeElementType"></Type>
 		</Item>
 
 	</CommonElement>
@@ -1436,57 +1379,9 @@
 		<Item>
 			<Element>SpanGaps</Element>
 			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+			<Type ref="CommonTypes" name="SpanGapsType"/>
 			<Description>A container element for holding multiple possible span gaps.</Description>
 		</Item>
-
-		<Item>
-			<Element>/SpanGap</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>
-			This structure duplicates much of the structure of <code>TimeElement</code> and is designed to represent a gap in the parent time period
-			defined by <code>StartDateTime</code> and <code>EndDateTime</code> above.
-			</Description>
-		</Item>
-
-
-		<Item>
-			<Element>//Type</Element>
-			<Characteristics>M</Characteristics>
-			<Type name="xs:normalizedString"/>
-		</Item>
-
-		<Item>
-			<Element>//Code</Element>
-			<Characteristics>M</Characteristics>
-			<Type name="xs:token"></Type>
-		</Item>
-
-		<Item>
-			<Element>//Name</Element>
-			<Characteristics>M</Characteristics>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-
-		<Item>
-			<Element>//Value</Element>
-			<Characteristics>M</Characteristics>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-
-		<Item>
-			<Element>//StartDateTime</Element>
-			<Characteristics>O</Characteristics>
-			<Type name="xs:dateTime"></Type>
-		</Item>
-
-		<Item>
-			<Element>//EndDateTime</Element>
-			<Characteristics>O</Characteristics>
-			<Type name="xs:dateTime"></Type>
-		</Item>
-
 
 		<Item>
 			<Element>IsCurrent</Element>
@@ -1522,6 +1417,72 @@
 
 		</xhtml:Example>
 	</CommonElement>
+	
+<CommonElement name="SpanGapsType" type="true">
+		<Item>
+			<Element>SpanGapsType</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List">
+			</List>
+			<Description>A container element for holding multiple possible span gaps.</Description>
+		</Item>
+
+		<Item>
+			<Element>SpanGap</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+			This structure duplicates much of the structure of <code>TimeElement</code> and is designed to represent a gap in the parent time period
+			defined by <code>StartDateTime</code> and <code>EndDateTime</code> above.
+			</Description>
+			<Type ref="CommonTypes" name="SpanGapType"/>
+		</Item>
+</CommonElement>
+
+<CommonElement name="SpanGapType" type="true">
+	 <Item>
+			<Element>SpanGapType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+			This structure duplicates much of the structure of <code>TimeElement</code> and is designed to represent a gap in the parent time period
+			defined by <code>StartDateTime</code> and <code>EndDateTime</code> above.
+			</Description>
+		</Item>
+		<Item>
+			<Element>Type</Element>
+			<Characteristics>M</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Type name="xs:token"></Type>
+		</Item>
+
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>M</Characteristics>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>M</Characteristics>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+
+		<Item>
+			<Element>StartDateTime</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:dateTime"></Type>
+		</Item>
+
+		<Item>
+			<Element>EndDateTime</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:dateTime"></Type>
+		</Item>
+   </CommonElement>
 
 	<CommonElement name="LifeCycleType" type="true">
 
