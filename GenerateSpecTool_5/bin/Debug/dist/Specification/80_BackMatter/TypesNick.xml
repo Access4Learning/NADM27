@@ -6476,3 +6476,60 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     <Type name="xs:string"/>
   </Item>
   </CommonElement>
+  
+   	<CommonElement name="StudentLEAEntryTypeType" type="true" dm="true">  
+    <Item>
+    <Element>StudentLEAEntryTypeType</Element>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code indicating the type of entry for this affiliation.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0619EntryTypeType"></Type>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"/>
+  </Item>
+  </CommonElement>
+  
+   	<CommonElement name="StudentLEAExitTypeType" type="true" dm="true">  
+    <Item>
+    <Element>StudentLEAExitTypeType</Element>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code indicating the type of exit for this affiliation.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0644ExitWithdrawalTypeType"></Type>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"/>
+  </Item>
+  </CommonElement>
+  
+   	<CommonElement name="StudentLEAExitStatusType" type="true" dm="true">  
+    <Item>
+    <Element>StudentLEAExitStatusType</Element>
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Code indicating the exit status for this affiliation.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0643ExitWithdrawalStatusType"></Type>
+  </Item>
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OtherCodeListType"/>
+  </Item>
+  </CommonElement>

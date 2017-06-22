@@ -1,11 +1,10 @@
 <IncludeGroup xmlns="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!--xi:include parse="xml" xmlns:xi="http://www.w3.org/2001/XInclude" href="DataModel-Vertical Reporting Task Force.xml"/-->
 
-  <!--<Group name="Data Model Task Force" sort="false" >
+  <Group name="Data Model Task Force" sort="false" >
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SEAInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentLEARelationship.xml"/>
   </Group>
--->
 
 
 

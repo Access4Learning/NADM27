@@ -68,7 +68,7 @@
         Contains the SIF school year to which this instance of <code>StudentLEARelationship</code> applies. <code>StudentLEARelationship</code> must not span multiple school years.
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>MembershipType</Element>
@@ -112,20 +112,9 @@
   <Item>
     <Element>EntryType</Element>
     <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="StudentLEAEntryTypeType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the type of entry for this affiliation.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0619EntryTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"/>
-  </Item>
+
   <Item>
     <Element>ExitDate</Element>
     <Characteristics>C</Characteristics>
@@ -140,37 +129,15 @@
   <Item>
     <Element>ExitType</Element>
     <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="StudentLEAExitTypeType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the type of exit for this affiliation.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0644ExitWithdrawalTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"/>
-  </Item>
+
   <Item>
     <Element>ExitStatus</Element>
     <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="StudentLEAExitStatusType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the exit status for this affiliation.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0643ExitWithdrawalStatusType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"/>
-  </Item>
+
   <Item>
     <Element>NonResidentAttendReason</Element>
     <Characteristics>C</Characteristics>
@@ -188,17 +155,17 @@
     <Description>
       <p>The grade or academic level of the student.</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevel"/>
+    <Type ref="CommonTypes" name="GradeLevelType"/>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <StudentLEARelationship
