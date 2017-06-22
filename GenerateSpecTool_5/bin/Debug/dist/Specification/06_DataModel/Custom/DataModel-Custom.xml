@@ -256,7 +256,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SectionCorrelation.xml"/>
   </Group>
 
-  <!--<Group name="Transportation and Geographic Information Working Group">
+  <Group name="Transportation and Geographic Information Working Group">
     <Intro>
       <p>
         The goal of Transportation and Geographic Information Working Group is to provide the wealth of information currently locked in the
@@ -270,7 +270,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\BusStopInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentTransportInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\BusPositionInfo.xml"/>
-  </Group>-->
+  </Group>
   
   <!--<Group name="Vertical Reporting Task Force">
     <Intro>

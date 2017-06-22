@@ -32,18 +32,18 @@
     <Description>
       <p>The location of the bus stop.</p>
     </Description>
-    <Type ref="DataModel" name="GridLocation"></Type>
+    <Type ref="CommonTypes" name="GridLocationType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <BusStopInfo RefId="D3E34B359D75101A8C3D00AA001A1652">

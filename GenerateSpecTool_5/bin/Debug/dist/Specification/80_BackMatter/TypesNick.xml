@@ -6030,3 +6030,449 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 	</CommonElement>
+	
+	<CommonElement name="BusInfoEquipmentListType" type="true" dm="true">  
+	 <Item>
+    <Element>BusInfoEquipmentListType</Element>
+    <Description>
+      <p>Describes any special equipment that is on this bus.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+
+  <Item>
+
+    <Element>Equipment</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Inventories each piece of special equipment on the bus.</p>
+    </Description>
+     <Type ref="CommonTypes" name="BusInfoEquipmentType"></Type>
+ </Item>
+ 	</CommonElement>
+
+	<CommonElement name="BusInfoEquipmentType" type="true" dm="true">  
+  <Item>
+
+    <Element>BusInfoEquipmentType</Element>
+    <Description>
+      <p>Inventories each piece of special equipment on the bus.</p>
+    </Description>
+ </Item>
+	<Item>
+
+    <Element>BusEquipmentRefId</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the type of equipment.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+
+    <Element>Count</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The number of pieces of this type of equipment that are on this bus.</p>
+    </Description>
+    <Type name="xs:unsignedInt"></Type>
+  </Item>
+  </CommonElement>
+  
+	<CommonElement name="TelemetryListType" type="true" dm="true">  
+   <Item>
+    <Element>TelemetryListType</Element>
+    <List mode="List"/>
+  </Item>
+
+  <Item>
+    <Element>Telemetry</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Indicators and values provided by the hardware along with this position snapshot. For events, it is safe to assume that one of these items triggered the hardware to issue an update.</p>
+      <p>The following values are suggested for common reports to enhance interoperability, but each deployment will have items dictated by the infrastructure. A format for reporting continuous-value metrics is also suggested.</p>
+      <p>Suggested Values:</p>
+      <p>Panic&#x2014;panic button pressed</p>
+      <p>Accident&#x2014;airbag deployed or some other detection</p>
+      <p>Checkpoint&#x2014;manually triggered per procedures</p>
+      <p>Assistance&#x2014;non-emergency request</p>
+      <p>Timer&#x2014;timed report</p>
+      <p>RouteStatus&#x2014;change to RouteStatus/Status</p>
+      <p>Open&#x2014;door open</p>
+      <p>Close&#x2014;door closed</p>
+      <p>ToD&#x2014;shifted into "Drive"</p>
+      <p>OffD&#x2014;shifted off "Drive"</p>
+      <p>StpLght&#x2014;Stop Lights are on</p>
+      <p>WrngLght&#x2014;Warning lights are on</p>
+      <p>StpArm&#x2014;Stop arm is out</p>
+      <p>CrsngGt&#x2014;Crossing gate is extended</p>
+      <p>EcmOp&#x2014;ECM Oil Pressure is Low</p>
+      <p>EcmOt&#x2014;ECM Oil Temperature is high</p>
+      <p>EcmTt&#x2014;ECM transmission temperature is high</p>
+      <p>EcmTp&#x2014;Transmission Oil Pressure is low</p>
+      <p>EcmFuelPrs&#x2014;ECM Fuel Pressure is low</p>
+      <p>EcmExtIdle&#x2014;ECM Extended engine idle period</p>
+      <p>EcmOvrSpeed&#x2014;ECM engine over Speed</p>
+      <p>EcmVltg&#x2014;ECM Voltage is low</p>
+      <p>OutBndry&#x2014;Out of Boundary</p>
+      <p>FuelGauge-34pct&#x2014;suggested continuous-value syntax, minimal use of special characters</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+</CommonElement>
+
+	<CommonElement name="BusStaffType" type="true" dm="true">  
+  <Item>
+    <Element>BusStaffType</Element>
+    <Description>
+      <p>Information identifying the driver or other staff on a bus.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>Name</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>The name of the bus staff. Condition is that at least one of this and EmployeePersonalRefId must be included.</p>
+    </Description>
+    <Type ref="CommonTypes" name="NameType"></Type>
+  </Item>
+  <Item>
+    <Element>EmployeePersonalRefId</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>The GUID of the staff's EmployeePersonal object. Condition is that at least one of this and Name must be included.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Element>Status</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Boarding status of the staff.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>On</Code>
+        <Text>Staff boarded the bus and no exit detected</Text>
+      </Value>
+      <Value>
+        <Code>Off</Code>
+        <Text>Staff exited the bus</Text>
+      </Value>
+      <Value>
+        <Code>Sched</Code>
+        <Text>Scheduled for this run, but either hasn't boarded or the telematics hardware can't confirm who the staff is</Text>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+	<CommonElement name="BusStaffListType" type="true" dm="true">  
+    <Item>
+    <Element>BusStaffListType</Element>
+    <Description>
+      <p>List identifying other staff. This may include aides, nurses, proctors, etc.</p>
+    </Description>
+    <List mode="List"/>
+  </Item>
+
+  <Item>
+    <Element>BusStaff</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Information about an individual staff member on the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="BusStaffType"></Type>
+  </Item>
+ </CommonElement>
+ 
+	<CommonElement name="BusRouteStatusType" type="true" dm="true">  
+   <Item>
+    <Element>BusRouteStatusType</Element>
+    <Description>
+      <p>
+        If the bus is running a route, this element must be included in the object.
+        Absence means the bus is not operating a route.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>BusRouteInfoRefId</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The GUID that identifies the route.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Element>Status</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Status of the route.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Begin</Code>
+        <Text>No students have been picked up yet</Text>
+      </Value>
+      <Value>
+        <Code>End</Code>
+        <Text>All students have been dropped off</Text>
+      </Value>
+      <Value>
+        <Code>Continue</Code>
+        <Text>In the midst of a run</Text>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Attribute>BusRouteDetailRefId</Attribute>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>If the bus is currently at a stop in this route, identify the stop's SIF object.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  </CommonElement>
+
+ 	<CommonElement name="BusPositionStudentListType" type="true" dm="true">  
+   <Item>
+    <Element>BusPositionStudentListType</Element>
+    <Description>A list of students and their statuses in BusPositionInfo.   The complete list may be sent with some events (e.g. change in RouteStatus) per district policy, but it is more typical of responses.</Description>
+    <List mode="List"/>
+  </Item>
+  <Item>
+    <Element>Student</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>Each student's status.</p>
+    </Description>
+    <Type ref="CommonTypes" name="BusPositionStudentType"></Type>
+  </Item>
+  </CommonElement>
+  
+ 	<CommonElement name="BusPositionStudentType" type="true" dm="true">  
+  <Item>
+    <Element>BusPositionStudentType</Element>
+    <Description>
+      <p>Each student's status in BusPositionInfo.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>StudentPersonalRefId</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the student that this element refers to.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Element>Status</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Boarding status of this student.  Note: Values <code>Sched</code>, <code>On</code> and <code>Off</code> are typical of responses.  Values <code>Entered</code>
+        and <code>Exited</code> are typical of events.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>On</Code>
+        <Text>Student boarded the bus and no exit detected</Text>
+      </Value>
+      <Value>
+        <Code>Off</Code>
+        <Text>Student exited the bus</Text>
+      </Value>
+      <Value>
+        <Code>Entered</Code>
+        <Text>Boarded the bus since previous event</Text>
+      </Value>
+      <Value>
+        <Code>Exited</Code>
+        <Text>Left the bus since previous event</Text>
+      </Value>
+      <Value>
+        <Code>Sched</Code>
+        <Text>Scheduled for this run, but either hasn't boarded or the telematics hardware can't confirm student identities</Text>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="OriginPointType" type="true" dm="true">  
+   <Item>
+    <Element>OriginPointType</Element>
+  </Item>
+  <Item>
+    <Attribute>BusRouteDetailRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>ArrivalTime</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The time that the bus associated with this route will stop at this bus stop.</p>
+    </Description>
+    <Type name="xs:time"/>
+  </Item>
+  <Item>
+    <Element>RouteNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A unique identifier for the route. For instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Element>RouteDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Short explanation of the route.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  <Item>
+    <Element>VehicleNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Vehicle number of the bus.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Element>BusStopDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>An explanation of this location.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="TransferPointListType" type="true" dm="true">  
+    <Item>
+    <Element>TransferPointListType</Element>
+    <List mode="List"/>
+  </Item>
+
+  <Item>
+    <Element>TransferPoint</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>
+        There should be one TransferPoint element for each intermediate point on a trip.
+        The "embark" and "disembark" bus stops for a single transfer point must be at the same location.
+        To order multiple TransferPoint elements, use the Time element of the BusStopInfo objects referenced by the attributes.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="TransferPointType"></Type>
+  </Item>
+  </CommonElement>
+  	<CommonElement name="TransferPointType" type="true" dm="true">  
+  <Item>
+    <Element>TransferPointType</Element>
+    <Description>
+      <p>
+        There should be one TransferPoint element for each intermediate point on a trip.
+        The "embark" and "disembark" bus stops for a single transfer point must be at the same location.
+        To order multiple TransferPoint elements, use the Time element of the BusStopInfo objects referenced by the attributes.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>EmbarkBusRouteDetail</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Values>
+      <Value>
+        <Code>BusRouteDetail</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+
+    <Element>DisembarkBusRouteDetail</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Values>
+      <Value>
+        <Code>BusRouteDetail</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+   	<CommonElement name="DestinationPointType" type="true" dm="true">  
+  <Item>
+    <Element>DestinationPointType</Element>
+  </Item>
+  <Item>
+    <Attribute>BusRouteDetailRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>ArrivalTime</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The time that the bus associated with this route will stop at this bus stop.</p>
+    </Description>
+    <Type name="xs:time"/>
+  </Item>
+  <Item>
+    <Element>RouteNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A unique identifier for the route. F or instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
+    </Description>
+    <Type name="xs:normalizedString"/>
+  </Item>
+  <Item>
+    <Element>RouteDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Short explanation of the route. It may be used to designate an area, or used to color-code bus routes (the "orange" route).</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  <Item>
+    <Element>VehicleNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Vehicle number of the bus.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  <Item>
+    <Element>BusStopDescription</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>An explanation of this location.</p>
+    </Description>
+    <Type name="xs:string"/>
+  </Item>
+  </CommonElement>
