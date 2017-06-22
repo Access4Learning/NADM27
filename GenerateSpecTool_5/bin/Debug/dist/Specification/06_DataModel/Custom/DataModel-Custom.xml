@@ -108,7 +108,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FiscalYear.xml"/>
   </Group>
 
-  <!--<Group name="Professional Development Working Group">
+  <Group name="Professional Development Working Group">
     <Intro>
       <p>
         The Professional Development Working Group assesses the interoperability needs of state and local education
@@ -133,7 +133,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ProfessionalDevelopmentActivities.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ProfessionalDevelopmentProgram.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ProfessionalDevelopmentRegistration.xml"/>
-  </Group>-->
+  </Group>
 
 
   <Group name="Special Programs Working Group">

@@ -1,3 +1,4 @@
+
 <CommonElement name="JobClassificationType" type="true" dm="true">
 	<Item>
 		<Element>JobClassificationType</Element>
@@ -5851,4 +5852,181 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Description>
 		<Type name="xs:date"/>
 	</Item>
+</CommonElement>
+
+<CommonElement name="EmployeeCertificationListType" type="true" dm="true">  
+      <Item>
+        <Element>EmployeeCertificationListType</Element>
+        <Description>
+          <p>Employee certifications</p>
+        </Description>
+        <List mode="List"/>
+      </Item>
+      <Item>
+        <Element>Certification</Element>
+        <Characteristics>MR</Characteristics>
+        <Description>
+          <p>Employee certification area information</p>
+        </Description>
+		<Type ref="CommonTypes" name="EmployeeCertificationType"/>
+      </Item>
+</CommonElement>
+
+
+<CommonElement name="EmployeeCertificationType" type="true" dm="true">  
+      <Item>
+        <Element>EmployeeCertificationType</Element>
+        <Description>
+          <p>Employee certification area information</p>
+        </Description>
+      </Item>
+      <Item>
+        <Element>Description</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Certification description as defined by state</p>
+        </Description>
+        <Type name="xs:string"></Type>
+      </Item>
+      <Item>
+        <Element>AreaAuthorized</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>Area in which employee has certification</p>
+        </Description>
+        <Type ref="ExternalCodeSets" name="NCES0421TeachingFieldOrAreaAuthorizedType"></Type>
+      </Item>
+</CommonElement>
+
+<CommonElement name="BackgroundCheckListType" type="true" dm="true">  
+      <Item>
+        <Element>BackgroundCheckListType</Element>
+        <Description>
+          <p>List of background checks performed on employee</p>
+        </Description>
+        <List mode="List"/>
+      </Item>
+      <Item>
+        <Element>BackgroundCheck</Element>
+        <Characteristics>OR</Characteristics>
+        <Description>
+          <p>Information about background check done on employee</p>
+        </Description>
+		<Type ref="CommonTypes" name="BackgroundCheckType"/>
+      </Item>
+</CommonElement>
+
+<CommonElement name="BackgroundCheckType" type="true" dm="true">  
+     <Item>
+        <Element>BackgroundCheckType</Element>
+        <Description>
+          <p>Information about background check done on employee</p>
+        </Description>
+      </Item>
+      <Item>
+        <Element>Type</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Background check type</p>
+        </Description>
+        <Type ref="ExternalCodeSets" name="NCES0401BackgroundCheckTypeType"></Type>
+      </Item>
+      <Item>
+        <Element>Date</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Date on which background type was checked</p>
+        </Description>
+        <Type name="xs:date"></Type>
+      </Item>
+      <Item>
+        <Element>Description</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>Description of background check performed</p>
+        </Description>
+        <Type name="xs:string"></Type>
+      </Item>
+</CommonElement>
+
+<CommonElement name="EmployeeAssignmentListType" type="true" dm="true">  
+	  <Item>
+        <Element>EmployeeAssignmentListType</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>List of employee assignments to schools</p>
+        </Description>
+        <List mode="List"/>
+      </Item>
+      <Item>
+        <Element>Assignment</Element>
+        <Characteristics>MR</Characteristics>
+        <Description>
+          <p>Information about the school and assignment of employee</p>
+        </Description>
+ 		<Type ref="CommonTypes" name="EmployeeAssignmentType"/>
+     </Item>
+</CommonElement>
+
+<CommonElement name="EmployeeAssignmentType" type="true" dm="true">  
+      <Item>
+        <Element>EmployeeAssignmentType</Element>
+        <Description>
+          <p>Information about the school and assignment of employee</p>
+        </Description>
+      </Item>
+      <Item>
+        <Element>SchoolInfoRefId</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>References SchoolInfo object to determine school in which this assignment pertains.</p>
+        </Description>
+        <Type ref="CommonTypes" name="IdRefType"></Type>
+      </Item>
+      <Item>
+        <Element>GradeLevels</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Grade which is assigned to this employee (e.g. 12)</p>
+        </Description>
+        <Type ref="CommonTypes" name="GradeLevelsType"></Type>
+      </Item>
+      <Item>
+        <Element>JobFunction</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>The purpose of the activity in school as related to students</p>
+        </Description>
+        <Type ref="CommonTypes" name="EmployeeJobFunctionType"></Type>
+      </Item>
+</CommonElement>
+
+<CommonElement name="EmployeeJobFunctionType" type="true" dm="true">  
+      <Item>
+        <Element>EmployeeJobFunctionType</Element>
+        <Description>
+          <p>The purpose of the activity in school as related to students</p>
+        </Description>
+      </Item>
+      <Item>
+        <Element>Code</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Code representing the type of job function.</p>
+        </Description>
+        <Type ref="ExternalCodeSets" name="NCES0568FunctionTypeType"></Type>
+      </Item>
+      <Item>
+        <Element>OtherCodeList</Element>
+        <Characteristics>O</Characteristics>
+        <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+      </Item>
+      <Item>
+        <Element>FTE</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>Full-time equivalent for this school</p>
+        </Description>
+        <Type name="xs:decimal"></Type>
+      </Item>
 </CommonElement>
