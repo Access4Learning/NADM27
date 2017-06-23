@@ -22,7 +22,7 @@
   </Group>
 
 
-  <!--<Group name="Food Services Working Group">
+  <Group name="Food Services Working Group">
     <Intro>
       <p>
         The Food Services Working Group specifies, implements, and promotes a standard set of messages and automated communication mechanisms
@@ -49,18 +49,18 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStaffMealCounts.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStudentEnrollmentCount.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStudentMealCounts.xml"/>
-  </Group>-->
+  </Group>
   
   
- <!-- <Group name="Student Record Exchange Task Force" sort="false">
+  <Group name="Student Record Exchange Task Force" sort="false">
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordExchange.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentDemographicRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentAcademicRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentSpecialEducationRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordPackage.xml"/>
-  </Group>-->
+  </Group>
 
- <!-- <Group name="Grade Book Working Group">
+  <Group name="Grade Book Working Group">
     <Intro>
       <p>The goal of the Grade Book Working Group is an efficient, functional standard that supports the entire SIF structure, allowing for easy, bi-directional transfer of data integral to grading.</p>
     </Intro>
@@ -75,7 +75,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentPeriodAttendance.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\OfficialStudentPeriodAttendance.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentGrade.xml"/>
-  </Group>-->
+  </Group>
 
 
   <Group name="Human Resources &amp; Financials Working Group">
@@ -271,7 +271,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\BusPositionInfo.xml"/>
   </Group>
   
-  <!--<Group name="Vertical Reporting Task Force">
+  <Group name="Vertical Reporting Task Force">
     <Intro>
       <p>The Vertical Reporting Task Force has the following responsibilities:</p>
       <ul>
@@ -286,7 +286,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ReportAuthorityInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SIF_ReportObject.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentLocator.xml"/>
-  </Group>-->
+  </Group>
   
   <!--<Group name="Infrastructure Working Group">
     <Intro>
@@ -301,14 +301,14 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\Authentication.xml"/>
   </Group>-->
   
- <!-- <Group name="Facilities and Energy Management">
+  <Group name="Facilities and Energy Management">
     <Intro>
       <p>
         The Facility and Energy Management Project Team is responsible for the planning and designing of data objects for energy usage
       </p>
     </Intro>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\EnergyUsage.xml"/>
-  </Group>-->
+  </Group>
   
   <Group name="Identity Management Project Team">
 		<Intro>
