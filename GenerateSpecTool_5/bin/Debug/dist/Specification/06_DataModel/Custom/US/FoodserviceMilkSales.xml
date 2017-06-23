@@ -39,7 +39,7 @@
   <Item>
     <Element>SaleQuantities</Element>
     <Characteristics>M</Characteristics>
-     <Type ref="CommonTypes" name="MilkSaleQuantityType"></Type>
+     <Type ref="CommonTypes" name="MilkSaleQuantityListType"></Type>
   </Item>
 
   <Item>

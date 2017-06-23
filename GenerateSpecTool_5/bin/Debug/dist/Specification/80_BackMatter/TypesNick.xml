@@ -7027,7 +7027,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 
 	<CommonElement name="MenuPlanQuantityListType" type="true" dm="true">  
 		<Item>
-			<Element>MenuPlanQuantities</Element>
+			<Element>MenuPlanQuantityListType</Element>
 			<Characteristics>M</Characteristics>
 			<List mode="List">
 			</List>
@@ -7270,17 +7270,17 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</Description>
 			<Type ref="CommonTypes" name="FoodserviceReimbursementAgencyRateType"></Type>
 		</Item>
-		
+
 	</CommonElement>
 	<CommonElement name="FoodserviceReimbursementAgencyRateType" type="true" dm="true">  
-		
-			<Item>
-				<Element>FoodserviceReimbursementAgencyRateType</Element>
-				<Description>
-					<p>Reimbursement rate of the meal</p>
-				</Description>
-			</Item>
-			<Item>
+
+		<Item>
+			<Element>FoodserviceReimbursementAgencyRateType</Element>
+			<Description>
+				<p>Reimbursement rate of the meal</p>
+			</Description>
+		</Item>
+		<Item>
 			<Attribute>SevereNeed</Attribute>
 			<Characteristics>M</Characteristics>
 			<Description>
@@ -7316,249 +7316,249 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Type ref="CommonTypes" name="MealStatusType"></Type>
 		</Item>
 	</CommonElement>
-	
+
 	<CommonElement name="FoodserviceSalesAmountListType" type="true" dm="true">  
-	 <Item>
-    <Element>SalesAmounts</Element>
-    <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>SalesAmount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Monetary value</p>
-      <p>(count * cost per unit) done for all grade levels</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"/>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Type of SalesAmount. This denotes the form of incoming funds for the sales done.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Cash</Code>
-      </Value>
-      <Value>
-        <Code>Account</Code>
-      </Value>
-      <Value>
-        <Code>Charged</Code>
-      </Value>
-      <Value>
-        <Code>Earned</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Attribute>AccountType</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
+		<Item>
+			<Element>FoodserviceSalesAmountListType</Element>
+			<Characteristics>M</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>SalesAmount</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Monetary value</p>
+				<p>(count * cost per unit) done for all grade levels</p>
+			</Description>
+			<Type ref="CommonTypes" name="MonetaryAmountType"/>
+		</Item>
+		<Item>
+			<Attribute>Type</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Type of SalesAmount. This denotes the form of incoming funds for the sales done.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Cash</Code>
+				</Value>
+				<Value>
+					<Code>Account</Code>
+				</Value>
+				<Value>
+					<Code>Charged</Code>
+				</Value>
+				<Value>
+					<Code>Earned</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Attribute>AccountType</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>
         Type of account to which sales amounts apply.  This is set to <code>NA</code> when <code>Type</code> is set as <code>Earned</code>.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>PrepaidCash</Code>
-      </Value>
-      <Value>
-        <Code>BreakfastCredit</Code>
-      </Value>
-      <Value>
-        <Code>LunchCredit</Code>
-      </Value>
-      <Value>
-        <Code>NA</Code>
-      </Value>
-    </Values>
-  </Item>
-  </CommonElement>
-  
+				</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>PrepaidCash</Code>
+				</Value>
+				<Value>
+					<Code>BreakfastCredit</Code>
+				</Value>
+				<Value>
+					<Code>LunchCredit</Code>
+				</Value>
+				<Value>
+					<Code>NA</Code>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
+
 	<CommonElement name="FSCountListType" type="true" dm="true">  
-    <Item>
-    <Element>FSCountListType</Element>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>Count</Element>
-    <Characteristics>MR</Characteristics>
-    <Type ref="CommonTypes" name="FSCountType"></Type>
-  </Item>
-</CommonElement>
+		<Item>
+			<Element>FSCountListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>Count</Element>
+			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="FSCountType"></Type>
+		</Item>
+	</CommonElement>
 
 
 	<CommonElement name="FSAmountListType" type="true" dm="true">  
-  <Item>
-    <Element>FSAmountListType</Element>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>This amount refers to the funds being directed inwards to/outwards from the customer's account. That is: these amounts reflect the changes to the account balances.</p>
-    </Description>
-    <Type ref="CommonTypes" name="FSAmountType"></Type>
-  </Item>
-</CommonElement>
+		<Item>
+			<Element>FSAmountListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>Amount</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>This amount refers to the funds being directed inwards to/outwards from the customer's account. That is: these amounts reflect the changes to the account balances.</p>
+			</Description>
+			<Type ref="CommonTypes" name="FSAmountType"></Type>
+		</Item>
+	</CommonElement>
 
 	<CommonElement name="FoodserviceTransactionListType" type="true" dm="true">  
-  <Item>
-    <Element>FoodserviceTransactionListType</Element>
-    <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>TransactionType</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Type of transaction</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Purchase</Code>
-      </Value>
-      <Value>
-        <Code>Prepayment</Code>
-      </Value>
-      <Value>
-        <Code>Refund</Code>
-      </Value>
-      <Value>
-        <Code>Repayment</Code>
-      </Value>
-      <Value>
-        <Code>Adjustment</Code>
-      </Value>
-    </Values>
-  </Item>
-  </CommonElement>
-  
- 	<CommonElement name="FoodserviceCustomerType" type="true" dm="true">  
-   <Item>
-    <Element>FoodserviceCustomerType</Element>
-    <Description>
-      <p>The customer can be a student or staff.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The GUID of the customer doing the transaction. </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>SIF customer type.</p>
-      <p>
+		<Item>
+			<Element>FoodserviceTransactionListType</Element>
+			<Characteristics>M</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>TransactionType</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Type of transaction</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Purchase</Code>
+				</Value>
+				<Value>
+					<Code>Prepayment</Code>
+				</Value>
+				<Value>
+					<Code>Refund</Code>
+				</Value>
+				<Value>
+					<Code>Repayment</Code>
+				</Value>
+				<Value>
+					<Code>Adjustment</Code>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="FoodserviceCustomerType" type="true" dm="true">  
+		<Item>
+			<Element>FoodserviceCustomerType</Element>
+			<Description>
+				<p>The customer can be a student or staff.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>SIF_RefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The GUID of the customer doing the transaction. </p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"/>
+		</Item>
+		<Item>
+			<Attribute>SIF_RefObject</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>SIF customer type.</p>
+				<p>
         If <code>StaffPersonal</code>, then <code>EarnedStatus</code> is included.
         If <code>StudentPersonal</code>, then <code>MealStatus</code> is included.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>StudentPersonal</Code>
-      </Value>
-      <Value>
-        <Code>StaffPersonal</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Choice optional="true">
-    <Item>
-      <Element>MealStatus</Element>
-      <Characteristics>C</Characteristics>
-      <Type ref="CommonTypes" name="MealStatusType"></Type>
-    </Item>
-    <Item>
-      <Element>EarnedStatus</Element>
-      <Characteristics>C</Characteristics>
-      <Type ref="CommonTypes" name="EarnedStatusType"></Type>
-    </Item>
-  </Choice>
-  </CommonElement>
-  
- 	<CommonElement name="FoodserviceTransactionPayMethodListType" type="true" dm="true">  
-    <Item>
-    <Element>FoodserviceTransactionPayMethodListType</Element>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>TransactionPayMethod</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Transaction method.</p>
-    </Description>
-       <Type ref="CommonTypes" name="FoodserviceTransactionPayMethodType"></Type>
- </Item>
- </CommonElement>
- 	<CommonElement name="FoodserviceTransactionPayMethodType" type="true" dm="true">  
- <Item>
-    <Element>FoodserviceTransactionPayMethodType</Element>
-    <Description>
-      <p>Transaction method.</p>
-    </Description>
- </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This refers to the way the payment was made.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Payment</Code>
-      </Value>
-      <Value>
-        <Code>Refund</Code>
-      </Value>
-      <Value>
-        <Code>Charge</Code>
-      </Value>
-      <Value>
-        <Code>Usage</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>Amounts</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="FSAmountListType"></Type>
-  </Item>
-  </CommonElement>
-  
- 	<CommonElement name="MealStatusListType" type="true" dm="true">  
-  <Item>
-    <Element>MealStatusListType</Element>
-    <Description>
-      <p>
+				</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>StudentPersonal</Code>
+				</Value>
+				<Value>
+					<Code>StaffPersonal</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Choice optional="true">
+			<Item>
+				<Element>MealStatus</Element>
+				<Characteristics>C</Characteristics>
+				<Type ref="CommonTypes" name="MealStatusType"></Type>
+			</Item>
+			<Item>
+				<Element>EarnedStatus</Element>
+				<Characteristics>C</Characteristics>
+				<Type ref="CommonTypes" name="EarnedStatusType"></Type>
+			</Item>
+		</Choice>
+	</CommonElement>
+
+	<CommonElement name="FoodservicePayMethodListType" type="true" dm="true">  
+		<Item>
+			<Element>FoodservicePayMethodListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>TransactionPayMethod</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Transaction method.</p>
+			</Description>
+			<Type ref="CommonTypes" name="FoodservicePayMethodType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="FoodservicePayMethodType" type="true" dm="true">  
+		<Item>
+			<Element>FoodservicePayMethodType</Element>
+			<Description>
+				<p>Transaction method.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>Type</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>This refers to the way the payment was made.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Payment</Code>
+				</Value>
+				<Value>
+					<Code>Refund</Code>
+				</Value>
+				<Value>
+					<Code>Charge</Code>
+				</Value>
+				<Value>
+					<Code>Usage</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>Amounts</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="FSAmountListType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MealStatusListType" type="true" dm="true">  
+		<Item>
+			<Element>MealStatusListType</Element>
+			<Description>
+				<p>
         List of meal status.
-      </p>
-    </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>MealStatus</Element>
-    <Characteristics>MR</Characteristics>
-    <Type ref="CommonTypes" name="MealStatusType"></Type>
-    <Description>
-      <p>
+				</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>MealStatus</Element>
+			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="MealStatusType"></Type>
+			<Description>
+				<p>
         The student's meal status.  
-      </p>
-    </Description>
-  </Item>
-  </CommonElement>
+				</p>
+			</Description>
+		</Item>
+	</CommonElement>

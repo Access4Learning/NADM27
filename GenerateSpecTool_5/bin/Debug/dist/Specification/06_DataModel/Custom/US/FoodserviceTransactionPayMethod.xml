@@ -29,7 +29,7 @@
   <Item>
     <Element>TransactionPayMethods</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="FoodserviceTransactionPayMethodListType"></Type>
+    <Type ref="CommonTypes" name="FoodservicePayMethodListType"></Type>
   </Item>
 
   <Item>
