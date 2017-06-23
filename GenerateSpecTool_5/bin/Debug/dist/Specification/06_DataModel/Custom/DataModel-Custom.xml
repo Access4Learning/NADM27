@@ -60,7 +60,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordPackage.xml"/>
   </Group>-->
 
- <!-- <Group name="Grade Book Working Group">
+  <Group name="Grade Book Working Group">
     <Intro>
       <p>The goal of the Grade Book Working Group is an efficient, functional standard that supports the entire SIF structure, allowing for easy, bi-directional transfer of data integral to grading.</p>
     </Intro>
@@ -74,7 +74,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentPeriodAttendance.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\OfficialStudentPeriodAttendance.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentGrade.xml"/>
-  </Group>-->
+  </Group>
 
 
   <Group name="Human Resources &amp; Financials Working Group">

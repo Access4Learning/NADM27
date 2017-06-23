@@ -67,73 +67,19 @@
     <Description>
       <p>A list of marks received for this student in this section.  For each Mark entry, at least one of the sub-elements must be specified.</p>
     </Description>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="StudentSectionMarkListType"></Type>
   </Item>
 
-  <Item>
-    <Element>/Mark</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Outer wrapper for marks  reported for this section, in this term.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>MarkInfoRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The Id (GUID) that identifies a mark that was given for this student.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-
-  <Item>
-    <Element>//Percentage</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The percent score for this mark (0.00 - 100.00).</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-    <Facets>
-      <xs:minInclusive value="0"/>
-      <xs:maxInclusive value="100"/>
-      <xs:fractionDigits value="2"/>
-    </Facets>
-  </Item>
-  <Item>
-    <Element>//Numeric</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The raw numeric score for this mark.</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Element>//Letter</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The letter grade for this mark.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//Narrative</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The free form text narrative for this mark.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

@@ -73,69 +73,19 @@
     <Description>
       This is the one grade given for this student and section. At least one numeric, percentage or letter must be provided as defined in the fields below. If <code>Grade/Numeric</code> is entered, <code>Grade/OutOf</code>, <code>Grade/Low</code> and <code>Grade/High</code> must also be entered.
     </Description>
-  </Item>
-  <Item>
-    <Element>/Percentage</Element>
-    <Characteristics>C</Characteristics>
-    <Description>The grade percentage for this grade (0.00-100.00).</Description>
-    <Type name="xs:decimal"/>
-    <Facets>
-      <xs:minInclusive value="0.00"/>
-      <xs:maxInclusive value="100.00"/>
-    </Facets>
-  </Item>
-  <Item>
-    <Element>/Numeric</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      The raw numeric value for this grade. If this is provided, the <code>OutOf</code>, <code>Low</code> and <code>High</code> must be entered.
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>/OutOf</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      This is the high value equivalent to 100% without extra points or extra credit (e.g. if a student received 3.5 out of 4, 4 would be the <code>Grade/OutOf</code> value and 3.5 would be the <code>Grade/Numeric</code> value).
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>/Low</Element>
-    <Characteristics>C</Characteristics>
-    <Description>Lowest grade value in the range for the numeric grade.</Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>/High</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      Highest grade value in the range for the numeric grade.  NOTE: This could be higher than the <code>Grade/OutOf</code> value.
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>/Letter</Element>
-    <Characteristics>C</Characteristics>
-    <Description>The letter grade value for this grade. If this is provided, the numeric value or percentage value must also be entered in order to provide a numeric value for the grade to be utilized in any computations.</Description>
-    <Type name="xs:token"/>
-  </Item>
-  <Item>
-    <Element>/Narrative</Element>
-    <Characteristics>O</Characteristics>
-    <Description>The free form text narrative for this grade.</Description>
-    <Type name="xs:string"/>
-  </Item>
+     <Type ref="CommonTypes" name="StudentGradeGradeType"></Type>
+ </Item>
+ 
 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

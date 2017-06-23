@@ -35,59 +35,18 @@
 	<Item>
 		<Element>TermMarkLists</Element>
 		<Characteristics>M</Characteristics>
-		<List mode="ActionList">
-			<Key>MarkInfoList/@TermInfoRefId</Key>
-		</List>
+		<Type ref="CommonTypes" name="TermMarkListsType"/>
 	</Item>
-	<Item>
-		<Element>/MarkInfoList</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>The grading-related information for a section, repeating for each marking period (TermInfo) in which the section reports Marks.</p>
-		</Description>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Attribute>TermInfoRefId</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The Id (GUID) that identifies the marking period that the following marks are recorded in.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
-	<Item>
-		<Attribute>SIF_Action</Attribute>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>
-        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.
-        At a minimum the key for the list must also be present.
-      </p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Delete</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>//MarkInfoRefId</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>The Id (GUID) that identifies a mark that this class uses for grading.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
+
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<SectionMarkInfo RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SectionInfoRefId="11737E214A7C46BDBA4301CADCA75C87" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB">
