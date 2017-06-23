@@ -22,7 +22,7 @@
   </Group>
 
 
-  <Group name="Food Services Working Group">
+  <!--<Group name="Food Services Working Group">
     <Intro>
       <p>
         The Food Services Working Group specifies, implements, and promotes a standard set of messages and automated communication mechanisms
@@ -49,22 +49,21 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStaffMealCounts.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStudentEnrollmentCount.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStudentMealCounts.xml"/>
-  </Group>
+  </Group>-->
   
   
-  <Group name="Student Record Exchange Task Force" sort="false">
+ <!-- <Group name="Student Record Exchange Task Force" sort="false">
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordExchange.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentDemographicRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentAcademicRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentSpecialEducationRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordPackage.xml"/>
-  </Group>
+  </Group>-->
 
-  <Group name="Grade Book Working Group">
+ <!-- <Group name="Grade Book Working Group">
     <Intro>
       <p>The goal of the Grade Book Working Group is an efficient, functional standard that supports the entire SIF structure, allowing for easy, bi-directional transfer of data integral to grading.</p>
     </Intro>
-
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\MarkValueInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\MarkInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SectionMarkInfo.xml"/>
@@ -75,7 +74,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentPeriodAttendance.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\OfficialStudentPeriodAttendance.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentGrade.xml"/>
-  </Group>
+  </Group>-->
 
 
   <Group name="Human Resources &amp; Financials Working Group">
@@ -271,7 +270,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\BusPositionInfo.xml"/>
   </Group>
   
-  <Group name="Vertical Reporting Task Force">
+  <!--<Group name="Vertical Reporting Task Force">
     <Intro>
       <p>The Vertical Reporting Task Force has the following responsibilities:</p>
       <ul>
@@ -286,7 +285,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ReportAuthorityInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SIF_ReportObject.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentLocator.xml"/>
-  </Group>
+  </Group>-->
   
   <!--<Group name="Infrastructure Working Group">
     <Intro>
@@ -310,7 +309,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\EnergyUsage.xml"/>
   </Group>
   
-  <Group name="Identity Management Project Team">
+  <!--  <Group name="Identity Management Project Team">
 		<Intro>
 			<p>Local Education Authorities (LEAs) across the globe are dealing with the issues of managing users across a rapidly increasing number of applications. Many of these applications within the educational enterprise interface directly with learners, parents, and teachers. Each new application requires digital identity and profile data for operational purposes. A significant burden is placed on individual users to manage and secure their login credentials across applications. In many instances, users end up having to remember many user names and passwords and deal with profile information that is not consistent or up to date across the various applications that they access.</p>
 			<p>There is a great need to provide a standards-based solution for identity management and role-based security within the education industry. While many standards have been developed to solve this problem, there is no common profile within education that suppliers and end users can adopt. The SIFA has been solving issues of interoperability like this for many years. Educational applications built to support the SIF standard can also benefit from a set of profiles developed by SIFA that are targeted at solving the needs of sharing and using digital identities within an educational enterprise.</p>
@@ -319,6 +318,6 @@
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\IdMAuthentication.xml"/>
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\IdMAuthorization.xml"/>
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\UserOrganizationAssociation.xml"/>
-  </Group>
+  </Group>-->
   
 </IncludeGroup>
