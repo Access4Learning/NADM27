@@ -271,7 +271,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>State-assigned Id for the relative area in which the expenditure/revenue was used.</p>
 			</Description>
-			<Type ref="CommonElement" name="StateProvinceIdType"></Type>
+			<Type ref="CommonTypes" name="StateProvinceIdType"></Type>
 		</Item>
 		<Item>
 			<Element>ExpenditureArea</Element>
@@ -2267,7 +2267,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Name of the author.</p>
 			</Description>
-			<Type ref="CommonElement" name="NameType"/>
+			<Type ref="CommonTypes" name="NameType"/>
 		</Item>
 		<Item>
 			<Element>Organization</Element>
@@ -4520,7 +4520,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Item>
 			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonElement" name="OtherCodeListType"></Type>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 	</CommonElement>
 
@@ -8372,7 +8372,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Lists an "other" identifier associated with the student.</p>
 			</Description>
-			<Type ref="CommonElement" name="StudentPersonalDataOtherIdType"></Type>
+			<Type ref="CommonTypes" name="StudentPersonalDataOtherIdType"></Type>
 		</Item>
 	</CommonElement>
 
@@ -8532,7 +8532,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>First parent/guardian.</p>
 			</Description>
-			<Type ref="CommonElement" name="StudentContactSummaryType"></Type>
+			<Type ref="CommonTypes" name="StudentContactSummaryType"></Type>
 		</Item>
 
 		<Item>
@@ -8541,7 +8541,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Second parent/guardian.</p>
 			</Description>
-			<Type ref="CommonElement" name="StudentContactSummaryType"></Type>
+			<Type ref="CommonTypes" name="StudentContactSummaryType"></Type>
 		</Item>
 
 
@@ -8559,19 +8559,19 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Item>
 			<Element>Name</Element>
 			<Characteristics>M</Characteristics>
-			<Type ref="CommonElement" name="NameType"></Type>
+			<Type ref="CommonTypes" name="NameType"></Type>
 		</Item>
 
 		<Item>
 			<Element>PhoneNumberList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonElement" name="PhoneNumberListType"></Type>
+			<Type ref="CommonTypes" name="PhoneNumberListType"></Type>
 		</Item>
 
 		<Item>
 			<Element>AddressList</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonElement" name="AddressListType"></Type>
+			<Type ref="CommonTypes" name="AddressListType"></Type>
 		</Item>
 	</CommonElement>
 
@@ -9779,7 +9779,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Item>
 			<Element>SIF_ExtendedElements</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonElement" name="SIF_ExtendedElementsType"/>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 		</Item>
 	</CommonElement>
 
@@ -9796,8 +9796,8 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Medium through which the student receives instructional communication from the teacher.</p>
 			</Description>
+		<Type ref="CommonTypes" name="CourseHistoryMediumOfInstructionType"/>
 		</Item>
-		<Type ref="CommonElement" name="CourseHistoryMediumOfInstructionType"/>
 	</CommonElement>
 
 	<CommonElement name="CourseHistoryMediumOfInstructionType" type="true" dm="true">  
@@ -9840,7 +9840,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Student performance/attendance data for a marking period.</p>
 			</Description>
-			<Type ref="CommonElement" name="CourseHistoryMarkingPeriodType"/>
+			<Type ref="CommonTypes" name="CourseHistoryMarkingPeriodType"/>
 		</Item>
 	</CommonElement>
 
@@ -10650,3 +10650,146 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     </Facets>
   </Item>
   </CommonElement>
+  
+ 	<CommonElement name="AuthenticationInfoType" type="true" dm="true">  
+       <Item>
+        <Element>AuthenticationInfoType</Element>
+        <Description>
+          <p>The authentication information for one system.</p>
+        </Description>
+      </Item>
+      <Item>
+        <Element>System</Element>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>An identifying string for the system that supports this authentication information.</p>
+        </Description>
+        <Type name="xs:normalizedString"></Type>
+        <Facets>
+          <xs:maxLength value="255"/>
+        </Facets>
+      </Item>
+      <Item>
+        <Attribute>Type</Attribute>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>Specific type of user identification.</p>
+        </Description>
+        <Values>
+          <Value>
+            <Code>Network</Code>
+          </Value>
+          <Value>
+            <Code>Application</Code>
+          </Value>
+        </Values>
+      </Item>
+      <Item>
+        <Element>Username</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>The identification string for this user.</p>
+        </Description>
+        <Type name="xs:normalizedString"></Type>
+        <Facets>
+          <xs:maxLength value="64"/>
+        </Facets>
+      </Item>
+      <Item>
+        <Element>DistinguishedName</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>This is the distinguished name of the user in a network directory system.</p>
+        </Description>
+        <Type name="xs:normalizedString"></Type>
+        <Facets>
+          <xs:maxLength value="255"/>
+        </Facets>
+      </Item>
+      <Item>
+        <Element>PasswordList</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>Allows a provider or publisher to specify the same password using multiple algorithms, if supported.</p>
+        </Description>
+     <Type ref="CommonTypes" name="PasswordListType"></Type>
+     </Item>
+	  </CommonElement>
+	  
+  	<CommonElement name="PasswordListType" type="true" dm="true">  
+     <Item>
+        <Element>PasswordListType</Element>
+        <Characteristics>O</Characteristics>
+        <Description>
+          <p>Allows a provider or publisher to specify the same password using multiple algorithms, if supported.</p>
+        </Description>
+        <List mode="List">
+        </List>
+      </Item>
+      <Item>
+        <Element>Password</Element>
+        <Characteristics>MR</Characteristics>
+        <Description>
+          <p>A representation of the user's password using the given algorithm.</p>
+        </Description>
+     <Type ref="CommonTypes" name="PasswordType"></Type>
+	 </Item>
+	 </CommonElement>
+	 
+	 
+   	<CommonElement name="PasswordType" type="true" dm="true">  
+       <Item>
+        <Element>PasswordType</Element>
+        <Description>
+          <p>A representation of the user's password using the given algorithm.</p>
+        </Description>
+        <Type name="xs:base64Binary"></Type>
+        <Facets>
+          <xs:maxLength value="255"/>
+        </Facets>
+      </Item>
+      <Item>
+        <Attribute>Algorithm</Attribute>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>The method used to encrypt the user's password. See the implementation details below.</p>
+        </Description>
+        <Values>
+          <Value>
+            <Code>base64</Code>
+          </Value>
+          <Value>
+            <Code>MD5</Code>
+          </Value>
+          <Value>
+            <Code>SHA1</Code>
+          </Value>
+          <Value>
+            <Code>DES</Code>
+          </Value>
+          <Value>
+            <Code>TripleDES</Code>
+          </Value>
+          <Value>
+            <Code>RC2</Code>
+          </Value>
+          <Value>
+            <Code>AES</Code>
+          </Value>
+          <Value>
+            <Code>RSA</Code>
+          </Value>
+        </Values>
+      </Item>
+      <Item>
+        <Attribute>KeyName</Attribute>
+        <Characteristics>M</Characteristics>
+        <Description>
+          <p>The name of the key to be used for decryption of the password.  Left blank for plain, encoded text (Algorithm attribute value of "base64") and hash algorithms.</p>
+        </Description>
+        <Type name="xs:normalizedString"></Type>
+        <Facets>
+          <xs:maxLength value="64"/>
+        </Facets>
+      </Item>
+</CommonElement>
