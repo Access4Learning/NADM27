@@ -52,13 +52,13 @@
   </Group>
   
   
- <!-- <Group name="Student Record Exchange Task Force" sort="false">
+  <Group name="Student Record Exchange Task Force" sort="false">
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordExchange.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentDemographicRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentAcademicRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentSpecialEducationRecord.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentRecordPackage.xml"/>
-  </Group>-->
+  </Group>
 
   <Group name="Grade Book Working Group">
     <Intro>

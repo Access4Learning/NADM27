@@ -255,7 +255,7 @@
   <Item>
     <Element>/ExceptionalityCategories</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="ExceptionalityCategories"></Type>
+    <Type ref="CommonTypes" name="ExceptionalityCategoryListType"></Type>
   </Item>
 
   <Item>
@@ -643,7 +643,7 @@
     <Description>
       <p></p>
     </Description>
-    <Type ref="DataModel" name="ExceptionalityCategories"></Type>
+    <Type ref="CommonTypes" name="ExceptionalityCategoryListType"></Type>
   </Item>
 
   <Item>

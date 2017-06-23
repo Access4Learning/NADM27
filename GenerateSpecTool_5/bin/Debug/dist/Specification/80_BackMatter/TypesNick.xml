@@ -6477,9 +6477,9 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Item>
 	</CommonElement>
 
-	<CommonElement name="StudentLEAEntryTypeType" type="true" dm="true">  
+	<CommonElement name="StudentEntryTypeType" type="true" dm="true">  
 		<Item>
-			<Element>StudentLEAEntryTypeType</Element>
+			<Element>StudentEntryTypeType</Element>
 		</Item>
 		<Item>
 			<Element>Code</Element>
@@ -6496,9 +6496,9 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Item>
 	</CommonElement>
 
-	<CommonElement name="StudentLEAExitTypeType" type="true" dm="true">  
+	<CommonElement name="StudentExitTypeType" type="true" dm="true">  
 		<Item>
-			<Element>StudentLEAExitTypeType</Element>
+			<Element>StudentExitTypeType</Element>
 		</Item>
 		<Item>
 			<Element>Code</Element>
@@ -6515,9 +6515,9 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Item>
 	</CommonElement>
 
-	<CommonElement name="StudentLEAExitStatusType" type="true" dm="true">  
+	<CommonElement name="StudentExitStatusType" type="true" dm="true">  
 		<Item>
-			<Element>StudentLEAExitStatusType</Element>
+			<Element>StudentExitStatusType</Element>
 		</Item>
 		<Item>
 			<Element>Code</Element>
@@ -7564,449 +7564,1958 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 
 	<CommonElement name="MarkValuePercentageType" type="true" dm="true">  
 		<Item>
-		<Element>MarkValuePercentageType</Element>
-		<Description>
-			<p>Indicates whether a percent Mark is accepted (format ##0.00).</p>
-		</Description>
-	</Item>
-	<Item>
-		<Attribute>IsAccepted</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Indicates whether a percent Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>
-		</Description>
-		<Type name="xs:boolean"/>
-	</Item>
-	<Item>
-		<Element>Minimum</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The minimum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be lower than this value.</p>
-		</Description>
-		<Type name="xs:decimal"/>
-	</Item>
-	<Item>
-		<Element>Maximum</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The maximum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be higher than this value.</p>
-		</Description>
-		<Type name="xs:decimal"/>
-	</Item>
-	</CommonElement>
-	
-		<CommonElement name="MarkValueNumberType" type="true" dm="true">  
+			<Element>MarkValuePercentageType</Element>
+			<Description>
+				<p>Indicates whether a percent Mark is accepted (format ##0.00).</p>
+			</Description>
+		</Item>
 		<Item>
-		<Element>MarkValueNumberType</Element>
-		<Description>
-			<p>Indicates whether a raw numeric score is accepted.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Attribute>IsAccepted</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Indicates whether a raw numeric score is accepted and is used in Change events to unambiguously signal whether support for the score has changed, especially ended.</p>
-		</Description>
-		<Type name="xs:boolean"/>
-	</Item>
-	<Item>
-		<Element>Precision</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Number of significant digits.</p>
-		</Description>
-		<Type name="xs:unsignedInt"/>
-	</Item>
-	<Item>
-		<Element>Scale</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Number of decimal places.</p>
-		</Description>
-		<Type name="xs:unsignedInt"/>
-	</Item>
-	<Item>
-		<Element>Low</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Lowest Mark in the range (e.g., 98, 3.95).</p>
-		</Description>
-		<Type name="xs:decimal"/>
-	</Item>
-	<Item>
-		<Element>High</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Highest Mark in the range (e.g., 100, 4.0).</p>
-		</Description>
-		<Type name="xs:decimal"/>
-	</Item>
-	</CommonElement>
-	
-		<CommonElement name="MarkValueLetterType" type="true" dm="true">  
+			<Attribute>IsAccepted</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Indicates whether a percent Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>
+			</Description>
+			<Type name="xs:boolean"/>
+		</Item>
 		<Item>
-		<Element>MarkValueLetterType</Element>
-		<Description>
-			<p>Indicates whether a letter Mark is accepted.</p>
-		</Description>
-		<List mode="ActionList">
-			<Key>ValidMark/Code</Key>
-		</List>
-	</Item>
-	<Item>
-		<Attribute>IsAccepted</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Indicates whether a letter Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>
-		</Description>
-		<Type name="xs:boolean"/>
-	</Item>
-	<Item>
-		<Element>ValidMark</Element>
-		<Characteristics>CR</Characteristics>
-		<Description>
-			<p>
-        List of specific valid letter Marks.  May be omitted when <code>IsAccepted</code> is <code>false</code>, otherwise mandatory.
-      </p>
-		</Description>
-			<Type ref="CommonTypes" name="ValidMarkType"></Type>
-	</Item>
-	</CommonElement>
-	
-	
-		<CommonElement name="ValidMarkType" type="true" dm="true">  
-	<Item>
-		<Element>ValidMarkType</Element>
-		<Description>
-			<p>
-        Valid letter Mark.       </p>
-		</Description>
-	</Item>
-	<Item>
-		<Attribute>SIF_Action</Attribute>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>
-        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.  At a minimum the key for the list must also be present.
-      </p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Delete</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>Code</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>String representing the actual Mark that would appear on the report card (e.g., "A+", "I", "100").</p>
-		</Description>
-		<Type name="xs:token"/>
-	</Item>
-	<Item>
-		<Element>NumericEquivalent</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Numeric equivalent for the Mark (e.g., 100, 4.0).</p>
-		</Description>
-		<Type name="xs:decimal"/>
-	</Item>
-	<Item>
-		<Element>Description</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The description for this code. (e.g. "Excellent", "Participates in Class", "Incomplete", etc...).</p>
-		</Description>
-		<Type name="xs:string"/>
-	</Item>
-	</CommonElement>
-	
-	
-		<CommonElement name="MarkValueNarrativeType" type="true" dm="true">  
+			<Element>Minimum</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The minimum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be lower than this value.</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
 		<Item>
-		<Element>MarkValueNarrativeType</Element>
-		<Description>
-			<p>Indicates that a free-form text narrative is accepted.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Attribute>IsAccepted</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Indicates whether a narrative is accepted and is used in Change events to unambiguously signal whether support for a narrative has changed, especially ended.</p>
-		</Description>
-		<Type name="xs:boolean"/>
-	</Item>
-	<Item>
-		<Element>MaximumSize</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>An integer value representing the maximum number of Unicode characters for the narrative, the UTF-8 encoding of which may be longer.</p>
-		</Description>
-		<Type name="xs:unsignedInt"/>
-	</Item>
-</CommonElement>
+			<Element>Maximum</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The maximum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be higher than this value.</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+	</CommonElement>
 
-		<CommonElement name="TermMarkListsType" type="true" dm="true">  
-	<Item>
-		<Element>TermMarkListsType</Element>
-		<List mode="ActionList">
-			<Key>MarkInfoList/@TermInfoRefId</Key>
-		</List>
-	</Item>
-	<Item>
-		<Element>MarkInfoList</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>The grading-related information for a section, repeating for each marking period (TermInfo) in which the section reports Marks.</p>
-		</Description>
-			<Type ref="CommonTypes" name="MarkInfoListType"></Type>
-	</Item>
+	<CommonElement name="MarkValuePercentageCleanType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValuePercentageCleanType</Element>
+			<Description>
+				<p>Indicates whether a percent Mark is accepted (format ##0.00).</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Minimum</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The minimum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be lower than this value.</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Maximum</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The maximum percent value accepted for this mark.  If present, the publisher of this object is required to ensure that any values present in the StudentSectionMarks object will not be higher than this value.</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
 	</CommonElement>
-		<CommonElement name="MarkInfoListType" type="true" dm="true">  
-	<Item>
-		<Element>MarkInfoListType</Element>
-		<Description>
-			<p>The grading-related information for a section, repeating for each marking period (TermInfo) in which the section reports Marks.</p>
-		</Description>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Attribute>TermInfoRefId</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The Id (GUID) that identifies the marking period that the following marks are recorded in.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
-	<Item>
-		<Attribute>SIF_Action</Attribute>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>
+
+	<CommonElement name="MarkValueNumberType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueNumberType</Element>
+			<Description>
+				<p>Indicates whether a raw numeric score is accepted.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>IsAccepted</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Indicates whether a raw numeric score is accepted and is used in Change events to unambiguously signal whether support for the score has changed, especially ended.</p>
+			</Description>
+			<Type name="xs:boolean"/>
+		</Item>
+		<Item>
+			<Element>Precision</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Number of significant digits.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+		<Item>
+			<Element>Scale</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Number of decimal places.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+		<Item>
+			<Element>Low</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Lowest Mark in the range (e.g., 98, 3.95).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>High</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Highest Mark in the range (e.g., 100, 4.0).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkValueNumberCleanType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueNumberCleanType</Element>
+			<Description>
+				<p>Indicates whether a raw numeric score is accepted.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Precision</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Number of significant digits.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+		<Item>
+			<Element>Scale</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Number of decimal places.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+		<Item>
+			<Element>Low</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Lowest Mark in the range (e.g., 98, 3.95).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>High</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Highest Mark in the range (e.g., 100, 4.0).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkValueLetterType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueLetterType</Element>
+			<Description>
+				<p>Indicates whether a letter Mark is accepted.</p>
+			</Description>
+			<List mode="ActionList">
+				<Key>ValidMark/Code</Key>
+			</List>
+		</Item>
+		<Item>
+			<Attribute>IsAccepted</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Indicates whether a letter Mark is accepted and is used in Change events to unambiguously signal whether support for the Mark has changed, especially ended.</p>
+			</Description>
+			<Type name="xs:boolean"/>
+		</Item>
+		<Item>
+			<Element>ValidMark</Element>
+			<Characteristics>CR</Characteristics>
+			<Description>
+				<p>
+        List of specific valid letter Marks.  May be omitted when <code>IsAccepted</code> is <code>false</code>, otherwise mandatory.
+				</p>
+			</Description>
+			<Type ref="CommonTypes" name="ValidMarkType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkValueLetterCleanType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueLetterCleanType</Element>
+			<Description>
+				<p>Indicates whether a letter Mark is accepted.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>ValidMark</Element>
+			<Characteristics>CR</Characteristics>
+			<Description>
+				<p>
+        List of specific valid letter Marks.  May be omitted when <code>IsAccepted</code> is <code>false</code>, otherwise mandatory.
+				</p>
+			</Description>
+			<Type ref="CommonTypes" name="ValidMarkCleanType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="ValidMarkType" type="true" dm="true">  
+		<Item>
+			<Element>ValidMarkType</Element>
+			<Description>
+				<p>
+        Valid letter Mark.       </p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>SIF_Action</Attribute>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>
+        In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.  At a minimum the key for the list must also be present.
+				</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Delete</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>String representing the actual Mark that would appear on the report card (e.g., "A+", "I", "100").</p>
+			</Description>
+			<Type name="xs:token"/>
+		</Item>
+		<Item>
+			<Element>NumericEquivalent</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Numeric equivalent for the Mark (e.g., 100, 4.0).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Description</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The description for this code. (e.g. "Excellent", "Participates in Class", "Incomplete", etc...).</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="ValidMarkCleanType" type="true" dm="true">  
+		<Item>
+			<Element>ValidMarkCleanType</Element>
+			<Description>
+				<p>
+        Valid letter Mark.       </p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>String representing the actual Mark that would appear on the report card (e.g., "A+", "I", "100").</p>
+			</Description>
+			<Type name="xs:token"/>
+		</Item>
+		<Item>
+			<Element>NumericEquivalent</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Numeric equivalent for the Mark (e.g., 100, 4.0).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Description</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The description for this code. (e.g. "Excellent", "Participates in Class", "Incomplete", etc...).</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkValueNarrativeType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueNarrativeType</Element>
+			<Description>
+				<p>Indicates that a free-form text narrative is accepted.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>IsAccepted</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Indicates whether a narrative is accepted and is used in Change events to unambiguously signal whether support for a narrative has changed, especially ended.</p>
+			</Description>
+			<Type name="xs:boolean"/>
+		</Item>
+		<Item>
+			<Element>MaximumSize</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>An integer value representing the maximum number of Unicode characters for the narrative, the UTF-8 encoding of which may be longer.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkValueNarrativeCleanType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueNarrativeCleanType</Element>
+			<Description>
+				<p>Indicates that a free-form text narrative is accepted.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>MaximumSize</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>An integer value representing the maximum number of Unicode characters for the narrative, the UTF-8 encoding of which may be longer.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="TermMarkListsType" type="true" dm="true">  
+		<Item>
+			<Element>TermMarkListsType</Element>
+			<List mode="ActionList">
+				<Key>MarkInfoList/@TermInfoRefId</Key>
+			</List>
+		</Item>
+		<Item>
+			<Element>MarkInfoList</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>The grading-related information for a section, repeating for each marking period (TermInfo) in which the section reports Marks.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkInfoListType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="MarkInfoListType" type="true" dm="true">  
+		<Item>
+			<Element>MarkInfoListType</Element>
+			<Description>
+				<p>The grading-related information for a section, repeating for each marking period (TermInfo) in which the section reports Marks.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Attribute>TermInfoRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The Id (GUID) that identifies the marking period that the following marks are recorded in.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"/>
+		</Item>
+		<Item>
+			<Attribute>SIF_Action</Attribute>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>
         In a <code>Change</code> event, this flag can be used to indicate an element has been deleted from the parent list container.
         At a minimum the key for the list must also be present.
-      </p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Delete</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>MarkInfoRefId</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>The Id (GUID) that identifies a mark that this class uses for grading.</p>
-		</Description>
-		<Type ref="CommonTypes" name="IdRefType"/>
-	</Item>
+				</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Delete</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>MarkInfoRefId</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>The Id (GUID) that identifies a mark that this class uses for grading.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"/>
+		</Item>
 	</CommonElement>
-	
-		<CommonElement name="StudentGradeGradeType" type="true" dm="true">  
-	 <Item>
-    <Element>StudentGradeGradeType</Element>
-    <Description>
+
+	<CommonElement name="StudentGradeGradeType" type="true" dm="true">  
+		<Item>
+			<Element>StudentGradeGradeType</Element>
+			<Description>
       This is the one grade given for this student and section. At least one numeric, percentage or letter must be provided as defined in the fields below. If <code>Numeric</code> is entered, <code>OutOf</code>, <code>Low</code> and <code>High</code> must also be entered.
-    </Description>
-  </Item>
-  <Item>
-    <Element>Percentage</Element>
-    <Characteristics>C</Characteristics>
-    <Description>The grade percentage for this grade (0.00-100.00).</Description>
-    <Type name="xs:decimal"/>
-    <Facets>
-      <xs:minInclusive value="0.00"/>
-      <xs:maxInclusive value="100.00"/>
-    </Facets>
-  </Item>
-  <Item>
-    <Element>Numeric</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Percentage</Element>
+			<Characteristics>C</Characteristics>
+			<Description>The grade percentage for this grade (0.00-100.00).</Description>
+			<Type name="xs:decimal"/>
+			<Facets>
+				<xs:minInclusive value="0.00"/>
+				<xs:maxInclusive value="100.00"/>
+			</Facets>
+		</Item>
+		<Item>
+			<Element>Numeric</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
       The raw numeric value for this grade. If this is provided, the <code>OutOf</code>, <code>Low</code> and <code>High</code> must be entered.
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>OutOf</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>OutOf</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
       This is the high value equivalent to 100% without extra points or extra credit (e.g. if a student received 3.5 out of 4, 4 would be the <code>Grade/OutOf</code> value and 3.5 would be the <code>Grade/Numeric</code> value).
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>Low</Element>
-    <Characteristics>C</Characteristics>
-    <Description>Lowest grade value in the range for the numeric grade.</Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>High</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Low</Element>
+			<Characteristics>C</Characteristics>
+			<Description>Lowest grade value in the range for the numeric grade.</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>High</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
       Highest grade value in the range for the numeric grade.  NOTE: This could be higher than the <code>Grade/OutOf</code> value.
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>Letter</Element>
-    <Characteristics>C</Characteristics>
-    <Description>The letter grade value for this grade. If this is provided, the numeric value or percentage value must also be entered in order to provide a numeric value for the grade to be utilized in any computations.</Description>
-    <Type name="xs:token"/>
-  </Item>
-  <Item>
-    <Element>Narrative</Element>
-    <Characteristics>O</Characteristics>
-    <Description>The free form text narrative for this grade.</Description>
-    <Type name="xs:string"/>
-  </Item>
-  </CommonElement>
-  
- 		<CommonElement name="StudentAttendanceAuditInfoType" type="true" dm="true">  
-  <Item>
-    <Element>StudentAttendanceAuditInfoType</Element>
-    <Description>
-      <p>An audit trail to help determine who entered this attendance event and when.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>CreationUser</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Information about which staff member created this attendance record.</p>
-    </Description>
-		<Type ref="CommonTypes" name="AuditInfoCreationUserType"/>
-  </Item>
-  <Item>
-    <Element>CreationDateTime</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The date and time of this attendance record was created.</p>
-    </Description>
-    <Type name="xs:dateTime"></Type>
-  </Item>
-  </CommonElement>
-  
-  		<CommonElement name="AuditInfoCreationUserType" type="true" dm="true">  
-   <Item>
-    <Element>AuditInfoCreationUserType</Element>
-    <Description>
-      <p>Information about which staff member created this attendance record.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The role of the staff member for that created this attendance record.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Office Staff</Code>
-      </Value>
-      <Value>
-        <Code>School Admin</Code>
-      </Value>
-      <Value>
-        <Code>Parent</Code>
-      </Value>
-      <Value>
-        <Code>Nurse</Code>
-      </Value>
-      <Value>
-        <Code>Teacher</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>UserId</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Unique identifier of the user that created the attendance record.  This will depend on the user and the source.  The preferred identifier would be a RefId for a StaffPersonal, StudentContact, or StudentPersonal Object.  However, the user may not be associated with any of these SIF objects.  In that case a unique Id given by the source should be used.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  </CommonElement>
-  
- <CommonElement name="StudentSectionMarkListType" type="true" dm="true">  
-   <Item>
-    <Element>StudentSectionMarkListType</Element>
-    <Description>
-      <p>A list of marks received for this student in this section.  For each Mark entry, at least one of the sub-elements must be specified.</p>
-    </Description>
-    <List mode="List">
-    </List>
-  </Item>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Letter</Element>
+			<Characteristics>C</Characteristics>
+			<Description>The letter grade value for this grade. If this is provided, the numeric value or percentage value must also be entered in order to provide a numeric value for the grade to be utilized in any computations.</Description>
+			<Type name="xs:token"/>
+		</Item>
+		<Item>
+			<Element>Narrative</Element>
+			<Characteristics>O</Characteristics>
+			<Description>The free form text narrative for this grade.</Description>
+			<Type name="xs:string"/>
+		</Item>
+	</CommonElement>
 
-  <Item>
-    <Element>Mark</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Outer wrapper for marks  reported for this section, in this term.</p>
-    </Description>
-		<Type ref="CommonTypes" name="StudentSectionMarkType"/>
-  </Item>
-  </CommonElement>
- <CommonElement name="StudentSectionMarkType" type="true" dm="true">  
-  <Item>
-    <Element>StudentSectionMarkType</Element>
-    <Description>
-      <p>Outer wrapper for marks  reported for this section, in this term.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>MarkInfoRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The Id (GUID) that identifies a mark that was given for this student.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
+	<CommonElement name="StudentAttendanceAuditInfoType" type="true" dm="true">  
+		<Item>
+			<Element>StudentAttendanceAuditInfoType</Element>
+			<Description>
+				<p>An audit trail to help determine who entered this attendance event and when.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>CreationUser</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Information about which staff member created this attendance record.</p>
+			</Description>
+			<Type ref="CommonTypes" name="AuditInfoCreationUserType"/>
+		</Item>
+		<Item>
+			<Element>CreationDateTime</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The date and time of this attendance record was created.</p>
+			</Description>
+			<Type name="xs:dateTime"></Type>
+		</Item>
+	</CommonElement>
 
-  <Item>
-    <Element>Percentage</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The percent score for this mark (0.00 - 100.00).</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-    <Facets>
-      <xs:minInclusive value="0"/>
-      <xs:maxInclusive value="100"/>
-      <xs:fractionDigits value="2"/>
-    </Facets>
-  </Item>
-  <Item>
-    <Element>Numeric</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The raw numeric score for this mark.</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Element>Letter</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The letter grade for this mark.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>Narrative</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The free form text narrative for this mark.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  </CommonElement>
+	<CommonElement name="AuditInfoCreationUserType" type="true" dm="true">  
+		<Item>
+			<Element>AuditInfoCreationUserType</Element>
+			<Description>
+				<p>Information about which staff member created this attendance record.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>Type</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The role of the staff member for that created this attendance record.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Office Staff</Code>
+				</Value>
+				<Value>
+					<Code>School Admin</Code>
+				</Value>
+				<Value>
+					<Code>Parent</Code>
+				</Value>
+				<Value>
+					<Code>Nurse</Code>
+				</Value>
+				<Value>
+					<Code>Teacher</Code>
+				</Value>
+				<Value>
+					<Code>Other</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>UserId</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Unique identifier of the user that created the attendance record.  This will depend on the user and the source.  The preferred identifier would be a RefId for a StaffPersonal, StudentContact, or StudentPersonal Object.  However, the user may not be associated with any of these SIF objects.  In that case a unique Id given by the source should be used.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentSectionMarkListType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSectionMarkListType</Element>
+			<Description>
+				<p>A list of marks received for this student in this section.  For each Mark entry, at least one of the sub-elements must be specified.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+
+		<Item>
+			<Element>Mark</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Outer wrapper for marks  reported for this section, in this term.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StudentSectionMarkType"/>
+		</Item>
+	</CommonElement>
+	<CommonElement name="StudentSectionMarkType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSectionMarkType</Element>
+			<Description>
+				<p>Outer wrapper for marks  reported for this section, in this term.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>MarkInfoRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The Id (GUID) that identifies a mark that was given for this student.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Percentage</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The percent score for this mark (0.00 - 100.00).</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+			<Facets>
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="100"/>
+				<xs:fractionDigits value="2"/>
+			</Facets>
+		</Item>
+		<Item>
+			<Element>Numeric</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The raw numeric score for this mark.</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+		</Item>
+		<Item>
+			<Element>Letter</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The letter grade for this mark.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>Narrative</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The free form text narrative for this mark.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentRecordsType" type="true" dm="true">  
+		<Item>
+			<Element>StudentRecordsType</Element>
+			<Description>
+				<p>All records associated with the student.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>StudentDemographicRecordRefId</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" relationship="student demographic information recorded in" count="1:1" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>StudentAcademicRecordRefId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" relationship="student academic information recorded in" count="?:1" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>StudentSpecialEducationRecordRefId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" relationship="student special education information recorded in" count="?:1" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>OtherRecords</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>
+        Other records or content not defined by SIF, but associated with the student.  Wrapped
+        in <a href="#StudentRecordPackage">
+						<code>StudentRecordPackage</code>
+					</a>.
+				</p>
+			</Description>
+			<Type ref="CommonTypes" name="OtherStudentRecordListType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="OtherStudentRecordListType" type="true" dm="true">  
+		<Item>
+			<Element>OtherStudentRecordListType</Element>
+			<Description>
+				<p>
+        Other records or content not defined by SIF, but associated with the student.  Wrapped
+        in <a href="#StudentRecordPackage">
+						<code>StudentRecordPackage</code>
+					</a>.
+				</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+
+		<Item>
+			<Element>StudentRecordPackageRefId</Element>
+			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" relationship="other student record information recorded in" count="*:1" name="IdRefType"></Type>
+		</Item>
+	</CommonElement>
+
+
+
+	<CommonElement name="StudentPersonalDataType" type="true" dm="true">  
+
+		<Item>
+			<Element>StudentPersonalDataType</Element>
+			<Description>
+				<p>Collects elements of interest from StudentPersonal.</p>
+			</Description>
+		</Item>
+
+		<Item>
+			<Element>LocalId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="LocalIdType"></Type>
+		</Item>
+
+		<Item>
+			<Element>StateProvinceId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="StateProvinceIdType"></Type>
+		</Item>
+
+		<Item>
+			<Element>SSN</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SSNType"></Type>
+		</Item>
+
+		<Item>
+			<Element>OtherIdList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Lists all "other" identifiers associated with the student.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StudentPersonalDataOtherIdType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>
+        Name of the student.  Note: Type value of <code>04</code> must be used here.
+				</p>
+			</Description>
+			<Type ref="CommonTypes" name="NameOfRecordType"></Type>
+		</Item>
+		<Item>
+			<Element>OtherNames</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Previous, alternate or other names or aliases associated with the student.</p>
+			</Description>
+			<Type ref="CommonTypes" name="OtherNamesType"/>
+		</Item>
+
+		<Item>
+			<Element>DemographicsData</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Collects elements of interest from Demographics.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StudentPersonalDataDemographicDataType"/>
+		</Item>
+
+
+
+		<Item>
+			<Element>AddressList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The address of the student.</p>
+			</Description>
+			<Type ref="CommonTypes" name="AddressListType"></Type>
+		</Item>
+
+		<Item>
+			<Element>PhoneNumberList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PhoneNumberListType"></Type>
+		</Item>
+
+		<Item>
+			<Element>IDEA</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="IDEAType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Migrant</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="MigrantType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Title1</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="Title1Type"></Type>
+		</Item>
+
+		<Item>
+			<Element>GiftedTalented</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="GiftedTalentedType"></Type>
+		</Item>
+
+		<Item>
+			<Element>EconomicDisadvantage</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="EconomicDisadvantageType"></Type>
+		</Item>
+
+		<Item>
+			<Element>ELL</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="ELLType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Homeless</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="HomelessType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Section504</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="Section504Type"></Type>
+		</Item>
+
+		<Item>
+			<Element>VocationalConcentrator</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="VocationalConcentratorType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Immigrant</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="ImmigrantType"></Type>
+		</Item>
+
+		<Item>
+			<Element>NeglectedDelinquent</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="NeglectedDelinquentType"></Type>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="StudentPersonalDataOtherIdListType" type="true" dm="true">  
+		<Item>
+			<Element>StudentPersonalDataOtherIdListType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Lists all "other" identifiers associated with the student.</p>
+			</Description>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>OtherId</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Lists an "other" identifier associated with the student.</p>
+			</Description>
+			<Type ref="CommonElement" name="StudentPersonalDataOtherIdType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentPersonalDataOtherIdType" type="true" dm="true">  
+		<Item>
+			<Element>StudentPersonalDataOtherIdType</Element>
+			<Description>
+				<p>Lists an "other" identifier associated with the student.</p>
+			</Description>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Attribute>Type</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Code that defines the type of this other Id.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0147IdentificationSystemType">
+				<Values type="subset">
+					<Value>
+						<Code>0164</Code>
+					</Value>
+					<Value>
+						<Code>0339</Code>
+					</Value>
+					<Value>
+						<Code>0338</Code>
+					</Value>
+					<Value>
+						<Code>0879</Code>
+					</Value>
+					<Value>
+						<Code>9999</Code>
+					</Value>
+					<Value>
+						<Code>0222</Code>
+					</Value>
+					<Value>
+						<Code>0764</Code>
+					</Value>
+					<Value>
+						<Code>0154</Code>
+					</Value>
+					<Value>
+						<Code>0113</Code>
+					</Value>
+					<Value>
+						<Code>5013</Code>
+					</Value>
+				</Values>
+			</Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentPersonalDataDemographicDataType" type="true" dm="true">  
+		<Item>
+			<Element>StudentPersonalDataDemographicDataType</Element>
+			<Description>
+				<p>Collects elements of interest from Demographics.</p>
+			</Description>
+		</Item>
+
+		<Item>
+			<Element>RaceList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="RaceListType"></Type>
+		</Item>
+
+		<Item>
+			<Element>Gender</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="GenderType"></Type>
+		</Item>
+
+		<Item>
+			<Element>BirthDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="BirthDateType"></Type>
+		</Item>
+
+		<Item>
+			<Element>EnglishProficiency</Element>
+			<Characteristics>O</Characteristics>
+			<Description>Person's proficiency in English.</Description>
+			<Type ref="CommonTypes" name="EnglishProficiencyType"></Type>
+		</Item>
+
+		<Item>
+			<Element>LanguageList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>List of languages an individual uses to communicate.</Description>
+			<Type ref="CommonTypes" name="LanguageListType"></Type>
+		</Item>
+
+		<Item>
+			<Element>HispanicLatino</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p></p>
+			</Description>
+			<Type ref="CommonTypes" name="HispanicLatinoType"></Type>
+		</Item>
+
+		<Item>
+			<Element>CountryOfBirth</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p></p>
+			</Description>
+			<Type ref="CommonTypes" name="CountryType"></Type>
+		</Item>
+
+		<Item>
+			<Element>DwellingArrangement</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Setting/environment in which the person resides.</p>
+			</Description>
+			<Type ref="CommonTypes" name="DwellingArrangementType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="DwellingArrangementType" type="true" dm="true">  
+		<Item>
+			<Element>DwellingArrangementType</Element>
+			<Description>
+				<p>Setting/environment in which the person resides.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Code representing the setting/environment in which the person resides</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0600DwellingArrangementType"></Type>
+		</Item>
+		<Item>
+			<Element>OtherCodeList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentContactsSummaryType" type="true" dm="true">  
+
+		<Item>
+			<Element>StudentContactsSummaryType</Element>
+			<Description>
+				<p>Reports up to two parents/guardians of the student.</p>
+			</Description>
+		</Item>
+
+		<Item>
+			<Element>ParentGuardian1</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>First parent/guardian.</p>
+			</Description>
+			<Type ref="CommonElement" name="StudentContactSummaryType"></Type>
+		</Item>
+
+		<Item>
+			<Element>ParentGuardian2</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Second parent/guardian.</p>
+			</Description>
+			<Type ref="CommonElement" name="StudentContactSummaryType"></Type>
+		</Item>
+
+
+	</CommonElement>
+
+	<CommonElement name="StudentContactSummaryType" type="true" dm="true">  
+		<Item>
+			<Element>StudentContactSummaryType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>A parent/guardian.</p>
+			</Description>
+		</Item>
+
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonElement" name="NameType"></Type>
+		</Item>
+
+		<Item>
+			<Element>PhoneNumberList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonElement" name="PhoneNumberListType"></Type>
+		</Item>
+
+		<Item>
+			<Element>AddressList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonElement" name="AddressListType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentSchoolEnrollmentDataType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSchoolEnrollmentDataType</Element>
+			<Description>
+				<p>Collects elements of interest from StudentSchoolEnrollment.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>SchoolAttendedRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="IdRefType"/>
+			<Description>
+				<p>References the school of record for the student (see SchoolAttended).</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>GradeLevel</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="GradeLevelType"/>
+		</Item>
+		<Item>
+			<Element>Advisor</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Staff member assigned to the student as an advisor.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StaffPersonalDataSummaryType"/>
+		</Item>
+		<Item>
+			<Element>Counselor</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Staff member assigned to the student as a counselor.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StaffPersonalDataSummaryType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="StaffPersonalDataSummaryType" type="true" dm="true">  
+		<Item>
+			<Element>StaffPersonalDataSummaryType</Element>
+			<Description>
+				<p></p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>StaffPersonalData</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Collects elements of interest from StaffPersonal.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StaffPersonalDataSummary2Type"/>
+		</Item>
+	</CommonElement>
+	<CommonElement name="StaffPersonalDataSummary2Type" type="true" dm="true">  
+		<Item>
+			<Element>StaffPersonalDataSummary2Type</Element>
+			<Description>
+				<p>Collects elements of interest from StaffPersonal.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="NameType"/>
+		</Item>
+		<Item>
+			<Element>Title</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>AddressList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="AddressListType"/>
+		</Item>
+		<Item>
+			<Element>PhoneNumberList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PhoneNumberListType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="SchoolAttendanceHistoryListType" type="true" dm="true">  
+		<Item>
+			<Element>SchoolAttendanceHistoryListType</Element>
+			<Description>
+				<p>Chronology of schools attended in the student's academic career, including the current school if enrolled.</p>
+			</Description>
+			<List mode="List"/>
+		</Item>
+		<Item>
+			<Element>SchoolAttended</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Data about each individual school attended.</p>
+			</Description>
+			<Type ref="CommonTypes" name="SchoolAttendanceHistoryType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="SchoolAttendanceHistoryType" type="true" dm="true">  
+		<Item>
+			<Element>SchoolAttendanceHistoryType</Element>
+			<Description>
+				<p>Data about each individual school attended.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>RefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="RefIdType"/>
+			<Description>
+				<p>Id used internally to StudentAcademicRecord to avoid duplication of school-related data.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>LEAInfoData</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Collects elements of interest from LEAInfo.</p>
+			</Description>
+			<Type ref="CommonTypes" name="LEAInfoSummaryType"/>
+		</Item>
+		<Item>
+			<Element>SchoolInfoData</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Collects elements of interest from SchoolInfo.</p>
+			</Description>
+			<Type ref="CommonTypes" name="SchoolInfoSummaryType"/>
+		</Item>
+		<Item>
+			<Element>AccreditingBody</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+			<Description>
+				<p>Accrediting body for the school.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>MarkingSystems</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Note: Mandatory if school of record. Marking systems/grading tables used by the school.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkingSystemsType"/>
+		</Item>
+	</CommonElement>
+	<CommonElement name="MarkingSystemsType" type="true" dm="true">  
+		<Item>
+			<Element>MarkingSystemsType</Element>
+			<Description>
+				<p>Note: Mandatory if school of record. Marking systems/grading tables used by the school.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>MarkValueInfoData</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Marking system/grading table used by the school.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkValueInfoType"/>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="MarkValueInfoType" type="true" dm="true">  
+		<Item>
+			<Element>MarkValueInfoType</Element>
+			<Description>
+				<p>Marking system/grading table used by the school.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>RefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="RefIdType"/>
+			<Description>
+				<p>Id used internally to StudentAcademicRecord to link marks to their marking systems.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The text name of the value list ("Letter Grades", "Letter Grades (+/-)", "ESU", "Pass/Fail", "Override Grades", "Citizenship Comment Codes", etc.).</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>Percentage</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Indicates whether a percent Mark is accepted (format ##0.00).</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkValuePercentageCleanType"/>
+		</Item>
+		<Item>
+			<Element>Numeric</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Indicates whether a raw numeric score is accepted.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkValueNumericCleanType"/>
+		</Item>
+		<Item>
+			<Element>Letter</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Indicates whether a letter Mark is accepted.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkValueLetterCleanType"/>
+		</Item>
+		<Item>
+			<Element>Narrative</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>If present, indicates that a free-form text narrative is accepted.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkValueNarrativeCleanTypeCleanType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="LEAInfoSummaryType" type="true" dm="true">  
+		<Item>
+			<Element>LEAInfoSummaryType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Collects elements of interest from LEAInfo.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>LocalId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="LocalIdType"/>
+		</Item>
+		<Item>
+			<Element>StateProvinceId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="StateProvinceIdType"/>
+		</Item>
+		<Item>
+			<Element>NCESId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="NCESIdType"/>
+		</Item>
+		<Item>
+			<Element>LEAName</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="LEANameType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="SchoolInfoSummaryType" type="true" dm="true">  
+		<Item>
+			<Element>SchoolInfoSummaryType</Element>
+			<Description>
+				<p>Collects elements of interest from SchoolInfo.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>LocalId</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="LocalIdType"/>
+		</Item>
+		<Item>
+			<Element>StateProvinceId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="StateProvinceIdType"/>
+		</Item>
+		<Item>
+			<Element>NCESId</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="NCESIdType"/>
+		</Item>
+		<Item>
+			<Element>SchoolName</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="SchoolNameType"/>
+		</Item>
+		<Item>
+			<Element>SchoolURL</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SchoolURLType"/>
+		</Item>
+		<Item>
+			<Element>SchoolContactList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SchoolContactListType"/>
+		</Item>
+		<Item>
+			<Element>AddressList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="AddressListType"/>
+		</Item>
+		<Item>
+			<Element>PhoneNumberList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PhoneNumberListType"/>
+		</Item>
+		<Item>
+			<Element>IdentificationInfoList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="IdentificationInfoListType"/>
+		</Item>
+		<Item>
+			<Element>GradeLevels</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="GradeLevelsType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="StudentSchoolEnrollmentSummaryListType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSchoolEnrollmentSummaryListType</Element>
+			<Description>
+				<p>A list of each enrollment in the schools above (see SchoolAttended).</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>StudentSchoolEnrollmentData</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Collects elements of interest from StudentSchoolEnrollment.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StudentSchoolEnrollmentSummaryType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentSchoolEnrollmentSummaryType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSchoolEnrollmentSummaryType</Element>
+			<Description>
+				<p>Collects elements of interest from StudentSchoolEnrollment.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>SchoolAttendedRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="IdRefType"/>
+			<Description>
+				<p>Reference to SchoolAttended.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>SchoolYear</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SchoolYearType"></Type>
+		</Item>
+		<Item>
+			<Element>EntryDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+		</Item>
+		<Item>
+			<Element>ExitDate</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Note: Mandatory if student exited school.</p>
+			</Description>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+		</Item>
+		<Item>
+			<Element>EntryType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p/>
+			</Description>
+			<Type ref="CommonTypes" name="StudentEntryTypeType"/>
+		</Item>
+		<Item>
+			<Element>GradeLevel</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Grade or academic level of student.</p>
+			</Description>
+			<Type ref='CommonTypes' name='GradeLevelType'/>
+		</Item>
+		<Item>
+			<Element>ExitStatus</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p/>
+			</Description>
+			<Type ref='CommonTypes' name='StudentExitStatusType'/>
+		</Item>
+		<Item>
+			<Element>ExitType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p/>
+			</Description>
+			<Type ref='CommonTypes' name='StudentExitTypeType'/>
+		</Item>
+		<Item>
+			<Element>StudentLEARelationship</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p/>
+			</Description>
+			<Type ref='CommonTypes' name='StudentLEARelationshipType'/>	
+		</Item>
+		<Item>
+			<Element>StudentSchoolRelationship</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p/>
+			</Description>
+			<Type ref='CommonTypes' name='StudentSchoolRelationshipType'/>	
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="StudentLEARelationshipType" type="true" dm="true">  
+		<Item>
+			<Element>StudentLEARelationshipType</Element>
+			<Description>
+				<p/>
+			</Description>
+		</Item>
+		<Item>
+			<Element>MembershipType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The type of this affiliation as it relates to the LEA identified.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Home</Code>
+					<Text>The LEA is responsible for reporting the student's membership/child accounting information.</Text>
+				</Value>
+				<Value>
+					<Code>Concurrent</Code>
+					<Text>The LEA is not the primary reporting unit for the student's membership/child accounting information.</Text>
+				</Value>
+				<Value>
+					<Code>Summer</Code>
+					<Text>A summer school enrollment, not part of the regular school year.</Text>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>LEARelationshipType</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>An instance of the OrganizationRelationshipType common type that describes the details of the student's affiliation with the LEA.</p>
+			</Description>
+			<Type ref="CommonTypes" name="OrganizationRelationshipType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentSchoolRelationshipType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSchoolRelationshipType</Element>
+			<Description>
+				<p/>
+			</Description>
+		</Item>
+		<Item>
+			<Element>MembershipType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The type of this affiliation as it relates to the school identified.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Home</Code>
+					<Text>The LEA is responsible for reporting the student's membership/child accounting information.</Text>
+				</Value>
+				<Value>
+					<Code>Concurrent</Code>
+					<Text>The LEA is not the primary reporting unit for the student's membership/child accounting information.</Text>
+				</Value>
+				<Value>
+					<Code>Summer</Code>
+					<Text>A summer school enrollment, not part of the regular school year.</Text>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>ResidencyStatus</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Location of an individual’s legal residence relative to (within or outside) the boundaries of the school for the enrollment reported.</p>
+			</Description>
+			<Type ref="CommonTypes" name="StudentSchoolRelationshipResidencyStatusType"/>
+		</Item>
+		<Item>
+			<Element>NonResidentAttendReason</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>If the school represented by this enrollment is outside of the student's usual attendance area (as indicated in the ResidencyStatus element), this element indicates the reason that the student attends this school.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0599NonResidentAttendanceRationaleType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentSchoolRelationshipResidencyStatusType" type="true" dm="true">  
+		<Item>
+			<Element>StudentSchoolRelationshipResidencyStatusType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Location of an individual’s legal residence relative to (within or outside) the boundaries of the school for the enrollment reported.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Code indicating the residency status for this enrollment.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0598PublicSchoolResidenceStatusType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="CurrentCourseActivityType" type="true" dm="true">  
+		<Item>
+			<Element>CurrentCourseActivity</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Note: Mandatory if coursework is underway.  Conveys a student's current coursework along with mid-term marks if applicable.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CurrentCourseActivityType"/>
+		</Item>
+		<Item>
+			<Element>TermInfoData</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Collects elements of interest from TermInfo.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CurrentCourseActivityTermInfoDataType"/>
+		</Item>
+		<Item>
+			<Element>Courses</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Courses being taken.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CurrentCourseActivityCourseListType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="CurrentCourseActivityCourseListType" type="true" dm="true">  	
+		<Item>
+			<Element>CurrentCourseActivityCourseListType</Element>
+			<Description>
+				<p>Courses being taken.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>Course</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Course being taken.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CurrentCourseActivityCourseType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="CurrentCourseActivityCourseType" type="true" dm="true">  	
+		<Item>
+			<Element>CurrentCourseActivityCourseType</Element>
+			<Description>
+				<p>Course being taken.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>SchoolAttendedRefId</Element>
+			<Characteristics>C</Characteristics>
+			<Type ref="CommonTypes" name="IdRefType"/>
+			<Description>
+				<p>
+        Reference to the school where the course is being taken (see SchoolAttended); may be omitted if the school is the same as the school of record.
+				</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>SchoolCourseInfoData</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Collects elements of interest from SchoolCourseInfo.</p>
+			</Description>
+			<Type ref="CommonTypes" name="SchoolCourseInfoSummaryType"/>
+		</Item>
+
+		<Item>
+			<Element>StartDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+			<Description>
+				<p>Date course section started.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>EndDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+			<Description>
+				<p>Date course section ended, or will end.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>MarkingPeriod</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MarkingPeriodSummaryType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkingPeriodSummaryType" type="true" dm="true">  		
+		<Item>
+			<Element>MarkingPeriodSummaryType</Element>
+			<Characteristics>M</Characteristics>
+		</Item>
+		<Item>
+			<Element>TermInfoData</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Information related to the span of time associated with the marking period.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkingPeriodTermInfoDataType"/>
+		</Item>
+		<Item>
+			<Element>GradeLevelWhenTaken</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Student's grade level at time of course.</p>
+			</Description>
+			<Type ref="CommonTypes" name="GradeLevelType"/>
+		</Item>
+		<Item>
+			<Element>MarkData</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Note: Mandatory if mid-term mark exists.  Mid-term mark.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MarkingPeriodMarkDataType"/>		
+		</Item>
+		<Item>
+			<Element>CourseCreditsAttempted</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:decimal"/>
+			<Description>
+				<p>Number of course credits attempted.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+
+	<CommonElement name="CurrentCourseActivityTermInfoDataType" type="true" dm="true">  
+		<Item>
+			<Element>TermInfoData</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Collects elements of interest from TermInfo.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CurrentCourseActivityTermInfoDataType"/>
+		</Item>
+		<Item>
+			<Attribute>SchoolAttendedRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="IdRefType"/>
+			<Description>
+				<p>Reference to the school of record for the courses being taken (see SchoolAttended).</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>SchoolYear</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SchoolYearType"></Type>
+		</Item>
+		<Item>
+			<Element>StartDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+		</Item>
+		<Item>
+			<Element>EndDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+		</Item>
+		<Item>
+			<Element>Description</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>TermCode</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>Track</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>TermSpan</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="TermSpanType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+
+
+	<CommonElement name="SchoolCourseInfoSummaryType" type="true" dm="true">  
+		<Item>
+			<Element>SchoolCourseInfoSummaryType</Element>
+			<Description>
+				<p>Collects elements of interest from SchoolCourseInfo.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>CourseCode</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="CourseCodeType"/>
+		</Item>
+		<Item>
+			<Element>StateCourseCode</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="StateCourseCodeType"/>
+		</Item>
+		<Item>
+			<Element>DistrictCourseCode</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="DistrictCourseCodeType"/>
+		</Item>
+		<Item>
+			<Element>NationalCourseCode</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>SubjectAreaList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SubjectAreaListType"/>
+		</Item>
+		<Item>
+			<Element>CourseTitle</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="CourseTitleType"/>
+		</Item>
+		<Item>
+			<Element>Description</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>InstructionalLevel</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="InstructionalLevelType"/>
+		</Item>
+		<Item>
+			<Element>CoreAcademicCourse</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:boolean"/>
+		</Item>
+		<Item>
+			<Element>GraduationRequirement</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="GraduationRequirementType"/>
+		</Item>
+		<Item>
+			<Element>Department</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkingPeriodTermInfoDataType" type="true" dm="true">  
+		<Item>
+			<Element>MarkingPeriodTermInfoDataType</Element>
+			<Description>
+				<p>Information related to the span of time associated with the marking period.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>StartDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+		</Item>
+		<Item>
+			<Element>EndDate</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="PartialDateType"/>
+		</Item>
+		<Item>
+			<Element>Description</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>TermCode</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>Track</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>TermSpan</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="TermSpanType"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MarkingPeriodMarkDataType" type="true" dm="true">  
+		<Item>
+			<Element>MarkingPeriodMarkDataType</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Note: Mandatory if mid-term mark exists.  Mid-term mark.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>MarkValueInfoDataRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="IdRefType"/>
+			<Description>
+				<p>Reference to marking system at school of record.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Percentage</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The percent score for this mark (0.00 - 100.00).</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Numeric</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The raw numeric score for this mark. Note: This element to be deprecated.</p>
+			</Description>
+			<Type name="xs:unsignedInt"/>
+		</Item>
+		<Item>
+			<Element>NumericAsDecimal</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The raw numeric score for this mark. This element allows for a numeric mark (score or grade) in decimal format.</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>Letter</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The letter grade for this mark.</p>
+			</Description>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>Narrative</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The free form text narrative for this mark.</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>SIF_ExtendedElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
+		</Item>
+	</CommonElement>

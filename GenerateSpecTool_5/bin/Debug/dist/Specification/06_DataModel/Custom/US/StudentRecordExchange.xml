@@ -17,7 +17,7 @@
   <Item>
     <Element>StateProvinceId</Element>
     <Characteristics>C</Characteristics>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
     <Description>
       <p>A unique student identifier outside of SIF.</p>
       <p>
@@ -29,7 +29,7 @@
   <Item>
     <Element>LocalId</Element>
     <Characteristics>C</Characteristics>
-    <Type ref="DataModel" name="LocalId"></Type>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
     <Description>
       <p>A locally-defined student identifier.</p>
     </Description>
@@ -50,50 +50,18 @@
     <Description>
       <p>All records associated with the student.</p>
     </Description>
+    <Type ref="CommonTypes" name="StudentRecordsType"></Type>
   </Item>
-  <Item>
-    <Element>/StudentDemographicRecordRefId</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" relationship="student demographic information recorded in" count="1:1" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>/StudentAcademicRecordRefId</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" relationship="student academic information recorded in" count="?:1" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>/StudentSpecialEducationRecordRefId</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" relationship="student special education information recorded in" count="?:1" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherRecords</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>
-        Other records or content not defined by SIF, but associated with the student.  Wrapped
-        in <a href="#StudentRecordPackage">
-          <code>StudentRecordPackage</code>
-        </a>.
-      </p>
-    </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>//StudentRecordPackageRefId</Element>
-    <Characteristics>MR</Characteristics>
-    <Type ref="CommonTypes" relationship="other student record information recorded in" count="*:1" name="IdRefType"></Type>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <StudentRecordExchange RefId="0EAF9D6DA4854F348103B04BFEAC65B2">
