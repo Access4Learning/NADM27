@@ -112,7 +112,7 @@
   <Item>
     <Element>EntryType</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="StudentLEAEntryTypeType"></Type>
+    <Type ref="CommonTypes" name="StudentEntryTypeType"></Type>
   </Item>
 
   <Item>
@@ -129,13 +129,13 @@
   <Item>
     <Element>ExitType</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="StudentLEAExitTypeType"></Type>
+    <Type ref="CommonTypes" name="StudentExitTypeType"></Type>
   </Item>
 
   <Item>
     <Element>ExitStatus</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="StudentLEAExitStatusType"></Type>
+    <Type ref="CommonTypes" name="StudentExitStatusType"></Type>
   </Item>
 
   <Item>
