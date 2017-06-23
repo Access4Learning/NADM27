@@ -22,7 +22,7 @@
   </Group>
 
 
-  <!--<Group name="Food Services Working Group">
+  <Group name="Food Services Working Group">
     <Intro>
       <p>
         The Food Services Working Group specifies, implements, and promotes a standard set of messages and automated communication mechanisms
@@ -49,7 +49,7 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStaffMealCounts.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStudentEnrollmentCount.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\FoodserviceStudentMealCounts.xml"/>
-  </Group>-->
+  </Group>
   
   
  <!-- <Group name="Student Record Exchange Task Force" sort="false">
@@ -309,7 +309,8 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\EnergyUsage.xml"/>
   </Group>
   
-  <!--  <Group name="Identity Management Project Team">
+  <!-- LINDA
+  <Group name="Identity Management Project Team">
 		<Intro>
 			<p>Local Education Authorities (LEAs) across the globe are dealing with the issues of managing users across a rapidly increasing number of applications. Many of these applications within the educational enterprise interface directly with learners, parents, and teachers. Each new application requires digital identity and profile data for operational purposes. A significant burden is placed on individual users to manage and secure their login credentials across applications. In many instances, users end up having to remember many user names and passwords and deal with profile information that is not consistent or up to date across the various applications that they access.</p>
 			<p>There is a great need to provide a standards-based solution for identity management and role-based security within the education industry. While many standards have been developed to solve this problem, there is no common profile within education that suppliers and end users can adopt. The SIFA has been solving issues of interoperability like this for many years. Educational applications built to support the SIF standard can also benefit from a set of profiles developed by SIFA that are targeted at solving the needs of sharing and using digital identities within an educational enterprise.</p>
@@ -318,6 +319,7 @@
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\IdMAuthentication.xml"/>
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\IdMAuthorization.xml"/>
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\UserOrganizationAssociation.xml"/>
-  </Group>-->
+  </Group>
+  -->
   
 </IncludeGroup>

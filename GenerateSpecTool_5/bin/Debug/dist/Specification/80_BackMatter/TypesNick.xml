@@ -5967,7 +5967,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Item>
 	</CommonElement>
 
-<CommonElement name="EmployeeCredentialAssignmentType" type="true" dm="true">  
+	<CommonElement name="EmployeeCredentialAssignmentType" type="true" dm="true">  
 		<Item>
 			<Element>EmployeeCredentialAssignmentType</Element>
 			<Description>
@@ -5982,7 +5982,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</Description>
 			<Type ref="CommonTypes" name="IdRefType"></Type>
 		</Item>
-		
+
 		<Item>
 			<Element>GradeLevels</Element>
 			<Characteristics>M</Characteristics>
@@ -6030,637 +6030,637 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 	</CommonElement>
-	
+
 	<CommonElement name="BusInfoEquipmentListType" type="true" dm="true">  
-	 <Item>
-    <Element>BusInfoEquipmentListType</Element>
-    <Description>
-      <p>Describes any special equipment that is on this bus.</p>
-    </Description>
-    <List mode="List">
-    </List>
-  </Item>
+		<Item>
+			<Element>BusInfoEquipmentListType</Element>
+			<Description>
+				<p>Describes any special equipment that is on this bus.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
 
-  <Item>
+		<Item>
 
-    <Element>Equipment</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Inventories each piece of special equipment on the bus.</p>
-    </Description>
-     <Type ref="CommonTypes" name="BusInfoEquipmentType"></Type>
- </Item>
- 	</CommonElement>
+			<Element>Equipment</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Inventories each piece of special equipment on the bus.</p>
+			</Description>
+			<Type ref="CommonTypes" name="BusInfoEquipmentType"></Type>
+		</Item>
+	</CommonElement>
 
 	<CommonElement name="BusInfoEquipmentType" type="true" dm="true">  
-  <Item>
+		<Item>
 
-    <Element>BusInfoEquipmentType</Element>
-    <Description>
-      <p>Inventories each piece of special equipment on the bus.</p>
-    </Description>
- </Item>
-	<Item>
+			<Element>BusInfoEquipmentType</Element>
+			<Description>
+				<p>Inventories each piece of special equipment on the bus.</p>
+			</Description>
+		</Item>
+		<Item>
 
-    <Element>BusEquipmentRefId</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the type of equipment.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
+			<Element>BusEquipmentRefId</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID that identifies the type of equipment.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
 
-    <Element>Count</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The number of pieces of this type of equipment that are on this bus.</p>
-    </Description>
-    <Type name="xs:unsignedInt"></Type>
-  </Item>
-  </CommonElement>
-  
+			<Element>Count</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The number of pieces of this type of equipment that are on this bus.</p>
+			</Description>
+			<Type name="xs:unsignedInt"></Type>
+		</Item>
+	</CommonElement>
+
 	<CommonElement name="TelemetryListType" type="true" dm="true">  
-   <Item>
-    <Element>TelemetryListType</Element>
-    <List mode="List"/>
-  </Item>
+		<Item>
+			<Element>TelemetryListType</Element>
+			<List mode="List"/>
+		</Item>
 
-  <Item>
-    <Element>Telemetry</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Indicators and values provided by the hardware along with this position snapshot. For events, it is safe to assume that one of these items triggered the hardware to issue an update.</p>
-      <p>The following values are suggested for common reports to enhance interoperability, but each deployment will have items dictated by the infrastructure. A format for reporting continuous-value metrics is also suggested.</p>
-      <p>Suggested Values:</p>
-      <p>Panic&#x2014;panic button pressed</p>
-      <p>Accident&#x2014;airbag deployed or some other detection</p>
-      <p>Checkpoint&#x2014;manually triggered per procedures</p>
-      <p>Assistance&#x2014;non-emergency request</p>
-      <p>Timer&#x2014;timed report</p>
-      <p>RouteStatus&#x2014;change to RouteStatus/Status</p>
-      <p>Open&#x2014;door open</p>
-      <p>Close&#x2014;door closed</p>
-      <p>ToD&#x2014;shifted into "Drive"</p>
-      <p>OffD&#x2014;shifted off "Drive"</p>
-      <p>StpLght&#x2014;Stop Lights are on</p>
-      <p>WrngLght&#x2014;Warning lights are on</p>
-      <p>StpArm&#x2014;Stop arm is out</p>
-      <p>CrsngGt&#x2014;Crossing gate is extended</p>
-      <p>EcmOp&#x2014;ECM Oil Pressure is Low</p>
-      <p>EcmOt&#x2014;ECM Oil Temperature is high</p>
-      <p>EcmTt&#x2014;ECM transmission temperature is high</p>
-      <p>EcmTp&#x2014;Transmission Oil Pressure is low</p>
-      <p>EcmFuelPrs&#x2014;ECM Fuel Pressure is low</p>
-      <p>EcmExtIdle&#x2014;ECM Extended engine idle period</p>
-      <p>EcmOvrSpeed&#x2014;ECM engine over Speed</p>
-      <p>EcmVltg&#x2014;ECM Voltage is low</p>
-      <p>OutBndry&#x2014;Out of Boundary</p>
-      <p>FuelGauge-34pct&#x2014;suggested continuous-value syntax, minimal use of special characters</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-</CommonElement>
+		<Item>
+			<Element>Telemetry</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Indicators and values provided by the hardware along with this position snapshot. For events, it is safe to assume that one of these items triggered the hardware to issue an update.</p>
+				<p>The following values are suggested for common reports to enhance interoperability, but each deployment will have items dictated by the infrastructure. A format for reporting continuous-value metrics is also suggested.</p>
+				<p>Suggested Values:</p>
+				<p>Panic&#x2014;panic button pressed</p>
+				<p>Accident&#x2014;airbag deployed or some other detection</p>
+				<p>Checkpoint&#x2014;manually triggered per procedures</p>
+				<p>Assistance&#x2014;non-emergency request</p>
+				<p>Timer&#x2014;timed report</p>
+				<p>RouteStatus&#x2014;change to RouteStatus/Status</p>
+				<p>Open&#x2014;door open</p>
+				<p>Close&#x2014;door closed</p>
+				<p>ToD&#x2014;shifted into "Drive"</p>
+				<p>OffD&#x2014;shifted off "Drive"</p>
+				<p>StpLght&#x2014;Stop Lights are on</p>
+				<p>WrngLght&#x2014;Warning lights are on</p>
+				<p>StpArm&#x2014;Stop arm is out</p>
+				<p>CrsngGt&#x2014;Crossing gate is extended</p>
+				<p>EcmOp&#x2014;ECM Oil Pressure is Low</p>
+				<p>EcmOt&#x2014;ECM Oil Temperature is high</p>
+				<p>EcmTt&#x2014;ECM transmission temperature is high</p>
+				<p>EcmTp&#x2014;Transmission Oil Pressure is low</p>
+				<p>EcmFuelPrs&#x2014;ECM Fuel Pressure is low</p>
+				<p>EcmExtIdle&#x2014;ECM Extended engine idle period</p>
+				<p>EcmOvrSpeed&#x2014;ECM engine over Speed</p>
+				<p>EcmVltg&#x2014;ECM Voltage is low</p>
+				<p>OutBndry&#x2014;Out of Boundary</p>
+				<p>FuelGauge-34pct&#x2014;suggested continuous-value syntax, minimal use of special characters</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+	</CommonElement>
 
 	<CommonElement name="BusStaffType" type="true" dm="true">  
-  <Item>
-    <Element>BusStaffType</Element>
-    <Description>
-      <p>Information identifying the driver or other staff on a bus.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>Name</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The name of the bus staff. Condition is that at least one of this and EmployeePersonalRefId must be included.</p>
-    </Description>
-    <Type ref="CommonTypes" name="NameType"></Type>
-  </Item>
-  <Item>
-    <Element>EmployeePersonalRefId</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>The GUID of the staff's EmployeePersonal object. Condition is that at least one of this and Name must be included.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>Status</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Boarding status of the staff.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>On</Code>
-        <Text>Staff boarded the bus and no exit detected</Text>
-      </Value>
-      <Value>
-        <Code>Off</Code>
-        <Text>Staff exited the bus</Text>
-      </Value>
-      <Value>
-        <Code>Sched</Code>
-        <Text>Scheduled for this run, but either hasn't boarded or the telematics hardware can't confirm who the staff is</Text>
-      </Value>
-    </Values>
-  </Item>
-  </CommonElement>
-  
-	<CommonElement name="BusStaffListType" type="true" dm="true">  
-    <Item>
-    <Element>BusStaffListType</Element>
-    <Description>
-      <p>List identifying other staff. This may include aides, nurses, proctors, etc.</p>
-    </Description>
-    <List mode="List"/>
-  </Item>
+		<Item>
+			<Element>BusStaffType</Element>
+			<Description>
+				<p>Information identifying the driver or other staff on a bus.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The name of the bus staff. Condition is that at least one of this and EmployeePersonalRefId must be included.</p>
+			</Description>
+			<Type ref="CommonTypes" name="NameType"></Type>
+		</Item>
+		<Item>
+			<Element>EmployeePersonalRefId</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>The GUID of the staff's EmployeePersonal object. Condition is that at least one of this and Name must be included.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>Status</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Boarding status of the staff.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>On</Code>
+					<Text>Staff boarded the bus and no exit detected</Text>
+				</Value>
+				<Value>
+					<Code>Off</Code>
+					<Text>Staff exited the bus</Text>
+				</Value>
+				<Value>
+					<Code>Sched</Code>
+					<Text>Scheduled for this run, but either hasn't boarded or the telematics hardware can't confirm who the staff is</Text>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
 
-  <Item>
-    <Element>BusStaff</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Information about an individual staff member on the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="BusStaffType"></Type>
-  </Item>
- </CommonElement>
- 
+	<CommonElement name="BusStaffListType" type="true" dm="true">  
+		<Item>
+			<Element>BusStaffListType</Element>
+			<Description>
+				<p>List identifying other staff. This may include aides, nurses, proctors, etc.</p>
+			</Description>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>BusStaff</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Information about an individual staff member on the bus.</p>
+			</Description>
+			<Type ref="CommonTypes" name="BusStaffType"></Type>
+		</Item>
+	</CommonElement>
+
 	<CommonElement name="BusRouteStatusType" type="true" dm="true">  
-   <Item>
-    <Element>BusRouteStatusType</Element>
-    <Description>
-      <p>
+		<Item>
+			<Element>BusRouteStatusType</Element>
+			<Description>
+				<p>
         If the bus is running a route, this element must be included in the object.
         Absence means the bus is not operating a route.
-      </p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>BusRouteInfoRefId</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The GUID that identifies the route.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>Status</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Status of the route.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Begin</Code>
-        <Text>No students have been picked up yet</Text>
-      </Value>
-      <Value>
-        <Code>End</Code>
-        <Text>All students have been dropped off</Text>
-      </Value>
-      <Value>
-        <Code>Continue</Code>
-        <Text>In the midst of a run</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Attribute>BusRouteDetailRefId</Attribute>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>If the bus is currently at a stop in this route, identify the stop's SIF object.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  </CommonElement>
+				</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>BusRouteInfoRefId</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The GUID that identifies the route.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>Status</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Status of the route.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Begin</Code>
+					<Text>No students have been picked up yet</Text>
+				</Value>
+				<Value>
+					<Code>End</Code>
+					<Text>All students have been dropped off</Text>
+				</Value>
+				<Value>
+					<Code>Continue</Code>
+					<Text>In the midst of a run</Text>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Attribute>BusRouteDetailRefId</Attribute>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>If the bus is currently at a stop in this route, identify the stop's SIF object.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+	</CommonElement>
 
- 	<CommonElement name="BusPositionStudentListType" type="true" dm="true">  
-   <Item>
-    <Element>BusPositionStudentListType</Element>
-    <Description>A list of students and their statuses in BusPositionInfo.   The complete list may be sent with some events (e.g. change in RouteStatus) per district policy, but it is more typical of responses.</Description>
-    <List mode="List"/>
-  </Item>
-  <Item>
-    <Element>Student</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Each student's status.</p>
-    </Description>
-    <Type ref="CommonTypes" name="BusPositionStudentType"></Type>
-  </Item>
-  </CommonElement>
-  
- 	<CommonElement name="BusPositionStudentType" type="true" dm="true">  
-  <Item>
-    <Element>BusPositionStudentType</Element>
-    <Description>
-      <p>Each student's status in BusPositionInfo.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>StudentPersonalRefId</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the student that this element refers to.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>Status</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
+	<CommonElement name="BusPositionStudentListType" type="true" dm="true">  
+		<Item>
+			<Element>BusPositionStudentListType</Element>
+			<Description>A list of students and their statuses in BusPositionInfo.   The complete list may be sent with some events (e.g. change in RouteStatus) per district policy, but it is more typical of responses.</Description>
+			<List mode="List"/>
+		</Item>
+		<Item>
+			<Element>Student</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Each student's status.</p>
+			</Description>
+			<Type ref="CommonTypes" name="BusPositionStudentType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="BusPositionStudentType" type="true" dm="true">  
+		<Item>
+			<Element>BusPositionStudentType</Element>
+			<Description>
+				<p>Each student's status in BusPositionInfo.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>StudentPersonalRefId</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID that identifies the student that this element refers to.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>Status</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>
         Boarding status of this student.  Note: Values <code>Sched</code>, <code>On</code> and <code>Off</code> are typical of responses.  Values <code>Entered</code>
         and <code>Exited</code> are typical of events.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>On</Code>
-        <Text>Student boarded the bus and no exit detected</Text>
-      </Value>
-      <Value>
-        <Code>Off</Code>
-        <Text>Student exited the bus</Text>
-      </Value>
-      <Value>
-        <Code>Entered</Code>
-        <Text>Boarded the bus since previous event</Text>
-      </Value>
-      <Value>
-        <Code>Exited</Code>
-        <Text>Left the bus since previous event</Text>
-      </Value>
-      <Value>
-        <Code>Sched</Code>
-        <Text>Scheduled for this run, but either hasn't boarded or the telematics hardware can't confirm student identities</Text>
-      </Value>
-    </Values>
-  </Item>
-  </CommonElement>
-  
-  	<CommonElement name="OriginPointType" type="true" dm="true">  
-   <Item>
-    <Element>OriginPointType</Element>
-  </Item>
-  <Item>
-    <Attribute>BusRouteDetailRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Element>ArrivalTime</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The time that the bus associated with this route will stop at this bus stop.</p>
-    </Description>
-    <Type name="xs:time"/>
-  </Item>
-  <Item>
-    <Element>RouteNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A unique identifier for the route. For instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>RouteDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Short explanation of the route.</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  <Item>
-    <Element>VehicleNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Vehicle number of the bus.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>BusStopDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>An explanation of this location.</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  </CommonElement>
-  
-  	<CommonElement name="TransferPointListType" type="true" dm="true">  
-    <Item>
-    <Element>TransferPointListType</Element>
-    <List mode="List"/>
-  </Item>
+				</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>On</Code>
+					<Text>Student boarded the bus and no exit detected</Text>
+				</Value>
+				<Value>
+					<Code>Off</Code>
+					<Text>Student exited the bus</Text>
+				</Value>
+				<Value>
+					<Code>Entered</Code>
+					<Text>Boarded the bus since previous event</Text>
+				</Value>
+				<Value>
+					<Code>Exited</Code>
+					<Text>Left the bus since previous event</Text>
+				</Value>
+				<Value>
+					<Code>Sched</Code>
+					<Text>Scheduled for this run, but either hasn't boarded or the telematics hardware can't confirm student identities</Text>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
 
-  <Item>
-    <Element>TransferPoint</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>
+	<CommonElement name="OriginPointType" type="true" dm="true">  
+		<Item>
+			<Element>OriginPointType</Element>
+		</Item>
+		<Item>
+			<Attribute>BusRouteDetailRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"/>
+		</Item>
+		<Item>
+			<Element>ArrivalTime</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The time that the bus associated with this route will stop at this bus stop.</p>
+			</Description>
+			<Type name="xs:time"/>
+		</Item>
+		<Item>
+			<Element>RouteNumber</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>A unique identifier for the route. For instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
+			</Description>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>RouteDescription</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Short explanation of the route.</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>VehicleNumber</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Vehicle number of the bus.</p>
+			</Description>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>BusStopDescription</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>An explanation of this location.</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="TransferPointListType" type="true" dm="true">  
+		<Item>
+			<Element>TransferPointListType</Element>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>TransferPoint</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>
         There should be one TransferPoint element for each intermediate point on a trip.
         The "embark" and "disembark" bus stops for a single transfer point must be at the same location.
         To order multiple TransferPoint elements, use the Time element of the BusStopInfo objects referenced by the attributes.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="TransferPointType"></Type>
-  </Item>
-  </CommonElement>
-  	<CommonElement name="TransferPointType" type="true" dm="true">  
-  <Item>
-    <Element>TransferPointType</Element>
-    <Description>
-      <p>
+				</p>
+			</Description>
+			<Type ref="CommonTypes" name="TransferPointType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="TransferPointType" type="true" dm="true">  
+		<Item>
+			<Element>TransferPointType</Element>
+			<Description>
+				<p>
         There should be one TransferPoint element for each intermediate point on a trip.
         The "embark" and "disembark" bus stops for a single transfer point must be at the same location.
         To order multiple TransferPoint elements, use the Time element of the BusStopInfo objects referenced by the attributes.
-      </p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>EmbarkBusRouteDetail</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>BusRouteDetail</Code>
-      </Value>
-    </Values>
-  </Item>
+				</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>EmbarkBusRouteDetail</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Attribute>SIF_RefObject</Attribute>
+			<Characteristics>M</Characteristics>
+			<Values>
+				<Value>
+					<Code>BusRouteDetail</Code>
+				</Value>
+			</Values>
+		</Item>
 
-  <Item>
+		<Item>
 
-    <Element>DisembarkBusRouteDetail</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>BusRouteDetail</Code>
-      </Value>
-    </Values>
-  </Item>
-  </CommonElement>
-  
-   	<CommonElement name="DestinationPointType" type="true" dm="true">  
-  <Item>
-    <Element>DestinationPointType</Element>
-  </Item>
-  <Item>
-    <Attribute>BusRouteDetailRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Element>ArrivalTime</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The time that the bus associated with this route will stop at this bus stop.</p>
-    </Description>
-    <Type name="xs:time"/>
-  </Item>
-  <Item>
-    <Element>RouteNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A unique identifier for the route. F or instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>RouteDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Short explanation of the route. It may be used to designate an area, or used to color-code bus routes (the "orange" route).</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  <Item>
-    <Element>VehicleNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Vehicle number of the bus.</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  <Item>
-    <Element>BusStopDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>An explanation of this location.</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  </CommonElement>
-  
-   	<CommonElement name="StudentLEAEntryTypeType" type="true" dm="true">  
-    <Item>
-    <Element>StudentLEAEntryTypeType</Element>
-  </Item>
-  <Item>
-    <Element>Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the type of entry for this affiliation.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0619EntryTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="OtherCodeListType"/>
-  </Item>
-  </CommonElement>
-  
-   	<CommonElement name="StudentLEAExitTypeType" type="true" dm="true">  
-    <Item>
-    <Element>StudentLEAExitTypeType</Element>
-  </Item>
-  <Item>
-    <Element>Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the type of exit for this affiliation.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0644ExitWithdrawalTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="OtherCodeListType"/>
-  </Item>
-  </CommonElement>
-  
-   	<CommonElement name="StudentLEAExitStatusType" type="true" dm="true">  
-    <Item>
-    <Element>StudentLEAExitStatusType</Element>
-  </Item>
-  <Item>
-    <Element>Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the exit status for this affiliation.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0643ExitWithdrawalStatusType"></Type>
-  </Item>
-  <Item>
-    <Element>OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="OtherCodeListType"/>
-  </Item>
-  </CommonElement>
-  
-   	<CommonElement name="EnergyUsageLocationInfoType" type="true" dm="true">  
-  	<Item>
-		<Element>EnergyUsageLocationInfoType</Element>
-		<Description>
-			<p>Complex element containing the location of where measurements apply to.</p>
-		</Description>
-	</Item>
-	<Item>
-	<Element>SchoolId</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>urn:sif:school:xxx.yyy.zzz where xxx.yyy.zzz is a structure that reading left to right starts with the most specific identification (school location) and works rightward to identify the higher levels.</p>
-			<p>e.g., urn:sif:school:AcmeMiddleSchool1.CoyoteDistrict.Arizona.</p>
-		</Description>
-		
-		<Type ref="CommonTypes" name="URIOrBinaryType"></Type>
-		<!--<Type ref="DataModel" name="urn"/>-->
-		
-	</Item>
-	<Item>
-		<Element>Building</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Name of the School Building.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-	</Item>
-	<Item>
-		<Element>EnergyZone</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Complex element refining and narrowing the location of the contained readings within the School/Building.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyZoneType"></Type>
-	</Item>	
+			<Element>DisembarkBusRouteDetail</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Attribute>SIF_RefObject</Attribute>
+			<Characteristics>M</Characteristics>
+			<Values>
+				<Value>
+					<Code>BusRouteDetail</Code>
+				</Value>
+			</Values>
+		</Item>
 	</CommonElement>
-	
-   	<CommonElement name="EnergyZoneType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyZoneType</Element>
-		<Description>
-			<p>Complex element refining and narrowing the location of the contained readings within the School/Building.</p>
-		</Description>
-	</Item>	
-	<Item>
-		<Element>Type</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Complex type of the facility or location supported by the Energy Zone.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyZoneTypeType"></Type>
-	</Item>
-	<Item>
-		<Element>EnergyZoneName</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Text description of Energy Zone Area to which readings will apply.</p>
-		</Description>
-		<ItemExample>Room 101</ItemExample>
-		<ItemExample>Oven 3</ItemExample>
-		<ItemExample>Steinhart Auditorum</ItemExample>
-		<Type name="xs:string"></Type>
-	</Item>
-	
-	<Item>
-		<Element>TagList</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>List of energy zone identifiers (each consisting of a Name and Value).</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyZoneTagListType"></Type>
-	</Item>
+
+	<CommonElement name="DestinationPointType" type="true" dm="true">  
+		<Item>
+			<Element>DestinationPointType</Element>
+		</Item>
+		<Item>
+			<Attribute>BusRouteDetailRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"/>
+		</Item>
+		<Item>
+			<Element>ArrivalTime</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The time that the bus associated with this route will stop at this bus stop.</p>
+			</Description>
+			<Type name="xs:time"/>
+		</Item>
+		<Item>
+			<Element>RouteNumber</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>A unique identifier for the route. F or instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
+			</Description>
+			<Type name="xs:normalizedString"/>
+		</Item>
+		<Item>
+			<Element>RouteDescription</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Short explanation of the route. It may be used to designate an area, or used to color-code bus routes (the "orange" route).</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>VehicleNumber</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Vehicle number of the bus.</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
+		<Item>
+			<Element>BusStopDescription</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>An explanation of this location.</p>
+			</Description>
+			<Type name="xs:string"/>
+		</Item>
 	</CommonElement>
-	
-   	<CommonElement name="EnergyZoneTagListType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyZoneTagListType</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>List of energy zone identifiers (each consisting of a Name and Value).</p>
-		</Description>
-		<List mode="List"></List>
-	</Item>
-	<Item>
-		<Element>Tag</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>An energy zone identifier. Could include “SensorGroup”, or individual SensorId”, or anything else.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyZoneTagType"></Type>		
-	</Item>
- 	</CommonElement>
-  	<CommonElement name="EnergyZoneTagType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyZoneTagType</Element>
-		<Description>
-			<p>An energy zone identifier. Could include “SensorGroup”, or individual SensorId”, or anything else.</p>
-		</Description>
-	</Item>
- 	<Item>
-		<Element>Name</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Name of the Tag.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-	</Item>
-	<Item>
-		<Element>Value</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Value of the Tag.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-	</Item>	</CommonElement>
-	
-   	<CommonElement name="EnergyZoneTypeType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyZoneTypeType</Element>
-		<Description>
-			<p>Complex type of the facility or location supported by the Energy Zone.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Element>Facility</Element>
-		<Characteristics>C</Characteristics>
-		<Description>Type of educational facility.  Either the faciity type or the description must be provided.</Description>
+
+	<CommonElement name="StudentLEAEntryTypeType" type="true" dm="true">  
+		<Item>
+			<Element>StudentLEAEntryTypeType</Element>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Code indicating the type of entry for this affiliation.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0619EntryTypeType"></Type>
+		</Item>
+		<Item>
+			<Element>OtherCodeList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="OtherCodeListType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentLEAExitTypeType" type="true" dm="true">  
+		<Item>
+			<Element>StudentLEAExitTypeType</Element>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Code indicating the type of exit for this affiliation.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0644ExitWithdrawalTypeType"></Type>
+		</Item>
+		<Item>
+			<Element>OtherCodeList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="OtherCodeListType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="StudentLEAExitStatusType" type="true" dm="true">  
+		<Item>
+			<Element>StudentLEAExitStatusType</Element>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Code indicating the exit status for this affiliation.</p>
+			</Description>
+			<Type ref="ExternalCodeSets" name="NCES0643ExitWithdrawalStatusType"></Type>
+		</Item>
+		<Item>
+			<Element>OtherCodeList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="OtherCodeListType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="EnergyUsageLocationInfoType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyUsageLocationInfoType</Element>
+			<Description>
+				<p>Complex element containing the location of where measurements apply to.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>SchoolId</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>urn:sif:school:xxx.yyy.zzz where xxx.yyy.zzz is a structure that reading left to right starts with the most specific identification (school location) and works rightward to identify the higher levels.</p>
+				<p>e.g., urn:sif:school:AcmeMiddleSchool1.CoyoteDistrict.Arizona.</p>
+			</Description>
+
+			<Type ref="CommonTypes" name="URIOrBinaryType"></Type>
+			<!--<Type ref="DataModel" name="urn"/>-->
+
+		</Item>
+		<Item>
+			<Element>Building</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Name of the School Building.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+		</Item>
+		<Item>
+			<Element>EnergyZone</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Complex element refining and narrowing the location of the contained readings within the School/Building.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyZoneType"></Type>
+		</Item>	
+	</CommonElement>
+
+	<CommonElement name="EnergyZoneType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyZoneType</Element>
+			<Description>
+				<p>Complex element refining and narrowing the location of the contained readings within the School/Building.</p>
+			</Description>
+		</Item>	
+		<Item>
+			<Element>Type</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Complex type of the facility or location supported by the Energy Zone.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyZoneTypeType"></Type>
+		</Item>
+		<Item>
+			<Element>EnergyZoneName</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Text description of Energy Zone Area to which readings will apply.</p>
+			</Description>
+			<ItemExample>Room 101</ItemExample>
+			<ItemExample>Oven 3</ItemExample>
+			<ItemExample>Steinhart Auditorum</ItemExample>
+			<Type name="xs:string"></Type>
+		</Item>
+
+		<Item>
+			<Element>TagList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>List of energy zone identifiers (each consisting of a Name and Value).</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyZoneTagListType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="EnergyZoneTagListType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyZoneTagListType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>List of energy zone identifiers (each consisting of a Name and Value).</p>
+			</Description>
+			<List mode="List"></List>
+		</Item>
+		<Item>
+			<Element>Tag</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>An energy zone identifier. Could include “SensorGroup”, or individual SensorId”, or anything else.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyZoneTagType"></Type>		
+		</Item>
+	</CommonElement>
+	<CommonElement name="EnergyZoneTagType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyZoneTagType</Element>
+			<Description>
+				<p>An energy zone identifier. Could include “SensorGroup”, or individual SensorId”, or anything else.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Name of the Tag.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+		</Item>
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Value of the Tag.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+		</Item>	</CommonElement>
+
+	<CommonElement name="EnergyZoneTypeType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyZoneTypeType</Element>
+			<Description>
+				<p>Complex type of the facility or location supported by the Energy Zone.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Facility</Element>
+			<Characteristics>C</Characteristics>
+			<Description>Type of educational facility.  Either the faciity type or the description must be provided.</Description>
 			<Values>
 				<Value>
 					<Code>Classroom</Code>
@@ -6722,88 +6722,88 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<Value>
 					<Code>Other</Code>
 				</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>Description</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Description of type of educational facility.  Either the faciity type or the description must be provided.</p>
-			<p>Used when location type is not covered by prefixed values in enumerated facility type list.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-	</Item>
+			</Values>
+		</Item>
+		<Item>
+			<Element>Description</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>Description of type of educational facility.  Either the faciity type or the description must be provided.</p>
+				<p>Used when location type is not covered by prefixed values in enumerated facility type list.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+		</Item>
 
-</CommonElement>
+	</CommonElement>
 
-   	<CommonElement name="EnergyUsageDataSourceType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyUsageDataSourceType</Element>
-		<Description>
-			<p>The description of the source of the measurements.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyUsageDataSourceType"></Type>
-	</Item>
-	<Item>
-		<Element>System</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Identifier of the reporting system.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-	</Item>
-	<Item>
-		<Element>StartTime</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Start time of measurements that follow.</p>
-		</Description>
-		<Type name="xs:dateTime"></Type>
-	</Item>
-	
-	
-	<Item>
-		<Element>ReadingDataList</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>List of ReadingData.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyUsageDataSourceReadingDataListType"></Type>
-	</Item>
+	<CommonElement name="EnergyUsageDataSourceType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyUsageDataSourceType</Element>
+			<Description>
+				<p>The description of the source of the measurements.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyUsageDataSourceType"></Type>
+		</Item>
+		<Item>
+			<Element>System</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Identifier of the reporting system.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+		</Item>
+		<Item>
+			<Element>StartTime</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Start time of measurements that follow.</p>
+			</Description>
+			<Type name="xs:dateTime"></Type>
+		</Item>
+
+
+		<Item>
+			<Element>ReadingDataList</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>List of ReadingData.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyUsageDataSourceReadingDataListType"></Type>
+		</Item>
 	</CommonElement>
-   	<CommonElement name="EnergyUsageDataSourceReadingDataListType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyUsageDataSourceReadingDataListType</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>List of ReadingData.</p>
-		</Description>
-		<List mode="List"></List>
-	</Item>
-	<Item>
-		<Element>ReadingData</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>Complex element defining a set of parameters that apply to all the actual readings that follow.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyUsageDataSourceReadingDataType"></Type>
-	</Item>
+	<CommonElement name="EnergyUsageDataSourceReadingDataListType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyUsageDataSourceReadingDataListType</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>List of ReadingData.</p>
+			</Description>
+			<List mode="List"></List>
+		</Item>
+		<Item>
+			<Element>ReadingData</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Complex element defining a set of parameters that apply to all the actual readings that follow.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyUsageDataSourceReadingDataType"></Type>
+		</Item>
 	</CommonElement>
-	
-   	<CommonElement name="EnergyUsageDataSourceReadingDataType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyUsageDataSourceReadingDataType</Element>
-		<Description>
-			<p>Complex element defining a set of parameters that apply to all the actual readings that follow.</p>
-		</Description>
-	</Item>
-	<Item>
-		<Element>Measurement</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Measurement type.</p>
-		</Description>
-		<Values>
+
+	<CommonElement name="EnergyUsageDataSourceReadingDataType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyUsageDataSourceReadingDataType</Element>
+			<Description>
+				<p>Complex element defining a set of parameters that apply to all the actual readings that follow.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Measurement</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Measurement type.</p>
+			</Description>
+			<Values>
 				<Value>
 					<Code>Gas</Code>
 				</Value>
@@ -6822,37 +6822,37 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<Value>
 					<Code>Other</Code>
 				</Value>
-		</Values>		
-	</Item>
-		
-	
-	<Item>
-		<Element>SensorId</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Identification of internal meter or data source.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-		
-	</Item>
-	
-	<Item>
-		<Element>Interval</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Time in seconds between Measurements.</p>
-		</Description>
-		<Type name="xs:unsignedInt"></Type>
-		
-	</Item>
-	
-<Item>
-		<Element>EnergyUnits</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>One of enumerated list of unit types for energy readings (temperature, electrical energy usage, gas usage and the price for both). </p>
-		</Description>
-		<Values>
+			</Values>		
+		</Item>
+
+
+		<Item>
+			<Element>SensorId</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Identification of internal meter or data source.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+
+		</Item>
+
+		<Item>
+			<Element>Interval</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Time in seconds between Measurements.</p>
+			</Description>
+			<Type name="xs:unsignedInt"></Type>
+
+		</Item>
+
+		<Item>
+			<Element>EnergyUnits</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>One of enumerated list of unit types for energy readings (temperature, electrical energy usage, gas usage and the price for both). </p>
+			</Description>
+			<Values>
 				<Value>
 					<Code>DegreeCentigrade</Code>
 				</Value>
@@ -6871,52 +6871,694 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<Value>
 					<Code>Other</Code>
 				</Value>
-		</Values>		
-		
-	</Item>
-	<Item>
-		<Element>ReadingName</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Description of collection of readings.</p>
-		</Description>
-		<Type name="xs:string"></Type>
-		
-	</Item>
-	<Item>
-		<Element>ReadingList</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Collection of reported data readings, in time order.</p>
-		</Description>
-		<Type ref="CommonTypes" name="EnergyUsageDataReadingListType"></Type>
-			
-	</Item>
+			</Values>		
+
+		</Item>
+		<Item>
+			<Element>ReadingName</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Description of collection of readings.</p>
+			</Description>
+			<Type name="xs:string"></Type>
+
+		</Item>
+		<Item>
+			<Element>ReadingList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Collection of reported data readings, in time order.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EnergyUsageDataReadingListType"></Type>
+
+		</Item>
 	</CommonElement>
-   	<CommonElement name="EnergyUsageDataReadingListType" type="true" dm="true">  
-	<Item>
-		<Element>EnergyUsageDataReadingListType</Element>
-		<Description>
-			<p>Collection of reported data readings, in time order.</p>
-		</Description>			
-	</Item>
-	<Item>
-		<Element>Reading</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Values for the energy readings for each interval.</p>
-		</Description>
-		<Type name="xs:decimal"></Type>
+	<CommonElement name="EnergyUsageDataReadingListType" type="true" dm="true">  
+		<Item>
+			<Element>EnergyUsageDataReadingListType</Element>
+			<Description>
+				<p>Collection of reported data readings, in time order.</p>
+			</Description>			
+		</Item>
+		<Item>
+			<Element>Reading</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Values for the energy readings for each interval.</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+
+		</Item>
+		<Item>
+			<Attribute>IntervalIndex</Attribute>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Interval number when reading was taken.</p>
+			</Description>
+			<Type name="xs:unsignedInt"></Type>
+
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="FoodserviceItemQuantityListType" type="true" dm="true">  
+		<Item>
+			<Element>FoodserviceItemQuantityListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>ItemQuantity</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Quantity of item amounts sold</p>
+			</Description>
+			<Type ref="CommonTypes" name="FoodserviceItemQuantityType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="FoodserviceItemQuantityType" type="true" dm="true">  
+		<Item>
+			<Element>FoodserviceItemQuantityType</Element>
+			<Description>
+				<p>Quantity of item amounts sold</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>FoodserviceItemPortionRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>GUID of FoodserviceItemPortion object</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The value of item quantity</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+		</Item>
+		<Item>
+			<Element>MealType</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MealType"></Type>
+		</Item>
+		<Item>
+			<Element>GradeLevels</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="GradeLevelsType"></Type>
+		</Item>
+		<Item>
+			<Element>Cost</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The cost (monetary value) of the item sold.</p>
+			</Description>
+			<Type ref="CommonTypes" name="MonetaryAmountType"/>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MealPriceListType" type="true" dm="true">  
+		<Item>
+			<Element>MealPriceListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>Price</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Price of the meal</p>
+			</Description>
+			<Type ref="CommonTypes" name="MealPriceType"/>
+		</Item>
+	</CommonElement>
+	<CommonElement name="MealPriceType" type="true" dm="true">  
+		<Item>
+			<Element>MealPriceType</Element>
+			<Description>
+				<p>Price of the meal</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The price value</p>
+			</Description>
+			<Type ref="CommonTypes" name="MonetaryAmountType"/>
+		</Item>
+		<Item>
+			<Element>MealStatus</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MealStatusType"></Type>
+		</Item>
+		<Item>
+			<Element>MealType</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MealType"></Type>
+		</Item>
+		<Item>
+			<Element>GradeLevels</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="GradeLevelsType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MenuPlanQuantityListType" type="true" dm="true">  
+		<Item>
+			<Element>MenuPlanQuantities</Element>
+			<Characteristics>M</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>MenuPlanQuantity</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Quantity of item in this menu plan</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+		</Item>
+		<Item>
+			<Attribute>FoodserviceItemPortionRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Item portion amount</p>
+			</Description>
+			<Type ref="CommonTypes" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Attribute>MenuCategory</Attribute>
+			<Characteristics>M</Characteristics>
+			<Values>
+				<Value>
+					<Code>ActualMeal</Code>
+				</Value>
+				<Value>
+					<Code>ProjectedMeal</Code>
+				</Value>
+				<Value>
+					<Code>ActualAlaCarte</Code>
+				</Value>
+				<Value>
+					<Code>ProjectedAlaCarte</Code>
+				</Value>
+				<Value>
+					<Code>Produced</Code>
+				</Value>
+				<Value>
+					<Code>LeftOver</Code>
+				</Value>
+				<Value>
+					<Code>Wasted</Code>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MilkSaleQuantityListType" type="true" dm="true">  
+		<Item>
+			<Element>MilkSaleQuantityListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>SaleQuantity</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Quantity of sale</p>
+			</Description>
+			<Type ref="CommonTypes" name="MilkSaleQuantityType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="MilkSaleQuantityType" type="true" dm="true">  
+		<Item>
+			<Element>MilkSaleQuantityType</Element>
+			<Description>
+				<p>Quantity of sale</p>
+			</Description>
+		</Item> 
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The quantity sold.</p>
+			</Description>
+			<Type name="xs:decimal"/>
+		</Item>
+		<Item>
+			<Element>MealStatus</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MealStatusType"></Type>
+		</Item>
+		<Item>
+			<Element>SaleUnit</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Unit of Sale</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>ChargeToChild</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Charge to child per unit</p>
+			</Description>
+			<Type ref="CommonTypes" name="MonetaryAmountType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="FoodservicePurchaseQuantityListType" type="true" dm="true">  
+		<Item>
+			<Element>FoodservicePurchaseQuantityListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>PurchaseQuantity</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Quantity of the item being purchased</p>
+			</Description>
+			<Type ref="CommonTypes" name="FoodservicePurchaseQuantityType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="FoodservicePurchaseQuantityType" type="true" dm="true">  
+		<Item>
+			<Element>FoodservicePurchaseQuantityType</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Quantity of the item being purchased</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>FoodserviceItemPortionRefId</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Foodservice Item Portion</p>
+			</Description>
+			<Type ref="CommonTypes" relationship="records portion purchased in" count="*:1" name="IdRefType"></Type>
+		</Item>
+		<Item>
+			<Attribute>Earned</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Identifies whether the item being purchased is earned i.e., at no cost to the buyer. It is used when  FoodserviceTransaction object's TransactionType element has the value "Purchase".</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Yes</Code>
+				</Value>
+				<Value>
+					<Code>No</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>MealType</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MealType"></Type>
+		</Item>
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The value of quantity</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="FoodserviceReimbursementAgencyListType" type="true" dm="true">  
+		<Item>
+			<Element>FoodserviceReimbursementAgencyListType</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>List of reimbursing agencies.</p>
+			</Description>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>Agency</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Reimbursing agency</p>
+			</Description>
+			<Type ref="CommonTypes" name="FoodserviceReimbursementAgencyType"></Type>
+		</Item>
+	</CommonElement>
+
+	<CommonElement name="FoodserviceReimbursementAgencyType" type="true" dm="true">  
+		<Item>
+			<Element>FoodserviceReimbursementAgencyType</Element>
+			<Description>
+				<p>Reimbursing agency</p>
+			</Description>
+		</Item>
+		<Item>
+			<Attribute>Type</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Type of the reimbursing agency.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Federal</Code>
+				</Value>
+				<Value>
+					<Code>State</Code>
+				</Value>
+				<Value>
+					<Code>Local</Code>
+				</Value>
+				<Value>
+					<Code>Other</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>Name</Element>
+			<Characteristics>C</Characteristics>
+			<Description>
+				<p>
+        The name of the reimbursing agency. This element is to be used when the Type is set as <code>Other</code>.
+				</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>Rates</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="FoodserviceReimbursementAgencyRateListType"></Type>
+		</Item>
+	</CommonElement>
+	<CommonElement name="FoodserviceReimbursementAgencyRateListType" type="true" dm="true">  
+		<Item>
+			<Element>FoodserviceReimbursementAgencyRateListType</Element>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>Rate</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Reimbursement rate of the meal</p>
+			</Description>
+			<Type ref="CommonTypes" name="FoodserviceReimbursementAgencyRateType"></Type>
+		</Item>
 		
-	</Item>
-	<Item>
-		<Attribute>IntervalIndex</Attribute>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>Interval number when reading was taken.</p>
-		</Description>
-		<Type name="xs:unsignedInt"></Type>
+	</CommonElement>
+	<CommonElement name="FoodserviceReimbursementAgencyRateType" type="true" dm="true">  
 		
-	</Item>
+			<Item>
+				<Element>FoodserviceReimbursementAgencyRateType</Element>
+				<Description>
+					<p>Reimbursement rate of the meal</p>
+				</Description>
+			</Item>
+			<Item>
+			<Attribute>SevereNeed</Attribute>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>
+        Severe need identifier for the rate. When SevereNeed is <code>Yes</code> then the rate shown is the combined rate.
+        For certain programs the severe need identifier does not apply.  In such cases the value <code>NA</code> should
+        be used.
+				</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Yes</Code>
+				</Value>
+				<Value>
+					<Code>No</Code>
+				</Value>
+				<Value>
+					<Code>NA</Code>
+				</Value>
+			</Values>
+		</Item>
+		<Item>
+			<Element>Value</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The rate value</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+		</Item>
+		<Item>
+			<Element>MealStatus</Element>
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="MealStatusType"></Type>
+		</Item>
 	</CommonElement>
 	
+	<CommonElement name="FoodserviceSalesAmountListType" type="true" dm="true">  
+	 <Item>
+    <Element>SalesAmounts</Element>
+    <Characteristics>M</Characteristics>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>SalesAmount</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Monetary value</p>
+      <p>(count * cost per unit) done for all grade levels</p>
+    </Description>
+    <Type ref="CommonTypes" name="MonetaryAmountType"/>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Type of SalesAmount. This denotes the form of incoming funds for the sales done.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Cash</Code>
+      </Value>
+      <Value>
+        <Code>Account</Code>
+      </Value>
+      <Value>
+        <Code>Charged</Code>
+      </Value>
+      <Value>
+        <Code>Earned</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Attribute>AccountType</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Type of account to which sales amounts apply.  This is set to <code>NA</code> when <code>Type</code> is set as <code>Earned</code>.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>PrepaidCash</Code>
+      </Value>
+      <Value>
+        <Code>BreakfastCredit</Code>
+      </Value>
+      <Value>
+        <Code>LunchCredit</Code>
+      </Value>
+      <Value>
+        <Code>NA</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+	<CommonElement name="FSCountListType" type="true" dm="true">  
+    <Item>
+    <Element>FSCountListType</Element>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>Count</Element>
+    <Characteristics>MR</Characteristics>
+    <Type ref="CommonTypes" name="FSCountType"></Type>
+  </Item>
+</CommonElement>
+
+
+	<CommonElement name="FSAmountListType" type="true" dm="true">  
+  <Item>
+    <Element>FSAmountListType</Element>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>Amount</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>This amount refers to the funds being directed inwards to/outwards from the customer's account. That is: these amounts reflect the changes to the account balances.</p>
+    </Description>
+    <Type ref="CommonTypes" name="FSAmountType"></Type>
+  </Item>
+</CommonElement>
+
+	<CommonElement name="FoodserviceTransactionListType" type="true" dm="true">  
+  <Item>
+    <Element>FoodserviceTransactionListType</Element>
+    <Characteristics>M</Characteristics>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>TransactionType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Type of transaction</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Purchase</Code>
+      </Value>
+      <Value>
+        <Code>Prepayment</Code>
+      </Value>
+      <Value>
+        <Code>Refund</Code>
+      </Value>
+      <Value>
+        <Code>Repayment</Code>
+      </Value>
+      <Value>
+        <Code>Adjustment</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+ 	<CommonElement name="FoodserviceCustomerType" type="true" dm="true">  
+   <Item>
+    <Element>FoodserviceCustomerType</Element>
+    <Description>
+      <p>The customer can be a student or staff.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The GUID of the customer doing the transaction. </p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>SIF customer type.</p>
+      <p>
+        If <code>StaffPersonal</code>, then <code>EarnedStatus</code> is included.
+        If <code>StudentPersonal</code>, then <code>MealStatus</code> is included.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>StudentPersonal</Code>
+      </Value>
+      <Value>
+        <Code>StaffPersonal</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Choice optional="true">
+    <Item>
+      <Element>MealStatus</Element>
+      <Characteristics>C</Characteristics>
+      <Type ref="CommonTypes" name="MealStatusType"></Type>
+    </Item>
+    <Item>
+      <Element>EarnedStatus</Element>
+      <Characteristics>C</Characteristics>
+      <Type ref="CommonTypes" name="EarnedStatusType"></Type>
+    </Item>
+  </Choice>
+  </CommonElement>
+  
+ 	<CommonElement name="FoodserviceTransactionPayMethodListType" type="true" dm="true">  
+    <Item>
+    <Element>FoodserviceTransactionPayMethodListType</Element>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>TransactionPayMethod</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>Transaction method.</p>
+    </Description>
+       <Type ref="CommonTypes" name="FoodserviceTransactionPayMethodType"></Type>
+ </Item>
+ </CommonElement>
+ 	<CommonElement name="FoodserviceTransactionPayMethodType" type="true" dm="true">  
+ <Item>
+    <Element>FoodserviceTransactionPayMethodType</Element>
+    <Description>
+      <p>Transaction method.</p>
+    </Description>
+ </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This refers to the way the payment was made.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Payment</Code>
+      </Value>
+      <Value>
+        <Code>Refund</Code>
+      </Value>
+      <Value>
+        <Code>Charge</Code>
+      </Value>
+      <Value>
+        <Code>Usage</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>Amounts</Element>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="FSAmountListType"></Type>
+  </Item>
+  </CommonElement>
+  
+ 	<CommonElement name="MealStatusListType" type="true" dm="true">  
+  <Item>
+    <Element>MealStatusListType</Element>
+    <Description>
+      <p>
+        List of meal status.
+      </p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>MealStatus</Element>
+    <Characteristics>MR</Characteristics>
+    <Type ref="CommonTypes" name="MealStatusType"></Type>
+    <Description>
+      <p>
+        The student's meal status.  
+      </p>
+    </Description>
+  </Item>
+  </CommonElement>

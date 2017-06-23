@@ -29,16 +29,7 @@
   <Item>
     <Element>Amounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>This amount refers to the funds being directed inwards to/outwards from the customer's account. That is: these amounts reflect the changes to the account balances.</p>
-    </Description>
-    <Type ref="CommonTypes" name="FSAmountType"></Type>
+    <Type ref="CommonTypes" name="FSAmountListType"></Type>
   </Item>
   <Item>
     <Element>Description</Element>
@@ -51,12 +42,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceTransactionDetails RefId="E50EE86118004F238D21B86E70B5B4AA">

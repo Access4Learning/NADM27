@@ -26,53 +26,22 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="FundedProgramtype"></Type>
   </Item>
   <Item>
     <Element>Prices</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Price</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Price of the meal</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//Value</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The price value</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"/>
-  </Item>
-  <Item>
-    <Element>//MealStatus</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="MealStatus"></Type>
-  </Item>
-  <Item>
-    <Element>//MealType</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="MealType"></Type>
-  </Item>
-  <Item>
-    <Element>//GradeLevels</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="MealPriceListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceMealPrices RefId="EF521958AB474559B2AE7BD82647C66B">

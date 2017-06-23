@@ -26,7 +26,7 @@
   <Item>
     <Element>GradeLevels</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>MenuPlanDate</Element>
@@ -39,7 +39,7 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>Description</Element>
@@ -60,61 +60,18 @@
   <Item>
     <Element>MenuPlanQuantities</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="MenuPlanQuantityListType"></Type>
   </Item>
-  <Item>
-    <Element>/MenuPlanQuantity</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Quantity of item in this menu plan</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Attribute>FoodserviceItemPortionRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Item portion amount</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>MenuCategory</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>ActualMeal</Code>
-      </Value>
-      <Value>
-        <Code>ProjectedMeal</Code>
-      </Value>
-      <Value>
-        <Code>ActualAlaCarte</Code>
-      </Value>
-      <Value>
-        <Code>ProjectedAlaCarte</Code>
-      </Value>
-      <Value>
-        <Code>Produced</Code>
-      </Value>
-      <Value>
-        <Code>LeftOver</Code>
-      </Value>
-      <Value>
-        <Code>Wasted</Code>
-      </Value>
-    </Values>
-  </Item>
+ 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

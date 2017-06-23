@@ -33,7 +33,7 @@
   <Item>
     <Element>MealStatus</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="MealStatus"></Type>
+    <Type ref="CommonTypes" name="MealStatusType"></Type>
     <Description>
       <p>The student's current meal status.</p>
     </Description>
@@ -43,25 +43,14 @@
     <Characteristics>O</Characteristics>
     <Description>
       <p>
-        Optionally provides the meal status of the student historically.
-      </p>
-    </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/MealStatus</Element>
-    <Characteristics>MR</Characteristics>
-    <Type ref="DataModel" name="MealStatus"></Type>
-    <Description>
-      <p>
-        The student's meal status.  Note that as this status is historical, <code>StartDate</code> and <code>EndDate</code> together,
+        Optionally provides the meal status of the student historically. Note that as this status is historical, <code>StartDate</code> and <code>EndDate</code> together,
         and/or <code>SchoolYear</code>&#160;<span class="rfc2119">MUST</span> be included.  If <code>SchoolYear</code> is included,
         <code>StartDate</code> and <code>EndDate</code> should not cross school year boundaries, i.e. in addition to multiple
         statuses being a possibility in a given school year, the same status may be repeated so <code>StartDate</code> and <code>EndDate</code> don't
         disagree with <code>SchoolYear</code>, if included.
       </p>
     </Description>
+     <Type ref="CommonTypes" name="MealStatusListType"></Type>
   </Item>
   <Item>
     <Element>LastBreakfastDate</Element>
@@ -82,23 +71,17 @@
   <Item>
     <Element>Amounts</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Type ref="CommonTypes" name="FSAmountType"></Type>
+     <Type ref="CommonTypes" name="FSAmountListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <StudentMeal RefId="C4E34B359D75101A8C3D00AA001A1792" StudentPersonalRefId="D3E34B359D75101A8C3D00AA001A1652">

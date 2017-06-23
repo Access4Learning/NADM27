@@ -31,7 +31,7 @@
 	<Item>
 		<Element>EarnedStatus</Element>
 		<Characteristics>M</Characteristics>
-		<Type ref="DataModel" name="EarnedStatus"/>
+		<Type ref="CommonTypes" name="EarnedStatusType"/>
 	</Item>
 	<Item>
 		<Element>LastBreakfastDate</Element>
@@ -52,23 +52,17 @@
 	<Item>
 		<Element>Amounts</Element>
 		<Characteristics>M</Characteristics>
-		<List mode="List">
-    </List>
-	</Item>
-	<Item>
-		<Element>/Amount</Element>
-		<Characteristics>MR</Characteristics>
-		<Type ref="CommonTypes" name="FSAmountType"/>
+		<Type ref="CommonTypes" name="FSAmountListType"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<StaffMeal RefId="359D75101AD0A9D7A8C3DAD0A85103A2" StaffPersonalRefId="A9E34B359F44D51A8C3D00AA001A1652">
