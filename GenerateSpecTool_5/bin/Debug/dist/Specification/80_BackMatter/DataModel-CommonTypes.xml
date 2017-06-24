@@ -5615,11 +5615,23 @@
 			<Description>
 				<p>Contains information about a specific required piece of software.</p>
 			</Description>
+			<Type ref="CommonTypes" name="SoftwareRequirementType"></Type>
+		</Item>
+
+		
+	</CommonElement>
+	<CommonElement name="SoftwareRequirementType" type="true">
+		<Item>
+			<Element>SoftwareRequirementType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Contains information about a specific required piece of software.</p>
+			</Description>
 
 		</Item>
 
 		<Item>
-			<Element>/SoftwareTitle</Element>
+			<Element>SoftwareTitle</Element>
 			<Characteristics>M</Characteristics>
 			<Description>
 				<p>This is the title of the specific software.  This does not include the vendor.  For example, Flash not Adobe.</p>
@@ -5628,7 +5640,7 @@
 		</Item>
 
 		<Item>
-			<Element>/Version</Element>
+			<Element>Version</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>This includes the version of the specific software.</p>
@@ -5638,7 +5650,7 @@
 
 
 		<Item>
-			<Element>/Vendor</Element>
+			<Element>Vendor</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>This is the vendor of the specific software.  For example, Adobe.</p>
@@ -5647,14 +5659,14 @@
 		</Item>
 
 		<Item>
-			<Element>/OS</Element>
+			<Element>OS</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>This is the operating system and version.  For example, Macintosh OS X 1.4.</p>
 			</Description>
 			<Type name='xs:string'/>
 		</Item>
-	</CommonElement>
+  </CommonElement>
 
 	<CommonElement name="ExtendedParametersType" type="true">
 		<Intro>
@@ -5674,10 +5686,21 @@
 			<Description>
 				<p>An arbitrary parameter with a string name and value</p>
 			</Description>
+			<Type ref="CommonTypes" name="ExtendedParameterType"></Type>
+		</Item>
+
+	</CommonElement>
+	<CommonElement name="ExtendedParameterType" type="true">
+		<Item>
+			<Element>ExtendedParameterType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>An arbitrary parameter with a string name and value</p>
+			</Description>
 		</Item>
 
 		<Item>
-			<Element>/SIF_Name</Element>
+			<Element>SIF_Name</Element>
 			<Characteristics>M</Characteristics>
 			<Description>
 				<p>The name of the parameter</p>
@@ -5686,16 +5709,15 @@
 		</Item>
 
 		<Item>
-			<Element>/SIF_Value</Element>
+			<Element>SIF_Value</Element>
 			<Characteristics>M</Characteristics>
 			<Description>
 				<p>The value of the parameter	</p>
 			</Description>
 			<Type name='xs:normalizedString'/>
 		</Item>
-
-
-	</CommonElement>
+		
+		</CommonElement>
 
 	<!--<CommonElement name="StudentRecordExchangeDataListType" type="true">
 		<Intro>
@@ -5864,6 +5886,32 @@
     <Description>
       <p>A name/value pair, the name being contained in the Name attribute, the value being the element content.</p>
     </Description>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementType"></Type>
+  </Item>
+  
+  <xhtml:Example xmlns="">
+    <SIF_ExtendedElements>
+      <SIF_ExtendedElement Name="ApplicationSubmissionStatus">4</SIF_ExtendedElement>
+      <SIF_ExtendedElement Name="DynamicXml">
+        <Parent xmlns="http://myapplication.com">
+          <Child n='1'>one</Child>
+          <Child n='2'/>
+          <Child n='3'>three</Child>
+        </Parent>
+      </SIF_ExtendedElement>
+      <SIF_ExtendedElement Name="Note" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        <xhtml:strong>Double</xhtml:strong>-check submission status.
+      </SIF_ExtendedElement>
+    </SIF_ExtendedElements>
+  </xhtml:Example>
+</CommonElement>
+<CommonElement name="SIF_ExtendedElementType"  type="true">
+  <Item>
+    <Element>SIF_ExtendedElementType</Element>
+    <Characteristics>OR</Characteristics>
+    <Description>
+      <p>A name/value pair, the name being contained in the Name attribute, the value being the element content.</p>
+    </Description>
     <Type ref="CommonTypes" complex="extension" name="ExtendedContentType"></Type>
   </Item>
   <Item>
@@ -5895,23 +5943,7 @@
       </Value>
     </Values>
   </Item>
-  <xhtml:Example xmlns="">
-    <SIF_ExtendedElements>
-      <SIF_ExtendedElement Name="ApplicationSubmissionStatus">4</SIF_ExtendedElement>
-      <SIF_ExtendedElement Name="DynamicXml">
-        <Parent xmlns="http://myapplication.com">
-          <Child n='1'>one</Child>
-          <Child n='2'/>
-          <Child n='3'>three</Child>
-        </Parent>
-      </SIF_ExtendedElement>
-      <SIF_ExtendedElement Name="Note" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-        <xhtml:strong>Double</xhtml:strong>-check submission status.
-      </SIF_ExtendedElement>
-    </SIF_ExtendedElements>
-  </xhtml:Example>
-</CommonElement>
-
+  </CommonElement>
 
 
 
