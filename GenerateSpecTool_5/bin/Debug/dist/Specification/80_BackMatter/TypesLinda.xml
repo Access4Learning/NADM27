@@ -1331,7 +1331,7 @@
     <Element>StaffPersonalRefId</Element>
     <Characteristics>MR</Characteristics>
     <Description>
-      <p>GUID that identifies the staff person assigned to this room (e.g. the homeroom teacher).</p>
+      <p>GUID that identifies the staff person.</p>
     </Description>
     <Type ref="CommonTypes" name="IdRefType"></Type>
   </Item>
@@ -1758,5 +1758,320 @@
 		<Element>OtherCodeList</Element>
 		<Characteristics>O</Characteristics>
 		<Type ref="CommonTypes" name="OtherCodeListType"/>
+	</Item>
+	</CommonElement>
+	
+	 <CommonElement name="CorrelationTypeType" type="true" dm="true">   
+		<Item>
+		<Element>CorrelationTypeType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The type of correlation.</p>
+		</Description>
+	</Item>	
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The code for the type of correlation.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>c</Code>
+				<Description>career technical</Description>
+			</Value>
+			<Value>
+				<Code>t</Code>
+				<Description>teaching teams</Description>
+			</Value>
+			<Value>
+				<Code>o</Code>
+				<Description>other</Description>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeListType"/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="CorrelationSectionListType" type="true" dm="true">   
+		<Item>
+		<Element>CorrelationSectionListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>The list of SectionInfo objects being correlated.</Description>
+		<List mode="List"></List>
+	</Item>
+	<Item>
+		<Element>CorrelationSection</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Reference to a SectionInfo object to be correlated.</p>
+		</Description>
+		<Type ref="CommonTypes" name="CorrelationSectionType"/>
+	</Item>
+</CommonElement>
+
+<CommonElement name="CorrelationSectionType" type="true" dm="true">   
+	<Item>
+		<Element>CorrelationSectionType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>Reference to a SectionInfo object to be correlated.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	<Item>
+		<Attribute>Primary</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>Indicate whether a SectionInfo is primary.  Only one SectionInfo in the CorrelationSectionList can be primary.</Description>
+		<Values>
+			<Value>
+				<Code>yes</Code>
+			</Value>
+			<Value>
+				<Code>no</Code>
+			</Value>
+		</Values>
+	</Item>
+</CommonElement>	
+<CommonElement name="ScheduleInfoListType" type="true" dm="true">   
+	<Item>
+		<Element>ScheduleInfoListType</Element>
+		<Characteristics>M</Characteristics>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>ScheduleInfo</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>The schedule-related information for a section repeating for each term in which the section is scheduled. The TermInfoRefId attribute value should repeat as necessary to show the appropriate relationship between meeting times, teachers and rooms. </p>
+		</Description>
+		<Type ref="CommonTypes" name="ScheduleInfoType"/>
+	</Item>
+</CommonElement>	
+<CommonElement name="ScheduleInfoType" type="true" dm="true"> 
+<Item>
+		<Element>ScheduleInfoType</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>The schedule-related information for a section repeating for each term in which the section is scheduled. The TermInfoRefId attribute value should repeat as necessary to show the appropriate relationship between meeting times, teachers and rooms. </p>
+		</Description>
+	</Item>  
+	<Item>
+		<Attribute>TermInfoRefId</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The Id (GUID) of the term to which this schedule information relates.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	<Item>
+		<Element>TeacherList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="StaffListType"></Type>
+    </Item>
+ 
+	<Item>
+		<Element>SectionRoomList</Element>
+		<Characteristics>O</Characteristics>
+	    <Type ref="CommonTypes" name="RoomListType"></Type>
+	</Item>
+	
+	<Item>
+		<Element>MeetingTimeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="MeetingTimeListType"></Type>
+	</Item>
+	 
+	</CommonElement>
+	
+	<CommonElement name="RoomListType" type="true" dm="true"> 
+		<Item>
+			<Element>RoomListType</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+		<Element>RoomInfoRefId</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>The Id (GUID) of the room in which this section is taught.</p>
+		</Description>
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>
+	</CommonElement>
+	
+    <CommonElement name="MeetingTimeListType" type="true" dm="true"> 
+		<Item>
+			<Element>MeetingTimeListType</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>MeetingTime</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+			<p>Time(s) this section meets.
+      
+			 <br/>
+				<br/>Note:  If the reference to BellSchedule below (BellScheduleRefId) exists in this object, then the TimetableDayList/TimetableDay/Identifier value and the  TimetablePeriodList/TimetablePeriod/Identifier value in the BellSchedule object <span class="rfc2119">MUST</span> exactly match, respectively, the MeetingTime/TimetableDay and MeetingTime/TimetablePeriod values in this object. 
+      </p>
+			</Description>
+			<Type ref="CommonTypes" name="MeetingTimeType"/>
+		</Item>
+		
+</CommonElement>	
+<CommonElement name="MediumOfInstructionType" type="true" dm="true"> 
+	<Item>
+		<Element>MediumOfInstructionType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Medium through which the student receives instructional communication from the teacher.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code representing the medium of instruction.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NCES0209MediumOfInstructionType"/>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeList"/>
+	</Item>	
+	</CommonElement>
+	<CommonElement name="LanguageOfInstructionType" type="true" dm="true"> 
+		<Item>
+		<Element>LanguageOfInstructionType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Language in which the section is taught.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Code representing the language of instruction.</p>
+		</Description>
+		<Type ref="ExternalCodeSets" name="NISOZ3953LanguageCodesType"/>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeListType"/>
+	</Item>
+	</CommonElement>
+	
+	<CommonElement name="LocationOfInstructionType" type="true" dm="true"> 
+	<Item>
+		<Element>LocationOfInstructionType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Description of the location in which the section is taught.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>Code</Element>
+		<Characteristics>M</Characteristics>
+		<Type ref="ExternalCodeSets" name="NCES0171ReceivingLocationOfInstructionServiceType"/>
+		<Description>
+			<p>Code representing the location of instruction.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Element>OtherCodeList</Element>
+		<Characteristics>O</Characteristics>
+		<Type ref="CommonTypes" name="OtherCodeListType"/>
+	</Item>
+	</CommonElement>
+	
+	<CommonElement name="SchoolCourseInfoOverrideType" type="true" dm="true"> 
+		<Item>
+		<Element>SchoolCourseInfoOverrideType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Optional overrides of the course information for this section.</p>
+		</Description>
+	</Item>
+	<Item>
+		<Attribute>Override</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Designates whether or not SchoolCourseInfo information has been overridden with different values for this section.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Yes</Code>
+			</Value>
+			<Value>
+				<Code>No</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>CourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the school-defined course code for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="CourseCodeType"/>
+	</Item>
+	<Item>
+		<Element>StateCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the state-defined course code for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="StateCourseCodeType"/>
+	</Item>
+	<Item>
+		<Element>DistrictCourseCode</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the district course code for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="DistrictCourseCodeType"/>
+	</Item>
+	<Item>
+		<Element>SubjectArea</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the subject matter area for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="SubjectAreaType"/>
+	</Item>
+	<Item>
+		<Element>CourseTitle</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the course title for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="CourseTitleType"/>
+	</Item>
+	<Item>
+		<Element>InstructionalLevel</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the instructional level for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="InstructionalLevelType"/>
+	</Item>
+	<Item>
+		<Element>CourseCredits</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>Override of the course credits for this section.</p>
+		</Description>
+		<Type ref="CommonTypes" name="CourseCreditsType"/>
 	</Item>
 	</CommonElement>
