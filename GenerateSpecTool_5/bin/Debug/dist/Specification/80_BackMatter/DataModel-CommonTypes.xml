@@ -787,108 +787,33 @@
 		</Item>
 		<Choice>
 
-			<Item>
+		    <Item>
 				<Element>XMLData</Element>
 				<Characteristics>C</Characteristics>
-				<Type>
-					<xs:any processContents="lax"/>
-				</Type>
 				<Description>
 					<p>Contains an arbitary XML element, encoded in UTF-8.</p>
 				</Description>
+				<Type ref='CommonTypes' name="XMLDataType"/>
 			</Item>
-			<Item>
-				<Attribute>Description</Attribute>
-				<Characteristics>O</Characteristics>
-				<Type name="xs:token"/>
-				<Description>
-					<p>
-					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
-					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
-					</p>
-				</Description>
-			</Item>
-
+	
 			<Item>
 				<Element>TextData</Element>
 				<Characteristics>C</Characteristics>
 				<Description>
 					<p>Contains arbitrary text, encoded in UTF-8.</p>
 				</Description>
-				<Type name="xs:string"/>
+				<Type ref='CommonTypes' name="TextDataType"/>
 			</Item>
-			<Item>
-				<Attribute>MIMEType</Attribute>
-				<Characteristics>O</Characteristics>
-				<Description>
-					<p>
-					Optional MIME type to specifically indicate the text type.  Otherwise <code>text/plain</code> can be assumed.
-					</p>
-				</Description>
-				<Type name="xs:token"/>
-			</Item>
-			<Item>
-				<Attribute>FileName</Attribute>
-				<Characteristics>O</Characteristics>
-				<Description>
-					<p>
-					Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
-					</p>
-				</Description>
-				<Type name="xs:token"/>
-			</Item>
-			<Item>
-				<Attribute>Description</Attribute>
-				<Characteristics>O</Characteristics>
-				<Type name="xs:token"/>
-				<Description>
-					<p>
-					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
-					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
-					</p>
-				</Description>
-			</Item>
-
+	
 			<Item>
 				<Element>BinaryData</Element>
 				<Characteristics>C</Characteristics>
-				<Type name="xs:base64Binary"/>
-				<Description>
+			 	<Description>
 					<p>Contains the base64Binary encoding of binary or text data not encoded in UTF-8.</p>
 				</Description>
+				<Type ref='CommonTypes' name="BinaryDataType"/>
 			</Item>
-			<Item>
-				<Attribute>MIMEType</Attribute>
-				<Characteristics>M</Characteristics>
-				<Description>
-					<p>
-					MIME type to indicate the content type.
-					</p>
-				</Description>
-				<Type name="xs:token"/>
-			</Item>
-			<Item>
-				<Attribute>FileName</Attribute>
-				<Characteristics>O</Characteristics>
-				<Description>
-					<p>
-					Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
-					</p>
-				</Description>
-				<Type name="xs:token"/>
-			</Item>
-			<Item>
-				<Attribute>Description</Attribute>
-				<Characteristics>O</Characteristics>
-				<Type name="xs:token"/>
-				<Description>
-					<p>
-					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
-					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
-					</p>
-				</Description>
-			</Item>
-
+			 
 			<Item>
 				<Element>Reference</Element>
 				<Characteristics>C</Characteristics>
@@ -939,6 +864,7 @@
 				</Description>
 			</Item>
     </CommonElement>
+    
 	<CommonElement name="AbstractContentElementType" type="true">
 		<Item>
 			<Element>AbstractContentElementType</Element>
@@ -952,65 +878,43 @@
 			<Item>
 				<Element>XMLData</Element>
 				<Characteristics>C</Characteristics>
-				<Type>
-					<xs:any processContents="lax"/>
-				</Type>
 				<Description>
 					<p>Contains an arbitary XML element, encoded in UTF-8.</p>
 				</Description>
+				<Type ref="CommonTypes" name="XMLDataType"/>
 			</Item>
-			<Item>
-				<Attribute>Description</Attribute>
-				<Characteristics>O</Characteristics>
-				<Type name="xs:token"/>
-				<Description>
-					<p>
-					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
-					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
-					</p>
-				</Description>
-			</Item>
+	 
 			<Item>
 				<Element>TextData</Element>
 				<Characteristics>C</Characteristics>
 				<Description>
 					<p>Contains arbitrary text, encoded in UTF-8.</p>
 				</Description>
-				<Type name="xs:string"/>
+			    <Type ref="CommonTypes" name="TextDataType"/>
 			</Item>
-			<Item>
-				<Attribute>MIMEType</Attribute>
-				<Characteristics>O</Characteristics>
-				<Description>
-					<p>
-					Optional MIME type to specifically indicate the text type.  Otherwise <code>text/plain</code> can be assumed.
-					</p>
-				</Description>
-				<Type name="xs:token"/>
-			</Item>
-			<Item>
-				<Attribute>FileName</Attribute>
-				<Characteristics>O</Characteristics>
-				<Description>
-					<p>
-					Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
-					</p>
-				</Description>
-				<Type name="xs:token"/>
-			</Item>
-			<Item>
-				<Attribute>Description</Attribute>
-				<Characteristics>O</Characteristics>
-				<Type name="xs:token"/>
-				<Description>
-					<p>
-					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
-					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
-					</p>
-				</Description>
-			</Item>
+		
 			<Item>
 				<Element>BinaryData</Element>
+				<Characteristics>C</Characteristics>
+				<Description>
+					<p>Contains the base64Binary encoding of binary or text data not encoded in UTF-8.</p>
+				</Description>
+				<Type ref="CommonTypes" name="TextDataType"/>
+			</Item>
+			<Item>
+				<Element>Reference</Element>
+				<Characteristics>C</Characteristics>
+				<Description>
+					<p>References external content via a URL.</p>
+				</Description>
+				<Type ref='CommonTypes' name="ReferenceType"/>
+			</Item>
+		</Choice>
+	</CommonElement>
+	
+	<CommonElement name="BinaryDataType" type="true">
+			<Item>
+				<Element>BinaryDataType</Element>
 				<Characteristics>C</Characteristics>
 				<Type name="xs:base64Binary"/>
 				<Description>
@@ -1048,17 +952,72 @@
 					</p>
 				</Description>
 			</Item>
+	</CommonElement>
+	
+	<CommonElement name="XMLDataType" type="true">
+				<Item>
+				<Element>XMLDataType</Element>
+				<Characteristics>C</Characteristics>
+				<Type>
+					<xs:any processContents="lax"/>
+				</Type>
+				<Description>
+					<p>Contains an arbitary XML element, encoded in UTF-8.</p>
+				</Description>
+			</Item>
 			<Item>
-				<Element>Reference</Element>
+				<Attribute>Description</Attribute>
+				<Characteristics>O</Characteristics>
+				<Type name="xs:token"/>
+				<Description>
+					<p>
+					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+					</p>
+				</Description>
+			</Item>
+</CommonElement>
+<CommonElement name="TextDataType" type="true">
+		<Item>
+				<Element>TextDataType</Element>
 				<Characteristics>C</Characteristics>
 				<Description>
-					<p>References external content via a URL.</p>
+					<p>Contains arbitrary text, encoded in UTF-8.</p>
 				</Description>
-				<Type ref='CommonTypes' name="ReferenceType"/>
+				<Type name="xs:string"/>
 			</Item>
-		</Choice>
-	</CommonElement>
-
+			<Item>
+				<Attribute>MIMEType</Attribute>
+				<Characteristics>O</Characteristics>
+				<Description>
+					<p>
+					Optional MIME type to specifically indicate the text type.  Otherwise <code>text/plain</code> can be assumed.
+					</p>
+				</Description>
+				<Type name="xs:token"/>
+			</Item>
+			<Item>
+				<Attribute>FileName</Attribute>
+				<Characteristics>O</Characteristics>
+				<Description>
+					<p>
+					Optional file name to indicate the file from which the content originated, or to suggest a name to use when saving the content.
+					</p>
+				</Description>
+				<Type name="xs:token"/>
+			</Item>
+			<Item>
+				<Attribute>Description</Attribute>
+				<Characteristics>O</Characteristics>
+				<Type name="xs:token"/>
+				<Description>
+					<p>
+					Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+					Contents may be mandated in instances of this type, or types that follow the <code>AbstractContentPackageType</code> pattern.
+					</p>
+				</Description>
+			</Item>
+    </CommonElement>
 	<CommonElement name="MonetaryAmountType" type="true">
 		<Item>
 			<Element>MonetaryAmountType</Element>
@@ -1540,7 +1499,7 @@
 		<Item>
 			<Element>TimeElement</Element>
 			<Characteristics>OR</Characteristics>
-			<Type ref="CommonTypesTaskForce" name="TimeElement"></Type>
+			<Type ref="CommonTypesTaskForce" name="TimeElementType"></Type>
 		</Item>
 	</CommonElement>
 
@@ -1685,6 +1644,62 @@
 
 		</xhtml:Example>
 	</CommonElement>
+	
+	<CommonElement name="FeesForUseType" type="true">
+			<Item>
+			<Element>FeesForUseType</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List">
+			</List>
+			<Description>A container for fees for use of the content in the object.</Description>
+		</Item>
+
+		<Item>
+			<Element>FeeForUse</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>Description of one fee structure applying to the use of this resource.</Description>
+			<Type ref="CommonTypes" name="FeeForUseType"></Type>
+		</Item>
+		
+	</CommonElement>
+	
+<CommonElement name="FeeForUseType" type="true">
+	    <Item>
+			<Element>FeeForUseType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>Description of one fee structure applying to the use of this resource.</Description>	 
+		</Item>
+		
+		<Item>
+			<Element>UseType</Element>
+			<Characteristics>M</Characteristics>
+			<Type name="xs:string"></Type>
+			<Description>
+			A description of the fee structure for this resource.
+			Some resources may be licensed differently depending upon their context.
+			For example, a content provider might charge one fee structure for resources used in the classroom and a separate fee for those
+			resources available to parents from home.
+			</Description>
+		</Item>
+
+		<Item>
+			<Element>MeteringType</Element>
+			<Characteristics>M</Characteristics>
+			<Type name="xs:token"></Type>
+		</Item>
+
+		<Item>
+			<Element>MeteringURL</Element>
+			<Characteristics>O</Characteristics>
+			<Type name="xs:anyURI"></Type>
+		</Item>
+
+		<Item>
+			<Element>PerUseCharge</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="MonetaryAmountType"/>
+		</Item>
+</CommonElement>
 	
 	<CommonElement name="CreatedType" type="true">
 			<Item>
@@ -5792,37 +5807,40 @@
 		<Item>
 			<Element>TimeElements</Element>
 			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+			<Type ref="CommonTypes" name="TimeElementsType"></Type>
 		</Item>
-		<Item>
-			<Element>/TimeElement</Element>
-			<Characteristics>OR</Characteristics>
-			<Type ref="CommonTypes" name="TimeElement"></Type>
-		</Item>
+
 		<Item>
 			<Element>LifeCycle</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" name="LifeCycle"></Type>
+			<Type ref="CommonTypes" name="LifeCycleType"></Type>
 		</Item>
+		
 		<Item>
+			<Element>RightsElements</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="RightsElementsType"></Type>
+		</Item>
+ 
+		<Item>
+			<Element>EducationFilter</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="EducationFilterType"></Type>
+		</Item>
+	</CommonElement>
+	  <CommonElement name="RightsElementsType"  type="true">
+	<Item>
 			<Element>RightsElements</Element>
 			<Characteristics>O</Characteristics>
 			<List mode="List">
 			</List>
 		</Item>
 		<Item>
-			<Element>/RightsElement</Element>
+			<Element>RightsElement</Element>
 			<Characteristics>OR</Characteristics>
-			<Type ref="CommonTypes" name="RightsElement"></Type>
+			<Type ref="CommonTypes" name="RightsElementType"></Type>
 		</Item>
-		<Item>
-			<Element>EducationFilter</Element>
-			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" name="EducationFilter"></Type>
-		</Item>
-	</CommonElement>
-	
+   </CommonElement>	
   <CommonElement name="SIF_ExtendedElementsType"  type="true">
   <Intro>
     <p>
