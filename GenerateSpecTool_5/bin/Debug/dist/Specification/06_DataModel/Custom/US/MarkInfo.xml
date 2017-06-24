@@ -53,12 +53,12 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="">
 		<MarkInfo RefId="46BDBA4301C11737E214A7CADCA75C87" MarkValueInfoRefId="301CADCA7511737E214A7C46BDBA4E23" SchoolInfoRefId="11737EA4301CADCA75C87214A7C46BDB">

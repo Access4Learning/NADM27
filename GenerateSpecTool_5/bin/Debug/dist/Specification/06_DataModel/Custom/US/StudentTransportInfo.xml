@@ -175,55 +175,9 @@
   <Item>
     <Element>OriginPoint</Element>
     <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="OriginPointType"></Type>
   </Item>
-  <Item>
-    <Attribute>BusRouteDetailRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Element>/ArrivalTime</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The time that the bus associated with this route will stop at this bus stop.</p>
-    </Description>
-    <Type name="xs:time"/>
-  </Item>
-  <Item>
-    <Element>/RouteNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A unique identifier for the route. For instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>/RouteDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Short explanation of the route.</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  <Item>
-    <Element>/VehicleNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Vehicle number of the bus.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>/BusStopDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>An explanation of this location.</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
+
   <Item>
     <Element>HomeBusRouteDetail</Element>
     <Characteristics>O</Characteristics>
@@ -249,56 +203,9 @@
   <Item>
     <Element>TransferPoints</Element>
     <Characteristics>O</Characteristics>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="TransferPointListType"></Type>
   </Item>
 
-  <Item>
-    <Element>/TransferPoint</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>
-        There should be one TransferPoint element for each intermediate point on a trip.
-        The "embark" and "disembark" bus stops for a single transfer point must be at the same location.
-        To order multiple TransferPoint elements, use the Time element of the BusStopInfo objects referenced by the attributes.
-      </p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//EmbarkBusRouteDetail</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets on the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>BusRouteDetail</Code>
-      </Value>
-    </Values>
-  </Item>
-
-  <Item>
-
-    <Element>//DisembarkBusRouteDetail</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Values>
-      <Value>
-        <Code>BusRouteDetail</Code>
-      </Value>
-    </Values>
-  </Item>
 
   <Item>
     <Element>SchoolBusRouteDetail</Element>
@@ -325,53 +232,7 @@
   <Item>
     <Element>DestinationPoint</Element>
     <Characteristics>O</Characteristics>
-  </Item>
-  <Item>
-    <Attribute>BusRouteDetailRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID that identifies the bus stop/route where the student gets off the bus.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Element>/ArrivalTime</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The time that the bus associated with this route will stop at this bus stop.</p>
-    </Description>
-    <Type name="xs:time"/>
-  </Item>
-  <Item>
-    <Element>/RouteNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>A unique identifier for the route. F or instance, you may have route 16AM in the morning and a 16PM in the afternoon.</p>
-    </Description>
-    <Type name="xs:normalizedString"/>
-  </Item>
-  <Item>
-    <Element>/RouteDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Short explanation of the route. It may be used to designate an area, or used to color-code bus routes (the "orange" route).</p>
-    </Description>
-    <Type name="xs:string"/>
-  </Item>
-  <Item>
-    <Element>/VehicleNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Vehicle number of the bus.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>/BusStopDescription</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>An explanation of this location.</p>
-    </Description>
-    <Type name="xs:string"/>
+    <Type ref="CommonTypes" name="DestinationPointType"></Type>
   </Item>
 
   <Item>
@@ -403,13 +264,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <StudentTransportInfo RefId="D3E34B359D75101A8C3D00AA001A1652" StudentPersonalRefId="C2F23F450B86234B9B3D00AA001A1652"

@@ -75,131 +75,17 @@
         <Description>
           <p>The authentication information for one system.</p>
         </Description>
+        <Type ref="CommonTypes" name="AuthenticationInfoType"></Type>
       </Item>
-      <Item>
-        <Element>/System</Element>
-        <Characteristics>M</Characteristics>
-        <Description>
-          <p>An identifying string for the system that supports this authentication information.</p>
-        </Description>
-        <Type name="xs:normalizedString"></Type>
-        <Facets>
-          <xs:maxLength value="255"/>
-        </Facets>
-      </Item>
-      <Item>
-        <Attribute>Type</Attribute>
-        <Characteristics>M</Characteristics>
-        <Description>
-          <p>Specific type of user identification.</p>
-        </Description>
-        <Values>
-          <Value>
-            <Code>Network</Code>
-          </Value>
-          <Value>
-            <Code>Application</Code>
-          </Value>
-        </Values>
-      </Item>
-      <Item>
-        <Element>/Username</Element>
-        <Characteristics>O</Characteristics>
-        <Description>
-          <p>The identification string for this user.</p>
-        </Description>
-        <Type name="xs:normalizedString"></Type>
-        <Facets>
-          <xs:maxLength value="64"/>
-        </Facets>
-      </Item>
-      <Item>
-        <Element>/DistinguishedName</Element>
-        <Characteristics>O</Characteristics>
-        <Description>
-          <p>This is the distinguished name of the user in a network directory system.</p>
-        </Description>
-        <Type name="xs:normalizedString"></Type>
-        <Facets>
-          <xs:maxLength value="255"/>
-        </Facets>
-      </Item>
-      <Item>
-        <Element>/PasswordList</Element>
-        <Characteristics>O</Characteristics>
-        <Description>
-          <p>Allows a provider or publisher to specify the same password using multiple algorithms, if supported.</p>
-        </Description>
-        <List mode="List">
-        </List>
-      </Item>
-      <Item>
-        <Element>//Password</Element>
-        <Characteristics>MR</Characteristics>
-        <Description>
-          <p>A representation of the user's password using the given algorithm.</p>
-        </Description>
-        <Type name="xs:base64Binary"></Type>
-        <Facets>
-          <xs:maxLength value="255"/>
-        </Facets>
-      </Item>
-      <Item>
-        <Attribute>Algorithm</Attribute>
-        <Characteristics>M</Characteristics>
-        <Description>
-          <p>The method used to encrypt the user's password. See the implementation details below.</p>
-        </Description>
-        <Values>
-          <Value>
-            <Code>base64</Code>
-          </Value>
-          <Value>
-            <Code>MD5</Code>
-          </Value>
-          <Value>
-            <Code>SHA1</Code>
-          </Value>
-          <Value>
-            <Code>DES</Code>
-          </Value>
-          <Value>
-            <Code>TripleDES</Code>
-          </Value>
-          <Value>
-            <Code>RC2</Code>
-          </Value>
-          <Value>
-            <Code>AES</Code>
-          </Value>
-          <Value>
-            <Code>RSA</Code>
-          </Value>
-        </Values>
-      </Item>
-      <Item>
-        <Attribute>KeyName</Attribute>
-        <Characteristics>M</Characteristics>
-        <Description>
-          <p>The name of the key to be used for decryption of the password.  Left blank for plain, encoded text (Algorithm attribute value of "base64") and hash algorithms.</p>
-        </Description>
-        <Type name="xs:normalizedString"></Type>
-        <Facets>
-          <xs:maxLength value="64"/>
-        </Facets>
-      </Item>
-
-
-
       <Item>
         <Element>SIF_Metadata</Element>
         <Characteristics>O</Characteristics>
-        <Type ref="DataModel" name="SIF_Metadata"></Type>
+        <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
       </Item>
       <Item>
         <Element>SIF_ExtendedElements</Element>
         <Characteristics>O</Characteristics>
-        <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+        <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
       </Item>
 
       <Section name="Password Implementation Details">

@@ -34,64 +34,22 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>ItemQuantities</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/ItemQuantity</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Quantity of item amounts sold</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>FoodserviceItemPortionRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>GUID of FoodserviceItemPortion object</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Element>//Value</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The value of item quantity</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Element>//MealType</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="MealType"></Type>
-  </Item>
-  <Item>
-    <Element>//GradeLevels</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="GradeLevels"></Type>
-  </Item>
-  <Item>
-    <Element>//Cost</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The cost (monetary value) of the item sold.</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"/>
+    <Type ref="CommonTypes" name="FoodserviceItemQuantityListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceItemSales RefId="F7E8FF23F3A1471BA9D0B0E22A0839C6">

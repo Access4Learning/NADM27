@@ -28,18 +28,7 @@
         Associated <code>LearningStandardItem</code> objects.
       </p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>
-        A GUID reference to a <code>LearningStandardItem</code> that supports this content.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+     <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
   <Item>
     <Element>LocalProgramId</Element>
@@ -76,12 +65,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <ProfessionalDevelopmentProgram RefId="E6F37470472D49EE86C1FA8EE47D8244">

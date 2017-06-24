@@ -29,61 +29,17 @@
   <Item>
     <Element>PurchaseQuantities</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/PurchaseQuantity</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Quantity of the item being purchased</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>FoodserviceItemPortionRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Foodservice Item Portion</p>
-    </Description>
-    <Type ref="CommonTypes" relationship="records portion purchased in" count="*:1" name="IdRefType"></Type>
-  </Item>
-  <Item>
-    <Attribute>Earned</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies whether the item being purchased is earned i.e., at no cost to the buyer. It is used when  FoodserviceTransaction object's TransactionType element has the value "Purchase".</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//MealType</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="MealType"></Type>
-  </Item>
-  <Item>
-    <Element>//Value</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The value of quantity</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
+     <Type ref="CommonTypes" name="FoodservicePurchaseQuantityListType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

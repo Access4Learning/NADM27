@@ -32,7 +32,7 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>TransactionDate</Element>
@@ -53,32 +53,7 @@
   <Item>
     <Element>TransactionTypes</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/TransactionType</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Type of transaction</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Purchase</Code>
-      </Value>
-      <Value>
-        <Code>Prepayment</Code>
-      </Value>
-      <Value>
-        <Code>Refund</Code>
-      </Value>
-      <Value>
-        <Code>Repayment</Code>
-      </Value>
-      <Value>
-        <Code>Adjustment</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="FoodserviceTransactionListType"></Type>
   </Item>
   <Item>
     <Element>Customer</Element>
@@ -86,46 +61,8 @@
     <Description>
       <p>The customer can be a student or staff.</p>
     </Description>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The GUID of the customer doing the transaction. </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>SIF customer type.</p>
-      <p>
-        If <code>StaffPersonal</code>, then <code>EarnedStatus</code> is included.
-        If <code>StudentPersonal</code>, then <code>MealStatus</code> is included.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>StudentPersonal</Code>
-      </Value>
-      <Value>
-        <Code>StaffPersonal</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Choice optional="true">
-    <Item>
-      <Element>/MealStatus</Element>
-      <Characteristics>C</Characteristics>
-      <Type ref="DataModel" name="MealStatus"></Type>
-    </Item>
-    <Item>
-      <Element>/EarnedStatus</Element>
-      <Characteristics>C</Characteristics>
-      <Type ref="DataModel" name="EarnedStatus"></Type>
-    </Item>
-  </Choice>
+     <Type ref="CommonTypes" name="FoodserviceCustomerType"></Type>
+ </Item>
   <Item>
     <Element>Amount</Element>
     <Characteristics>M</Characteristics>
@@ -166,12 +103,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceTransaction RefId="A9E34B359F44D51A8C3D00AA001A1652">

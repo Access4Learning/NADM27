@@ -42,7 +42,7 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="ProgramTypeType"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>Agencies</Element>
@@ -50,104 +50,18 @@
     <Description>
       <p>List of reimbursing agencies.</p>
     </Description>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="FoodserviceReimbursementAgencyListType"></Type>
   </Item>
-  <Item>
-    <Element>/Agency</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Reimbursing agency</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Type of the reimbursing agency.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Federal</Code>
-      </Value>
-      <Value>
-        <Code>State</Code>
-      </Value>
-      <Value>
-        <Code>Local</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//Name</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>
-        The name of the reimbursing agency. This element is to be used when the Type is set as <code>Other</code>.
-      </p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//Rates</Element>
-    <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>///Rate</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Reimbursement rate of the meal</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>SevereNeed</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
-        Severe need identifier for the rate. When SevereNeed is <code>Yes</code> then the rate shown is the combined rate.
-        For certain programs the severe need identifier does not apply.  In such cases the value <code>NA</code> should
-        be used.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-      <Value>
-        <Code>NA</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>////Value</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The rate value</p>
-    </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Element>////MealStatus</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="MealStatus"></Type>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceReimbursementRates RefId="D9837A776DD626777872361DD118873C">

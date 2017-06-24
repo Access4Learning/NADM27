@@ -42,18 +42,7 @@
         Associated <code>LearningStandardItem</code> objects.
       </p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/LearningStandardItemRefId</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>
-        A GUID reference to a <code>LearningStandardItem</code> that supports this content.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+    <Type ref="CommonTypes" name="LearningStandardItemRefIdListType"></Type>
   </Item>
   <Item>
     <Element>LocalId</Element>
@@ -61,7 +50,7 @@
     <Description>
       <p>Locally assigned number or provider referenced course number used to represent the course or activity</p>
     </Description>
-    <Type ref="DataModel" name="LocalId"></Type>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
   </Item>
   <Item>
     <Element>StartDate</Element>
@@ -122,12 +111,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <ProfessionalDevelopmentActivities RefId="CCD1254884AE54687FF4567DACD34653" ActivityProviderRefId="CAD125488EE54687FF4567DACD346532">

@@ -34,76 +34,23 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>SalesAmounts</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="FoodserviceSalesAmountListType"></Type>
   </Item>
-  <Item>
-    <Element>/SalesAmount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Monetary value</p>
-      <p>(count * cost per unit) done for all grade levels</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"/>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Type of SalesAmount. This denotes the form of incoming funds for the sales done.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Cash</Code>
-      </Value>
-      <Value>
-        <Code>Account</Code>
-      </Value>
-      <Value>
-        <Code>Charged</Code>
-      </Value>
-      <Value>
-        <Code>Earned</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Attribute>AccountType</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
-        Type of account to which sales amounts apply.  This is set to <code>NA</code> when <code>Type</code> is set as <code>Earned</code>.
-      </p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>PrepaidCash</Code>
-      </Value>
-      <Value>
-        <Code>BreakfastCredit</Code>
-      </Value>
-      <Value>
-        <Code>LunchCredit</Code>
-      </Value>
-      <Value>
-        <Code>NA</Code>
-      </Value>
-    </Values>
-  </Item>
+ 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceSales RefId="E57A732918E1473F80C2CFA7774DAA6A">

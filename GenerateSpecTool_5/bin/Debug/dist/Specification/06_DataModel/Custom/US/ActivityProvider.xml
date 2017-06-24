@@ -21,7 +21,7 @@
     <Description>
       <p>Local code used to represent this provider</p>
     </Description>
-    <Type ref="DataModel" name="LocalId"></Type>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
   </Item>
   <Item>
     <Element>StateProvinceId</Element>
@@ -29,7 +29,7 @@
     <Description>
       <p>State assigned provider number</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>Name</Element>
@@ -45,17 +45,17 @@
     <Description>
       <p>This element contains information related to provider's address information.</p>
     </Description>
-    <Type ref="DataModel" name="Address"></Type>
+    <Type ref="CommonTypes" name="AddressType"></Type>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <ActivityProvider RefId="FE1078BA3261545A31905937B265CE01">

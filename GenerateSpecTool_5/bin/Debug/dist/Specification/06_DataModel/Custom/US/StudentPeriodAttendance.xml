@@ -98,57 +98,9 @@
     <Description>
       <p>An audit trail to help determine who entered this attendance event and when.</p>
     </Description>
+    <Type ref="CommonTypes" name="StudentAttendanceAuditInfoType"></Type>
   </Item>
-  <Item>
-    <Element>/CreationUser</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Information about which staff member created this attendance record.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The role of the staff member for that created this attendance record.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Office Staff</Code>
-      </Value>
-      <Value>
-        <Code>School Admin</Code>
-      </Value>
-      <Value>
-        <Code>Parent</Code>
-      </Value>
-      <Value>
-        <Code>Nurse</Code>
-      </Value>
-      <Value>
-        <Code>Teacher</Code>
-      </Value>
-      <Value>
-        <Code>Other</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//UserId</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Unique identifier of the user that created the attendance record.  This will depend on the user and the source.  The preferred identifier would be a RefId for a StaffPersonal, StudentContact, or StudentPersonal Object.  However, the user may not be associated with any of these SIF objects.  In that case a unique Id given by the source should be used.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>/CreationDateTime</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The date and time of this attendance record was created.</p>
-    </Description>
-    <Type name="xs:dateTime"></Type>
-  </Item>
+ 
   <Item>
     <Element>AttendanceComment</Element>
     <Characteristics>O</Characteristics>
@@ -161,12 +113,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
 

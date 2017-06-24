@@ -34,59 +34,23 @@
   <Item>
     <Element>Program</Element>
     <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="Program"></Type>
+    <Type ref="CommonTypes" name="FundedProgramType"></Type>
   </Item>
   <Item>
     <Element>SaleQuantities</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
+     <Type ref="CommonTypes" name="MilkSaleQuantityListType"></Type>
   </Item>
-  <Item>
-    <Element>/SaleQuantity</Element>
-    <Characteristics>OR</Characteristics>
-    <Description>
-      <p>Quantity of sale</p>
-    </Description>
-  </Item>
-  <Item>
-    <Element>//Value</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The quantity sold.</p>
-    </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Element>//MealStatus</Element>
-    <Characteristics>M</Characteristics>
-    <Type ref="DataModel" name="MealStatus"></Type>
-  </Item>
-  <Item>
-    <Element>//SaleUnit</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Unit of Sale</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>//ChargeToChild</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Charge to child per unit</p>
-    </Description>
-    <Type ref="CommonTypes" name="MonetaryAmountType"></Type>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example xmlns="">

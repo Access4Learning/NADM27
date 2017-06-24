@@ -29,7 +29,7 @@
         The state-assigned identifier for this staff member.  This element or <code>SSN</code>, or both, must be included.
       </p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>SSN</Element>
@@ -39,7 +39,7 @@
         Employee Social Security Number.  This element or <code>StateProvinceId</code>, or both, must be included.
       </p>
     </Description>
-    <Type ref="DataModel" name="SSN"></Type>
+    <Type ref="CommonTypes" name="SSNType"></Type>
   </Item>
   <Item>
     <Element>Name</Element>
@@ -47,7 +47,7 @@
     <Description>
       <p>Name of employee.</p>
     </Description>
-    <Type ref="DataModel" name="Name"></Type>
+    <Type ref="CommonTypes" name="NameType"></Type>
   </Item>
   <Item>
     <Element>Demographics</Element>
@@ -55,7 +55,7 @@
     <Description>
       <p>This element contains information related to employee demographics.</p>
     </Description>
-    <Type ref="DataModel" name="Demographics"></Type>
+    <Type ref="CommonTypes" name="DemographicsType"></Type>
   </Item>
   <Item>
     <Element>ActivityName</Element>
@@ -133,12 +133,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <EmployeeRecertification RefId="359D75101AD0A9D7A8C3DAD0A85103A2">

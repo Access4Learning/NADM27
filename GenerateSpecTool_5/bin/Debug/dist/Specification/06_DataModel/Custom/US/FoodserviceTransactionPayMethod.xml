@@ -29,60 +29,18 @@
   <Item>
     <Element>TransactionPayMethods</Element>
     <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
+    <Type ref="CommonTypes" name="FoodservicePayMethodListType"></Type>
   </Item>
-  <Item>
-    <Element>/TransactionPayMethod</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>Transaction method.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This refers to the way the payment was made.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Payment</Code>
-      </Value>
-      <Value>
-        <Code>Refund</Code>
-      </Value>
-      <Value>
-        <Code>Charge</Code>
-      </Value>
-      <Value>
-        <Code>Usage</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>//Amounts</Element>
-    <Characteristics>M</Characteristics>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>///Amount</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>This amount is the form of the incoming funds for this transaction. For example; the payment can be made by a credit card.</p>
-    </Description>
-    <Type ref="CommonTypes" name="FSAmountType"></Type>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceTransactionPayMethod RefId="FF8340A51D844EBDB156DE662BF373CE">

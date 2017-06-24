@@ -21,7 +21,7 @@
     <Description>
       <p>Item number as presented to user.</p>
     </Description>
-    <Type ref="DataModel" name="LocalId"></Type>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
   </Item>
   <Item>
     <Element>Description</Element>
@@ -37,7 +37,7 @@
     <Description>
       <p>Electronic identifier(s) associated with this item.</p>
     </Description>
-    <Type ref="DataModel" name="ElectronicIdList"></Type>
+    <Type ref="CommonTypes" name="ElectronicIdListType"></Type>
   </Item>
   <Item>
     <Element>ItemCategory</Element>
@@ -58,12 +58,12 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <FoodserviceItem RefId="EF521958AB474559B2AE7BD82647C66B">
