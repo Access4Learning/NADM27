@@ -23,7 +23,7 @@
     <Description>
       <p>Common element containing person demographic information.</p>
     </Description>
-    <Type ref="DataModel" name="PersonInfo"></Type>
+    <Type ref="CommonTypes" name="PersonInfoType"></Type>
   </Item>
 
   <Item>
@@ -41,7 +41,7 @@
     <Description>
       <p>The highest level of education completed by the contact person.</p>
     </Description>
-    <Type ref="DataModel" name="EducationalLevel"></Type>
+    <Type ref="CommonTypes" name="EducationalLevelType"></Type>
   </Item>
   
 <Item>
@@ -66,13 +66,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
   <xhtml:Example name="StudentContactPersonal - Example 1" xmlns=''>

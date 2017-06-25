@@ -43,7 +43,7 @@
 	<Description>
 	  <p>The NCES-assigned identifier of the school or district where the evaluator resides.</p>
 	</Description>
-	<Type ref="CommonTypes"  name="NCESId"></Type>
+	<Type ref="CommonTypes"  name="NCESIdType"></Type>
 </Item>
 
 <Item>
@@ -52,7 +52,7 @@
 	<Description>
 	  <p>The identifier that has been assigned by the state to the administrator that is administering the evaluation</p>
 	</Description>
-	<Type ref="CommonTypes"  name="StateProvinceId"></Type>
+	<Type ref="CommonTypes"  name="StateProvinceIdType"></Type>
 </Item>
 
 <Item>
@@ -124,42 +124,9 @@
 	<Description>
 	  <p>The set of the Evaluation Parts.</p>
 	</Description>
-	<List mode="List"></List>
+	<Type ref="CommonTypes"  name="EvaluationPartsType"></Type>
  </Item>
- 
- <Item>
-	 <Element>/EvaluationPart</Element>
-	 <Characteristics>MR</Characteristics>
-	 <Description>
-	  <p>Container for parts of the evaluation.</p>
-	</Description>
- </Item>
- 
- <Item>
-	 <Element>//Name</Element>
-	 <Characteristics>M</Characteristics>
-	 <Description>
-	  <p>This is the name of a part that could receive a score.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- <Item>
-	 <Element>//Score</Element>
-	 <Characteristics>M</Characteristics>
-	 <Description>
-	  <p>This is a subscore that is part of the evaluation.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- <Item>
-	 <Element>//Scale</Element>
-	 <Characteristics>M</Characteristics>
-	 <Description>
-	  <p>This is the scale for the Subscore that is part of the evaluation.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- 
+  
 <Item>
 	<Element>EvaluationHolisticScore</Element>
 	<Characteristics>M</Characteristics>
@@ -184,39 +151,23 @@
 	 <Description>
 	  <p>What was done because of a summative evaluation.</p>
 	</Description>
+	<Type ref="CommonTypes" name="EvaluationRecommendationType"/>
  </Item>
  
- <Item>
-	 <Element>/Code</Element>
-	 <Characteristics>M</Characteristics>
-	 <Description>
-	  <p>The code for the decision taken during the summative evaluation. This element corresponds to the global CEDS Id 000102  Currently this is limited to 80 characters.</p>
-	</Description>
-	<Type name="xs:normalizedString"></Type>
- </Item>
- 
-  <Item>
-	 <Element>/OtherCodeList</Element>
-	 <Characteristics>O</Characteristics>
-	 <Description>
-	  <p>Other codes for the decision taken during the summative evaluation.</p>
-	</Description>
-	<Type ref="DataModel" name="OtherCodeList"></Type>
-
- </Item>
+  
  
  <Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"></Type>
+		<Type ref="CommonTypes" name="SIF_MetadataType"></Type>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
 	</Item>
 
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StaffEvaluation" xmlns="">
     <StaffEvaluation RefId="359D75101AD0A9D7A8C3DAD0A85103A2">
 		<StaffPersonalRefId>DCE34B359D75101A8C3D00AA001A1652</StaffPersonalRefId>
 		<SchoolInfoRefId>1947AB893C29F73910FEC3827A239CB1</SchoolInfoRefId>

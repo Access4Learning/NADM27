@@ -38,7 +38,7 @@
         School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g., <code>2007</code> for the 2006-07 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Attribute>StaffPersonalRefId</Attribute>
@@ -108,57 +108,25 @@
     <Description>
       <p>The purpose of the activities as related to students</p>
     </Description>
+    <Type ref="CommonTypes" name="JobFunctionType"/>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code representing the type of job function.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0568FunctionTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
+   
   <Item>
     <Element>TeachingAssignment</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>The teacher field taught by the individual</p>
     </Description>
+    <Type ref="CommonTypes" name="TeachingAssignmentType"/>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code representing the type of teaching assignment.</p>
-    </Description>
-    <Union>
-      <Type ref="ExternalCodeSets" name="NCES0436TeachingAssignmentType"></Type>
-      <Type name="xs:token">
-        <Values type="additional">
-          <Value>
-            <Code>NA</Code>
-            <Text>Not applicable</Text>
-          </Value>
-        </Values>
-      </Type>
-    </Union>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
+   
   <Item>
     <Element>GradeLevels</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>An indication of the grade level(s) the individual is assigned</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevels"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
   </Item>
   <Item>
     <Element>ItinerantTeacher</Element>
@@ -184,7 +152,7 @@
     <Description>
       <p>An indication of the general nature of instruction provided throughout a course.</p>
     </Description>
-    <Type ref="DataModel" name="InstructionalLevel"></Type>
+    <Type ref="CommonTypes" name="InstructionalLevelType"></Type>
   </Item>
   <Item>
     <Element>EmployeePersonalRefId</Element>
@@ -197,15 +165,15 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StaffAssignment" xmlns="">
     <StaffAssignment RefId="D3E34B359D75101A8C3D00AA001A1652" SchoolInfoRefId="A8C3D3E34B359D75101D00AA001A1652"
       SchoolYear="2004" StaffPersonalRefId="D3E34B359D75101A8C3D00AA001A1651">
       <Description>First grade elementary teacher</Description>

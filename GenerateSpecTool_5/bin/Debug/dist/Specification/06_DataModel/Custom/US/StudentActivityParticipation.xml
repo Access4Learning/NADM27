@@ -42,7 +42,7 @@
     <Description>
       School year for which the information is applicable, expressed as the four-digit year in which the school year ends (e.g. <code>2009</code> for the 2008-09 school year).
     </Description>
-    <Type ref="DataModel" name="SchoolYear"/>
+    <Type ref="CommonTypes" name="SchoolYearType"/>
   </Item>
 
   <Item>
@@ -76,33 +76,23 @@
     <Element>RecognitionList</Element>
     <Characteristics>O</Characteristics>
     <Description>List of awards and other types of recognition given to the student for this activity.</Description>
-    <List mode="List"/>
+    <Type ref="CommonTypes" name="RecognitionListType"></Type>
   </Item>
-  <Item>
-    <Element>/Recognition</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>The nature of recognition given to the student for the successful completion of work in a co-curricular or extra-curricular activity.</Description>
-    <Type name="xs:token"/>
-  </Item>
-  <Item>
-    <Attribute>Code</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type ref="ExternalCodeSets" name="NCES0674HonorsTypeType"/>
-  </Item>
+   
 
 
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StudentActivityParticipation" xmlns="">
     <StudentActivityParticipation RefId="9ECC96830E02406F926C1C4D3542D122" StudentPersonalRefId="646C5D4AC8294886A02B971695C7BC06" StudentActivityInfoRefId="6472B2610947583A463DBB345291B001" SchoolYear="2009">
       <ParticipationComment>First year of participation</ParticipationComment>
       <StartDate>2008-09-01</StartDate>

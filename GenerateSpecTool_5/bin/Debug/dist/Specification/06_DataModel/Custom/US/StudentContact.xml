@@ -37,17 +37,18 @@
         rather than a unique contact identifier.  In this case there may be more than one StudentContact instance with the same LocalId.
       </p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
+	
 	<Item>
 		<Element>OtherIdList</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
 			<p>Lists all "other" identifiers associated with the contact.</p>
 		</Description>
-		<List mode="List">
-    </List>
-	</Item>
+		<Type ref="CommonTypes" name="OtherIdListType"/>
+    </Item>
+	<!-- The subset was removed so that an additional OtherId Type was not required.  Subset needs to be specified in documentation 
 	<Item>
 		<Element>/OtherId</Element>
 		<Characteristics>MR</Characteristics>
@@ -96,6 +97,7 @@
 			</Value>
 		</Values>
 	</Item>
+     -->
 	<Item>
 		<Element>Name</Element>
 		<Characteristics>M</Characteristics>
@@ -106,13 +108,14 @@
 		</Description>
 		<Type ref="CommonTypes" name="NameOfRecordType"/>
 	</Item>
+	
 	<Item>
 		<Element>OtherNames</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
 			<p>Previous, alternate or other names or aliases associated with the contact.</p>
 		</Description>
-		<Type ref="DataModel" name="OtherNames"/>
+		<Type ref="CommonTypes" name="OtherNamesType"/>
 	</Item>
 	<Item>
 		<Element>Demographics</Element>
@@ -120,7 +123,7 @@
 		<Description>
 			<p>Demographic information about the contact.</p>
 		</Description>
-		<Type ref="DataModel" name="Demographics"/>
+		<Type ref="CommonTypes" name="DemographicsType"/>
 	</Item>
 	<Item>
 		<Element>AddressList</Element>
@@ -128,7 +131,7 @@
 		<Description>
 			<p>The contact's address(es).</p>
 		</Description>
-		<Type ref="DataModel" name="AddressList"/>
+		<Type ref="CommonTypes" name="AddressListType"/>
 	</Item>
 	<Item>
 		<Element>PhoneNumberList</Element>
@@ -136,7 +139,7 @@
 		<Description>
 			<p>The contact's phone number(s).</p>
 		</Description>
-		<Type ref="DataModel" name="PhoneNumberList"/>
+		<Type ref="CommonTypes" name="PhoneNumberListType"/>
 	</Item>
 	<Item>
 		<Element>EmailList</Element>
@@ -144,7 +147,7 @@
 		<Description>
 			<p>The contact's e-mail address(es).</p>
 		</Description>
-		<Type ref="DataModel" name="EmailList"/>
+		<Type ref="CommonTypes" name="EmailListType"/>
 	</Item>
 	<Item>
 		<Element>Relationship</Element>
@@ -152,7 +155,7 @@
 		<Description>
 			<p>Defines the relationship of the contact to the student.</p>
 		</Description>
-		<Type ref="DataModel" name="Relationship"/>
+		<Type ref="CommonTypes" name="RelationshipType"/>
 	</Item>
 	<Item>
 		<Element>EmployerType</Element>
@@ -169,7 +172,7 @@
 		<Description>
 			<p>The highest level of education completed by the contact person.</p>
 		</Description>
-		<Type ref="DataModel" name="EducationalLevel"/>
+		<Type ref="CommonTypes" name="EducationalLevelType"/>
 	</Item>
 	<Item>
 		<Element>ContactFlags</Element>
@@ -181,151 +184,9 @@
         Do not publish the <code>StudentContact</code> instance if one of the child elements does not have a <code>Yes</code> value.
       </p>
 		</Description>
+		<Type ref="CommonTypes" name="ContactFlagsType"/>
 	</Item>
-	<Item>
-		<Element>/ParentLegalGuardian</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Does the individual have parental or legal guardianship responsibility for the student?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/PickupRights</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>This element tells whether or not the contact has pickup rights.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/LivesWith</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Does the student live with this contact?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/AccessToRecords</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Does this contact have access to the student's records?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/EmergencyContact</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Should this contact be notified in case of emergency?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/HasCustody</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Does this contact have or share custody of the student?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/DisciplinaryContact</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Is this person to be contacted in case of disciplinary action?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
-	<Item>
-		<Element>/PrimaryCareProvider</Element>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>Does this person provide daily living or personal assistance to the student?</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>Yes</Code>
-			</Value>
-			<Value>
-				<Code>No</Code>
-			</Value>
-			<Value>
-				<Code>Unknown</Code>
-			</Value>
-		</Values>
-	</Item>
+	 
 	<Item>
 		<Element>ContactSequence</Element>
 		<Characteristics>O</Characteristics>
@@ -337,14 +198,14 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
-	<xhtml:Example xmlns="">
+	<xhtml:Example name="StudentContact" xmlns="">
 		<StudentContact RefId="D3E34B379D75101A8C3D00AA001A1652" StudentPersonalRefId="DEE34B359D75101A8C3D00AA001A1652">
 			<Name Type="04">
 				<LastName>Johnson</LastName>
