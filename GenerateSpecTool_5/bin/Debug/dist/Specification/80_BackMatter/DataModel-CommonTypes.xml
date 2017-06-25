@@ -5460,7 +5460,7 @@
 			<Description>
 				<p>The other Id entry.</p>
 			</Description>
-			<Type ref="CommonTypes" name="OtherId"></Type>
+			<Type ref="CommonTypes" name="OtherIdType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<OtherIdList>

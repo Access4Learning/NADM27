@@ -79,30 +79,9 @@
     <Description>
       <p>List of one or more Roles.</p>
     </Description>
-    <List mode="List"></List>
+    <Type ref="CommonTypes"  name="RolesType"></Type>
   </Item>
   
-  <Item>
-    <Element>/Role</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>One of a set of possible enumerated Role values.</p>
-    </Description>
-	<Values>
-		<Value>
-			<Code>LeadTeacher</Code>
-			<Description>Lead teacher with the primary responsibility for student learning in the assigned class section.</Description>
-		</Value>
-		<Value>
-			<Code>TeamTeacher</Code>
-			<Description>Team teacher with shared responsibility for student learning within the assigned class section.</Description>
-		</Value>
-		<Value>
-			<Code>ContributingProfessional</Code>
-			<Description>Contributing professional who has been assigned the responsibility to provide additional services that support and increase a student learning.</Description>
-		</Value>
-	</Values>
-  </Item>
   
   <Item>
     <Element>PercentResponsible</Element>
@@ -121,15 +100,15 @@
  <Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"></Type>
+		<Type ref="CommonTypes" name="SIF_MetadataType"></Type>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
 	</Item>
 
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StaffSectionAssignment" xmlns="">
     <StaffSectionAssignment RefId="E3D34B359D75101A8C3D00AA001A1652">
 	<StaffPersonalRefId>D3E34B359D75101A8C3D0004561A1652</StaffPersonalRefId>
 	<SectionInfoRefId>B359D3E34D75101A8C3D00AA001A1652</SectionInfoRefId>
