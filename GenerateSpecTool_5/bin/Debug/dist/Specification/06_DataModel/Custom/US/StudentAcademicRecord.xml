@@ -524,7 +524,7 @@
 			</ActivityAwardHistory>
 		</StudentAcademicRecord>
 	</xhtml:Example>
-	 <xhtml:Example name="StudentSchoolEnrollment - Example 2" xmlns="">
+	 <xhtml:Example name="StudentAcademicRecord - Example 2" xmlns="">
 	<StudentAcademicRecord RefId="D932E34082D04C048112729922B58A93" SIF_RefObject="StudentRecordExchange" SIF_RefId="0EAF9D6DA4854F348103B04BFEAC65B2"> 
     <ReportingDate>2010-07-15</ReportingDate>
     <StudentSchoolEnrollmentData SchoolAttendedRefId="140902170B360F35140071CD92A52A4A">

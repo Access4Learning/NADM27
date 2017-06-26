@@ -117,7 +117,7 @@
         School year for which this enrollment is applicable, expressed as the four-digit year in which the school year ends (e.g. <code>2007</code> for the 2006-07 school year). StudentSchoolEnrollment instances must not span multiple school years.
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>EntryDate</Element>
@@ -133,21 +133,9 @@
 
     <Characteristics>O</Characteristics>
     <Description></Description>
+    <Type ref="CommonTypes" name="StudentEntryTypeType"></Type>
   </Item>
-  <Item>
-
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the type of entry for this enrollment</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0619EntryTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
+ 
   <Item>
     <Element>GradeLevel</Element>
 
@@ -155,7 +143,7 @@
     <Description>
       <p>Grade or academic level of student for this enrollment.</p>
     </Description>
-    <Type ref="DataModel" name="GradeLevel"></Type>
+    <Type ref="CommonTypes" name="GradeLevelType"></Type>
   </Item>
   <Item>
     <Element>Homeroom</Element>
@@ -244,46 +232,22 @@
     </Description>
     <Type name="xs:date"></Type>
   </Item>
+  
   <Item>
     <Element>ExitStatus</Element>
     <Characteristics>O</Characteristics>
     <Description></Description>
+    <Type ref="CommonTypes" name="StudentExitStatusType"></Type>
   </Item>
-  <Item>
-
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p> Code indicating the closure status for this enrollment.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0643ExitWithdrawalStatusType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
+ 
+ 
   <Item>
     <Element>ExitType</Element>
-
     <Characteristics>O</Characteristics>
     <Description></Description>
+    <Type ref="CommonTypes" name="StudentExitTypeType"></Type>
   </Item>
-  <Item>
-
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the type of exit for this enrollment.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0644ExitWithdrawalTypeType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-
+ 
   <Item>
     <Element>RecordClosureReason</Element>
     <Characteristics>O</Characteristics>
@@ -303,88 +267,17 @@
       </Value>
     </Values>
   </Item>
+  
   <Item>
     <Element>PromotionInfo</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Information on a student’s promotion, retention, or demotion related to this enrollment instance.</p>
     </Description>
+    <Type ref="CommonTypes" name="PromotionInfoType"></Type>
   </Item>
 
-  <Item>
-    <Element>/PromotionStatus</Element>
-    <Characteristics>O</Characteristics>
-    <Description>This value should be set if this enrollment instance is closed for an end-of-year closeout or a mid-year promotion or demotion. A value other than NA should be specified when the enrollment instance represents an end-of-year closeout or mid-year promotion/demotion.</Description>
-    <Values>
-      <Value>
-        <Code>Promoted</Code>
-      </Value>
-      <Value>
-        <Code>Demoted</Code>
-      </Value>
-      <Value>
-        <Code>Retained</Code>
-      </Value>
-      <Value>
-        <Code>NA</Code>
-      </Value>
-    </Values>
-  </Item>
-
-  <Item>
-    <Element>/Promotion</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This element is mutually exclusive with Nonpromotion, and its child elements should only be populated if the value of PromotionStatus is "Promoted".</p>
-    </Description>
-
-  </Item>
-
-  <Item>
-    <Element>//Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The reason the student was promoted.  This element should only be populated if the value of PromotionStatus is “Promoted”.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0672PromotionTypeType"></Type>
-  </Item>
-
-  <Item>
-    <Element>//OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p></p>
-    </Description>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-
-  <Item>
-    <Element>/Nonpromotion</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>This element is mutually exclusive with Promotion, and its child elements should only be populated if the value of PromotionStatus is "Retained" or "Demoted".</p>
-    </Description>
-
-  </Item>
-  <Item>
-    <Element>//Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The reason the student was promoted.  This element should only be populated if the value of PromotionStatus is “Promoted”.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0673NonpromotionReasonType"></Type>
-  </Item>
-
-  <Item>
-    <Element>//OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p></p>
-    </Description>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
-
-  <Item>
+   <Item>
     <Element>FTE</Element>
 
     <Characteristics>O</Characteristics>
@@ -416,25 +309,13 @@
   </Item>
   <Item>
     <Element>ResidencyStatus</Element>
-
     <Characteristics>O</Characteristics>
     <Description>
       <p>Location of an individual's legal residence relative to (within or outside) the boundaries of the school for this enrollment.</p>
     </Description>
+    <Type ref="CommonTypes" name="ResidencyStatusType"></Type>
   </Item>
-  <Item>
-    <Element>/Code</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Code indicating the residency status for this enrollment.</p>
-    </Description>
-    <Type ref="ExternalCodeSets" name="NCES0598PublicSchoolResidenceStatusType"></Type>
-  </Item>
-  <Item>
-    <Element>/OtherCodeList</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="OtherCodeList"></Type>
-  </Item>
+
   <Item>
     <Element>NonResidentAttendReason</Element>
 
@@ -450,13 +331,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example name="StudentSchoolEnrollment - Example 1" xmlns="">
     <StudentSchoolEnrollment RefId="A8C3D3E34B359D75101D00AA001A1652" StudentPersonalRefId="D3E34B359D75101A8C3D00AA001A1652"

@@ -232,7 +232,7 @@
 		<Characteristics>O</Characteristics>
 		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
-	<xhtml:Example xmlns="">
+	<xhtml:Example name="StudentPersonal" xmlns="">
 		<StudentPersonal RefId="D3E34B359D75101A8C3D00AA001A1652">
 			<AlertMessages>
 				<AlertMessage Type="Legal">This is the Legal Alert for Joe Student</AlertMessage>

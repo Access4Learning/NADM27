@@ -80,14 +80,14 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
-	<xhtml:Example xmlns="">
+	<xhtml:Example name="UserOrganizationAssociation" xmlns="">
 		<UserOrganizationAssociation RefId="FE1078BA3261545A31905937B265CE01">
 			<PersonRefId SIF_Object = "StaffPersonal">AE1078BA3261545A31905937B265CE01</PersonRefId>
 			<OrganizationRefId SIF_Object = "SchoolInfo">BE1078BA3261545A31905937B265CE01</OrganizationRefId>
