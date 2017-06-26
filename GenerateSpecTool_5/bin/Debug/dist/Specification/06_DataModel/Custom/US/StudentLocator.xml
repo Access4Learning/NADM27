@@ -122,7 +122,7 @@
 			<p>This is the student's state-assigned Id. May be empty in a response where IdStatus is "Ambiguous."</p>
 			<p>NOTE: Although used in the context of a Request query, this field conveys information to (and from) the state and typically does not participate in the matching logic.</p>
 		</Description>
-		<Type ref="DataModel" name="StateProvinceId"/>
+		<Type ref="CommonTypes" name="StateProvinceIdType"/>
 	</Item>
 	<Item>
 		<Element>Confidence</Element>
@@ -141,7 +141,7 @@
 			<p>This is the requesting agency's unique Id for the student.</p>
 			<p>NOTE: Although used in the context of a Request query, this field conveys information to (and from) the state and typically does not participate in the matching logic.</p>
 		</Description>
-		<Type ref="DataModel" name="LocalId"/>
+		<Type ref="CommonTypes" name="LocalIdType"/>
 	</Item>
 	<Item>
 		<Element>StudentPersonalRefId</Element>
@@ -187,7 +187,7 @@
 		<Description>
 			<p>The student's current grade level.</p>
 		</Description>
-		<Type ref="DataModel" name="GradeLevel"/>
+		<Type ref="CommonTypes" name="GradeLevelType"/>
 	</Item>
 	<Item>
 		<Element>SSN</Element>
@@ -203,7 +203,7 @@
 		<Description>
 			<p>The name(s) of the student.</p>
 		</Description>
-		<Type ref="DataModel" name="Name"/>
+		<Type ref="CommonTypes" name="NameType"/>
 	</Item>
 	<Item>
 		<Element>Address</Element>
@@ -211,7 +211,7 @@
 		<Description>
 			<p>The address(es) of the student.</p>
 		</Description>
-		<Type ref="DataModel" name="Address"/>
+		<Type ref="CommonTypes" name="AddressType"/>
 	</Item>
 	<Item>
 		<Element>Demographics</Element>
@@ -219,46 +219,17 @@
 		<Description>
 			<p>Demographic information about the student. This will typically be the core matching information. Privacy considerations may mean that it is filled differently here than it might be in a local StudentPersonal, but it must include enough to drive the state's matching algorithms.</p>
 		</Description>
-		<Type ref="DataModel" name="Demographics"/>
+		<Type ref="CommonTypes" name="DemographicsType"/>
 	</Item>
 	<Item>
 		<Element>Contact</Element>
-		<Characteristics>OR</Characteristics>
+		<!-- <Characteristics>OR</Characteristics> -->
+		<Characteristics>O</Characteristics>
 		<Description>
 			<p>Typically used to provide the state information about a student's parents and legal guardians.</p>
 		</Description>
-	</Item>
-	<Item>
-		<Element>/Relationship</Element>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Relationship to the student.</p>
-		</Description>
-		<Type ref="DataModel" name="Relationship"/>
-	</Item>
-	<Item>
-		<Element>/Name</Element>
-		<Characteristics>OR</Characteristics>
-		<Description>
-			<p>The name(s) of the contact.</p>
-		</Description>
-		<Type ref="DataModel" name="Name"/>
-	</Item>
-	<Item>
-		<Element>/OtherId</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>An other Id associated with the contact.</p>
-		</Description>
-		<Type ref="DataModel" name="OtherId"/>
-	</Item>
-	<Item>
-		<Element>/EducationalLevel</Element>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>Highest level of education completed by the contact.</p>
-		</Description>
-		<Type ref="DataModel" name="EducationalLevel"/>
+		<Type ref="CommonTypes" name="SimpleContactRelationshipType"/>
+		<!-- ContactRelationshipType may have been intended; bare OR, which is inconsistent, with SIF design -->
 	</Item>
 	<Item>
 		<Element>EffectiveDate</Element>
@@ -285,7 +256,7 @@
 	<Item>
 		<Element>GraduationDate</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="GraduationDate"/>
+		<Type ref="CommonTypes" name="GraduationDateType"/>
 		<Description>
 			<p>
             Indicates the date the student graduated&#x2014;Year, Year and Month, or Year, Month and Day may be specified.
@@ -314,7 +285,7 @@
 	<Item>
 		<Element>OtherId</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="OtherId"/>
+		<Type ref="CommonTypes" name="OtherIdType"/>
 		<Description>
 			<p>Additional student identifier not represented elsewhere in StudentLocator (e.g. the driver's license number of the student).</p>
 		</Description>
@@ -330,16 +301,12 @@
             in log files or error reports, along with the SIF_Desc and optional SIF_ExtendedDesc elements.
           </p>
 		</Description>
-		<!--
-		TODO: this is an infrastructure dependency, should not be here
 		<Type ref="Infrastructure" name="SIF_Error"/>
-		-->
-		<Type ref="DataModel" name="OtherId"/>
 	</Item>
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 		<Description>
 			<p>
             SIF_Metadata/TimeElement may be specified as metadata of a StudentLocator SIF_Request to indicate a time duration to which
@@ -352,7 +319,7 @@
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
 	<xhtml:Example xmlns="" name="StudentLocator Query">
 		<SIF_Message xmlns="http://www.sifinfo.org/infrastructure/2.x" Version="2.5">
