@@ -31,25 +31,9 @@
     <Description>
       <p>Rule for calculating the aggregate statistic</p>
     </Description>
-    <Type name="xs:string"></Type>
+    <Type ref="CommonTypes" name="CalculationRuleType"></Type>
   </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description></Description>
-    <Values>
-      <Value>
-        <Code>Description</Code>
-      </Value>
-      <Value>
-        <Code>Formula</Code>
-      </Value>
-      <Value>
-        <Code>URL</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
+   <Item>
     <Element>ApprovalDate</Element>
     <Characteristics>O</Characteristics>
     <Description>

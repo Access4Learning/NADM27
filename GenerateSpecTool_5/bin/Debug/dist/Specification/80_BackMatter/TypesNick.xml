@@ -973,31 +973,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Time required to complete the activity.</p>
 			</Description>
-			<Type name="xs:unsignedInt"/>
-		</Item>
-		<Item>
-			<Attribute>Units</Attribute>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Unit of time of the Duration value.&#160;</p>
-			</Description>
-			<Values>
-				<Value>
-					<Code>week</Code>
-				</Value>
-				<Value>
-					<Code>day</Code>
-				</Value>
-				<Value>
-					<Code>hour</Code>
-				</Value>
-				<Value>
-					<Code>minute</Code>
-				</Value>
-				<Value>
-					<Code>second</Code>
-				</Value>
-			</Values>
+		<Type ref="CommonTypes" name="DurationType"/>
 		</Item>
 		<Item>
 			<Element>StartDate</Element>
@@ -1080,33 +1056,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Time required to complete the assignment.</p>
 			</Description>
-			<Type name="xs:decimal"/>
-		</Item>
-		<Item>
-			<Attribute>Units</Attribute>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>
-        Unit of time of the <code>Duration</code> value.
-				</p>
-			</Description>
-			<Values>
-				<Value>
-					<Code>week</Code>
-				</Value>
-				<Value>
-					<Code>day</Code>
-				</Value>
-				<Value>
-					<Code>hour</Code>
-				</Value>
-				<Value>
-					<Code>minute</Code>
-				</Value>
-				<Value>
-					<Code>second</Code>
-				</Value>
-			</Values>
+		<Type ref="CommonTypes" name="DurationType"/>
 		</Item>
 		<Item>
 			<Element>StartDate</Element>
@@ -10793,3 +10743,574 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
         </Facets>
       </Item>
 </CommonElement>
+
+   	<CommonElement name="ReportInfoType" type="true" dm="true">  
+    <Item>
+      <Element>ReportInfoType</Element>
+      <Description>
+        <p>
+          Identifies the manifest for the report and characteristics of the submission.
+          This element is a conditional element.
+          This element, the ReportData element, or the SIF_ExtendedQueryResults element is included but never more than one at the same time within an instance of this object.
+          See examples of the usage of the object below.
+        </p>
+      </Description>
+    </Item>
+    <Item>
+      <Attribute>ReportManifestRefId</Attribute>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>The report manifest corresponding to this report.</p>
+      </Description>
+      <Type ref="CommonTypes" relationship="indicates report defined by" count="*:1" name="IdRefType"></Type>
+    </Item>
+    <Item>
+      <Element>CalculationDate</Element>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>The date on which the report was calculated.</p>
+      </Description>
+      <Type name="xs:date"></Type>
+    </Item>
+    <Item>
+      <Element>SubmissionNumber</Element>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>A number that identifies the submission; beginning at 1 and incremented each time a submission is done for a particular report; used to indicate resubmission(s).</p>
+      </Description>
+      <Type name="xs:positiveInteger"></Type>
+    </Item>
+    <Item>
+      <Element>SubmissionReason</Element>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>Reason for the report submission.</p>
+      </Description>
+      <Values>
+        <Value>
+          <Code>Initial</Code>
+        </Value>
+        <Value>
+          <Code>Correction</Code>
+        </Value>
+        <Value>
+          <Code>Revision</Code>
+        </Value>
+        <Value>
+          <Code>Addition</Code>
+        </Value>
+      </Values>
+    </Item>
+    <Item>
+      <Element>ReportSubmitterInfo</Element>
+      <Characteristics>C</Characteristics>
+      <Description>
+        <p>Identifies the submitter of the report.</p>
+        <p>This element is conditional depending on the context in which the SIF_ReportObject is used. It must be present in the ReportInfo element when a SIF_ReportObject is sent to a report authority in a SIF_Event message. However, its presence is optional in SIF_ReportObject packets delivered to report authorities in SIF_Response messages.</p>
+      </Description>
+      <Type ref="CommonTypes" name="ReportSubmitterInfoType"></Type>
+   </Item>
+    <Item>
+      <Element>Description</Element>
+      <Characteristics>O</Characteristics>
+      <Type name="xs:string"></Type>
+    </Item>
+	</CommonElement>
+
+	
+   	<CommonElement name="ReportSubmitterInfoType" type="true" dm="true">  
+	    <Item>
+      <Element>ReportSubmitterInfoType</Element>
+      <Description>
+        <p>Identifies the submitter of the report.</p>
+        <p>This element is conditional depending on the context in which the SIF_ReportObject is used. It must be present in the ReportInfo element when a SIF_ReportObject is sent to a report authority in a SIF_Event message. However, its presence is optional in SIF_ReportObject packets delivered to report authorities in SIF_Response messages.</p>
+      </Description>
+    </Item>
+    <Item>
+      <Element>SIF_RefId</Element>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>If the submitter is described by another SIF data object such as a SchoolInfo or LEAInfo instance, this element references that object by RefId.</p>
+      </Description>
+      <Type ref="CommonTypes" name="IdRefType"/>
+    </Item>
+    <Item>
+      <Attribute>SIF_RefObject</Attribute>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>The name of a SIF data object. When used in the context of ReportSubmitterInfo, this attribute must have one of the following values.</p>
+      </Description>
+      <Values>
+        <Value>
+          <Code>LEAInfo</Code>
+          <Text>The submitter of the SIF_ReportObject is the district or other agency referenced by a LEAInfo object</Text>
+        </Value>
+        <Value>
+          <Code>SchoolInfo</Code>
+          <Text>The submitter of the SIF_ReportObject is the school referenced by a SchoolInfo object</Text>
+        </Value>
+      </Values>
+    </Item>
+    <Item>
+      <Element>SubmitterName</Element>
+      <Characteristics>M</Characteristics>
+      <Description>
+        <p>Name of the report submitter.</p>
+        <p>
+          This is a descriptive string that names the entity submitting the SIF_ReportObject to the report authority.
+          It could be the name of an agency, a district, a school, the SIF_SourceId of the submitting agent,
+          or any other string that a report authority could use to identify the submitter of a report.
+          This element may be present regardless of the presence of the SIF_RefId and SIF_RefObject elements.
+          When those elements are used, it is recommended that collector agents reproduce the name of the LEA or school here.
+        </p>
+      </Description>
+      <Type name="xs:normalizedString"></Type>
+    </Item>
+    <Item>
+      <Element>SubmitterDepartment</Element>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>Department, office, or subdivision of the agency submitting the report.</p>
+      </Description>
+      <Type name="xs:normalizedString"></Type>
+    </Item>
+    <Item>
+      <Element>ContactInfo</Element>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>Information on the contact person in this agency submitting the report.</p>
+      </Description>
+      <Type ref="CommonTypes" name="ContactInfoType"></Type>
+    </Item>
+    <Item>
+      <Element>Address</Element>
+      <Characteristics>O</Characteristics>
+      <Type ref="CommonTypes" name="AddressType"></Type>
+    </Item>
+    <Item>
+      <Element>PhoneNumber</Element>
+      <Characteristics>O</Characteristics>
+      <Type ref="CommonTypes" name="PhoneNumberType"></Type>
+    </Item>
+    <Item>
+      <Element>SubmitterNotes</Element>
+      <Characteristics>O</Characteristics>
+      <Description>
+        <p>Optional notes for the report authority, such as information about a district's reporting policies and procedures, instructions for contacting the district for technical support, etc.</p>
+      </Description>
+      <Type name="xs:string"></Type>
+    </Item>
+	</CommonElement>
+	
+ <CommonElement name="SimpleContactRelationshipType" type="true" dm="true">
+       <Item>
+			<Element>SimpleContactRelationshipType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>Typically used to provide the state information about a person's parents and legal guardians.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Relationship</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Relationship to the person.</p>
+			</Description>
+			<Type ref='CommonTypes' name='Relationship'/>
+		</Item>
+
+		<Item>
+			<Element>Name</Element>
+			<!-- had been given as OR, intended presumably as Names, in StudentLocator -->
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The name(s) of the contact.</p>
+			</Description>
+			<Type ref='CommonTypes' name='NameType'/>
+		</Item>
+
+		<Item>
+			<Element>OtherIdList</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>OtherIds associated with the contact .</p>
+			</Description>
+			<Type ref='CommonTypes' name='OtherIdListType'/>
+		</Item>
+
+		<Item>
+			<Element>EducationalLevel</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The highest level of education completed by the contact person.</p>
+			</Description>
+			<Type ref="CommonTypes" name="EducationalLevelType"></Type>
+		</Item>
+		
+</CommonElement>
+
+ <CommonElement name="ReportingPeriodType" type="true" dm="true">
+  <Item>
+    <Element>ReportingPeriod</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information on the period of time over which the report spans.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>BeginReportDate</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The first date for which the report contains information.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>EndReportDate</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The last date for which the report contains information. May be the same as BeginReportDate for snapshot-type reports.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>BeginSubmitDate</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The first date on which the report may be submitted to the authority.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>EndSubmitDate</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The last date on which the report may be submitted to the authority.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  <Item>
+    <Element>DueDate</Element>
+
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The official due date of the report.</p>
+    </Description>
+    <Type name="xs:date"></Type>
+  </Item>
+  </CommonElement>
+  
+ <CommonElement name="ReportFormatListType" type="true" dm="true">
+    <Item>
+    <Element>ReportFormatListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>
+        An optional list of one or more third-party formats that describe the visual representation of the report data.
+        If more than one report format is associated with a manifest, the implementation can choose the most applicable
+        format by examining the ContentType attribute.
+      </p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>ReportFormat</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>A third-party format that describes the visual representation of the report data.</p>
+    </Description>
+			<Type ref="CommonTypes" name="ReportFormatType"></Type>
+ </Item>
+  </CommonElement>
+  
+  
+ <CommonElement name="ReportFormatType" type="true" dm="true">
+  <Item>
+    <Element>ReportFormatType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>A third-party format that describes the visual representation of the report data.</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>This attribute indicates the encoding of the format reference.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>URL</Code>
+      </Value>
+      <Value>
+        <Code>Embedded</Code>
+      </Value>
+      <Value>
+        <Code>Base64Binary</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Attribute>ContentType</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        The vendor-defined content type (e.g. <code>com.vendor.format</code>, <code>PDF</code>, etc.
+      </p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  </CommonElement>
+  
+  <!-- LEFT out for now: references to Infrastructure 
+ <CommonElement name="SIF_QueryListType" type="true" dm="true">
+      <Item>
+      <Element>SIF_QueryListType</Element>
+
+      <Description>
+        <p>
+          Parent element containing the querying criteria for extracting the report information if <code>ReportDefinitionSource/@Type</code>
+          is <code>SIF_Query</code>.
+        </p>
+      </Description>
+      <List mode="List">
+      </List>
+    </Item>
+    <Item>
+      <Element>SIF_Query</Element>
+      <Characteristics>MR</Characteristics>
+      <Description></Description>
+      <Type ref="Infrastructure" name="SIF_Query"></Type>
+    </Item>
+</CommonElement>
+-->
+
+
+ <CommonElement name="CalculationRuleType" type="true" dm="true">
+  <Item>
+    <Element>CalculationRuleType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Rule for calculating the aggregate statistic</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description></Description>
+    <Values>
+      <Value>
+        <Code>Description</Code>
+      </Value>
+      <Value>
+        <Code>Formula</Code>
+      </Value>
+      <Value>
+        <Code>URL</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="DocumentSourceType" type="true" dm="true">
+	
+	  <Item>
+    <Element>DocumentSourceType</Element>
+
+    <Description>
+      <p>
+        This element defines a document. If the Type attribute is URL, this is the location of the document that describes the assignment. If Type is PDF, this element will contain the Base64 encoding of the entire document.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="URIOrBinaryType"/>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The way the document is specified.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>URL</Code>
+      </Value>
+      <Value>
+        <Code>PDF</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="AttendanceCodeType" type="true" dm="true">
+    <Item>
+    <Element>AttendanceCodeType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The local attendance code.</p>
+    </Description>
+    <Type name="xs:token"></Type>
+  </Item>
+  <Item>
+    <Attribute>AttendanceCodeInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+</CommonElement>
+
+  	<CommonElement name="FederalTaxIdType" type="true" dm="true">
+ <Item>
+    <Element>FederalTaxIdType</Element>
+    <Description>
+      <p>Taxpayer identification number/Federal tax Id for this vendor.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Attribute>Code</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        The type tax Id that this is. TIN based on IRS Publication 1915 <a href="References.html#IRSTIN">[IRSTIN]</a>.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>EIN</Code>
+      </Value>
+      <Value>
+        <Code>SSNO</Code>
+      </Value>
+      <Value>
+        <Code>ITIN</Code>
+      </Value>
+      <Value>
+        <Code>ATIN</Code>
+      </Value>
+      <Value>
+        <Code>OTHER</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="DurationType" type="true" dm="true">
+  	<Item>
+		<Element>DurationType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A duration.</p>
+		</Description>
+		<!--<Type name='xs:unsignedInt'/>-->
+		<!--More general, used in one instance -->
+			<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Attribute>Units</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Unit of time of the Duration value.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>week</Code>
+			</Value>
+			<Value>
+				<Code>day</Code>
+			</Value>
+			<Value>
+				<Code>hour</Code>
+			</Value>
+			<Value>
+				<Code>minute</Code>
+			</Value>
+			<Value>
+				<Code>second</Code>
+			</Value>
+		</Values>
+	</Item>
+	</CommonElement>
+	
+  	<CommonElement name="LearningResourceLocationType" type="true" dm="true">
+	  <Item>
+    <Element>LearningResourceLocationType</Element>
+
+    <Description>
+      <p>Description of location of resource, i.e. location in library or URL, community resource, outside resource supplier.</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+
+    <Attribute>ReferenceType</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>A qualifying attribute for the Location payload. If ReferenceType is "URI", the payload contains a web address where the resource can be found.</p>
+    </Description>
+    <Type name="xs:token"></Type>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="TypedCreatorType" type="true" dm="true">
+  <Item>
+ <Element>TypedCreatorType</Element>
+ <Description>Name of the Creator of the relationship.</Description>
+ <Type name="xs:normalizedString"></Type>
+</Item>
+ 
+ <Item>
+	<Attribute>Type</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The object type of the object representing the Creator.</p>
+	</Description>
+	<Values>
+		<Value>
+			<Code>StaffPersonal</Code>
+		</Value>
+		<Value>
+			<Code>Person</Code>
+		</Value>
+		<Value>
+			<Code>WorkforcePersonal</Code>
+		</Value>
+		<Value>
+			<Code>Other</Code>
+		</Value>
+	</Values>
+  </Item>
+	  
+  <Item>
+	<Attribute>SIF_RefId</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>RefId of SIF object representing the creator if such exists.</p>
+	</Description>
+	<Type ref="CommonTypes"  name="IdRefType"></Type>
+  </Item> 
+  </CommonElement>
+  
+  	<CommonElement name="DriversLicenseNumberType" type="true" dm="true">
+  	<Item>
+		<Element>DriversLicenseNumberType</Element>
+		<Description>
+			<p>The driver's license of the individual.</p>
+		</Description>
+		<Type name="xs:string"></Type>
+	</Item>
+	<Item>
+		<Attribute>StateProvince</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The state/province that issued the driver's license.</p>
+		</Description>
+		<Type ref="CommonTypes" name="StateProvinceType"></Type>
+	</Item>
+	</CommonElement>
