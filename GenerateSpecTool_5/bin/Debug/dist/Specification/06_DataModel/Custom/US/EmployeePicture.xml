@@ -33,22 +33,7 @@
         This element defines the picture. If the Type attribute is URL, this is the location of the picture in <a href="References.html#JPEG">[JPEG]</a> format; if Type is JPEG, this is the <a href="References.html#JPEG">[JPEG]</a> image data encoded using the Base64 Content-Transfer-Encoding defined in Section 6.8 of <a href="References.html#RFC2045">[RFC 2045]</a>.
       </p>
     </Description>
-    <Type ref="CommonTypes" name="URIOrBinaryType"/>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The way the picture is specified.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>URL</Code>
-      </Value>
-      <Value>
-        <Code>JPEG</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="PictureSourceType"/>
   </Item>
   <Item>
     <Element>SIF_Metadata</Element>

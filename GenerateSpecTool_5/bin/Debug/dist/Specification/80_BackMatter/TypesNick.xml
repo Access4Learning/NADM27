@@ -973,31 +973,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Time required to complete the activity.</p>
 			</Description>
-			<Type name="xs:unsignedInt"/>
-		</Item>
-		<Item>
-			<Attribute>Units</Attribute>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Unit of time of the Duration value.&#160;</p>
-			</Description>
-			<Values>
-				<Value>
-					<Code>week</Code>
-				</Value>
-				<Value>
-					<Code>day</Code>
-				</Value>
-				<Value>
-					<Code>hour</Code>
-				</Value>
-				<Value>
-					<Code>minute</Code>
-				</Value>
-				<Value>
-					<Code>second</Code>
-				</Value>
-			</Values>
+		<Type ref="CommonTypes" name="DurationType"/>
 		</Item>
 		<Item>
 			<Element>StartDate</Element>
@@ -1080,33 +1056,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Time required to complete the assignment.</p>
 			</Description>
-			<Type name="xs:decimal"/>
-		</Item>
-		<Item>
-			<Attribute>Units</Attribute>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>
-        Unit of time of the <code>Duration</code> value.
-				</p>
-			</Description>
-			<Values>
-				<Value>
-					<Code>week</Code>
-				</Value>
-				<Value>
-					<Code>day</Code>
-				</Value>
-				<Value>
-					<Code>hour</Code>
-				</Value>
-				<Value>
-					<Code>minute</Code>
-				</Value>
-				<Value>
-					<Code>second</Code>
-				</Value>
-			</Values>
+		<Type ref="CommonTypes" name="DurationType"/>
 		</Item>
 		<Item>
 			<Element>StartDate</Element>
@@ -11142,27 +11092,6 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 </CommonElement>
 -->
 
- <CommonElement name="XMLDataType" type="true" dm="true">
-  <Item>
-    <Element>XMLDataType</Element>
-    <Type>
-      <xs:any processContents="lax"/>
-    </Type>
-    <Description>
-      <p>Contains an arbitary XML element, encoded in UTF-8.</p>
-    </Description>
-  </Item>
-  <Item>
-    <Attribute>Description</Attribute>
-    <Characteristics>O</Characteristics>
-    <Type name="xs:token"/>
-    <Description>
-      <p>
-        Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
-      </p>
-    </Description>
-  </Item>
-</CommonElement>
 
  <CommonElement name="CalculationRuleType" type="true" dm="true">
   <Item>
@@ -11190,3 +11119,198 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     </Values>
   </Item>
   </CommonElement>
+  
+  	<CommonElement name="DocumentSourceType" type="true" dm="true">
+	
+	  <Item>
+    <Element>DocumentSourceType</Element>
+
+    <Description>
+      <p>
+        This element defines a document. If the Type attribute is URL, this is the location of the document that describes the assignment. If Type is PDF, this element will contain the Base64 encoding of the entire document.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="URIOrBinaryType"/>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The way the document is specified.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>URL</Code>
+      </Value>
+      <Value>
+        <Code>PDF</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="AttendanceCodeType" type="true" dm="true">
+    <Item>
+    <Element>AttendanceCodeType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The local attendance code.</p>
+    </Description>
+    <Type name="xs:token"></Type>
+  </Item>
+  <Item>
+    <Attribute>AttendanceCodeInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Type ref="CommonTypes" name="IdRefType"></Type>
+  </Item>
+</CommonElement>
+
+  	<CommonElement name="FederalTaxIdType" type="true" dm="true">
+ <Item>
+    <Element>FederalTaxIdType</Element>
+    <Description>
+      <p>Taxpayer identification number/Federal tax Id for this vendor.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Attribute>Code</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        The type tax Id that this is. TIN based on IRS Publication 1915 <a href="References.html#IRSTIN">[IRSTIN]</a>.
+      </p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>EIN</Code>
+      </Value>
+      <Value>
+        <Code>SSNO</Code>
+      </Value>
+      <Value>
+        <Code>ITIN</Code>
+      </Value>
+      <Value>
+        <Code>ATIN</Code>
+      </Value>
+      <Value>
+        <Code>OTHER</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="DurationType" type="true" dm="true">
+  	<Item>
+		<Element>DurationType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A duration.</p>
+		</Description>
+		<!--<Type name='xs:unsignedInt'/>-->
+		<!--More general, used in one instance -->
+			<Type name="xs:decimal"/>
+	</Item>
+	<Item>
+		<Attribute>Units</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>Unit of time of the Duration value.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>week</Code>
+			</Value>
+			<Value>
+				<Code>day</Code>
+			</Value>
+			<Value>
+				<Code>hour</Code>
+			</Value>
+			<Value>
+				<Code>minute</Code>
+			</Value>
+			<Value>
+				<Code>second</Code>
+			</Value>
+		</Values>
+	</Item>
+	</CommonElement>
+	
+  	<CommonElement name="LearningResourceLocationType" type="true" dm="true">
+	  <Item>
+    <Element>LearningResourceLocationType</Element>
+
+    <Description>
+      <p>Description of location of resource, i.e. location in library or URL, community resource, outside resource supplier.</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+
+    <Attribute>ReferenceType</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>A qualifying attribute for the Location payload. If ReferenceType is "URI", the payload contains a web address where the resource can be found.</p>
+    </Description>
+    <Type name="xs:token"></Type>
+  </Item>
+  </CommonElement>
+  
+  	<CommonElement name="TypedCreatorType" type="true" dm="true">
+  <Item>
+ <Element>TypedCreatorType</Element>
+ <Description>Name of the Creator of the relationship.</Description>
+ <Type name="xs:normalizedString"></Type>
+</Item>
+ 
+ <Item>
+	<Attribute>Type</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>The object type of the object representing the Creator.</p>
+	</Description>
+	<Values>
+		<Value>
+			<Code>StaffPersonal</Code>
+		</Value>
+		<Value>
+			<Code>Person</Code>
+		</Value>
+		<Value>
+			<Code>WorkforcePersonal</Code>
+		</Value>
+		<Value>
+			<Code>Other</Code>
+		</Value>
+	</Values>
+  </Item>
+	  
+  <Item>
+	<Attribute>SIF_RefId</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>RefId of SIF object representing the creator if such exists.</p>
+	</Description>
+	<Type ref="CommonTypes"  name="IdRefType"></Type>
+  </Item> 
+  </CommonElement>
+  
+  	<CommonElement name="DriversLicenseNumberType" type="true" dm="true">
+  	<Item>
+		<Element>DriversLicenseNumberType</Element>
+		<Description>
+			<p>The driver's license of the individual.</p>
+		</Description>
+		<Type name="xs:string"></Type>
+	</Item>
+	<Item>
+		<Attribute>StateProvince</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The state/province that issued the driver's license.</p>
+		</Description>
+		<Type ref="CommonTypes" name="StateProvinceType"></Type>
+	</Item>
+	</CommonElement>

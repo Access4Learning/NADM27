@@ -101,22 +101,7 @@
         If <code>Type</code> is <code>PDF</code>, this element will contain the Base64 encoding of the entire document.
       </p>
     </Description>
-    <Type ref="CommonTypes" name="URIOrBinaryType"/>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The type of information that is contained in the DetailedDescription element.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>URL</Code>
-      </Value>
-      <Value>
-        <Code>PDF</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="DocumentSourceType"/>
   </Item>
 
   <Item>
