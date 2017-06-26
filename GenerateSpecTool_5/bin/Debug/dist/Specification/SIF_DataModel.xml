@@ -112,7 +112,6 @@
 		<!--These includes and associated files will disappear before the end of development.-->
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/TypesLinda.xml"/>
 		<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="80_BackMatter/TypesNick.xml"/>
-
 	</Appendix>
 	
 		<!--Section B-->

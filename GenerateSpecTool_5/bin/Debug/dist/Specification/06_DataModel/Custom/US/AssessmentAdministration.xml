@@ -34,7 +34,7 @@
     <Description>
       <p>Special conditions or unusual events related to the administration event.</p>
     </Description>
-    <Type ref="CommonTypes" name="SpecialConditionListType"></Type>
+    <Type ref="CommonTypes" name="SpecialConditionActionListType"></Type>
   </Item>
  
  
