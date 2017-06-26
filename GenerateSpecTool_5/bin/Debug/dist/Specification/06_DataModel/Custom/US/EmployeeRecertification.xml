@@ -97,22 +97,7 @@
     <Description>
       <p>Hours attended or credits earned by the employee</p>
     </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Number of hours or credits.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Hours</Code>
-      </Value>
-      <Value>
-        <Code>Credits</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="EmployeeCreditEarnedType"></Type>
   </Item>
   <Item>
     <Element>DateFrom</Element>

@@ -112,51 +112,17 @@
     <Description>
       <p>Current odometer reading.</p>
     </Description>
-    <Type name="xs:decimal"></Type>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Units used in the odometer reading.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>Kilometers</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>Miles</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
+   <Item>
     <Element>Speedometer</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Current speedometer reading.</p>
     </Description>
-    <Type name="xs:decimal"></Type>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Units used in the speedometer reading.&#160;</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>Kilometers/hour</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>Miles/hour</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
+   <Item>
     <Element>Students</Element>
     <Characteristics>O</Characteristics>
     <Description>A list of students and their statuses.   The complete list may be sent with some events (e.g. change in RouteStatus) per district policy, but it is more typical of responses.</Description>

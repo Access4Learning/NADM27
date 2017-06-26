@@ -5112,7 +5112,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p></p>
 			</Description>
-			<Type ref="CommonTypes" name="PlannedAssessmentParticipationType"></Type>
+			<Type ref="CommonTypes" name="SourcedCodesetType"></Type>
 		</Item>
 
 		<Item>
@@ -5526,8 +5526,8 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 				<p>
         If this transaction has an item associated with it, this element contains the information about the item.  Most <code>Transaction</code> elements will contain this element.  However, certain types of fines assessed to the student like "talking in class",  "running in library", etc. do not have a corresponding item so that <code>Transaction</code> instance would not contain an ItemInfo.
 				</p>
-				<Type ref="CommonTypes" name="LibraryItemInfoType"></Type>
 			</Description>
+				<Type ref="CommonTypes" name="LibraryItemInfoType"></Type>
 		</Item>
 
 		<Item>
@@ -10594,7 +10594,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>PlannedAssessmentParticipation</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="PlannedAssessmentParticipationType"></Type>
+    <Type ref="CommonTypes" name="SourcedCodesetType"></Type>
   </Item>
 
   <Item>
@@ -11308,6 +11308,49 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   </Item> 
   </CommonElement>
   
+    	<CommonElement name="TypedCreator2Type" type="true" dm="true">
+  <Item>
+ <Element>TypedCreator2Type</Element>
+ <Description>Name of a Creator.</Description>
+ <Type name="xs:normalizedString"></Type>
+</Item>
+ 
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The type of the object representing the Creator.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>StudentPersonal</Code>
+			</Value>
+			<Value>
+				<Code>StaffPersonal</Code>
+			</Value>
+			<Value>
+				<Code>EmployeePersonal</Code>
+			</Value>
+			<Value>
+				<Code>StudentContactPersonal</Code>
+			</Value>
+			<Value>
+				<Code>StudentContact</Code>
+			</Value>
+		</Values>
+	</Item>
+
+	  
+  <Item>
+	<Attribute>SIF_RefId</Attribute>
+	<Characteristics>O</Characteristics>
+	<Description>
+	  <p>RefId of SIF object representing the creator if such exists.</p>
+	</Description>
+	<Type ref="CommonTypes"  name="IdRefType"></Type>
+  </Item> 
+  </CommonElement>
+  
   	<CommonElement name="DriversLicenseNumberType" type="true" dm="true">
   	<Item>
 		<Element>DriversLicenseNumberType</Element>
@@ -11325,3 +11368,228 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		<Type ref="CommonTypes" name="StateProvinceType"></Type>
 	</Item>
 	</CommonElement>
+	
+  	<CommonElement name="PersonIdType" type="true" dm="true">
+		<Item>
+		<Element>PersonIdType</Element>
+		<Description>
+			<p>The state-assigned identifier for this person.  This will probably not be the same State Province Id as the one assigned to the various roles such as StudentPersonal.</p>
+		</Description>
+		<Type ref="CommonTypes" name="StateProvinceIdType"/>
+	</Item>
+	<Item>
+		<Attribute>Label</Attribute>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The label associated with this id for instance: "MPI ID" or "P20ID".</p>
+		</Description>
+		<Type name="xs:string"></Type>
+	</Item>
+	</CommonElement>
+	
+  	<CommonElement name="AssociatedRoleRefIdType" type="true" dm="true">
+		<Item>
+		<Element>AssociatedRoleRefIdType</Element>
+		<Description>
+			<p>The RefId of the  *Personal SIF_Object representing this Person's role .</p>
+		</Description>
+		<Type ref="CommonTypes"  name="IdRefType"></Type>
+	</Item>
+	
+	<Item>
+		<Attribute>Zone_Id</Attribute>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The ZoneId for the target object.</p>
+		</Description>
+		<Type name="xs:token"></Type>
+	</Item>
+		
+	<Item>
+		<Attribute>Type</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p> The object type of the Person's associated role.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>StudentPersonal</Code>
+			</Value>
+			<Value>
+				<Code>StaffPersonal</Code>
+			</Value>
+			<Value>
+				<Code>EmployeePersonal</Code>
+			</Value>
+			<Value>
+				<Code>StudentContactPersonal</Code>
+			</Value>
+			<Value>
+				<Code>StudentContact</Code>
+			</Value>
+		</Values>
+	</Item>
+	</CommonElement>
+	
+  	<CommonElement name="LibraryMessageListType" type="true" dm="true">
+		<Item>
+		<Element>LibraryMessageListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>List of messages for/regarding the patron.</p>
+		</Description>
+		<List mode="List">
+    </List>
+	</Item>
+	<Item>
+		<Element>Message</Element>
+		<Characteristics>OR</Characteristics>
+		<Type ref="CommonTypes"  name="LibraryMessageType"></Type>
+	</Item>
+	</CommonElement>
+  	<CommonElement name="LibraryMessageType" type="true" dm="true">
+	<Item>
+		<Element>LibraryMessageType</Element>
+	</Item>
+	<Item>
+		<Attribute>Priority</Attribute>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The level of urgency associated with this message.</p>
+		</Description>
+		<Values>
+			<Value>
+				<Code>Low</Code>
+			</Value>
+			<Value>
+				<Code>Normal</Code>
+			</Value>
+			<Value>
+				<Code>Urgent</Code>
+			</Value>
+		</Values>
+	</Item>
+	<Item>
+		<Element>Sent</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>The date and time that this message was originally sent.</p>
+		</Description>
+		<Type name="xs:dateTime"/>
+	</Item>
+	<Item>
+		<Element>Text</Element>
+		<Characteristics>M</Characteristics>
+		<Description>
+			<p>The contents of the message.</p>
+		</Description>
+		<Type name="xs:string"/>
+	</Item>
+	</CommonElement>
+	
+  	<CommonElement name="EmployeeCreditEarnedType" type="true" dm="true">
+	  <Item>
+    <Element>EmployeeCreditEarnedType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The number of units earned</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The unit description</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Hours</Code>
+      </Value>
+      <Value>
+        <Code>Credits</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  <CommonElement name="SourcedCodesetType" type="true" dm="true">
+		<Item>
+			<Element>SourcedCodesetType</Element>
+			<Type name="xs:token"></Type>
+		</Item>
+
+		<Item>
+			<Attribute>Codeset</Attribute>
+			<Description>
+				<p>Identifies source of value provided.</p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>StateProvince</Code>
+				</Value>
+				<Value>
+					<Code>Local</Code>
+					<Text>e.g. district-specific</Text>
+				</Value>
+				<Value>
+					<Code>Other</Code>
+				</Value>
+				<Value>
+					<Code>Text</Code>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
+	
+  <CommonElement name="SessionDurationType" type="true" dm="true">
+	  <Item>
+    <Element>SessionDurationType</Element>
+    <Description>
+      <p>Duration relative to a session.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Attribute>UnitOfMeasure</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies unit of measure in which amount of time is expressed.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Minutes</Code>
+      </Value>
+      <Value>
+        <Code>Hours</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  <CommonElement name="DistanceType" type="true" dm="true">
+    <Item>
+    <Element>DistanceType</Element>
+    <Description>
+      <p>Measurement of distance.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Attribute>Unit</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Units used in the distance measurement.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>km</Code>
+        <Text>Kilometers</Text>
+      </Value>
+      <Value>
+        <Code>m</Code>
+        <Text>Miles</Text>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>

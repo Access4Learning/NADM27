@@ -45,23 +45,9 @@
     <Description>
       <p>The number of units earned</p>
     </Description>
-    <Type name="xs:decimal"></Type>
+    <Type ref="CommonTypes" name="EmployeeCreditEarnedType"></Type>
   </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The unit description</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Hours</Code>
-      </Value>
-      <Value>
-        <Code>Credits</Code>
-      </Value>
-    </Values>
-  </Item>
+
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>

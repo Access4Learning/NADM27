@@ -31,15 +31,7 @@
 		<Description>
 			<p>The driver's license of the individual.</p>
 		</Description>
-		<Type name="xs:string"></Type>
-	</Item>
-	<Item>
-		<Attribute>StateProvince</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>The state/province that issued the driver's license.</p>
-		</Description>
-		<Type ref="CommonTypes" name="StateProvinceType"></Type>
+		<Type ref="CommonTypes" name="DriversLicenseNumberType"/> 
 	</Item>
 	<Item>
 		<Element>PersonId</Element>
@@ -47,15 +39,7 @@
 		<Description>
 			<p>The state-assigned identifier for this person.  This will probably not be the same State Province Id as the one assigned to the various roles such as StudentPersonal.</p>
 		</Description>
-		<Type ref="CommonTypes" name="StateProvinceIdType"/>
-	</Item>
-	<Item>
-		<Attribute>Label</Attribute>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The label associated with this id for instance: "MPI ID" or "P20ID".</p>
-		</Description>
-		<Type name="xs:string"></Type>
+		<Type ref="CommonTypes" name="PersonIdType"/>
 	</Item>
 	
 	<Item>

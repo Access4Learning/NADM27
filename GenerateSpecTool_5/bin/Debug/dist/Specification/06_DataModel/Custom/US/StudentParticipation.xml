@@ -323,37 +323,21 @@
 		<Description>
 			<p>Review by program / state.  May be required if a ProjectedExitDate is present.  The projected reason for a student's exit from program.</p>
 		</Description>
-		<Type name="xs:token"/>
-	</Item>
-	<Item>
-		<Attribute>Codeset</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Identifies source of value provided.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>StateProvince</Code>
-			</Value>
-			<Value>
-				<Code>Local</Code>
-				<Text>e.g. district-specific</Text>
-			</Value>
-			<Value>
-				<Code>Other</Code>
-			</Value>
-			<Value>
-				<Code>Text</Code>
-			</Value>
-		</Values>
+		<Type ref="CommonTypes" name="SourcedCodesetType"/>
 	</Item>
 	<Item>
 		<Element>PlannedAssessmentParticipation</Element>
 		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The student's planned level of participation in statewide assessments.</p>
-		</Description>
-		<Type ref="CommonTypes" name="PlannedAssessmentParticipationType"/>
+			<Description>
+				<p>The student's planned level of participation in statewide assessments.</p>
+			</Description>
+			<ItemExample>Accommodations - Students with Disabilities</ItemExample>
+			<ItemExample>Accommodations - Students with temporary or long-term disabilities and Section 504 students</ItemExample>
+			<ItemExample>Accommodations - English Language Learners</ItemExample>
+			<ItemExample>Exempted Students - Transfer</ItemExample>
+			<ItemExample>Excused - Prior to Test</ItemExample>
+			<ItemExample>Excused - During Testing</ItemExample>
+		<Type ref="CommonTypes" name="SourcedCodesetType"/>
 	</Item>
 	<Item>
 		<Element>TransitionPlanning</Element>
@@ -365,29 +349,7 @@
 		<ItemExample>Employment - transition services should be targeted toward employment</ItemExample>
 		<ItemExample>Community Living - transition services should be targeted toward community living</ItemExample>
 		<ItemExample>NA - not applicable (e.g., student is younger than age 16)</ItemExample>
-		<Type name="xs:token"/>
-	</Item>
-	<Item>
-		<Attribute>Codeset</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Identifies source of value provided.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>StateProvince</Code>
-			</Value>
-			<Value>
-				<Code>Local</Code>
-				<Text>e.g. district-specific</Text>
-			</Value>
-			<Value>
-				<Code>Other</Code>
-			</Value>
-			<Value>
-				<Code>Text</Code>
-			</Value>
-		</Values>
+		<Type ref="CommonTypes" name="SourcedCodesetType"/>
 	</Item>
 	<Item>
 		<Element>StudentSpecialEducationFTE</Element>
