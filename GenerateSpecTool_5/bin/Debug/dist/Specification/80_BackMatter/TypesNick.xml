@@ -5101,7 +5101,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p></p>
 			</Description>
-			<Type ref="CommonTypes" name="PlannedAssessmentParticipationType"></Type>
+			<Type ref="CommonTypes" name="SourcedCodesetType"></Type>
 		</Item>
 
 		<Item>
@@ -10583,7 +10583,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
   <Item>
     <Element>PlannedAssessmentParticipation</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="PlannedAssessmentParticipationType"></Type>
+    <Type ref="CommonTypes" name="SourcedCodesetType"></Type>
   </Item>
 
   <Item>
@@ -11530,3 +11530,55 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			</Values>
 		</Item>
 	</CommonElement>
+	
+  <CommonElement name="SessionDurationType" type="true" dm="true">
+	  <Item>
+    <Element>SessionDurationType</Element>
+    <Description>
+      <p>Duration relative to a session.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Attribute>UnitOfMeasure</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Identifies unit of measure in which amount of time is expressed.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Minutes</Code>
+      </Value>
+      <Value>
+        <Code>Hours</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  <CommonElement name="DistanceType" type="true" dm="true">
+    <Item>
+    <Element>DistanceType</Element>
+    <Description>
+      <p>Measurement of distance.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Attribute>Unit</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Units used in the distance measurement.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>km</Code>
+        <Text>Kilometers</Text>
+      </Value>
+      <Value>
+        <Code>m</Code>
+        <Text>Miles</Text>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
