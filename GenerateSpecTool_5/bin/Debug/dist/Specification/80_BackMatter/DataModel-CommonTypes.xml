@@ -2266,7 +2266,7 @@
 			</OtherNames>
 		</xhtml:Example>
 	</CommonElement>
-
+<!--
 	<CommonElement name="PlannedAssessmentParticipationType" type="true">
 		<Item>
 			<Element>PlannedAssessmentParticipationType</Element>
@@ -2308,7 +2308,7 @@
 			<PlannedAssessmentParticipation Codeset="StateProvince">Accommodations - Students with Disabilities</PlannedAssessmentParticipation>
 		</xhtml:Example>
 	</CommonElement>
-
+-->
 	<CommonElement name="ExceptionalityCategoryListType" type="true">
 		<Item>
 			<Element>ExceptionalityCategoryListType</Element>
