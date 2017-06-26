@@ -249,7 +249,7 @@
 			<Item>
 				<Element>MealStatus</Element>
 				<Characteristics>C</Characteristics>
-				<Type ref="CommonTypes" name="MealStatus"></Type>
+				<Type ref="CommonTypes" name="MealStatusType"></Type>
 				<Description>
 					<p>Student meal status. If a meal status applies, either MealStatus (for students), or EarnedStatus (for staff) is specified.</p>
 				</Description>
@@ -257,7 +257,7 @@
 			<Item>
 				<Element>EarnedStatus</Element>
 				<Characteristics>C</Characteristics>
-				<Type ref="CommonTypes" name="EarnedStatus"></Type>
+				<Type ref="CommonTypes" name="EarnedStatusType"></Type>
 				<Description>
 					<p>Staff meal status.</p>
 				</Description>
@@ -551,7 +551,7 @@
 			<Description>
 				<p>The name(s) of the person.</p>
 			</Description>
-			<Type ref='CommonTypes' name='Name'/>
+			<Type ref='CommonTypes' name='NameType'/>
 		</Item>
 </CommonElement>
 
@@ -590,7 +590,7 @@
 			<Description>
 				<p>Relationship to the person.</p>
 			</Description>
-			<Type ref='CommonTypes' name='Relationship'/>
+			<Type ref='CommonTypes' name='RelationshipType'/>
 		</Item>
 
 		<Item>
@@ -1574,47 +1574,11 @@
 		<Item>
 			<Element>FeesForUse</Element>
 			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+			<Type ref="CommonTypes" name="FeesForUseType"></Type>
 			<Description>A container for fees for use of the content in the object.</Description>
 		</Item>
 
-		<Item>
-			<Element>/FeeForUse</Element>
-			<Characteristics>OR</Characteristics>
-			<Description>Description of one fee structure applying to the use of this resource.</Description>
-		</Item>
-
-		<Item>
-			<Element>//UseType</Element>
-			<Characteristics>M</Characteristics>
-			<Type name="xs:string"></Type>
-			<Description>
-			A description of the fee structure for this resource.
-			Some resources may be licensed differently depending upon their context.
-			For example, a content provider might charge one fee structure for resources used in the classroom and a separate fee for those
-			resources available to parents from home.
-			</Description>
-		</Item>
-
-		<Item>
-			<Element>//MeteringType</Element>
-			<Characteristics>M</Characteristics>
-			<Type name="xs:token"></Type>
-		</Item>
-
-		<Item>
-			<Element>//MeteringURL</Element>
-			<Characteristics>O</Characteristics>
-			<Type name="xs:anyURI"></Type>
-		</Item>
-
-		<Item>
-			<Element>//PerUseCharge</Element>
-			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" name="MonetaryAmountType"/>
-		</Item>
-
+		 
 		<Item>
 			<Element>CopyrightStatement</Element>
 			<Characteristics>O</Characteristics>
@@ -1797,20 +1761,16 @@
 			<Element>MediaTypes</Element>
 			<Characteristics>O</Characteristics>
 			<Description>Allows an object or query to be tagged with MIME types.</Description>
-			<List mode="List"/>
+		    <Type ref="CommonTypes" name="MediaTypesType"></Type>
 		</Item>
 
-		<Item>
-			<Element>/MediaType</Element>
-			<Characteristics>MR</Characteristics>
-			<Type name="xs:token"/>
-		</Item>
+ 
 
 		<Item>
 			<Element>GradeLevels</Element>
 			<Characteristics>O</Characteristics>
 			<Description>Applicable grade levels as defined by SIF.</Description>
-			<Type ref="CommonTypes" name="GradeLevels"></Type>
+			<Type ref="CommonTypes" name="GradeLevelsType"></Type>
 		</Item>
 
 		<Item>
@@ -1821,14 +1781,10 @@
 			Although there could be overlap with <code>LearningStandardItems</code>, it is anticipated
 			there will be use cases where <code>LearningStandardItem</code> objects may not exist or may not be available, and data may need to be tagged with high-level subject areas.
 			</Description>
-			<List mode="List"/>
+			<Type ref="CommonTypes" name="SubjectAreasType"></Type>
 		</Item>
 
-		<Item>
-			<Element>/SubjectArea</Element>
-			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" name="SubjectArea"></Type>
-		</Item>
+	 
 
 		<Item>
 			<Element>InterestLevels</Element>
@@ -1836,26 +1792,15 @@
 			<Description>
 				<code>InterestLevels</code> is designed to represent the grade level for which the content is created.  For example a tenth grader is at a third grade level in Algebra.  You would want to present the content at a third grade level, but in a tenth grade context or interest level.
 			</Description>
-			<List mode="List"/>
+			<Type ref="CommonTypes" name="InterestLevelsType"></Type>
 		</Item>
 
-		<Item>
-			<Element>/InterestLevel</Element>
-			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" name="GradeLevel"></Type>
-		</Item>
-
+	 
 		<Item>
 			<Element>LearningStandardItems</Element>
 			<Characteristics>O</Characteristics>
 			<Description>Allows any SIF object to be correlated to learning standards.</Description>
-			<List mode="List"/>
-		</Item>
-
-		<Item>
-			<Element>/LearningStandardItemRefId</Element>
-			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" name="IdRefType"/>
+			<Type ref="CommonTypes" name="LearningStandardItemsType"/>
 		</Item>
 
 		<Item>
@@ -1867,114 +1812,27 @@
 				For the purposes of assigning attributes to learning resources, the SIF specification is limited to the cognitive domain, including knowledge, comprehension, application, analysis, synthesis and evaluation.
 				</p>
 			</Description>
-			<List mode="List"/>
+			<Type ref="CommonTypes" name="BloomsTaxonomyLevelsType"/>
 		</Item>
-		<Item>
-			<Element>/BloomsTaxonomyLevel</Element>
-			<Characteristics>OR</Characteristics>
-			<Values>
-				<Value>
-					<Code>Knowledge</Code>
-				</Value>
-				<Value>
-					<Code>Comprehension</Code>
-				</Value>
-				<Value>
-					<Code>Application</Code>
-				</Value>
-				<Value>
-					<Code>Analysis</Code>
-				</Value>
-				<Value>
-					<Code>Synthesis</Code>
-				</Value>
-				<Value>
-					<Code>Evaluation</Code>
-				</Value>
-			</Values>
-		</Item>
+		 
 		<Item>
 			<Element>MultipleIntelligences</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>An educational theory that describes at least eight different kinds of "intelligences."  These include linguistic, logical-mathematical, spatial, bodily-kinesthetic, musical intelligence, interpersonal, intrapersonal and naturalist. </p>
 			</Description>
-			<List mode="List"/>
+			<Type ref="CommonTypes" name="MultipleIntelligencesType"/>
 		</Item>
-		<Item>
-			<Element>/MultipleIntelligence</Element>
-			<Characteristics>OR</Characteristics>
-			<Values>
-				<Value>
-					<Code>Linguistic</Code>
-				</Value>
-				<Value>
-					<Code>Logical-Mathematical</Code>
-				</Value>
-				<Value>
-					<Code>Spatial</Code>
-				</Value>
-				<Value>
-					<Code>Musical</Code>
-				</Value>
-				<Value>
-					<Code>Bodily-Kinesthetic</Code>
-				</Value>
-				<Value>
-					<Code>Interpersonal</Code>
-				</Value>
-				<Value>
-					<Code>Intrapersonal</Code>
-				</Value>
-				<Value>
-					<Code>Naturalist</Code>
-				</Value>
-			</Values>
-		</Item>
+		 
 		<Item>
 			<Element>InstructionalStrategies</Element>
 			<Characteristics>O</Characteristics>
-			<List mode="List"/>
+			<Type ref="CommonTypes" name="InstructionalStrategiesType"/>
 			<Description>
 				<p>The various ways that instruction is delivered to achieve learning objectives and concepts.</p>
 			</Description>
 		</Item>
-		<Item>
-			<Element>/InstructionalStrategy</Element>
-			<Characteristics>OR</Characteristics>
-			<Values>
-				<Value>
-					<Code>Lecture</Code>
-				</Value>
-				<Value>
-					<Code>Online</Code>
-				</Value>
-				<Value>
-					<Code>Discussion</Code>
-				</Value>
-				<Value>
-					<Code>Cooperative Group</Code>
-				</Value>
-				<Value>
-					<Code>Scenario</Code>
-				</Value>
-				<Value>
-					<Code>Demonstration/Lab</Code>
-				</Value>
-				<Value>
-					<Code>Self-study</Code>
-				</Value>
-				<Value>
-					<Code>Problem-Based Learning</Code>
-				</Value>
-				<Value>
-					<Code>Project</Code>
-				</Value>
-				<Value>
-					<Code>Other</Code>
-				</Value>
-			</Values>
-		</Item>
+ 
 
 		<Item>
 			<Element>Title</Element>
@@ -2000,19 +1858,10 @@
 			<Description>
 				<p>Description of learning objective(s) for this lesson, i.e., "Student will be able to use Pythagorean Theorem."—equates to 'benchmark' or 'goal' or other terminology</p>
 			</Description>
-			<List mode='List'/>
+			<Type ref="CommonTypes" name="LearningObjectivesType"/>
 		</Item>
-
-		<Item>
-			<Element>/LearningObjective</Element>
-			<Characteristics>MR</Characteristics>
-			<Description>
-				<p></p>
-			</Description>
-			<Type name='xs:string'/>
-		</Item>
-
-		<Item>
+		
+  		<Item>
 			<Element>ResourceTypes</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
@@ -2020,32 +1869,7 @@
 				Type of resource 
 				</p>
 			</Description>
-			<List mode='List'/>
-		</Item>
-
-		<Item>
-			<Element>/ResourceType</Element>
-			<Characteristics>MR</Characteristics>
-			<Description>
-				<p></p>
-			</Description>
-			<Values>
-				<Value>
-					<Code>Supplemental Resource</Code>
-				</Value>
-				<Value>
-					<Code>Remedial Resource</Code>
-				</Value>
-				<Value>
-					<Code>Core Instructional Resource</Code>
-				</Value>
-				<Value>
-					<Code>Assessment</Code>
-				</Value>
-				<Value>
-					<Code>Other</Code>
-				</Value>
-			</Values>
+			<Type ref="CommonTypes" name="ResourceTypesType"/>
 		</Item>
 
 		<xhtml:Example name='EducationFilter - Example 1' xmlns="">
@@ -2135,6 +1959,253 @@
 
 		</xhtml:Example>
 	</CommonElement>
+		
+	<CommonElement name="InstructionalStrategiesType" type="true">
+		<Item>
+			<Element>InstructionalStrategiesType</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List"/>
+			<Description>
+				<p>The various ways that instruction is delivered to achieve learning objectives and concepts.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>InstructionalStrategy</Element>
+			<Characteristics>OR</Characteristics>
+			<Values>
+				<Value>
+					<Code>Lecture</Code>
+				</Value>
+				<Value>
+					<Code>Online</Code>
+				</Value>
+				<Value>
+					<Code>Discussion</Code>
+				</Value>
+				<Value>
+					<Code>Cooperative Group</Code>
+				</Value>
+				<Value>
+					<Code>Scenario</Code>
+				</Value>
+				<Value>
+					<Code>Demonstration/Lab</Code>
+				</Value>
+				<Value>
+					<Code>Self-study</Code>
+				</Value>
+				<Value>
+					<Code>Problem-Based Learning</Code>
+				</Value>
+				<Value>
+					<Code>Project</Code>
+				</Value>
+				<Value>
+					<Code>Other</Code>
+				</Value>
+			</Values>
+		</Item>
+   </CommonElement>
+   
+    <CommonElement name="ResourceTypesType" type="true">
+   		<Item>
+			<Element>ResourceTypesType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>
+				Type of resource 
+				</p>
+			</Description>
+			<List mode='List'/>
+		</Item>
+
+		<Item>
+			<Element>ResourceType</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p></p>
+			</Description>
+			<Values>
+				<Value>
+					<Code>Supplemental Resource</Code>
+				</Value>
+				<Value>
+					<Code>Remedial Resource</Code>
+				</Value>
+				<Value>
+					<Code>Core Instructional Resource</Code>
+				</Value>
+				<Value>
+					<Code>Assessment</Code>
+				</Value>
+				<Value>
+					<Code>Other</Code>
+				</Value>
+			</Values>
+		</Item>
+</CommonElement>		
+		
+   <CommonElement name="LearningObjectivesType" type="true">
+   	<Item>
+			<Element>LearningObjectivesType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Description of learning objective(s) for this lesson, i.e., "Student will be able to use Pythagorean Theorem."—equates to 'benchmark' or 'goal' or other terminology</p>
+			</Description>
+			<List mode='List'/>
+		</Item>
+
+		<Item>
+			<Element>LearningObjective</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p></p>
+			</Description>
+			<Type name='xs:string'/>
+		</Item>
+    </CommonElement>
+	<CommonElement name="LearningStandardItemsType" type="true">
+		<Item>
+			<Element>LearningStandardItemsType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>Allows any SIF object to be correlated to learning standards.</Description>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>LearningStandardItemRefId</Element>
+			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="IdRefType"/>
+		</Item>
+</CommonElement>		
+	<CommonElement name="BloomsTaxonomyLevelsType" type="true">
+	<Item>
+			<Element>BloomsTaxonomyLevelsType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>
+				This is a taxonomy of educational objectives based on three "domains:"  Affective, Psychomotor, and Cognitive.
+				For the purposes of assigning attributes to learning resources, the SIF specification is limited to the cognitive domain, including knowledge, comprehension, application, analysis, synthesis and evaluation.
+				</p>
+			</Description>
+			<List mode="List"/>
+		</Item>
+		<Item>
+			<Element>BloomsTaxonomyLevel</Element>
+			<Characteristics>OR</Characteristics>
+			<Values>
+				<Value>
+					<Code>Knowledge</Code>
+				</Value>
+				<Value>
+					<Code>Comprehension</Code>
+				</Value>
+				<Value>
+					<Code>Application</Code>
+				</Value>
+				<Value>
+					<Code>Analysis</Code>
+				</Value>
+				<Value>
+					<Code>Synthesis</Code>
+				</Value>
+				<Value>
+					<Code>Evaluation</Code>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>	
+	
+	<CommonElement name="MultipleIntelligencesType" type="true">
+		<Item>
+			<Element>MultipleIntelligencesType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>An educational theory that describes at least eight different kinds of "intelligences."  These include linguistic, logical-mathematical, spatial, bodily-kinesthetic, musical intelligence, interpersonal, intrapersonal and naturalist. </p>
+			</Description>
+			<List mode="List"/>
+		</Item>
+		<Item>
+			<Element>MultipleIntelligence</Element>
+			<Characteristics>OR</Characteristics>
+			<Values>
+				<Value>
+					<Code>Linguistic</Code>
+				</Value>
+				<Value>
+					<Code>Logical-Mathematical</Code>
+				</Value>
+				<Value>
+					<Code>Spatial</Code>
+				</Value>
+				<Value>
+					<Code>Musical</Code>
+				</Value>
+				<Value>
+					<Code>Bodily-Kinesthetic</Code>
+				</Value>
+				<Value>
+					<Code>Interpersonal</Code>
+				</Value>
+				<Value>
+					<Code>Intrapersonal</Code>
+				</Value>
+				<Value>
+					<Code>Naturalist</Code>
+				</Value>
+			</Values>
+		</Item>
+	</CommonElement>
+		
+<CommonElement name="MediaTypesType" type="true">
+    <Item>
+			<Element>MediaTypesType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>Allows an object or query to be tagged with MIME types.</Description>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>MediaType</Element>
+			<Characteristics>MR</Characteristics>
+			<Type name="xs:token"/>
+		</Item>
+	</CommonElement>	
+	<CommonElement name="SubjectAreasType" type="true">
+		<Item>
+			<Element>SubjectAreasType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+			This allows subject areas to be associated with an object or query.
+			Although there could be overlap with <code>LearningStandardItems</code>, it is anticipated
+			there will be use cases where <code>LearningStandardItem</code> objects may not exist or may not be available, and data may need to be tagged with high-level subject areas.
+			</Description>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>SubjectArea</Element>
+			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="SubjectAreaType"></Type>
+		</Item>
+</CommonElement>
+
+<CommonElement name="InterestLevelsType" type="true">
+	<Item>
+			<Element>InterestLevelsType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<code>InterestLevels</code> is designed to represent the grade level for which the content is created.  For example a tenth grader is at a third grade level in Algebra.  You would want to present the content at a third grade level, but in a tenth grade context or interest level.
+			</Description>
+			<List mode="List"/>
+		</Item>
+
+		<Item>
+			<Element>InterestLevel</Element>
+			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="GradeLevelType"></Type>
+		</Item>
+</CommonElement>
 
 
 
@@ -2168,9 +2239,17 @@
 		<Item>
 			<Element>Language</Element>
 			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="LanguageContainerType"></Type>
+		</Item>
+</CommonElement>
+
+<CommonElement name="LanguageContainerType" type="true">
+	<Item>
+			<Element>LanguageContainerType</Element>
+			<Characteristics>MR</Characteristics>
 		</Item>
 		<Item>
-			<Element>/Code</Element>
+			<Element>Code</Element>
 			<Characteristics>M</Characteristics>
 			<Description>
 				<p>The code representing the specific language that an individual uses to communicate. </p>
@@ -2178,12 +2257,12 @@
 			<Type ref="ExternalCodeSets" name="NISOZ3953LanguageCodesType"></Type>
 		</Item>
 		<Item>
-			<Element>/OtherCodeList</Element>
+			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
 			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
 		<Item>
-			<Element>/LanguageType</Element>
+			<Element>LanguageType</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>An indication of the function and context in which an individual uses a language to communicate.</p>
@@ -2191,14 +2270,14 @@
 			<Type ref="ExternalCodeSets" name="NCES0327LanguageTypeType"></Type>
 		</Item>
 		<Item>
-			<Element>/Dialect</Element>
+			<Element>Dialect</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>Specific dialect of a person's language.</p>
 			</Description>
 			<Type name="xs:normalizedString"></Type>
 		</Item>
-	</CommonElement>
+</CommonElement>
 
 	<CommonElement name="PrimaryAssignmentType" type="true">
 		<Item>
@@ -2715,7 +2794,7 @@
 			<Description>
 				<p>Subject matter.</p>
 			</Description>
-			<Type ref="CommonTypes" name="SubjectArea"></Type>
+			<Type ref="CommonTypes" name="SubjectAreaType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<SubjectAreaList>
@@ -2772,22 +2851,9 @@
 			<Description>
 				<p>Information on contact persons for this school.</p>
 			</Description>
+			<Type ref="CommonTypes" name="SchoolContactType"></Type>
 		</Item>
-		<Item>
-			<Element>/PublishInDirectory</Element>
-
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Indicates whether or not this school contact's information should be published in a directory of school information.</p>
-			</Description>
-			<Type ref="CommonTypes" name="PublishInDirectory"></Type>
-		</Item>
-		<Item>
-			<Element>/ContactInfo</Element>
-
-			<Characteristics>M</Characteristics>
-			<Type ref="CommonTypes" name="ContactInfo"></Type>
-		</Item>
+		 
 		<xhtml:Example xmlns="">
 			<SchoolContactList>
 				<SchoolContact>
@@ -2812,6 +2878,30 @@
 
 		</xhtml:Example>
 	</CommonElement>
+	<CommonElement name="SchoolContactType" type="true">
+		<Item>
+			<Element>SchoolContactType</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>Information on contact persons for this school.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>PublishInDirectory</Element>
+
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Indicates whether or not this school contact's information should be published in a directory of school information.</p>
+			</Description>
+			<Type ref="CommonTypes" name="PublishInDirectoryType"></Type>
+		</Item>
+		<Item>
+			<Element>ContactInfo</Element>
+
+			<Characteristics>M</Characteristics>
+			<Type ref="CommonTypes" name="ContactInfoType"></Type>
+		</Item>
+	</CommonElement>	
 
 	<CommonElement name="SchoolURLType" type="true">
 		<Item>
@@ -3324,7 +3414,7 @@
 		<Item>
 			<Element>Address</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" complex="extension" name="Address"></Type>
+			<Type ref="CommonTypes" complex="extension" name="AddressType"></Type>
 		</Item>
 		<Item>
 			<Attribute>SIF_Action</Attribute>
@@ -3394,111 +3484,10 @@
 			<Description>
 				<p>The street element is a complex element and breaks the street down into several parts.</p>
 			</Description>
+			<Type ref="CommonTypes" name="StreetType"></Type>
 		</Item>
-		<Item>
-			<Element>/Line1</Element>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Address line 1.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/Line2</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Address line 2.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/Line3</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Address line 3.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/Complex</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Name of the complex.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/StreetNumber</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The address number assigned to the building.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/StreetPrefix</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Street prefix like NE</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/StreetName</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The name of the street.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/StreetType</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The type of street. For example, Lane, Blvd., Ave., etc.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/StreetSuffix</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Street suffix like SW.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/ApartmentType</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Type of apartment, for example, Suite.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/ApartmentNumberPrefix</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Apartment number prefix.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/ApartmentNumber</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The number of the apartment.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/ApartmentNumberSuffix</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Apartment number suffix.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
+		
+		
 		<Item>
 			<Element>City</Element>
 			<Characteristics>M</Characteristics>
@@ -3521,7 +3510,7 @@
 			<Description>
 				<p>The state or province code.</p>
 			</Description>
-			<Type ref="CommonTypes" name="StateProvince"></Type>
+			<Type ref="CommonTypes" name="StateProvinceType"></Type>
 		</Item>
 		<Item>
 			<Element>Country</Element>
@@ -3529,7 +3518,7 @@
 			<Description>
 				<p>The country code.</p>
 			</Description>
-			<Type ref="CommonTypes" name="Country"></Type>
+			<Type ref="CommonTypes" name="CountryType"></Type>
 		</Item>
 		<Item>
 			<Element>PostalCode</Element>
@@ -3545,7 +3534,7 @@
 			<Description>
 				<p>The location of the address.</p>
 			</Description>
-			<Type ref="CommonTypes" name="GridLocation"></Type>
+			<Type ref="CommonTypes" name="GridLocationType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<Address Type="0123">
@@ -3586,6 +3575,119 @@
 			<StateProvince>IL</StateProvince>
 		</xhtml:Example>
 	</CommonElement>
+	<CommonElement name="StreetType" type="true">
+	<Item>
+			<Element>StreetType</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The street element is a complex element and breaks the street down into several parts.</p>
+			</Description>
+		</Item>
+		<Item>
+			<Element>Line1</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>Address line 1.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>Line2</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Address line 2.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>Line3</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Address line 3.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>Complex</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Name of the complex.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>StreetNumber</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The address number assigned to the building.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>StreetPrefix</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Street prefix like NE</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>StreetName</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The name of the street.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>StreetType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The type of street. For example, Lane, Blvd., Ave., etc.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>StreetSuffix</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Street suffix like SW.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>ApartmentType</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Type of apartment, for example, Suite.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>ApartmentNumberPrefix</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Apartment number prefix.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>ApartmentNumber</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>The number of the apartment.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+		<Item>
+			<Element>ApartmentNumberSuffix</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>Apartment number suffix.</p>
+			</Description>
+			<Type name="xs:normalizedString"></Type>
+		</Item>
+</CommonElement>
 
 	<CommonElement name="CountryType" type="true">
 		<Item>
@@ -3644,111 +3746,7 @@
 				a value.
 				</p>
 			</Description>
-		</Item>
-		<Item>
-			<Attribute>Type</Attribute>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>
-				Code that specifies what type of name this is.  If unsure, use <code>04</code>.
-				</p>
-			</Description>
-			<Values>
-				<Value>
-					<Code>01</Code>
-					<Text>Given Name (Name at Birth)</Text>
-				</Value>
-				<Value>
-					<Code>02</Code>
-					<Text>Current Legal</Text>
-				</Value>
-				<Value>
-					<Code>03</Code>
-					<Text>Alias</Text>
-				</Value>
-				<Value>
-					<Code>04</Code>
-					<Text>Name of Record</Text>
-				</Value>
-				<Value>
-					<Code>05</Code>
-					<Text>Previous Name (sometimes called Maiden Name of Female Persons)</Text>
-				</Value>
-				<Value>
-					<Code>07</Code>
-					<Text>Married Name</Text>
-				</Value>
-				<Value>
-					<Code>08</Code>
-					<Text>Professional Name</Text>
-				</Value>
-			</Values>
-		</Item>
-		<Item>
-			<Element>/Prefix</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>A prefix associated with the name like Mr., Ms., etc.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/LastName</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The last name.</p>
-			</Description>
-			<Type ref="CommonTypes" name="LastName"></Type>
-		</Item>
-		<Item>
-			<Element>/FirstName</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The first name.</p>
-			</Description>
-			<Type ref="CommonTypes" name="FirstName"></Type>
-		</Item>
-		<Item>
-			<Element>/MiddleName</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>The middle name or initial.</p>
-			</Description>
-			<Type ref="CommonTypes" name="MiddleName"></Type>
-		</Item>
-		<Item>
-			<Element>/Suffix</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>Generation of suffix like II, Jr., etc.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/PreferredName</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>This is a name that the person prefers to be called by.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/SortName</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>This is the name to be used for sorting purposes.</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
-		</Item>
-		<Item>
-			<Element>/FullName</Element>
-			<Characteristics>C</Characteristics>
-			<Description>
-				<p>
-				A free text field for the complete name.  Mandatory if <code>LastName</code> and <code>FirstName</code> are omitted.
-				</p>
-			</Description>
-			<Type name="xs:normalizedString"></Type>
+			<Type ref="CommonTypes" name="NameType"></Type>
 		</Item>
 		<Item>
 			<Element>PositionTitle</Element>
@@ -3776,7 +3774,7 @@
 			<Description>
 				<p>Address of the contact.</p>
 			</Description>
-			<Type ref="CommonTypes" name="Address"></Type>
+			<Type ref="CommonTypes" name="AddressType"></Type>
 		</Item>
 		<Item>
 			<Element>EmailList</Element>
@@ -3931,44 +3929,9 @@
 		<Item>
 			<Element>Race</Element>
 			<Characteristics>MR</Characteristics>
+			<Type ref="CommonTypes" name="RaceCodeType"/>
 		</Item>
-		<Item>
-			<Element>/Code</Element>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>The general racial category which reflects the individual's recognition of his or her community or with which the individual most identifies.</p>
-				<p>In a given SIF implementation Agents must have alignment on the use of the NCES and deprecated SPEEDE code sets. Agents are not required to translate between the code sets.</p>
-			</Description>
-			<Union>
-				<Type ref="ExternalCodeSets" name="NCES0849RaceType"></Type>
-				<Type name="xs:token">
-					<Values type="additional">
-						<Value>
-							<Code>A</Code>
-							<Text>Asian (deprecated)</Text>
-						</Value>
-						<Value>
-							<Code>H</Code>
-							<Text>Hispanic (deprecated)</Text>
-						</Value>
-					</Values>
-				</Type>
-			</Union>
-		</Item>
-		<Item>
-			<Element>/OtherCodeList</Element>
-			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
-		</Item>
-		<Item>
-			<Element>/Proportion</Element>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>A percentage associated with the race.</p>
-			</Description>
-			<Type name="xs:decimal"></Type>
-		</Item>
-
+	
 		<xhtml:Example xmlns="">
 			<RaceList>
 				<Race>
@@ -4005,6 +3968,49 @@
 			<Gender>F</Gender>
 		</xhtml:Example>
 	</CommonElement>
+	<CommonElement name="RaceCodeType" type="true">
+		<Item>
+			<Element>RaceCodeType</Element>
+			<Characteristics>MR</Characteristics>
+		</Item>
+		<Item>
+			<Element>Code</Element>
+			<Characteristics>M</Characteristics>
+			<Description>
+				<p>The general racial category which reflects the individual's recognition of his or her community or with which the individual most identifies.</p>
+				<p>In a given SIF implementation Agents must have alignment on the use of the NCES and deprecated SPEEDE code sets. Agents are not required to translate between the code sets.</p>
+			</Description>
+			<Union>
+				<Type ref="ExternalCodeSets" name="NCES0849RaceType"></Type>
+				<Type name="xs:token">
+					<Values type="additional">
+						<Value>
+							<Code>A</Code>
+							<Text>Asian (deprecated)</Text>
+						</Value>
+						<Value>
+							<Code>H</Code>
+							<Text>Hispanic (deprecated)</Text>
+						</Value>
+					</Values>
+				</Type>
+			</Union>
+		</Item>
+		<Item>
+			<Element>OtherCodeList</Element>
+			<Characteristics>O</Characteristics>
+			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
+		</Item>
+		<Item>
+			<Element>Proportion</Element>
+			<Characteristics>O</Characteristics>
+			<Description>
+				<p>A percentage associated with the race.</p>
+			</Description>
+			<Type name="xs:decimal"></Type>
+		</Item>
+		
+	</CommonElement>
 
 	<CommonElement name="BirthDateType" type="true">
 		<Item>
@@ -4037,7 +4043,7 @@
 		<Item>
 			<Element>HispanicLatino</Element>
 			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" name="HispanicLatino"></Type>
+			<Type ref="CommonTypes" name="HispanicLatinoType"></Type>
 		</Item>
 		<Item>
 			<Element>Gender</Element>
@@ -4045,7 +4051,7 @@
 			<Description>
 				<p>Person's gender.</p>
 			</Description>
-			<Type ref="CommonTypes" name="Gender"></Type>
+			<Type ref="CommonTypes" name="GenderType"></Type>
 		</Item>
 		<Item>
 			<Element>BirthDate</Element>
@@ -4053,7 +4059,7 @@
 			<Description>
 				<p>The person's date of birth.</p>
 			</Description>
-			<Type ref="CommonTypes" name="BirthDate"></Type>
+			<Type ref="CommonTypes" name="BirthDateType"></Type>
 		</Item>
 		<Item>
 			<Element>BirthDateVerification</Element>
@@ -4079,13 +4085,14 @@
 			</Description>
 			<Type name="xs:normalizedString"></Type>
 		</Item>
+		
 		<Item>
 			<Element>StateOfBirth</Element>
 			<Characteristics>O</Characteristics>
 			<Description>
 				<p>The person's state of birth.</p>
 			</Description>
-			<Type ref="CommonTypes" name="StateProvince"></Type>
+			<Type ref="CommonTypes" name="StateProvinceType"></Type>
 		</Item>
 		<Item>
 			<Element>CountryOfBirth</Element>
@@ -4093,36 +4100,21 @@
 			<Description>
 				<p>The person's country of birth.</p>
 			</Description>
-			<Type ref="CommonTypes" name="Country"></Type>
+			<Type ref="CommonTypes" name="CountryType"></Type>
 		</Item>
+		
 		<Item>
 			<Element>CountriesOfCitizenship</Element>
 			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+			<Type ref="CommonTypes" name="CountriesOfCitizenshipType"></Type>
 		</Item>
-		<Item>
-			<Element>/CountryOfCitizenship</Element>
-			<Characteristics>MR</Characteristics>
-			<Description>
-				<p>A person's country of citizenship.</p>
-			</Description>
-			<Type ref="CommonTypes" name="Country"></Type>
-		</Item>
+	 
 		<Item>
 			<Element>CountriesOfResidency</Element>
 			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+			<Type ref="CommonTypes" name="CountriesOfResidencyType"></Type>
 		</Item>
-		<Item>
-			<Element>/CountryOfResidency</Element>
-			<Characteristics>MR</Characteristics>
-			<Description>
-				<p>A person's country of residence.</p>
-			</Description>
-			<Type ref="CommonTypes" name="Country"></Type>
-		</Item>
+		
 		<Item>
 			<Element>CountryArrivalDate</Element>
 			<Characteristics>O</Characteristics>
@@ -4131,6 +4123,7 @@
 			</Description>
 			<Type name="xs:date"></Type>
 		</Item>
+		
 		<Item>
 			<Element>CitizenshipStatus</Element>
 			<Characteristics>O</Characteristics>
@@ -4144,7 +4137,7 @@
 			<Element>EnglishProficiency</Element>
 			<Characteristics>O</Characteristics>
 			<Description>Person's proficiency in English.</Description>
-			<Type ref="CommonTypes" name="EnglishProficiency"></Type>
+			<Type ref="CommonTypes" name="EnglishProficiencyType"></Type>
 		</Item>
 
 		<Item>
@@ -4161,20 +4154,9 @@
 			<Description>
 				<p>Setting/environment in which the person resides.</p>
 			</Description>
+			<Type ref="CommonTypes" name="DwellingArrangementType"></Type>
 		</Item>
-		<Item>
-			<Element>/Code</Element>
-			<Characteristics>M</Characteristics>
-			<Description>
-				<p>Code representing the setting/environment in which the person resides</p>
-			</Description>
-			<Type ref="ExternalCodeSets" name="NCES0600DwellingArrangementType"></Type>
-		</Item>
-		<Item>
-			<Element>/OtherCodeList</Element>
-			<Characteristics>O</Characteristics>
-			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
-		</Item>
+	 
 		<Item>
 			<Element>MaritalStatus</Element>
 			<Characteristics>O</Characteristics>
@@ -4254,8 +4236,43 @@
 				<MaritalStatus>1042</MaritalStatus>
 			</Demographics>
 		</xhtml:Example>
+		
 	</CommonElement>
+	<CommonElement name="CountriesOfResidencyType" type="true">
+		<Item>
+			<Element>CountriesOfResidencyType</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>CountryOfResidency</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>A person's country of residence.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CountryType"></Type>
+		</Item>
+	</CommonElement>
+		 
 
+	<CommonElement name="CountriesOfCitizenshipType" type="true">
+			<Item>
+			<Element>CountriesOfCitizenship</Element>
+			<Characteristics>O</Characteristics>
+			<List mode="List">
+			</List>
+		</Item>
+		<Item>
+			<Element>CountryOfCitizenship</Element>
+			<Characteristics>MR</Characteristics>
+			<Description>
+				<p>A person's country of citizenship.</p>
+			</Description>
+			<Type ref="CommonTypes" name="CountryType"></Type>
+		</Item>
+	</CommonElement>
+ 
 	<CommonElement name="EducationalLevelType" type="true">
 		<Item>
 			<Element>EducationalLevelType</Element>
@@ -4280,7 +4297,7 @@
 		<Item>
 			<Element>ElectronicId</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" name="ElectronicId"></Type>
+			<Type ref="CommonTypes" name="ElectronicIdType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<ElectronicIdList>
@@ -4339,7 +4356,7 @@
 		<Item>
 			<Element>Email</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" name="Email"></Type>
+			<Type ref="CommonTypes" name="EmailType"></Type>
 		</Item>
 		<Item>
 			<Attribute>SIF_Action</Attribute>
@@ -4549,7 +4566,7 @@
 		<Item>
 			<Element>GradeLevel</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes" name="GradeLevel"></Type>
+			<Type ref="CommonTypes" name="GradeLevelType"></Type>
 		</Item>
 		<xhtml:Example xmlns="">
 			<GradeLevels>
@@ -4863,7 +4880,7 @@
 		<Item>
 			<Element>PhoneNumber</Element>
 			<Characteristics>MR</Characteristics>
-			<Type ref="CommonTypes"  complex="extension" name="PhoneNumber"></Type>
+			<Type ref="CommonTypes"  complex="extension" name="PhoneNumberType"></Type>
 		</Item>
 		<Item>
 			<Attribute>SIF_Action</Attribute>
@@ -5352,7 +5369,7 @@
 				(e.g., <code>2004</code> for the 2003-04 school year).
 				</p>
 			</Description>
-			<Type ref="CommonTypes" name="SchoolYear"></Type>
+			<Type ref="CommonTypes" name="SchoolYearType"></Type>
 		</Item>
 
 		<xhtml:Example xmlns="">
@@ -5483,7 +5500,7 @@
 			<Description>
 				<p>The locally-assigned identifier for this person. Note: LocalId may be used as a unique person identifier rather than a unique contact identifier. In this case there may be more than one object instance with the same LocalId.</p>
 			</Description>
-			<Type ref="CommonTypes" name="LocalId"></Type>
+			<Type ref="CommonTypes" name="LocalIdType"></Type>
 		</Item>
 		<Item>
 			<Element>OtherIdList</Element>
@@ -5507,7 +5524,7 @@
 			<Description>
 				<p>Previous, alternate or other names or aliases associated with the person.</p>
 			</Description>
-			<Type ref="CommonTypes" name="OtherNames"/>
+			<Type ref="CommonTypes" name="OtherNamesType"/>
 		</Item>
 		<Item>
 			<Element>Demographics</Element>
@@ -5515,7 +5532,7 @@
 			<Description>
 				<p>This element contains information related to person's demographics.</p>
 			</Description>
-			<Type ref="CommonTypes" name="Demographics"></Type>
+			<Type ref="CommonTypes" name="DemographicsType"></Type>
 		</Item>
 		<Item>
 			<Element>AddressList</Element>
