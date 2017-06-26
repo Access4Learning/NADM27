@@ -720,7 +720,7 @@
     <CommonElement name="OffenderListType" type="true" dm="true">
   
    <Item>
-    <Element>OffenderList</Element>
+    <Element>OffenderListType</Element>
     <Characteristics>M</Characteristics>
     <Description>
       <p>List of offenders.</p>

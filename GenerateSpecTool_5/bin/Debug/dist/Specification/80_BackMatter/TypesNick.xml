@@ -81,6 +81,17 @@
 			<Description>
 				<p>This field can hold a SSN, state or locally assigned Id.</p>
 			</Description>
+			<Type ref="CommonTypes" name="EmployeePersonalOtherIdType"/>
+		</Item>
+	</CommonElement>
+	
+	<CommonElement name="EmployeePersonalOtherIdType" type="true" dm="true">
+		<Item>
+			<Element>EmployeePersonalOtherIdType</Element>
+			<Characteristics>OR</Characteristics>
+			<Description>
+				<p>This field can hold a SSN, state or locally assigned Id.</p>
+			</Description>
 			<Type name="xs:normalizedString"></Type>
 		</Item>
 		<Item>
@@ -101,8 +112,8 @@
 				</Value>
 			</Values>
 		</Item>
-	</CommonElement>
-
+   </CommonElement>
+   
 	<CommonElement name="PayRateListType" type="true" dm="true">
 		<Item>
 			<Element>PayRateListType</Element>
