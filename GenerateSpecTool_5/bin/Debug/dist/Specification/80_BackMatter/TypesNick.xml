@@ -11141,3 +11141,52 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
     </Item>
 </CommonElement>
 -->
+
+ <CommonElement name="XMLDataType" type="true" dm="true">
+  <Item>
+    <Element>XMLDataType</Element>
+    <Type>
+      <xs:any processContents="lax"/>
+    </Type>
+    <Description>
+      <p>Contains an arbitary XML element, encoded in UTF-8.</p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>Description</Attribute>
+    <Characteristics>O</Characteristics>
+    <Type name="xs:token"/>
+    <Description>
+      <p>
+        Contains an optional description of the content or a processing hint with regard to its structure (e.g. named standard, file layout or XSD).
+      </p>
+    </Description>
+  </Item>
+</CommonElement>
+
+ <CommonElement name="CalculationRuleType" type="true" dm="true">
+  <Item>
+    <Element>CalculationRuleType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Rule for calculating the aggregate statistic</p>
+    </Description>
+    <Type name="xs:string"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description></Description>
+    <Values>
+      <Value>
+        <Code>Description</Code>
+      </Value>
+      <Value>
+        <Code>Formula</Code>
+      </Value>
+      <Value>
+        <Code>URL</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>

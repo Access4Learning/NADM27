@@ -96,7 +96,7 @@
 			<Name>myApplication</Name>
 			<URI>http://myApplication.com</URI>
 			<DefaultFunction>Student Information</DefaultFunction>
-			<DefaultIdentityProvider>"DE1078BA3261545A31905937B265CE47"</DefaultIdentityProvider>
+			<DefaultIdentityProvider>DE1078BA3261545A31905937B265CE47</DefaultIdentityProvider>
 			<StartDate>2001-09-05</StartDate>
 		</IdMApplication>
 	</xhtml:Example>
