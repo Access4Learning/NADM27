@@ -56,7 +56,7 @@
         in which the school year ends (e.g. <code>2007</code> for the 2006-07 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>Name</Element>
@@ -64,7 +64,7 @@
     <Description>
       <p>The name of the student.</p>
     </Description>
-    <Type ref="DataModel" name="Name"></Type>
+    <Type ref="CommonTypes" name="NameType"></Type>
   </Item>
   <Item>
     <Element>LocalId</Element>
@@ -72,7 +72,7 @@
     <Description>
       <p>The locally-defined identifier for this student.</p>
     </Description>
-    <Type ref="DataModel" name="LocalId"></Type>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
   </Item>
   <Item>
     <Element>StateProvinceId</Element>
@@ -80,7 +80,7 @@
     <Description>
       <p>The state-assigned identifier for this student.</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>Address</Element>
@@ -88,7 +88,7 @@
     <Description>
       <p>The address of the student.</p>
     </Description>
-    <Type ref="DataModel" name="Address"></Type>
+    <Type ref="CommonTypes" name="AddressType"></Type>
   </Item>
   <Item>
     <Element>RaceList</Element>
@@ -97,13 +97,13 @@
     <Description>
       <p>Person's race</p>
     </Description>
-    <Type ref="DataModel" name="RaceList"></Type>
+    <Type ref="CommonTypes" name="RaceListType"></Type>
   </Item>
   <Item>
     <Element>HispanicLatino</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="HispanicLatino"></Type>
+    <Type ref="CommonTypes" name="HispanicLatinoType"></Type>
   </Item>
   <Item>
     <Element>Gender</Element>
@@ -112,7 +112,7 @@
     <Description>
       <p>Person's gender.</p>
     </Description>
-    <Type ref="DataModel" name="Gender"></Type>
+    <Type ref="CommonTypes" name="GenderType"></Type>
   </Item>
   <Item>
     <Element>BirthDate</Element>
@@ -121,7 +121,7 @@
     <Description>
       <p>The person's date of birth.</p>
     </Description>
-    <Type ref="DataModel" name="BirthDate"></Type>
+    <Type ref="CommonTypes" name="BirthDateType"></Type>
   </Item>
   <Item>
     <Element>Age</Element>
@@ -137,7 +137,7 @@
     <Description>
       <p>Currently projected graduation year.</p>
     </Description>
-    <Type ref="DataModel" name="ProjectedGraduationYear"></Type>
+    <Type ref="CommonTypes" name="ProjectedGraduationYearType"></Type>
   </Item>
   <Item>
     <Element>OnTimeGraduationYear</Element>
@@ -145,12 +145,12 @@
     <Description>
       <p>First projected graduation year, usually determined when student is accepted into ninth grade.</p>
     </Description>
-    <Type ref="DataModel" name="OnTimeGraduationYear"></Type>
+    <Type ref="CommonTypes" name="OnTimeGraduationYearType"></Type>
   </Item>
   <Item>
     <Element>GraduationDate</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GraduationDate"></Type>
+    <Type ref="CommonTypes" name="GraduationDateType"></Type>
     <Description>
       <p>Date student officially graduated from secondary education.</p>
     </Description>
@@ -203,177 +203,63 @@
         membership/child accounting information. This is most likely the primary enrollment site for the student.
       </p>
     </Description>
+     <Type ref="CommonTypes" name="HomeEnrollmentType"></Type>
   </Item>
-  <Item>
-    <Element>/StudentSchoolEnrollmentRefId</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The Id (GUID) of the StudentSchoolEnrollment object from which the enrollment information is derived.</p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Element>/SchoolName</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>Name of the school.</p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
-  </Item>
-  <Item>
-    <Element>/SchoolInfoRefId</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>
-        The Id (GUID) of the school.  Provide both the HomeEnrollment/SchoolInfoRefId and HomeEnrollment/LocalId elements if possible.
-        If not, one or the other must be provided.
-      </p>
-    </Description>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Element>/LocalId</Element>
-    <Characteristics>C</Characteristics>
-    <Description>
-      <p>
-        The locally-defined identifier for this school.
-        Provide both the HomeEnrollment/LocalId and HomeEnrollment/SchoolId elements if possible.
-        If not, one or the other must be provided.
-      </p>
-    </Description>
-    <Type ref="DataModel" name="LocalId"></Type>
-  </Item>
-  <Item>
-    <Element>/StateProvinceId</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The state or province defined identifier for this school.</p>
-    </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
-  </Item>
-  <Item>
-    <Element>/Status</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Enrollment status as of the SnapDate.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Active</Code>
-      </Value>
-      <Value>
-        <Code>Inactive</Code>
-      </Value>
-      <Value>
-        <Code>Unreported</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>/GradeLevel</Element>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Grade or academic level of student.</p>
-    </Description>
-    <Type ref="DataModel" name="GradeLevel"></Type>
-  </Item>
-  <Item>
-    <Element>/Homeroom</Element>
-    <Characteristics>O</Characteristics>
-    <Type ref="CommonTypes" name="IdRefType"/>
-  </Item>
-  <Item>
-    <Attribute>SIF_RefObject</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The name of the SIF object referenced.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>RoomInfo</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Element>/HomeroomNumber</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The locally-defined identifier for this room.</p>
-    </Description>
-    <Type ref="DataModel" name="HomeroomNumber"></Type>
-  </Item>
-  <Item>
-    <Element>/FullYearEnrollment</Element>
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>An indication as to whether or not the student was enrolled for the whole school year. If the SchoolYear is in progress as of the SnapDate, use the value "Unknown".</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Yes</Code>
-      </Value>
-      <Value>
-        <Code>No</Code>
-      </Value>
-      <Value>
-        <Code>Unknown</Code>
-      </Value>
-    </Values>
-  </Item>
+  
   <Item>
     <Element>IDEA</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="IDEA"></Type>
+    <Type ref="CommonTypes" name="IDEAType"></Type>
   </Item>
   <Item>
     <Element>Migrant</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Migrant"></Type>
+    <Type ref="CommonTypes" name="MigrantType"></Type>
   </Item>
   <Item>
     <Element>Title1</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Title1"></Type>
+    <Type ref="CommonTypes" name="Title1Type"></Type>
   </Item>
   <Item>
     <Element>GiftedTalented</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GiftedTalented"></Type>
+    <Type ref="CommonTypes" name="GiftedTalentedType"></Type>
   </Item>
   <Item>
     <Element>EconomicDisadvantage</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="EconomicDisadvantage"></Type>
+    <Type ref="CommonTypes" name="EconomicDisadvantageType"></Type>
   </Item>
   <Item>
     <Element>ELL</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="ELL"></Type>
+    <Type ref="CommonTypes" name="ELLType"></Type>
   </Item>
   <Item>
     <Element>Homeless</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Homeless"></Type>
+    <Type ref="CommonTypes" name="HomelessType"></Type>
   </Item>
   <Item>
     <Element>Section504</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Section504"></Type>
+    <Type ref="CommonTypes" name="Section504Type"></Type>
   </Item>
   <Item>
     <Element>VocationalConcentrator</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="VocationalConcentrator"></Type>
+    <Type ref="CommonTypes" name="VocationalConcentratorType"></Type>
   </Item>
   <Item>
     <Element>Immigrant</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="Immigrant"></Type>
+    <Type ref="CommonTypes" name="ImmigrantType"></Type>
   </Item>
   <Item>
     <Element>NeglectedDelinquent</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="NeglectedDelinquent"></Type>
+    <Type ref="CommonTypes" name="NeglectedDelinquentType"></Type>
   </Item>
   <Item>
     <Element>FreeAndReducedStatus</Element>
@@ -400,15 +286,15 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StudentSnapshot" xmlns="">
     <StudentSnapshot RefId="359D75101AD0A9D7A8C3DAD0A85103A2" SnapDate="2003-10-01" StudentPersonalRefId="A15484ED564995254A4568EFFC5100BD" SchoolYear="2004">
       <Name Type="04">
         <LastName>Johnson</LastName>

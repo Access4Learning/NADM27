@@ -57,7 +57,7 @@
         ends (e.g. <code>2007</code> for the 2006-07 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
   <Item>
     <Element>AttendanceCodeInfoRefId</Element>
@@ -95,15 +95,15 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StudentDailyAttendance" xmlns="">
     <StudentDailyAttendance RefId="359D75101AD0A9D7A8C3DAD0A85103A2" StudentPersonalRefId="D3E34B359D75101A8C3D00AA001A1652" SchoolInfoRefId="CA285746359D75101A8C36432A901A16"
       Date="2002-11-01" SchoolYear="2003">
       <AttendanceCodeInfoRefId>84726485960937465A53B2781BB260AA</AttendanceCodeInfoRefId>

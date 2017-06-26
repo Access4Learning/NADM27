@@ -2418,5 +2418,389 @@
   </Item>
 
 	</CommonElement>
+	
+	<CommonElement name="PictureSourceType" type="true" dm="true">
+	
+	  <Item>
+    <Element>PictureSourceType</Element>
 
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        This element defines the picture. If the Type attribute is URL, this is the location of the picture in <a href="References.html#JPEG">[JPEG]</a> format; if Type is JPEG, this is the <a href="References.html#JPEG">[JPEG]</a> image data encoded using the Base64 Content-Transfer-Encoding defined in Section 6.8 of <a href="References.html#RFC2045">[RFC 2045]</a>.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="URIOrBinaryType"/>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The way the picture is specified.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>URL</Code>
+      </Value>
+      <Value>
+        <Code>JPEG</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+  
+  <CommonElement name="PromotionInfoType" type="true" dm="true">
+  <Item>
+    <Element>PromotionInfoType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Information on a student’s promotion, retention, or demotion related to this enrollment instance.</p>
+    </Description>
+  </Item>
+
+  <Item>
+    <Element>PromotionStatus</Element>
+    <Characteristics>O</Characteristics>
+    <Description>This value should be set if this enrollment instance is closed for an end-of-year closeout or a mid-year promotion or demotion. A value other than NA should be specified when the enrollment instance represents an end-of-year closeout or mid-year promotion/demotion.</Description>
+    <Values>
+      <Value>
+        <Code>Promoted</Code>
+      </Value>
+      <Value>
+        <Code>Demoted</Code>
+      </Value>
+      <Value>
+        <Code>Retained</Code>
+      </Value>
+      <Value>
+        <Code>NA</Code>
+      </Value>
+    </Values>
+  </Item>
+
+  <Item>
+    <Element>Promotion</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This element is mutually exclusive with Nonpromotion, and its child elements should only be populated if the value of PromotionStatus is "Promoted".</p>
+    </Description>
+    <Type ref="CommonTypes" name="PromotionType"></Type>
+
+  </Item>
+  <Item>
+    <Element>Nonpromotion</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This element is mutually exclusive with Promotion, and its child elements should only be populated if the value of PromotionStatus is "Retained" or "Demoted".</p>
+    </Description>
+    <Type ref="CommonTypes" name="NonpromotionType"></Type>
+  </Item>
+ 
+ </CommonElement> 
+ 
+ <CommonElement name="PromotionType" type="true" dm="true">
+  <Item>
+    <Element>Promotion</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This element is mutually exclusive with Nonpromotion, and its child elements should only be populated if the value of PromotionStatus is "Promoted".</p>
+    </Description>
+
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The reason the student was promoted.  This element should only be populated if the value of PromotionStatus is “Promoted”.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0672PromotionTypeType"></Type>
+  </Item>
+
+  <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p></p>
+    </Description>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+  </Item>
+  </CommonElement>
+
+   <CommonElement name="NonpromotionType" type="true" dm="true">
+ <Item>
+    <Element>NonpromotionType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>This element is mutually exclusive with Promotion, and its child elements should only be populated if the value of PromotionStatus is "Retained" or "Demoted".</p>
+    </Description>
+
+  </Item>
+  <Item>
+    <Element>Code</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The reason the student was promoted.  This element should only be populated if the value of PromotionStatus is “Promoted”.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0673NonpromotionReasonType"></Type>
+  </Item>
+    <Item>
+    <Element>OtherCodeList</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p></p>
+    </Description>
+    <Type ref="CommonTypes" name="OtherCodeListType"></Type>
+  </Item>
+  </CommonElement>
+  <CommonElement name="ScheduleInfoOverrideListType" type="true" dm="true">
+   <Item>
+    <Element>ScheduleInfoOverrideListType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>A complete replacement of the standard SectionInfo/ScheduleInfoList for this student's course enrollment.</p>
+    </Description>
+    <List mode="List">
+    </List>
+  </Item>
+  <Item>
+    <Element>ScheduleInfoOverride</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>
+        A complete replacement of the standard SectionInfo/ScheduleInfo for this student's course enrollment.
+        If the student's schedule for this course is different than the standard schedule as defined in SectionInfo,
+        a ScheduleInfoOverride must be provided for each term in which the course is offered,
+        along with the appropriate value for Override. See the use cases for this object for scenario examples.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="ScheduleInfoOverrideType"></Type>
+  </Item>
+</CommonElement>  
+ <CommonElement name="ScheduleInfoOverrideType" type="true" dm="true">
+   <Item>
+    <Element>ScheduleInfoOverrideType</Element>
+    <Characteristics>MR</Characteristics>
+    <Description>
+      <p>
+        A complete replacement of the standard SectionInfo/ScheduleInfo for this student's course enrollment.
+        If the student's schedule for this course is different than the standard schedule as defined in SectionInfo,
+        a ScheduleInfoOverride must be provided for each term in which the course is offered,
+        along with the appropriate value for Override. See the use cases for this object for scenario examples.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Attribute>Override</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Designates whether or not scheduling information has been overridden with different values for this student.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Attribute>TermInfoRefId</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The Id (GUID) of the term to which this override information relates for this student.</p>
+    </Description>
+    <Type ref="CommonTypes" name="RefIdType"></Type>
+  </Item>
+  <Item>
+    <Element>MeetingTimeList</Element>
+    <Characteristics>O</Characteristics>
+     <Type ref="CommonTypes" name="MeetingTimeListType"></Type>
+  </Item>
+  </CommonElement>
+  <CommonElement name="CreditsAttemptedType" type="true" dm="true">
+    <Item>
+    <Element>CreditsAttemptedType</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Number of credits the student is attempting to earn. If present, this element's value overrides the credits in SchoolCourseInfo and SectionInfo.</p>
+    </Description>
+    <Type name="xs:decimal"></Type>
+  </Item>
+  <Item>
+    <Attribute>Type</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The type of credit.</p>
+    </Description>
+    <Type ref="ExternalCodeSets" name="NCES0108CreditTypeEarnedType"></Type>
+  </Item>
+  </CommonElement>
+  <CommonElement name="HomeEnrollmentType" type="true" dm="true">
+    <Item>
+    <Element>HomeEnrollmentType</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>
+        Enrollment-related information for the school that is responsible for reporting the student's
+        membership/child accounting information. This is most likely the primary enrollment site for the student.
+      </p>
+    </Description>
+  </Item>
+  <Item>
+    <Element>StudentSchoolEnrollmentRefId</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The Id (GUID) of the StudentSchoolEnrollment object from which the enrollment information is derived.</p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>SchoolName</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>Name of the school.</p>
+    </Description>
+    <Type name="xs:normalizedString"></Type>
+  </Item>
+  <Item>
+    <Element>SchoolInfoRefId</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>
+        The Id (GUID) of the school.  Provide both the HomeEnrollment/SchoolInfoRefId and HomeEnrollment/LocalId elements if possible.
+        If not, one or the other must be provided.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Element>LocalId</Element>
+    <Characteristics>C</Characteristics>
+    <Description>
+      <p>
+        The locally-defined identifier for this school.
+        Provide both the HomeEnrollment/LocalId and HomeEnrollment/SchoolId elements if possible.
+        If not, one or the other must be provided.
+      </p>
+    </Description>
+    <Type ref="CommonTypes" name="LocalIdType"></Type>
+  </Item>
+  <Item>
+    <Element>StateProvinceId</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The state or province defined identifier for this school.</p>
+    </Description>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
+  </Item>
+  <Item>
+    <Element>Status</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Enrollment status as of the SnapDate.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Active</Code>
+      </Value>
+      <Value>
+        <Code>Inactive</Code>
+      </Value>
+      <Value>
+        <Code>Unreported</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>GradeLevel</Element>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>Grade or academic level of student.</p>
+    </Description>
+    <Type ref="CommonTypes" name="GradeLevelType"></Type>
+  </Item>
+  <Item>
+    <Element>Homeroom</Element>
+    <Characteristics>O</Characteristics>
+    <Type ref="CommonTypes" name="IdRefType"/>
+  </Item>
+  <Item>
+    <Attribute>SIF_RefObject</Attribute>
+    <Characteristics>M</Characteristics>
+    <Description>
+      <p>The name of the SIF object referenced.</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>RoomInfo</Code>
+      </Value>
+    </Values>
+  </Item>
+  <Item>
+    <Element>HomeroomNumber</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>The locally-defined identifier for this room.</p>
+    </Description>
+    <Type ref="CommonTypes" name="HomeroomNumberType"></Type>
+  </Item>
+  <Item>
+    <Element>FullYearEnrollment</Element>
+    <Characteristics>O</Characteristics>
+    <Description>
+      <p>An indication as to whether or not the student was enrolled for the whole school year. If the SchoolYear is in progress as of the SnapDate, use the value "Unknown".</p>
+    </Description>
+    <Values>
+      <Value>
+        <Code>Yes</Code>
+      </Value>
+      <Value>
+        <Code>No</Code>
+      </Value>
+      <Value>
+        <Code>Unknown</Code>
+      </Value>
+    </Values>
+  </Item>
+  </CommonElement>
+   <CommonElement name="FunctionListType" type="true" dm="true">
+  <Item>
+		<Element>FunctionListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>A list of short descriptions of other functions the application performs. </p>
+		</Description>
+		<List mode="List"></List>
+	</Item>	
+	<Item>
+		<Element>Function</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p/>
+		</Description>
+		<Type name="xs:token"/>
+	</Item>	
+	</CommonElement>
+	
+	<CommonElement name="IdentityProviderListType" type="true" dm="true">
+		<Item>
+		<Element>IdentityProviderListType</Element>
+		<Characteristics>O</Characteristics>
+		<Description>
+			<p>If the application can use multiple Identity Providers (authentication providers) to authenticate the user, for example Google directory service, LDAP, AD, etc., there could be multiple such providers in this list.</p>
+		</Description>
+		<List mode="List"></List>
+	</Item>	
+	<Item>
+		<Element>IdentityProvider</Element>
+		<Characteristics>MR</Characteristics>
+		<Description>
+			<p>RefId of an Identity Provider application.</p>
+		</Description>
+		<!--Type name="sif:IdRefType"/-->
+		<Type ref="CommonTypes" name="IdRefType"/>
+	</Item>	
+</CommonElement>
+  
   

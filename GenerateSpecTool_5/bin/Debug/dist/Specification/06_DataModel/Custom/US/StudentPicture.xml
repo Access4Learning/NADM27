@@ -36,8 +36,9 @@
         ends (e.g. <code>2007</code> for the 2006-07 school year).
       </p>
     </Description>
-    <Type ref="DataModel" name="SchoolYear"></Type>
+    <Type ref="CommonTypes" name="SchoolYearType"></Type>
   </Item>
+  
   <Item>
     <Element>PictureSource</Element>
 
@@ -47,24 +48,9 @@
         This element defines the picture. If the Type attribute is URL, this is the location of the picture in <a href="References.html#JPEG">[JPEG]</a> format; if Type is JPEG, this is the <a href="References.html#JPEG">[JPEG]</a> image data encoded using the Base64 Content-Transfer-Encoding defined in Section 6.8 of <a href="References.html#RFC2045">[RFC 2045]</a>.
       </p>
     </Description>
-    <Type ref="CommonTypes" name="URIOrBinaryType"/>
+    <Type ref="CommonTypes" name="PictureSourceType"/>
   </Item>
-  <Item>
-
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>The way the picture is specified.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>URL</Code>
-      </Value>
-      <Value>
-        <Code>JPEG</Code>
-      </Value>
-    </Values>
-  </Item>
+   
   <Item>
     <Element>OKToPublish</Element>
     <Description>
@@ -83,15 +69,15 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="StudentPicture" xmlns="">
     <StudentPicture RefId="359D75101AD0A9D7A8C3DAD0A85103A2"
  StudentPersonalRefId="D3E34B359D75101A8C3D00AA001A1652" SchoolYear="1999">
       <PictureSource Type="URL">http://www.schoolsite.com/pictures/1999/1234.jpg</PictureSource>

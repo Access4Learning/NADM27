@@ -45,16 +45,9 @@
 		<Description>
 			<p>A list of short descriptions of other functions the application performs. </p>
 		</Description>
-		<List mode="List"></List>
+		<Type ref="CommonTypes" name="FunctionListType"/>
 	</Item>	
-	<Item>
-		<Element>/Function</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p/>
-		</Description>
-		<Type name="xs:token"/>
-	</Item>	
+	 
 	<Item>
 		<Element>DefaultIdentityProvider</Element>
 		<Characteristics>M</Characteristics>
@@ -69,16 +62,9 @@
 		<Description>
 			<p>If the application can use multiple Identity Providers (authentication providers) to authenticate the user, for example Google directory service, LDAP, AD, etc., there could be multiple such providers in this list.</p>
 		</Description>
-		<List mode="List"></List>
+		<Type ref="CommonTypes" name="IdentityProviderListType"/>
 	</Item>	
-	<Item>
-		<Element>/IdentityProvider</Element>
-		<Characteristics>MR</Characteristics>
-		<Description>
-			<p>RefId of an Identity Provider application.</p>
-		</Description>
-		<Type name="sif:IdRefType"/>
-	</Item>	
+	 
 	<Item>
 		<Element>StartDate</Element>
 		<Characteristics>O</Characteristics>
@@ -98,14 +84,14 @@
 	<Item>
 		<Element>SIF_Metadata</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_Metadata"/>
+		<Type ref="CommonTypes" name="SIF_MetadataType"/>
 	</Item>
 	<Item>
 		<Element>SIF_ExtendedElements</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="DataModel" name="SIF_ExtendedElements"/>
+		<Type ref="CommonTypes" name="SIF_ExtendedElementsType"/>
 	</Item>
-	<xhtml:Example xmlns="">
+	<xhtml:Example name= "IdMApplication" xmlns="">
 		<IdMApplication RefId="FE1078BA3261545A31905937B265CE01">
 			<Name>myApplication</Name>
 			<URI>http://myApplication.com</URI>
