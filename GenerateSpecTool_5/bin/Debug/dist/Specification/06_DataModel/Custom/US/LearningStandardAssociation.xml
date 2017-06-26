@@ -83,38 +83,7 @@
  <Element>Creator</Element>
  <Characteristics>M</Characteristics>
  <Description>Name of the Creator of the relationship.</Description>
- <Type name="xs:normalizedString"></Type>
-</Item>
- 
- <Item>
-	<Attribute>Type</Attribute>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>The object type of the object representing the Creator.</p>
-	</Description>
-	<Values>
-		<Value>
-			<Code>StaffPersonal</Code>
-		</Value>
-		<Value>
-			<Code>Person</Code>
-		</Value>
-		<Value>
-			<Code>WorkforcePersonal</Code>
-		</Value>
-		<Value>
-			<Code>Other</Code>
-		</Value>
-	</Values>
-  </Item>
-	  
-  <Item>
-	<Attribute>SIF_RefId</Attribute>
-	<Characteristics>O</Characteristics>
-	<Description>
-	  <p>RefId of SIF object representing the creator if such exists.</p>
-	</Description>
-	<Type ref="CommonTypes"  name="IdRefType"></Type>
+	<Type ref="CommonTypes"  name="TypedCreatorType"></Type>
   </Item> 
 	  
   <Item>

@@ -99,52 +99,9 @@
     <Description>
       <p>Information on the period of time over which the report spans.</p>
     </Description>
+    <Type ref="CommonTypes" name="ReportingPeriodType"></Type>
   </Item>
-  <Item>
-    <Element>/BeginReportDate</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The first date for which the report contains information.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/EndReportDate</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The last date for which the report contains information. May be the same as BeginReportDate for snapshot-type reports.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/BeginSubmitDate</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The first date on which the report may be submitted to the authority.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/EndSubmitDate</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The last date on which the report may be submitted to the authority.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
-  <Item>
-    <Element>/DueDate</Element>
-
-    <Characteristics>O</Characteristics>
-    <Description>
-      <p>The official due date of the report.</p>
-    </Description>
-    <Type name="xs:date"></Type>
-  </Item>
+ 
   <Item>
     <Element>ReportDefinitionSource</Element>
 
@@ -207,44 +164,7 @@
         format by examining the ContentType attribute.
       </p>
     </Description>
-    <List mode="List">
-    </List>
-  </Item>
-  <Item>
-    <Element>/ReportFormat</Element>
-    <Characteristics>MR</Characteristics>
-    <Description>
-      <p>A third-party format that describes the visual representation of the report data.</p>
-    </Description>
-    <Type name="xs:string"></Type>
-  </Item>
-  <Item>
-    <Attribute>Type</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>This attribute indicates the encoding of the format reference.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>URL</Code>
-      </Value>
-      <Value>
-        <Code>Embedded</Code>
-      </Value>
-      <Value>
-        <Code>Base64Binary</Code>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
-    <Attribute>ContentType</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>
-        The vendor-defined content type (e.g. <code>com.vendor.format</code>, <code>PDF</code>, etc.
-      </p>
-    </Description>
-    <Type name="xs:normalizedString"></Type>
+    <Type ref="CommonTypes" name="ReportingFormattingListType"></Type>
   </Item>
   <Choice  optional="true">
     <Item>
@@ -257,15 +177,8 @@
           is <code>SIF_Query</code>.
         </p>
       </Description>
-      <List mode="List">
-      </List>
-    </Item>
-    <Item>
-      <Element>/SIF_Query</Element>
-      <Characteristics>MR</Characteristics>
-      <Description></Description>
-      <Type ref="Infrastructure" name="SIF_Query"></Type>
-    </Item>
+   <Type ref="CommonTypes" name="SIF_QueryListType"></Type>
+     </Item>
     <Item>
       <Element>SIF_ExtendedQuery</Element>
       <Characteristics>C</Characteristics>
@@ -281,13 +194,13 @@
   <Item>
     <Element>SIF_Metadata</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_Metadata"></Type>
+    <Type ref="CommonTypes" name="SIF_MetadataType"></Type>
   </Item>
   <Item>
     <Element>SIF_ExtendedElements</Element>
 
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="SIF_ExtendedElements"></Type>
+    <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
   <xhtml:Example xmlns="">
     <ReportManifest RefId="C234516384746B387459000F84723A00" ReportAuthorityInfoRefId="84756373645746363738484848484832">

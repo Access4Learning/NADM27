@@ -60,31 +60,7 @@
 		<Description>
 			<p>Desired duration of the lesson</p>
 		</Description>
-		<Type name="xs:unsignedInt"/>
-	</Item>
-	<Item>
-		<Attribute>Units</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p>Unit of time of the Duration value.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>week</Code>
-			</Value>
-			<Value>
-				<Code>day</Code>
-			</Value>
-			<Value>
-				<Code>hour</Code>
-			</Value>
-			<Value>
-				<Code>minute</Code>
-			</Value>
-			<Value>
-				<Code>second</Code>
-			</Value>
-		</Values>
+		<Type ref="CommonTypes" name="DurationType"/>
 	</Item>
 	<Item>
 		<Element>Description</Element>

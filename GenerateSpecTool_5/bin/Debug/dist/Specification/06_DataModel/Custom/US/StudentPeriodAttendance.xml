@@ -85,12 +85,7 @@
     <Description>
       <p>The local attendance code.</p>
     </Description>
-    <Type name="xs:token"></Type>
-  </Item>
-  <Item>
-    <Attribute>AttendanceCodeInfoRefId</Attribute>
-    <Characteristics>M</Characteristics>
-    <Type ref="CommonTypes" name="IdRefType"></Type>
+     <Type ref="CommonTypes" name="AttendanceCodeType"></Type>
   </Item>
   <Item>
     <Element>AuditInfo</Element>

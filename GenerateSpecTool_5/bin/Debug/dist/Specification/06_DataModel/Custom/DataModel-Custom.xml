@@ -270,7 +270,9 @@
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\BusPositionInfo.xml"/>
   </Group>
   
-  <!--<Group name="Vertical Reporting Task Force">
+  <!--
+  LEFT out for now: plenty of references to Infrastructure 
+  <Group name="Vertical Reporting Task Force">
     <Intro>
       <p>The Vertical Reporting Task Force has the following responsibilities:</p>
       <ul>
@@ -282,10 +284,11 @@
       </ul>
     </Intro>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ReportManifest.xml"/>
-    <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ReportAuthorityInfo.xml"/>
+	<xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\ReportAuthorityInfo.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\SIF_ReportObject.xml"/>
     <xi:include parse="text" xmlns:xi="http://www.w3.org/2001/XInclude" href="US\StudentLocator.xml"/>
-  </Group>-->
+  </Group>
+  -->
   
   <Group name="Infrastructure Working Group">
     <Intro>
