@@ -87,7 +87,7 @@
 	
 	<CommonElement name="EmployeePersonalOtherIdType" type="true" dm="true">
 		<Item>
-			<Element>OtherId</Element>
+			<Element>EmployeePersonalOtherIdType</Element>
 			<Characteristics>OR</Characteristics>
 			<Description>
 				<p>This field can hold a SSN, state or locally assigned Id.</p>
