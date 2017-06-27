@@ -103,74 +103,23 @@
     <Description>
       <p>Distance between the student’s home address and the school.</p>
     </Description>
-    <Type name="xs:decimal"/>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Units used in distance reporting.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>Kilometers</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>Miles</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
+   <Item>
     <Element>WalkToStopDistance</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Distance between the student’s address and the bus stop where they are picked up or dropped off.</p>
     </Description>
-    <Type name="xs:decimal"/>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Units used in distance reporting.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>Kilometers</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>Miles</Text>
-      </Value>
-    </Values>
-  </Item>
-  <Item>
+ <Item>
     <Element>StopToSchoolDistance</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Distance between the bus stop where a student is picked up or dropped off and the school.</p>
     </Description>
-    <Type name="xs:decimal"/>
-  </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Units used in distance reporting.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>Kilometers</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>Miles</Text>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
   <Item>
     <Element>OriginPoint</Element>

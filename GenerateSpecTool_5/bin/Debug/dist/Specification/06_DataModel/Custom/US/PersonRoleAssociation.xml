@@ -32,43 +32,10 @@
 		<Description>
 			<p>The RefId of the  *Personal SIF_Object representing this Person's role .</p>
 		</Description>
-		<Type ref="CommonTypes"  name="IdRefType"></Type>
+		<Type ref="CommonTypes"  name="AssociatedRoleRefIdType"></Type>
 	</Item>
 	
-	<Item>
-		<Attribute>Zone_Id</Attribute>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The ZoneId for the target object.</p>
-		</Description>
-		<Type name="xs:token"></Type>
-	</Item>
-		
-	<Item>
-		<Attribute>Type</Attribute>
-		<Characteristics>M</Characteristics>
-		<Description>
-			<p> The object type of the Person's associated role.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>StudentPersonal</Code>
-			</Value>
-			<Value>
-				<Code>StaffPersonal</Code>
-			</Value>
-			<Value>
-				<Code>EmployeePersonal</Code>
-			</Value>
-			<Value>
-				<Code>StudentContactPersonal</Code>
-			</Value>
-			<Value>
-				<Code>StudentContact</Code>
-			</Value>
-		</Values>
-	</Item>
-	
+
 	<Item>
 		<Element>EntryDate</Element>
 		<Characteristics>M</Characteristics>
@@ -102,42 +69,10 @@
 		<Description>
 			<p>Name of the Creator of this association.</p>
 		</Description>
-		<Type name="xs:string"></Type>
+		<Type ref="CommonTypes"  name="TypedCreator2Type"></Type>
 	</Item>
 	
-	<Item>
-		<Attribute>Type</Attribute>
-		<Characteristics>O</Characteristics>
-		<Description>
-			<p>The type of the object representing the Creator.</p>
-		</Description>
-		<Values>
-			<Value>
-				<Code>StudentPersonal</Code>
-			</Value>
-			<Value>
-				<Code>StaffPersonal</Code>
-			</Value>
-			<Value>
-				<Code>EmployeePersonal</Code>
-			</Value>
-			<Value>
-				<Code>StudentContactPersonal</Code>
-			</Value>
-			<Value>
-				<Code>StudentContact</Code>
-			</Value>
-		</Values>
-	</Item>
-	
-	<Item>
-		<Attribute>SIF_RefId</Attribute>
-		<Characteristics>C</Characteristics>
-		<Description>
-			<p>RefId of SIF object representing the creator if such exists- Mandatory if a Creator/ObjectType exists.</p>
-		</Description>
-		<Type ref="CommonTypes"  name="IdRefType"></Type>
-	</Item>
+
 	
 	<Item>
 		<Element>CreationDate</Element>

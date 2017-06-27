@@ -225,22 +225,7 @@
     <Description>
       <p>Number of units of time per session spent directly providing the service to the student.</p>
     </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Attribute>UnitOfMeasure</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies unit of measure in which amount of time is expressed.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Minutes</Code>
-      </Value>
-      <Value>
-        <Code>Hours</Code>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="SessionDurationType"></Type>
   </Item>
   <Item>
     <Element>IndirectTime</Element>
@@ -248,47 +233,15 @@
     <Description>
       <p>Number of units of time per session NOT spent directly providing the service to the student but rather spent providing consultation services to someone related to the student (e.g. parent, a general ed teacher, a new service provider, etc.).</p>
     </Description>
-    <Type name="xs:decimal"></Type>
+    <Type ref="CommonTypes" name="SessionDurationType"></Type>
   </Item>
-  <Item>
-    <Attribute>UnitOfMeasure</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies unit of measure in which amount of time is expressed.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Minutes</Code>
-      </Value>
-      <Value>
-        <Code>Hours</Code>
-      </Value>
-    </Values>
-
-  </Item>
-  <Item>
+   <Item>
     <Element>TotalServiceDuration</Element>
     <Characteristics>O</Characteristics>
     <Description>
       <p>Total of the direct and indirect time as it relates to the FrequencyTime; e.g., DirectTime 60 + IndirectTime 30 = 90.</p>
     </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Attribute>UnitOfMeasure</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Identifies unit of measure in which amount of time is expressed.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>Minutes</Code>
-      </Value>
-      <Value>
-        <Code>Hours</Code>
-      </Value>
-    </Values>
-
+    <Type ref="CommonTypes" name="SessionDurationType"></Type>
   </Item>
   <Item>
     <Element>IncludedInSpecialEducationFTE</Element>

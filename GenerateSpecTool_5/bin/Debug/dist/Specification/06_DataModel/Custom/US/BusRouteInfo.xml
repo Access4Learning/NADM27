@@ -106,24 +106,7 @@
     <Description>
       <p>Refers to the distance the bus drives when at least one student is riding the bus.</p>
     </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Distance unit used.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>kilometers</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>miles</Text>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
 
   <Item>
@@ -132,24 +115,7 @@
     <Description>
       <p>Includes the total distance driven for this route including to and from garage.</p>
     </Description>
-    <Type name="xs:decimal"></Type>
-  </Item>
-  <Item>
-    <Attribute>Unit</Attribute>
-    <Characteristics>M</Characteristics>
-    <Description>
-      <p>Distance unit used.</p>
-    </Description>
-    <Values>
-      <Value>
-        <Code>km</Code>
-        <Text>kilometers</Text>
-      </Value>
-      <Value>
-        <Code>m</Code>
-        <Text>miles</Text>
-      </Value>
-    </Values>
+    <Type ref="CommonTypes" name="DistanceType"></Type>
   </Item>
 
   <Item>
