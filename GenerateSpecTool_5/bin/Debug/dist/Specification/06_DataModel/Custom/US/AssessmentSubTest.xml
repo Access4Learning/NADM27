@@ -56,7 +56,7 @@
   <Item>
     <Element>GradeLevels</Element>
     <Characteristics>O</Characteristics>
-    <Type ref="DataModel" name="GradeLevelsType"></Type>
+    <Type ref="CommonTypes" name="GradeLevelsType"></Type>
     <Description>
       <p>Grade levels for which the score is valid.</p>
     </Description>

@@ -593,7 +593,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 
 	<CommonElement name="FinancialIncomeStatementMonetaryAmountListType" type="true">
 		<Item>
-			<Element>MonetaryAmountListType</Element>
+			<Element>FinancialIncomeStatementMonetaryAmountListType</Element>
 			<Characteristics>M</Characteristics>
 			<Description>
 				<p>List of monetary amounts.</p>
@@ -10622,7 +10622,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 
 	<CommonElement name="StudentParticipationDataType" type="true" dm="true">  
 		<Item>
-			<Element>StudentParticipationData</Element>
+			<Element>StudentParticipationDataType</Element>
 			<Characteristics>M</Characteristics>
 			<Description>
 				<p>Collects elements of interest from StudentParticipation.</p>

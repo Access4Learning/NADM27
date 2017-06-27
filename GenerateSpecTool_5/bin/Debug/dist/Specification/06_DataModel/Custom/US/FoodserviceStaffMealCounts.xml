@@ -52,7 +52,7 @@
     <Type ref="CommonTypes" name="SIF_ExtendedElementsType"></Type>
   </Item>
 
-  <xhtml:Example xmlns="">
+  <xhtml:Example name="FoodservicesStaffMealCounts" xmlns="">
     <FoodserviceStaffMealCounts RefId="E822BCDC9E7A40F787ED8183D3B485B5">
       <SchoolInfoRefId>F2F9D9B212B94489BC3F9FD6AB75F54A</SchoolInfoRefId>
       <Date>2003-08-25</Date>

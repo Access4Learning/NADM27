@@ -2225,7 +2225,7 @@
 
 <CommonElement name="RecognitionListType" type="true" dm="true">
 	<Item>
-		<Element>RecognitionList</Element>
+		<Element>RecognitionListType</Element>
 		<Characteristics>O</Characteristics>
 		<Description>List of awards and other types of recognition given to the student for this activity.</Description>
 		<List mode="List"/>

@@ -33,7 +33,7 @@
     <Description>
       <p>State assigned reporting Id for district or agency</p>
     </Description>
-    <Type ref="DataModel" name="StateProvinceId"></Type>
+    <Type ref="CommonTypes" name="StateProvinceIdType"></Type>
   </Item>
   <Item>
     <Element>FiscalYear</Element>
