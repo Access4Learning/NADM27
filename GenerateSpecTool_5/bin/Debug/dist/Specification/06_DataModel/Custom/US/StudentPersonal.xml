@@ -207,7 +207,7 @@
 	<Item>
 		<Element>Immigrant</Element>
 		<Characteristics>O</Characteristics>
-		<Type ref="CommonTypes" name="Immigrant"/>
+		<Type ref="CommonTypes" name="ImmigrantType"/>
 	</Item>
 	<Item>
 		<Element>NeglectedDelinquent</Element>

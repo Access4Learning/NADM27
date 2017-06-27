@@ -67,7 +67,7 @@
     <Description>
       <p>A local ID that may be used to identify this intervention for the student.</p>
     </Description>
-   <Type ref="DataModel" name="LocalId"/>
+   <Type ref="CommonTypes" name="LocalIdType"/>
    </Item>
    
   <Item>
