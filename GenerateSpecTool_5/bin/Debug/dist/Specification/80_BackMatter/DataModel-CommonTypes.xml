@@ -5862,12 +5862,12 @@
 			<Type ref="CommonTypes" name="EducationFilterType"></Type>
 		</Item>
 	</CommonElement>
-	  <CommonElement name="RightsElementsType"  type="true">
-	<Item>
-			<Element>RightsElements</Element>
-			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+	 <CommonElement name="RightsElementsType"  type="true">
+		<Item>
+			<Element>RightsElementsType</Element>
+			<Description>
+				<p>A list of rights elements.</p>
+			</Description>
 		</Item>
 		<Item>
 			<Element>RightsElement</Element>
