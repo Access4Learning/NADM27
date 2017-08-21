@@ -1705,12 +1705,7 @@
 		</Item>
 </CommonElement>
 
-<CommonElement name="CreatorType" type="true">
-		<Item>
-			<Element>Creator</Element>
-			<Characteristics>MR</Characteristics>
-		</Item>
-		
+<CommonElement name="CreatorType" type="true">		
 		<Item>
 			<Element>Name</Element>
 			<Characteristics>M</Characteristics>
