@@ -48,7 +48,7 @@
 
     <Characteristics>O</Characteristics>
     <Description>
-      <p>Id of the hardware unit on the bus that tracks &amp; reports location and status. The interpretation of the content is deployment specific, but the format must be compact.</p>
+      <p>Id of the hardware unit on the bus that tracks and reports location and status. The interpretation of the content is deployment specific, but the format must be compact.</p>
     </Description>
     <Type name="xs:normalizedString"></Type>
   </Item>

@@ -6229,11 +6229,11 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Status of the route.</p>
 			</Description>
-			<Type ref="CommonTypes" name="BusRouteStatusStatusType"></Type>
+			<Type name="xs:token"/>
 		</Item>
 	</CommonElement>
 
-		<CommonElement name='BusRouteStatusStatus2Type' type="true">
+	<!--<CommonElement name='BusRouteStatusStatus2Type' type="true">
 		<Item>
 			<Element>BusRouteStatusStatus2Type</Element>
 			<Values>
@@ -6253,26 +6253,18 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>Status of the route.</Description>
 		</Item>
 		
-	</CommonElement>
+	</CommonElement>-->
 
-	<CommonElement name="BusRouteStatusStatusType" type="true" dm="true">  
+	<!--<CommonElement name="BusRouteStatusStatusType" type="true" dm="true">  
 		<Item>
 			<Element>BusRouteStatusStatusType</Element>
 			<Description>
 				<p>Status of the route.</p>
 			</Description>
-			<Type ref="CommonTypes" name="BusRouteStatusStatus2Type"></Type>
-		</Item>
-		<Item>
-			<Attribute>BusRouteDetailRefId</Attribute>
-			<Characteristics>O</Characteristics>
-			<Description>
-				<p>If the bus is currently at a stop in this route, identify the stop's SIF object.</p>
-			</Description>
-			<Type ref="CommonTypes" name="IdRefType"></Type>
+			<Type name="xs:normalizedString"/>
 		</Item>
 	</CommonElement>
-
+-->
 	
 	<CommonElement name="BusPositionStudentListType" type="true" dm="true">  
 		<Item>
@@ -8305,7 +8297,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Lists all "other" identifiers associated with the student.</p>
 			</Description>
-			<Type ref="CommonTypes" name="StudentPersonalDataOtherIdType"></Type>
+			<Type ref="CommonTypes" name="StudentPersonalDataOtherIdListType"></Type>
 		</Item>
 
 		<Item>

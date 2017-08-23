@@ -1705,12 +1705,7 @@
 		</Item>
 </CommonElement>
 
-<CommonElement name="CreatorType" type="true">
-		<Item>
-			<Element>Creator</Element>
-			<Characteristics>MR</Characteristics>
-		</Item>
-		
+<CommonElement name="CreatorType" type="true">		
 		<Item>
 			<Element>Name</Element>
 			<Characteristics>M</Characteristics>
@@ -2223,7 +2218,7 @@
 			<Type ref="ExternalCodeSets" name="NCES0585EnglishProficiencyType"></Type>
 		</Item>
 		<Item>
-			<Element>OtherCodeListType</Element>
+			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
 			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
@@ -4258,7 +4253,7 @@
 
 	<CommonElement name="CountriesOfCitizenshipType" type="true">
 			<Item>
-			<Element>CountriesOfCitizenship</Element>
+			<Element>CountriesOfCitizenshipType</Element>
 			<Characteristics>O</Characteristics>
 			<List mode="List">
 			</List>
@@ -5867,12 +5862,12 @@
 			<Type ref="CommonTypes" name="EducationFilterType"></Type>
 		</Item>
 	</CommonElement>
-	  <CommonElement name="RightsElementsType"  type="true">
-	<Item>
-			<Element>RightsElements</Element>
-			<Characteristics>O</Characteristics>
-			<List mode="List">
-			</List>
+	 <CommonElement name="RightsElementsType"  type="true">
+		<Item>
+			<Element>RightsElementsType</Element>
+			<Description>
+				<p>A list of rights elements.</p>
+			</Description>
 		</Item>
 		<Item>
 			<Element>RightsElement</Element>
