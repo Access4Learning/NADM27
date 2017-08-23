@@ -1169,7 +1169,7 @@
 
 <CommonElement name="IncidentActionType" type="true" dm="true">  
 	<Item>
-		<Element>IncidentAction</Element>
+		<Element>IncidentActionType</Element>
 		<Characteristics>MR</Characteristics>
 		<Description>
 			<p>Information regarding the action(s) taken in response to the incident.</p>

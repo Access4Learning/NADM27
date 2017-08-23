@@ -4253,7 +4253,7 @@
 
 	<CommonElement name="CountriesOfCitizenshipType" type="true">
 			<Item>
-			<Element>CountryOfCitizenship</Element>
+			<Element>CountriesOfCitizenshipType</Element>
 			<Characteristics>O</Characteristics>
 			<List mode="List">
 			</List>
