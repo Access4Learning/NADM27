@@ -2218,7 +2218,7 @@
 			<Type ref="ExternalCodeSets" name="NCES0585EnglishProficiencyType"></Type>
 		</Item>
 		<Item>
-			<Element>OtherCodeListType</Element>
+			<Element>OtherCodeList</Element>
 			<Characteristics>O</Characteristics>
 			<Type ref="CommonTypes" name="OtherCodeListType"></Type>
 		</Item>
@@ -4253,7 +4253,7 @@
 
 	<CommonElement name="CountriesOfCitizenshipType" type="true">
 			<Item>
-			<Element>CountriesOfCitizenship</Element>
+			<Element>CountryOfCitizenship</Element>
 			<Characteristics>O</Characteristics>
 			<List mode="List">
 			</List>
