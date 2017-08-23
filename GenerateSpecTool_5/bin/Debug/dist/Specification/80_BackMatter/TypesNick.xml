@@ -8305,7 +8305,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 			<Description>
 				<p>Lists all "other" identifiers associated with the student.</p>
 			</Description>
-			<Type ref="CommonTypes" name="StudentPersonalDataOtherIdType"></Type>
+			<Type ref="CommonTypes" name="StudentPersonalDataOtherIdListType"></Type>
 		</Item>
 
 		<Item>
