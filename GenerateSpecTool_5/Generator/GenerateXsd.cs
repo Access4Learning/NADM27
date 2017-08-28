@@ -1343,14 +1343,27 @@ namespace GenerateSpec.Generator
             if (!xsdSettings.Annotate || iterator == null) return;
 
             XPathNodeIterator descriptionIterator = inputDocumentManager.Select(iterator.Current, "xhtml:Description/child::node()");
+            XPathNodeIterator charIterator = inputDocumentManager.Select(iterator.Current, "xhtml:Characteristics/child::node()");
 
-            if (descriptionIterator.MoveNext())
+             
+           // 
             {
                 //writer.WriteNode(new Developmentor.Xml.NavigatorReader(descriptionIterator.Current), true);
                 writer.WriteStartElement("xs:annotation");
-                writer.WriteStartElement("xs:documentation");
-                writer.WriteString(descriptionIterator.Current.Value);
+                    writer.WriteStartElement("xs:appinfo");
+                        writer.WriteStartElement("char");
+                        if (charIterator.MoveNext())
+                        {
+                            writer.WriteString(charIterator.Current.Value);
+                        }
                 writer.WriteEndElement();
+                    writer.WriteEndElement();
+                        writer.WriteStartElement("xs:documentation");
+                        if (descriptionIterator.MoveNext())
+                        {
+                            writer.WriteString(descriptionIterator.Current.Value);
+                        }
+                        writer.WriteEndElement();
                 writer.WriteEndElement();
             }
         }
