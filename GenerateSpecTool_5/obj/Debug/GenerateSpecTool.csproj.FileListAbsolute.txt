@@ -139,3 +139,17 @@ C:\Users\vinceparedes\myGit\nadm27c\GenerateSpecTool_5\obj\Debug\GenerateSpec.ex
 C:\Users\vinceparedes\myGit\nadm27c\GenerateSpecTool_5\obj\Debug\GenerateSpec.application
 C:\Users\vinceparedes\myGit\nadm27c\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe
 C:\Users\vinceparedes\myGit\nadm27c\GenerateSpecTool_5\obj\Debug\GenerateSpec.pdb
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.config
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe.manifest
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.application
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.xml
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.exe
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\GenerateSpec.pdb
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\Developmentor.Xml.dll
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\bin\Debug\dist\Developmentor.Xml.pdb
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\obj\Debug\GenerateSpecTool.csprojResolveAssemblyReference.cache
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\obj\Debug\GenerateSpec.TrustInfo.xml
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe.manifest
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\obj\Debug\GenerateSpec.application
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\obj\Debug\GenerateSpec.exe
+C:\Users\vinceparedes\myGit\NADM27e\GenerateSpecTool_5\obj\Debug\GenerateSpec.pdb
