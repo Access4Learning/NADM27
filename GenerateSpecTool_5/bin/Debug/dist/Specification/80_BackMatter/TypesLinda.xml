@@ -2500,7 +2500,7 @@
 
 <CommonElement name="PromotionType" type="true" dm="true">
 	<Item>
-		<Element>Promotion</Element>
+		<Element>PromotionType</Element>
 		<Characteristics>O</Characteristics>
 		<Description>
 			<p>This element is mutually exclusive with Nonpromotion, and its child elements should only be populated if the value of PromotionStatus is "Promoted".</p>
