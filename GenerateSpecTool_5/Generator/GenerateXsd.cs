@@ -1351,7 +1351,7 @@ namespace GenerateSpec.Generator
                 //writer.WriteNode(new Developmentor.Xml.NavigatorReader(descriptionIterator.Current), true);
                 writer.WriteStartElement("xs:annotation");
                     writer.WriteStartElement("xs:appinfo");
-                        writer.WriteStartElement("char");
+                        writer.WriteStartElement("sifChar");
                         if (charIterator.MoveNext())
                         {
                             writer.WriteString(charIterator.Current.Value);
