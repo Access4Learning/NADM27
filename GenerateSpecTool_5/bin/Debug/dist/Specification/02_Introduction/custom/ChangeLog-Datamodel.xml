@@ -1,38 +1,5 @@
-<Section name="Additions/Changes Since Version 2.6">
-	<p>This release of the SIF Data Model Implementation Specification is a so-called migration release because it incorporates important version 3 structural changes that move the data model toward compatibility with both the 2.* and SIF 3 infrastructures. The data model Zone Services have been deprecated in lieu of similar functionality in the SIF 3 infrastructure. Also, RefIds have been added to all SIF objects that did not have them before as detailed below.</p>
-	<p>Although this specification is not a SIF Infrastructure release it does suggest that certain infrastructure features not be used, namely: Zone Services, the SOAP Transport, and Bundled Events.</p>
+<Section name="Additions/Changes Since Version 2.7M">
+	<p>  </p>
 
-	<p>RefIds added to these SIF objects:</p>
-	<ul>
-		<li>EmploymentRecord </li>
-		<li>SectionMarkInfo </li>
-		<li>StaffEvaluation</li>
-		<li>StudentAttendanceSummary </li>
-		<li>StudentSectionMarks </li>
-		<li>CalendarDate</li>
-		<li>ContentCatalog</li>
-		<li>EmployeeCredential</li>
-		<li>EmployeePicture</li>
-		<li>EmployeeRecertification</li>
-		<li>EnergyUsage</li>
-		<li>FinancialAnnual</li>
-		<li>FinancialBudget</li>
-		<li>FoodServiceStaffEnrollmentCount</li>
-		<li>FoodServiceStudentEnrollmentCount</li>
-		<li>GradingAssignmentScore</li>
-		<li>LibraryPatronStatus</li>
-		<li>StaffMeal</li>
-		<li>StudentContactRelationship</li>
-		<li>StudentDailyAttendance</li>
-		<li>StudentLocator</li>
-		<li>StudentMeal</li>
-		<li>StudentPicture</li>
-		<li>StudentSnapshot</li>
-		<li>StudentSpecialEducationSummary</li>
-		<li>W4</li>
-	</ul>
-	<p>Staff Evaluation - Events Reported changed to True.</p>
-	<p>BusPositionInfo/BusPositionInfoRefId changed to RefId.</p>
-	<p>LearningResourcePackage - example corrected.</p>
-	<p>Added four new Identity Management objects and the Identity Management Project Team section in the Spec. </p>
+	
 </Section>

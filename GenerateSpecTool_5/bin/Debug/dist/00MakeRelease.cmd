@@ -13,4 +13,4 @@ rem --creade the new Excel file
 %COMSPEC% /C MakeExcelFile.vbs
 
 rem --create the one mega-zip file.  Not done any more
-%COMSPEC% /C makespecificationzip.cmd
+rem %COMSPEC% /C makespecificationzip.cmd
