@@ -6949,7 +6949,7 @@ balances, or changes therein, e.g. the code for  Debt Service Funds, or Capital 
 		</Item>
 		<Item>
 			<Attribute>IntervalIndex</Attribute>
-			<Characteristics>OR</Characteristics>
+			<Characteristics>M</Characteristics>
 			<Description>
 				<p>Interval number when reading was taken.</p>
 			</Description>
